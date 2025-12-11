@@ -69,4 +69,5 @@ ORDER BY TotalTransacted DESC;
 ```
 $πBranchName, NumTransactions, TotalTransacted​(σTotalTransacted > 0​(View_BranchTransactions))$
 
-<img src="/images/Pasted image 20251211130220.png" alt="image" width="500">
+
+<img src="/images/Pasted image 20251211130348.png" alt="image" width="500">

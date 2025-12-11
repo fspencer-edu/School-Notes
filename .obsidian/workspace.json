@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TEXTBOOKS/Relational Algebra.md",
+                "file": "Test.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Relational Algebra"
+              "title": "Test"
             }
           }
         ]
@@ -170,11 +170,15 @@
   },
   "active": "d87a273f2c29bc02",
   "lastOpenFiles": [
+    "images/Pasted image 20251211130358.png",
+    "images/Pasted image 20251211130348.png",
+    "Pasted image 20251211130358.png",
+    "TEXTBOOKS/Relational Algebra.md",
+    "Pasted image 20251211130348.png",
+    "Test.md",
     "images/Pasted image 20251211130220.png",
     "images/Pasted image 20251211125941.png",
-    "TEXTBOOKS/Relational Algebra.md",
     "Pasted image 20251211130220.png",
-    "Test.md",
     "TEXTBOOKS/Relational Algebra_converted.md",
     "README_converted.md",
     "Test_converted.md",
