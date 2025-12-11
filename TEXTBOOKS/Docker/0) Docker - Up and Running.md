@@ -15,4 +15,4 @@ https://learning.oreilly.com/library/view/docker-up/9781492036722/cover.html
 10) Docker At Scale
 11) Advanced Topics
 12) Container Platform Design
-13) 
+13) Conclusion
