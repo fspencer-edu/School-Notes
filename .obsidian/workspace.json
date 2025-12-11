@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Test.md",
+                "file": "TEXTBOOKS/test/new photos.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Test"
+              "title": "new photos"
             }
           }
         ]
@@ -170,12 +170,17 @@
   },
   "active": "d87a273f2c29bc02",
   "lastOpenFiles": [
-    "images/Pasted image 20251211130358.png",
+    "images/Pasted image 20251211130514.png",
+    "Pasted image 20251211130514.png",
     "images/Pasted image 20251211130348.png",
+    "TEXTBOOKS/test/new photos.md",
+    "TEXTBOOKS/test",
+    "Untitled.md",
+    "Test.md",
+    "images/Pasted image 20251211130358.png",
     "Pasted image 20251211130358.png",
     "TEXTBOOKS/Relational Algebra.md",
     "Pasted image 20251211130348.png",
-    "Test.md",
     "images/Pasted image 20251211130220.png",
     "images/Pasted image 20251211125941.png",
     "Pasted image 20251211130220.png",
@@ -185,7 +190,6 @@
     "Pasted image 20251211125941.png",
     "images/Pasted image 20251211125057.png",
     "move_images.sh",
-    "Pasted image 20251211125057.png",
     "images",
     "README.md",
     "TEXTBOOKS",
