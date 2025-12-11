@@ -1,5 +1,5 @@
 
-![[Pasted image 20251211130824.png]]
+<img src="/images/Pasted image 20251211130824.png" alt="image" width="500">
 
 [[1. Computer Networks and the Internet]]
 [[2. Application Layer]]

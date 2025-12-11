@@ -93,8 +93,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "f79334738d86d2cb",
@@ -186,9 +185,10 @@
   },
   "active": "1a65f14add9ef481",
   "lastOpenFiles": [
+    "images/Pasted image 20251211130824.png",
+    "PRIVATE.md",
     "TEXTBOOKS/Computer Networking - Top Down/Computer Networking - Top Down Approach.md",
     "PRIVATE/Todo.md",
-    "PRIVATE.md",
     "PRIVATE",
     "Pasted image 20251211130824.png",
     "README.md",
