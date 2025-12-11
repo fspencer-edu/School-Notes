@@ -1,7 +1,7 @@
 {
   "remoteURL": "git@github-edu:fspencer-edu/School-Notes.git",
   "gitLocation": "",
-  "syncinterval": 5,
+  "syncinterval": 30,
   "isSyncOnLoad": false,
   "checkStatusOnLoad": true
 }
