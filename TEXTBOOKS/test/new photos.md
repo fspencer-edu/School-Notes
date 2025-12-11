@@ -1,1 +1,0 @@
-<img src="/images/Pasted image 20251211130514.png" alt="image" width="500">
