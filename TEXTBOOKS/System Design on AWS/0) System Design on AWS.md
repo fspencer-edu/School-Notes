@@ -1,6 +1,6 @@
 https://learning.oreilly.com/library/view/system-design-on/9781098146887/
 
-![[Pasted image 20251211172140.png]]
+<img src="/images/Pasted image 20251211172140.png" alt="image" width="500">
 
 
 ## I - System Design Basics

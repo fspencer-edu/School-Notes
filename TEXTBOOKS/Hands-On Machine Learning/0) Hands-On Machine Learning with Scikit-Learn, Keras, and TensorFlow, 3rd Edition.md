@@ -1,6 +1,6 @@
 https://learning.oreilly.com/library/view/hands-on-machine-learning/9781098125967/
 
-![[Pasted image 20251211172835.png]]
+<img src="/images/Pasted image 20251211172835.png" alt="image" width="500">
 
 ## I - The Fundamentals of Machine Learning
 
