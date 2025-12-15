@@ -118,9 +118,23 @@
               "icon": "lucide-file",
               "title": "9. Multimedia Networking"
             }
+          },
+          {
+            "id": "c91e0a650b482374",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "camera.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "camera"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 8
       }
     ],
     "direction": "vertical"
@@ -268,8 +282,10 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "b6eb1077f2b25852",
+  "active": "c91e0a650b482374",
   "lastOpenFiles": [
+    "camera.md",
+    "TEXTBOOKS/Computer Networking - Top Down/3. Transport Layer.md",
     "Pasted image 20251215013725.png",
     "images/Pasted image 20251215013223.png",
     "images/Pasted image 20251215013400.png",
@@ -280,9 +296,7 @@
     "images/Pasted image 20251215012049.png",
     "images/Pasted image 20251215012105.png",
     "images/Pasted image 20251215012851.png",
-    "images/Pasted image 20251215012410.png",
     "TEXTBOOKS/Computer Networking - Top Down/9. Multimedia Networking.md",
-    "TEXTBOOKS/Computer Networking - Top Down/3. Transport Layer.md",
     "TEXTBOOKS/Computer Networking - Top Down/2. Application Layer.md",
     "TEXTBOOKS/Computer Networking - Top Down/8. Security in Computer Networks.md",
     "TEXTBOOKS/Kubernetes/1) Network Introduction.md",
