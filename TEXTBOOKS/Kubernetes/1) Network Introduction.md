@@ -1,7 +1,7 @@
 
 ## Networking History
 
-## OSI MOdel
+## OSI Model
 
 ## TCP/IP
 
