@@ -4,81 +4,52 @@
     "type": "split",
     "children": [
       {
-        "id": "7e0a60b5ac632ec3",
+        "id": "8b51b89791a2fa56",
         "type": "tabs",
         "children": [
           {
-            "id": "8548c1b044634a4f",
+            "id": "bee51eb4e8cec45a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PRIVATE/ToDo.md",
+                "file": "TEXTBOOKS/Docker/1) Introduction.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ToDo"
+              "title": "1) Introduction"
             }
           },
           {
-            "id": "574fbcfbb0cbb97a",
+            "id": "90bcbe53fdf1d503",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TEXTBOOKS/Kubernetes/3) Container Networking Basics.md",
+                "file": "TEXTBOOKS/Docker/2) The Docker Landscape.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "3) Container Networking Basics"
+              "title": "2) The Docker Landscape"
             }
           },
           {
-            "id": "b9c6a8cc23424ae8",
+            "id": "397d7c0a9d8b0197",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TEXTBOOKS/Kubernetes/4) Kubernetes Networking Introduction.md",
+                "file": "TEXTBOOKS/Docker/3) Installing Docker.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "4) Kubernetes Networking Introduction"
-            }
-          },
-          {
-            "id": "fa848dfc3cf0b427",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS/Kubernetes/5) Kubernetes Networking Abstraction.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "5) Kubernetes Networking Abstraction"
-            }
-          },
-          {
-            "id": "2b2dabb0eac44f08",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS/Kubernetes/6) Kubernetes and Cloud Networking.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "6) Kubernetes and Cloud Networking"
+              "title": "3) Installing Docker"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -135,7 +106,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "f79334738d86d2cb",
@@ -225,19 +197,27 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "574fbcfbb0cbb97a",
+  "active": "bee51eb4e8cec45a",
   "lastOpenFiles": [
+    "TEXTBOOKS/Docker/3) Installing Docker.md",
+    "TEXTBOOKS/Docker/2) The Docker Landscape.md",
+    "TEXTBOOKS/Docker/1) Introduction.md",
+    "TEXTBOOKS/Docker/0) Docker - Up and Running.md",
+    "TEXTBOOKS/Computer Vision/0) Computer Vision - Algorithms and Applications.md",
+    "TEXTBOOKS/Interactive Computer Graphics/0) Interactive Computer Graphics.md",
+    "TEXTBOOKS/Computer Vision",
+    "Pasted image 20251217134149.png",
+    "TEXTBOOKS/Hands-On Machine Learning/0) Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow, 3rd Edition.md",
+    "TEXTBOOKS/Interactive Computer Graphics",
+    "TEXTBOOKS/System Design on AWS/0) System Design on AWS.md",
+    "PRIVATE/ToDo.md",
     "TEXTBOOKS/Kubernetes/6) Kubernetes and Cloud Networking.md",
+    "TEXTBOOKS/Kubernetes/5) Kubernetes Networking Abstraction.md",
+    "TEXTBOOKS/Kubernetes/4) Kubernetes Networking Introduction.md",
     "TEXTBOOKS/Kubernetes/3) Container Networking Basics.md",
     "TEXTBOOKS/Kubernetes/1) Network Introduction.md",
     "TEXTBOOKS/Kubernetes/2) Linux Networking.md",
-    "TEXTBOOKS/Kubernetes/5) Kubernetes Networking Abstraction.md",
-    "TEXTBOOKS/System Design on AWS/0) System Design on AWS.md",
-    "TEXTBOOKS/Kubernetes/4) Kubernetes Networking Introduction.md",
-    "PRIVATE/ToDo.md",
-    "TEXTBOOKS/Hands-On Machine Learning/0) Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow, 3rd Edition.md",
     "TEXTBOOKS/Kubernetes/0) Kubernetes.md",
-    "TEXTBOOKS/Docker/0) Docker - Up and Running.md",
     "TEXTBOOKS/Docker/13) Conclusion.md",
     "TEXTBOOKS/Docker/12) Container Platform Design.md",
     "TEXTBOOKS/Docker/11) Advanced Topics.md",
@@ -248,9 +228,6 @@
     "TEXTBOOKS/Docker/6) Exploring Docker.md",
     "TEXTBOOKS/Docker/5) Working With Docker Containers.md",
     "TEXTBOOKS/Docker/4) Working With Docker Images.md",
-    "TEXTBOOKS/Docker/3) Installing Docker.md",
-    "TEXTBOOKS/Docker/2) The Docker Landscape.md",
-    "TEXTBOOKS/Docker/1) Introduction.md",
     "images/Pasted image 20251217105039.png",
     "images/Pasted image 20251216202610.png",
     "images/Pasted image 20251216203453.png",
@@ -260,9 +237,6 @@
     "images/Pasted image 20251216151336.png",
     "images/Pasted image 20251216120518.png",
     "images/Pasted image 20251216152744.png",
-    "images/Pasted image 20251216151728.png",
-    "TEXTBOOKS/Computer Networking - Top Down/9. Multimedia Networking.md",
-    "TEXTBOOKS/Computer Networking - Top Down/8. Security in Computer Networks.md",
     "TEXTBOOKS/Hands-On Machine Learning",
     "TEXTBOOKS/System Design on AWS",
     "TEXTBOOKS/Kubernetes",
@@ -270,8 +244,6 @@
     "PRIVATE",
     "PRIVATE",
     "TEXTBOOKS/Computer Networking - Top Down",
-    "TEXTBOOKS/test",
-    "move_images.sh",
-    "images"
+    "TEXTBOOKS/test"
   ]
 }
