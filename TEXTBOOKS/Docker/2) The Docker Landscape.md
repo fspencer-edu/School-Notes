@@ -165,7 +165,25 @@
 **Limited Isolation**
 
 - Containers are isolated from each other
-- Containers can compete f
+- Containers can compete for resources on production machines
+- Limits on CPU and memory are encouraged
+- Many containers share one or more common filesystem layers
+- Containerized processes are just processes on the Docker server
+- Runs on same exact instance of Linux kernel as OS
+- Apply further isolation
+	- SELinux
+	- AppArmor
+
+- Many containers use UID 0 to launch processes
+- Although the container is contained, it can access the kernel and cause security vulnerabilities
+
+**Containers Are Lightweight**
+- A newly created contained from an existing image is 12 kb
+- VM require hundreds of thousands of mb
+- New container is a reference to a layered filesystem image and metadata
+
+**Toward an Immutable Infrastructure**
+- 
 
 ## The Docker Workflow
 
