@@ -98,9 +98,74 @@
 - Unix socket can be located in different paths on different OS
 
 **Robust Tooling**
-- 
+- The older, deprecated project was called Docker Swarm
+- Newer version, is Sward mode
+
+- Docker has launched its own orchestration toolset, include Compose, Machine, and Swarm
+	- Creates a cohesive deployment story for developers
+- Overshadowed by Kubernetes and Apache Mesos
+
+**Docker CLI**
+- The CLI is the main interface of Docker
+- Go program that compiles and runs on all common architectures and OS
+	- Build a container image
+	- Pull images from a registry to a Docker daemon or push to registry
+	- Start a container on a Docker server in foreground or background
+	- Retrieve the Docker logs from a remote server
+	- Start a CLI shell inside a running container on a remote server
+	- Monitor statistics about container
+	- Get a process listing from container
+
+**Docker Engine API**
+- Docker daemon has a remote web application programming interface (API)
+	- Mapping deployed Docker containers to server
+	- Automated deployments
+	- Distributed schedulers
+- Docker maintains SDKs for Python and Go
+
+**Container Networking**
+- Docker initially supported a single networking model
+- Now supports a robust assortment of configurations that handle most application requirements
+- Most people run containers in the default configuration, called bridge
+- mode
+	- Each container behaves on a private network
+	- Docker servers acts as virtual bridge and the containers are clients behind it
+	- A bridge repeats traffic from one side to another
+- Each container has its own virtual Ethernet interface connected to the Docker bridge and its won IP address
+- Traffic passes over a proxy that is also part of the Docker daemon before getting to the container
+
+![[Pasted image 20251217144943.png]]
+
+- Docker allocates the private subnet from an unused private subnet block
+- Bridged to the host's local network through an interface on the server called `docker0`
+- All container are on a network together and can take to each other directly
+- To get host or outside world, they go over the `docker0` virtual bridge interface
 
 ## Getting the Most from Docker
+
+- Docker's architecture aims it squarely at applications that are either stateless or where the state is externalized into data stores like databases or caches
+- Databases that run well in Docker can be deployed, although is difficult
+- Best use cases
+	- Web frontends
+	- Backend APIs
+	- Short-running tasks
+- Start with a stateless application
+
+**Containers are Not Virtual Machines**
+- Docker containers are lightweight wrappers around a single Unix process
+- Process might spawn others
+- Containers are also ephemeral
+	- They come and go more than traditional VM
+- VM are a stand-in for real hardware
+- VMs are often long lived in nature
+- Docker can run natively, therefore there is no need for a virtual machine to be run on the system
+
+![[Pasted image 20251217145743.png]]
+
+**Limited Isolation**
+
+- Containers are isolated from each other
+- Containers can compete f
 
 ## The Docker Workflow
 
