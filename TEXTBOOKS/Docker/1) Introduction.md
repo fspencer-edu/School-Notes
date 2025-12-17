@@ -46,8 +46,46 @@
 	- OpenStack
 	- CloudStack
 	- Docker only handles deploying, running, and managing containers on pre-existing Docker hosts
-	- Does not allow you to create new 
+	- Does not allow you to create new host systems (instances), object stores, block storage, and other resources involved with cloud platform
+- Configuration management
+	- Puppet
+	- Chef
+	- Dockerfiles are used to define how a container should look at build time
+	- Do not manage the container's ongoing state, or host system
+- Deployment framework
+	- Capistrano
+	- Fabric
+	- Docker can't be used to automate a complex deployment process by itself
+- Workload management tool
+	- Mesos
+	- Kubernetes
+	- Swarm
+- Development environment
+	- Vagrant
+		- VM management tool for developers to simulate server stacks in production environment
+
 
 ## Important Terminology
 
+**Docker Client**
+- This is the `docker` command used to control most of the Docker workflow and talk to remove Docker servers
+
+**Docker Server**
+- This is the `dockerd` command that is used to start the Docker server process that builds and launches containers via a client
+
+**Docker Images**
+- Docker images consists of one or more filesystem layers and some important metadata that represent all the files required to run a Dockerized application
+- A single Docker image can be copied to numerous hosts
+- An image has a name and a tag
+	- Tag is used to identify a particular release of an image
+
+**Docker Container**
+- Linux container that has been instantiated from a Docker image
+- Can only exist once
+- Create multiple containers from the same image
+
+**Atomic Host**
+- Small, finely tuned OS image, like Fedora CoreOS, that supports container hosting and atomic OS upgrades
+
 ## Wrap-Up
+
