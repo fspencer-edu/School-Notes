@@ -11,7 +11,7 @@
 7. Loop over step 5 and 6
 8. The application is deployed
 
-![[Pasted image 20251217140941.png]]
+<img src="/images/Pasted image 20251217140941.png" alt="image" width="500">
 
 
 **Heroku**
@@ -27,7 +27,7 @@
 2. Operations engineers provide configuration details to the container and provision resources
 3. Developers trigger deployment
 
-![[Pasted image 20251217141514.png]]
+<img src="/images/Pasted image 20251217141514.png" alt="image" width="500">
 
 - Docker allows all the dependency issues to be discovered during the development and test cycles
 
@@ -81,7 +81,7 @@
 - Docker daemon can run on any number of servers in the infrastructure
 - Clients drive all communications and are responsible for telling servers what to do
 
-![[Pasted image 20251217142506.png]]
+<img src="/images/Pasted image 20251217142506.png" alt="image" width="500">
 
 - `docker` client
 - `dockerd` server
@@ -134,7 +134,7 @@
 - Each container has its own virtual Ethernet interface connected to the Docker bridge and its won IP address
 - Traffic passes over a proxy that is also part of the Docker daemon before getting to the container
 
-![[Pasted image 20251217144943.png]]
+<img src="/images/Pasted image 20251217144943.png" alt="image" width="500">
 
 - Docker allocates the private subnet from an unused private subnet block
 - Bridged to the host's local network through an interface on the server called `docker0`
@@ -160,7 +160,7 @@
 - VMs are often long lived in nature
 - Docker can run natively, therefore there is no need for a virtual machine to be run on the system
 
-![[Pasted image 20251217145743.png]]
+<img src="/images/Pasted image 20251217145743.png" alt="image" width="500">
 
 **Limited Isolation**
 
@@ -195,8 +195,100 @@
 - Stored in metadata that makes up a container configuration
 - Databases are often where scaled applications store state, and nothing in Docker interferes with doing that for containerized application
 - Applications that need to store filesystem state should be considered carefully
-- State should be stored in a centralized location that can be accessed
+- State should be stored in a centralized location that can be accessed regardless of host
+	- Amazon S3
+	- EBS volumes
+	- HDFS
+	- OpenStack Swift
+	- Local block store
+	- EBS volumes
+	- iSCSC disks insides the container
 
 ## The Docker Workflow
 
+### Revision Control
+
+- Docker provides two forms of revision control
+	- One used to track the filesystem layers that each Docker image is comprised of
+	- Other is a tagging system for those images
+
+**Filesystem Layers**
+- Docker containers are made up of stacked filesystem layers, each identified by a unique hash
+- Only rebuild the layer that follow the change you're deploying
+- Docker containers include all of the application dependencies
+
+**Image tags**
+- Version control from non-Dockerized applications
+	- Git tags
+	- Deployment logs
+	- Tagged builds
+- Docker has a built-in mechanism for handling this
+	- Provides image tagging at deployment time
+	- `latest` tag is used to grab the most recent version of a image
+		- Floating tag, can get outdated
+
+
+**Building**
+- Docker CLI contains `build` flag that will consume a Dockerfile and produce a Docker image
+- Each command in a Dockerfile generates a new layer in the image
+- The Dockerfile is checked in a revision control system
+- Most Docker builds are a single command, `docker build`, which generates a single artifact, the container image
+- Create standard build jobs for a team to use in build systems like Jenkins
+
+**Testing**
+- Use the Docker SHA for the container, or a custom tag to ship the same version of the application
+- Containers include all dependencies
+- Test then run on containers that are reliable
+- Docker containers also help if there are multiple API use
+	- Inter-microservice API calls
+- Run Docker containers in production is automated integration tests to pull down a versioned set of Docker containers for different services
+- New service can then be integration-tested against the same version it will be deployed with
+
+**Packaging**
+- Docker produces a single artifact from each build
+- Docker
+	- A single, transportable unit that universal tooling can handle, regardless of what it contains
+
+
+**Deployment**
+- Capistrano
+- Fabric
+- Ansible
+
+- Standard Docker client handles deploying only to a single host at a time
+
+**The Docker Ecosystem**
+
+Orchestration
+- Mass deployment tools
+	- New Relic's Centurion
+	- Spotify's Helios
+	- Ansible Docker tooling
+- Fully automatic schedulers
+	- Apache Mesos
+- Schedulers
+	- Singularity
+	- Aurora
+	- Marathon
+	- Google's Kubernetes
+
+**Atomic Hosts**
+- Most running systems are patched and updated in place
+- Most people deploy an entire copy of their application, rather than trying to apply patches to a running system
+- Atomic host
+	- Minimal footprint
+	- Support for Linux containers and Docker
+	- Atomic OS updates and rollbacks
+
+**Additional Tools**
+- Production tools
+	- Prometheus for monitoring
+	- Ansible or Helios for orchestration
+- Plug-ins
+	- Convoy for managing persistent volumes on Amazon EBS
+	- NFS mounts
+	- Weave Net network overlay
+	- Azure File Service
+
 ## Wrap-Up
+
