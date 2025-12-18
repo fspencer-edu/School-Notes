@@ -183,7 +183,19 @@
 - New container is a reference to a layered filesystem image and metadata
 
 **Toward an Immutable Infrastructure**
-- 
+- Simplify communication with immutable infrastructure, where components are replaced entirely rather than being changed in place
+- Many container-based production systems are now using tools such as HashiCrop's Packer to build cloud virtual server images and then leveraging Docker to nearly or entirely avoid configuration management systems
+
+**Stateless Applications**
+- The process of containerization means that your move configuration state into environment variables that can be passed to your application from the container
+- Use the same container to run in either production or staging environments
+
+**Externalizing State**
+- Configuration is best passed by environment variables
+- Stored in metadata that makes up a container configuration
+- Databases are often where scaled applications store state, and nothing in Docker interferes with doing that for containerized application
+- Applications that need to store filesystem state should be considered carefully
+- State should be stored in a centralized location that can be accessed
 
 ## The Docker Workflow
 
