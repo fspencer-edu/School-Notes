@@ -1,3 +1,5 @@
+
+- Every Docker container is based on an image
 ## Anatomy of a Dockerfile
 
 ## Troubleshooting Broken Builds

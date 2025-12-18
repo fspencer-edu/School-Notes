@@ -154,11 +154,30 @@ cd coreos-vagrant
 }
 ```
 
-
-
-
 ## Testing the Setup
 
+```bash
+# ubuntu
+docker run --rm -ti ubuntu:latest /bin/bash
+
+# fedora
+docker run --rm -ti fedora:latest /bin/bash
+
+# Apline
+docker run --rm -ti alpine:latest /bin/sh
+```
+
 ## Exploring the Docker Server
+
+- Running the Docker daemon on a Linux system
+```bash
+sudo dockerd -H unix:///var/run/docker.sock -H tcp://0.0.0.0:2375
+```
+
+- Creates a Unix domain socket, and binds to all system IP addresses using the default unencrypted traffic port for docker
+
+`docker run -it --privileged --pid=host debian nsenter -t 1 -m -u -n -i sh`
+
+- Uses a privileged Debian container that contains the `nsenter` to manipulate the Linux kernel namespaces to navigate the filesystem
 
 ## Wrap-Up
