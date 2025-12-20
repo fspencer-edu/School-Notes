@@ -78,20 +78,6 @@
             }
           },
           {
-            "id": "9935d2562a05b2df",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS/Computer Networking - Top Down/4. The Network Layer - Data Plane.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "4. The Network Layer - Data Plane"
-            }
-          },
-          {
             "id": "521b128d9c47ec8a",
             "type": "leaf",
             "state": {
@@ -162,7 +148,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -310,25 +296,24 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "9935d2562a05b2df",
+  "active": "6be648b7d05f78c8",
   "lastOpenFiles": [
-    "Pasted image 20251220153030.png",
-    "Pasted image 20251220152627.png",
-    "Pasted image 20251220151922.png",
-    "Pasted image 20251220143725.png",
-    "Pasted image 20251220143009.png",
-    "Pasted image 20251220142959.png",
-    "Pasted image 20251220114623.png",
-    "Pasted image 20251220114121.png",
-    "Pasted image 20251220113012.png",
-    "Pasted image 20251220112913.png",
-    "Pasted image 20251220112531.png",
+    "TEXTBOOKS/Computer Networking - Top Down/5. The Network Layer - Control Plane.md",
+    "images/Pasted image 20251220112512.png",
+    "images/Pasted image 20251220111742.png",
+    "images/Pasted image 20251220111223.png",
+    "images/Pasted image 20251220153601.png",
+    "images/Pasted image 20251220142959.png",
+    "images/Pasted image 20251220152627.png",
+    "images/Pasted image 20251220151922.png",
+    "images/Pasted image 20251220161014.png",
+    "images/Pasted image 20251220114121.png",
+    "images/Pasted image 20251220161026.png",
+    "TEXTBOOKS/Computer Networking - Top Down/4. The Network Layer - Data Plane.md",
     "TEXTBOOKS/Computer Networking - Top Down/9. Multimedia Networking.md",
     "TEXTBOOKS/Computer Networking - Top Down/8. Security in Computer Networks.md",
     "TEXTBOOKS/Computer Networking - Top Down/7. Wireless and Mobile Networks.md",
     "TEXTBOOKS/Computer Networking - Top Down/6. The Link Layer and LANs.md",
-    "TEXTBOOKS/Computer Networking - Top Down/5. The Network Layer - Control Plane.md",
-    "TEXTBOOKS/Computer Networking - Top Down/4. The Network Layer - Data Plane.md",
     "PRIVATE/ToDo.md",
     "TEXTBOOKS/Docker/7) Debugging Containers.md",
     "TEXTBOOKS/Computer Networking - Top Down/3. Transport Layer.md",
