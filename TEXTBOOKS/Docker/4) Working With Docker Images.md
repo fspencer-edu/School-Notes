@@ -168,10 +168,118 @@ Hello Sean and Karl. Wish you were here.
 
 ### Authentication to a Registry
 
-- 
+- Docker assumes the registry will be Docker Hub
+
 
 **Creating a Docker Hub Account**
 
+```c
+docker login
+
+ls -la ~/.docker/config.json
+
+docker logout
+```
+
+**Pushing Images into a repository**
+
+```c
+docker login
+docker build -t example/docker-node-hello:latest .
+
+docker tag example/docker-node-hello:latest \
+	${<myuser>}/docker-node-hello:latest
+	
+docker push ${<myuser>}/docker-node-hello:latest
+
+docker pull ${<myuser>}/docker-node-hello:latest
+```
+
+### Running a Private Registry
+
+```c
+git clone https://github.com/spkane/basic-registry --config core.autocrlf=input
+
+docker run --entrypoint htpasswd spkane/basic-registry:latest \
+
+docker build -t my-registry .
+
+docker run -d -p 5000:5000 --name registry my-registry
+
+docker logs registry
+```
+
+**Testing the Private Registry**
+
 ## Advanced Building Techniques
 
+ ### Keeping Images Small
+
+- A large number of Docker containers inherit from a base image that contains a minimal Linux distribution
+
+```c
+docker image inspect alpine:latest
+
+docker image inspect adejonge/helloworld:latest
+```
+
+**Multistage Builds**
+```c
+# build container
+FROM golang:apline as builder
+RUN apk update && \
+	apk add git && \
+	CGO_ENABLED=0 go get -a -ldflags '-s' github.com/adriaandejonge/helloworld
+	
+# Production container
+FROM scratch
+COPY --from=builder /go/bin/helloworld /helloworld
+EXPOSE 8080
+CMD ["/hellowowld"]
+```
+
+- Create a directory
+- Paste the content from the preceding example into a _Dockerfile_
+
+```bash
+mkdir /tmp/multi-build
+cd /tmp/multi-build
+vi Dockerfile
+
+docker build .
+```
+
+- Have a stage based non the public GO image that builds the API
+- Another stage based on the Angular container to build the frontend
+- Final stage to combine the outputs from both
+
+
+**Layers Are Additive**
+- Cannot delete file
+
+```c
+FROM fedora
+RUN dnf install -y httpd
+CMD ["/usr/sbin/httpd", "-DFOREGROUND"]
+
+docker build .
+
+docker tag 8d29ec43dc5a size1
+```
+
+- 3 layers added not size to final image
+- Package managers
+	- `apk, apt, dnf, yum`
+- Cache uses up a huge amount of space
+- Add `RUN dnf clean all`
+- Cannot make earlier layers in an image smaller by deleting file in subsequent layers
+- When a file is edited or deleted, the older version is being masked
+- The most common way to deal with this is using `&&`
+
+```c
+FROM fedora
+RUN dnf install -y httpd && \
+	dnf clean all
+CMD ["/usr/sbin/httpd", "-DFOREGROUND"]
+```
 ## Wrap-Up
