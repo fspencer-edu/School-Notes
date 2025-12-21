@@ -282,4 +282,25 @@ RUN dnf install -y httpd && \
 	dnf clean all
 CMD ["/usr/sbin/httpd", "-DFOREGROUND"]
 ```
+
+**Optimizing for the Cache**
+- The final building technique is related to keeping build times as fast as possible
+- During a build process, Docker uses a layer cache to avoid rebuilding any image layers
+
+```c
+FROM fedora
+RUN dnf install -y httpd && \
+	dnf clean all
+RUN mkdir /var/www && \
+	mkdir /var/www/html
+ADD index.html /var/www/html
+CMD ["/usr/sbin/httpd", "-DFOREGROUND"]
+
+time docker build --no-cache .
+```
+
+- `time` command tells us to build without the cache
+- Order the _Dockerfile_ so that the most stable and time-consuming portions of the build process happen first and code is added as late in the process as possible
+	- Use `npm` and `bundle` to install dependencies
+
 ## Wrap-Up

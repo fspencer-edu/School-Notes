@@ -22,20 +22,6 @@
             }
           },
           {
-            "id": "6be648b7d05f78c8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS/Docker/4) Working With Docker Images.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "4) Working With Docker Images"
-            }
-          },
-          {
             "id": "8578bf60cef58e82",
             "type": "leaf",
             "state": {
@@ -296,8 +282,9 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "6be648b7d05f78c8",
+  "active": "8578bf60cef58e82",
   "lastOpenFiles": [
+    "TEXTBOOKS/Docker/4) Working With Docker Images.md",
     "TEXTBOOKS/Computer Networking - Top Down/5. The Network Layer - Control Plane.md",
     "images/Pasted image 20251220112512.png",
     "images/Pasted image 20251220111742.png",
@@ -318,7 +305,6 @@
     "TEXTBOOKS/Docker/7) Debugging Containers.md",
     "TEXTBOOKS/Computer Networking - Top Down/3. Transport Layer.md",
     "TEXTBOOKS/Computer Networking - Top Down/2. Application Layer.md",
-    "TEXTBOOKS/Docker/4) Working With Docker Images.md",
     "TEXTBOOKS/Docker/3) Installing Docker.md",
     "TEXTBOOKS/Docker/6) Exploring Docker.md",
     "TEXTBOOKS/Docker/2) The Docker Landscape.md",
