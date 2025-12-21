@@ -126,6 +126,31 @@ docker run --rm -ti -v /mnt/session_data:/data:ro \
 	- `z` indicates bind mount content is shared among multiple containers
 
 
+- If the container application is designed to write into `/data`, then it will be visible to the host filesystem and remain available when container stops
+- Containers should be designed to stateless whenever possible
+
+**Resource Quotas**
+- Using Docker, leverage cgroup in the Linux kernel to control the resources that are available to Docker container
+- `docker create` and `docker run` support configuring CPU, memory, swap, and storage I/O restrictions
+
+**CPU Shares**
+
+- Docker uses cpu shares to limit usages by applications in containers
+- Docker assigned the number 1024 to represent the full pool
+- Docker image that contains the `stress` command for pushing a system to its limits
+
+```c
+docker run --rm -ti progrium/stress \
+  --cpu 2 --io 1 --vm 2 --vm-bytes 128M --timeout 120s
+```
+- Creates 2 CPU-bound processes, one IO process, and two memory allocation processes
+
+
+**CPU Pinning**
+- Pin a container to one or more CPU cores
+- `--cpuset` is a zero-indexed, so first CPU core i 0
+- 
+
 ## Starting a Container
 
 ## Auto-Restarting a Container
