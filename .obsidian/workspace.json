@@ -119,8 +119,7 @@
               "title": "9. Multimedia Networking"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -268,8 +267,9 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "2f217cae0f1a44c8",
+  "active": "795faeff4f6dc8eb",
   "lastOpenFiles": [
+    "camera.md",
     "TEXTBOOKS/Docker/6) Exploring Docker.md",
     "TEXTBOOKS/Docker/5) Working With Docker Containers.md",
     "TEXTBOOKS/Docker/4) Working With Docker Images.md",
