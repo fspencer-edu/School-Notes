@@ -8,20 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "1decfe3f5db0c0e9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS/Docker/7) Debugging Containers.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "7) Debugging Containers"
-            }
-          },
-          {
             "id": "521b128d9c47ec8a",
             "type": "leaf",
             "state": {
@@ -161,8 +147,7 @@
               "title": "9. Multimedia Networking"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -312,11 +297,14 @@
   },
   "active": "521b128d9c47ec8a",
   "lastOpenFiles": [
+    "Pasted image 20251226145319.png",
+    "Pasted image 20251226144429.png",
+    "TEXTBOOKS/Docker/7) Debugging Containers.md",
+    "TEXTBOOKS/Computer Networking - Top Down/5. The Network Layer - Control Plane.md",
     "TEXTBOOKS/Computer Networking - Top Down/9. Multimedia Networking.md",
     "TEXTBOOKS/Computer Networking - Top Down/8. Security in Computer Networks.md",
     "TEXTBOOKS/Computer Networking - Top Down/7. Wireless and Mobile Networks.md",
     "TEXTBOOKS/Computer Networking - Top Down/6. The Link Layer and LANs.md",
-    "TEXTBOOKS/Computer Networking - Top Down/5. The Network Layer - Control Plane.md",
     "Pasted image 20251226142058.png",
     "images/Pasted image 20251226142020.png",
     "images/Pasted image 20251226141636.png",
@@ -324,7 +312,6 @@
     "Pasted image 20251226142020.png",
     "Pasted image 20251226141636.png",
     "Pasted image 20251226141554.png",
-    "TEXTBOOKS/Docker/7) Debugging Containers.md",
     "camera.md",
     "PRIVATE/ToDo.md",
     "TEXTBOOKS/Docker/6) Exploring Docker.md",
@@ -332,7 +319,6 @@
     "TEXTBOOKS/Docker/4) Working With Docker Images.md",
     "images/Pasted image 20251220112512.png",
     "images/Pasted image 20251220111742.png",
-    "images/Pasted image 20251220111223.png",
     "TEXTBOOKS/Computer Networking - Top Down/4. The Network Layer - Data Plane.md",
     "TEXTBOOKS/Computer Networking - Top Down/3. Transport Layer.md",
     "TEXTBOOKS/Computer Networking - Top Down/2. Application Layer.md",
