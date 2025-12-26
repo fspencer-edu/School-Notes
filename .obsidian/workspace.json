@@ -76,76 +76,6 @@
               "icon": "lucide-file",
               "title": "9. Multimedia Networking"
             }
-          },
-          {
-            "id": "ba896cf1b0b9bd29",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS/Computer Networking - Top Down/5. The Network Layer - Control Plane.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "5. The Network Layer - Control Plane"
-            }
-          },
-          {
-            "id": "a2955f9e44eda655",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS/Computer Networking - Top Down/6. The Link Layer and LANs.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "6. The Link Layer and LANs"
-            }
-          },
-          {
-            "id": "4a44a9efa24f18bf",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS/Computer Networking - Top Down/7. Wireless and Mobile Networks.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "7. Wireless and Mobile Networks"
-            }
-          },
-          {
-            "id": "a1ee22c7b7a74fab",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS/Computer Networking - Top Down/8. Security in Computer Networks.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "8. Security in Computer Networks"
-            }
-          },
-          {
-            "id": "498dd275372f261e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS/Computer Networking - Top Down/9. Multimedia Networking.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "9. Multimedia Networking"
-            }
           }
         ]
       }
@@ -297,14 +227,14 @@
   },
   "active": "521b128d9c47ec8a",
   "lastOpenFiles": [
-    "Pasted image 20251226145319.png",
-    "Pasted image 20251226144429.png",
-    "TEXTBOOKS/Docker/7) Debugging Containers.md",
-    "TEXTBOOKS/Computer Networking - Top Down/5. The Network Layer - Control Plane.md",
     "TEXTBOOKS/Computer Networking - Top Down/9. Multimedia Networking.md",
     "TEXTBOOKS/Computer Networking - Top Down/8. Security in Computer Networks.md",
     "TEXTBOOKS/Computer Networking - Top Down/7. Wireless and Mobile Networks.md",
     "TEXTBOOKS/Computer Networking - Top Down/6. The Link Layer and LANs.md",
+    "TEXTBOOKS/Computer Networking - Top Down/5. The Network Layer - Control Plane.md",
+    "Pasted image 20251226145319.png",
+    "Pasted image 20251226144429.png",
+    "TEXTBOOKS/Docker/7) Debugging Containers.md",
     "Pasted image 20251226142058.png",
     "images/Pasted image 20251226142020.png",
     "images/Pasted image 20251226141636.png",
@@ -318,7 +248,6 @@
     "TEXTBOOKS/Docker/5) Working With Docker Containers.md",
     "TEXTBOOKS/Docker/4) Working With Docker Images.md",
     "images/Pasted image 20251220112512.png",
-    "images/Pasted image 20251220111742.png",
     "TEXTBOOKS/Computer Networking - Top Down/4. The Network Layer - Data Plane.md",
     "TEXTBOOKS/Computer Networking - Top Down/3. Transport Layer.md",
     "TEXTBOOKS/Computer Networking - Top Down/2. Application Layer.md",
