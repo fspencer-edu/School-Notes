@@ -8,34 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "795faeff4f6dc8eb",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/ToDo.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "ToDo"
-            }
-          },
-          {
-            "id": "2f217cae0f1a44c8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "camera.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "camera"
-            }
-          },
-          {
             "id": "1decfe3f5db0c0e9",
             "type": "leaf",
             "state": {
@@ -118,8 +90,79 @@
               "icon": "lucide-file",
               "title": "9. Multimedia Networking"
             }
+          },
+          {
+            "id": "ba896cf1b0b9bd29",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS/Computer Networking - Top Down/5. The Network Layer - Control Plane.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "5. The Network Layer - Control Plane"
+            }
+          },
+          {
+            "id": "a2955f9e44eda655",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS/Computer Networking - Top Down/6. The Link Layer and LANs.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "6. The Link Layer and LANs"
+            }
+          },
+          {
+            "id": "4a44a9efa24f18bf",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS/Computer Networking - Top Down/7. Wireless and Mobile Networks.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "7. Wireless and Mobile Networks"
+            }
+          },
+          {
+            "id": "a1ee22c7b7a74fab",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS/Computer Networking - Top Down/8. Security in Computer Networks.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "8. Security in Computer Networks"
+            }
+          },
+          {
+            "id": "498dd275372f261e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS/Computer Networking - Top Down/9. Multimedia Networking.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "9. Multimedia Networking"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -267,30 +310,30 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "795faeff4f6dc8eb",
+  "active": "521b128d9c47ec8a",
   "lastOpenFiles": [
-    "camera.md",
-    "TEXTBOOKS/Docker/6) Exploring Docker.md",
-    "TEXTBOOKS/Docker/5) Working With Docker Containers.md",
-    "TEXTBOOKS/Docker/4) Working With Docker Images.md",
-    "TEXTBOOKS/Computer Networking - Top Down/5. The Network Layer - Control Plane.md",
-    "images/Pasted image 20251220112512.png",
-    "images/Pasted image 20251220111742.png",
-    "images/Pasted image 20251220111223.png",
-    "images/Pasted image 20251220153601.png",
-    "images/Pasted image 20251220142959.png",
-    "images/Pasted image 20251220152627.png",
-    "images/Pasted image 20251220151922.png",
-    "images/Pasted image 20251220161014.png",
-    "images/Pasted image 20251220114121.png",
-    "images/Pasted image 20251220161026.png",
-    "TEXTBOOKS/Computer Networking - Top Down/4. The Network Layer - Data Plane.md",
     "TEXTBOOKS/Computer Networking - Top Down/9. Multimedia Networking.md",
     "TEXTBOOKS/Computer Networking - Top Down/8. Security in Computer Networks.md",
     "TEXTBOOKS/Computer Networking - Top Down/7. Wireless and Mobile Networks.md",
     "TEXTBOOKS/Computer Networking - Top Down/6. The Link Layer and LANs.md",
-    "PRIVATE/ToDo.md",
+    "TEXTBOOKS/Computer Networking - Top Down/5. The Network Layer - Control Plane.md",
+    "Pasted image 20251226142058.png",
+    "images/Pasted image 20251226142020.png",
+    "images/Pasted image 20251226141636.png",
+    "images/Pasted image 20251226141554.png",
+    "Pasted image 20251226142020.png",
+    "Pasted image 20251226141636.png",
+    "Pasted image 20251226141554.png",
     "TEXTBOOKS/Docker/7) Debugging Containers.md",
+    "camera.md",
+    "PRIVATE/ToDo.md",
+    "TEXTBOOKS/Docker/6) Exploring Docker.md",
+    "TEXTBOOKS/Docker/5) Working With Docker Containers.md",
+    "TEXTBOOKS/Docker/4) Working With Docker Images.md",
+    "images/Pasted image 20251220112512.png",
+    "images/Pasted image 20251220111742.png",
+    "images/Pasted image 20251220111223.png",
+    "TEXTBOOKS/Computer Networking - Top Down/4. The Network Layer - Data Plane.md",
     "TEXTBOOKS/Computer Networking - Top Down/3. Transport Layer.md",
     "TEXTBOOKS/Computer Networking - Top Down/2. Application Layer.md",
     "TEXTBOOKS/Docker/3) Installing Docker.md",
@@ -306,7 +349,6 @@
     "TEXTBOOKS/Kubernetes/6) Kubernetes and Cloud Networking.md",
     "TEXTBOOKS/Kubernetes/5) Kubernetes Networking Abstraction.md",
     "TEXTBOOKS/Kubernetes/4) Kubernetes Networking Introduction.md",
-    "TEXTBOOKS/Kubernetes/3) Container Networking Basics.md",
     "TEXTBOOKS/Hands-On Machine Learning",
     "TEXTBOOKS/System Design on AWS",
     "TEXTBOOKS/Kubernetes",
