@@ -67,13 +67,18 @@
             "id": "9b29b6016aa74ba4",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS/Genetics - Analysis and Principles/0) Genetics - Analysis and Principles.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "0) Genetics - Analysis and Principles"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -130,8 +135,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "f79334738d86d2cb",
@@ -221,21 +225,30 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "935fc028d246358d",
+  "active": "9b29b6016aa74ba4",
   "lastOpenFiles": [
-    "Pasted image 20260104130028.png",
-    "Pasted image 20260104122351.png",
+    "Pasted image 20260104132652.png",
+    "TEXTBOOKS/Genetics- Genes to Genomes/0) Genetics - Genes to Genomes.md",
+    "TEXTBOOKS/Genetics - Analysis and Principles/0) Genetics - Analysis and Principles.md",
+    "TEXTBOOKS/Genetics - Analysis and Principles",
+    "Pasted image 20260104132221.png",
+    "TEXTBOOKS/Data Mining/0) Data Mining.md",
+    "TEXTBOOKS/Genetics- Genes to Genomes",
+    "Pasted image 20260104131611.png",
+    "TEXTBOOKS/Computer Vision/0) Computer Vision - Algorithms and Applications.md",
+    "TEXTBOOKS/Data Mining",
+    "TEXTBOOKS/Docker/0) Docker - Up and Running.md",
+    "TEXTBOOKS/Computer Networking - Top Down/0. Computer Networking - Top Down Approach.md",
     "TEXTBOOKS/Computer Networking - Top Down/6. The Link Layer and LANs.md",
-    "Pasted image 20260104120350.png",
+    "Pasted image 20260104131123.png",
+    "images/Pasted image 20260104130354.png",
+    "images/Pasted image 20260104120350.png",
+    "images/Pasted image 20260104122351.png",
+    "images/Pasted image 20260104130821.png",
+    "images/Pasted image 20260104130028.png",
+    "Pasted image 20260104130821.png",
+    "Pasted image 20260104130354.png",
     "PRIVATE/ToDo.md",
-    "images/Pasted image 20251231131017.png",
-    "images/Pasted image 20251231131621.png",
-    "images/Pasted image 20251231133034.png",
-    "images/Pasted image 20251231132835.png",
-    "images/Pasted image 20251231131053.png",
-    "images/Pasted image 20251231133447.png",
-    "Pasted image 20251231133447.png",
-    "Pasted image 20251231133034.png",
     "TEXTBOOKS/Computer Networking - Top Down/5. The Network Layer - Control Plane.md",
     "TEXTBOOKS/Computer Networking - Top Down/9. Multimedia Networking.md",
     "TEXTBOOKS/Computer Networking - Top Down/8. Security in Computer Networks.md",
@@ -251,23 +264,14 @@
     "TEXTBOOKS/Docker/3) Installing Docker.md",
     "TEXTBOOKS/Docker/2) The Docker Landscape.md",
     "TEXTBOOKS/Docker/1) Introduction.md",
-    "TEXTBOOKS/Docker/0) Docker - Up and Running.md",
-    "TEXTBOOKS/Computer Vision/0) Computer Vision - Algorithms and Applications.md",
     "TEXTBOOKS/Interactive Computer Graphics/0) Interactive Computer Graphics.md",
     "TEXTBOOKS/Computer Vision",
     "TEXTBOOKS/Hands-On Machine Learning/0) Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow, 3rd Edition.md",
     "TEXTBOOKS/Interactive Computer Graphics",
-    "TEXTBOOKS/System Design on AWS/0) System Design on AWS.md",
-    "TEXTBOOKS/Kubernetes/6) Kubernetes and Cloud Networking.md",
-    "TEXTBOOKS/Kubernetes/5) Kubernetes Networking Abstraction.md",
-    "TEXTBOOKS/Kubernetes/4) Kubernetes Networking Introduction.md",
     "TEXTBOOKS/Hands-On Machine Learning",
     "TEXTBOOKS/System Design on AWS",
     "TEXTBOOKS/Kubernetes",
     "TEXTBOOKS/Docker",
-    "PRIVATE",
-    "PRIVATE",
-    "TEXTBOOKS/Computer Networking - Top Down",
-    "TEXTBOOKS/test"
+    "PRIVATE"
   ]
 }
