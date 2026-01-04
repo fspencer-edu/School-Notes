@@ -64,21 +64,16 @@
             }
           },
           {
-            "id": "d21214dd52c6cc0e",
+            "id": "9b29b6016aa74ba4",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/ToDo.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "ToDo"
+              "title": "New tab"
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "vertical"
@@ -226,9 +221,12 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "d21214dd52c6cc0e",
+  "active": "935fc028d246358d",
   "lastOpenFiles": [
+    "Pasted image 20260104122351.png",
     "TEXTBOOKS/Computer Networking - Top Down/6. The Link Layer and LANs.md",
+    "Pasted image 20260104120350.png",
+    "PRIVATE/ToDo.md",
     "images/Pasted image 20251231131017.png",
     "images/Pasted image 20251231131621.png",
     "images/Pasted image 20251231133034.png",
@@ -238,14 +236,12 @@
     "Pasted image 20251231133447.png",
     "Pasted image 20251231133034.png",
     "Pasted image 20251231132835.png",
-    "Pasted image 20251231131621.png",
     "TEXTBOOKS/Computer Networking - Top Down/5. The Network Layer - Control Plane.md",
     "TEXTBOOKS/Computer Networking - Top Down/9. Multimedia Networking.md",
     "TEXTBOOKS/Computer Networking - Top Down/8. Security in Computer Networks.md",
     "TEXTBOOKS/Computer Networking - Top Down/7. Wireless and Mobile Networks.md",
     "TEXTBOOKS/Docker/7) Debugging Containers.md",
     "camera.md",
-    "PRIVATE/ToDo.md",
     "TEXTBOOKS/Docker/6) Exploring Docker.md",
     "TEXTBOOKS/Docker/5) Working With Docker Containers.md",
     "TEXTBOOKS/Docker/4) Working With Docker Images.md",
