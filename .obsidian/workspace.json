@@ -237,6 +237,9 @@
   },
   "active": "1447f193185fcea8",
   "lastOpenFiles": [
+    "PRIVATE/Winter 2026/Computer Networks",
+    "PRIVATE/Winter 2026/Genetics",
+    "PRIVATE/Winter 2026/Data Mining",
     "PRIVATE/Winter 2026",
     "TEXTBOOKS/Computer Networking - Top Down/6. The Link Layer and LANs.md",
     "PRIVATE/ToDo.md",
@@ -279,9 +282,6 @@
     "TEXTBOOKS/Hands-On Machine Learning/0) Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow, 3rd Edition.md",
     "TEXTBOOKS/Interactive Computer Graphics",
     "TEXTBOOKS/Hands-On Machine Learning",
-    "TEXTBOOKS/System Design on AWS",
-    "TEXTBOOKS/Kubernetes",
-    "TEXTBOOKS/Docker",
-    "PRIVATE"
+    "TEXTBOOKS/System Design on AWS"
   ]
 }
