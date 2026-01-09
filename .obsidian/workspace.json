@@ -162,7 +162,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -236,7 +236,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PRIVATE/Winter 2026/Genetics/Textbook/7) DNA - Structure and Replication.md",
+                "file": "PRIVATE/Winter 2026/Genetics/Textbook/8) RNA - Transcription, Processing, and Decay.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -246,7 +246,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 7) DNA - Structure and Replication"
+              "title": "Backlinks for 8) RNA - Transcription, Processing, and Decay"
             }
           },
           {
@@ -311,8 +311,9 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "75fc31369742a054",
+  "active": "b69d80c1e82748a6",
   "lastOpenFiles": [
+    "PRIVATE/Winter 2026/Genetics/Textbook/7) DNA - Structure and Replication.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/6) The Genetics of Bacteria and Their Viruses.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/5) Gene Interaction.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/4) Mapping Eukaryote Chromosomes by Recombination.md",
@@ -325,7 +326,6 @@
     "PRIVATE/Winter 2026/Genetics/Textbook/10) Gene Isolation and Manipulation.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/9) Proteins and Their Synthesis.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/8) RNA - Transcription, Processing, and Decay.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/7) DNA - Structure and Replication.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/3) Independent Assortment of Genes.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/2) Single-Gene Inheritance.md",
     "Pasted image 20260109135253.png",
