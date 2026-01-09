@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PRIVATE/Winter 2026/Genetics/Textbook/Outline - Genetics.md",
+                "file": "PRIVATE/Winter 2026/Data Mining/Lec Notes/Lec 2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Outline - Genetics"
+              "title": "Lec 2"
             }
           }
         ],
@@ -121,7 +121,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "f79334738d86d2cb",
@@ -137,7 +138,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PRIVATE/Winter 2026/Genetics/Textbook/Outline - Genetics.md",
+                "file": "PRIVATE/Winter 2026/Data Mining/Lec Notes/Lec 2.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +148,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Outline - Genetics"
+              "title": "Backlinks for Lec 2"
             }
           },
           {
@@ -214,9 +215,12 @@
   },
   "active": "13a86f3882eaf624",
   "lastOpenFiles": [
+    "PRIVATE/Winter 2026/Genetics/Textbook/Outline - Genetics.md",
+    "Pasted image 20260109114218.png",
+    "Pasted image 20260109114202.png",
+    "Pasted image 20260109114147.png",
     "Pasted image 20260109114128.png",
     "PRIVATE/Winter 2026/Data Mining/Textbook/1) Introduction (Data Mining).md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/Outline - Genetics.md",
     "PRIVATE/Winter 2026/Genetics/Textbook",
     "PRIVATE/Winter 2026/Genetics/Lec Notes",
     "PRIVATE/Winter 2026/Data Mining/Textbook/0) Intro to Data Mining.md",
@@ -239,10 +243,6 @@
     "images/Pasted image 20260109113546.png",
     "images/Pasted image 20260109112924.png",
     "Pasted image 20260109113546.png",
-    "Pasted image 20260109112949.png",
-    "Pasted image 20260109112935.png",
-    "Pasted image 20260109112924.png",
-    "Pasted image 20260109112911.png",
     "PRIVATE/Winter 2026/Data Mining/Lec Notes/Lec 2.md",
     "PRIVATE/Winter 2026/Data Mining/Lec Notes/Lec 1.md",
     "TEXTBOOKS/Computer Networking - Top Down/6. The Link Layer and LANs.md",
