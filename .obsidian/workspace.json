@@ -76,9 +76,19 @@
               "icon": "lucide-file",
               "title": "ToDo"
             }
+          },
+          {
+            "id": "39c785f045cd83a1",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -225,8 +235,15 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "9b29b6016aa74ba4",
+  "active": "1447f193185fcea8",
   "lastOpenFiles": [
+    "PRIVATE/Winter 2026",
+    "TEXTBOOKS/Computer Networking - Top Down/6. The Link Layer and LANs.md",
+    "PRIVATE/ToDo.md",
+    "images/Pasted image 20260104131611.png",
+    "images/Pasted image 20260104132652.png",
+    "images/Pasted image 20260104132221.png",
+    "images/Pasted image 20260104131123.png",
     "TEXTBOOKS/Genetics - Analysis and Principles/0) Genetics - Analysis and Principles.md",
     "Pasted image 20260104132652.png",
     "TEXTBOOKS/Genetics- Genes to Genomes/0) Genetics - Genes to Genomes.md",
@@ -239,15 +256,9 @@
     "TEXTBOOKS/Data Mining",
     "TEXTBOOKS/Docker/0) Docker - Up and Running.md",
     "TEXTBOOKS/Computer Networking - Top Down/0. Computer Networking - Top Down Approach.md",
-    "TEXTBOOKS/Computer Networking - Top Down/6. The Link Layer and LANs.md",
     "Pasted image 20260104131123.png",
     "images/Pasted image 20260104130354.png",
     "images/Pasted image 20260104120350.png",
-    "images/Pasted image 20260104122351.png",
-    "images/Pasted image 20260104130821.png",
-    "images/Pasted image 20260104130028.png",
-    "Pasted image 20260104130821.png",
-    "PRIVATE/ToDo.md",
     "TEXTBOOKS/Computer Networking - Top Down/5. The Network Layer - Control Plane.md",
     "TEXTBOOKS/Computer Networking - Top Down/9. Multimedia Networking.md",
     "TEXTBOOKS/Computer Networking - Top Down/8. Security in Computer Networks.md",

@@ -1,5 +1,5 @@
 
-![[Pasted image 20260104131611.png]]
+<img src="/images/Pasted image 20260104131611.png" alt="image" width="500">
 
 https://tjzhifei.github.io/links/DM3.pdf
 
