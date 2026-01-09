@@ -8,216 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "4c490febd8c4e245",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Genetics/Textbook/1) The Genetics Revolution.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "1) The Genetics Revolution"
-            }
-          },
-          {
-            "id": "402ab81446fd38ca",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Genetics/Textbook/2) Single-Gene Inheritance.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "2) Single-Gene Inheritance"
-            }
-          },
-          {
-            "id": "164a03f6bbc661fe",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Genetics/Textbook/3) Independent Assortment of Genes.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "3) Independent Assortment of Genes"
-            }
-          },
-          {
-            "id": "96abcbade12a58d6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Genetics/Textbook/4) Mapping Eukaryote Chromosomes by Recombination.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "4) Mapping Eukaryote Chromosomes by Recombination"
-            }
-          },
-          {
-            "id": "9242c4b8e8d91f94",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Genetics/Textbook/5) Gene Interaction.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "5) Gene Interaction"
-            }
-          },
-          {
-            "id": "a14c63d46c8af087",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Genetics/Textbook/6) The Genetics of Bacteria and Their Viruses.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "6) The Genetics of Bacteria and Their Viruses"
-            }
-          },
-          {
-            "id": "75fc31369742a054",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Genetics/Textbook/7) DNA - Structure and Replication.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "7) DNA - Structure and Replication"
-            }
-          },
-          {
-            "id": "b69d80c1e82748a6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Genetics/Textbook/8) RNA - Transcription, Processing, and Decay.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "8) RNA - Transcription, Processing, and Decay"
-            }
-          },
-          {
-            "id": "c4f253ad489a851a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Genetics/Textbook/9) Proteins and Their Synthesis.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "9) Proteins and Their Synthesis"
-            }
-          },
-          {
-            "id": "df2f85f8a2ada3e3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Genetics/Textbook/10) Gene Isolation and Manipulation.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "10) Gene Isolation and Manipulation"
-            }
-          },
-          {
-            "id": "d77d6d8bdab282fc",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Genetics/Textbook/11) Regulation of Gene Expression in Bacteria and Their Viruses.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "11) Regulation of Gene Expression in Bacteria and Their Viruses"
-            }
-          },
-          {
-            "id": "2746a159491dfcad",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Genetics/Textbook/12) Regulation of Transcription in Eukaryotes.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "12) Regulation of Transcription in Eukaryotes"
-            }
-          },
-          {
-            "id": "61df4b61c32e84f9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Genetics/Textbook/13) The Genetic Control of Development.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "13) The Genetic Control of Development"
-            }
-          },
-          {
-            "id": "55a3c414cf4cad95",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Genetics/Textbook/14) Genomes and Genomics.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "14) Genomes and Genomics"
-            }
-          },
-          {
-            "id": "6006aa2f22688968",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Genetics/Textbook/15) DNA Damage, Repair, and Mutation.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "15) DNA Damage, Repair, and Mutation"
-            }
-          },
-          {
             "id": "ae822e2c526addd4",
             "type": "leaf",
             "state": {
@@ -286,9 +76,65 @@
               "icon": "lucide-file",
               "title": "20) Evolution of Genes, Traits, and Species"
             }
+          },
+          {
+            "id": "55620f460776c167",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Data Mining/Textbook/7) Association Analysis - Advanced Concepts.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "7) Association Analysis - Advanced Concepts"
+            }
+          },
+          {
+            "id": "b97cbfd450f82bc3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Data Mining/Textbook/8) Cluster Analysis - Basic Concepts and Algorithms.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "8) Cluster Analysis - Basic Concepts and Algorithms"
+            }
+          },
+          {
+            "id": "14fa8a46ff2536e5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Data Mining/Textbook/9) Cluster Analysis - Additional Issues and Algorithms.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "9) Cluster Analysis - Additional Issues and Algorithms"
+            }
+          },
+          {
+            "id": "4af354b616d3815f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Data Mining/Textbook/10) Anomaly Detection.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "10) Anomaly Detection"
+            }
           }
         ],
-        "currentTab": 13
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -362,7 +208,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PRIVATE/Winter 2026/Genetics/Textbook/14) Genomes and Genomics.md",
+                "file": "PRIVATE/Winter 2026/Data Mining/Textbook/7) Association Analysis - Advanced Concepts.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -372,7 +218,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 14) Genomes and Genomics"
+              "title": "Backlinks for 7) Association Analysis - Advanced Concepts"
             }
           },
           {
@@ -437,11 +283,34 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "55a3c414cf4cad95",
+  "active": "55620f460776c167",
   "lastOpenFiles": [
+    "PRIVATE/Winter 2026/Data Mining/Textbook/6) Association Analysis - Basic Concepts and Algorithms.md",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/5) Classification - Alternative Techniques.md",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/4) Classification - Basic Concepts, Decision Trees, and Model Evaluation.md",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/3) Exploring Data.md",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/2) Data.md",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/1) Introduction (Data Mining).md",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/10) Anomaly Detection.md",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/9) Cluster Analysis - Additional Issues and Algorithms.md",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/8) Cluster Analysis - Basic Concepts and Algorithms.md",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/7) Association Analysis - Advanced Concepts.md",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/0) Intro to Data Mining.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/16) The Dynamic Genome - Transposable Elements.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/15) DNA Damage, Repair, and Mutation.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/14) Genomes and Genomics.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/13) The Genetic Control of Development.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/12) Regulation of Transcription in Eukaryotes.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/20) Evolution of Genes, Traits, and Species.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Outline - Comparative Programming Languages.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/11) Regulation of Gene Expression in Bacteria and Their Viruses.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/10) Gene Isolation and Manipulation.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/9) Proteins and Their Synthesis.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/8) RNA - Transcription, Processing, and Decay.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/7) DNA - Structure and Replication.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/6) The Genetics of Bacteria and Their Viruses.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/5) Gene Interaction.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/4) Mapping Eukaryote Chromosomes by Recombination.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/3) Independent Assortment of Genes.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/2) Single-Gene Inheritance.md",
     "images/Pasted image 20260109134233.png",
     "images/Pasted image 20260109162313.png",
     "images/Pasted image 20260109162729.png",
@@ -452,34 +321,12 @@
     "images/Pasted image 20260109162336.png",
     "images/Pasted image 20260109135253.png",
     "images/Pasted image 20260109125720.png",
-    "PRIVATE/Winter 2026/Discrete Structures/Outline - Discrete Structures.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Untitled",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Lec Notes",
     "PRIVATE/Winter 2026/Comparative Prog. Languages",
-    "PRIVATE/Winter 2026/Discrete Structures/Textbook/0) Discrete Mathematics with Applications.md",
-    "PRIVATE/Winter 2026/Data Mining/Textbook/2) Data.md",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook",
     "PRIVATE/Winter 2026/Discrete Structures/Lec Notes",
     "PRIVATE/Winter 2026/Discrete Structures",
-    "PRIVATE/Winter 2026/Data Mining/Textbook/1) Introduction (Data Mining).md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/14) Genomes and Genomics.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/13) The Genetic Control of Development.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/11) Regulation of Gene Expression in Bacteria and Their Viruses.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/9) Proteins and Their Synthesis.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/19) The Inheritance of Complex Traits.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/18) Population Genetics.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/17) Large-Scale Chromosomal Changes.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/16) The Dynamic Genome - Transposable Elements.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/15) DNA Damage, Repair, and Mutation.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/10) Gene Isolation and Manipulation.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/8) RNA - Transcription, Processing, and Decay.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/7) DNA - Structure and Replication.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/6) The Genetics of Bacteria and Their Viruses.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/5) Gene Interaction.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/4) Mapping Eukaryote Chromosomes by Recombination.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/1) The Genetics Revolution.md",
-    "TEXTBOOKS/Computer Networking - Top Down/8. Security in Computer Networks.md",
-    "TEXTBOOKS/Computer Networking - Top Down/7. Wireless and Mobile Networks.md",
     "PRIVATE/Winter 2026/Genetics/Textbook",
     "PRIVATE/Winter 2026/Genetics/Lec Notes",
     "PRIVATE/Winter 2026/Data Mining/Textbook",
