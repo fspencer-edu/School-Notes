@@ -288,7 +288,7 @@
             }
           }
         ],
-        "currentTab": 11
+        "currentTab": 13
       }
     ],
     "direction": "vertical"
@@ -362,7 +362,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PRIVATE/Winter 2026/Genetics/Textbook/12) Regulation of Transcription in Eukaryotes.md",
+                "file": "PRIVATE/Winter 2026/Genetics/Textbook/14) Genomes and Genomics.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -372,7 +372,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 12) Regulation of Transcription in Eukaryotes"
+              "title": "Backlinks for 14) Genomes and Genomics"
             }
           },
           {
@@ -437,19 +437,40 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "2746a159491dfcad",
+  "active": "55a3c414cf4cad95",
   "lastOpenFiles": [
+    "PRIVATE/Winter 2026/Genetics/Textbook/12) Regulation of Transcription in Eukaryotes.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/20) Evolution of Genes, Traits, and Species.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Outline - Comparative Programming Languages.md",
+    "images/Pasted image 20260109134233.png",
+    "images/Pasted image 20260109162313.png",
+    "images/Pasted image 20260109162729.png",
+    "images/Pasted image 20260109134721.png",
+    "images/Pasted image 20260109131507.png",
+    "images/Pasted image 20260109162207.png",
+    "images/Pasted image 20260109134930.png",
+    "images/Pasted image 20260109162336.png",
+    "images/Pasted image 20260109135253.png",
+    "images/Pasted image 20260109125720.png",
+    "PRIVATE/Winter 2026/Discrete Structures/Outline - Discrete Structures.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Untitled",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Lec Notes",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/0) Discrete Mathematics with Applications.md",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/2) Data.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook",
+    "PRIVATE/Winter 2026/Discrete Structures/Lec Notes",
+    "PRIVATE/Winter 2026/Discrete Structures",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/1) Introduction (Data Mining).md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/14) Genomes and Genomics.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/13) The Genetic Control of Development.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/11) Regulation of Gene Expression in Bacteria and Their Viruses.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/9) Proteins and Their Synthesis.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/20) Evolution of Genes, Traits, and Species.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/19) The Inheritance of Complex Traits.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/18) Population Genetics.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/17) Large-Scale Chromosomal Changes.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/16) The Dynamic Genome - Transposable Elements.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/15) DNA Damage, Repair, and Mutation.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/14) Genomes and Genomics.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/13) The Genetic Control of Development.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/12) Regulation of Transcription in Eukaryotes.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/10) Gene Isolation and Manipulation.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/8) RNA - Transcription, Processing, and Decay.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/7) DNA - Structure and Replication.md",
@@ -459,31 +480,9 @@
     "PRIVATE/Winter 2026/Genetics/Textbook/1) The Genetics Revolution.md",
     "TEXTBOOKS/Computer Networking - Top Down/8. Security in Computer Networks.md",
     "TEXTBOOKS/Computer Networking - Top Down/7. Wireless and Mobile Networks.md",
-    "TEXTBOOKS/Computer Networking - Top Down/6. The Link Layer and LANs.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/3) Independent Assortment of Genes.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/2) Single-Gene Inheritance.md",
-    "Pasted image 20260109135253.png",
-    "Pasted image 20260109134930.png",
-    "Pasted image 20260109134721.png",
-    "Pasted image 20260109134233.png",
-    "Pasted image 20260109131507.png",
-    "PRIVATE/ToDo.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/0) Introduction to Genetic Analysis.md",
-    "Pasted image 20260109125720.png",
-    "PRIVATE/Winter 2026/Genetics/Outline - Genetics.md",
-    "images/Pasted image 20260109121955.png",
-    "images/Pasted image 20260109123749.png",
-    "images/Pasted image 20260109122250.png",
-    "images/Pasted image 20260109114218.png",
     "PRIVATE/Winter 2026/Genetics/Textbook",
     "PRIVATE/Winter 2026/Genetics/Lec Notes",
     "PRIVATE/Winter 2026/Data Mining/Textbook",
-    "PRIVATE/Winter 2026/Data Mining/Lec Notes",
-    "PRIVATE/Winter 2026/Computer Networks",
-    "PRIVATE/Winter 2026/Genetics",
-    "PRIVATE/Winter 2026/Data Mining",
-    "PRIVATE/Winter 2026",
-    "TEXTBOOKS/Genetics - Analysis and Principles",
-    "TEXTBOOKS/Genetics- Genes to Genomes"
+    "PRIVATE/Winter 2026/Data Mining/Lec Notes"
   ]
 }
