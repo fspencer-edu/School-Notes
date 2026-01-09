@@ -8,62 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "935fc028d246358d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS/Computer Networking - Top Down/6. The Link Layer and LANs.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "6. The Link Layer and LANs"
-            }
-          },
-          {
-            "id": "2b2e9973d5148f10",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS/Computer Networking - Top Down/7. Wireless and Mobile Networks.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "7. Wireless and Mobile Networks"
-            }
-          },
-          {
-            "id": "6d5788b625a845dc",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS/Computer Networking - Top Down/8. Security in Computer Networks.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "8. Security in Computer Networks"
-            }
-          },
-          {
-            "id": "b2946633fbe8a625",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Genetics/Textbook/20) Evolution of Genes, Traits, and Species.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "20) Evolution of Genes, Traits, and Species"
-            }
-          },
-          {
             "id": "4c490febd8c4e245",
             "type": "leaf",
             "state": {
@@ -118,9 +62,107 @@
               "icon": "lucide-file",
               "title": "4) Mapping Eukaryote Chromosomes by Recombination"
             }
+          },
+          {
+            "id": "9242c4b8e8d91f94",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Genetics/Textbook/5) Gene Interaction.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "5) Gene Interaction"
+            }
+          },
+          {
+            "id": "a14c63d46c8af087",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Genetics/Textbook/6) The Genetics of Bacteria and Their Viruses.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "6) The Genetics of Bacteria and Their Viruses"
+            }
+          },
+          {
+            "id": "75fc31369742a054",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Genetics/Textbook/7) DNA - Structure and Replication.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "7) DNA - Structure and Replication"
+            }
+          },
+          {
+            "id": "b69d80c1e82748a6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Genetics/Textbook/8) RNA - Transcription, Processing, and Decay.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "8) RNA - Transcription, Processing, and Decay"
+            }
+          },
+          {
+            "id": "c4f253ad489a851a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Genetics/Textbook/9) Proteins and Their Synthesis.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "9) Proteins and Their Synthesis"
+            }
+          },
+          {
+            "id": "df2f85f8a2ada3e3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Genetics/Textbook/10) Gene Isolation and Manipulation.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "10) Gene Isolation and Manipulation"
+            }
+          },
+          {
+            "id": "d77d6d8bdab282fc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Genetics/Textbook/11) Regulation of Gene Expression in Bacteria and Their Viruses.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "11) Regulation of Gene Expression in Bacteria and Their Viruses"
+            }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -194,7 +236,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PRIVATE/Winter 2026/Genetics/Textbook/2) Single-Gene Inheritance.md",
+                "file": "PRIVATE/Winter 2026/Genetics/Textbook/7) DNA - Structure and Replication.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -204,7 +246,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 2) Single-Gene Inheritance"
+              "title": "Backlinks for 7) DNA - Structure and Replication"
             }
           },
           {
@@ -269,27 +311,30 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "402ab81446fd38ca",
+  "active": "75fc31369742a054",
   "lastOpenFiles": [
+    "PRIVATE/Winter 2026/Genetics/Textbook/6) The Genetics of Bacteria and Their Viruses.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/5) Gene Interaction.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/4) Mapping Eukaryote Chromosomes by Recombination.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/1) The Genetics Revolution.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/20) Evolution of Genes, Traits, and Species.md",
+    "TEXTBOOKS/Computer Networking - Top Down/8. Security in Computer Networks.md",
+    "TEXTBOOKS/Computer Networking - Top Down/7. Wireless and Mobile Networks.md",
+    "TEXTBOOKS/Computer Networking - Top Down/6. The Link Layer and LANs.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/11) Regulation of Gene Expression in Bacteria and Their Viruses.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/10) Gene Isolation and Manipulation.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/9) Proteins and Their Synthesis.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/8) RNA - Transcription, Processing, and Decay.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/7) DNA - Structure and Replication.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/3) Independent Assortment of Genes.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/2) Single-Gene Inheritance.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/1) The Genetics Revolution.md",
     "Pasted image 20260109135253.png",
     "Pasted image 20260109134930.png",
     "Pasted image 20260109134721.png",
     "Pasted image 20260109134233.png",
     "Pasted image 20260109131507.png",
     "PRIVATE/ToDo.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/20) Evolution of Genes, Traits, and Species.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/0) Introduction to Genetic Analysis.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/5) Gene Interaction.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/6) The Genetics of Bacteria and Their Viruses.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/7) DNA - Structure and Replication.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/8) RNA - Transcription, Processing, and Decay.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/9) Proteins and Their Synthesis.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/10) Gene Isolation and Manipulation.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/11) Regulation of Gene Expression in Bacteria and Their Viruses.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/12) Regulation of Transcription in Eukaryotes.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/13) The Genetic Control of Development.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/14) Genomes and Genomics.md",
@@ -300,8 +345,6 @@
     "PRIVATE/Winter 2026/Genetics/Textbook/19) The Inheritance of Complex Traits.md",
     "Pasted image 20260109125720.png",
     "PRIVATE/Winter 2026/Genetics/Outline - Genetics.md",
-    "TEXTBOOKS/Computer Networking - Top Down/8. Security in Computer Networks.md",
-    "PRIVATE/Winter 2026/Data Mining/Lec Notes/Lec 2.md",
     "images/Pasted image 20260109121955.png",
     "images/Pasted image 20260109123749.png",
     "images/Pasted image 20260109122250.png",
