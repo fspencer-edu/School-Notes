@@ -35,8 +35,7 @@
               "title": "1) Introduction to Psychology"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -110,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/1) Introduction to Psychology.md",
+                "file": "PRIVATE/Winter 2026/Genetics/Textbook/6) The Genetics of Bacteria and Their Viruses.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +119,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 1) Introduction to Psychology"
+              "title": "Backlinks for 6) The Genetics of Bacteria and Their Viruses"
             }
           },
           {
@@ -185,22 +184,23 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "f8f7441b2cb8b123",
+  "active": "ac2c2cc7a1fbdbe2",
   "lastOpenFiles": [
-    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/2) Psychological Research.md",
+    "Pasted image 20260114083056.png",
+    "images/Pasted image 20260114081109.png",
+    "images/Pasted image 20260114081109 1.png",
+    "images/Pasted image 20260114081110.png",
+    "images/Pasted image 20260114080916.png",
+    "images/Pasted image 20260114081428.png",
+    "images/Pasted image 20260113223849.png",
+    "Pasted image 20260114081428.png",
+    "Pasted image 20260114081110.png",
+    "Pasted image 20260114081109 1.png",
+    "Pasted image 20260114081109.png",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/1) Introduction to Psychology.md",
+    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/2) Psychological Research.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/0) Introduction to Psychology and Neuroscience.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/6) The Genetics of Bacteria and Their Viruses.md",
-    "Pasted image 20260113223849.png",
-    "images/Pasted image 20260113154320.png",
-    "images/Pasted image 20260113152631.png",
-    "images/Pasted image 20260113152355.png",
-    "images/Pasted image 20260113152218.png",
-    "images/Pasted image 20260113154626.png",
-    "images/Pasted image 20260113163703.png",
-    "images/Pasted image 20260113152330.png",
-    "images/Pasted image 20260113152302.png",
-    "images/Pasted image 20260113155913.png",
     "PRIVATE/Winter 2026/Genetics/Textbook/5) Gene Interaction.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/14) Genomes and Genomics.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/13) The Genetic Control of Development.md",
@@ -222,7 +222,6 @@
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/9) Counting and Probability.md",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/8) Properties of Relation.md",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/7) Properties of Functions.md",
-    "PRIVATE/Winter 2026/Discrete Structures/Textbook/6) Set Theory.md",
     "TEXTBOOKS/Data Mining/0) Data Mining.md.tmp",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook",
     "PRIVATE/Winter 2026/Computer Networks/Textbook",
