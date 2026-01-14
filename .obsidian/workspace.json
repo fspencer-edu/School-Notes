@@ -147,7 +147,8 @@
               "title": "7) Learning"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -221,7 +222,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PRIVATE/ToDo.md",
+                "file": "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/2) Psychological Research.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -231,7 +232,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for ToDo"
+              "title": "Backlinks for 2) Psychological Research"
             }
           },
           {
@@ -296,8 +297,11 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "ac2c2cc7a1fbdbe2",
+  "active": "e900f1d2eb8d41e6",
   "lastOpenFiles": [
+    "Pasted image 20260114123827.png",
+    "Pasted image 20260114123426.png",
+    "PRIVATE/ToDo.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/7) Learning.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/6) Memory.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/5) States of Consciousness.md",
@@ -308,7 +312,6 @@
     "Pasted image 20260114114909.png",
     "Pasted image 20260114113129.png",
     "PRIVATE/Winter 2026/Data Mining/Textbook/1) Introduction (Data Mining).md",
-    "PRIVATE/ToDo.md",
     "Pasted image 20260114103700.png",
     "PRIVATE/Winter 2026/Genetics/Textbook/6) The Genetics of Bacteria and Their Viruses.md",
     "images/Pasted image 20260114101019.png",
@@ -317,7 +320,6 @@
     "Pasted image 20260114100938.png",
     "images/Pasted image 20260114093757.png",
     "images/Pasted image 20260114093838.png",
-    "images/Pasted image 20260114091911.png",
     "PRIVATE/Winter 2026/Data Mining/Textbook/3) Exploring Data.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/2) Data.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/0) Introduction to Psychology and Neuroscience.md",
@@ -333,7 +335,6 @@
     "PRIVATE/Winter 2026/Genetics/Textbook/0) Introduction to Genetic Analysis.md",
     "PRIVATE/Winter 2026/Discrete Structures/Outline - Discrete Structures.md",
     "PRIVATE/Winter 2026/Computer Networks/Textbook/5) The Network Layer - Control Plane.md",
-    "PRIVATE/Winter 2026/Computer Networks/Textbook/3) Transport Layer.md",
     "TEXTBOOKS/Data Mining/0) Data Mining.md.tmp",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook",
     "PRIVATE/Winter 2026/Computer Networks/Textbook",
