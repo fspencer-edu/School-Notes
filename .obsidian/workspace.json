@@ -132,9 +132,23 @@
               "icon": "lucide-file",
               "title": "7) Learning"
             }
+          },
+          {
+            "id": "e7368e20927a39f1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Genetics/Outline - Genetics.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Outline - Genetics"
+            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 9
       }
     ],
     "direction": "vertical"
@@ -208,7 +222,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/3) Biological Basis of Behaviour.md",
+                "file": "PRIVATE/Winter 2026/Genetics/Outline - Genetics.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -218,7 +232,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 3) Biological Basis of Behaviour"
+              "title": "Backlinks for Outline - Genetics"
             }
           },
           {
@@ -283,8 +297,9 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "80b73227dfd457be",
+  "active": "e7368e20927a39f1",
   "lastOpenFiles": [
+    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/3) Biological Basis of Behaviour.md",
     "Pasted image 20260115114336.png",
     "Pasted image 20260115114100.png",
     "Pasted image 20260115113645.png",
@@ -295,14 +310,12 @@
     "Pasted image 20260115110818.png",
     "Pasted image 20260115110614.png",
     "Pasted image 20260115102655.png",
-    "Pasted image 20260114144425.png",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/2) Psychological Research.md",
     "PRIVATE/ToDo.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/7) Learning.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/6) Memory.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/5) States of Consciousness.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/4) Sensation and Perception.md",
-    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/3) Biological Basis of Behaviour.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/1) Introduction to Psychology.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/1) Introduction (Data Mining).md",
     "PRIVATE/Winter 2026/Genetics/Textbook/6) The Genetics of Bacteria and Their Viruses.md",
