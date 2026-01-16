@@ -8,77 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "ac2c2cc7a1fbdbe2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/ToDo.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "ToDo"
-            }
-          },
-          {
-            "id": "329aa50472a2f044",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Data Mining/Textbook/1) Introduction (Data Mining).md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "1) Introduction (Data Mining)"
-            }
-          },
-          {
-            "id": "d75e6774f34a5c8d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Data Mining/Textbook/2) Data.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "2) Data"
-            }
-          },
-          {
-            "id": "7c2992f401985586",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Data Mining/Textbook/3) Exploring Data.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "3) Exploring Data"
-            }
-          },
-          {
-            "id": "80b73227dfd457be",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/3) Biological Basis of Behaviour.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "3) Biological Basis of Behaviour"
-            }
-          },
-          {
-            "id": "9b99dcc8b51386aa",
+            "id": "d84307d13e3af32a",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -92,7 +22,7 @@
             }
           },
           {
-            "id": "1d384f9d95eac120",
+            "id": "0c617c7b9f650214",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -106,7 +36,7 @@
             }
           },
           {
-            "id": "ee3c173b34cdd177",
+            "id": "e160b45fdbf2796b",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -120,7 +50,7 @@
             }
           },
           {
-            "id": "82dd66e071a3062f",
+            "id": "5f6ff3021f4e0ba3",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -132,23 +62,8 @@
               "icon": "lucide-file",
               "title": "7) Learning"
             }
-          },
-          {
-            "id": "e7368e20927a39f1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Genetics/Outline - Genetics.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Outline - Genetics"
-            }
           }
-        ],
-        "currentTab": 9
+        ]
       }
     ],
     "direction": "vertical"
@@ -222,7 +137,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PRIVATE/Winter 2026/Genetics/Outline - Genetics.md",
+                "file": "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/4) Sensation and Perception.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -232,7 +147,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Outline - Genetics"
+              "title": "Backlinks for 4) Sensation and Perception"
             }
           },
           {
@@ -297,9 +212,19 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "e7368e20927a39f1",
+  "active": "d84307d13e3af32a",
   "lastOpenFiles": [
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/3) Biological Basis of Behaviour.md",
+    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/7) Learning.md",
+    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/6) Memory.md",
+    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/5) States of Consciousness.md",
+    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/4) Sensation and Perception.md",
+    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/2) Psychological Research.md",
+    "PRIVATE/ToDo.md",
+    "PRIVATE/Winter 2026/Genetics/Outline - Genetics.md",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/3) Exploring Data.md",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/2) Data.md",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/1) Introduction (Data Mining).md",
     "Pasted image 20260115114336.png",
     "Pasted image 20260115114100.png",
     "Pasted image 20260115113645.png",
@@ -310,17 +235,8 @@
     "Pasted image 20260115110818.png",
     "Pasted image 20260115110614.png",
     "Pasted image 20260115102655.png",
-    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/2) Psychological Research.md",
-    "PRIVATE/ToDo.md",
-    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/7) Learning.md",
-    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/6) Memory.md",
-    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/5) States of Consciousness.md",
-    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/4) Sensation and Perception.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/1) Introduction to Psychology.md",
-    "PRIVATE/Winter 2026/Data Mining/Textbook/1) Introduction (Data Mining).md",
     "PRIVATE/Winter 2026/Genetics/Textbook/6) The Genetics of Bacteria and Their Viruses.md",
-    "PRIVATE/Winter 2026/Data Mining/Textbook/3) Exploring Data.md",
-    "PRIVATE/Winter 2026/Data Mining/Textbook/2) Data.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/0) Introduction to Psychology and Neuroscience.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/5) Gene Interaction.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/14) Genomes and Genomics.md",
