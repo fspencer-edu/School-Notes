@@ -62,6 +62,118 @@
               "icon": "lucide-file",
               "title": "7) Learning"
             }
+          },
+          {
+            "id": "518e0a8afcce1d59",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/8) Language and Intelligence.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "8) Language and Intelligence"
+            }
+          },
+          {
+            "id": "6be36fdd36b3a043",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/9) Development.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "9) Development"
+            }
+          },
+          {
+            "id": "6d8c295f33bccb08",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/10) Emotion and Motivation.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "10) Emotion and Motivation"
+            }
+          },
+          {
+            "id": "bb08049b66e2623a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/11) Personality.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "11) Personality"
+            }
+          },
+          {
+            "id": "2bfd9f5811e00ef0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/12) Social Psychology.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "12) Social Psychology"
+            }
+          },
+          {
+            "id": "bf18ff19aa222a6a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/13) Stress and Health.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "13) Stress and Health"
+            }
+          },
+          {
+            "id": "5473662d04069c4c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/14) Psychopathology.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "14) Psychopathology"
+            }
+          },
+          {
+            "id": "56594a9f5aae483a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/15) Treatment.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "15) Treatment"
+            }
           }
         ]
       }
@@ -214,22 +326,29 @@
   },
   "active": "d84307d13e3af32a",
   "lastOpenFiles": [
+    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/15) Treatment.md",
+    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/14) Psychopathology.md",
+    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/13) Stress and Health.md",
+    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/12) Social Psychology.md",
+    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/11) Personality.md",
+    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/10) Emotion and Motivation.md",
+    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/9) Development.md",
+    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/8) Language and Intelligence.md",
+    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/4) Sensation and Perception.md",
+    "Pasted image 20260116124352.png",
+    "Pasted image 20260116123753.png",
+    "Pasted image 20260116123433.png",
+    "Pasted image 20260116123129.png",
     "Pasted image 20260116121238.png",
     "Pasted image 20260116120040.png",
     "Pasted image 20260116115556.png",
     "Pasted image 20260116115350.png",
     "images/Pasted image 20260114144425.png",
     "images/Pasted image 20260115111903.png",
-    "images/Pasted image 20260115112821.png",
-    "images/Pasted image 20260115110818.png",
-    "images/Pasted image 20260115114100.png",
-    "images/Pasted image 20260114142709.png",
-    "images/Pasted image 20260115110614.png",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/3) Biological Basis of Behaviour.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/7) Learning.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/6) Memory.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/5) States of Consciousness.md",
-    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/4) Sensation and Perception.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/2) Psychological Research.md",
     "PRIVATE/ToDo.md",
     "PRIVATE/Winter 2026/Genetics/Outline - Genetics.md",
@@ -243,13 +362,6 @@
     "PRIVATE/Winter 2026/Genetics/Textbook/14) Genomes and Genomics.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/13) The Genetic Control of Development.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/12) Regulation of Transcription in Eukaryotes.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/11) Regulation of Gene Expression in Bacteria and Their Viruses.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/10) Gene Isolation and Manipulation.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/9) Proteins and Their Synthesis.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/8) RNA - Transcription, Processing, and Decay.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/7) DNA - Structure and Replication.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/0) Introduction to Genetic Analysis.md",
-    "PRIVATE/Winter 2026/Discrete Structures/Outline - Discrete Structures.md",
     "TEXTBOOKS/Data Mining/0) Data Mining.md.tmp",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook",
     "PRIVATE/Winter 2026/Computer Networks/Textbook",
