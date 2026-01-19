@@ -119,7 +119,8 @@
               "title": "10) Anomaly Detection"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -193,7 +194,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PRIVATE/Winter 2026/Data Mining/Textbook/3) Exploring Data.md",
+                "file": "PRIVATE/Winter 2026/Data Mining/Textbook/4) Classification - Basic Concepts, Decision Trees, and Model Evaluation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -203,7 +204,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 3) Exploring Data"
+              "title": "Backlinks for 4) Classification - Basic Concepts, Decision Trees, and Model Evaluation"
             }
           },
           {
@@ -268,21 +269,20 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "2a90e105429dfa17",
+  "active": "9ecf39612ae0a830",
   "lastOpenFiles": [
-    "Pasted image 20260119143728.png",
-    "Pasted image 20260119143553.png",
-    "PRIVATE/Winter 2026/Data Mining/Textbook/2) Data.md",
-    "Pasted image 20260119142252.png",
-    "Pasted image 20260119142137.png",
-    "Pasted image 20260119141753.png",
-    "Pasted image 20260119141159.png",
-    "Pasted image 20260119140457.png",
-    "Pasted image 20260119140429.png",
-    "Pasted image 20260119140308.png",
-    "Pasted image 20260119140126.png",
-    "Pasted image 20260119140111.png",
     "PRIVATE/Winter 2026/Data Mining/Textbook/3) Exploring Data.md",
+    "Pasted image 20260119145636.png",
+    "images/Pasted image 20260119142137.png",
+    "images/Pasted image 20260119140126.png",
+    "images/Pasted image 20260119144625.png",
+    "images/Pasted image 20260119140457.png",
+    "images/Pasted image 20260119113806.png",
+    "images/Pasted image 20260119135816.png",
+    "images/Pasted image 20260119141159.png",
+    "images/Pasted image 20260119144752.png",
+    "images/Pasted image 20260119142252.png",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/2) Data.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/1) Introduction (Data Mining).md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/10) Anomaly Detection.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/9) Cluster Analysis - Additional Issues and Algorithms.md",
