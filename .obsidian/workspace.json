@@ -120,7 +120,7 @@
             }
           }
         ],
-        "currentTab": 7
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -194,7 +194,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PRIVATE/Winter 2026/Data Mining/Textbook/10) Anomaly Detection.md",
+                "file": "PRIVATE/Winter 2026/Data Mining/Textbook/7) Association Analysis - Advanced Concepts.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -204,7 +204,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 10) Anomaly Detection"
+              "title": "Backlinks for 7) Association Analysis - Advanced Concepts"
             }
           },
           {
@@ -269,16 +269,17 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "33bad92fe5badaf1",
+  "active": "52f537afdeb676dd",
   "lastOpenFiles": [
+    "PRIVATE/Winter 2026/Data Mining/Textbook/6) Association Analysis - Basic Concepts and Algorithms.md",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/4) Classification - Basic Concepts, Decision Trees, and Model Evaluation.md",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/3) Exploring Data.md",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/10) Anomaly Detection.md",
     "images/Pasted image 20260119145636.png",
     "PRIVATE/Winter 2026/Data Mining/Textbook/9) Cluster Analysis - Additional Issues and Algorithms.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/8) Cluster Analysis - Basic Concepts and Algorithms.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/7) Association Analysis - Advanced Concepts.md",
-    "PRIVATE/Winter 2026/Data Mining/Textbook/6) Association Analysis - Basic Concepts and Algorithms.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/5) Classification - Alternative Techniques.md",
-    "PRIVATE/Winter 2026/Data Mining/Textbook/4) Classification - Basic Concepts, Decision Trees, and Model Evaluation.md",
-    "PRIVATE/Winter 2026/Data Mining/Textbook/3) Exploring Data.md",
     "Pasted image 20260119145636.png",
     "images/Pasted image 20260119142137.png",
     "images/Pasted image 20260119140126.png",
@@ -288,10 +289,8 @@
     "images/Pasted image 20260119135816.png",
     "images/Pasted image 20260119141159.png",
     "images/Pasted image 20260119144752.png",
-    "images/Pasted image 20260119142252.png",
     "PRIVATE/Winter 2026/Data Mining/Textbook/2) Data.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/1) Introduction (Data Mining).md",
-    "PRIVATE/Winter 2026/Data Mining/Textbook/10) Anomaly Detection.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/0) Intro to Data Mining.md",
     "PRIVATE/Winter 2026/Data Mining/Outline - Data Mining.md",
     "PRIVATE/ToDo.md",
