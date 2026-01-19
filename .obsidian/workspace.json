@@ -146,8 +146,19 @@
               "icon": "lucide-file",
               "title": "8) Security in Computer Networks"
             }
+          },
+          {
+            "id": "aaf386ab3a4cb57a",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
           }
-        ]
+        ],
+        "currentTab": 10
       }
     ],
     "direction": "vertical"
@@ -204,8 +215,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "f79334738d86d2cb",
@@ -221,7 +231,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/8) Language and Intelligence.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -231,7 +240,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 8) Language and Intelligence"
+              "title": "Backlinks"
             }
           },
           {
@@ -296,8 +305,9 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "518e0a8afcce1d59",
+  "active": "aaf386ab3a4cb57a",
   "lastOpenFiles": [
+    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/8) Language and Intelligence.md",
     "PRIVATE/Winter 2026/Computer Networks/Textbook/8) Security in Computer Networks.md",
     "PRIVATE/Winter 2026/Computer Networks/Textbook/7) Wireless and Mobile Networks.md",
     "PRIVATE/Winter 2026/Computer Networks/Textbook/6) The Link Layer and LANs.md",
@@ -308,7 +318,6 @@
     "PRIVATE/Winter 2026/Computer Networks/Textbook/1) Computer Networks and the Internet.md",
     "PRIVATE/Winter 2026/Computer Networks/Textbook/0) Computer Networks.md",
     "PRIVATE/ToDo.md",
-    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/8) Language and Intelligence.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/9) Development.md",
     "images/Pasted image 20260116183717.png",
     "images/Pasted image 20260116174617.png",
