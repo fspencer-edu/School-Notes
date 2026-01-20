@@ -133,8 +133,7 @@
               "title": "ToDo"
             }
           }
-        ],
-        "currentTab": 7
+        ]
       }
     ],
     "direction": "vertical"
@@ -283,8 +282,10 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "33bad92fe5badaf1",
+  "active": "2a90e105429dfa17",
   "lastOpenFiles": [
+    "Pasted image 20260120090337.png",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/10) Anomaly Detection.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/9) Cluster Analysis - Additional Issues and Algorithms.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/3) Exploring Data.md",
     "PRIVATE/ToDo.md",
@@ -292,7 +293,6 @@
     "PRIVATE/Winter 2026/Data Mining/Textbook/7) Association Analysis - Advanced Concepts.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/6) Association Analysis - Basic Concepts and Algorithms.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/4) Classification - Basic Concepts, Decision Trees, and Model Evaluation.md",
-    "PRIVATE/Winter 2026/Data Mining/Textbook/10) Anomaly Detection.md",
     "images/Pasted image 20260119145636.png",
     "PRIVATE/Winter 2026/Data Mining/Textbook/5) Classification - Alternative Techniques.md",
     "Pasted image 20260119145636.png",
