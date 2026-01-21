@@ -218,7 +218,7 @@
             }
           }
         ],
-        "currentTab": 8
+        "currentTab": 14
       }
     ],
     "direction": "vertical"
@@ -367,26 +367,25 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "d94163c2be93ef5b",
+  "active": "6b7e0c593b45aa4e",
   "lastOpenFiles": [
-    "Pasted image 20260121102846.png",
-    "Pasted image 20260121102216.png",
-    "Pasted image 20260121100351.png",
-    "Pasted image 20260121094629.png",
-    "Pasted image 20260121094209.png",
-    "Pasted image 20260121093824.png",
-    "Pasted image 20260121093401.png",
-    "Pasted image 20260121093229.png",
-    "Pasted image 20260121093058.png",
-    "Pasted image 20260121092848.png",
-    "PRIVATE/Winter 2026/Computer Networks/Textbook/3) Transport Layer.md",
-    "Pasted image 20260121092533.png",
-    "PRIVATE/Winter 2026/Computer Networks/Textbook/2) Application Layer.md",
-    "PRIVATE/Winter 2026/Computer Networks/Textbook/8) Security in Computer Networks.md",
     "PRIVATE/Winter 2026/Computer Networks/Textbook/7) Wireless and Mobile Networks.md",
     "PRIVATE/Winter 2026/Computer Networks/Textbook/6) The Link Layer and LANs.md",
     "PRIVATE/Winter 2026/Computer Networks/Textbook/5) The Network Layer - Control Plane.md",
     "PRIVATE/Winter 2026/Computer Networks/Textbook/4) The Network Layer - Data Plane.md",
+    "PRIVATE/Winter 2026/Computer Networks/Textbook/3) Transport Layer.md",
+    "PRIVATE/Winter 2026/Computer Networks/Textbook/2) Application Layer.md",
+    "Pasted image 20260121105331.png",
+    "Pasted image 20260121104740.png",
+    "Pasted image 20260121104545.png",
+    "Pasted image 20260121104441.png",
+    "Pasted image 20260121104418.png",
+    "Pasted image 20260121104237.png",
+    "Pasted image 20260121103524.png",
+    "images/Pasted image 20260121090304.png",
+    "images/Pasted image 20260121102846.png",
+    "images/Pasted image 20260121091752.png",
+    "PRIVATE/Winter 2026/Computer Networks/Textbook/8) Security in Computer Networks.md",
     "PRIVATE/Winter 2026/Computer Networks/Textbook/1) Computer Networks and the Internet.md",
     "PRIVATE/ToDo.md",
     "PRIVATE/Winter 2026/Computer Networks/Textbook/0) Computer Networks.md",
