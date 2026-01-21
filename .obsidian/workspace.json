@@ -218,7 +218,7 @@
             }
           }
         ],
-        "currentTab": 14
+        "currentTab": 8
       }
     ],
     "direction": "vertical"
@@ -367,8 +367,11 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "6b7e0c593b45aa4e",
+  "active": "d94163c2be93ef5b",
   "lastOpenFiles": [
+    "Pasted image 20260121112522.png",
+    "Pasted image 20260121112029.png",
+    "PRIVATE/Winter 2026/Computer Networks/Textbook/8) Security in Computer Networks.md",
     "PRIVATE/Winter 2026/Computer Networks/Textbook/7) Wireless and Mobile Networks.md",
     "PRIVATE/Winter 2026/Computer Networks/Textbook/6) The Link Layer and LANs.md",
     "PRIVATE/Winter 2026/Computer Networks/Textbook/5) The Network Layer - Control Plane.md",
@@ -384,8 +387,6 @@
     "Pasted image 20260121103524.png",
     "images/Pasted image 20260121090304.png",
     "images/Pasted image 20260121102846.png",
-    "images/Pasted image 20260121091752.png",
-    "PRIVATE/Winter 2026/Computer Networks/Textbook/8) Security in Computer Networks.md",
     "PRIVATE/Winter 2026/Computer Networks/Textbook/1) Computer Networks and the Internet.md",
     "PRIVATE/ToDo.md",
     "PRIVATE/Winter 2026/Computer Networks/Textbook/0) Computer Networks.md",
