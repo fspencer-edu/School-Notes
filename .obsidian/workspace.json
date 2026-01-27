@@ -153,16 +153,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PRIVATE/Winter 2026/Comparative Prog. Languages/Rust/Textbook/5) Expressions.md",
+                "file": "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/3) Getting Started with Types.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "5) Expressions"
+              "title": "3) Getting Started with Types"
             }
           }
         ],
-        "currentTab": 10
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -219,7 +219,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "f79334738d86d2cb",
@@ -310,14 +311,29 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "7c1ca0bc5e1dfc0f",
+  "active": "af79888f06a0f055",
   "lastOpenFiles": [
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/3) Getting Started with Types.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/2) Working with Lists.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/1) Getting Started with Haskell.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/0) Effective Haskell.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/10) Beyond GenServer.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/8) Fault Tolerance Basics.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Rust/Textbook/14) Iterators.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Rust/Textbook/13) Closures.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Rust/Textbook/12) Utility Traits.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Rust/Textbook/11) Operator Overloading.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Rust/Textbook/10) Traits and Generics.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Rust/Textbook/9) Enums and Patterns.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Rust/Textbook/8) Structs.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Rust/Textbook/7) Crates and Modules.md",
+    "README.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Rust/Textbook/6) Error Handling.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Rust/Textbook/5) Expressions.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Rust/Textbook/4) References.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Rust/Textbook/3) Ownership and Moves.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Rust/Textbook/2) Fundamental Types.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Rust/Textbook/1) A Tour of Rust.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/1) Getting Started with Haskell.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/0) Effective Haskell.md",
     "PRIVATE/Winter 2026/Computer Networks/Textbook/6) The Link Layer and LANs.md",
     "images/Pasted image 20260127140451.png",
     "images/Pasted image 20260127141415.png",
@@ -331,22 +347,8 @@
     "images/Pasted image 20260127144038.png",
     "PRIVATE/Winter 2026/Data Mining/Textbook/10) Anomaly Detection.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Rust/Textbook/0) Programming Rust, 3rd Edition.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Rust/Textbook/5) Expressions.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Rust/Textbook/6) Error Handling.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Rust/Textbook/7) Crates and Modules.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Rust/Textbook/8) Structs.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Rust/Textbook/9) Enums and Patterns.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Rust/Textbook/10) Traits and Generics.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Rust/Textbook/11) Operator Overloading.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Rust/Textbook/12) Utility Traits.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Rust/Textbook/13) Closures.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Rust/Textbook/14) Iterators.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/15) Programming with Types.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/2) Working with Lists.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/3) Getting Started with Types.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/4) Creating New Types.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/5) Creating and Structuring Haskell Projects.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/6) Type Classes.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Rust/Textbook",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook",
