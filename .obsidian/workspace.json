@@ -153,16 +153,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TEXTBOOKS/System Design on AWS/17) Designing An Online Game Leaderboard.md",
+                "file": "PRIVATE/ToDo.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "17) Designing An Online Game Leaderboard"
+              "title": "ToDo"
+            }
+          },
+          {
+            "id": "f6f726164ee52b34",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
             }
           }
         ],
-        "currentTab": 7
+        "currentTab": 11
       }
     ],
     "direction": "vertical"
@@ -311,22 +321,31 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "af79888f06a0f055",
+  "active": "f6f726164ee52b34",
   "lastOpenFiles": [
-    "Pasted image 20260127113117.png",
-    "Pasted image 20260127112652.png",
-    "Pasted image 20260127110913.png",
-    "Pasted image 20260127110440.png",
-    "Pasted image 20260127105936.png",
-    "Pasted image 20260127105012.png",
+    "PRIVATE/Winter 2026/Computer Networks/Textbook/6) The Link Layer and LANs.md",
+    "PRIVATE/ToDo.md",
+    "TEXTBOOKS/System Design on AWS/21) Designing An Online Stock-Trading Platform.md",
+    "TEXTBOOKS/System Design on AWS/20) Designing A Video-Processine Pipeline For A Streaming Serice.md",
+    "TEXTBOOKS/System Design on AWS/19) Designing A Chat Application.md",
+    "TEXTBOOKS/System Design on AWS/18) Designing A Hotel Reservation System.md",
     "TEXTBOOKS/System Design on AWS/17) Designing An Online Game Leaderboard.md",
+    "Pasted image 20260127114610.png",
+    "images/Pasted image 20260127105012.png",
+    "images/Pasted image 20260127113710.png",
+    "images/Pasted image 20260127113117.png",
+    "images/Pasted image 20260127110913.png",
+    "images/Pasted image 20260127110440.png",
+    "images/Pasted image 20260127112652.png",
+    "images/Pasted image 20260127114233.png",
+    "images/Pasted image 20260127105936.png",
+    "Pasted image 20260127114233.png",
     "TEXTBOOKS/System Design on AWS/16) Designing a Social Network and Newsfeed System.md",
     "TEXTBOOKS/System Design on AWS/15) Designing A Web Crawler and Search Engine.md",
     "TEXTBOOKS/System Design on AWS/14) Design A URL Shortener Service.md",
     "TEXTBOOKS/System Design on AWS/13) Big Data, Analytics, and Machine Learning Services.md",
     "TEXTBOOKS/System Design on AWS/12) AWS Messaging, Orchestration, Monitoring, and Access Management Service.md",
     "TEXTBOOKS/System Design on AWS/9) AWS Network Service.md",
-    "PRIVATE/Winter 2026/Computer Networks/Textbook/6) The Link Layer and LANs.md",
     "PRIVATE/Winter 2026/Computer Networks/Textbook/7) Wireless and Mobile Networks.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/10) Anomaly Detection.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/9) Cluster Analysis - Additional Issues and Algorithms.md",
@@ -335,21 +354,12 @@
     "PRIVATE/Winter 2026/Data Mining/Textbook/4) Classification - Basic Concepts, Decision Trees, and Model Evaluation.md",
     "PRIVATE/Winter 2026/Computer Networks/Textbook/8) Security in Computer Networks.md",
     "PRIVATE/Winter 2026/Data Mining/Lab/Lab 2 - Results.md",
-    "images/Pasted image 20260123103658.png",
-    "images/Pasted image 20260123110208.png",
-    "images/Pasted image 20260123111659.png",
-    "images/Pasted image 20260123111105.png",
-    "images/Pasted image 20260123112327.png",
     "PRIVATE/Winter 2026/Data Mining/Lab",
     "PRIVATE/Winter 2026/Computer Networks/Textbook/5) The Network Layer - Control Plane.md",
     "TEXTBOOKS/System Design on AWS/11) AWS Computer Service.md",
     "TEXTBOOKS/System Design on AWS/10) AWS Storage Services.md",
     "TEXTBOOKS/System Design on AWS/8) Architectural Designs and Patterns.md",
     "TEXTBOOKS/System Design on AWS/7) Containerization, Orchestration, and Deployment.md",
-    "TEXTBOOKS/System Design on AWS/6) Communication Networks and Protocols.md",
-    "TEXTBOOKS/System Design on AWS/5) Load Balancing Approaches and Techniques.md",
-    "TEXTBOOKS/System Design on AWS/4) Caching Policies and Strategies.md",
-    "TEXTBOOKS/System Design on AWS/3) Non-relational Stores.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/14) Psychopathology.md.tmp",
     "TEXTBOOKS/Data Mining/0) Data Mining.md.tmp",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook",
