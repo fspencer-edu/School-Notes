@@ -106,6 +106,20 @@
             }
           },
           {
+            "id": "af79888f06a0f055",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Computer Networks/Textbook/6) The Link Layer and LANs.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "6) The Link Layer and LANs"
+            }
+          },
+          {
             "id": "f06c3d56c5a23bf5",
             "type": "leaf",
             "state": {
@@ -134,21 +148,21 @@
             }
           },
           {
-            "id": "33707ecb72882f81",
+            "id": "16953542f30165e7",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PRIVATE/Winter 2026/Data Mining/Lab/Lab 2 - Results.md",
+                "file": "TEXTBOOKS/System Design on AWS/15) Designing A Web Crawler and Search Engine.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Lab 2 - Results"
+              "title": "15) Designing A Web Crawler and Search Engine"
             }
           }
         ],
-        "currentTab": 9
+        "currentTab": 10
       }
     ],
     "direction": "vertical"
@@ -205,7 +219,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "f79334738d86d2cb",
@@ -296,31 +311,36 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "33707ecb72882f81",
+  "active": "16953542f30165e7",
   "lastOpenFiles": [
-    "Screenshot 2026-01-26 at 4.29.53 PM.png",
-    "PRIVATE/Winter 2026/Computer Networks/Textbook/7) Wireless and Mobile Networks.md",
-    "PRIVATE/Winter 2026/Data Mining/Lab/Lab 2 - Results.md",
-    "Figure 2026-01-26 152124.png",
-    "Figure 2026-01-26 152133.png",
-    "Pasted image 20260126152101.png",
-    "PRIVATE/Winter 2026/Computer Networks/Textbook/6) The Link Layer and LANs.md",
-    "PRIVATE/Winter 2026/Data Mining/Lab",
-    "Pasted image 20260123112327.png",
-    "Pasted image 20260123111659.png",
-    "Pasted image 20260123111231.png",
-    "Pasted image 20260123111133.png",
-    "Pasted image 20260123111105.png",
-    "Pasted image 20260123111031.png",
-    "Pasted image 20260123110208.png",
-    "PRIVATE/Winter 2026/Computer Networks/Textbook/5) The Network Layer - Control Plane.md",
-    "PRIVATE/Winter 2026/Computer Networks/Textbook/8) Security in Computer Networks.md",
+    "TEXTBOOKS/System Design on AWS/14) Design A URL Shortener Service.md",
+    "TEXTBOOKS/System Design on AWS/13) Big Data, Analytics, and Machine Learning Services.md",
     "TEXTBOOKS/System Design on AWS/12) AWS Messaging, Orchestration, Monitoring, and Access Management Service.md",
+    "TEXTBOOKS/System Design on AWS/9) AWS Network Service.md",
+    "PRIVATE/Winter 2026/Computer Networks/Textbook/6) The Link Layer and LANs.md",
+    "PRIVATE/Winter 2026/Computer Networks/Textbook/7) Wireless and Mobile Networks.md",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/10) Anomaly Detection.md",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/9) Cluster Analysis - Additional Issues and Algorithms.md",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/8) Cluster Analysis - Basic Concepts and Algorithms.md",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/7) Association Analysis - Advanced Concepts.md",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/4) Classification - Basic Concepts, Decision Trees, and Model Evaluation.md",
+    "PRIVATE/Winter 2026/Computer Networks/Textbook/8) Security in Computer Networks.md",
+    "PRIVATE/Winter 2026/Data Mining/Lab/Lab 2 - Results.md",
+    "images/Pasted image 20260123103658.png",
+    "images/Pasted image 20260123110208.png",
+    "images/Pasted image 20260123111659.png",
+    "images/Pasted image 20260123111105.png",
+    "images/Pasted image 20260123112327.png",
+    "images/Pasted image 20260122171556.png",
+    "images/Pasted image 20260123103201.png",
+    "images/Pasted image 20260122170924.png",
+    "images/Figure 2026-01-26 152124.png",
+    "images/Pasted image 20260126152101.png",
+    "PRIVATE/Winter 2026/Data Mining/Lab",
+    "PRIVATE/Winter 2026/Computer Networks/Textbook/5) The Network Layer - Control Plane.md",
     "TEXTBOOKS/System Design on AWS/11) AWS Computer Service.md",
     "TEXTBOOKS/System Design on AWS/10) AWS Storage Services.md",
-    "TEXTBOOKS/System Design on AWS/9) AWS Network Service.md",
     "TEXTBOOKS/System Design on AWS/8) Architectural Designs and Patterns.md",
-    "PRIVATE/Winter 2026/Data Mining/Textbook/4) Classification - Basic Concepts, Decision Trees, and Model Evaluation.md",
     "TEXTBOOKS/System Design on AWS/7) Containerization, Orchestration, and Deployment.md",
     "TEXTBOOKS/System Design on AWS/6) Communication Networks and Protocols.md",
     "TEXTBOOKS/System Design on AWS/5) Load Balancing Approaches and Techniques.md",
@@ -330,11 +350,6 @@
     "TEXTBOOKS/System Design on AWS/1) System design Trade-Offs and Guidelines.md",
     "TEXTBOOKS/System Design on AWS/21) Designing An Online Stock-Trading Platform.md",
     "TEXTBOOKS/System Design on AWS/0) System Design on AWS.md",
-    "TEXTBOOKS/System Design on AWS/13) Big Data, Analytics, and Machine Learning Services.md",
-    "TEXTBOOKS/System Design on AWS/14) Design A URL Shortener Service.md",
-    "TEXTBOOKS/System Design on AWS/15) Designing A Web Crawler and Search Engine.md",
-    "TEXTBOOKS/System Design on AWS/16) Designing a Social Network and Newsfeed System.md",
-    "TEXTBOOKS/System Design on AWS/17) Designing An Online Game Leaderboard.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/14) Psychopathology.md.tmp",
     "TEXTBOOKS/Data Mining/0) Data Mining.md.tmp",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook",
