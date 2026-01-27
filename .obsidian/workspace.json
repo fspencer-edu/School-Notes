@@ -148,7 +148,7 @@
             }
           }
         ],
-        "currentTab": 9
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -205,7 +205,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "f79334738d86d2cb",
@@ -296,13 +297,15 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "1447f193185fcea8",
+  "active": "af79888f06a0f055",
   "lastOpenFiles": [
+    "PRIVATE/Winter 2026/Data Mining/Textbook/10) Anomaly Detection.md",
+    "PRIVATE/Winter 2026/Computer Networks/Textbook/6) The Link Layer and LANs.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Rust/Textbook/1) A Tour of Rust.md",
     "images/Pasted image 20260127114610.png",
     "images/Pasted image 20260127125151.png",
     "images/Pasted image 20260127122850.png",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Rust/Textbook/0) Programming Rust, 3rd Edition.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Rust/Textbook/1) A Tour of Rust.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Rust/Textbook/2) Fundamental Types.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Rust/Textbook/3) Ownership and Moves.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Rust/Textbook/4) References.md",
@@ -326,7 +329,6 @@
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/5) Creating and Structuring Haskell Projects.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/6) Type Classes.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/7) Understanding IO.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/8) Working with the Local System.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Rust/Textbook",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook",
     "Pasted image 20260127122850.png",
@@ -341,7 +343,6 @@
     "images/Pasted image 20260127113710.png",
     "images/Pasted image 20260127113117.png",
     "images/Pasted image 20260127110913.png",
-    "images/Pasted image 20260127110440.png",
     "PRIVATE/Winter 2026/Data Mining/Lab",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/14) Psychopathology.md.tmp"
   ]
