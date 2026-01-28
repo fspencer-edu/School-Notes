@@ -1,0 +1,34 @@
+# The Vanishing/Exploding Gradients Problems
+
+## Glorot and He Initialization
+## Better Activation Functions
+## Batch Normalization
+## Gradient Clipping
+
+# Reusing Pretrained Layers
+
+## Transfer Learning with Keras
+## Unsupervised Pretraining
+## Pretraining on an Auxiliary Task
+
+# Faster Optimizers
+
+## Momentum
+## Nesterov Accelerated Gradient
+## AdaGrad
+## RMSProp
+## Adam
+## AdaMax
+## Nadam
+## AdamW
+# Learning Rate Scheduling
+
+# Avoiding Overfitting Through Regularization
+
+## $\ell_1$ and $\ell_2$ Regularization
+
+## Dropout
+## Monte Carlo (MC) Dropout
+## Max-Norm Regularization
+
+# Summary and Practical Guidelines
