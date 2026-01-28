@@ -15,11 +15,10 @@
 ## Poor-Quality Data
 ## Irrelevant Features
 
-## Overfitting the Tra
-## 
-## 
-## 
-## 
+## Overfitting the Training Data
+## Underfitting the Training Data
+## Stepping Back
+ 
 
 # Testing and Validating
 
