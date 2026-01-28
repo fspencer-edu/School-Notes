@@ -1,4 +1,17 @@
+
+- Supervise vs. unsupervised learning
+- Online vs. batch learning
+- Instance-based vs. model-based learning
+
+
 # Why Use Machine Learning?
+
+- Machine learning is the science of programming computers so they can learn from data
+- Each training set is a training instance/sample
+- ML system that learns and makes prediction is the model
+	- Neural networks
+	- Random 
+
 
 # Examples of Applications
 

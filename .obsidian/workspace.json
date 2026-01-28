@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/12) Custom Models and Training with TensorFlow.md",
+                "file": "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/1) The Machine Learning Landscape.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "12) Custom Models and Training with TensorFlow"
+              "title": "1) The Machine Learning Landscape"
             }
           },
           {
@@ -92,7 +92,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "f79334738d86d2cb",
@@ -185,6 +186,15 @@
   },
   "active": "f06c3d56c5a23bf5",
   "lastOpenFiles": [
+    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/0) Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow, 3rd Edition.md",
+    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/19) Training and Deploying TensorFlow Models at Scale.md",
+    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/18) Reinforcement Learning.md",
+    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/17) Auto-encoders, GANs, and Diffusion Models.md",
+    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/16) Natural Language Processing with RNNs and Attention.md",
+    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/15) Processing Sequences Using RNNs and CNNs.md",
+    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/14) Deep Computer Vision Using Convolutional Neural Networks.md",
+    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/13) Loading and Preprocessing Data with TensorFlow.md",
+    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/12) Custom Models and Training with TensorFlow.md",
     "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/11) Training Deep Neural Networks.md",
     "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/10) Introduction to Artificial Neural Networks with Keras.md",
     "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/9) Unsupervised Leraning Techniques.md",
@@ -196,15 +206,6 @@
     "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/3) Classification.md",
     "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/2) End-To-End Machine Learning Project.md",
     "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/1) The Machine Learning Landscape.md",
-    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/0) Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow, 3rd Edition.md",
-    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/12) Custom Models and Training with TensorFlow.md",
-    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/13) Loading and Preprocessing Data with TensorFlow.md",
-    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/14) Deep Computer Vision Using Convolutional Neural Networks.md",
-    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/15) Processing Sequences Using RNNs and CNNs.md",
-    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/16) Natural Language Processing with RNNs and Attention.md",
-    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/17) Auto-encoders, GANs, and Diffusion Models.md",
-    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/18) Reinforcement Learning.md",
-    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/19) Training and Deploying TensorFlow Models at Scale.md",
     "TEXTBOOKS (PUBLIC)/Genetics- Genes to Genomes/0) Genetics - Genes to Genomes.md",
     "TEXTBOOKS (PUBLIC)/Kubernetes/3) Container Networking Basics.md",
     "TEXTBOOKS (PUBLIC)/Kubernetes/2) Linux Networking.md",
