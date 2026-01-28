@@ -161,11 +161,96 @@ ML Is Used For
 
 ### Reinforcement Learning
 
-- 
+- Learning system, called an agent can observer the environment, select and perform actions, and get rewards/penalties in return
+- Learn a policy, to get the most reward over time
+	- Policy defines action the agents takes
 
 
 ## Batch vs. Online Learning
+### Batch Learning
+- System is incapable of learning incrementally
+- Trained using all the available data
+- Offline learning
+- Performance tends to decay over time
+	- Model rot or data drift
+- Regularly retrain the model on up to data data
+- Training, evaluating, and launching a machine learning system can be automated
+	- Time consuming
+	- Computing resources
+	- Data storage
+
+### Online Learning
+
+- Train the system incrementally by feeding it data instances sequentially
+	- Mini-batches
+- Learning steps are fast and cheap
+- Adapts to change
+- Trains on limited computing resource
+- Train models on huge datasets that cannot fit on main memory
+	- Out-of-core learning
+		- Done offline
+- Learning rate
+	- Adapt to new data, but forget old data
+- System declines with bad data
+	- Bug
+	- Spamming
+- Monitor system and switch learning off, or reach to abnormal data
+
+
 ## Instance-Based vs. Model-Based Learning
+
+- Generalization of data
+### Instance-based Learning
+
+- Measure of similarity
+	- Similarity measure between two data objects
+- System learns by data points, then generalized a new case using similarity measures
+
+![[Pasted image 20260128094514.png]]
+
+### Model-Based Learning
+
+- Generalize from a set of examples to build a model of examples, then use that model to make predictions
+
+
+![[Pasted image 20260128094603.png]]
+
+- Model selection with specific parameters, that represent a function
+- Specify a performance measure
+	- Utility/fitness function that measure how good the model is
+	- Define a cost function that measure how bad the model is
+		- Distance between linear models
+- Objective is to minimize distance
+- Final training model find the optimal parameter values
+
+```python
+import matplotlib.pyplot as plt
+import numbpt as np
+import pandas as pd
+from sklearn.linear_model import LinearRegression
+
+# Prepare Data
+data_root = "https://github.com/ageron/data/raw/main/"
+lifesat = pd.read_csv(data_root + "lifesat/lifesat.csv")
+x = lifesat[["GDP per capita (USD)"]].values
+y = lifesat[["Life satisfaction"]].values
+
+# Visualize data
+lifesat.plot(kind='scatter', grid=True,
+		x="GDP per capita (USD)", y="Life satisfaction")
+plt.axis([23_500, 62_500, 4, 9])
+plt.show()
+
+# Select a Lienar Model
+model = LinearRegression()
+
+# Train the model
+model.fit(X, y)
+
+# Made a prediction
+X_new = [[37_655.2]]
+print()
+```
 
 # Main Challenges of Machine Learning
 ## Insufficient Quantity of Training Data
