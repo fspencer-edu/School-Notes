@@ -249,16 +249,67 @@ model.fit(X, y)
 
 # Made a prediction
 X_new = [[37_655.2]]
-print()
+print(model.predict(X_new))
 ```
 
+- Replacing linear regression with k-nearest neighbours regression
+
+```python
+from sklearn.neighbors import KNeighborsRegressor
+model = KNeighborsRegressor(n_neighbors=3)
+```
+
+- Inference
+	- Apply the model to make prediction on new cases
+
 # Main Challenges of Machine Learning
+
+- Bad model
+- Bad data
+
 ## Insufficient Quantity of Training Data
+
+- ML takes a lot of data
+- Different learning algorithms, performed almost identically well on a complex problem of natural language disambiguation once given enough data
+
+![[Pasted image 20260128102518.png]]
+
 ## Non-representative Training Data
+
+- Training data must be representative of the new cases to be generalized
+- Trained model is unlikely to make accurate predictions
+- If sample is too small, it will have sampling noise
+- Flawed sample in a sampling bias
+
 ## Poor-Quality Data
+
+- Errors, outliers, and noise will make it difficult to detect underlying patterns
+- Cleaning data
+	- Discard or fix outliers
+	- Ignore instances, or fill in missing values, or train with specific features
+
 ## Irrelevant Features
 
+- Feature engineering
+	- Feature selection
+	- Feature extraction
+	- Creating new features by gathering new data
+
 ## Overfitting the Training Data
+
+- Overgeneralizing or overfitting
+	- Model performs well on the training data, but it does not generalize well
+- Complex models such as deep neural networks can detect subtle patterns in the data
+- Overfitting occurs when the model is too complex relative to the amount and noisiness of the training data
+	- Simplify the model by selecting fewer parameters (regularization)
+	- Gather more training data
+	- Reduce the noise in the training data
+
+- A parameter correlated to the degrees of freedom to adapt to the model to the training data
+	- Tweak both the heigh and the slope of the line
+- Amount or regularization to apply during learning can be controlled by a hyperparameter
+- A hyperparameter is a parameter of a learning algorithm (not of the model)
+- 
 ## Underfitting the Training Data
 ## Stepping Back
  
@@ -266,6 +317,3 @@ print()
 # Testing and Validating
 
 ## Hyperparameter Tuning and Model Selection
-## 
-## 
-## 
