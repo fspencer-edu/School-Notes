@@ -309,11 +309,60 @@ model = KNeighborsRegressor(n_neighbors=3)
 	- Tweak both the heigh and the slope of the line
 - Amount or regularization to apply during learning can be controlled by a hyperparameter
 - A hyperparameter is a parameter of a learning algorithm (not of the model)
-- 
+- Set prior to training and remains constant during training
+
 ## Underfitting the Training Data
-## Stepping Back
- 
+
+- Occurs when your model is too simple to learn the underlying structure of the data
+- Fixing underfitting
+	- Select a more powerful model, with more parameters
+	- Feed better feature to the learning algorithm
+	- Reduce the constraints on the model
+
 
 # Testing and Validating
 
+- To measure how well a model will generalize to new cases it to try it on new cases
+- Put model in production and monitor how it performs
+- Split data into 2 sets
+	- Training set
+	- Test set
+- Error rate on new cases is called the generalization error or (out-of-sample error)
+- Error value tell how well your model will perform on instances it has never seen before
+- If training error is low, but generalization is high, model is overfitting data
+- 80% for training, and hold out 20% for testing
+
 ## Hyperparameter Tuning and Model Selection
+
+- Holdout validation
+	- Hold out part of the training set to evaluate several candidate models and select the best one
+	- Held-out set is called the validation set (or development set)
+- Train multiple models with various hyperparameters on the reduced training set, and select model that performs best on the validation set
+- Train the best model on the full training set, which results in the final model
+- Evaluate final model on the test set to get an estimate of the generalization error
+
+![[Pasted image 20260128105225.png]]
+
+- If validation is too small, the model evaluation is imprecise
+- If too large, remaining training set is much small than the full training set
+- Repeated cross-validation
+	- Using many small validation sets
+	- Model is evaluated once per validation after train on the rest of the data
+	- Averaging out all evaluations of a model, the results is a more accurate model
+	- Time consuming
+
+### Data Mismatch
+
+- Both the validation set and test set must be a representative of data
+- Hold out training in another set, train-dev set
+- After model is trained, evaluate it on the train-dev set
+- If performs well, then train on dev set
+
+![[Pasted image 20260128105623.png]]
+
+ - Simplifications are meant to discard the superfluous details that are unlikely to generalize to new instances
+ - Choosing model requires making assumptions about the data
+ - No Free Lunch (NFL) theorem
+	- There is no model that is a priori guaranteed to work better
+- Simple tasks may evaluate linear models with various levels of regularization
+- Complex problems may evaluate various neural networks
