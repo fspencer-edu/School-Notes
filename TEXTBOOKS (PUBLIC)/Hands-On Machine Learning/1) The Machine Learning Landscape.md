@@ -106,7 +106,7 @@ ML Is Used For
 - Logistic regression is used for classification
 	- Outputs a value that corresponds the the probability of belonging to a given class
 
-![[Pasted image 20260128091856.png]]
+<img src="/images/Pasted image 20260128091856.png" alt="image" width="500">
 
 - Target
 	- More common in regression tasks
@@ -133,7 +133,7 @@ ML Is Used For
 	- Discover relations between attributes
 
 
-![[Pasted image 20260128092339.png]]
+<img src="/images/Pasted image 20260128092339.png" alt="image" width="500">
 
 
 ### Semi-Supervised Learning
@@ -142,7 +142,7 @@ ML Is Used For
 - A clustering may be used to group similar instances, then similar unlabeled instance can be labeled with its common
 - Google Photos
 
-![[Pasted image 20260128092556.png]]
+<img src="/images/Pasted image 20260128092556.png" alt="image" width="500">
 
 
 ### Self-supervised Learning
@@ -206,14 +206,14 @@ ML Is Used For
 	- Similarity measure between two data objects
 - System learns by data points, then generalized a new case using similarity measures
 
-![[Pasted image 20260128094514.png]]
+<img src="/images/Pasted image 20260128094514.png" alt="image" width="500">
 
 ### Model-Based Learning
 
 - Generalize from a set of examples to build a model of examples, then use that model to make predictions
 
 
-![[Pasted image 20260128094603.png]]
+<img src="/images/Pasted image 20260128094603.png" alt="image" width="500">
 
 - Model selection with specific parameters, that represent a function
 - Specify a performance measure
@@ -272,7 +272,7 @@ model = KNeighborsRegressor(n_neighbors=3)
 - ML takes a lot of data
 - Different learning algorithms, performed almost identically well on a complex problem of natural language disambiguation once given enough data
 
-![[Pasted image 20260128102518.png]]
+<img src="/images/Pasted image 20260128102518.png" alt="image" width="500">
 
 ## Non-representative Training Data
 
@@ -341,7 +341,7 @@ model = KNeighborsRegressor(n_neighbors=3)
 - Train the best model on the full training set, which results in the final model
 - Evaluate final model on the test set to get an estimate of the generalization error
 
-![[Pasted image 20260128105225.png]]
+<img src="/images/Pasted image 20260128105225.png" alt="image" width="500">
 
 - If validation is too small, the model evaluation is imprecise
 - If too large, remaining training set is much small than the full training set
@@ -358,7 +358,7 @@ model = KNeighborsRegressor(n_neighbors=3)
 - After model is trained, evaluate it on the train-dev set
 - If performs well, then train on dev set
 
-![[Pasted image 20260128105623.png]]
+<img src="/images/Pasted image 20260128105623.png" alt="image" width="500">
 
  - Simplifications are meant to discard the superfluous details that are unlikely to generalize to new instances
  - Choosing model requires making assumptions about the data

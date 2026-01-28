@@ -76,7 +76,7 @@ $y^{(1)} = 156400$ => median house value of $x^{(1)}$
 - $RMSE(X, h)$ is the cost function measured on the set of example using hypothesis, $h$
 
 
-![[Pasted image 20260128111426.png]]
+<img src="/images/Pasted image 20260128111426.png" alt="image" width="500">
 
 
 
@@ -156,7 +156,7 @@ housing = load_housing_data()
 
 ## Take a Quick Look at the Data Structure
 
-![[Pasted image 20260128113704.png]]
+<img src="/images/Pasted image 20260128113704.png" alt="image" width="500">
 
 
 - Row represents one district
@@ -188,7 +188,7 @@ housing.hist(bins=50, figsize(12, 8))
 plt.show()
 ```
 
-![[Pasted image 20260128114048.png]]
+<img src="/images/Pasted image 20260128114048.png" alt="image" width="500">
 
 - Median income attributes does not look like it is expressed in dollars
 	- Data has been scaled and capped at 15 for higher incomes, and 0.5 for lower median incomes
@@ -229,7 +229,64 @@ len(test_set)
 from zlib import crc32
 
 def is_id_in_test_set(identifier, test_ratio):
-	r
+	return crc32(np.int64(identifier)) < test_ratio * 2 **32
+	
+def split_data_with_id_hash(data, test_ratio, id_column):
+	ids = data[id_column]
+	in_test_set = ids.apply(lambda id_: is_id_in_test_set(id_, test_ratio))
+	return data.loc[~in_test_set], data.loc[in_test_set]
+```
+
+- Housing dataset does not have an identifier column
+- Use row index as the ID
+
+```python
+housing_with_id = housing.reset_index()
+train_set, test_set = split_data_with_id_hash(housing_with_id, 0,2, "index")
+```
+
+- Scikit-learn splits data into multiple subsets in various ways, `train_test_splt()`
+
+```python
+from sklearn.model_selection import train_test_split
+
+train_set, test_test = train_test_split(housing, test_size=0.2, random_state=42)
+```
+- `random_state` parameter allows you to set the random generator seed
+- Pass multiple datasets with an identical number of row, and split them on the same indices
+
+- Random sampling methods on small datasets can introduce sampling bias
+- Stratified sampling
+	- The population is decided into homogeneous subgroups called strata, and the right number of instances are sampled from each stratum to guarantee that the test set is representative of the overall population
+- `pd.cut()` is used to create an income category attribute with five categories
+
+```python
+housing["income_cat"] = pd.cut(housing["median_income"],
+								bins=[0., 1.0, 3.0, 4.5, 6., np.inf],
+								labels=[1, 2, 3, 4, 5])
+								
+								
+housing["income_cat"].value_counts().sort_index().plot.bar(rot=0, grid=True)
+plt.xlabel("Income Category")
+plt.ylabel("Number of districts")
+plt.show()
+```
+
+<img src="/images/Pasted image 20260128115752.png" alt="image" width="500">
+
+- Scikit-Learn provides a number of splitter classes in the `sklearn.model_seletion`
+- Each splitter has a `split()` method that returns an iterator over different training/test splits on the same data
+- Yields test indices
+
+```python
+from sklearn.model_selection import StratifiedSuffleSplot
+
+splitter = StratifiedSuffleSplot(n_splits=10, test_size=0.2, random_state=42)
+strat_splits = []
+for train_index, test_index in splitter.split(housing, housing["income_cat"]):
+	strat_train_set_n = housing.iloc[train_index]
+	strat_test_set_n = housing.iloc[test_index]
+	strat_splits.append([strat_train_set_n, strat_test_set_n])
 ```
 
 
