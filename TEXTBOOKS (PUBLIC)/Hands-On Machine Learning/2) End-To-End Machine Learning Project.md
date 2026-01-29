@@ -287,20 +287,160 @@ for train_index, test_index in splitter.split(housing, housing["income_cat"]):
 	strat_train_set_n = housing.iloc[train_index]
 	strat_test_set_n = housing.iloc[test_index]
 	strat_splits.append([strat_train_set_n, strat_test_set_n])
-```
+	
+# first split
+strat_train_set, strat_test_set = strat_splits[0]
 
+# stratify arg
+start_train_set, strat_test_set = train_test_split(
+	housing, test_size=0.2, stratify=housing["income_cat"], random_state=42)
+	
+# dropping
+for set_ in (strat_train_set, strat_test_set):
+	set_.drop("income_cat", axis=1, inplace=True)
+```
 
 # Explore and Visualize the Data to Gain Insight
 
+```python
+housing = strat_train_set.copy()
+```
+
 ## Visualizing Geographical Data
+
+```python
+housing.plot(kind="scatter", x="longitude", y="latitude", grid=True)
+plt.show()
+```
+
+![[Pasted image 20260129122240.png]]
+
+- ```python
+# setting alpha value, density value
+housing.plot(kind="scatter", x="longitude", y="latitude", grid=True, alpha=0.2)
+plt.show()
+```
+
+![[Pasted image 20260129122337.png]]
+
+```python
+# plot customization
+housing.plot(kind="scatter", x="longitude", y="latitude", grid=True,
+			s=housing["population"]/100, label="population",
+			c="median_house_value", cmap="jet", colorbar=True,
+			legend=True, sharex=False, figsize=(10, 7))
+			
+plt.show()
+```
+
+![[Pasted image 20260129122610.png]]
+
+
+- Housing prices are related to the location and the population density
+- Clustering algorithm should be used for detecting the main cluster and adding new features that measure the proximity to the cluster centres
+
 ## Look for Correlations
+
+- Compute the standard correlation coefficient (Pearson's r)
+
+```python
+corr_matrix = housing.corr()
+
+corr_matrix["median_house_value"].sort_value(ascending=False)
+median_house_value    1.000000
+median_income         0.688380
+total_rooms           0.137455
+housing_median_age    0.102175
+households            0.071426
+total_bedrooms        0.054635
+population           -0.020153
+longitude            -0.050859
+latitude             -0.139584
+Name: median_house_value, dtype: float64
+```
+- Correlation coefficient ranges from -1 to 1
+- Alternative is to use `scatter_matrix()`
+	- Plots every numerical attribute against every other numerical attribute
+
+```python
+from pandas.plotting import scatter_matrix
+
+attributes = ["median_house_value", "median_income", "total_rooms",
+              "housing_median_age"]
+scatter_matrix(housing[attributes], figsize=(12, 8))
+plt.show()
+```
+
+![[Pasted image 20260129122950.png]]
+
+
+```python
+housing.plot(kind="scatter", x="median_income", y="median_house_value",
+             alpha=0.1, grid=True)
+plt.show()
+```
+
+![[Pasted image 20260129123057.png]]
+
+- Correlation coefficient only measure linear correlation
+
+![[Pasted image 20260129123212.png]]
+
 ## Experiment with Attribute Combinations
-
-
 
 # Prepare the Data for Machine Learning Algorithms
 
+- Write a function to prepare data
+	- Reproduce transformations on any dataset
+	- Build a library of transformation function to reuse
+	- Use these functions in live systems to transfer the new data
+	- Try various transformations
+
+- Separate the predictors and the labels
+
+```python
+housing = strat_train_set.drop("median_house_value", axis=1)
+housing_labels = start_train_set["median_house_value"].copy()
+```
+
 ## Clean the Data
+
+- Fix missing values
+	- Remove corresponding values
+	- Remove entire attribute
+	- Set the missing value to some zero
+		- Imputation
+
+```python
+housing.dropna(subset=["total_bedrooms"], inplace=True)
+housing.drop("total_bedrooms", axis=1)
+median = housing["total_bedrooms"].median()
+housing["total_bedroons"].fillna(median, inplace=True)
+```
+
+- `SimpleImputer`
+	- Store the median value of each feature
+
+```python
+from sklearn.impute import SimpleImputer
+imputer = SimpleImputer(strategy="median")
+
+housing_num = housing.select_dtypes(include=[np.number])
+
+imputer.fit(housing_num)
+
+imputer.statistics_
+array([-118.51 , 34.26 , 29. , 2125. , 434. , 1167. , 408. , 3.5385])
+housing_num.median().values
+array([-118.51 , 34.26 , 29. , 2125. , 434. , 1167. , 408. , 3.5385])
+
+# transform the training set by replacing values
+X = imputer.transform(housing_num)
+```
+
+- Other imputers
+	- ``
+
 ## Handling Text and Categorical Attributes
 ## Feature Scaling and Transformation
 ## Custom Transformers
