@@ -313,7 +313,7 @@ housing.plot(kind="scatter", x="longitude", y="latitude", grid=True)
 plt.show()
 ```
 
-![[Pasted image 20260129122240.png]]
+<img src="/images/Pasted image 20260129122240.png" alt="image" width="500">
 
 - ```python
 # setting alpha value, density value
@@ -321,7 +321,7 @@ housing.plot(kind="scatter", x="longitude", y="latitude", grid=True, alpha=0.2)
 plt.show()
 ```
 
-![[Pasted image 20260129122337.png]]
+<img src="/images/Pasted image 20260129122337.png" alt="image" width="500">
 
 ```python
 # plot customization
@@ -333,7 +333,7 @@ housing.plot(kind="scatter", x="longitude", y="latitude", grid=True,
 plt.show()
 ```
 
-![[Pasted image 20260129122610.png]]
+<img src="/images/Pasted image 20260129122610.png" alt="image" width="500">
 
 
 - Housing prices are related to the location and the population density
@@ -371,7 +371,7 @@ scatter_matrix(housing[attributes], figsize=(12, 8))
 plt.show()
 ```
 
-![[Pasted image 20260129122950.png]]
+<img src="/images/Pasted image 20260129122950.png" alt="image" width="500">
 
 
 ```python
@@ -380,11 +380,11 @@ housing.plot(kind="scatter", x="median_income", y="median_house_value",
 plt.show()
 ```
 
-![[Pasted image 20260129123057.png]]
+<img src="/images/Pasted image 20260129123057.png" alt="image" width="500">
 
 - Correlation coefficient only measure linear correlation
 
-![[Pasted image 20260129123212.png]]
+<img src="/images/Pasted image 20260129123212.png" alt="image" width="500">
 
 ## Experiment with Attribute Combinations
 
@@ -591,7 +591,7 @@ housing_num_std_scaled = std_scaler.fit_transform(housing_num)
 - Replace the feature with its square root
 - If a power law distribution, replace with its logarithm
 
-![[Pasted image 20260129130557.png]]
+<img src="/images/Pasted image 20260129130557.png" alt="image" width="500">
 
 - Bucketizing
 	- Chopping its distribution into roughly equal-sized buckets, and replacing each feature value with the index of the bucket it belongs to
@@ -607,7 +607,113 @@ from sklearn.metrics.pairwise import rbf_kernel
 
 age.simil_35 = rbf_kernel(housing[["housing_median_age"]], [[35]], gamma=0.1)
 ```
+
+<img src="/images/Pasted image 20260129131005.png" alt="image" width="500">
+
+- If the target distribution has a heavy tail, you may choose to replace the target with its logarithm
+	- Regression model will now predict the log of the value, not median house value
+	- Compute the exponential of model's prediction to get median value
+
+```python
+from sklearn.linear_model import LinearRegression
+
+target_scaler = StandardScaler()
+scared_labels = target_scaler.fit_transform(housing_labels.to_frame())
+
+model = LinearRegression()
+model.fit(housing[["median_income"]], scaled_labels)
+some_new_data = housing[["median_income"]]iloc[:5]
+scaled_predictions = model.predict(some_new_data)
+predictions = target_scaler.inverse_transform(scaled_predictions)
+```
+
+- Simpler option is to use `TransformedTargetRegressor`
+	- Construct it, given the regression model and label transformer
+	- Fit training set, using the original unscaled labels
+
+```python
+from skilearn.compose import TransformedTargetRegressor
+
+model = TransformedTargetRegressor(LinearRegression(),
+				transformer=StandardScaler())
+model.fit(housing[["median_income"]], housing_labels)
+predictions = model.predict(some_new_data)
+```
+
 ## Custom Transformers
+
+- Write your own transformers for tasks
+	- Custom transformations
+	- Cleanup operations
+	- Combining specific attributes
+
+- Write a function that takes a NumPy array as input and outputs the transformed array
+- Transform features with heavy tailed distributions by replacing them with their log
+
+```python
+from sklearn.preprocessing import FunctionTransformer
+
+log_transformer = FunctionTransformer(np.log, inverse_func=np.exp)
+log_pop = log_transformer.transform(housing[["population"]])
+```
+
+- Transformation function can take hyperparameters as additional arguments
+
+```python
+rbf_transformer = FunctionTransformer(rbf_kernel, 
+						kw_args=dict(Y=[[35.]], gamma = 0.1))
+age_simil_35 = rbf_transformer.transform(housing[["housing_median_age"]])
+```
+
+- If you pass an array with two features, it will measure the 2D distance to measure similarity
+- To add a feature that will measure the geographic similarity
+
+```python
+sf_coords = 37.7, -122
+sf_transformer = FunctionTransformer(rbf_kernel,
+						kw_args=dict(Y=[sf_coords], gamma=0.1))
+sf_simil = sf_transformer.transform(housing[["lat", "long"]])
+```
+
+- Custom transformers are useful to combine features
+
+```python
+>>> ratio_transformer = FunctionTransformer(lambda X: X[:, [0]] / X[:, [1]])
+>>> ratio_transformer.transform(np.array([[1., 2.], [3., 4.]]))
+array([[0.5 ],
+       [0.75]])
+```
+
+- Write a custom class
+- Scikit-learn relies on duck typing, so this class does not have to inherit from any particular base class
+- The default implementation will call `fit()` then `transform()`
+
+Custom Transformers, similar to `StandardScaler`
+```python
+from skilearn.base import BaseEstimator, TransformerMixin
+from skilearn.utils.validation import check_array, check_is_fitted
+
+class StandardScalerClone(BaseEstimator, TransformerMixin):
+	def __init__(self, with_mean=True):
+		self.with_mean = with_mean
+		
+	def fit(self, X, y=None):
+		X = check_array(X)
+		self.mean_ = X.mean(axis=0)
+		self.scale_ = X.std(axis=0)
+		self.n_features_in_ = X.shape[1]
+		return self
+		
+	def transform(self, X):
+		check_is_fitted(self)
+		X = check_array(X)
+		assert serf.n_features_in_ == X.shape[1]
+		if self.with_mean:
+			X = X - self.mean_
+		return X / self.scale_
+```
+
+
 ## Transformation Pipeline
 
 
