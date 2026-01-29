@@ -439,10 +439,174 @@ X = imputer.transform(housing_num)
 ```
 
 - Other imputers
-	- ``
+	- `KNNImputer`
+		- Replaces each missing value with the mean of the k-nearest neighbour values for that feature
+	- `InterativeImputer`
+		- Trains a regression model per feature to predict the missing values based on all the other available features
+
+
+**Scikit-Learn API Principles**
+1) Consistency
+	1) Estimators
+	2) Transformers
+	3) Predictors
+2) Inspection
+3) Nonproliferation of classes
+4) Composition
+5) Sensible defaults
+
+- Scikit-Learn transformers output NumPy arrays
+	- Neither column or index names
+	- Wrap in a data frame and recover the column names and index
+
+```python
+housing_tr = pd.DataFrame(X, columns=housing_num.columns, index=housing_num.index)
+```
 
 ## Handling Text and Categorical Attributes
+
+```python
+housing_cat = housing[["ocean_proximity"]]
+housing_cat.head(8)
+      ocean_proximity
+13096        NEAR BAY
+14973       <1H OCEAN
+3785           INLAND
+14689          INLAND
+20507      NEAR OCEAN
+1286           INLAND
+18078       <1H OCEAN
+4396         NEAR BAY
+```
+
+- Convert categories from text to numbers, using `OrdinalEncoder`
+
+```python
+from sklearn.preprocessing import OrdinalEncoder
+
+ordinal_encoder = OrdinalEncoder()
+housing_cat_encoded = original_encoder.fit_transform(housing_cat)
+
+housing_cat_encoded[:8]
+array([[3.],
+       [0.],
+       [1.],
+       [1.],
+       [4.],
+       [1.],
+       [0.],
+       [3.]])
+       
+ordinal_encoder.categories_
+[array(['<1H OCEAN', 'INLAND', 'ISLAND', 'NEAR BAY', 'NEAR OCEAN'],
+       dtype=object)]
+```
+
+- ML algorithms will assume that two nearby values are more similar than two distant values
+- Create one binary attribute per category
+	- One-hot encoding
+	- Only one attribute will be equal to 1, while the other 0
+- The new attributes are called dummy attributes
+
+```python
+from sklearn.preprocessing import OneHotEncoder
+
+cat_encoder = OneHotEncoder()
+housing_cat_1hot = cat_encoder.fit_transform(housing_cat)
+
+housing_cat_1hot
+<16512x5 sparse matrix of type '<class 'numpy.float64'>'
+with 16512 stored elements in Compressed Sparse Row format>
+ 
+housing_cat_1hot.toarray()
+array([[0., 0., 0., 1., 0.],
+       [1., 0., 0., 0., 0.],
+       [0., 1., 0., 0., 0.],
+       ...,
+       [0., 0., 0., 0., 1.],
+       [1., 0., 0., 0., 0.],
+       [0., 0., 0., 0., 1.]])
+```
+
+- Default output, is sparse matrix
+	- Efficient representation for matrices that contain zeros
+	- Stores only non-zero values and their positions
+
+
+- `get_dummies()`
+	- Converts each categorical feature into a one-hot representation, with one binary feature
+
+```python
+df_test = pd.DataFrame({"ocean_proximity": ["INLAND", "NEAR BAY"]})
+pd.get_dummies(df_test)
+   ocean_proximity_INLAND  ocean_proximity_NEAR BAY
+0                       1                         0
+1                       0                         1
+```
+
+- One hot encoder remembers which categories it was trained on
+- When dealing with neural networks, replace each category with a learnable, low-dimensional vector called an embedding
+	- Representational learning
+
+- Estimator stores the columns names
+
+```python
+cat_encoder.feature_names_in_
+array(['ocean_proximity'], dtype=object)
+```
+
 ## Feature Scaling and Transformation
+
+- Feature scaling
+	- Min-max scaling
+	- Standardization
+
+- Fit the scalers to the training data only
+
+**Min-Max Scaling (Normalization)**
+- Simplest
+- For each attribute, the values are shifted and rescaled so they end up ranging from 0 to 1
+- Subtracting the min value and dividing by the difference between min and max
+
+```python
+from sklearn.preprocessing import MinMaxScaler
+
+min_max_scaler = MinMaxScaler(feature_range=(-1, 1))
+housing_num_min_max_scaled = min_max_scaler.fit_transform(housing_num)
+```
+**Standardization**
+- Subtracts the mean value, then divides the result by the standard deviation
+- Does not restrict values to a specific range
+- Less affected by outliers
+
+```python
+from sklearn.preprocessing import StandardScaler
+
+std_scaler = StandardScaler()
+housing_num_std_scaled = std_scaler.fit_transform(housing_num)
+```
+
+- When a feature distribution has a heavy tail, both min-max and standardization will squash most values into a small range
+- Before scaling the feature, transform it to shrink the heavy tail
+- Replace the feature with its square root
+- If a power law distribution, replace with its logarithm
+
+![[Pasted image 20260129130557.png]]
+
+- Bucketizing
+	- Chopping its distribution into roughly equal-sized buckets, and replacing each feature value with the index of the bucket it belongs to
+	- Replace value with its percentile
+- Multimodal distribution, bucketize is used to treat the bucket IDs as categories
+- Add a feature for each modes
+- Radial basis function (RBF)
+	- Any function that depends only on the distance between the input value and a fixed point
+	- Gaussian RBF
+
+```python
+from sklearn.metrics.pairwise import rbf_kernel
+
+age.simil_35 = rbf_kernel(housing[["housing_median_age"]], [[35]], gamma=0.1)
+```
 ## Custom Transformers
 ## Transformation Pipeline
 
