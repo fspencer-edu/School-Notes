@@ -1086,8 +1086,58 @@ final_predictions = final_model.predict(X_test)
 final_rmse = root_mean_squared_error(y_test, final_predictions)
 print(final_rmse) # prints 41424.40026462184
 ```
-- Compute a 95% confidence internval for the generalization error using `scipy`
+- Compute a 95% confidence interval for the generalization error using `scipy.stats.boostrap()`
 
+```python
+from scipy import stats
 
+def rmse(squared_errors):
+	return np.sqrt(np.mean(squared_error))
+	
+confidence = 0.95
+squared_errors = (final_predictions - y_test) **2
+boot_result = stats.bootstrap([sqaured_errors], rmse,
+				confidence_level=confidence, random_state=42)
+rmse_lower, rmse_upper = boot_result.confidence_interval # (39,574 to 43,780)
+```
+
+- Test RMSE is lower than validation RMSE
 
 # Launch, Monitor, and Maintain Your System
+
+- Deploy model to production environment
+- Save the best model, transfer the file to production environment, and load it
+- Import any custom classes and functions the model uses
+
+```python
+import loblib
+
+def column_ratio(X): [...]
+def ratio_name(function_transformer, feature_names_in): [...]
+class ClusterSimilarity(BaseEstimator, TransformerMixin): [...]
+
+final_model_reloaded = joblib.load("my_california_housing_model.pkl")
+
+new_data = [...]  # some new districts to make predictions for
+predictions = final_model_reloaded.predict(new_data)
+```
+
+- Load the model upon server startup, rather than when model is called
+- Wrap the model within a web service though a REST API
+- Deploy model to the cloud
+	- Google's Vertex AI
+- Write monitoring code to check system's live performance at regular intervals and trigger alerts
+- Model rot
+	- If the model was trained with old data, it may not adapt to new data
+- Model's performance can be inferred from downstream metrics
+- Update datasets and retrain model regularly
+
+Automate
+- Collect fresh data and label it
+- Train the model and fine-tune the hyperparameters
+- Evaluate both the new model and previous model on the updated test set
+	- Deploy if the performance has not decreased
+
+- Monitor model's input data
+- Keep backups of every model
+- Keep backups of every version of dataset
