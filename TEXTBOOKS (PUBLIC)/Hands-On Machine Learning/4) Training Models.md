@@ -1,3 +1,7 @@
+
+- 
+
+
 # Linear Regression
 
 ## The Normal Equation

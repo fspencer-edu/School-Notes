@@ -485,11 +485,120 @@ array([0.8983, 0.891 , 0.9018])
 
 - A coloured diagram of the confusion matrix is easier to analyze
 
+![[Pasted image 20260130164604.png]]
+
 ```python
-from sklearn
+from sklearn.metrics import ConfusionMatrixDisplay
+
+y_train_pred = cross_val_predict(sgd_clf, x_train_scaled, y_train, cv=3)
+ConfusionMatrixDisplay.from_predictions(y_train, y_train_pred)
+plt.show()
 ```
+
+- Confusion matrix (top left) shows most images are on the main diagonal, classified correctly
+- Normalize the confusion matrix by dividing each value by the total number of images in the corresponding class (top right)
+
+```python
+ConfusionMatrixDisplay.from_predictions(y_train, y_train_pred,
+			normalize="true", values_format=".0%")
+plt.show()
+```
+
+- Add a zero weight on the correct predictions (bottom left)
+- Column for class 8 is bright, which confirms that many images got misclassified as 8s
+
+```python
+sample_weight = (y_train_pred != y_train)
+ConfusionMatrixDisplay.from_predictions(y_train, y_train_pred,
+				sample_weight=sample_weight,
+				normalize="true", values_format=".0%")
+plt.show()
+```
+
+- Normalize the confusion matrix by column rather than by row (bottom right)
+- CM helps to identify ways to improve the classifier
+
+![[Pasted image 20260130165302.png]]
+
+- Most misclassified images seem obvious
+- Data augmentation
+	- Force a model to learn to be more tolerant to variations of data
 
 
 # Multilabel Classification
 
+```python
+from numpy as np
+from sklearn.neighbors import KNneightborsClassifier
+
+y_train_large = (y_train >= '7')
+y_train_odd (y_train.astype('int8') % 2 ==1)
+y_multilabel = np.c_[y_train_large, y_train_odd]
+
+knn_clf = KNeighborsClassifier()
+knn_clf.fit(x_train, y_multilabel)
+```
+- Creates an array containing two target labels fro each digit image
+	- First indicates whether or not the digit is large
+	- Second indicates whether or not it is odd
+- Code creates a KN classifier instance, which support multilabel classification, and train this model using the multiple target array
+
+```python
+knn_clf.predict([some_digit])
+array([[False, True]]) # 5 is large-F, Odd-T
+```
+
+- Measure $F_1$ score for each individual label, then compute the average score
+
+```python
+y_train_knn_pred = cross_val_predict(knn_clf, x_train, y_multilabel, cv=3)
+f1_score(y_multilabel, y_train_knn_pred, average="macro")
+0.976410265560605
+```
+- This approach assumes all labels are equally important
+- Given each label a weight equal to its support
+	- The number of instances with that target label
+- To use a classifier that does not natively support multilabel classification, such as `svc`, train one model per label
+- Models can be organized in a chain
+	- When a model makes a prediction, it uses the input features plus all the predictions of the models that come before it
+- Use the true labels for training, feeding each model the appropriate labels depending on their position in the chain
+- If `cv` is set, cross-validation will be used to get "clean" prediction from each trained model for every instance in the training set, and will be used to train all the models later in the chain
+
+```python
+from sklearn.multioutput import ClassifierChain
+
+chain_clf = ClassifierChain(SVC(), cv=3, random_state=42)
+chain_clf.fit(x_train[:2000], y_multilabel[:2000])
+
+chain_clf.predict([some_digit])
+array([[0., 1.]])
+```
+
 # Multioutput Classification
+
+- A generalization of multilabel classification where each label can be multiclass
+- Build a system that removes noise from images
+- The line between classification and regression is blurring
+	- Predicting pixel intensity is more akin to regression than to classification
+- Multioutput systems are not limited to classifications tasks
+- Add noise to the MNIST images
+
+```python
+np.random.seed(42)
+noise = np.random.randint(0, 100, (len(x_train), 784))
+x_train_mod = x_train + noise
+noise = np.random.randint(0, 100, (len(x_test), 784))
+x_test_mode = x_test + noise
+y_train_mod = x_train
+y_test_mod = x_test
+```
+
+![[Pasted image 20260130170906.png]]
+
+```python
+knn_clf = KNeighborsClassifier()
+nkk_clf.fit(x_train_mod, y_train_mod)
+clear_digit = knn_clf.predict([x_test_mod[0]])
+plot_digit(clean_digit)
+plt.show()
+```
