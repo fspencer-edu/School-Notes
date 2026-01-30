@@ -126,11 +126,149 @@ array([0.90965, 0.90965, 0.90965])
 - Accuracy of 90%
 - Only about 10% of the images are 5
 - Therefore, it is guessing that everything is a 5
+- Accuracy is not the preferred performance measure for classifiers
+- A better performance classifier is the confusion matrix (CM)
 
+- Implement custom CV
+
+```python
+from sklearn.model_selection import StatifiedKFold
+from sklearn.base import clone
+
+skfolds = StatifiedKFold(n_splits=3)
+
+for train_index, test_index in skfolds.split(x_train, y_train_5):
+	clone_clf = clone(sgd_clf)
+	x_train_folds = x_train[train_index]
+	y_train_folds = y_train_5[train_index]
+	x_test_fold = x_train[test_index]
+	y_test_fold = y_train_5[test_index]
+	
+	clone_clf.fit(x_train_fold, y_train_fold)
+	y_pred = clone_clf.predict(x_test_fold)
+	n_correct = sum(y_pred == y_test_fold)
+	print(n_correct / len(y_pred)) # prints 0.95035, 0.96035, and 0.9604
+```
+
+- A stratified sampling produces folds that contain a representative ratio of each class
+- At each iteration the code creates a clone of the classifier, trains that clone on the training folds, and makes predictions on the test fold
+- Count the number of correct prediction, and outputs the ratio of correct predictions
 
 ## Confusion Matrices
+
+- The idea of the confusion matrix is to count the number of times instances of class A are classified as B, for all A/B pairs
+- Compute the CM by obtaining a set of prediction
+
+```python
+from sklearn.model_selection import cross_val_predict
+
+y_train_pred = cross_val_predict(sgd_clf, x_train, y_train_5, cv=3)
+```
+
+- Performs k-fold CV, but instead of returning the evaluation scores, it returns the prediction made on each test fold
+- Get a clean prediction for each instance in the training set
+
+```python
+from sklearn.metrics import confusion_matrix
+cm = confusion_matrix(y_train_5, y_train_pred)
+cm
+array([[53892,   687],
+       [ 1891,  3530]])
+```
+- Each row represents an actual class
+- Each column represents a predicted class
+- First row are non-5 images
+	- 53892 true negatives
+	- 687 are false positives/type I errors
+- Second row considers the image is a 5
+	- 1891 are false negatives
+	- 3530 are true positives
+- A perfect classifier would only have true positives and true negatives
+- Accuracy of positive predictions
+	- Precision
+
+**Precision**
+
+![[Pasted image 20260130151924.png]]
+
+- Create a classifier that always makes negative predictions, except for one single positive prediction on the instance it's most confident about
+- Recall also called sensitivity or the true positive rate (TPR)
+	- Ratio of positive instances that are correctly detected by the classifier
+
+**Recall**
+
+![[Pasted image 20260130152108.png]]
+
+
+![[Pasted image 20260130152132.png]]
+
+
 ## Precision and Recall
+
+```python
+from sklearn.metrics import precision_score, recall_score
+precision_score(y_train_5, y_train_pred) # == 3530 / (687 + 3530)
+0.8370879772350012
+recall_score(y_train_5, y_train_pred) # == 3530 / (1891 + 3530)
+0.6511713705958311
+```
+- Combine precision and recall into a single metric called the $F_1$ score
+- Harmonic mean of precision and recall
+- Regular mean treats all values equally, the harmonic mean gives much more weight to low values
+
+![[Pasted image 20260130152535.png]]
+
+
+```python
+from sklearn.metrics import f1_score
+f1_score(y_train_5, y_train_pred)
+0.7325171197343846
+```
+
+- $F_1$ scores favour classifiers that have similar precision and recall
+- Precision/recall trade-off
+	- Increasing precision reduces recall, and vice versa
+
 ## The Precision/Recall Trade-Off
+
+- For each instance the SGD classifier computes a score based on a decision function
+- If the score is greater than a threshold, it assigns the instance to the positive class, otherwise the negative class
+
+![[Pasted image 20260130153059.png]]
+
+- The decision threshold is positioned at the central arrow
+- Calling `predict()` method, set the threshold
+
+```python
+y_scores = sgd_clf.decision_function([some_digit])
+y_scores
+array([2164.22030239])
+threshold = 0
+y_some_digit_pred = (y_scores > threshold)
+y_some_digit_pred
+array([True])
+
+threshold = 3000
+y_some_digit_pred = (y_scores > threshold)
+y_some_digit_pred
+array([False])
+```
+
+- Raising the threshold, decreases recall
+- Use CV function to get the scores of all instances in the training set
+
+```python
+y_scores = cross_val_predict(sgd_clf, x_train, y_train_5, cv=3,
+				method="decision_function")
+				
+				
+from sklearn.metrices import precision_recall_curve
+precisions, recalls, thesholds = precision_recall_curve(y_train_5, y_scores)
+
+plt.plot(t)
+```
+
+
 ## The ROC Curve
 # Multiclass Classification
 
