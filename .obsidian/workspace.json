@@ -120,7 +120,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -269,8 +269,9 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "2903d71e520aeaa8",
+  "active": "4375d35c70798938",
   "lastOpenFiles": [
+    "PRIVATE/Winter 2026/Computer Networks/Textbook/8) Security in Computer Networks.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/9) Introducing Monads.md.tmp",
     "camera.md.tmp",
     "images/Pasted image 20260130122756.png",
@@ -284,7 +285,6 @@
     "images/Pasted image 20260130120623.png",
     "images/Pasted image 20260130120846.png",
     "PRIVATE/ToDo.md",
-    "PRIVATE/Winter 2026/Computer Networks/Textbook/8) Security in Computer Networks.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/5) Classification - Alternative Techniques.md",
     "PRIVATE/Winter 2026/Computer Networks/Textbook/7) Wireless and Mobile Networks.md",
     "TEXTBOOKS (PUBLIC)/Computer Networking - Top Down/8. Security in Computer Networks.md",
@@ -315,7 +315,6 @@
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Rist/Untitled",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Rust",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/SmallTalk"
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir"
   ]
 }
