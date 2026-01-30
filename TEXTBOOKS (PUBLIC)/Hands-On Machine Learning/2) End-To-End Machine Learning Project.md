@@ -836,42 +836,163 @@ def ratio_pipeline():
 		SimpleImputer(strategy="median"),
 		FunctionTransformer(column_ratio, feature_names_out=ratio_name),
 		StandardScaler())
-	
-	log_pipeline = make_pipeline(
-		SimpleImputer(stategy="median"),
-		FunctionTransformer(np.log, feature_names_out="one-to-one"),
-		StandardScaler())
-	
-	cluster_simil = ClusterSimilarity(n_clusters=10, gamma=1.0, random_state=42)
-	default_num_pipeline = make_pipeline(SimpleImputer(stategy="median"),
-				StandardScaler())
-				
-	preprocessing = ColumnTransformer([
-        ("bedrooms", ratio_pipeline(), ["total_bedrooms", "total_rooms"]),
-        ("rooms_per_house", ratio_pipeline(), ["total_rooms", "households"]),
-        ("people_per_house", ratio_pipeline(), ["population", "households"]),
-        ("log", log_pipeline, ["total_bedrooms", "total_rooms", "population",
-                               "households", "median_income"]),
-        ("geo", cluster_simil, ["latitude", "longitude"]),
-        ("cat", cat_pipeline, make_column_selector(dtype_include=object)),
-    ],
-    remainder=default_num_pipeline)
+
+log_pipeline = make_pipeline(
+	SimpleImputer(stategy="median"),
+	FunctionTransformer(np.log, feature_names_out="one-to-one"),
+	StandardScaler())
+
+cluster_simil = ClusterSimilarity(n_clusters=10, gamma=1.0, random_state=42)
+default_num_pipeline = make_pipeline(SimpleImputer(stategy="median"),
+			StandardScaler())
+			
+preprocessing = ColumnTransformer([
+	("bedrooms", ratio_pipeline(), ["total_bedrooms", "total_rooms"]),
+	("rooms_per_house", ratio_pipeline(), ["total_rooms", "households"]),
+	("people_per_house", ratio_pipeline(), ["population", "households"]),
+	("log", log_pipeline, ["total_bedrooms", "total_rooms", "population",
+						   "households", "median_income"]),
+	("geo", cluster_simil, ["latitude", "longitude"]),
+	("cat", cat_pipeline, make_column_selector(dtype_include=object)),
+],
+remainder=default_num_pipeline)
 ```
-- Run `Column`
+- Run `ColumnTransformer`, to perform all transformations and outputs
 
 ```python
-
+housing_prepared = preprocessing.fit_transform(housing)
+housing_prepared.shape
+(16512, 24)
+preprocessing.get_feature_names_out()
 ```
 
 # Select and Train a Model
 
 ## Train and Evaluate on the Training Set
+
+- Linear regression model
+
+```python
+from sklearn.linear_model import LinearRegression
+
+lin_eg = make_pipeline(preprocessing, LinearRegression())
+lin_reg.fit(housing, housing_labels)
+```
+
+- Try model on training set, and look at the first 5 predictions and comparing them to the labels
+
+```python
+housing_prediction = lin_reg.predict(housing)
+housing_predictions[:5].round(-2)
+array([243700., 372400., 128800.,  94400., 328300.])
+housing_labels.iloc[:5].values
+array([458300., 483800., 101700.,  96100., 361800.])
+```
+
+- First prediction is off by over 200,000, while other prediction are better
+- Choose to use the RMSE as performance measure
+
+```python
+from sklearn.metrics import root_mean_squared_error
+lin_rmse = root_mean_squared_error(housing_labals, housing_predictions)
+lin_rmse
+68687.89176589991
+```
+- A prediction error is $68,628
+- District range is between 120,000 and 265,000
+- Model underfitting the training date
+- Select a more powerful model with better features, or to reduce the constraints on the model
+	- The model is not regularized
+
+```python
+# Complex non-linear relationships
+from sklearn.tree import DecisionTreeRegressor
+
+tree_reg = make_pipeline(preprocessing, DecisionTreeRegressor(random_state_42))
+tree_reg.fit(housing, housing_labels)
+
+housing_predictions = tree_reg.predict(housing)
+tree_rmse = root_mean_squared_error(housing_labels, housing_predictions)
+tree_rmse
+0.0
+```
+
 ## Better Evaluation Using Cross-Validation
 
+- Use `train_ test_split()` to split the training set into smaller training set and a validation set, then train models against the smaller training set and evaluate them against the validation set
+- k-fold cross-validation
+	- Randomly splits the training set into 10 non-overlapping subsets called folds
+	- Trains and evaluates the tree model 10 times
+	- Returns an array contain the 10 evaluation scores
+
+```python
+fro sklearn.model_selection cross_val_score
+tree_rmses = -cross_val_score(tree_reg, housing, housing_labels,
+				scoring="neg-root_mean_squared_error", cv=10)
+				
+pd.Series(tree_rmses).describe()
+count       10.000000
+mean     66868.027288
+std       2060.966425
+min      63649.536493
+25%      65338.078316
+50%      66801.953094
+75%      68229.934454
+max      70094.778246
+dtype: float64
+```
+
+- Expects a utility function rather than a cost function
+	- Higher score is better
+
+- `RandomForestRegressor` trains many decision trees on random subsets of the features, then averaging out their prediction
+- Models composed of many other models are called ensembles
+
+```python
+from sklearn.ensemble import RandomForestRegressor
+forest_reg = make_pipeline(preprocesing, 
+							RandomForestregressor(random_state=42))
+forest_rmses = -cross_val_score(forest_reg, housing, housing_labels,
+							scoring="neg_root_mean_squared_error", cv=10)
+pd.Series(forest_rmses).describe()
+count       10.000000
+mean     47019.561281
+std       1033.957120
+min      45458.112527
+25%      46464.031184
+50%      46967.596354
+75%      47325.694987
+max      49243.765795
+dtype: float64
+```
+
+- The random forest model is the best, but still overfitting
 
 # Fine-Tune Your Model
 
 ## Grid Search
+
+- Find a great combination of hyperparameter values
+- `GridSearchCV` class is used to search hyperparameters by cross-validation to evaluate all possible combinations
+
+```python
+from sklearn.model_selection import GridSearchCV
+
+full_pipeline = Pipeline([
+	("preprocessing", preprocessing),
+	("random_forest", RandomForestRegressor(random_state=42)),
+])
+paran_gird = [
+	{'preprocessing__geo__n_clusters': [5, 8, 10],
+     'random_forest__max_features': [4, 6, 8]},
+    {'preprocessing__geo__n_clusters': [10, 15],
+     'random_forest__max_features': [6, 8, 10]},
+]
+grid_search = GridSearchCV(full_pipeline, param_grid, cv=3,
+			scoring='neg_root_mean_squared_error')
+grid_search.fit(housing, housing_labels)
+```
+
 ## Randomized Search
 ## Ensemble Methods
 ## Analyzing the Best Models and Their Errors
