@@ -315,9 +315,180 @@ recall_at_90_precision
 - True-negative rate (TNR), is the ratio of negative instances that are correctly classified as negative
 - TNR is also called specificity
 
+- ROC curve plots sensitivity (recall) versus 1 - specificity
+
+```python
+from sklearn.metrics import roc_curve
+
+fpr, tpr, thresholds = roc_curve(y_train, y_scores)
+```
+
+- Plot FPR against the TPR
+- To find the point that corresponds to 90% precision, look for the index of the desired threshold
+
+```python
+idx_for_threshold_at_90 = (threshold <= threshold_for_90_precision).argmax()
+tpr_90, fpr_90 = trp[idx_for_threshold_at_90], fpr[idx_for_threshold_at_90]
+
+plt.plot(fpr, tpr, linewidth=2, label="ROC Curve")
+plt.plot([0, 1], [0, 1], 'k:', label="Random Classifier's ROC Curve")
+plt.plot([fpr_90], [tpr_90], "ko", label="Threshold for 90% precision")
+plt.show()
+```
+
+![[Pasted image 20260130161559.png]]
+
+- The higher the TPR, the more FPR
+- Dotted line represents the ROC curve of a purely random classifier
+- A good classifier stays as far aways from that line as possible
+- Compare classifiers by measuring the area under the curve (AUC)
+- A perfect ROC AUC is equal to 1, whereas a purely random classifier is 0.5
+
+```python
+from sklearn.metrics import roc_auc_score
+roc_auc_score(y_train_5, y_scores)
+0.9604938554008616
+```
+
+- ROC curve is similar to precision/recall (PR) curve
+- Prefer the PR curve then the positive class is rare or when false positives are more important than false negatives
+- Otherwise, use ROC curve
+
+```python
+from sklearn.ensemble import RandomForestClassifier
+forest_clf = RandomForestClassifier(random_state=42)
+
+y_probas_forest = cross_val_predict(forest_clf, x_train, y_train_5, cv=3,
+			method="predict_proba")
+y_probas_forest[:2]
+array([[0.11, 0.89],
+       [0.99, 0.01]])
+```
+
+- The model predicts that the first image is positive with 89%, and predicts the second image is negative with a 99%
+- These are estimated probabilities, not actual probability
+
+```python
+y_scores_forest = y_probas_forest[:, 1]
+precisions_forest, recalls_forest, thresholds_forest = precision_recall_curve(
+		y_train_5, y_scores_forest
+)
+plt.plot(recalls_forest, precisions_forest, "b-", linewidth=2,
+         label="Random Forest")
+plt.plot(recalls, precisions, "--", linewidth=2, label="SGD")
+plt.show()
+```
+
+![[Pasted image 20260130162819.png]]
+
+- PR curve look much better than the SGD
+- $F_1$ score and ROC AUC score are better
+
+```python
+y_train_pred_forest = y_probas_forest[:, 1] >= 0.5
+f1_score(y_train_5, y_train_pred_forest)
+0.9242275142688446
+roc_auc_score(y_train_5, y_scores_forest)
+0.9983436731328145
+```
+
 # Multiclass Classification
 
+- Multiclass classifiers (multi-nominal classifiers) can distinguish between more than two classes
+	- `LogisticRegression, RandomForestClassifier, GaussianNB`
+- Create a system that can classify the digit images into 10 classes (0-9)
+- Get a decision score from each classifier for that image, and select the class whose classifier outputs the highest score
+- One-versus-the-rest (OvR)
+	- Also called one-versus-all (OvA)
+
+- Train a binary classifier for every pair of digits
+	- One-versus-one (OvO)
+	- $N x (N-1)/2$ classifiers
+- Some algorithms scale poorly with the size of the training set
+- OvO is preferred because it is faster to train many classifiers on small training sets
+- For most binary classification algorithms, OvR is preferred
+
+```python
+from sklearn.svm import SVC
+
+svc_clf = SVC(random_state=42)
+svm_clf.fit(x_train[:2000], y_train[:2000])
+
+svm_clf.predict([some_digit])
+array(['5'], dtype=object)
+```
+- The `SVC` using the original target classes
+- Uses OvO strategy and 45 binary classifiers
+- Returns 10 scores per instance, once per class
+- Each class get a score equal to the number of won duels plus or minus a small tweak
+
+```python
+some_digit_scores = svm_clf.decision_function([some_digit])
+some_digit_scores.round(2)
+array([[ 3.79,  0.73,  6.06,  8.3 , -0.29,  9.3 ,  1.75,  2.77,  7.21,
+         4.82]]
+class_id = some_digit_scores.argmax()
+class_id
+5
+
+svm_clf.classes_
+array(['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'], dtype=object)
+svm_clf.classes_[class_id]
+'5'
+```
+
+- The index of each class in the `classes_` array matches the class itself
+- To force OvO or OvR
+- Create an instance and pass a classifier to its constructor
+
+```python
+from sklearn.multiclass import OneVsRestClassifier
+
+ovr_clf = OneVsRestClassifier(SVC(random_state=42))
+ovr_clf.fit(x_train[:2000], y_train[:2000])
+
+ovr_clf.predict([some_digit])
+array(['5'], dtype='<U1')
+len(ovr_clf.estimators_)
+10
+
+sgd_clf = SGDClassifier(random_state=42)
+sgd_clf.fit(X_train, y_train)
+sgd_clf.predict([some_digit])
+array(['3'], dtype='<U1')
+```
+
+- The SGD classifier on a multiclass dataset is incorrect
+
+```python
+sgd_clf.decision_function([some_digit]).round()
+array([[-31893., -34420.,  -9531.,   1824., -22320.,  -1386., -26189.,
+        -16148.,  -4604., -12051.]])
+>>> cross_val_score(sgd_clf, X_train, y_train, cv=3, scoring="accuracy")
+array([0.87365, 0.85835, 0.8689 ])
+```
+- Classifiers are not very confident about its prediction
+	- All scores are negative
+
+- After evaluating the mode, over 85.8% on all test folds
+- Improve the accuracy may scaling the inputs
+
+```python
+from sklearn.preprocessing import StandardScaler
+scaler = StandardScaler()
+x_train_scaled = scaler.fit_transform(x_train.astype("float64"))
+cross_val_score(sgd_clf, X_train_scaled, y_train, cv=3, scoring="accuracy")
+array([0.8983, 0.891 , 0.9018])
+```
+
 # Error Analysis
+
+- A coloured diagram of the confusion matrix is easier to analyze
+
+```python
+from sklearn
+```
+
 
 # Multilabel Classification
 
