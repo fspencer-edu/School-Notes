@@ -993,10 +993,101 @@ grid_search = GridSearchCV(full_pipeline, param_grid, cv=3,
 grid_search.fit(housing, housing_labels)
 ```
 
+- If fitting the pipeline transformers is computationally expensive, `memory` parameter can be used to cache a directly
+- `GridSearchCV` will evaluate all 9 the combinations of `n_clusters` and `max_features` hyperparameter values, then 6 combinations of hyperparameter values in the second `dict`
+- Total grid search is 15, and train the pipeline 3 times for 3-fold cross validation
+	- 45 rounds of training
+
+```python
+grid_search.best_params_
+{'preprocessing__geo__n_clusters': 15, 'random_forest__max_features': 6}
+```
+
+- Once it finds the best estimator using CV, it retrains it on the whole training set
+
+``` python
+cv_res = pd.DataFrame(grid_search.cv_results_)
+cv_rea.sort_values(by="mean_test_score", ascending=False, inplace=True)
+cv_res.head()
+n_clusters max_features  split0  split1  split2  mean_test_rmse
+12         15            6   43460   43919   44748           44042
+13         15            8   44132   44075   45010           44406
+14         15           10   44374   44286   45316           44659
+7          10            6   44683   44655   45657           44999
+9          10            6   44683   44655   45657           44999
+```
+
+- The RMSE for the best model is 44042, which is better than the score by default hyperparameter values
+
 ## Randomized Search
+
+- `RandomizedSearchCV` is used when the hyperparameter search space is large
+- Select random value for each hyperparameter at every iteration
+	- Randomized on continuous features
+	- If hyperparameters are similar, reduces the training time
+	- Random search can always run for any number of iterations
+
+```python
+for sklearn.model_selection import RandomizedSearchCV
+from cripy.stats import randint
+param_disribs = {'preprocessing__geo__n_clusters': randint(low=3, high=50),
+                  'random_forest__max_features': randint(low=2, high=20)}
+
+rnd_search = RandomizedSearchCV(
+	full_pipeline, param_distribution=param_distribs, n_iter=10, cv=3,
+				scoring='neg_root_mean_squared_error', random_state=42
+)
+
+rnd_search.fit(housing, housing_labels)
+```
+
 ## Ensemble Methods
+
+- Combine models that perform the best
+- The group will often perform better than the best individual model
+- Train and fine-tune a k-nearest neighbour model, then create an ensemble model
+
 ## Analyzing the Best Models and Their Errors
+
+- Gain insight on inspecting the best models
+
+```python
+final_model = rnd_search.best_estimator_
+feature_importances = final_model["random_forest"].feature_importances_
+feature_importances.round(2)
+array([0.07, 0.05, 0.05, 0.01, 0.01, 0.01, 0.01, 0.19, [...], 0.01])
+sorted(zip(feature_importances,
+...            final_model["preprocessing"].get_feature_names_out()),
+...        reverse=True)
+[(0.18694559869103852, 'log__median_income'),
+ (0.0748194905715524, 'cat__ocean_proximity_INLAND'),
+ (0.06926417748515576, 'bedrooms__ratio'),
+ (0.05446998753775219, 'rooms_per_house__ratio'),
+ (0.05262301809680712, 'people_per_house__ratio'),
+ (0.03819415873915732, 'geo__Cluster 0 similarity'),
+ [...]
+ (0.00015061247730531558, 'cat__ocean_proximity_NEAR BAY'),
+ (7.301686597099842e-05, 'cat__ocean_proximity_ISLAND')]
+```
+- Look at specific errors that the system makes
+- Creating subsets of validation set for each category help the model performance
+
+
 ## Evaluate Your System on the Test Set
+
+- Evaluate the final model on the test set
+- Get the predictors and the labels from the test and run
+
+```python
+X_test = strat_test_set.drop("median_house_value", axis=1)
+y_test = strat_test_set["median_house_value"].copy()
+
+final_predictions = final_model.predict(X_test)
+final_rmse = root_mean_squared_error(y_test, final_predictions)
+print(final_rmse) # prints 41424.40026462184
+```
+- Compute a 95% confidence internval for the generalization error using `scipy`
+
 
 
 # Launch, Monitor, and Maintain Your System
