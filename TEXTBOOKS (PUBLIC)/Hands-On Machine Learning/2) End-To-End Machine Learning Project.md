@@ -713,9 +713,155 @@ class StandardScalerClone(BaseEstimator, TransformerMixin):
 		return X / self.scale_
 ```
 
+- A customer transformer can use other estimators in its implementation
+
+```python
+from sklearn.cluster import KMeans
+
+class ClusterSimilarity(BaseEstimator, TransformerMixin):
+	def __init__(self, n_clusters=10, gamma=1.0, random_state=None):
+		self.n_clusters = n_clusters
+		self.gamma = gamma
+		self.random_state = random_state
+		
+	def fit(self, X, y=None, sample_weight=None);
+		self.kmeans_ = KMeans(self.n_clusters, random_state=self.random_state)
+		self.kmeans_.fit(X, sample_weight=sample_weight)
+		return self
+		
+	def transform(self, X):
+		retrun rbf_kernel(X, self.kmeans_.cluster_centers_, gamma=self.gamma)
+		
+	def get_feature_names_out(self, names=None):
+		return [f"Cluster {i} similarity" for i in range(self.n_clusters)]
+```
+- k-means is a clustering algorithm that locates clusters in the data
+- After training, the cluster centres are available via the `cluster_centers_` attribute
+
+```python
+cluster_simil = ClusterSimilarity(n_clusters=10, gamma=1., random_state=42)
+similarities = cluster_simil.fit_transform(housing[["latitude", "longitude"]],
+                                           sample_weight=housing_labels)
+similarities[:3].round(2)
+array([[0.  , 0.14, 0.  , 0.  , 0.  , 0.08, 0.  , 0.99, 0.  , 0.6 ],
+       [0.63, 0.  , 0.99, 0.  , 0.  , 0.  , 0.04, 0.  , 0.11, 0.  ],
+       [0.  , 0.29, 0.  , 0.  , 0.01, 0.44, 0.  , 0.7 , 0.  , 0.3 ]])
+```
+
+- Transformer uses k-mean to locate the clusters, then measure the Gaussian RBF similarity between each district and all 10 cluster centres
+
+![[Pasted image 20260130131240.png]]
+
 
 ## Transformation Pipeline
 
+- `Pipeline` class is used for sequences of transformation
+
+```python
+from sklearn.pipeline import Pipeline
+
+num_pipeline = Pipeline([
+	("impute", SimpleImputer(stragegy="median")),
+	("standardize", StandardScaler()),
+])
+```
+
+- Constructor takes a list of name/estimator pairs defining a sequence of steps
+- Estimators must all be transformers, except for the least one
+	- Transformer
+	- Predictor
+	- Or another type of estimator
+
+- `make_pipeline()` used to name functions
+
+```python
+from sklearn.pipeline import make_pipeline
+num_pipeline = make_pipeline(SimpleImputer(strategy="median"))
+```
+
+- Pipelining support indexing
+- Use a single transformer capable of handling all columns, applying the appropriate transformations to each column
+	- Change numerical attribute to categorical attributes
+
+```python
+from sklearn.compose import ColumnTransformer
+
+num_attribs = ["longitude", "latitude", "housing_median_age", "total_rooms",
+               "total_bedrooms", "population", "households", "median_income"]
+cat_attribs = ["ocean_proximity"]
+cat_pipeline = make_pipeline(
+	SimpleImputer(strategy="most_frequent"),
+	OneHotEncoder(handle_unknown="ignore"))
+	
+preprocessing = ColumnTransformer([
+	("num", num_pipeline, num_attribs),
+	("cat", cat_pipeline, cat_attribs)
+])
+```
+
+- `make_column_selector` class is used to automatically select all the features of a given type
+- Pass a selector to the `ColumnTransfomer` instead of column names or indices
+
+```python
+from sklearn.compose import make_column_selector, make_column_transformer
+
+preprocessing = make_column_transformer(
+    (num_pipeline, make_column_selector(dtype_include=np.number)),
+    (cat_pipeline, make_column_selector(dtype_include=object)),
+)
+
+housing_prepared = preprocessing.fit_tranform(housing)
+```
+- The preprocessing pipeline takes the entire training dataset and applied each transformer to the appropriate columns, then concatenates the transformed columns horizontally
+- Estimates the density of the final matrix, and return a sparse matrix if the density is lower than a given threshold
+
+- Create a simple pipeline that will perform all transformations
+	- Missing values in numerical features will be imputed by replacing them with the median
+		- In categorial features, missing values will be replaced by most frequent
+	- Categorical features will be one-hot encoded
+	- A few ratio feature will be computed and added
+	- A few cluster similarity feature will be added
+	- Features with a long tail will be replaced by their log
+	- All numerical features will be standardized
+
+```python
+def column_ratio(X):
+	return X[:, [0]] / X[:, [1]]
+	
+def ratio_name(function_transformer, feature_names_in):
+	return ["ratio"]
+	
+def ratio_pipeline():
+	return make_pipeline(
+		SimpleImputer(strategy="median"),
+		FunctionTransformer(column_ratio, feature_names_out=ratio_name),
+		StandardScaler())
+	
+	log_pipeline = make_pipeline(
+		SimpleImputer(stategy="median"),
+		FunctionTransformer(np.log, feature_names_out="one-to-one"),
+		StandardScaler())
+	
+	cluster_simil = ClusterSimilarity(n_clusters=10, gamma=1.0, random_state=42)
+	default_num_pipeline = make_pipeline(SimpleImputer(stategy="median"),
+				StandardScaler())
+				
+	preprocessing = ColumnTransformer([
+        ("bedrooms", ratio_pipeline(), ["total_bedrooms", "total_rooms"]),
+        ("rooms_per_house", ratio_pipeline(), ["total_rooms", "households"]),
+        ("people_per_house", ratio_pipeline(), ["population", "households"]),
+        ("log", log_pipeline, ["total_bedrooms", "total_rooms", "population",
+                               "households", "median_income"]),
+        ("geo", cluster_simil, ["latitude", "longitude"]),
+        ("cat", cat_pipeline, make_column_selector(dtype_include=object)),
+    ],
+    remainder=default_num_pipeline)
+```
+- Run `Column`
+
+```python
+
+```
 
 # Select and Train a Model
 
