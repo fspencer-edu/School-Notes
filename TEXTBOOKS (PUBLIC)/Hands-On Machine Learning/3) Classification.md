@@ -57,9 +57,9 @@ y[0]
 '5'
 ```
 
-![[Pasted image 20260130145530.png]]
+<img src="/images/Pasted image 20260130145530.png" alt="image" width="500">
 
-![[Pasted image 20260130145552.png]]
+<img src="/images/Pasted image 20260130145552.png" alt="image" width="500">
 
 - Create a test set and set it aside for inspecting
 - First 60000 is training set, 10,000 is for the test set
@@ -189,7 +189,7 @@ array([[53892,   687],
 
 **Precision**
 
-![[Pasted image 20260130151924.png]]
+<img src="/images/Pasted image 20260130151924.png" alt="image" width="500">
 
 - Create a classifier that always makes negative predictions, except for one single positive prediction on the instance it's most confident about
 - Recall also called sensitivity or the true positive rate (TPR)
@@ -197,10 +197,10 @@ array([[53892,   687],
 
 **Recall**
 
-![[Pasted image 20260130152108.png]]
+<img src="/images/Pasted image 20260130152108.png" alt="image" width="500">
 
 
-![[Pasted image 20260130152132.png]]
+<img src="/images/Pasted image 20260130152132.png" alt="image" width="500">
 
 
 ## Precision and Recall
@@ -216,7 +216,7 @@ recall_score(y_train_5, y_train_pred) # == 3530 / (1891 + 3530)
 - Harmonic mean of precision and recall
 - Regular mean treats all values equally, the harmonic mean gives much more weight to low values
 
-![[Pasted image 20260130152535.png]]
+<img src="/images/Pasted image 20260130152535.png" alt="image" width="500">
 
 
 ```python
@@ -234,7 +234,7 @@ f1_score(y_train_5, y_train_pred)
 - For each instance the SGD classifier computes a score based on a decision function
 - If the score is greater than a threshold, it assigns the instance to the positive class, otherwise the negative class
 
-![[Pasted image 20260130153059.png]]
+<img src="/images/Pasted image 20260130153059.png" alt="image" width="500">
 
 - The decision threshold is positioned at the central arrow
 - Calling `predict()` method, set the threshold
@@ -265,11 +265,56 @@ y_scores = cross_val_predict(sgd_clf, x_train, y_train_5, cv=3,
 from sklearn.metrices import precision_recall_curve
 precisions, recalls, thesholds = precision_recall_curve(y_train_5, y_scores)
 
-plt.plot(t)
+plt.plot(thresholds, precisions[:-1], "b--", label="Precision", linewidth=2)
+plt.plot(thresholds, recalls[:-1], "g-", label="Recall", linewidth=2)
+plt.vlines(threshold, 0, 1.0, "k", "dotted", label="threshold")
+[...]  # beautify the figure: add grid, legend, axis, labels, and circles
+plt.show()
 ```
 
+<img src="/images/Pasted image 20260130153832.png" alt="image" width="500">
+
+- Precision may sometimes go down when you raise the threshold
+- Whereas recall can only go down
+- As the threshold value, precision is near 90%, recall is around 50%
+- Plot precision directly against recall
+
+```python
+plt.plot(recalls, precisions, linewidth=2, label="Precision/Recall Curve")
+plt.show()
+```
+<img src="/images/Pasted image 20260130154043.png" alt="image" width="500">
+
+
+- Precision starts to fall around 80% recall
+- Select a threshold at around 60% recall
+- Search for the lowest threshold that gives 90% precision
+
+```python
+idx_for_90_precision = (precisions >=90).argmax()
+threshold_for_90_precision = thresholds[idx_for_90_precision]
+threhold_for_90_precision
+3370.0194991439557
+
+y_train_pred_90 = (y_scores >= threshold_for_90_precision)
+precision_score(y_train_5, y_train_pred_90)
+0.9000345901072293
+recall_at_90_precision = recall_score(y_train_5, y_train_pred_90)
+recall_at_90_precision
+0.4799852425751706
+```
+
+- 90% precision classifier
+- A high precision classifier is not useful if the recall is too low
 
 ## The ROC Curve
+
+- The receiver operating characteristic (ROC) curve is another common tool used with binary classifiers
+- Similar to precision/recall curve, but instead of plotting, the ROC curve plots the true positive rate, against the false positive rate (FPR)
+- FPR, also called fallout, is the ratio of the negative instances that are incorrectly classified as positive
+- True-negative rate (TNR), is the ratio of negative instances that are correctly classified as negative
+- TNR is also called specificity
+
 # Multiclass Classification
 
 # Error Analysis

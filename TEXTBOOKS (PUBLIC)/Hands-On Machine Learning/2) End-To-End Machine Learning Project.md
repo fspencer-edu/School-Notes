@@ -750,7 +750,7 @@ array([[0.  , 0.14, 0.  , 0.  , 0.  , 0.08, 0.  , 0.99, 0.  , 0.6 ],
 
 - Transformer uses k-mean to locate the clusters, then measure the Gaussian RBF similarity between each district and all 10 cluster centres
 
-![[Pasted image 20260130131240.png]]
+<img src="/images/Pasted image 20260130131240.png" alt="image" width="500">
 
 
 ## Transformation Pipeline
