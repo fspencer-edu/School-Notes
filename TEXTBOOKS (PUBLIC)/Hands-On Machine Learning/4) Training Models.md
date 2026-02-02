@@ -583,10 +583,137 @@ for epoch in range(n_epochs):
 ![[Pasted image 20260202104654.png]]
 
 - Log loss can be show mathematically using Bayesian inference
-- There is no known c
+- There is no known closed-form equation to compute the value of $\theta$ that minimizes this cost function
+- Cost function is convex, so GD is guaranteed to find the global minimum
 
 
+**Logistic cost function partial derivatives**
 
+![[Pasted image 20260202104851.png]]
+
+- For each instance it computes the prediction error and multiples its by the $j$ th feature value
+- Computes the average over all training instances
+- Use gradient vector in batch GD
 
 ## Decision Boundaries
+
+- Use iris dataset to illustrate logistic regression
+
+```python
+from sklearn.datasets import load_iris
+iris = load_iris(as_frame=True)
+list(iris)
+['data', 'target', 'frame', 'target_names', 'DESCR', 'feature_names',
+ 'filename', 'data_module']
+iris.target.head(3)
+0    0
+1    0
+2    0
+Name: target, dtype: int64
+iris.target_names
+array(['setosa', 'versicolor', 'virginica'], dtype='<U10')
+
+# split data
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
+
+X = iris.data[["petal width (cm)"]].values
+y = iris.targer_names[iris_target] == 'virginica'
+X_train, X_test, y_train = train_test_split(X, y, random_state=42)
+
+log_reg = LogisticRegression(random_state=42)
+log_reg.fit(X_train, y_train)
+
+# Model's estimated probabilities
+X_new = np.linspace(0, 3, 1000).reshape(-1, 1)
+y_proba = log_reg,predict_proba(X_new)
+decision_boundary = X_new[y_proba[:, 1] >= 0.5][0, 0]
+
+plt.plot(X_new, y_proba[:, 0], "b--", linewidth=2,
+	label="Not Iris virginica proba")
+plt.plot(X_new, y_proba[:, 1], "g-", linewidth=2, label="Iris virginica proba")
+plt.plot([decision_boundary, decision_boundary], [0, 1], "k:", linewidth=2,
+         label="Decision boundary")
+plt.show()
+```
+
+![[Pasted image 20260202105537.png]]
+
+- The petal width of Iris virginica flowers (triangles) ranges from 1.4 to 2.5 cm, while other iris flowers (squares) have a smaller petal width, 0.1 to 1.8
+- There is a decision boundary at around 1.6 cm where both probabilities are equal to 50%
+
+```python
+decision_boundary
+1.6516516516516517
+log_reg.predict([[1.7], [1.5]])
+array([ True, False])
+```
+
+![[Pasted image 20260202105809.png]]
+
+
 ## Softmax Regression
+
+- The logistic regression model can be generalized to support classes directly, without having to train and combine binary classifiers
+	- Softmax or multinomial logistic regression
+- When given an instance x, the softmax regression model first computes a score $s_k(x)$ for each class k, then estimates the probability of each class by applying the softmax function (normalized exponential)
+
+**Softmax score for class k**
+
+![[Pasted image 20260202110031.png]]
+
+- Each class has its own dedicated parameter vector
+- All vectors are stored as rows in a parameter matrix, $\Theta$
+- Function computes the exponential of every score, then normalizes them
+
+**Softmax Function**
+
+![[Pasted image 20260202110153.png]]
+
+$K$ = number of classes
+$s(x)$ = a vector containing the scores of each class
+$\sigma(s(x))_k$ = estimated probability that the instance x belongs to class k
+
+**Softmax Regression Classifier Prediction**
+
+![[Pasted image 20260202110317.png]]
+
+- argmax operator returns the value of a variable that maximizes a function
+
+- The objective is to have a model that estimates a high probability for the target class
+- Minimizing the cost function, called the cross entropy, should lead to this objective because it penalizes the model when it estimates a low probability for a target class
+- Cross entropy is used to measure how well a set of estimated class probabilities matches the target classes
+
+**Cross entropy cost function**
+
+![[Pasted image 20260202110510.png]]
+
+$y_k$ = target probability
+
+- Cross entropy originates from information theory
+- Measures the average number of bits you send per option
+- If assumption is perfect, cross entropy will be equal to the entropy of the weather
+- If wrong, cross entropy will be greater by an amount called the Kullback–Leibler (KL) divergence
+
+**Cross entropy gradient vector for class k**
+
+![[Pasted image 20260202110755.png]]
+
+
+```python
+X = iris.data[["petal length (cm)", "petal width (cm)"]].values
+y = iris["target"]
+X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42)
+softmax_reg = LogisticRegression(C=30, random_state=42)
+softmax.fit(X_train, y_train)
+
+softmax_reg.predict([[5, 2]])
+array([2])
+softmax_reg.predict_proba([[5, 2]]).round(2)
+array([[0.  , 0.04, 0.96]])
+```
+
+![[Pasted image 20260202111016.png]]
+
+- Decision boundaries between two classes are linear
+- 
