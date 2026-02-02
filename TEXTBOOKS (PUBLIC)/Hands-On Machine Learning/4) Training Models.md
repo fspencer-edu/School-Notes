@@ -171,12 +171,130 @@ $X^+ = V\sum^+U^T$
 - Gradient descent is guaranteed to approach arbitrarily close the global minimum
 - Cost function can be elongated depending on feature scales
 
+![[Pasted image 20260202085624.png]]
+
+- Training a model means searching for a combination of model parameters that minimizes a cost function
+- More parameters a mode has, the mode dimensions the space has, and the harder the search is
+
 ## Batch Gradient Descent
+
+- Calculates how much the cost function will change if you change $\theta_j$ a little
+	- Partial derivative
+
+**Partial Derivatives of the Cost Function**
+
+![[Pasted image 20260202092256.png]]
+
+- The gradient vector, $\Delta_{\theta}MSE(\theta)$, contains all partial derivatives of the cost function
+
+**Gradient Vector of the Cost Function**
+
+![[Pasted image 20260202092403.png]]
+
+- Batch gradient descent uses the whole batch of training data at every step
+- Slow
+- Scales will with the number of features
+- Faster on a linear regression model with many features compared to normal equation or SVD decomposition
+
+ - Subtract $\Delta_{\theta}MSE(\theta)$ from $\theta$ to get downhill vector
+
+**Gradient descent step**
+
+![[Pasted image 20260202092633.png]]
+
+```python
+eta = 0.1 # learning rate
+n_epochs = 1000
+m = len(X_b)
+
+np.random.seed(42)
+theta = np.random.randn(2, 1)
+for epcoh in range(n_epcochs):
+	gradients = 2 / m * X_b.T @ (X_b @ theta - y)
+	theta = theta - eta * gradients
+theta
+array([[4.21509616],
+       [2.77011339]])
+```
+
+- Each iteration over the training set is called an epoch
+
+![[Pasted image 20260202092906.png]]
+
+- To find a good learning rate, use a grid search
+- Set a very large number of epochs but to interrupt the algorithm when the gradient vector becomes tiny
+- Norm becomes smaller than the tolerance, $\epsilon$, and reached minimum
+- A convex slope will converge $O(1/\epsilon)$ iterations
+- Uses entire training set to compute the gradient at each step
+
+
 ## Stochastic Gradient Descent
+
+- Stochastic gradient descent picks a random instance in the training set at every step and computes the gradients based only on that single instance
+- Algorithm is faster, but less regular than batch GD
+- Cost function will bounce up and down, decreasing only on overage
+- Final value is good but not optimal
+
+![[Pasted image 20260202093510.png]]
+
+- SGD has a better change for irregular cost functions
+- Gradually reduce the learning rate
+	- Simulated annealing
+		- An algorithm inspired by the processing in metallurgy of annealing, where molten metal is slowly cooled down
+- The function that determines the learning rate at each iteration is called the learning schedule
+
+```python
+n_epochs = 50
+t0, t1 = 5, 50 # learning sch
+
+def learning_schedule(t):
+	return t0/ (t + t1)
+	
+np.random.seed(42)
+theta = np.random.randn(2, 1)
+
+for epoch in range(n_epochs):
+	for iteration in range(m):
+	random_index = np.random.randint(m)
+	xi = X_b[random_index : random_index + 1]
+	yi = y[random_index : random_index + 1]
+	gradients = 2 * xi.T @ (xi @ theta - yi)
+	eta = learning_schedule(epoch * m + iteration)
+	theta = theta - eta * gradients
+theta
+array([[4.21076011],
+       [2.74856079]])
+```
+
+![[Pasted image 20260202094008.png]]
+
+- Some instance may be picked several times per epoch
+- Another approach is to shuffle the training set, then go through instance by instance
+- Training instances must be independent and identically distributed (IID) to ensure that the parameters get pulled towards the global optimum, on average
+- Shuffle the instances, or SGD will optimize for one label
+
+```python
+from sklearn.linear_model import SGDRegression
+
+sgd_reg = SGDRegression(max_iter=1000, tol=1e-5, pentalty=None, eta0=0.01,
+		n_iter_no_change=100, random_state_42)
+sgd_reg.fit(X, y.ravel())
+```
+
+
 ## Mini-Batch Gradient Descent
 
+- At each step, instead of computing the gradients based on the full training set (GD) or on one instance (SGD), mini-batch computes the gradients on small random sets of instances
+- Performance boost from hardware optimization of matrix operations, GPUs
+- Walking closer to min that SGD, harder to escape the local minima
+
+![[Pasted image 20260202094649.png]]
+
+![[Pasted image 20260202094720.png]]
 
 # Polynomial Regression
+
+- Add powers of each feature as new features, then train a linear model on this ex
 
 # Learning Curves
 
