@@ -46,7 +46,7 @@ Source.from_file("iris_tree.dot")
 
 **Gini Impurity**
 
-![[Pasted image 20260202124235.png]]
+<img src="/images/Pasted image 20260202124235.png" alt="image" width="500">
 
 $p_{i, k}$ = ratio of the class k instances among the training instances
 
@@ -59,7 +59,7 @@ $1 - (0/54)^2 - (49/54)^2 - (5/54)^2 = 0.168$
 - The thick vertical line represents the decision boundary of the root
 - Righthand area is impure, and further divided into two nodes
 
-![[Pasted image 20260202124458.png]]
+<img src="/images/Pasted image 20260202124458.png" alt="image" width="500">
 
 - Decision trees are intuitive, and their decisions are easy to interpret
 - Models are often called white box models
@@ -87,7 +87,7 @@ array([1])
 
 **CART cost function for classification**
 
-![[Pasted image 20260202125300.png]]
+<img src="/images/Pasted image 20260202125300.png" alt="image" width="500">
 
 - Once CART algorithm has successfully split the training set in two, it splits the subsets using the same logic, then the sub-subsets, and so on, recursively
 - Stops when reaches the max depth
@@ -117,7 +117,7 @@ array([1])
 
 **Entropy**
 
-![[Pasted image 20260202125949.png]]
+<img src="/images/Pasted image 20260202125949.png" alt="image" width="500">
 
 Example - Entropy of Green Node
 
@@ -164,7 +164,7 @@ tree_clf1.fit(X_moons, y_moons)
 tree_clf2.fit(X_moons, y_moons)
 ```
 
-![[Pasted image 20260202133433.png]]
+<img src="/images/Pasted image 20260202133433.png" alt="image" width="500">
 
 - The unregularized model is overfitting
 
@@ -194,31 +194,31 @@ tree_reg = DecisionTreeRegressor(max_depth=2, random_state=42)
 tree_reg.fit(X_quad, y_quad)
 ```
 
-![[Pasted image 20260202133741.png]]
+<img src="/images/Pasted image 20260202133741.png" alt="image" width="500">
 
 - The main different is that instead of predicting a class in each node, it predicts a value
 - The prediction is the average target value of the 110 training instances associated with this leaf node
 - Predicted value for each region is always the average target value of the instances in that region
 - Algorithm splits each region in a way that makes most training instances as close as possible to that predicted value
 
-![[Pasted image 20260202134001.png]]
+<img src="/images/Pasted image 20260202134001.png" alt="image" width="500">
 
 - CART algorithm works similarly, except instead of trying to split the training set in a way that minimizes impurity, it splits the training set to minimize MSE
 
 **CART cost function for regression**
 
-![[Pasted image 20260202134108.png]]
+<img src="/images/Pasted image 20260202134108.png" alt="image" width="500">
 
 - Decision trees are prone to overfitting with regression tasks
 
-![[Pasted image 20260202134134.png]]
+<img src="/images/Pasted image 20260202134134.png" alt="image" width="500">
 
 
 # Sensitivity to Axis Orientation
 
 - Decision trees prefer orthogonal decision boundaries
 
-![[Pasted image 20260202134240.png]]
+<img src="/images/Pasted image 20260202134240.png" alt="image" width="500">
 
 - Scale the data, then apply a principal component analysis function transformation (PCA)
 - Rotates data in a way that reduces the correlation between features
@@ -235,14 +235,14 @@ tree_clf_pca = DecisionTreeClassifier(max_depth=2, random_state=2)
 tree_clf_pca.fit(X_iris_rotated, y_iris)
 ```
 
-![[Pasted image 20260202134517.png]]
+<img src="/images/Pasted image 20260202134517.png" alt="image" width="500">
 
 
 # Decision Trees Have a High Variance
 
 - Decision trees alway have a high variance
 
-![[Pasted image 20260202134549.png]]
+<img src="/images/Pasted image 20260202134549.png" alt="image" width="500">
 
 - Averaging predictions over many trees, reduces variance
 - Ensemble trees called random forests
