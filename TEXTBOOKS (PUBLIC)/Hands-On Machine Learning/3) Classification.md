@@ -336,7 +336,7 @@ plt.plot([fpr_90], [tpr_90], "ko", label="Threshold for 90% precision")
 plt.show()
 ```
 
-![[Pasted image 20260130161559.png]]
+<img src="/images/Pasted image 20260130161559.png" alt="image" width="500">
 
 - The higher the TPR, the more FPR
 - Dotted line represents the ROC curve of a purely random classifier
@@ -379,7 +379,7 @@ plt.plot(recalls, precisions, "--", linewidth=2, label="SGD")
 plt.show()
 ```
 
-![[Pasted image 20260130162819.png]]
+<img src="/images/Pasted image 20260130162819.png" alt="image" width="500">
 
 - PR curve look much better than the SGD
 - $F_1$ score and ROC AUC score are better
@@ -485,7 +485,7 @@ array([0.8983, 0.891 , 0.9018])
 
 - A coloured diagram of the confusion matrix is easier to analyze
 
-![[Pasted image 20260130164604.png]]
+<img src="/images/Pasted image 20260130164604.png" alt="image" width="500">
 
 ```python
 from sklearn.metrics import ConfusionMatrixDisplay
@@ -518,7 +518,7 @@ plt.show()
 - Normalize the confusion matrix by column rather than by row (bottom right)
 - CM helps to identify ways to improve the classifier
 
-![[Pasted image 20260130165302.png]]
+<img src="/images/Pasted image 20260130165302.png" alt="image" width="500">
 
 - Most misclassified images seem obvious
 - Data augmentation
@@ -593,7 +593,7 @@ y_train_mod = x_train
 y_test_mod = x_test
 ```
 
-![[Pasted image 20260130170906.png]]
+<img src="/images/Pasted image 20260130170906.png" alt="image" width="500">
 
 ```python
 knn_clf = KNeighborsClassifier()

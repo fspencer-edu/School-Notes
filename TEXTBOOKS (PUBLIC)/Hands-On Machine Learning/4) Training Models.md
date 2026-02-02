@@ -51,7 +51,7 @@ $\theta \cdot x$ = dot product
 
 **MSE cost function for a linear regression model**
 
-![[Pasted image 20260202083046.png]]
+<img src="/images/Pasted image 20260202083046.png" alt="image" width="500">
 
 - Model is parametrized by the vector $\theta$
 
@@ -75,7 +75,7 @@ X = 2 * np.random.rand(m, 1)
 y = 4 + 3 * X + np.random.randn(m, 1)
 ```
 
-![[Pasted image 20260202083441.png]]
+<img src="/images/Pasted image 20260202083441.png" alt="image" width="500">
 
 - Compute $\hat{\theta}$ using the Normal equation
 
@@ -109,7 +109,7 @@ plt.plot(X_new, y_predict, "r-", labal="Predictions")
 plt.show()
 ```
 
-![[Pasted image 20260202084014.png]]
+<img src="/images/Pasted image 20260202084014.png" alt="image" width="500">
 
 - Perform linear regression
 - Scikit separates the bias terms from the feature weights
@@ -158,12 +158,12 @@ $X^+ = V\sum^+U^T$
 - Fill $\theta$ with random values (random initialization)
 - Converge at minimum
 
-![[Pasted image 20260202085125.png]]
+<img src="/images/Pasted image 20260202085125.png" alt="image" width="500">
 
 - Size of step is determined by learning rate hyperparameter
 - If the random initialization starts on the left, then it will converge to a local minimum, not the global minimum
 
-![[Pasted image 20260202085244.png]]
+<img src="/images/Pasted image 20260202085244.png" alt="image" width="500">
 
 - MSE cost function for a linear regression model happens to be a convex function
 - MSE function is convex, therefore no local minima, just one global minimum
@@ -171,7 +171,7 @@ $X^+ = V\sum^+U^T$
 - Gradient descent is guaranteed to approach arbitrarily close the global minimum
 - Cost function can be elongated depending on feature scales
 
-![[Pasted image 20260202085624.png]]
+<img src="/images/Pasted image 20260202085624.png" alt="image" width="500">
 
 - Training a model means searching for a combination of model parameters that minimizes a cost function
 - More parameters a mode has, the mode dimensions the space has, and the harder the search is
@@ -183,13 +183,13 @@ $X^+ = V\sum^+U^T$
 
 **Partial Derivatives of the Cost Function**
 
-![[Pasted image 20260202092256.png]]
+<img src="/images/Pasted image 20260202092256.png" alt="image" width="500">
 
 - The gradient vector, $\Delta_{\theta}MSE(\theta)$, contains all partial derivatives of the cost function
 
 **Gradient Vector of the Cost Function**
 
-![[Pasted image 20260202092403.png]]
+<img src="/images/Pasted image 20260202092403.png" alt="image" width="500">
 
 - Batch gradient descent uses the whole batch of training data at every step
 - Slow
@@ -200,7 +200,7 @@ $X^+ = V\sum^+U^T$
 
 **Gradient descent step**
 
-![[Pasted image 20260202092633.png]]
+<img src="/images/Pasted image 20260202092633.png" alt="image" width="500">
 
 ```python
 eta = 0.1 # learning rate
@@ -219,7 +219,7 @@ array([[4.21509616],
 
 - Each iteration over the training set is called an epoch
 
-![[Pasted image 20260202092906.png]]
+<img src="/images/Pasted image 20260202092906.png" alt="image" width="500">
 
 - To find a good learning rate, use a grid search
 - Set a very large number of epochs but to interrupt the algorithm when the gradient vector becomes tiny
@@ -235,7 +235,7 @@ array([[4.21509616],
 - Cost function will bounce up and down, decreasing only on overage
 - Final value is good but not optimal
 
-![[Pasted image 20260202093510.png]]
+<img src="/images/Pasted image 20260202093510.png" alt="image" width="500">
 
 - SGD has a better change for irregular cost functions
 - Gradually reduce the learning rate
@@ -266,7 +266,7 @@ array([[4.21076011],
        [2.74856079]])
 ```
 
-![[Pasted image 20260202094008.png]]
+<img src="/images/Pasted image 20260202094008.png" alt="image" width="500">
 
 - Some instance may be picked several times per epoch
 - Another approach is to shuffle the training set, then go through instance by instance
@@ -288,9 +288,9 @@ sgd_reg.fit(X, y.ravel())
 - Performance boost from hardware optimization of matrix operations, GPUs
 - Walking closer to min that SGD, harder to escape the local minima
 
-![[Pasted image 20260202094649.png]]
+<img src="/images/Pasted image 20260202094649.png" alt="image" width="500">
 
-![[Pasted image 20260202094720.png]]
+<img src="/images/Pasted image 20260202094720.png" alt="image" width="500">
 
 # Polynomial Regression
 
@@ -304,7 +304,7 @@ X = 6 * np.random.rand(m, 1) - 3
 y = 0.5 * X ** 2 + X + 2 + np.random.randm(m, 1)
 ```
 
-![[Pasted image 20260202094910.png]]
+<img src="/images/Pasted image 20260202094910.png" alt="image" width="500">
 
 ```python
 from sklearn.preprocessing import PolynomialFeatures
@@ -321,16 +321,16 @@ lin_reg.intercept_, lin_reg.coef_
 (array([1.78134581]), array([[0.93366893, 0.56456263]]))
 ```
 
-![[Pasted image 20260202095115.png]]
+<img src="/images/Pasted image 20260202095115.png" alt="image" width="500">
 
-![[Pasted image 20260202095131.png]]
+<img src="/images/Pasted image 20260202095131.png" alt="image" width="500">
 
 
 # Learning Curves
 
 - If you perform high-degree polynomial regression, the fitted training data is better than plain linear regression
 
-![[Pasted image 20260202095333.png]]
+<img src="/images/Pasted image 20260202095333.png" alt="image" width="500">
 
 - Model that will generalize best is the quadratic model
 - Use cross validation to estimate a model's generalization performance
@@ -352,7 +352,7 @@ plt.plot(train_sizes, train_errors, "r-+", linewidth=2, label="train")
 plt.plot(train_sizes, valid_errors, "b-", linewidth=2, label="valid")
 plt.show()
 ```
-![[Pasted image 20260202095812.png]]
+<img src="/images/Pasted image 20260202095812.png" alt="image" width="500">
 
 - The model is underfitting
 - Error ends up at a plateau
@@ -371,7 +371,7 @@ train_size, train_scores, valid_scores = learing_curve(
 )
 ```
 
-![[Pasted image 20260202100244.png]]
+<img src="/images/Pasted image 20260202100244.png" alt="image" width="500">
 
 - Error on the training data is much lower
 - There is a gap between the cruves
@@ -418,18 +418,18 @@ Irreducible error
 
 **Ridge regression cost function**
 
-![[Pasted image 20260202101100.png]]
+<img src="/images/Pasted image 20260202101100.png" alt="image" width="500">
 
 - $\theta_0$, bias term is not regularized
 - Scale data before performing ridge regression
 
-![[Pasted image 20260202101247.png]]
+<img src="/images/Pasted image 20260202101247.png" alt="image" width="500">
 
 - Perform ridge regression by computing closed-form equation or GD
 
 **Ridge Regression Closed-Form Solution**
 
-![[Pasted image 20260202101343.png]]
+<img src="/images/Pasted image 20260202101343.png" alt="image" width="500">
 
 ```python
 from sklearn.linear_model import Ridge
@@ -453,14 +453,140 @@ array([1.55302613])
 - Adds a regularization term to the cost function
 - Uses $\ell_1$ norm of the weight vector instance of the square of $\ell_2$ norm
 
+**Lasso regression cost function**
+
+<img src="/images/Pasted image 20260202101758.png" alt="image" width="500">
+
+<img src="/images/Pasted image 20260202101808.png" alt="image" width="500">
+
+- Tends to eliminate the weights of the least important features
+
+
+<img src="/images/Pasted image 20260202101854.png" alt="image" width="500">
+
+- The lasso cost function is not differentiable at $\theta_i$, but GD works for sub-gradient vector
+
+**Lasso Regression Subgradient Vector**
+
+<img src="/images/Pasted image 20260202102153.png" alt="image" width="500">
+
+```python
+from sklearn.linear_model import Lasso
+lasso_reg = Lasso(alpha=0.1)
+lasso_reg.fit(X, y)
+lassor_reg.predict([[1.5]])
+array([1.53788174])
+```
 
 ## Elastic Net Regression
+
+- Middle ground between ridge and lasso regression
+- Regularization term is a weighted sum of both ridge and lasso
+- Control the mix ratio $r$
+	- When $r=0$
+		- Elastic net is equivalent to ridge
+	- When $r=1$
+		- Equivalent to lasso
+
+**Elastic Net Cost Function**
+
+<img src="/images/Pasted image 20260202102422.png" alt="image" width="500">
+
+- Always preferable to have a little bit of regularization
+
+```python
+from sklearn.linear_model import ElasticNet
+elastic_new = ElasticNew(alpha=0.1, 11_ratio=0.5)
+elatic_net.fit(X, y)
+elastic_net.predict([[1.5]])
+array([1.54333232])
+```
+
 ## Early Stopping
 
+- A different way to regularize iterative learning algorithms is to stop training as soon as validation error reaches a min
+- With stochastic and mini-batch gradient descent, the curves are not as smooth
+- Stop only after the validation error has been above the min, then role back the model parameters to the point of min
+<img src="/images/Pasted image 20260202102605.png" alt="image" width="500">
+
+```python
+from copy import deepcopy
+from sklearn.metrics imprt root_mean_squared_error
+from sklearn.preprocessing import StandardScaler
+
+X_train, y_train, X_valid, y_valid = [...]
+preprocessing = make_peipline(PolynomialFeature(degree=90, include_bias=False),
+		StandardScaler())
+		
+x_train_prep = preprocessing.fit_transform(X_train)
+X_valid_prep = preprocessing.tranform(X_valid)
+sgd_reg = SGDRegressor(penalty=None, eta0=0.002, random_state=42)
+n_epochs = 500
+best_valid_rmse = float('inf')
+
+for epoch in range(n_epochs):
+	sgd_reg.partial_fit(X_train_prep, y_train)
+	y_valid_predict = sgd_reg.predict(X_valid_prep)
+    val_error = root_mean_squared_error(y_valid, y_valid_predict)
+    if val_error < best_valid_rmse:
+        best_valid_rmse = val_error
+        best_model = deepcopy(sgd_reg)
+```
+
+- Adds the polynomial features and scales all the input features for training and validation set
+- Measures the RMSE on the validation set at each epoch
+- If lower than the previous RMSE, the saves a copy of model in the `best_model`
 
 # Logistic Regression
 
+- Some regression algorithms can be used for classification
+- Logistic regression also called logit regression is used to estimate the probability that an instance belongs to a class
+	- Positive and negative class
+
 ## Estimating Probabilities
+
+- Computes a weighted sum of the input features
+- Outputs the logistic of this result
+
+**Logistic regression model estimated probability (vectorized form)**
+
+![[Pasted image 20260202103820.png]]
+
+- $\alpha(\cdot)$ is the sigmoid function that outputs a number between 0 and 1
+
+**Logistic Function**
+
+![[Pasted image 20260202103906.png]]
+
+![[Pasted image 20260202103916.png]]
+
+**Logistic Regression model prediction using a 50% threshold probability**
+
+![[Pasted image 20260202104300.png]]
+
+- The score $t$ is often called the logit
+	- Logit function is the inverse of the logistic function
+	- Log-odds
+	- Log of the ratio between the estimated probability for the positive and negative class
+
+
 ## Training and Cost Function
+
+- The objective of training is to set the parameter vector $\theta$ so that the model estimates high probabilities for positive instances (y = 1) and negative instances (y = 1)
+
+**Cost Function of a single training instance**
+
+![[Pasted image 20260202104605.png]]
+
+**Logistic regression cost function (log loss)**
+
+![[Pasted image 20260202104654.png]]
+
+- Log loss can be show mathematically using Bayesian inference
+- There is no known c
+
+
+
+
 ## Decision Boundaries
 ## Softmax Regression
