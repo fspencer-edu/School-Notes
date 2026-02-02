@@ -5,7 +5,7 @@
 
 # Linear SVM Classification
 
-![[Pasted image 20260202112226.png]]
+<img src="/images/Pasted image 20260202112226.png" alt="image" width="500">
 
 - Left plot
 	- Decision boundaries of 3 possible linear classifiers
@@ -19,7 +19,7 @@
 	- Support vectors
 - SVM are sensitive to the feature scales
 
-![[Pasted image 20260202112511.png]]
+<img src="/images/Pasted image 20260202112511.png" alt="image" width="500">
 
 
 ## Soft Margin Classification
@@ -29,13 +29,13 @@
 	- Only works if data is linearly separable
 	- Sensitive to outliers
 
-![[Pasted image 20260202112619.png]]
+<img src="/images/Pasted image 20260202112619.png" alt="image" width="500">
 
 - Soft margin classification
 	- Keep street at large as possible and limit the margin violations
 - Specify hyperparameters, including regularization hyperparameters $C$
 
-![[Pasted image 20260202112824.png]]
+<img src="/images/Pasted image 20260202112824.png" alt="image" width="500">
 
 - If the SVM model is overfitting, try regularizing by reducing C
 
@@ -67,7 +67,7 @@ array([ 0.66163411, -0.22036063])
 - Many datasets are not close to being linearly separable
 - Add more features, such as polynomial features
 
-![[Pasted image 20260202113237.png]]
+<img src="/images/Pasted image 20260202113237.png" alt="image" width="500">
 
 - Create a pipeline containing a `PolynomialFeatures` transformer
 - Use moons dataset, a binary classification in which the data points are shaped as two interleaving crescent moons
@@ -87,7 +87,7 @@ polynomial_svm_clf = make_pipeline(
 polynomial_svm_clf.fit(X, y)
 ```
 
-![[Pasted image 20260202113513.png]]
+<img src="/images/Pasted image 20260202113513.png" alt="image" width="500">
 
 ## Polynomial Kernel
 
@@ -106,14 +106,14 @@ poly_kernel_svm_clf.fit(X, y)
 
 - This code trains an SVM classifier using a third-degree polynomial kernel
 
-![[Pasted image 20260202113823.png]]
+<img src="/images/Pasted image 20260202113823.png" alt="image" width="500">
 
 
 ## Similarity Features
 
 - Another technique for non-linear problems is to add features computer using a similarity function, which measure how much each instance resembles a particular landmark
 
-![[Pasted image 20260202114019.png]]
+<img src="/images/Pasted image 20260202114019.png" alt="image" width="500">
 
 - Simplest approach is to create a landmark at the location of each and every instance in the dataset
 
@@ -127,7 +127,7 @@ rbf_kernel_svm_clf = make_pipeline(StandardScaler(),
 rbf_kernel_svm_clf.fit(X, y)
 ```
 
-![[Pasted image 20260202114248.png]]
+<img src="/images/Pasted image 20260202114248.png" alt="image" width="500">
 
 - Increasing gamma makes the bell-shape curve narrower
 - Some kernels are specialized for specific data structures
@@ -149,7 +149,7 @@ rbf_kernel_svm_clf.fit(X, y)
 - For training it uses the stochastic GD
 - Uses little memory
 
-![[Pasted image 20260202120126.png]]
+<img src="/images/Pasted image 20260202120126.png" alt="image" width="500">
 
 
 # SVM Regression
@@ -158,7 +158,7 @@ rbf_kernel_svm_clf.fit(X, y)
 - Instead of trying to fit the largest possible street between two classes while limiting margin violations, SVM regression tries to fit as many instances as possible on the street while limiting margin violations
 
 
-![[Pasted image 20260202120216.png]]
+<img src="/images/Pasted image 20260202120216.png" alt="image" width="500">
 
 
 - Reducing $\epsilon$ increase the number of support vectors, which regularizes the model
@@ -175,7 +175,7 @@ svm_reg.fit(X, y)
 
 - For non-linear regression tasks, use a kernelized SVM model
 
-![[Pasted image 20260202120548.png]]
+<img src="/images/Pasted image 20260202120548.png" alt="image" width="500">
 
 ```python
 from sklearn.svm import SVR
@@ -200,30 +200,90 @@ svm_poly_reg.fit(X, y)
 - Another convention is to separate the bias term b ($\theta_0$) and the feature weights vector $w$
 	- No bias feature needs to be added to the input feature vectors, and the linear SVMs function is $w^Tx + b = w_1x_1 + ...$
 
-- Find the weight vectors and the bias term to make the street 
+- Find the weight vectors and the bias term to make the street at wide as possible, while limiting the number of margin violations
 
 
-![[Pasted image 20260202120959.png]]
+<img src="/images/Pasted image 20260202120959.png" alt="image" width="500">
+
+- Avoid margin violations
+	- Decision function should be greater that 1 for all positive training instances and lower than -1 for negative training instances
 
 **Hard margin linear SVM classifier objective**
 
+<img src="/images/Pasted image 20260202122046.png" alt="image" width="500">
+
+
+- Optimization algorithms often work much better on differentiable functions
+- Slack variables, $\zeta$
+	- Measures how much the $i$ instance is allowed to violate the margin
+	- Make stack variables as small as possible, and make $1/2w^tw$ as small as possible to increase margin
+- `C` is used to define the trade-off between these two objects
+
+
 **Soft margin linear SVM classifier objective**
+
+<img src="/images/Pasted image 20260202122311.png" alt="image" width="500">
+
+- The hard and soft margin problems are both convex quadratic optimization problems with linear constraints
+	- Quadratic programming (QP) problems
+- Using a QP solver is one way to train an SVM
+- Another way is to use a GD to minimize the hinge loss or the squared hinge loss
+- The further away an instance is from the correct side of the margin, the higher the loss
+	- Grows linearly for the hinge loss, and quadratically for the squared loss
+- If the dataset is clean, it tends to converge faster
+
+<img src="/images/Pasted image 20260202122535.png" alt="image" width="500">
+
 
 # The Dual Problem
 
+- Given a constrained optimization problem, primal problem, it is possible to express a different but closely related problem, called its dual problem
+- Gives a lower bound to the solution, but under some conditions it can have the same solution as the primal problem
+- SVM meets these conditions, and is used to solve primal or dual problems
+	- Same solution
+
 **Dual form of the linear SVM objective**
+
+<img src="/images/Pasted image 20260202122741.png" alt="image" width="500">
+
+- Once you find the vector $\hat{\alpha}$ that minimizes the equation, use dual solution to find $\hat{w}$ and $\hat{b}$ that minimize the primal problem
+
 
 **From the dual solution to the primal solution**
 
+<img src="/images/Pasted image 20260202122905.png" alt="image" width="500">
+
+
+- The dual problem is faster to solve than the primal one when the number of training instances is smaller than the number of features
+- Kernel trick is possible on dual, not primal
 
 ## Kernelized SVMs
 
+- The transformed vector is 32 instead of 2D
+- 
+
 **Second-degree polynomial mapping**
+
+<img src="/images/Pasted image 20260202123000.png" alt="image" width="500">
 
 **Kernel trick for a second-degree polynomial mapping**
 
+<img src="/images/Pasted image 20260202123011.png" alt="image" width="500">
+
+- The dot product of the transformed vector is equal to the square of the dot product of the original vectors
+- In ML, a kernel is a function capable of computing the dot product $\phi(a)^T\phi(b)$
+
 **Common kernels**
+
+<img src="/images/Pasted image 20260202123219.png" alt="image" width="500">
+
 
 **Making predictions with a kernelized SVM**
 
+<img src="/images/Pasted image 20260202123246.png" alt="image" width="500">
+
 **Using the kernel trick to compute the bias term**
+
+<img src="/images/Pasted image 20260202123258.png" alt="image" width="500">
+
+- 

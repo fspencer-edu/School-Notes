@@ -550,19 +550,19 @@ for epoch in range(n_epochs):
 
 **Logistic regression model estimated probability (vectorized form)**
 
-![[Pasted image 20260202103820.png]]
+<img src="/images/Pasted image 20260202103820.png" alt="image" width="500">
 
 - $\alpha(\cdot)$ is the sigmoid function that outputs a number between 0 and 1
 
 **Logistic Function**
 
-![[Pasted image 20260202103906.png]]
+<img src="/images/Pasted image 20260202103906.png" alt="image" width="500">
 
-![[Pasted image 20260202103916.png]]
+<img src="/images/Pasted image 20260202103916.png" alt="image" width="500">
 
 **Logistic Regression model prediction using a 50% threshold probability**
 
-![[Pasted image 20260202104300.png]]
+<img src="/images/Pasted image 20260202104300.png" alt="image" width="500">
 
 - The score $t$ is often called the logit
 	- Logit function is the inverse of the logistic function
@@ -576,11 +576,11 @@ for epoch in range(n_epochs):
 
 **Cost Function of a single training instance**
 
-![[Pasted image 20260202104605.png]]
+<img src="/images/Pasted image 20260202104605.png" alt="image" width="500">
 
 **Logistic regression cost function (log loss)**
 
-![[Pasted image 20260202104654.png]]
+<img src="/images/Pasted image 20260202104654.png" alt="image" width="500">
 
 - Log loss can be show mathematically using Bayesian inference
 - There is no known closed-form equation to compute the value of $\theta$ that minimizes this cost function
@@ -589,7 +589,7 @@ for epoch in range(n_epochs):
 
 **Logistic cost function partial derivatives**
 
-![[Pasted image 20260202104851.png]]
+<img src="/images/Pasted image 20260202104851.png" alt="image" width="500">
 
 - For each instance it computes the prediction error and multiples its by the $j$ th feature value
 - Computes the average over all training instances
@@ -637,7 +637,7 @@ plt.plot([decision_boundary, decision_boundary], [0, 1], "k:", linewidth=2,
 plt.show()
 ```
 
-![[Pasted image 20260202105537.png]]
+<img src="/images/Pasted image 20260202105537.png" alt="image" width="500">
 
 - The petal width of Iris virginica flowers (triangles) ranges from 1.4 to 2.5 cm, while other iris flowers (squares) have a smaller petal width, 0.1 to 1.8
 - There is a decision boundary at around 1.6 cm where both probabilities are equal to 50%
@@ -649,7 +649,7 @@ log_reg.predict([[1.7], [1.5]])
 array([ True, False])
 ```
 
-![[Pasted image 20260202105809.png]]
+<img src="/images/Pasted image 20260202105809.png" alt="image" width="500">
 
 
 ## Softmax Regression
@@ -660,7 +660,7 @@ array([ True, False])
 
 **Softmax score for class k**
 
-![[Pasted image 20260202110031.png]]
+<img src="/images/Pasted image 20260202110031.png" alt="image" width="500">
 
 - Each class has its own dedicated parameter vector
 - All vectors are stored as rows in a parameter matrix, $\Theta$
@@ -668,7 +668,7 @@ array([ True, False])
 
 **Softmax Function**
 
-![[Pasted image 20260202110153.png]]
+<img src="/images/Pasted image 20260202110153.png" alt="image" width="500">
 
 $K$ = number of classes
 $s(x)$ = a vector containing the scores of each class
@@ -676,7 +676,7 @@ $\sigma(s(x))_k$ = estimated probability that the instance x belongs to class k
 
 **Softmax Regression Classifier Prediction**
 
-![[Pasted image 20260202110317.png]]
+<img src="/images/Pasted image 20260202110317.png" alt="image" width="500">
 
 - argmax operator returns the value of a variable that maximizes a function
 
@@ -686,7 +686,7 @@ $\sigma(s(x))_k$ = estimated probability that the instance x belongs to class k
 
 **Cross entropy cost function**
 
-![[Pasted image 20260202110510.png]]
+<img src="/images/Pasted image 20260202110510.png" alt="image" width="500">
 
 $y_k$ = target probability
 
@@ -697,7 +697,7 @@ $y_k$ = target probability
 
 **Cross entropy gradient vector for class k**
 
-![[Pasted image 20260202110755.png]]
+<img src="/images/Pasted image 20260202110755.png" alt="image" width="500">
 
 
 ```python
@@ -713,7 +713,7 @@ softmax_reg.predict_proba([[5, 2]]).round(2)
 array([[0.  , 0.04, 0.96]])
 ```
 
-![[Pasted image 20260202111016.png]]
+<img src="/images/Pasted image 20260202111016.png" alt="image" width="500">
 
 - Decision boundaries between two classes are linear
 - 
