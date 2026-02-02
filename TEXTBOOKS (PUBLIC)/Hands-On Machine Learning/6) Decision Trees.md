@@ -130,10 +130,119 @@ $-(49/54)log_1(49/54)-(5/54)log_2(5/54) = 0.445$
 
 # Regularization Hyperparameters
 
-- 
+- If left unconstrained, the tree structure will adapt itself to the training data, likely overfitting it
+	- Non-parametric model
+	- Does not have any parameters, but because the number of parameters is not determined prior to training, the model structure is close to the data
+- Parametric model
+	- Such as a linear model
+	- Predetermined number of parameters, so its degree of freedom is limited, reducing the risk of overfitting
+- Restrict the decision tree's freedom during training
+	- Regularization
+	- Restrict the max depth of the decision tree
+
+`DecisionTreeClassifier` Parameters
+- `max_features`
+- `max_leaf_nodes`
+- `min_samples_split`
+- `min_samples_leaf`
+- `min_weight_fraction_leaf`
+
+- Increasing `min_*` or reducing `max_*` hyperparameters will regularize the model
+- Other algorithms work by training the decision tree without restriction, then pruning unnecessary nodes
+- Chi-squared test is used to estimate the probability that the improvement is purely the result of change
+	- p-value
+
+- Train one decision tree without regularization, and another with
+
+```python
+from sklearn.datasets import make_moons
+X_moons, y_moons = make_moons(n_samples=150, noise=0.2, random_state=42)
+
+tree_clf1 = DecisionTreeClassifier(random_state=42)
+tree_clf2 = DecisionTreeClassifier(min_samples_leaf=5, random_state=42)
+tree_clf1.fit(X_moons, y_moons)
+tree_clf2.fit(X_moons, y_moons)
+```
+
+![[Pasted image 20260202133433.png]]
+
+- The unregularized model is overfitting
+
+```python
+>>> X_moons_test, y_moons_test = make_moons(n_samples=1000, noise=0.2,
+>>> tree_clf1.score(X_moons_test, y_moons_test)
+0.898
+>>> tree_clf2.score(X_moons_test, y_moons_test)
+0.92
+```
+
+- Therefore, the second tree has a better accuracy on the test set
 
 # Regression
 
+- Decision trees are also capable of performing regression tasks
+- Train it on a noisy quadratic dataset
+
+```python
+import numpy as np
+from sklearn.tree import DecisionTreeRegressor
+
+np.random.seed(42)
+X_quad = np.random.rand(200, 1) - 0.5
+y_quad = x_quad ** 2 + 0.025 * np.random.randn(200, 1)
+tree_reg = DecisionTreeRegressor(max_depth=2, random_state=42)
+tree_reg.fit(X_quad, y_quad)
+```
+
+![[Pasted image 20260202133741.png]]
+
+- The main different is that instead of predicting a class in each node, it predicts a value
+- The prediction is the average target value of the 110 training instances associated with this leaf node
+- Predicted value for each region is always the average target value of the instances in that region
+- Algorithm splits each region in a way that makes most training instances as close as possible to that predicted value
+
+![[Pasted image 20260202134001.png]]
+
+- CART algorithm works similarly, except instead of trying to split the training set in a way that minimizes impurity, it splits the training set to minimize MSE
+
+**CART cost function for regression**
+
+![[Pasted image 20260202134108.png]]
+
+- Decision trees are prone to overfitting with regression tasks
+
+![[Pasted image 20260202134134.png]]
+
+
 # Sensitivity to Axis Orientation
 
+- Decision trees prefer orthogonal decision boundaries
+
+![[Pasted image 20260202134240.png]]
+
+- Scale the data, then apply a principal component analysis function transformation (PCA)
+- Rotates data in a way that reduces the correlation between features
+- The rotation makes it possible to fit the dataset
+
+```python
+from sklearn.decomposition import PCA
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
+
+pca_pipeline = make_pipeline(StandardScaler(), PCA())
+X_iris_rotated = pca_pipeline.fit_Transform(X_iris)
+tree_clf_pca = DecisionTreeClassifier(max_depth=2, random_state=2)
+tree_clf_pca.fit(X_iris_rotated, y_iris)
+```
+
+![[Pasted image 20260202134517.png]]
+
+
 # Decision Trees Have a High Variance
+
+- Decision trees alway have a high variance
+
+![[Pasted image 20260202134549.png]]
+
+- Averaging predictions over many trees, reduces variance
+- Ensemble trees called random forests

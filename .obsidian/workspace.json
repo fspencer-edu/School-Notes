@@ -8,20 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "693f76976c32ba80",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/6) Decision Trees.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "6) Decision Trees"
-            }
-          },
-          {
             "id": "4ae5b2289ff0be8c",
             "type": "leaf",
             "state": {
@@ -33,6 +19,62 @@
               },
               "icon": "lucide-file",
               "title": "7) Ensemble Leaning and Random Forests"
+            }
+          },
+          {
+            "id": "aba4aa2d8c0d8e84",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/8) Dimensionality Reduction.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "8) Dimensionality Reduction"
+            }
+          },
+          {
+            "id": "7a403bbb3f7a408f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/9) Unsupervised Leraning Techniques.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "9) Unsupervised Leraning Techniques"
+            }
+          },
+          {
+            "id": "b2643e5d8abff0fe",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/10) Introduction to Artificial Neural Networks with Keras.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "10) Introduction to Artificial Neural Networks with Keras"
+            }
+          },
+          {
+            "id": "6203ffdad184fa42",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/11) Training Deep Neural Networks.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "11) Training Deep Neural Networks"
             }
           }
         ]
@@ -184,24 +226,26 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "693f76976c32ba80",
+  "active": "4ae5b2289ff0be8c",
   "lastOpenFiles": [
-    "Pasted image 20260202125949.png",
-    "Pasted image 20260202125300.png",
-    "Pasted image 20260202124458.png",
-    "Pasted image 20260202124235.png",
-    "images/Pasted image 20260202120959.png",
-    "images/Pasted image 20260202113823.png",
-    "images/Pasted image 20260202111016.png",
-    "images/Pasted image 20260202122741.png",
-    "images/Pasted image 20260202123258.png",
-    "images/Pasted image 20260202103820.png",
-    "images/Pasted image 20260202114019.png",
-    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/5) Support Vector Machines.md",
+    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/11) Training Deep Neural Networks.md",
+    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/10) Introduction to Artificial Neural Networks with Keras.md",
+    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/9) Unsupervised Leraning Techniques.md",
+    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/8) Dimensionality Reduction.md",
     "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/7) Ensemble Leaning and Random Forests.md",
     "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/6) Decision Trees.md",
+    "Pasted image 20260202134549.png",
+    "Pasted image 20260202134517.png",
+    "Pasted image 20260202134240.png",
+    "Pasted image 20260202134134.png",
+    "Pasted image 20260202134108.png",
+    "Pasted image 20260202134001.png",
+    "Pasted image 20260202133741.png",
+    "Pasted image 20260202133433.png",
+    "Pasted image 20260202125949.png",
+    "Pasted image 20260202125300.png",
+    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/5) Support Vector Machines.md",
     "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/4) Training Models.md",
-    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/8) Dimensionality Reduction.md",
     "PRIVATE/ToDo.md",
     "PRIVATE/Winter 2026/Computer Networks/Textbook/8) Security in Computer Networks.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/10) Anomaly Detection.md",
@@ -222,8 +266,6 @@
     "PRIVATE/Winter 2026/Data Mining/Textbook/3) Exploring Data.md",
     "PRIVATE/Winter 2026/Data Mining/Outline - Data Mining.md",
     "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/1) The Machine Learning Landscape.md",
-    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/0) Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow, 3rd Edition.md",
-    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/19) Training and Deploying TensorFlow Models at Scale.md",
     "PRIVATE/Winter 2026/Computer Networks/Textbook/8) Security in Computer Networks.md.tmp",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Rust/Textbook",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook",
