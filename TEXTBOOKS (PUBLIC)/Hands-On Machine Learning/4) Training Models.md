@@ -294,14 +294,166 @@ sgd_reg.fit(X, y.ravel())
 
 # Polynomial Regression
 
-- Add powers of each feature as new features, then train a linear model on this ex
+- Add powers of each feature as new features, then train a linear model on this extended set of features
+- Quadratic equation, $y = ax^2 + bx + c$
+
+```python
+np.random.seed(42)
+m = 100
+X = 6 * np.random.rand(m, 1) - 3
+y = 0.5 * X ** 2 + X + 2 + np.random.randm(m, 1)
+```
+
+![[Pasted image 20260202094910.png]]
+
+```python
+from sklearn.preprocessing import PolynomialFeatures
+poly_features = PolynomialFeatures(degree=2, include_bias=False)
+X_poly = poly_features.fit_Transform(X)
+X[0]
+array([-0.75275929])
+X_poly[0]
+array([-0.75275929,  0.56664654])
+
+lin_reg = LinearRegression()
+lin_reg.git(X_poly, y)
+lin_reg.intercept_, lin_reg.coef_
+(array([1.78134581]), array([[0.93366893, 0.56456263]]))
+```
+
+![[Pasted image 20260202095115.png]]
+
+![[Pasted image 20260202095131.png]]
+
 
 # Learning Curves
 
+- If you perform high-degree polynomial regression, the fitted training data is better than plain linear regression
+
+![[Pasted image 20260202095333.png]]
+
+- Model that will generalize best is the quadratic model
+- Use cross validation to estimate a model's generalization performance
+- Learning curves
+	- Plots a model's training error and validation error as a function of the training iteration
+
+
+```python
+from sklearn.model_selection import learning_curve
+train_size, train_score, valid_scores = learning_curve(
+	LinearRegression(), X, y, train_sizes=np.linspace(0.01, 1.0, 40), cv=5,
+	scoring="neg_root_mean_squared_error"
+)
+
+train_erorrs = -train_scores.mean(axis=1)
+valid_erorrs = -valid_scores.mean(axis=1)
+
+plt.plot(train_sizes, train_errors, "r-+", linewidth=2, label="train")
+plt.plot(train_sizes, valid_errors, "b-", linewidth=2, label="valid")
+plt.show()
+```
+![[Pasted image 20260202095812.png]]
+
+- The model is underfitting
+- Error ends up at a plateau
+
+```python
+from sklearn.pipeline import make_pipeline
+
+polynormial_regression = make_pipeline(
+	PolynomialFeatures(degree=10, include_bias=False),
+	LinearRegrssion()
+)
+
+train_size, train_scores, valid_scores = learing_curve(
+	polynomial_regression, X, y, train_sizes=np.linspace(0.01, 1.0, 40), cv=5,
+	scoring="neg_root_mean_sqaured_error"
+)
+```
+
+![[Pasted image 20260202100244.png]]
+
+- Error on the training data is much lower
+- There is a gap between the cruves
+	- Model perform better on training than validation data
+	- Overfitting model
+- Use a larger training set, to get curves to meet
+
+**Bias/Variance Trade-Off**
+- Model's generalization error can be expressed as the sum of 3 very different errors
+
+Bias
+- Due to wrong assumptions
+
+Variance
+- Model's excessive sensitivity to small variations in the training data
+
+Irreducible error
+- Noisiness of data
+- Clean up data
+
+- Increasing a model's complexity will increase its variance and reduce its bias
+- Reducing complexity increases its bias and reduces its variance
+
 # Regularized Linear Models
 
+- A good way to reduce overfitting it to regularize the model
+	- Fewer degrees of freedom
+	- Constraining weights of the models
+	- Reducing the number of polynomial degrees
+- Ridge regression
+- Lasso regression
+- Elastic net regression
+
 ## Ridge Regression
+
+- Ridge regression also called Tikhonov regularization
+- Regularized version of linear regression
+- A regularization term equal to $\alpha / m \sum^n_{i=1}\theta^2_i$ is added to the MSE
+- Regularization term is only added to the cost function during training
+- Use unregularized MSE to evaluate model's performance
+- $\alpha$ controls the regularization
+	- If = 0, then ridge regression is linear
+	- If larger, then all weights end up very close to zero, and result is a flat line through data's mean
+
+**Ridge regression cost function**
+
+![[Pasted image 20260202101100.png]]
+
+- $\theta_0$, bias term is not regularized
+- Scale data before performing ridge regression
+
+![[Pasted image 20260202101247.png]]
+
+- Perform ridge regression by computing closed-form equation or GD
+
+**Ridge Regression Closed-Form Solution**
+
+![[Pasted image 20260202101343.png]]
+
+```python
+from sklearn.linear_model import Ridge
+ridge_reg = Ridge(alpha=0.1, solver="cholesky")
+ridge_reg.fit(X, y)
+ridge_reg.predict([[1.5]])
+array([[1.55325833]])
+
+# SGD
+sgd_reg = SGDRegressor(penalty="12", alpha=0.1/m, tol=None,
+			max_iter=1000, eta=0.01, random_state=42)
+sgd_reg.fit(X, y.rave1())
+sgd_reg.predict([[1.5]])
+array([1.55302613])
+```
+
 ## Lasso Regression
+
+- Least absolute shrinkage and selection operator regression (lasso)
+- Another regularized version of linear regression
+- Adds a regularization term to the cost function
+- Uses $\ell_1$ norm of the weight vector instance of the square of $\ell_2$ norm
+
+
 ## Elastic Net Regression
 ## Early Stopping
 
