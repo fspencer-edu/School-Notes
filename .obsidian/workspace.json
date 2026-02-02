@@ -35,8 +35,7 @@
               "title": "5) Support Vector Machines"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -185,13 +184,13 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "dd51b627e7bed871",
+  "active": "663ced67a1273a9f",
   "lastOpenFiles": [
+    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/5) Support Vector Machines.md",
     "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/4) Training Models.md",
     "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/8) Dimensionality Reduction.md",
     "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/7) Ensemble Leaning and Random Forests.md",
     "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/6) Decision Trees.md",
-    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/5) Support Vector Machines.md",
     "PRIVATE/ToDo.md",
     "PRIVATE/Winter 2026/Computer Networks/Textbook/8) Security in Computer Networks.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/10) Anomaly Detection.md",
