@@ -242,7 +242,7 @@ for score, name in zip(rnd_clf.feature_importances_, iris.data.columns):
 - Sequential learning technique is similar with GD
 	- Adds predictors to the ensemble
 
-![[Pasted image 20260202145954.png]]
+<img src="/images/Pasted image 20260202145954.png" alt="image" width="500">
 
 - Training cannot be parallelized since each predictor can only be trained after the previous one
 - Each instance weight is initially set to $1/m$
@@ -250,7 +250,7 @@ for score, name in zip(rnd_clf.feature_importances_, iris.data.columns):
 
 **Weighted error rate of the j-th predictor**
 
-![[Pasted image 20260202150123.png]]
+<img src="/images/Pasted image 20260202150123.png" alt="image" width="500">
 
 - The predictor weight $\alpha_j$ is computed, where $\eta$ is the learning rate hyperparameter (defaults to 1)
 - The more accurate the predictor is, the higher its weight will b
@@ -258,14 +258,14 @@ for score, name in zip(rnd_clf.feature_importances_, iris.data.columns):
 
 **Predictor weight**
 
-![[Pasted image 20260202150131.png]]
+<img src="/images/Pasted image 20260202150131.png" alt="image" width="500">
 
 - AdaBoost algorithm updates the instance weights
 
 
 **Weight update rule**
 
-![[Pasted image 20260202150146.png]]
+<img src="/images/Pasted image 20260202150146.png" alt="image" width="500">
 
 - Scikit-Learn uses a multiclass version of AdaBoost called SAMME (Stagewise Additive Modelling using a Multiclass Exponential loss function)
 
@@ -275,11 +275,161 @@ ada_clf = AdaBoostClassifier(
 	DecisionTreeClassifier(max_depth=1), n_estimators=30,
 	learning_rate=0.5, random_state=42
 )
-ada_clf.fit(X_)
+ada_clf.fit(X_train, y_train)
 ```
 
+- AdaBoost classifier based on 30 decision stumps
+- A decision stump is a decision tree with a max_depth of 1
+	- Node with two leaf nodes
+- If AdaBoost ensemble is overfitting the training set, reduce the number of estimators or more strongly regularizing the bast estimator
 
 ## Gradient Boosting
+
+- Gradient boosting works by sequentially adding predictors to an ensemble, each one correcting its predecessor
+- Instead of tweaking the instance weights at every iteration, it tries to fit the new predictor to the residual error made by the previous predictor
+- Using decision trees as the base predictor
+	- Gradient tree boosting or gradient boosted regression trees (GBRT)
+
+```python
+import numpy as np
+from sklearn.tree import DecisionTreeRegressor
+np.random.seed(42)
+X = np.random.seed(100, 1) - 0.5
+y = 3 * X[:, 0] ** 2 + 0.05 * np.random.randn(100) # y = 3x^2 + Gaussian noise
+tree_reg1 = DecisionTreeRegressor(max_depth=2, random_state=42)
+tree_reg1.fit(X, y)
+
+# Train the second DTR on the residual errors
+y2 = y - tree_reg1.predict(X)
+tree_reg2 = DecisionTreeRegressor(max_depth=2, random_state=43)
+tree_reg2.fit(X, y2)
+
+# Train 3rd regression on the residual errors from 2nd predictor
+y3 = y2 - tree_reg2.predict(X)
+tree_reg3 = DecisionTreeRegressor(max_depth=2, random_state=44)
+tree_ref3.fit(X, y3)
+
+# Make predictions on a new instance by addding up the predictions of all trees
+X_new = np.array(([[-0.4], [0.], [0.5]])
+sum(tree.predict(X_new) for tree in (tree_reg1, tree_reg2, tree_reg3))
+array([0.49484029, 0.04021166, 0.75026781])
+
+# gradient boosting
+from sklearn.ensemble import GradientBoostingRegressor
+gbrt = GradientBoostingRegressor(max_depth=2, n_estimator=3,
+			learning_rate=1.0, random_state=42)
+gbrt.git(X, y)
+```
+- The graphs show the predictions of the 3 trees, and the ensemble's predictions
+- First row
+	- Ensemble has one tree, so predictions are the same
+- Second row
+	- A new tree is trained on the residual error of the first tree
+	- Ensemble's prediction are equal to the sum of the predictions of the first two tress
+- Third row
+	- Another tress is trained on the residual error of the second tree
+	- Ensemble's prediction gradually gets better as trees are add
+
+
+<img src="/images/Pasted image 20260202151522.png" alt="image" width="500">
+
+
+- The `learning_rate` scales the contribution of each tree
+- Shrinkage
+	- Regularization technique
+	- If the learning rate is low, then you will need more trees in the ensemble to fit the training set
+
+<img src="/images/Pasted image 20260202151901.png" alt="image" width="500">
+
+- To find the optimal number of trees, perform cross-validation using grid search or randomized search CV
+- Or set `n_iter_no_change` to an integer value, then GBR will automatically stop adding more trees during training if it sees that the last 10 trees did not help
+- Tolerate having no progress, then stops
+
+```python
+gbrt_best = GradientBoostingRegressor(
+	max_depth=2, learning_rate=0.05, n_estimators=500,
+	n_iter_no_change=10, random_state=42
+)
+
+gbrt_best.fit(X, y)
+gbrt_best.n_estimators_
+92
+```
+
+- Stochastic gradient boosting
+	- Speeds up training
+	- Each tree is trained on 25% of the training instances
+
+
 ## Histogram-Based Gradient Boosting
 
+- Another GBRT implementations for large datasets is histogram-based gradient boosting (HGB)
+- Binning the input features, replacing them with integers
+- Binning can reduce the number of possible thresholds that the training algorithm needs to evaluate
+- Working with integers makes it possible to use faster and more memory-efficient data structures
+- Removes the need for sorting the feature when training each tree
+- Complexity of $O(b \times m)$
+- Binning causes a precision loss
+- Two classes
+	- `HistGradientBoostingRegressor`
+	- `HistGradientBoostingClassifier`
+- Early stopping is automatically activated if the number of instances is greater than 10,000
+- Subsampling is not supported
+- `n_estimators` is renamed to `max_iter`
+- The only decision tree hyperparameter than can be tweaked are `max_leaf_nodes, min_samples_leaf, max_depth`
+- 2 features
+	- Support for categorical features and missing features
+
+```python
+from sklearn.pipeline import make_pipeline
+from sklearn.compose import make_column_transformer
+from sklearn.ensemble import HistGradientBoostingRegressor
+from sklearn.preprocessing import OrdinalEncoder
+
+hgb_reg = make_pipeline(
+	make_column_transformer((OrdinalEncoder(), ["ocean_proximity"]),
+					remainder="passthrough"),
+	HistGradientBoostingRegressor(categoritcal_features=[0], random_state=42)
+)
+
+hgb_reg.fit(housing, housing_labels)
+```
+
+- Other gradient boosting implementations
+	- XGBoost
+	- CatBoost
+	- LightGBM
+
 # Stacking
+
+- Stacking also called stacked generalization
+- Instead of using trivial functions to aggregate the predictions of all predictors, train a model to perform this aggregation
+- Each of the bottom 3 predictors predict a different value, and then a final predictor (blender, or a meta learner) takes these predictions as inputs and makes a final prediction
+<img src="/images/Pasted image 20260202153048.png" alt="image" width="500">
+
+- To train the blender, first build the blending training set
+- Use `cross_val_predict()` on every predictor to get out-of-sample prediction for each instance in the original training set
+- The blending training set will contain one input feature per predictor
+- Once blender is trained, the base predictors are retrained one last time on the full original training set
+
+<img src="/images/Pasted image 20260202153059.png" alt="image" width="500">
+- Train several different blenders (with different classifiers) to get a whole layer of blenders
+- Add blenders on top of each other to produce the final prediction
+
+<img src="/images/Pasted image 20260202153119.png" alt="image" width="500">
+
+- `StackingClassifier`
+- `StackingRegressor`
+
+```python
+from sklearn.ensemble import StackingClassifier
+
+stacking_clf = StackingClassifier(
+	estimators=[
+		('lr', LogisticRegression(random_state=42)),
+        ('rf', RandomForestClassifier(random_state=42)),
+        ('svc', SVC(probability=True, random_state=42))
+	],
+	final_estimator=RandomForestCl
+)
+```
