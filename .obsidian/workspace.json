@@ -8,20 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "aba4aa2d8c0d8e84",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/8) Dimensionality Reduction.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "8) Dimensionality Reduction"
-            }
-          },
-          {
             "id": "bf03df65c29037ac",
             "type": "leaf",
             "state": {
@@ -47,6 +33,90 @@
               },
               "icon": "lucide-file",
               "title": "10) Introduction to Artificial Neural Networks with Keras"
+            }
+          },
+          {
+            "id": "059d0b5952de0488",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/11) Training Deep Neural Networks.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "11) Training Deep Neural Networks"
+            }
+          },
+          {
+            "id": "e84fa413edce0cbf",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/12) Custom Models and Training with TensorFlow.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "12) Custom Models and Training with TensorFlow"
+            }
+          },
+          {
+            "id": "45e7306af63c0edb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/13) Loading and Preprocessing Data with TensorFlow.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "13) Loading and Preprocessing Data with TensorFlow"
+            }
+          },
+          {
+            "id": "f489ac943c28da2b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/14) Deep Computer Vision Using Convolutional Neural Networks.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "14) Deep Computer Vision Using Convolutional Neural Networks"
+            }
+          },
+          {
+            "id": "518bdda5bead2c43",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/15) Processing Sequences Using RNNs and CNNs.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "15) Processing Sequences Using RNNs and CNNs"
+            }
+          },
+          {
+            "id": "46f271dee5db70a2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/ToDo.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "ToDo"
             }
           }
         ]
@@ -198,8 +268,18 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "aba4aa2d8c0d8e84",
+  "active": "bf03df65c29037ac",
   "lastOpenFiles": [
+    "PRIVATE/ToDo.md",
+    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/15) Processing Sequences Using RNNs and CNNs.md",
+    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/14) Deep Computer Vision Using Convolutional Neural Networks.md",
+    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/13) Loading and Preprocessing Data with TensorFlow.md",
+    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/12) Custom Models and Training with TensorFlow.md",
+    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/11) Training Deep Neural Networks.md",
+    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/9) Unsupervised Leraning Techniques.md",
+    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/8) Dimensionality Reduction.md",
+    "Pasted image 20260203100319.png",
+    "Pasted image 20260203100111.png",
     "images/Pasted image 20260202160039.png",
     "images/Pasted image 20260202160401.png",
     "images/Pasted image 20260202155447.png",
@@ -208,18 +288,11 @@
     "images/Pasted image 20260202160712.png",
     "images/Pasted image 20260202161624.png",
     "images/Pasted image 20260202155836.png",
-    "images/Pasted image 20260202161616.png",
-    "images/Pasted image 20260202161559.png",
-    "images/Pasted image 20260202155946.png",
     "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/10) Introduction to Artificial Neural Networks with Keras.md",
-    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/9) Unsupervised Leraning Techniques.md",
-    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/8) Dimensionality Reduction.md",
     "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/7) Ensemble Leaning and Random Forests.md",
-    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/11) Training Deep Neural Networks.md",
     "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/6) Decision Trees.md",
     "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/5) Support Vector Machines.md",
     "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/4) Training Models.md",
-    "PRIVATE/ToDo.md",
     "PRIVATE/Winter 2026/Computer Networks/Textbook/8) Security in Computer Networks.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/10) Anomaly Detection.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/9) Cluster Analysis - Additional Issues and Algorithms.md",
@@ -235,9 +308,6 @@
     "PRIVATE/Winter 2026/Computer Networks/Textbook/7) Wireless and Mobile Networks.md",
     "TEXTBOOKS (PUBLIC)/Computer Networking - Top Down/8. Security in Computer Networks.md",
     "TEXTBOOKS (PUBLIC)/Computer Networking - Top Down/9. Multimedia Networking.md",
-    "PRIVATE/Winter 2026/Data Mining/Textbook/4) Classification - Basic Concepts, Decision Trees, and Model Evaluation.md",
-    "PRIVATE/Winter 2026/Data Mining/Textbook/3) Exploring Data.md",
-    "PRIVATE/Winter 2026/Data Mining/Outline - Data Mining.md",
     "PRIVATE/Winter 2026/Computer Networks/Textbook/8) Security in Computer Networks.md.tmp",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Rust/Textbook",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook",

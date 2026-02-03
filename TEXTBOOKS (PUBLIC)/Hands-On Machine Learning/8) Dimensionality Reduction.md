@@ -333,11 +333,40 @@ lle = LocallyLinearEmbedding(n_components=2, n_neighbours=10, random_state=42)
 X_unrolled = lle.fit_transform(X_swiss)
 ```
 
-- 
+- `t` is a 1D NumPy array containing the position of each instance along the rolled axis
 
 <img src="/images/Pasted image 20260202161616.png" alt="image" width="500">
+- The roll is completely unrolled, and the distances between instances are locally preserved
+- Distances are not preserved on a larger scale
+- The algorithm identifies its k-nearest neighbours, then tries to reconstruct x as a linear function of these neighbours
+	- Finds the weights, such that the squared distance between x and $\sum^m_{j=1}w_{i, j}x$ is as small as possible
 
+**LLE Step 1: Linearly Modeling Local Relationships**
+
+![[Pasted image 20260203100111.png]]
+
+- $\hat{W}$ encodes the local linear relationship between the training instances
+- Second step is to map the training instances into a d-dimensional space, while preserving these local relationships
+- Keeping the weighted fixed, and finding the optimal position of the instances in a low-dimensional space
+
+**LLE Step 2: Reduction Dimensionality while Preserving Relationships**
+
+![[Pasted image 20260203100319.png]]
+
+- Complexity of LLE, $O(mlog(m)nlog(k))$
 
 # Other Dimensionality Reduction Techniques
+
+- `sklearn.manifold.MDS`
+	- Multidimensional scaling (MDS) reduces dimensionality while trying to preserve. the distances between the instances
+
+- `sklearn.mandifold.Isomap`
+	- Creates a graph by connecting each instance to its nearest neighbours, then reduces dimensionality while trying to preserve the geodesic distances between the instances
+
+- `sklearn.mandifold.TSNE`
+	- t-distributed stochastic neighbours embedding (t-SNE) reduces dimensionality while trying to keep similar instances close and dissimilar instances apart
+
+- `sklearn.discriminant_analysis.LinearDiscriminantAnalysis`
+	- Linear discriminant analysis (LDA) is a linear classification algorithm that, during training, learns the most discriminative axes between the classes
 
 <img src="/images/Pasted image 20260202161624.png" alt="image" width="500">
