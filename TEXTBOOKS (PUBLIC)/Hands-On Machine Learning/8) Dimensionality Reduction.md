@@ -296,9 +296,44 @@ np.random.seed(42)
 P = np.random.randn(d, n) / np.sqrt(d)
 X = np.random.randn(m, n)
 X_reduced = X @ P.T
+
+from sklearn.random_projection import GaussianRandomProjection
+
+gaussian_rnd_proj = GaussianRandomProjection(eps=ε, random_state=42)
+X_reduced = gaussian_rnd.proj.fit_transform(X
 ```
 
+- `SparseRandomProjection`
+	- Determines the target dimensionality in the same way, generates a random matrix of the same shape, and performs the projection identically
+	- Uses less memory
+- The ratio r of non-zero items in the spare random matrix is called its density
+
+```python
+components_pinv = np.linalg.pinv(gaussian_rnd_proj.components_)
+X_recovered = X_reduced @ components_pinv.T
+```
+
+- Computing the pseudo-inverse may take a long time if the components matrix is large
+- Complexity of `pinv()` is $O(dn^2)$
+- Locality sensitive hashing (LSH)
+	- Used in search engines to group similar documents
 # LLE
+
+- Locally linear embedding (LLE) is a non-linear dimensionality reduction (NLDR) technique
+- Manifold techniques that does not rely on projections
+- Measures how each training instance linearly relates to its nearest neighbours, then looks for a low-dimensional representation of the training set where these local relationships are best preserved
+- Used for unrolling twisted manifolds
+
+```python
+from skilearn.datasets import make_swiss_roll
+from sklearn.manifold import LocallyLinearEmbedding
+
+X_swiss, t = make_swiss_roll(n_samples=1000, noise=0.2, random_state=42)
+lle = LocallyLinearEmbedding(n_components=2, n_neighbours=10, random_state=42)
+X_unrolled = lle.fit_transform(X_swiss)
+```
+
+- 
 
 <img src="/images/Pasted image 20260202161616.png" alt="image" width="500">
 
