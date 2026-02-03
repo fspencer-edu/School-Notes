@@ -40,12 +40,12 @@ Renewed ANNs
 - Signals travel along the axions and make the synapses release chemical signals called neurotransmitter
 - Fires electrical impulses
 
-![[Pasted image 20260203143253.png]]
+<img src="/images/Pasted image 20260203143253.png" alt="image" width="500">
 
 - Architecture of biological neural networks (BNNs)
 - Neurons are often organized in consecutive layers, especially in the cerebral cortex
 
-![[Pasted image 20260203143400.png]]
+<img src="/images/Pasted image 20260203143400.png" alt="image" width="500">
 
 
 ## Logical Computations with Neurons
@@ -55,7 +55,7 @@ Renewed ANNs
 	- One or more binary inputs and one binary output
 - Can compute any logical proposition
 
-![[Pasted image 20260203143524.png]]
+<img src="/images/Pasted image 20260203143524.png" alt="image" width="500">
 
 1) Identity function
 	1) If A is activated, then C gets activated
@@ -83,21 +83,21 @@ $h_w(x) = step(z)$
 - Similar to logistic regression, except it uses a step function instead of logistic
 - Model parameters are the input weights $w$ and the bias term, $b$
 
-![[Pasted image 20260203144005.png]]
+<img src="/images/Pasted image 20260203144005.png" alt="image" width="500">
 
 - Most common step function is the Heaviside step function
 - Sign function is also used
 
 **Common Step Functions Used in Perceptron (threshold = 0)**
 
-![[Pasted image 20260203144051.png]]
+<img src="/images/Pasted image 20260203144051.png" alt="image" width="500">
 
 - A single TLU can be used for simple linear binary classification
 - A perceptron is composed of one or more TLUs organized in a single layer
 	- Every TLU is connected to every input
 	- Fully connected layer, or a dense layer
 
-![[Pasted image 20260203144215.png]]
+<img src="/images/Pasted image 20260203144215.png" alt="image" width="500">
 
 - Classify instances simultaneously into 3 different binary classes, makes it a multilabel classifier
 
@@ -123,7 +123,7 @@ $\phi$ = activation functions
 
 **Perception Learning Rule (Weight Update)**
 
-![[Pasted image 20260203144734.png]]
+<img src="/images/Pasted image 20260203144734.png" alt="image" width="500">
 
 $w_{i,j}$ = connection weight
 $x_i$ =input value of current training instance
@@ -157,7 +157,7 @@ y_pred = per_clf.predict(X_new)  # predicts True and False for these 2 flowers
 	- Incapable of solving trivial problems
 		- XOR classification problems
 
-![[Pasted image 20260203145407.png]]
+<img src="/images/Pasted image 20260203145407.png" alt="image" width="500">
 
 - Some limitations can be eliminated by stacking multiple perceptrons
 - Multilayer perceptron (MLP)
@@ -171,19 +171,142 @@ y_pred = per_clf.predict(X_new)  # predicts True and False for these 2 flowers
 - An MLP is composed of one input layer, one or more layers of TLU called hidden layers, and one final layer called the output layer
 - Layers closed to the input is are the lower layers, and then upper layers
 
-![[Pasted image 20260203145612.png]]
+<img src="/images/Pasted image 20260203145612.png" alt="image" width="500">
 
 
 - Signal flow in one direction
 - Feedforward neural network (FNN)
 - When ANN contains a deep stack of hidden layers, it is called a deep neural network (DNN)
 - Research discussed the possibility of using gradient descent to train NN (1960)
-- Reverse-mode automatic 
+- Reverse-mode automatic differentiation (1970)
+	- In 2 passes through a network, it is able to compute the gradients of the NN;s error with regard to every single model parameter
+- Combination of reverse-mode autodiff and gradient descent is called backpropagation (backprop)
+- Reverse-mode autodiff is suited when the function to differentiate has many variables and few outputs
+- Backpropagation can be applied to computational graphs
+
+**Backpropagation**
+- Handles one mini-batch at a time, and goes through the full training set multiple times
+	- Epoch
+- Each mini-batch enters the network through the input layer
+	- Computes the output of all the neurons in the first hidden layer
+	- Result is passed to the next layer, and so on
+	- Forward pass
+		- All intermediate results are preserved for backward pass
+- Algorithm measures the network's output error
+- Computes how much each output bias and each connection to the output layer contributed to the error
+	- Chain rule
+- Algorithm them measure error contributions from connection in layer below, until it reaches input layer
+	- Measure the error gradient across all the connection weights and biases
+- Algorithm performs a gradient descent step to tweak all the connection weights in the network, using the error gradients
+
+- Initialize the hidden layers' connection weights randomly
+- Break the symmetry and allow backpropagation to train a diverse team of neurons
+
+- Replaced the step function in MLP with the logistic function $\alpha(z) = 1 / (1 + exp(-z))$
+	- Sigmoid function
+- Step function contains only flat segments
+	- Ranges from 0 to 1
+
+**Backpropagation on other activation functions**
+
+Hyperbolic tangent function: $tanh(z) = 2\sigma(2z)-1$
+- Activation function is S-shaped, continuous, and differentiable
+- Output value ranges from -1 to 1
+- Each layer's output is more or less centred around at the beginning of training, helps speed of convergence
+
+<img src="/images/Pasted image 20260203151054.png" alt="image" width="500">
+
+The rectified linear unit function: $ReLU(z) = max(0, z)$
+- Continuous but not differentiable at $z=0$
+- Fast to compute, default
+- Does not have a max output value
+	- reduce issues during gradient descent
+
+
+<img src="/images/Pasted image 20260203151039.png" alt="image" width="500">
+
+- If you chain several linear transformations, the result is a linear transformation
+- Deep stack of linear layers, is a complex problem
+- A large enough DNN with non-linear activations can theoretically approximate any continuous function
+
+
+<img src="/images/Pasted image 20260203151009.png" alt="image" width="500">
+
+
 
 ## Regression MLPs
+
+- MLP can be used for regression tasks
+- For multivariate regression, you need one output neuron per output dimension
+	- Locate the centre of an object in an image
+	- Predict 2D coordinates
+	- Place a bounding box around the object (4 output neurons)
+- `MLPRegression` is used to build an MLP with 3 hidden layers composed of 50 neurons each
+
+```python
+from sklearn.datasets import fetch_california_housing
+from sklearn.metrics improt root_mean_squared_error
+from sklearn.model_selection import train_test_split
+from sklearn.neural_network import MLPRegressor
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
+
+housing = fetch_california_housing()
+X_train_full, X_test, y_train_full, y_test = train_test_split(
+	housing.data, housing.taget, random_state=42)
+x_train, X_valud, y_train, y_valid = train_test_split(
+	X_train_full, y_train_full, random_state=42)
+mlp_reg = MLPRegressor(hidden_layer_sizes=[50, 50, 50], random_state=42)
+pipeline = nake_pipeline(StandardScaler(), mlp_reg)
+y_pred = pipeline.predict(X_valid)
+rmse = root_mean_squared_error(y_valid, y_pred)  # about 0.505
+```
+
+- The result is RMSE of ~0.505
+
+- Gradient descent does not converge well when features have large scales
+- Code training the model and evaluates its validation error
+- Model uses ReLU activation function, and it uses a variant of gradient descent called Adam to minimize the mean squared error
+- MLP does not use any activation function from the output layer
+- To guarantee that the output will always be positive, use ReLU activation function in the output layer, or the softplus activation function
+	- Smooth variant of ReLU: $softplus(z) = log(1 +exp(z))$
+		- Close to 0 when z is negative
+		- Close to z when z is positive
+- Neural net features are limited in Scikit-Learn
+- Use mean absolute error (MAE) if there are many outliers
+- Huber loss
+	- Combination of both
+		- Quadratic when the error is smaller than a threshold, linear when error is larger
+
+
+<img src="/images/Pasted image 20260203152340.png" alt="image" width="500">
 ## Classification MLPs
 
+- For binary classification, use a single output neuron using the sigmoid activation function
+	- Output between 0 and 1
+- MLPs can also handle multilabel binary classification tasks
+- 2 output neurons, both using the sigmoid activation function
+	- Output the probability that the email is spam, second would output the probability that it is urgent
+- Model outputs any combination of labels
+- Use softmax activation function for the whole output layer
+	- Probabilities are between 0 and 1, add up to 1
+	- Classes are exclusive
+- Cross-entropy loss (x-entropy or log loss) is a good choice for a loss function
+
+![[Pasted image 20260203152724.png]]
+
+- `MLPClassifier` is similar to `MLPRegressor`
+	- Minimizes the cross entropy rather than the MSE
+
+![[Pasted image 20260203152812.png]]
+
+
 # Implementing MLPs with Keras
+
+- Keras is TensorFlow's high-level deep learning API
+- Build, train, evaluate, and execute NN
+- Keras library was developed by Francois Chollet
+
 
 ## Building an Image Classifier Using the Sequential API
 ## Building a Regression MLP Using the Sequential API

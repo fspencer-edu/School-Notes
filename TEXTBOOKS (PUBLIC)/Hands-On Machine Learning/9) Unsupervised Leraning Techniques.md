@@ -583,7 +583,7 @@ anomalies = X[densities < density_threshold]
 
 **Bayesian information criterion (BIC) and Akaike information criterion (AIC)**
 
-![[Pasted image 20260203135401.png]]
+<img src="/images/Pasted image 20260203135401.png" alt="image" width="500">
 
 $m$ = number of instances
 $p$ = number of parameters
