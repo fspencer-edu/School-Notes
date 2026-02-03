@@ -598,15 +598,73 @@ $\hat{L}$ = max value of the likelihood function
 	- Describe how plausible a particular set of parameter values are, after the outcome is known
 
 - A 1D model has two Gaussian distribution centred at -4 and +1
-- To estimate proab
-
-
+- To estimate probability distribution of a feature outcome, set the model parameter $\theta$
 
 <img src="/images/Pasted image 20260203124250.png" alt="image" width="500">
+- Given a dataset $X$, a common task it to estimate the most likely values for the model parameters
+- Find the values that max the likelihood function
+- A single instance $x=2.5$, the maximum likelihood estimate $MLE$ of $\theta$ is $\hat{\theta} = 1.66$
+- Maximum a-posteriori (MAP) estimation
+	- Prior probability distribution is used
+- Maximizing the likelihood function is equivalent to maximizing its logarithm
+- Logarithm converts products into sums
+
+log(ab) = log(a) + log(b)
+
+
+```python
+gm.bic(X)
+8189.747000497186
+gm.aic(X)
+8102.521720382148
+```
 
 <img src="/images/Pasted image 20260203124315.png" alt="image" width="500">
+## Bayesian Gaussian Mixture Models
+
+- Use `BayesianGaussianMixutre`, that gives weights equal to zero to unnecessary clusters
+- Set the number of cluster to a value that is greater than the optimal number
+- Algorithm will eliminate the unnecessary cluster automatically
+
+```python
+from sklearn.mixture improt BayesianGaussianMixture
+bgm = BayesianGaussianMixture(n_components=10, n_init_10, random_state=42)
+bgm.fit(X)
+bgm.weights_.round(2)
+array([0.4 , 0.21, 0.4 , 0.  , 0.  , 0.  , 0.  , 0.  , 0.  , 0.  ])
+```
+
+- Algorithms detects that only three clusters are needed
+- Gaussian mixture models do not work on models on different shapes
 
 <img src="/images/Pasted image 20260203124325.png" alt="image" width="500">
+- Algorithm searches for ellipsoid
 
-## Bayesian Gaussian Mixture Models
 ## Other Algorithms for Anomaly and Novelty Detection
+
+
+**Fast-MCD (minimum covariance determinant)**
+- `EllipticEnvelope`
+- Use for outlier detection
+- Assumes that normal instances are generated from a single Gaussian distribution
+- Assumes that the dataset is contaminated with outliers that were not generated from this distribution
+- Better estimation for elliptic envelope
+
+**Isolation forest**
+- Outlier detection in high-dimensional datasets
+- Builds a random forest
+- Picks a random feature, and random threshold to split the data
+- Datasets gets chopped, until all instances are isolated
+- Anomalies are far from other instances
+
+**Local outlier factor (LOF)**
+- Outlier detection
+- Compares the density of instances around a given instance to a density around its neighbours
+
+**One-class SVM**
+- Use for novelty detection
+- Separates the instances in high-dimensional space from the origin
+
+**PCA and other dimensionality reduction techniques with an `inverse_tranform()` method**
+- Compare the reconstruction error of a normal instance with the reconstruction of an anomaly, latter will be larger
+- Anomaly detection approach
