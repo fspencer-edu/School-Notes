@@ -433,11 +433,29 @@ array([0., 0., 0., 0., 0., 0., 0., 0., 0., ...,  0., 0., 0.], dtype=float32)
 ```
 
 - `Dense` layer initialized the connection weights randomly and bias terms are set to zero
-- Shape of weight matrix
-
+- Kernel is another name for the matrix of connection weights
+- Shape of weight matrix depends on the number of inputs
 
 ### Compiling the model
 
+- After a model is created, `compile()` method is used to specify the loss function and the optimizer to use
+
+```python
+model.compile(loss="sparse_categorical_crossentropy",
+	optimizer="sgd",
+	metrics=["accuracy"])
+```
+
+- `"sparse_categorical_crossentropy"` is used for loss because we have sparse labels
+- Use one-hot vectors to represent class 3 => `[0., 0., 0., 1., 0., 0., 0., 0., 0., 0.]`
+- Use `sigmoid` activation for binary or multilabel binary classification
+- Convert sparse labels to one-hot vector labels, use `tf.keras.utils.to_categorical()`
+- Optimizer, `sgd`, means that the model will train using stochastic gradient descent
+	- Backpropagation
+- Tune learning rate
+	- `optimizer=tf.keras.optimizers.SGD(learning_rate=__??__)`
+	- Default to 0.01
+- Measure its accuracy during training and evaluation, 
 
 
 ### Training and evaluating the model
