@@ -185,16 +185,118 @@ pca.n_components_
 
 <img src="/images/Pasted image 20260202161543.png" alt="image" width="500">
 
-- 
+- Tune the number of dimensions
+
+```python
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import RandomizedSearchCV
+from sklearn.pipeline import make_pipeline
+
+clf = make_pipeline(PCA(random_state=42),
+			RandomForestClassifier(random_state=42))
+param_distrib = {
+		"pca__n_components": np.arange(10, 80),
+		"randomforestclassifier__n_estimators": np.arange(50, 500)
+}
+rnd_search = RandomizedSearchCV(clf, parm_distrib, n_iter=10,
+		random_state=42)
+rnd_search.fit(X_train[:1000], y_train[:1000])
+
+print(rnd_search.best_params_)
+{'randomforestclassifier__n_estimators': 465, 'pca__n_components': 23}
+
+```
+
+- Reduce the number of dimensions from 784 to 23
 
 ## PCA for Compression
 
+- Decompress the reduced dataset back to 784 dimensions by applying the inverse transformation of the PCA projection
+- Reconstruction error
+	- Mean squared distance between the original and reconstructed data
+
+```python
+X_recovered = pca.inverse_transform(X_reduced)
+```
+
 <img src="/images/Pasted image 20260202161559.png" alt="image" width="500">
+**PCA Inverse Transformation, back to the original number of dimensions**
+
+$X_{recovered} = X_{dProj}W_d^T$
+
 
 ## Randomized PCR
+
+- Scikit-Learn uses a stochastic algorithm called randomized PCA that quickly finds an approximation of the first d principal components
+	- Complexity is $O(m t\times d^2) + O(d^3)$
+	- Faster than the full SVD approach
+
+```python
+rnd_pca = PCA(n_components=154, svd_solver="randomized", random_state=42)
+X_reduced = rnd_pca.fit_transform(X_train)
+```
+
+-  By default the `svd_solver` is set to "auto"
+
 ## Incremental PCA
 
+- Incremental PCA (IPCA) splits the training set into mini-batches and feed these in one mini-batch at a time
+- Useful for applying PCA online
+
+```python
+from sklearn.decomponsition import IncrementalPCA
+
+n_batches = 100
+inc_pca = IncrementalPCA(n_components=154)
+for X_batch in np.array_split(X_train, n_batches):
+	inc_pca.partial_fit(X_batch)
+	
+X_reduced = inc_pca.transfom(X_train)
+```
+
+- Splits the MNIST training set into 100 mini batches and feeds them into the incremental class to reduce the dimensionality
+- Alternatively, use `memmap` class, to manipulate large array stored in a binary file on disk as if it were in memory
+- Create a memory-mapped file and copy the MNIST training set to it
+- Load training data chunk by chunk and save each chunk to the right part of the memmap array
+
+```python
+filename = "my_mnist.mmap"
+X_mmap = np.memmap(filename, dtype='float32', mode='write', shape=X_train.shape)
+X_mmap[:] = X_train
+X_mmap.flush()
+
+X_mmap = np.memmap(filename, dtype="float32", mode="readonly").reshape(-1, 784)
+batch_size = X_mmap.shape[0]
+inc_pca = IncrementalPCA(n_componoents=154, batch_size=batch_size)
+inc_pca.fit(X_mmap)
+```
+
+- Only the raw binary data is saved to disk
+- Specify the data type and shape of the array when loading it
+- For high-dimensional datasets, PCA can to slow
+
 # Random Projection
+
+- Random projection algorithm projects the data to a lower-dimensional space using a random linear projection
+- Two similar instances will remain similar after projection, and two very different instances will remain very different
+
+```python
+from sklearn.random_projection import johnson_lindenstrauss_min_dim
+m, ε = 5_000, 0.1
+d = johnsom_lindenstrauss_min_dim(m, eps=ε)
+d
+7300
+```
+
+- Generate a random matrix P of shape $[d, n]$, where each item os sampled randomly frpm Gaussian distribution with mean 0 and variance 1/d, and use it to project a dataset from n dimensions down to d
+
+```python
+n = 20_000
+np.random.seed(42)
+P = np.random.randn(d, n) / np.sqrt(d)
+X = np.random.randn(m, n)
+X_reduced = X @ P.T
+```
 
 # LLE
 
