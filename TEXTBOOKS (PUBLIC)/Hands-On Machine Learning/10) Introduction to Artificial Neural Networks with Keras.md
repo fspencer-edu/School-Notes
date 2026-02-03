@@ -646,12 +646,143 @@ model = tf.keras.Model(inputs=[inputs_], outputs=[output])
 - `Normalization` standardize the inputs
 - `Dense` layers with 30 neurons, using ReLU activation function
 - `Concatenate` layer
-- `Input` object
+- `Input` object specifies the shape and type, default 32-bit floats
+- Functional API
+	- Pass input object to normalization layer
+	- No actual data is being processed
+- Use `concat_layer` to concatenate the input and second hidden layer
+- Pass `concat` to `output_layer` for final output
+- `Model` specifies the inputs and outputs
+
+- To send a subset of features through the wide path a a different subset through the deep path
+
+```python
+input_wide = tf.keras.layers.Input(shape=[5]) # features 0 to 4
+input_deep = tf.keras.layers.Input(shape=[6]) # features 2 to 7
+norm_layer_wide = tf.keras.layers.Normalization()
+norm_layer_deep = tf.keras.layers.Normalization()
+norm_wide = norm_layer_wide(input_wide)
+norm_deep = norm_layer_deep(input_deep)
+hidden1 = tf.keras.layers.Dense(30, activation="relu")(norm_deep)
+hidden2 = tf.keras.layers.Dense(30, activation="relu")(hidden1)
+concat = tf.keras.layers.concatenate([norm_wide, hidden1])
+output = tf.keras.layers.Dense(1)(concat)
+model = tf.keras.Model(inputs=[input_wide, input_deep], outputs=[outputs])
+```
+
+![[Pasted image 20260203173332.png]]
 
 
+- Each `Dense` layer is created and called on the same line
+	- Cannot do this with `Normalization` layer since we need to reference layers to call `adapt()` method before
+- Use concat which created a layer and calls it with inputs
+- Specified `inputs` when creating the model, since there are two inputs
 
+- Compile the model, but when calling `fit()`, instead of passing a single input matrix `X_train`, pass a pair of matrices `(X_train_wide, X_train_deep)`, one per input
+
+```python
+optimizer = tf.keras.optimizers.Adam(learning_rate=1e-3)
+model.compile(loss="mse", optimizer=optimizer, metrics=["RootMeanSquredRoot"])
+
+X_train_wide, X_train_deep = X_train[:, :5], X_train[:, 2:]
+X_valid_wide, X_valid_deep = X_valid[:, :5], X_valid[:, 2:]
+
+X_test_wide, X_test_deep = X_test[:, :5], X_test[:, 2:]
+X_new_wide, X_new_deep = X_test_wide[:3], X_test_deep[:3]
+
+norm_layer_wide.adapt(X_train_wide)
+norm_layer_deep.adapt(X_train_deep)
+history = model.fit(X_train_wide, X_train_deep), y_train, epoch=20,
+		validation_data=((X_valid_wide, X_valid_deep), y_valid)
+mse_test = model.evaluate((X_test_wide, X_test_deep), y_test)
+y_pred = model.predict((X_new_wide, X_new_deep))
+```
+
+- Instead of passing a tuple `(X_train_wide, X_train_deep)` use a dictionary
+	- `{"input_wide": X_train_wide, "input_deep": X_train_deep}`
+
+- Cases to have multiple outputs
+	- Locate and classify the main object in the picture
+		- Regression and classification tasks
+- Have multiple independent tasks based on the same data
+	- Train a single NN with one output per task
+	- NN can learn features in the data that are useful across tasks
+	- Multitask classification on pictures of faces
+- Regularization technique
+	- Training constraint to reduce overfitting
+	- Add auxiliary output in a neural network architecture to ensure underlying part of the network learn something on its own
+
+
+![[Pasted image 20260203174225.png]]
+
+- Add an extra output requires connection to the models's list of outputs
+
+```python
+output = tf.keras.layers.Dense(1)(concat)
+aux_output = tf.keras.layers.Dense(1)(hidden2)
+model = tf.keras.Model(inputs=[input_wide, input_deep],
+			outputs=[outputm aux_output])
+```
+
+- Each output needs its own loads function
+- Compile the model, to pass a list of losses
+
+```python
+optimizer = tf.keras.optimizers.Adam(learning_rate=1e-3)
+model.compile(loss=("mse", "mse"), loss_weights=(0.9, 0.1), optimizer=optimizer,
+			metrics=["RootMeanSquaredError"])
+```
+
+- Instead of passing `loss=("mse", "mse")`, use dictionary `loss={"ouput":"mse", "aux_output":"mse"}`
+- Provide labels for each output
+- The main output and auxiliary output should try to predict the same thing
+	- Use the same labels
+
+```python
+norm_layer_wide.adapt(X_train_wide)
+norm_layer_deep.adapt(X_train_deep)
+history = model.fit(
+	(X_train_wide, X_train_deep), (y_train, y_train), epochs=20,
+	validation_data=((X_valid_wide, X_valid_deep), (y_valid, y_valid))
+)
+```
+
+- Keras returns the weighted sum of the losses, as well as all individual losses and metrics
+
+```python
+eval_results = model.evaluate((X_test_wide, X_test_deep), (y_test, y_test))
+weighted_sum_of_losses, main_loss, aux_loss, main_rmse, aux_rmse = eval_results
+```
+
+- Set `return_dict=True` for a dictionary instead of a tuple
+
+```python
+y_pred_main, y_pred_aux = model.predict((X_new_wide, y_new_deep))
+
+# create dictonary from predict()
+y_pred_tuple = model.predict((X_new_wide, X_new_deep))
+y_pred = dict(zip(model.output_names, y_pred_tuple))
+```
 
 ## Using the Subclassing API to Build Dynamic Models
+
+- Sequential and functional API are declarative
+	- Start by declaring layers to use then how they should be connected
+	- Model is easily saved, cloned, and shared
+	- Structure can be displayed and analyzed
+	- Framework can infer shapes and check types
+	- Errors can be caught early
+- Model is a static graph of layers
+- Imperative programming style is preferred for
+	- Loops
+	- Varying shapes
+	- Conditional branching
+	- Dynamic behaviours
+
+- Use subclass `Model`, to create the layers you need in the constructor, and use them to perform the computations you want in t
+- 
+
+
 ## Saving and Restoring a Model
 ## Using Callbacks
 
