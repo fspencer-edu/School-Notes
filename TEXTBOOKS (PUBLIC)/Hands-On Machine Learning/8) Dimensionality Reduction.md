@@ -343,7 +343,7 @@ X_unrolled = lle.fit_transform(X_swiss)
 
 **LLE Step 1: Linearly Modeling Local Relationships**
 
-![[Pasted image 20260203100111.png]]
+<img src="/images/Pasted image 20260203100111.png" alt="image" width="500">
 
 - $\hat{W}$ encodes the local linear relationship between the training instances
 - Second step is to map the training instances into a d-dimensional space, while preserving these local relationships
@@ -351,7 +351,7 @@ X_unrolled = lle.fit_transform(X_swiss)
 
 **LLE Step 2: Reduction Dimensionality while Preserving Relationships**
 
-![[Pasted image 20260203100319.png]]
+<img src="/images/Pasted image 20260203100319.png" alt="image" width="500">
 
 - Complexity of LLE, $O(mlog(m)nlog(k))$
 

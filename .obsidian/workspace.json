@@ -120,7 +120,7 @@
             }
           }
         ],
-        "currentTab": 7
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -269,21 +269,22 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "46f271dee5db70a2",
+  "active": "b1787674a13e5e9c",
   "lastOpenFiles": [
+    "images/Pasted image 20260203112816.png",
+    "images/Pasted image 20260203124222.png",
+    "images/Pasted image 20260203110753.png",
+    "images/Pasted image 20260203124233.png",
+    "images/Pasted image 20260203114252.png",
+    "images/Pasted image 20260203110520.png",
+    "images/Pasted image 20260203122037.png",
+    "images/Pasted image 20260203100319.png",
+    "images/Pasted image 20260203124250.png",
+    "images/Pasted image 20260203124325.png",
+    "images/Pasted image 20260203114758.png",
     "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/9) Unsupervised Leraning Techniques.md",
-    "Pasted image 20260203122037.png",
-    "Pasted image 20260203121242.png",
-    "Pasted image 20260203114758.png",
-    "Pasted image 20260203114252.png",
-    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/10) Introduction to Artificial Neural Networks with Keras.md",
-    "Pasted image 20260203113742.png",
-    "Pasted image 20260203113624.png",
-    "Pasted image 20260203113246.png",
-    "Pasted image 20260203112930.png",
-    "Pasted image 20260203112816.png",
-    "Pasted image 20260203111733.png",
     "PRIVATE/ToDo.md",
+    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/10) Introduction to Artificial Neural Networks with Keras.md",
     "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/8) Dimensionality Reduction.md",
     "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/15) Processing Sequences Using RNNs and CNNs.md",
     "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/14) Deep Computer Vision Using Convolutional Neural Networks.md",

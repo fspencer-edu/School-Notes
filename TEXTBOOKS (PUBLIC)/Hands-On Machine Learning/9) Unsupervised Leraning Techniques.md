@@ -13,7 +13,7 @@
 
 - Clustering is an unsupervised task
 
-![[Pasted image 20260203110520.png]]
+<img src="/images/Pasted image 20260203110520.png" alt="image" width="500">
 
 Application of Clustering
 - Customer segmentation
@@ -33,7 +33,7 @@ Application of Clustering
 
 - A technique for pulse-code modulation
 
-![[Pasted image 20260203110753.png]]
+<img src="/images/Pasted image 20260203110753.png" alt="image" width="500">
 
 ```python
 from sklearn.cluster import KMeans
@@ -66,7 +66,7 @@ kmeans.predict(X_new)
 array([1, 1, 2, 2], dtype=int32)
 ```
 
-![[Pasted image 20260203111057.png]]
+<img src="/images/Pasted image 20260203111057.png" alt="image" width="500">
 
 - k-means algorithm does not behave well when the blobs have different diameters
 - Instead of assigning each instance to a single cluster, which is called hard clustering
@@ -88,14 +88,14 @@ array([[2.81, 0.33, 2.9 , 1.49, 2.89],
 - Place the centroids randomly, label the instances, update the centroid and repeat
 - This converges in a finite number of steps
 
-![[Pasted image 20260203111553.png]]
+<img src="/images/Pasted image 20260203111553.png" alt="image" width="500">
 
 - The computational complexity of the algorithm is generally linear with regards to the numbers of instances m, the number of clusters k, and the number of dimensions n
 - Complexity can increase exponentially with the number of instances
 
 - Converging at the right solution depends on the centroid initialization
 
-![[Pasted image 20260203111733.png]]
+<img src="/images/Pasted image 20260203111733.png" alt="image" width="500">
 
 ### Centroid initialization methods
 
@@ -147,13 +147,13 @@ minibatch_kmeans.fit(X)
 - Or pass one mini-batch at a time to `partial_fit()`
 - The inertia in mini-batch k-mean algorithm is slightly worse
 
-![[Pasted image 20260203112816.png]]
+<img src="/images/Pasted image 20260203112816.png" alt="image" width="500">
 
 ### Finding the optimal number of clusters
 
 - The inertial is not a good performance metric when trying to choose k, because it keeps getting lower as we increase k
 
-![[Pasted image 20260203112930.png]]
+<img src="/images/Pasted image 20260203112930.png" alt="image" width="500">
 
 - The curve contains an inflexion point called the elbow
 - Inertia drops quickly as k increases, but then decreases
@@ -171,7 +171,7 @@ silhouette_score(X, kmeans.labels_)
 0.655517642572828
 ```
 
-![[Pasted image 20260203113246.png]]
+<img src="/images/Pasted image 20260203113246.png" alt="image" width="500">
 
 - A more informative visualization is obtained when every instance's silhouette coefficient is plotted, and sorted by the clusters they are assigned to and by the value of the coefficient
 	- Silhouette diagram
@@ -181,14 +181,14 @@ silhouette_score(X, kmeans.labels_)
 	- Wider is better
 - Vertical dash lines represent the mean silhouette score for each number of clusters
 
-![[Pasted image 20260203113624.png]]
+<img src="/images/Pasted image 20260203113624.png" alt="image" width="500">
 
 - Shows use that k=5, is a good choice to get clusters of similar sizes
 ## Limits of k-means
 
 - k-means does not behave well when the clusters have varying sizes, different densities, or non-spherical shapes
 
-![[Pasted image 20260203113742.png]]
+<img src="/images/Pasted image 20260203113742.png" alt="image" width="500">
 
 - Scale input features before running k-means, or the clusters will be stretches
 
@@ -221,7 +221,7 @@ segmented_img = segmented_img.reshape(image.shape)
 
 - Reshapes the array to a long list of RGB colours, then clusters the colours using k-means with 8 clusters
 
-![[Pasted image 20260203114252.png]]
+<img src="/images/Pasted image 20260203114252.png" alt="image" width="500">
 
 
 
@@ -260,7 +260,7 @@ representative_digit_idx = np.argmin(X_digits_dist, axis=0)
 X_representative_digits = X_train[representative_digits_idx]
 ```
 
-![[Pasted image 20260203114758.png]]
+<img src="/images/Pasted image 20260203114758.png" alt="image" width="500">
 
 ```python
 # manually label
@@ -366,7 +366,7 @@ array([[-0.02137124,  0.40618608],
        [ 0.79419406,  0.60777171]])
 ```
 
-![[Pasted image 20260203121242.png]]
+<img src="/images/Pasted image 20260203121242.png" alt="image" width="500">
 
 - As each instance neighbourhood is increasing `eps` to 0.2, forms cluster on the right
 
@@ -399,7 +399,7 @@ y_pred[y_dist > 0.2] = -1
 y_pred.ravel()
 array([-1,  0,  1, -1])
 ```
-![[Pasted image 20260203122037.png]]
+<img src="/images/Pasted image 20260203122037.png" alt="image" width="500">
 
 - DBSCAN is used to identify any number of clusters of any shape
 - DBSCAN can struggle if there is no low-density regions or various significant density regions
@@ -445,6 +445,24 @@ array([-1,  0,  1, -1])
 - A Gaussian mixture model (GMM) is a probabilistic model that assumes that the instances were generated from a mixture of several Gaussian distributions whose parameters are unknown
 
 ## Using Gaussian Mixtures for Anomaly Detection
+
+
+
+<img src="/images/Pasted image 20260203124213.png" alt="image" width="500">
+
+<img src="/images/Pasted image 20260203124222.png" alt="image" width="500">
+
+
+
+<img src="/images/Pasted image 20260203124233.png" alt="image" width="500">
 ## Selecting the Number of Clusters
+
+
+<img src="/images/Pasted image 20260203124250.png" alt="image" width="500">
+
+<img src="/images/Pasted image 20260203124315.png" alt="image" width="500">
+
+<img src="/images/Pasted image 20260203124325.png" alt="image" width="500">
+
 ## Bayesian Gaussian Mixture Models
 ## Other Algorithms for Anomaly and Novelty Detection
