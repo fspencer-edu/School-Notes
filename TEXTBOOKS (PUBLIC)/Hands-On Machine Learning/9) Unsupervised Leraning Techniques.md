@@ -443,19 +443,163 @@ array([-1,  0,  1, -1])
 # Gaussian Mixtures
 
 - A Gaussian mixture model (GMM) is a probabilistic model that assumes that the instances were generated from a mixture of several Gaussian distributions whose parameters are unknown
+- All instances form a cluster that looks like an ellipsoid
+- `GaussianMixture`, the number of k distributions is known in advance
 
-## Using Gaussian Mixtures for Anomaly Detection
+- For each instance, a cluster is picked randomly from among $k$ clusters
+- $\phi$, cluster weight
+- z, index of the cluster
+- If the ith instance was assigned to the jth cluster, then the location x of the instance is sampled randomly from the Gaussian distribution with mean $\micro$ and covariance matrix $\sum$
 
+- Start by estimating the weights, and distribution parameters
 
+```python
+from sklearn.mixture import GaussianMixture
+
+gm = GaussianMixture(n_components=3, n_init_10)
+gm.fit(X)
+
+>>> gm.weights_
+array([0.39025715, 0.40007391, 0.20966893])
+>>> gm.means_
+array([[ 0.05131611,  0.07521837],
+       [-1.40763156,  1.42708225],
+       [ 3.39893794,  1.05928897]])
+>>> gm.covariances_
+array([[[ 0.68799922,  0.79606357],
+        [ 0.79606357,  1.21236106]],
+
+       [[ 0.63479409,  0.72970799],
+        [ 0.72970799,  1.1610351 ]],
+
+       [[ 1.14833585, -0.03256179],
+        [-0.03256179,  0.95490931]]])
+```
+
+- True cluster weights are 0.4, 0.4, and 0.2
+- The true means and covariance matrices are close to the those found by the algorithm
+- The class relies on expectation-maximization (EM), which has man similarities with the k-mean algorithm
+	- Assigns instances to clusters (expectation step)
+	- Updates the clusters (maximization step)
+- EM is a generalization of k-means that finds the clusters, shape, size, orientation, and relative weights
+- EM uses a soft cluster assignments
+- Algorithm estimates the probability that is belongs to each cluster
+- Each cluster is updated using all the instances in the dataset
+- Probabilities are called the responsibilities of the clusters for the instances
+- EM can end up converging to poor solutions
+
+- Check if algorithm converged and the iterations
+
+```python
+gm.converged_
+True
+gm.n_iter_
+4
+```
+
+- Model can assign each instance to the most likely cluster (hard) or estimate the probability that it belongs to a cluster (soft)
+
+```python
+gm.predict(X)
+array([0, 0, 1, ..., 2, 2, 2])
+gm.predict_proba(X).round(3)
+array([[0.977, 0.   , 0.023],
+       [0.983, 0.001, 0.016],
+       [0.   , 1.   , 0.   ],
+       ...,
+       [0.   , 0.   , 1.   ],
+       [0.   , 0.   , 1.   ],
+       [0.   , 0.   , 1.   ]])
+       
+# generate new samples
+X_new, y_new = gm.sample(6)
+X_new
+array([[-0.86944074, -0.32767626],
+       [ 0.29836051,  0.28297011],
+       [-2.8014927 , -0.09047309],
+       [ 3.98203732,  1.49951491],
+       [ 3.81677148,  0.53095244],
+       [ 2.84104923, -0.73858639]])
+y_new
+array([0, 0, 1, 2, 2, 2])
+
+# est. density
+gm.score_samples(X).round(2)
+array([-2.61, -3.57, -3.33, ..., -3.51, -4.4 , -3.81])
+```
+
+- A Gaussian mixture model is a generative model
+	- Sample new instances from it
+- For each instance it is given, `score_samples()` estimates the log of the probability density function (PDF) at that location
+- Exponential of these scores, is the PDF at the location of the given instances
 
 <img src="/images/Pasted image 20260203124213.png" alt="image" width="500">
 
+- Data is not always Gaussian and low-dimensional
+- EM can struggle to converge if there are many dimensions, clusters, or few instances
+- Reduce the number of parameters
+- Limit the range of shapes and orientations that the cluster can have
+- `covariance_type`
+	- `"spherical"`
+		- All clusters must be spherical
+	- `"diag"`
+		- Cluster can take on any ellipsoidal shape
+	- `"ties"`
+		- All clusters must have the same ellipsoidal shape, size, and orientation
+- `"full"` by default
+	- Each cluster can take on any shape, size, and orientation
+
 <img src="/images/Pasted image 20260203124222.png" alt="image" width="500">
 
+- Gaussian Mixture model depends on number of instances m, number of dimensions n, and number of clusters k, and constraints on the covariance matrices
+- $O(kmn)$ for spherical or diag
+- $O(kmn^2 + kn^3)$ for full
 
+## Using Gaussian Mixtures for Anomaly Detection
 
+- Any instance located in a low-density region can be considered an anomaly
+- Define a density threshold
+- Uses precision/recall trade-off
+
+```python
+densities = gm.score_samples(X)
+density_threshold = np.percentile(densities, 2)
+anomalies = X[densities < density_threshold]
+```
 <img src="/images/Pasted image 20260203124233.png" alt="image" width="500">
+- A related task is novelty detection
+	- Algorithm is assumed to be trained on a "clean" dataset, with no outliers
+
+- GM models tries to fit all the data
+- If there are too many outliers the bias of "normality" will be skewed
+- Fit the model once, use it to detect and remove the most extreme outliers, then fit the model again
+- `EllipticEnvelope`
+
 ## Selecting the Number of Clusters
+
+- K-means, users the inertia or the silhouette score to select the appropriate number of cluster
+- GM, does no use these metrics because they are not reliable when clusters are not spherical
+- Find a model that minimizes a theoretical information criterion, such as Bayesian information criterion (BIC) or Akaike information criterion (AIC)
+
+**Bayesian information criterion (BIC) and Akaike information criterion (AIC)**
+
+![[Pasted image 20260203135401.png]]
+
+$m$ = number of instances
+$p$ = number of parameters
+$\hat{L}$ = max value of the likelihood function
+
+- Both BIC and AIC penalize the models that have more parameters to learn and reward models that fit the data well
+- BIC tends to be simpler, but does not fit the data as well
+
+- Probability
+	- Describes how plausible a feature outcome is
+- Likelihood
+	- Describe how plausible a particular set of parameter values are, after the outcome is known
+
+- A 1D model has two Gaussian distribution centred at -4 and +1
+- To estimate proab
+
 
 
 <img src="/images/Pasted image 20260203124250.png" alt="image" width="500">

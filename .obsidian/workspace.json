@@ -119,8 +119,7 @@
               "title": "ToDo"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -269,8 +268,10 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "b1787674a13e5e9c",
+  "active": "bf03df65c29037ac",
   "lastOpenFiles": [
+    "Pasted image 20260203135401.png",
+    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/10) Introduction to Artificial Neural Networks with Keras.md",
     "images/Pasted image 20260203112816.png",
     "images/Pasted image 20260203124222.png",
     "images/Pasted image 20260203110753.png",
@@ -281,10 +282,8 @@
     "images/Pasted image 20260203100319.png",
     "images/Pasted image 20260203124250.png",
     "images/Pasted image 20260203124325.png",
-    "images/Pasted image 20260203114758.png",
     "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/9) Unsupervised Leraning Techniques.md",
     "PRIVATE/ToDo.md",
-    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/10) Introduction to Artificial Neural Networks with Keras.md",
     "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/8) Dimensionality Reduction.md",
     "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/15) Processing Sequences Using RNNs and CNNs.md",
     "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/14) Deep Computer Vision Using Convolutional Neural Networks.md",
