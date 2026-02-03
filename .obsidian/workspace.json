@@ -20,132 +20,6 @@
               "icon": "lucide-file",
               "title": "10) Introduction to Artificial Neural Networks with Keras"
             }
-          },
-          {
-            "id": "059d0b5952de0488",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/11) Training Deep Neural Networks.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "11) Training Deep Neural Networks"
-            }
-          },
-          {
-            "id": "e84fa413edce0cbf",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/12) Custom Models and Training with TensorFlow.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "12) Custom Models and Training with TensorFlow"
-            }
-          },
-          {
-            "id": "45e7306af63c0edb",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/13) Loading and Preprocessing Data with TensorFlow.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "13) Loading and Preprocessing Data with TensorFlow"
-            }
-          },
-          {
-            "id": "f489ac943c28da2b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/14) Deep Computer Vision Using Convolutional Neural Networks.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "14) Deep Computer Vision Using Convolutional Neural Networks"
-            }
-          },
-          {
-            "id": "518bdda5bead2c43",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/15) Processing Sequences Using RNNs and CNNs.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "15) Processing Sequences Using RNNs and CNNs"
-            }
-          },
-          {
-            "id": "46f271dee5db70a2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/16) Natural Language Processing with RNNs and Attention.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "16) Natural Language Processing with RNNs and Attention"
-            }
-          },
-          {
-            "id": "7efca90d225a4f6f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/17) Auto-encoders, GANs, and Diffusion Models.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "17) Auto-encoders, GANs, and Diffusion Models"
-            }
-          },
-          {
-            "id": "9c9254bb064a045c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/18) Reinforcement Learning.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "18) Reinforcement Learning"
-            }
-          },
-          {
-            "id": "8b1f679c06051ab2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/19) Training and Deploying TensorFlow Models at Scale.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "19) Training and Deploying TensorFlow Models at Scale"
-            }
           }
         ]
       }
@@ -298,6 +172,8 @@
   },
   "active": "b1787674a13e5e9c",
   "lastOpenFiles": [
+    "Pasted image 20260203154241.png",
+    "Pasted image 20260203153548.png",
     "Pasted image 20260203152812.png",
     "Pasted image 20260203152724.png",
     "images/Pasted image 20260203143253.png",
@@ -307,8 +183,6 @@
     "images/Pasted image 20260203135401.png",
     "images/Pasted image 20260203144215.png",
     "images/Pasted image 20260203151009.png",
-    "images/Pasted image 20260203151039.png",
-    "images/Pasted image 20260203143400.png",
     "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/19) Training and Deploying TensorFlow Models at Scale.md",
     "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/18) Reinforcement Learning.md",
     "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/17) Auto-encoders, GANs, and Diffusion Models.md",

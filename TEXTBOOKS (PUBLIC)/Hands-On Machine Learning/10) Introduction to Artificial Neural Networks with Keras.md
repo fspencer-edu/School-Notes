@@ -306,9 +306,145 @@ rmse = root_mean_squared_error(y_valid, y_pred)  # about 0.505
 - Keras is TensorFlow's high-level deep learning API
 - Build, train, evaluate, and execute NN
 - Keras library was developed by Francois Chollet
+- Other popular deep learning libraries include
+	- PyTorch by Facebook
+	- JAX by Google
+
+- Colab runtimes come with recent version of TF and Keras preinstalled
 
 
 ## Building an Image Classifier Using the Sequential API
+
+- Load a dataset
+- Fashion MNIST, images represent fashion items rather than handwritten digits
+
+### Using Keras to load the dataset
+
+```python
+import tensorflow as tf
+fashion_mnist = tf.keras.datasets.fashion_mnist.load_data()
+(X_train_full, y_train_full), (X_test, y_test) = fashion_mnist
+X_train, y_train = X_train_full[:-5000], y_train_full[:-5000]
+X_valid, y_valid = X_train_full[-5000], y_train_full[-5000]
+```
+
+- Every image is represented as a 28 x 28 array rather than a 1D array
+- Pixel intensities are represented as integers rather than float
+
+```python
+X_train.shape
+(55000, 28, 28)
+X_train.dtype
+dtype('uint8')
+
+# Scale intentities down to the 0-1 range
+X_train, X_valid, X_test = X_train / 255., X_valid / 255., X_test / 255.
+
+# list of class names
+class_names = ["T-shirt/top", "Trouser", "Pullover", "Dress", "Coat",
+               "Sandal", "Shirt", "Sneaker", "Bag", "Ankle boot"]
+               
+class_names[y_train[0]]
+'Ankle boot'
+```
+
+![[Pasted image 20260203153548.png]]
+
+### Creating the model using the sequential API
+
+```python
+tf.random.set_seed(42)
+model = tf.keras.Sequential()
+model.add(tf.keras.layers.Input(shape=[28,28]))
+model.add(tf.keras.layers.Flattern())
+model.add(tf.keras.layesr.Dense(300, activation="relu"))
+model.add(tf.keras.layesr.Dense(100, activation="relu"))
+model.add(tf.keras.layesr.Dense(10, activation="softmax"))
+```
+- Set TF random seed to make the results reproducible
+- `Sequential` creates a model for NN that are composed of a single stack of layers connected sequentially
+- Build the first layer `Input` and add to model
+	- Shape of instances
+- `Flatten` layer
+	- Converts each input image into a 1D array
+	- `[32, 28, 28]` -> `[32, 784]`
+- `Dense` hidden layer with 300 neurons
+	- Use ReLU
+	- Manages its own weight matrix, and vector of bias terms
+- Second `Dense` hidden layer
+- Final `Dense` hidden layer with softmax
+
+
+- Instead of adding the layers one by one, pass a list of layers when creating a sequential model
+- Drop the input layer, and specify input shape
+
+```python
+nodel = tf.keras.Sequential([
+	tf.keras.layers.Flatten(input_shape[28, 28]),
+	tf.keras.layesr.Dense(300, activation="relu"),
+	tf.keras.layesr.Dense(100, activation="relu"),
+	tf.keras.layesr.Dense(10, activation="softmax"),
+])
+```
+
+- `summary()` displays all the models layers
+	- Name
+	- Output shape
+	- Number of parameters
+
+![[Pasted image 20260203154241.png]]
+
+- `Dense` layers have a lot of parameters
+- First hidden layer is 784 x 300 connection weights, plus 300 bias term; 235500 parameters
+- Each model must have a unique name
+- Keras converts layer's class name into snake case
+- Ensures that name is globally unique
+- All global state managed by Keras is stored in a Keras session
+	- `tf.keras.backend.clear_session()`
+
+
+```python
+model.layers
+[<keras.layers.reshaping.flatten.Flatten at 0x17380e9b0>,
+ <keras.layers.core.dense.Dense at 0x1776211b0>,
+ <keras.layers.core.dense.Dense at 0x177622410>,
+ <keras.layers.core.dense.Dense at 0x176e78c40>]
+ hidden1 = model.layers[1]
+ hidden.name
+ 'dense'
+ model.get_layer('dense') is hidden1
+ True
+ 
+ # access models weights and bias
+>>> weights, biases = hidden1.get_weights()
+>>> weights
+array([[ 5.3297073e-02,  2.4198458e-02, -2.1023259e-02, ...,  4.6089381e-02],
+       [ 2.2632368e-02,  5.9892908e-03,  1.4587238e-02, ...,  2.4750374e-02],
+       ...,
+       [-4.4557646e-02, -5.9672445e-02,  6.5973431e-02, ...,  5.1353276e-02],
+       [-1.4996272e-02,  1.0063291e-02, -3.2075007e-02, ..., -6.4764827e-02]],
+       dtype=float32)
+>>> weights.shape
+(784, 300)
+>>> biases
+array([0., 0., 0., 0., 0., 0., 0., 0., 0., ...,  0., 0., 0.], dtype=float32)
+>>> biases.shape
+(300,)
+```
+
+- `Dense` layer initialized the connection weights randomly and bias terms are set to zero
+- Shape of weight matrix
+
+
+### Compiling the model
+
+
+
+### Training and evaluating the model
+
+### Using the model to make predictions
+
+
 ## Building a Regression MLP Using the Sequential API
 ## Building Complex Models Using the Functional API
 ## Using the Subclassing API to Build Dynamic Models
