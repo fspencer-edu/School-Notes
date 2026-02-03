@@ -341,11 +341,108 @@ log_reg = LogisticRegression(max_iter=10_000)
 	- $\epsilon$-neighbourhood
 - If an instance has at least `min_samples` instances in its $\epsilon$-neighbourhood, then it is considered a core instance
 - All instances in the neighbourhood of a core instance belong to the same cluster
-- 
+- Any instance that is not a core instance and does not have one in its neighbourhood is considered an anomaly
+
+```python
+from sklearn.cluster import DBsCAN
+from sklearn.datasets import make_moons
+X, y = make_moons(n_samples=1000, noise=0.05)
+dbscan = DBSCAN(eps=0.05, min_samples=5)
+dbscan.fit(X)
+dbscan.labels_
+array([ 0,  2, -1, -1,  1,  0,  0,  0,  2,  5, [...], 3,  3,  4,  2,  6,  3])
+```
+
+- Some instances have a cluster index equal to -1
+	- Considered anomalies
+
+```python
+dbscan.core_sample_indices_
+array([  0,   4,   5,   6,   7,   8,  10,  11, [...], 993, 995, 997, 998, 999])
+dbscan.components_
+array([[-0.02137124,  0.40618608],
+       [-0.84192557,  0.53058695],
+       [...],
+       [ 0.79419406,  0.60777171]])
+```
+
+![[Pasted image 20260203121242.png]]
+
+- As each instance neighbourhood is increasing `eps` to 0.2, forms cluster on the right
+
+- DBSCAN cannot predict which cluster a new instance belongs to
+- Different classification algorithm can be better for different tasks
+
+```python
+form sklearn.neighbors import KNeighborClassifier
+
+knn = KNeighborClassifier(n_neighbors=50)
+knn.fit(dbscan.components_, dbscan.labaels_[dbscan.core_sample_indices_])
+
+# predict clusters for new instances
+X_new = np.array([[-0.5, 0], [0, 0.5], [1, -0.1], [2, 1]])
+knn.predict(X_new)
+array([1, 0, 1, 0])
+knn.predict_proba(X_new)
+array([[0.18, 0.82],
+       [1.  , 0.  ],
+       [0.12, 0.88],
+       [1.  , 0.  ]])
+```
+- Only trained the classifier on the core instance
+- Introduces a min distance, in which anomalies are classified
+
+```python
+y_dist, y_pred_idx = knn.kneighbors(X_new, n_neighbors=1)
+y_pred = dbscan.labels_[dbscan.core_sample_indices_][y_pred_idx]
+y_pred[y_dist > 0.2] = -1
+y_pred.ravel()
+array([-1,  0,  1, -1])
+```
+![[Pasted image 20260203122037.png]]
+
+- DBSCAN is used to identify any number of clusters of any shape
+- DBSCAN can struggle if there is no low-density regions or various significant density regions
+- Computational complexity is roughly $O(m^2n)$
+
+- Hierarchical DBSCAN (HDBSCAN)
+	- Better than DBSCAN at finding cluster of varying densities
 
 ## Other Clustering Algorithms
 
+- Agglomerative clustering
+	- A hierarchy of clusters is built from the bottom up
+	- At each iteration, connects the nearest pair of clusters
+	- Capture clusters of various shapes
+	- Flexible and informative cluster trees
+	- Scales well with connectivity matrix
+- BIRCH
+	- Balanced iterative reducing and clustering using hierarchies (BIRCH)
+	- Large datasets, faster than batch k-means
+	- Builds a tree structure containing just enough information to quickly assign each new instance to a cluster, without having to store all instances in the tree
+- Mean-shift
+	- Starts by placing a circle centred on each instance
+	- For each circle it computes the mean of all the instances located within it, and it shifts the circle to it is centred on the mean
+	- Iterates, until circle stops moving
+	- Shifts circles in the direction of higher density, until local density max
+	- Radius of circle is called the bandwidth, relies on local density estimation
+	- Chop clusters into pieces when they have internal density variations
+	- Complexity $O(m^2n)$
+- Affinity propagation
+	- Instances repeatedly exchange message between one another until every instance has elected another instance (or itself) to represent it
+		- Exemplars
+	- Each exemplar and all instances that elected it form one cluster
+	- $O(m^2)$
+- Spectral clustering
+	- Takes similarity matrix between the instances and creates a low-dimensional embedding from it
+	- Uses another clustering algorithm in low-dim space
+	- Capture complex cluster structures
+	- Used to cut graphs
+
+
 # Gaussian Mixtures
+
+- A Gaussian mixture model (GMM) is a probabilistic model that assumes that the instances were generated from a mixture of several Gaussian distributions whose parameters are unknown
 
 ## Using Gaussian Mixtures for Anomaly Detection
 ## Selecting the Number of Clusters
