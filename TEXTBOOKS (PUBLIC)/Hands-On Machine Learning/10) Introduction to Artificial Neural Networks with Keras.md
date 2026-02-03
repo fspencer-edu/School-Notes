@@ -293,12 +293,12 @@ rmse = root_mean_squared_error(y_valid, y_pred)  # about 0.505
 	- Classes are exclusive
 - Cross-entropy loss (x-entropy or log loss) is a good choice for a loss function
 
-![[Pasted image 20260203152724.png]]
+<img src="/images/Pasted image 20260203152724.png" alt="image" width="500">
 
 - `MLPClassifier` is similar to `MLPRegressor`
 	- Minimizes the cross entropy rather than the MSE
 
-![[Pasted image 20260203152812.png]]
+<img src="/images/Pasted image 20260203152812.png" alt="image" width="500">
 
 
 # Implementing MLPs with Keras
@@ -348,7 +348,7 @@ class_names[y_train[0]]
 'Ankle boot'
 ```
 
-![[Pasted image 20260203153548.png]]
+<img src="/images/Pasted image 20260203153548.png" alt="image" width="500">
 
 ### Creating the model using the sequential API
 
@@ -392,7 +392,7 @@ nodel = tf.keras.Sequential([
 	- Output shape
 	- Number of parameters
 
-![[Pasted image 20260203154241.png]]
+<img src="/images/Pasted image 20260203154241.png" alt="image" width="500">
 
 - `Dense` layers have a lot of parameters
 - First hidden layer is 784 x 300 connection weights, plus 300 bias term; 235500 parameters
@@ -455,16 +455,202 @@ model.compile(loss="sparse_categorical_crossentropy",
 - Tune learning rate
 	- `optimizer=tf.keras.optimizers.SGD(learning_rate=__??__)`
 	- Default to 0.01
-- Measure its accuracy during training and evaluation, 
-
+- Measure its accuracy during training and evaluation, `metrics=["accuracy"]`
 
 ### Training and evaluating the model
 
+- Call `fit()` to train model
+
+```python
+history = model.fit(X_train, y_train, epochs=30,
+		validation_data=(X_valid, y_valid))
+Epoch 1/30
+1719/1719 [==============================] - 3s 2ms/step
+  - loss: 0.7239 - sparse_categorical_accuracy: 0.7616
+  - val_loss: 0.5026 - val_sparse_categorical_accuracy: 0.8298
+Epoch 2/30
+1719/1719 [==============================] - 3s 2ms/step
+  - loss: 0.4890 - sparse_categorical_accuracy: 0.8306
+  - val_loss: 0.4506 - val_sparse_categorical_accuracy: 0.8360
+[...]
+Epoch 30/30
+1719/1719 [==============================] - 6s 3ms/step
+  - loss: 0.2246 - sparse_categorical_accuracy: 0.9204
+  - val_loss: 0.3021 - val_sparse_categorical_accuracy: 0.8904
+```
+- Pass input features `X_train` and target classes `y_train`, and number of epochs
+- Pass a validation set
+- Keras will measure the loss and extra metrics on this set at the end of each epoch
+- If performance on the training set is better than on the validation set, model is overfitting
+- Shape errors are common
+	- Remove with `Flatten` layer
+	- `loss="categorical_crossentropy"`
+
+- Neural network is trained
+- At each epoch during training, Keras displays the number of mini-batches processed
+	- 1,719 batches per epoch
+	- Mean training time per sample
+	- Loss and accuracy on training and validation set
+- Training loss when down
+- Validation accuracy reached 89.04% after 30 epochs
+
+- Instead of passing a validation set, use a `validation_split=0.1` to the ratio of the training set to use for validation
+- If training is skewed, set `class_weight` when calling `fit()`
+	- Give a larger weight to under-represented classes, and lower to over-r classes
+	- Give more weights to instances labeled by experts compared to open source
+- `fit()` returns a `History` object containing
+	- Training parameters (`history.params`)
+	- Epoch
+	- Dictionary with loss and extra metrics
+
+```python
+import matplotlib.pyplot as plt
+import pandas as pd
+pd.DataFrame(history.history).plot(
+	figsize=(8, 5), xlim=[0, 29], ylim=[0, 1], gird=True, xlabel="Epoch",
+	style=["r--", "r--.", "b-", "b-*"])
+plt.show()
+```
+
+<img src="/images/Pasted image 20260203170239.png" alt="image" width="500">
+
+- Both training and validation accuracy increase during training
+- Training and validation loss decrease
+- Validation curves get further apart overtime, show overfitting
+- Validation error is computed at the end of each epoch
+- Training error is computer using a running mean during each epoch
+	- Therefore, the training curve should be shifted by half an epoch to the left
+	- Training set performance ends up beating the validation
+- Calling the `fit()` method again, continues training, to reach max accuracy
+
+- Optimize model performance
+	- Check learning rate
+	- Try another optimizer
+	- Tube model hyperparameters
+		- Number of layers
+		- Number of neurons per layer
+		- Types of activation functions
+	- Batch size
+
+- Evaluate performance on the test set to estimate the generalization error before deployment
+- `evaluate()`
+
+```python
+model.evaluate(X_test, y_test)
+313/313 [==============================] - 1s 626us/step
+  - loss: 0.3213 - sparse_categorical_accuracy: 0.8858
+[0.3213411867618561, 0.8858000040054321]
+```
+
+- Common to get lower performance on test set than validation set
+- Hyperparameters are tuned on the validation set
+- Resist temptation to tweak the hyperparameters on the test set, or else your estimate of the generalization error will be too optimistic
+
 ### Using the model to make predictions
+
+- Make predictions on the new instances
+
+```python
+X_new = X_test[L3]
+y_proba = model.predict(X_new)
+y_proba.round(2)
+array([[0.  , 0.  , 0.  , 0.  , 0.  , 0.01, 0.  , 0.02, 0.  , 0.97],
+       [0.  , 0.  , 0.99, 0.  , 0.01, 0.  , 0.  , 0.  , 0.  , 0.  ],
+       [0.  , 1.  , 0.  , 0.  , 0.  , 0.  , 0.  , 0.  , 0.  , 0.  ]],
+      dtype=float32)
+```
+
+- For each instance the model estimates one probability per class, 0-9
+- First image estimates that the probability of class 9 (ankle boot) is 96%
+- Use `argmax()` to get the highest probability class index for each instance
+
+```python
+import numpy as np
+y_pred = y_proba.argmax(axis=-1)
+y_pred
+array([9, 2, 1])
+np.array(class_names)[y_pred]
+array(['Ankle boot', 'Pullover', 'Trouser'], dtype='<U11')
+
+y_new = y_test[:3]
+y_new
+array([9, 2, 1], dtype=uint8)
+```
+
+<img src="/images/Pasted image 20260203171152.png" alt="image" width="500">
 
 
 ## Building a Regression MLP Using the Sequential API
+
+- Using sequential API is similar to classification
+- Output layer has a single neuron and it uses no activation function
+- Loss function is the RMSE
+- Use `Normalization`, same as Scikit-Learn `StandardScaler`, but fitted to the training data
+
+```python
+tf.random.set_seed(42)
+norm_layer = tf.keras.layers.Normalization(input_shape=X_train.shape[1:])
+model = tf.keras.Sequational([
+	norm_layer,
+	tf.keras.layers.Dense(50, activation="relu"),
+	tf.keras.layers.Dense(50, activation="relu"),
+	tf.keras.layers.Dense(50, activation="relu"),
+	tf.keras.layers.Dense(1)
+])
+optimizer = tf.keras.optimizer.Adam(learning_rate=1e-3)
+model.compile(loss="mse", optimizer=optimizer, metrics=["RootMeanSquaredERror"])
+norm_layer.adapt(X_train)
+history = model.fit(X_train, y_train, epochs=20,
+			validation_data=(X_valid, y_valid))
+mse_test, rmse_test = model.evaluate(X_test, y_test)
+X_new = X_test[:3]
+y_pred = model.predict(X_new)
+```
+
+- `Normalization` layer learns the feature means and standard deviations in the training data at `adapt()`
+	- Parameters are not affected by gradient descent
+
+- `Sequational` model are common, useful to build NN with ore complex topologies, with multiple inputs or outputs
+
 ## Building Complex Models Using the Functional API
+
+- A non-sequential NN is a wide and deep neural network (2016)
+- Connects all or part of the inputs directly to the output layer
+- Makes is possible for the NN to learn both deep patterns and simple rules (short path)
+- Regular MLP forces all the data to flow through the full stack of layers
+	- Simple patterns in data are distorted by sequence transformations
+
+<img src="/images/Pasted image 20260203171949.png" alt="image" width="500">
+
+```python
+normalization_layer = tf.keras.layers.Normalization()
+hidden_layer1 = tf.keras.layers.Dense(30, activation="relu")
+hidden_layer2 = tf.keras.layers.Dense(30, activation="relu")
+concat_layer = tf.keras.layers.Concatenate()
+output_layer = tf.keras.layers.Dense(1)
+
+input_ = tf.keras.layers.Input(shape=X_train.shape[1:])
+normalized = normalization_layer(input_)
+hidden1 = hidden_layer1(normalized)
+hidden2 = hidden_layer2(hidden1)
+concat = concat_layer([normalized, hidden2])
+output = output_layer(concat)
+
+model = tf.keras.Model(inputs=[inputs_], outputs=[output])
+```
+
+- At a high level, the first 5 lines create all the layers
+- The next 6 lines use the layers like functions to form the input to the output
+- `Model` points to the input and the output
+
+- `Normalization` standardize the inputs
+- `Dense` layers with 30 neurons, using ReLU activation function
+- `Concatenate` layer
+- `Input` object
+
+
+
+
 ## Using the Subclassing API to Build Dynamic Models
 ## Saving and Restoring a Model
 ## Using Callbacks
