@@ -173,12 +173,176 @@ silhouette_score(X, kmeans.labels_)
 
 ![[Pasted image 20260203113246.png]]
 
+- A more informative visualization is obtained when every instance's silhouette coefficient is plotted, and sorted by the clusters they are assigned to and by the value of the coefficient
+	- Silhouette diagram
+- Each diagram contain one knife shape per cluster
+	- The shapes height indicates the number of instances in the cluster
+	- The width represents the sorted silhouette coefficients of the instances in the cluster
+	- Wider is better
+- Vertical dash lines represent the mean silhouette score for each number of clusters
+
+![[Pasted image 20260203113624.png]]
+
+- Shows use that k=5, is a good choice to get clusters of similar sizes
+## Limits of k-means
+
+- k-means does not behave well when the clusters have varying sizes, different densities, or non-spherical shapes
+
+![[Pasted image 20260203113742.png]]
+
+- Scale input features before running k-means, or the clusters will be stretches
+
+
+## Using Clustering for Image Segmentation
+
+- Image segmentation is the task of partitioning an image into multiple segments
+	- Colour segmentation
+	- Semantic segmentation
+	- Instance segmentation
+
+- Semantic or instance segmentation is achieved using complex architectures based on convolutional neural networks
+
+- Pillow package is used as a python imaging library
+
+```python
+import PIL
+image = np.asarray(PIL.Image.open(filepath))
+image.shape
+(533, 800, 3)
+```
+- (height, width, colour channels)
+
+```python
+X = image.reshape(-1, 3)
+kmeans = KMeans(n_clusters=8, random_state=42).fit(X)
+segmented_img = kmeans.cluster_centers_[kmeans.labels_]
+segmented_img = segmented_img.reshape(image.shape)
+```
+
+- Reshapes the array to a long list of RGB colours, then clusters the colours using k-means with 8 clusters
+
+![[Pasted image 20260203114252.png]]
+
+
+
+## Using Clustering for Semi-Supervised Learning
+
+- Semi-supervise learning
+
+```python
+# load and split the dateset
+from sklearn.datasets import load_digits
+X_digits, y_digits = load_digits(return_X_y=True)
+X_train, y_train = X_digits[:1400], y_digits[:1400]
+X_test, y_test = X_digits[1400:], y_digits[1400:]
+
+# train a logistic regression model on 50 labeled instances
+from sklearn.linear_model import LogisticRegression
+n_labeled = 50
+log_reg = LogisticRegression(max_iter=10_000)
+log_reg.fit(X_train[:n_labeled], y_train[:n_labaled])
+
+# measure accuracy
+log_reg.score(X_test, y_test)
+0.7481108312342569
+```
+
+- Training the model on a full set, will have a higher accuracy
+- Cluster the training set into 50 clusters
+- Then for each cluster, find the image closest to the centroid
+	- Representative images
+
+```python
+k = 50
+kmeans = KMeans(n_cluster=k, random_state=42)
+X_digits_dist = kmeans.fit_transform(X_train)
+representative_digit_idx = np.argmin(X_digits_dist, axis=0)
+X_representative_digits = X_train[representative_digits_idx]
+```
+
+![[Pasted image 20260203114758.png]]
+
+```python
+# manually label
+y_representative_digits = np.array([1, 3, 6, 0, 7, 9, 2, ..., 5, 1, 9, 9, 3, 7])
+
+# Performance
+log_reg = LogisticRegression(max_iter=10_000)
+>>> log_reg.fit(X_representative_digits, y_representative_digits)
+>>> log_reg.score(X_test, y_test)
+0.8488664987405542
+```
+
+- Label representative instances rather than random instances
+- Label propagation
+	- Propagated the labels to all the other instances in the same cluster
+
+```python
+y_train_propagated = np.empty(len(X_train), dtype=np.int64)
+for i in range(k):
+	y_train_propagated[kmeans.labales_ == i] = y_representative_digits[i]
+	
+# train
+log_reg = LogisticRegression()
+>>> log_reg.fit(X_train, y_train_propagated)
+>>> log_reg.score(X_test, y_test)
+0.8942065491183879
+
+# train again, ignoring 1% fathest from their cluster centre
+
+percentile_closest = 99
+X_cluster_dist = X_digits_dist[np.arange(len(X_train)), kmeans.labels_]
+for i in range(k):
+	in_cluster = (kmeans.labels_ == i)
+	cluster_dist = X_cluster_dist[in_cluster]
+	cutoff_distance = np.percentile(cluster_dist, percentile_closest)
+	above_cutoff = (X_cluster_dist > cutoff_distance)
+	X_cluster_dist[in_cluster & above_cutoff] = -1
+	
+partially_propagated = (X_cluster_dist != -1)
+X_train_partially_propagated = X_train[partially_propagated]
+y_train_partially_propagated = y_train_propagated[partially_propagated]
+
+# train
+log_reg = LogisticRegression(max_iter=10_000)
+>>> log_reg.fit(X_train_partially_propagated, y_train_partially_propagated)
+>>> log_reg.score(X_test, y_test)
+0.9093198992443325
+
+(y_train_partially_propagated == y_train[partially_propagated]).mean()
+0.9755555555555555
+```
+
+- Propagated labels have a accuracy of 97%
+
+- Scikit-learn classes to propagate labels automatically
+	- `LabelSpeading`
+	- `LabelPropagation`
+
+- Active learning
+	- Human expert interacts with the learning algorithm, providing labels for specific instances when the algorithm requests them
+- Uncertainty sampling
+	- The model is trained on the labeled instances, and this model is used to make prediction on all the unlabeled instances
+	- Instances for the model the model is more uncertain are given to the expert of labeling
+	- Iterative this process until the performance improvement stops being worth the labeling effort
+
+- Other active learning strategies
+	- Labeling the instances that would results in the largest model change or the largest drop in the model's validation error 
+
+
+## DBSCAN
+
+- Popular clustering algorithm that illustrates an approach based on local density estimation
+- Identifies clusters of arbitrary shapes
+- Density-based spatial clustering of applications with noise (DBSCAN)
+	- Defines clusters as continuous regions of high density
+
+- For each instance, the algorithm counts how many instances are located within a small distance $\epsilon$
+	- $\epsilon$-neighbourhood
+- If an instance has at least `min_samples` instances in its $\epsilon$-neighbourhood, then it is considered a core instance
+- All instances in the neighbourhood of a core instance belong to the same cluster
 - 
 
-## Limits of k-means
-## Using Clustering for Image Segmentation
-## Using Clustering for Semi-Supervised Learning
-## DBSCAN
 ## Other Clustering Algorithms
 
 # Gaussian Mixtures
