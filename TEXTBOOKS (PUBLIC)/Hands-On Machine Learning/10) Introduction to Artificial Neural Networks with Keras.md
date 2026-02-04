@@ -865,7 +865,24 @@ checkpoint_cb = tf.keras.callbacks.ModelCheckpoint("my_checkpoints",
 history = model.fit([...], callbacks=[checkpoint_cb])
 ```
 
-- 
+- Set `save_best_only=True` to save model's best performance
+- `EarlyStopping` callback is used to stop when there is no progress
+
+```python
+early_stopping_cb = tf.keras.callbacks.EarlyStopping(patience=10,
+					restore_best_weights=True)
+history = model.fit([...], callbacks=[checkpoint_cb, early_stopping_cb])
+```
+
+- Custom callback
+
+```python
+class PrintValTrainRatioCallback(tf.keras.callbacks.Callback):
+	def on_epoch_end(self, epoch, logs):
+		ratio = logs["val_loss"] / logs["loss"]
+		print(f"Epoch={epoch}, val/train={ratio:.2f}")
+```
+
 
 ## Using TensorBoard for Visualization
 
