@@ -1,8 +1,8 @@
 # A Quick Tour of TensorFlow
 
-![[Pasted image 20260204105607.png]]
+<img src="/images/Pasted image 20260204105607.png" alt="image" width="500">
 
-![[Pasted image 20260204105615.png]]
+<img src="/images/Pasted image 20260204105615.png" alt="image" width="500">
 
 # Using TensorFlow like NumPy
 
@@ -20,7 +20,7 @@
 ## Custom Metrics
 ## Custom Models
 
-![[Pasted image 20260204105646.png]]
+<img src="/images/Pasted image 20260204105646.png" alt="image" width="500">
 
 ## Losses and Metrics Based on Model Internals
 ## Computing Gradients Using Autodiff
@@ -28,7 +28,7 @@
 
 # TensorFlow Functions and Graphs
 
-![[Pasted image 20260204105705.png]]
+<img src="/images/Pasted image 20260204105705.png" alt="image" width="500">
 
 ## AutoGraph and Tracing
 ## TF Function Rules

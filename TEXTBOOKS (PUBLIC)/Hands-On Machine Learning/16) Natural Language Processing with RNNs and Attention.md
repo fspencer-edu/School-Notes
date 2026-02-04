@@ -1,6 +1,9 @@
 # Generating Shakespearean Text Using a Character RNN
 
 ## Creating the Training Dataset
+
+![[Pasted image 20260204110756.png]]
+
 ## Building and Training the Char-RNN Model
 ## Generating Fake Shakespearean Text
 ## Stateful RNN

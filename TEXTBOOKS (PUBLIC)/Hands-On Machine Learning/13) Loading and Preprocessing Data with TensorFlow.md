@@ -2,17 +2,17 @@
 
 ## Chaining Transformations
 
-![[Pasted image 20260204105728.png]]
+<img src="/images/Pasted image 20260204105728.png" alt="image" width="500">
 ## Shuffling the Data
 ## Interleaving Lines from Multiple Files
 ## Preprocessing the Data
 ## Putting Everything Together
 
-![[Pasted image 20260204105738.png]]
+<img src="/images/Pasted image 20260204105738.png" alt="image" width="500">
 
 ## Prefetching
 
-![[Pasted image 20260204105749.png]]
+<img src="/images/Pasted image 20260204105749.png" alt="image" width="500">
 
 ## Using the Dataset with Keras
 
@@ -28,9 +28,9 @@
 
 ## The Normalization Layer
 
-![[Pasted image 20260204105806.png]]
+<img src="/images/Pasted image 20260204105806.png" alt="image" width="500">
 
-![[Pasted image 20260204105817.png]]
+<img src="/images/Pasted image 20260204105817.png" alt="image" width="500">
 
 
 ## The Discretization Layer
@@ -39,8 +39,8 @@
 ## The Hashing Layer
 ## Encoding Categorical Features Using Embeddings
 
-![[Pasted image 20260204105827.png]]
-![[Pasted image 20260204105837.png]]
+<img src="/images/Pasted image 20260204105827.png" alt="image" width="500">
+<img src="/images/Pasted image 20260204105837.png" alt="image" width="500">
 ## Text Preprocessing
 ## Using Pretrained Language Model Components
 ## Image Preprocessing Layers

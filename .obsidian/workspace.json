@@ -22,119 +22,21 @@
             }
           },
           {
-            "id": "f10824be35b96e29",
+            "id": "34d60a339efdade4",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/12) Custom Models and Training with TensorFlow.md",
+                "file": "TEXTBOOKS (PUBLIC)/Cloud Native Patterns/0) Cloud Native Patterns.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "12) Custom Models and Training with TensorFlow"
-            }
-          },
-          {
-            "id": "c0e955378ea5e071",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/13) Loading and Preprocessing Data with TensorFlow.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "13) Loading and Preprocessing Data with TensorFlow"
-            }
-          },
-          {
-            "id": "be569375b64b741c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/14) Deep Computer Vision Using Convolutional Neural Networks.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "14) Deep Computer Vision Using Convolutional Neural Networks"
-            }
-          },
-          {
-            "id": "851d1cf3d2faa31c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/15) Processing Sequences Using RNNs and CNNs.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "15) Processing Sequences Using RNNs and CNNs"
-            }
-          },
-          {
-            "id": "350f3ed8f4cad4d0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/16) Natural Language Processing with RNNs and Attention.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "16) Natural Language Processing with RNNs and Attention"
-            }
-          },
-          {
-            "id": "2f7dbf1e29221465",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/17) Auto-encoders, GANs, and Diffusion Models.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "17) Auto-encoders, GANs, and Diffusion Models"
-            }
-          },
-          {
-            "id": "f5a83cf8d18fbcb4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/18) Reinforcement Learning.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "18) Reinforcement Learning"
-            }
-          },
-          {
-            "id": "22c34bcb01b79fd2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/19) Training and Deploying TensorFlow Models at Scale.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "19) Training and Deploying TensorFlow Models at Scale"
+              "title": "0) Cloud Native Patterns"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -191,8 +93,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "f79334738d86d2cb",
@@ -283,53 +184,53 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "be569375b64b741c",
+  "active": "34d60a339efdade4",
   "lastOpenFiles": [
-    "Pasted image 20260204105934.png",
-    "Pasted image 20260204105908.png",
-    "Pasted image 20260204105856.png",
-    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/13) Loading and Preprocessing Data with TensorFlow.md",
-    "Pasted image 20260204105837.png",
-    "Pasted image 20260204105827.png",
-    "Pasted image 20260204105817.png",
-    "Pasted image 20260204105806.png",
-    "Pasted image 20260204105749.png",
-    "Pasted image 20260204105738.png",
-    "Pasted image 20260204105728.png",
-    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/12) Custom Models and Training with TensorFlow.md",
-    "Pasted image 20260204105705.png",
+    "TEXTBOOKS (PUBLIC)/Intro to Python for CS Data Science/0) Intro to Python for Computer Science and Data Science - Learning to Program with AI, Big Data and The Cloud.md",
+    "TEXTBOOKS (PUBLIC)/Cloud Native Patterns/0) Cloud Native Patterns.md",
+    "TEXTBOOKS (PUBLIC)/Cloud Native Patterns",
+    "camera.md",
+    "TEXTBOOKS (PUBLIC)/Intro to Python for CS Data Science",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/4) Classification - Basic Concepts, Decision Trees, and Model Evaluation.md",
+    "TEXTBOOKS (PUBLIC)/Building Machine Learning Pipelines/0) Building Machine Learning Pipelines.md",
+    "TEXTBOOKS (PUBLIC)/Docker/3) Installing Docker.md",
+    "TEXTBOOKS (PUBLIC)/Building Machine Learning Pipelines",
+    "TEXTBOOKS (PUBLIC)/Docker/1) Introduction.md",
+    "TEXTBOOKS (PUBLIC)/Docker/0) Docker - Up and Running.md",
+    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/6) Decision Trees.md",
+    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/3) Classification.md",
+    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/1) The Machine Learning Landscape.md",
+    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/0) Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow, 3rd Edition.md",
+    "TEXTBOOKS (PUBLIC)/Interactive Computer Graphics/0) Interactive Computer Graphics.md",
+    "TEXTBOOKS (PUBLIC)/Kubernetes/2) Linux Networking.md",
+    "TEXTBOOKS (PUBLIC)/Kubernetes/1) Network Introduction.md",
+    "TEXTBOOKS (PUBLIC)/System Design on AWS/8) Architectural Designs and Patterns.md",
+    "TEXTBOOKS (PUBLIC)/System Design on AWS/7) Containerization, Orchestration, and Deployment.md",
+    "TEXTBOOKS (PUBLIC)/System Design on AWS/6) Communication Networks and Protocols.md",
+    "TEXTBOOKS (PUBLIC)/System Design on AWS/4) Caching Policies and Strategies.md",
+    "TEXTBOOKS (PUBLIC)/System Design on AWS/2) Storage Types and Relational Stores.md",
+    "TEXTBOOKS (PUBLIC)/System Design on AWS/1) System design Trade-Offs and Guidelines.md",
     "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/11) Training Deep Neural Networks.md",
     "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/19) Training and Deploying TensorFlow Models at Scale.md",
     "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/18) Reinforcement Learning.md",
     "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/17) Auto-encoders, GANs, and Diffusion Models.md",
+    "Pasted image 20260204110826.png",
     "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/16) Natural Language Processing with RNNs and Attention.md",
-    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/15) Processing Sequences Using RNNs and CNNs.md",
-    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/14) Deep Computer Vision Using Convolutional Neural Networks.md",
-    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/10) Introduction to Artificial Neural Networks with Keras.md",
-    "PRIVATE/ToDo.md",
-    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/9) Unsupervised Leraning Techniques.md",
-    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/8) Dimensionality Reduction.md",
-    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/7) Ensemble Leaning and Random Forests.md",
-    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/6) Decision Trees.md",
-    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/5) Support Vector Machines.md",
-    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/4) Training Models.md",
-    "PRIVATE/Winter 2026/Computer Networks/Textbook/8) Security in Computer Networks.md",
-    "PRIVATE/Winter 2026/Data Mining/Textbook/10) Anomaly Detection.md",
-    "PRIVATE/Winter 2026/Data Mining/Textbook/9) Cluster Analysis - Additional Issues and Algorithms.md",
-    "PRIVATE/Winter 2026/Data Mining/Textbook/8) Cluster Analysis - Basic Concepts and Algorithms.md",
-    "PRIVATE/Winter 2026/Data Mining/Textbook/7) Association Analysis - Advanced Concepts.md",
-    "PRIVATE/Winter 2026/Data Mining/Textbook/6) Association Analysis - Basic Concepts and Algorithms.md",
-    "PRIVATE/Winter 2026/Data Mining/Textbook/5) Classification - Alternative Techniques.md",
-    "PRIVATE/Winter 2026/Data Mining/Lab/Lab 3.md",
+    "Pasted image 20260204110756.png",
+    "images/Pasted image 20260204110453.png",
+    "images/Pasted image 20260204105738.png",
+    "images/Pasted image 20260204105705.png",
+    "images/Pasted image 20260204105856.png",
+    "images/Pasted image 20260204105934.png",
+    "images/Pasted image 20260204105908.png",
+    "images/Pasted image 20260204110444.png",
+    "images/Pasted image 20260204105510.png",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/9) Introducing Monads.md.tmp",
     "camera.md.tmp",
     "PRIVATE/Winter 2026/Computer Networks/Textbook/8) Security in Computer Networks.md.tmp",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Rust/Textbook",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Rist/Untitled",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Rust",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir"
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Rist/Untitled"
   ]
 }

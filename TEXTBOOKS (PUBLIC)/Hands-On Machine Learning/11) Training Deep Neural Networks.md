@@ -226,7 +226,7 @@ model = tf.keras.Sequential([
 - Tweak `momentum`
 	- Updates the exponential moving average
 
-![[Pasted image 20260204101258.png]]
+<img src="/images/Pasted image 20260204101258.png" alt="image" width="500">
 
 - `axis`
 	- Determines which axis should be normalized
@@ -255,7 +255,7 @@ model.compile([...], optimizer=optimizer)
 - Transfer learning
 - Add a preprocessing step to resize to the expected original model
 
-![[Pasted image 20260204101857.png]]
+<img src="/images/Pasted image 20260204101857.png" alt="image" width="500">
 
 - Make the weights of the reused layers non-trainable so the GD won't modify them
 - Then train model
@@ -342,7 +342,7 @@ history = model_B_on_A.fit(X_train_B, y_train_B, epochs=16,
 	- Train model again, and repeat
 - Now, models train the full unsupervised model in one shat and use autoencoders or GANs rather than RBMs
 
-![[Pasted image 20260204103736.png]]
+<img src="/images/Pasted image 20260204103736.png" alt="image" width="500">
 
 ## Pretraining on an Auxiliary Task
 
@@ -386,7 +386,7 @@ history = model_B_on_A.fit(X_train_B, y_train_B, epochs=16,
 
 **Momentum algorithm**
 
-![[Pasted image 20260204104549.png]]
+<img src="/images/Pasted image 20260204104549.png" alt="image" width="500">
 
 - When the inputs have different scales, the cost function will look like an elongated bowl
 - Help roll past local optima
@@ -406,10 +406,10 @@ optimizer = tf.keras.optimizers.SGD(learning_rate=0.001, momentum=0.9)
 
 **Nesterov Accelerated Gradient Algorithm**
 
-![[Pasted image 20260204105013.png]]
+<img src="/images/Pasted image 20260204105013.png" alt="image" width="500">
 
 
-![[Pasted image 20260204104755.png]]
+<img src="/images/Pasted image 20260204104755.png" alt="image" width="500">
 
 - Nesterov update ends up closer to the optimum
 - Momentum pushes weights across the valley
@@ -427,12 +427,12 @@ optimizer = tf.keras.optimizers.SGD(learning_rate=0.001, momentum=0.9,
 
 **AdaGrad Algorithm**
 
-![[Pasted image 20260204105357.png]]
+<img src="/images/Pasted image 20260204105357.png" alt="image" width="500">
 
 
 
 
-![[Pasted image 20260204105510.png]]
+<img src="/images/Pasted image 20260204105510.png" alt="image" width="500">
 
 
 
@@ -445,7 +445,7 @@ optimizer = tf.keras.optimizers.SGD(learning_rate=0.001, momentum=0.9,
 ## AdamW
 # Learning Rate Scheduling
 
-![[Pasted image 20260204105525.png]]
+<img src="/images/Pasted image 20260204105525.png" alt="image" width="500">
 
 
 # Avoiding Overfitting Through Regularization
@@ -457,6 +457,6 @@ optimizer = tf.keras.optimizers.SGD(learning_rate=0.001, momentum=0.9,
 ## Max-Norm Regularization
 
 
-![[Pasted image 20260204105547.png]]
+<img src="/images/Pasted image 20260204105547.png" alt="image" width="500">
 
 # Summary and Practical Guidelines
