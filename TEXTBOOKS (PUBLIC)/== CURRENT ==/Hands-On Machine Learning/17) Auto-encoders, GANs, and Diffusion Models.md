@@ -1,6 +1,6 @@
 # Efficient Data Representations
 
-![[Pasted image 20260204110826.png]]
+<img src="/images/Pasted image 20260204110826.png" alt="image" width="500">
 
 # Performing PCA with an Undercomplete Linear Autoencoder
 

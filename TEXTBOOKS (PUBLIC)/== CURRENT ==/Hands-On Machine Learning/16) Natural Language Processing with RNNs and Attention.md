@@ -2,7 +2,7 @@
 
 ## Creating the Training Dataset
 
-![[Pasted image 20260204110756.png]]
+<img src="/images/Pasted image 20260204110756.png" alt="image" width="500">
 
 ## Building and Training the Char-RNN Model
 ## Generating Fake Shakespearean Text
