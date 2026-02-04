@@ -1054,10 +1054,107 @@ best_trial.metrics.get_last_value("val_accuracy")
 0.8596000075340271
 
 # continue training on full set, evaluate, and deploy
-best_model.fit(X_train_full)
+best_model.fit(X_train_full, y_train_full, epochs=10)
+test_loss, test_accuracy = best_model.evaluate(X_test, y_test)
 ```
 
+- Fine-tune pre-processing hyperparameters
+	- Batch size
+- Use `kt.HyperModel`
+	- `build()`
+	- `fit()`
+
+
+- Following code builds the same model as before, with the same hyperparameters, but also uses a Boolean `normalize` to control training
+
+```python
+class MyClassificationHyperModel(kt.HyperModel):
+	def build(self, hp):
+		return build_model(hp)
+		
+	def fit(self, hp, model, X, y, **kwargs):
+		if hp.Boolean("normalize"):
+			norm_layer = tf.keras.layers.Normalization()
+			X = norm_layer(X)
+		return model.fit(X, y, **kwargs)
+```
+
+- Pass an instance of this class to tuner
+
+```python
+hyperband_tuner = kt.Hyperband(
+	MyClassificationHyperModel(), objective="val_accuracy", seed=42,
+	max_epochs=10, factor=3, hyperband_iterations=2,
+	overwrite=True, directory="my_fashion_mnist", project_name="hyperband"
+)
+```
+
+- Trains different models for a few epochs, then eliminates the worst, and keeps only 1/factor models
+- Repeats until a single model is left
+
+```python
+root_logdir = Path(hyperband_tuner.project_dir)/"tensorboard"
+tensorbarod_cb = tf.keras.callbacks.TensorBoard(root_logdir)
+early_stopping_cb = tf.keras.callbacks.EarlyStopping(patience=2)
+hyperband_tuner.search(X_train, y_train, epochs=10,
+	validation_data=(X_valid, y_valid),
+	callbacks=[early_stopping_cb, tensorboard_cb])
+```
+
+- HPARAMS
+	- Contains a summary of all the hyperparameters combinations that were tried and metrics
+	- Table view
+	- Parallel coordinates view
+	- Scatterplot matrix view
+- Hyperband is smarter than pure random search in the way it allocates resources
+- Keras Tuner also includes `kt.BayesianOptimization` tuner
+	- Gradually learns which regions of the hyperparameter space are most promising by fitting a probabilistic models, called Gaussian process
+	- Zoom to best hyperparameters
+	- Has its own hyperparameters, `alpha` = noise, `beta` = algorithm to explore
+
+```python
+bayestian_opt_tuner = kt.BayesianOptimization(
+	MyClassificationHyperModel(), objective="val_accuracy", seed=42,
+	max_trials=10, alpha=1e-4, beta=2.6,
+	overwrite=True, directory="my_fashion_mnist", project_name="bayestion_opt"
+	bayesian_opt_tuner.search([...])
+)
+```
+
+- AutoML
+	- Refers to any system that takes care of a large part of the ML workflow
+
 ## Number of Hidden Layers
+
+- For complex problems, deep network have a much higher parameter efficiency than shallow one
+- A deep neural network automatically takes advantage that data is hierarchical
+- Kickstart the training by reusing the lower layers of a network
+	- Transfer learning
+
 ## Number of Neurons per Hidden Layer
+
+- The number of neurons in the input and output layers is determined by the type of input and output of the task
+- Using the same number of neurons in all hidden layers performs just as well in most cases, or even better
+	- Only one hyperparameter to tune, instead of per layer
+- Build a model with more layers and neurons that needed, then use early stopping and other regularization techniques
+	- "Stretch pants"
+	- Avoid bottleneck layers
+
 ## Learning rate, Batch Size, and Other Hyperparameters
 
+**Other Hyperparameters**
+
+- Learning rate
+	- The optimal learning rate will be lower than the point at which the loss starts to climb
+	- Reinitialize model and train it using the optimal learning rate
+- Optimizer
+- Batch size
+	- Use largest batch size that can fit in GPU RAM
+		- Learning rate warmup
+	- Small batch size
+- Activation function
+	- ReLU for hidden layer
+	- Output layer depends
+- Number of iterations
+
+- 
