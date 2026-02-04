@@ -779,12 +779,93 @@ y_pred = dict(zip(model.output_names, y_pred_tuple))
 	- Conditional branching
 	- Dynamic behaviours
 
-- Use subclass `Model`, to create the layers you need in the constructor, and use them to perform the computations you want in t
-- 
+- Use subclass `Model`, to create the layers you need in the constructor, and use them to perform the computations you want in the `call()`
+- Creating an instance of the following `WideAndDeepModel` gives an equivalent model to functional API
 
+```python
+class WideAndDeepModel(tf.keras.Model):
+	def __init__(self, units=30, activation="relu", **kwards):
+		super().__init__(**kwargs)
+		self.norm_layer_wide = tf.keras.layers.Normalization()
+		self.norm_layer_deep = tf.keras.layers.Normalization()
+		self.hidden1 = tf.keras.layers.Dense(units, activation=activation)
+		self.hidden2 = tf.keras.layers.Dense(units, activation=activation)
+		self.main_output = tf.keras.layers.Dense(1)
+		self.aux_output = tf.keras.layers.Dense(1)
+		
+	def call(self, inputs):
+		input_wide, input_deep = inputs
+		norm_wide = self.norm_layer_wide(input_wide)
+		norm_deep = self.norm_layer_deep(input_deep)
+		hidden1 = self.hidden1(norm_deep)
+		hidden2 = self.hidden2(hidden1)
+		concat = tf.keras.layers.concatenate([norm_wide, hidden2])
+		output = self.main_output(concat)
+		aux_output = self.aux_output(hidden2)
+		return output, aux_output
+		
+model = WideAndDeepModel(30, activation="relu", name="my_cool_omdel")
+```
+
+- Separate the creation of the layers in the constructor from their usage in `call()`
+- Do not create the `Input` object, use the `input` argument to `call()` method
+- Compile the model instance, adapt its normalization layers, fit it, evaluate it, and use it to make predictions
+- API can include anything, but
+	- Model's architecture is hidden within the `call()`, so Keras cannot inspect it
+	- Model cannot be cloned
+	- A list of layers is returned with `summary()`, without information
+	- Keras cannot check types and shapes ahead of time
+- Use sequential or functional API
+
+- Keras models can be used like regular layers, combine to build complex architectures
 
 ## Saving and Restoring a Model
+
+```python
+# saving model
+model.save("my_keras>model", save_format="tf")
+```
+
+- Keras saves the model using TF save model format
+	- Directory containing files and subdirectories
+	- `saved_model.pb` file contains the model's architecture and logic in the form of a serialized computation graph
+	- Do not deploy the model's source code for production
+- `keras_metadata.pb` file contains extra information
+- `/variables` subdirectory contains all the parameter values
+	- Weights, biases, normalization statistics, optimizer's parameters
+- `/assets`, contains extra files
+	- Data samples
+	- Feature names
+	- Class banes
+
+- `save_format="h5"`, saves the model to a single file using Keras-specific format based on HDF5 format
+
+
+- Have a script that trains a model and saves it, and one more script (web services) that load the model and use t to evaluate or make predictions
+
+```python
+# loading model
+model = tf.keras.models.load_model("my_keras_model")
+y_pred_main, y_pred_aux = model.predict((X_new_wide, X_new_deep))
+```
+
+- `save_weights()` and `load_weights()` to save and load parameter values
+	- Saved in an index file, `.index`
+- Save checkpoints regularly in case a computer crashes
+
 ## Using Callbacks
+
+- `fit()` method accepts a `callbacks` argument that specify a list of objects that Keras will call before and after training, before and after each epoch, and before and after processing each batch
+- `ModelCheckpoint` callback saves checkpoints of the model at regular intervals during training
+
+```python
+# checkpoint
+checkpoint_cb = tf.keras.callbacks.ModelCheckpoint("my_checkpoints",
+			save_weights_only=True)
+history = model.fit([...], callbacks=[checkpoint_cb])
+```
+
+- 
 
 ## Using TensorBoard for Visualization
 
