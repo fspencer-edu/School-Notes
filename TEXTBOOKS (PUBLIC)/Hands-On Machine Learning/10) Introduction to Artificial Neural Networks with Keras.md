@@ -670,7 +670,7 @@ output = tf.keras.layers.Dense(1)(concat)
 model = tf.keras.Model(inputs=[input_wide, input_deep], outputs=[outputs])
 ```
 
-![[Pasted image 20260203173332.png]]
+<img src="/images/Pasted image 20260203173332.png" alt="image" width="500">
 
 
 - Each `Dense` layer is created and called on the same line
@@ -713,7 +713,7 @@ y_pred = model.predict((X_new_wide, X_new_deep))
 	- Add auxiliary output in a neural network architecture to ensure underlying part of the network learn something on its own
 
 
-![[Pasted image 20260203174225.png]]
+<img src="/images/Pasted image 20260203174225.png" alt="image" width="500">
 
 - Add an extra output requires connection to the models's list of outputs
 
@@ -913,7 +913,7 @@ history = model.fit([...], callbacks=[tensorboard_cb])
 
 - Code will profile the network between batch 100 and 200 during the first epoch
 
-![[Pasted image 20260204082507.png]]
+<img src="/images/Pasted image 20260204082507.png" alt="image" width="500">
 
 - One directory per run, each containing one subdirectory for training logs, and validation logs
 	- Both files contain training logs, and profile traces
@@ -926,7 +926,7 @@ tensorboard --logdir=./my_logs
 
 - Use SCALARS tab to view the learning curves
 
-![[Pasted image 20260204082743.png]]
+<img src="/images/Pasted image 20260204082743.png" alt="image" width="500">
 
 - TensorFlow offers a lower-level API in the `tf.sumary` package
 - To create `SummaryWriter` using `create_file_writer()` function

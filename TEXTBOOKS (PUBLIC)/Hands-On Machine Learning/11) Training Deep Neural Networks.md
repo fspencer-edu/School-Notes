@@ -17,7 +17,7 @@
 		- Exploding gradients
 - Sigmoid activation function and initialization scheme (normal distribution) causes the variance of the output of each layer to be greater than the variance of its inputs
 
-![[Pasted image 20260204093152.png]]
+<img src="/images/Pasted image 20260204093152.png" alt="image" width="500">
 
 - When the inputs become large, the function saturates at 0 or 1, with a derivative close to 0
 - When backpropagation kicks in it has no gradient to propagate through and is diluted
@@ -36,11 +36,11 @@ $fan_{avg} = (fan_{in} + fan_{out})$
 
 **Glorot Initialization**
 
-![[Pasted image 20260204093548.png]]
+<img src="/images/Pasted image 20260204093548.png" alt="image" width="500">
 
 - Using Glorot initialization can seep up training
 
-![[Pasted image 20260204093700.png]]
+<img src="/images/Pasted image 20260204093700.png" alt="image" width="500">
 
 - Keras uses Glorot initialization by default with a uniform distribution
 
@@ -77,7 +77,7 @@ $LeakyReLU_a(z) = max(az, z)$
 	- $a$ is authorized to be learning during training
 	- Outperforms ReLU on large datasets, but overfitting on smaller
 
-![[Pasted image 20260204094434.png]]
+<img src="/images/Pasted image 20260204094434.png" alt="image" width="500">
 
 - Keras has `LeakyReLY, PReLU`
 
@@ -97,7 +97,7 @@ dense = tf.keras.layers.Dense(50, activation=leaky_relu,
 
 **ELU Activation Function**
 
-![[Pasted image 20260204094741.png]]
+<img src="/images/Pasted image 20260204094741.png" alt="image" width="500">
 
 - When z < 0, allows unit to have an average output closer to 0, and helps alleviate the vanishing
 - Non-zero gradient for z < 0, avoid dead neuron problem
@@ -105,7 +105,7 @@ dense = tf.keras.layers.Dense(50, activation=leaky_relu,
 - Slower to compute
 - Raster convergence rate during training
 
-![[Pasted image 20260204094924.png]]
+<img src="/images/Pasted image 20260204094924.png" alt="image" width="500">
 
 - Scaled ELU (SELU)
 	- Scaled variant of the ELU
@@ -124,7 +124,7 @@ dense = tf.keras.layers.Dense(50, activation=leaky_relu,
 
 **GELU Activation Function**
 
-![[Pasted image 20260204095310.png]]
+<img src="/images/Pasted image 20260204095310.png" alt="image" width="500">
 
 - Neither convex or monotonic
 - Curvature at every point
@@ -132,7 +132,7 @@ dense = tf.keras.layers.Dense(50, activation=leaky_relu,
 - Outperforms every activation function so far
 - More computationally intensive
 
-![[Pasted image 20260204095446.png]]
+<img src="/images/Pasted image 20260204095446.png" alt="image" width="500">
 
 - Sigmoid linear unit (SiLU)
 	- Also called Switch
@@ -153,15 +153,172 @@ dense = tf.keras.layers.Dense(50, activation=leaky_relu,
 
 **Batch normalization algorithm**
 
+<img src="/images/Pasted image 20260204095958.png" alt="image" width="500">
 
+<img src="/images/Pasted image 20260204100007.png" alt="image" width="500">
+
+- BN standardizes the inputs, rescales and offsets them
+- Estimates the final statistics during training using a moving average
+	- $\gamma$ = output scale vector
+	- $\beta$ = output offset vector
+	- $\micro$ = final input mean vector
+	- $\sigma$ = final standard deviation vector
+
+- BN improved all the DNN
+- Less sensitive to weight initialization
+- Acts as a regularizer, reducing the need for regularization techniques
+- Slower predictions
+- Fuse the BN with the previous layer after training, avoiding the runtime penalty
 
 ### Implementing batch normalization with Keras
 
+- Add BN layer before or after each hidden layer
+- Add BN layer as the first layer
+
+```python
+model = tf.keras.Sequential([
+    tf.keras.layers.Flatten(input_shape=[28, 28]),
+    tf.keras.layers.BatchNormalization(),
+    tf.keras.layers.Dense(300, activation="relu",
+                          kernel_initializer="he_normal"),
+    tf.keras.layers.BatchNormalization(),
+    tf.keras.layers.Dense(100, activation="relu",
+                          kernel_initializer="he_normal"),
+    tf.keras.layers.BatchNormalization(),
+    tf.keras.layers.Dense(10, activation="softmax")
+])
+```
+
+<img src="/images/Pasted image 20260204100807.png" alt="image" width="500">
+
+- Each BN layer add four parameters per input, 4 x 784 = 3136
+- Last parameters are moving average, and not affected by backpropagation
+	- "Non-trainable"
+- BN params: $(3136 + 1200 + 400) / 2 = 2368$
+
+
+```python
+>>> [(var.name, var.trainable) for var in model.layers[1].variables]
+[('batch_normalization/gamma:0', True),
+ ('batch_normalization/beta:0', True),
+ ('batch_normalization/moving_mean:0', False),
+ ('batch_normalization/moving_variance:0', False)]
+```
+
+- Add BN layers before activation function, rather than after
+- remove the activation functions from the hidden layers and add them as separate layers after the BN layers
+- remove the bias term from previous layer
+- Drop the first BN layer to avoid sandwiching the first hidden layer between two BN layers
+
+```python
+model = tf.keras.Sequential([
+    tf.keras.layers.Flatten(input_shape=[28, 28]),
+    tf.keras.layers.Dense(300, kernel_initializer="he_normal", use_bias=False),
+    tf.keras.layers.BatchNormalization(),
+    tf.keras.layers.Activation("relu"),
+    tf.keras.layers.Dense(100, kernel_initializer="he_normal", use_bias=False),
+    tf.keras.layers.BatchNormalization(),
+    tf.keras.layers.Activation("relu"),
+    tf.keras.layers.Dense(10, activation="softmax")
+])
+```
+
+- Tweak `momentum`
+	- Updates the exponential moving average
+
+![[Pasted image 20260204101258.png]]
+
+- `axis`
+	- Determines which axis should be normalized
+	- Default normalize the last axis
+
+- BN is used in convolutional neural networks
+
 ## Gradient Clipping
+
+- Another technique to mitigate the exploding gradients is to clip the gradients during backpropagation to never exceed some threshold
+	- Gradient clipping
+- Used in recurrent NN, where using BN is difficult
+`
+```python
+optimizer = tf.keras.optimizers.SGD(clipvalue=1.0)
+model.compile([...], optimizer=optimizer)
+```
+
+- Clip every component of the gradient vector to a value between -1.0 and 1.0
+- All the partial derivates of the loss will be clipped
+- May change the orientation of the gradient vector
 
 # Reusing Pretrained Layers
 
+- Reuse layers, except for the top time
+- Transfer learning
+- Add a preprocessing step to resize to the expected original model
+
+![[Pasted image 20260204101857.png]]
+
+- Make the weights of the reused layers non-trainable so the GD won't modify them
+- Then train model
+- Unfreeze one or two on the top hidden layers to let BP tweak them
+- Useful to reduce the learning rate when unfreeze reused layers
+	- Avoid wrecking fine-tuned weights
+- Drop hidden layers and freeze all remaining hidden layers
+
+
 ## Transfer Learning with Keras
+
+- Load model A and create anew model based on that model's layers
+- Reuse all the layers except for the output layer
+
+```python
+[...]
+model_A = tf.keras.models.load_model("my_model_A")
+model_B_on_A = tf.keras.Sequential(model_A.layers[:1])
+model_B_on_A.add(tf.keras.layers.Dense(1, activation="sigmoid""))
+```
+
+- When `model_B_on_A` is trained, is will affect model A
+- To avoid, clone `model_A` before
+
+```python
+model_A_clone = tf.keras.models.clone_model(model_A)
+model_A_clone.set_weights(model_A.get_weights())
+```
+
+- Train `model_B_on_A` for task B
+- New output layer was initialized randomly and creates large errors
+- Freeze the reuse layers, during the first few epochs
+- Giving the new layers to learn reasonable weights
+- Set every layer's `trainable=False`
+
+```python
+for layer in model_B_on_A.layers[:-1]:
+	layer.trainable = False
+	
+optimizer = tf.keras.optimizer.SGD(learning_rate=0.001)
+model_B_on_A.compile(loss="binary_crossentropy", optimizer=optimizer,
+			metrics=["accuracy"])
+```
+
+- Unfreeze the reused layers and continue training to fine-tune the reused layers for task B
+- Reduce the learning rate, to avoid damaging the reused weights
+
+```python
+history = model_B_on_A.fit(X_train_B, y_train_B, epochs=4
+		validation_data=(X_valid_B, y_valid_B))
+for layer in model_B_on_A.layers[:-1]:
+	layer.trainable = True
+	
+optimizer = tf.keras.optimizers.SGD(learning_rate=0.001)
+model_B_on_A.compile(loss="binary_crossentropy", optimizer=optimizer,
+		metrics=["accuracy"])
+		
+history = model_B_on_A.fit(X_train_B, y_train_B, epochs=16,
+			validation_data=(X_valid_B, y_valid_B))
+```
+
+
+
 ## Unsupervised Pretraining
 ## Pretraining on an Auxiliary Task
 
