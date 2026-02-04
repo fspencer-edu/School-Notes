@@ -315,24 +315,138 @@ model_B_on_A.compile(loss="binary_crossentropy", optimizer=optimizer,
 		
 history = model_B_on_A.fit(X_train_B, y_train_B, epochs=16,
 			validation_data=(X_valid_B, y_valid_B))
+			
+>>> model_B_on_A.evaluate(X_test_B, y_test_B)
+[0.2546142041683197, 0.9384999871253967]
 ```
 
-
+- Transfer learning has reduced the error rate by 25%
+- Transfer learning does not work well with small dense networks
+- Small networks learn few patterns, and dense network learn very  specific patterns
+- Transfer learning works best with deep convolutional NN
+- Feature detectors that are more general
 
 ## Unsupervised Pretraining
+
+- Cheap to gather unlabeled training examples, but expensive to label them
+- Used to train an unsupervised model
+	- Autoencoder
+	- Generative adversarial network (GAN)
+- Reuse the lower layers of the autoencoder of the GAN's discriminator, add the output layer for the task on tope, fine-tune the final network using supervised learning
+
+- Unsupervised pretraining is a good option when you have a complex task to solve, no similar model, and little labeled training data, but lots of unlabeled training data
+- Greedy layer-wise pretraining
+	- Train an unsupervised model with a single layer
+		- RBM (Restricted Boltzmann machine)
+	- Freeze the layer and add another one on top
+	- Train model again, and repeat
+- Now, models train the full unsupervised model in one shat and use autoencoders or GANs rather than RBMs
+
+![[Pasted image 20260204103736.png]]
+
 ## Pretraining on an Auxiliary Task
+
+- If there is little labeled training data, an alternative is to train a first NN on an auxiliary task for which you can easily obtain or generate labeled training data, then reuse the lower layers for actual task
+- Build a system to recognize faces
+	- Gather pictures of random people, and train NN
+	- Learn feature detectors
+- For natural language processing (NLP) application, download text documents and automatically generate labeled data
+	- Mask out words and train a model to predict missing words
+	- Train model to reach good performance, then reused
+
+- Self-supervised learning is when you automatically generate the labels from the data itself
+	- Text-masking
+	- Train a model on the results "labeled" dataset using supervised learning techniques
+
 
 # Faster Optimizers
 
+- 4 ways to speed up training
+	- Initialization strategy for connection weights
+	- Activation function
+	- Batch normalization
+	- Reusing pretraining networks
+- Faster optimizer
+	- Momentum
+	- Nesterov accelerated gradient
+	- AdaGrad
+	- RMSProp
+	- Adam
+
 ## Momentum
+
+- Momentum optimization
+- Regular GD will take small steps when the slope is gentle and large when slope is deep
+	- Never pick up speed
+	- Slower to reach the min
+- Momentum optimization depends on previous gradients
+	- Subtracts the local gradient from the momentum vector $m$
+- Gradient is used as an acceleration, not a speed
+- Algorithm introduces perparameter $\beta$, call momentum, which is set between 0 and 1 (high to low friction)
+
+**Momentum algorithm**
+
+![[Pasted image 20260204104549.png]]
+
+- When the inputs have different scales, the cost function will look like an elongated bowl
+- Help roll past local optima
+- Optimizer may overshoot a but, then come back, overshoot again, and oscillate before stabilizing at the min
+- Good to have friction in the system
+
+```python
+optimizer = tf.keras.optimizers.SGD(learning_rate=0.001, momentum=0.9)
+```
+
+- Momentum value of 0.9 works well
+
 ## Nesterov Accelerated Gradient
+
+- Nesterov accelerated gradient (NAG)
+	- Measures the gradient of the cost function not at the local position $\theta$, but ahead in the direction at, $\theta + \beta m$
+
+**Nesterov Accelerated Gradient Algorithm**
+
+![[Pasted image 20260204105013.png]]
+
+
+![[Pasted image 20260204104755.png]]
+
+- Nesterov update ends up closer to the optimum
+- Momentum pushes weights across the valley
+- NAG reduces oscillations
+
+```python
+optimizer = tf.keras.optimizers.SGD(learning_rate=0.001, momentum=0.9,
+			nesterov=True)
+```
+
 ## AdaGrad
+
+- GD starts by going down the steepest slope
+- AdaGrad algorithm achieves this over shooting by scaling down the gradient vector along the steepest dimensions
+
+**AdaGrad Algorithm**
+
+![[Pasted image 20260204105357.png]]
+
+
+
+
+![[Pasted image 20260204105510.png]]
+
+
+
+
+
 ## RMSProp
 ## Adam
 ## AdaMax
 ## Nadam
 ## AdamW
 # Learning Rate Scheduling
+
+![[Pasted image 20260204105525.png]]
+
 
 # Avoiding Overfitting Through Regularization
 
@@ -341,5 +455,8 @@ history = model_B_on_A.fit(X_train_B, y_train_B, epochs=16,
 ## Dropout
 ## Monte Carlo (MC) Dropout
 ## Max-Norm Regularization
+
+
+![[Pasted image 20260204105547.png]]
 
 # Summary and Practical Guidelines

@@ -133,7 +133,8 @@
               "title": "19) Training and Deploying TensorFlow Models at Scale"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -282,29 +283,29 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "6e9b3706862b2421",
+  "active": "be569375b64b741c",
   "lastOpenFiles": [
-    "Pasted image 20260204101857.png",
-    "Pasted image 20260204101258.png",
-    "images/Pasted image 20260204094741.png",
-    "images/Pasted image 20260204095310.png",
-    "images/Pasted image 20260204094434.png",
-    "images/Pasted image 20260204093548.png",
-    "images/Pasted image 20260203173332.png",
-    "images/Pasted image 20260204082743.png",
-    "images/Pasted image 20260204100807.png",
-    "images/Pasted image 20260204093700.png",
-    "images/Pasted image 20260204100007.png",
+    "Pasted image 20260204105934.png",
+    "Pasted image 20260204105908.png",
+    "Pasted image 20260204105856.png",
+    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/13) Loading and Preprocessing Data with TensorFlow.md",
+    "Pasted image 20260204105837.png",
+    "Pasted image 20260204105827.png",
+    "Pasted image 20260204105817.png",
+    "Pasted image 20260204105806.png",
+    "Pasted image 20260204105749.png",
+    "Pasted image 20260204105738.png",
+    "Pasted image 20260204105728.png",
+    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/12) Custom Models and Training with TensorFlow.md",
+    "Pasted image 20260204105705.png",
+    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/11) Training Deep Neural Networks.md",
     "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/19) Training and Deploying TensorFlow Models at Scale.md",
     "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/18) Reinforcement Learning.md",
     "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/17) Auto-encoders, GANs, and Diffusion Models.md",
     "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/16) Natural Language Processing with RNNs and Attention.md",
     "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/15) Processing Sequences Using RNNs and CNNs.md",
     "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/14) Deep Computer Vision Using Convolutional Neural Networks.md",
-    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/11) Training Deep Neural Networks.md",
     "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/10) Introduction to Artificial Neural Networks with Keras.md",
-    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/13) Loading and Preprocessing Data with TensorFlow.md",
-    "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/12) Custom Models and Training with TensorFlow.md",
     "PRIVATE/ToDo.md",
     "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/9) Unsupervised Leraning Techniques.md",
     "TEXTBOOKS (PUBLIC)/Hands-On Machine Learning/8) Dimensionality Reduction.md",

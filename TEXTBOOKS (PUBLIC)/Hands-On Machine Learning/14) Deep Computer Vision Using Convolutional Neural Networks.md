@@ -1,6 +1,18 @@
+
+![[Pasted image 20260204105856.png]]
+
 # The Architecture of the Visual Cortex
 
+
+
+
+
 # Convolutional Layers
+
+![[Pasted image 20260204105908.png]]
+
+
+![[Pasted image 20260204105934.png]]
 
 ## Filters
 ## Stacking Multiple Feature Maps
