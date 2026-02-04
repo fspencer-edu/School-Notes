@@ -13,11 +13,150 @@
 - GD updates leaves the lower-layers' connection weight unchanged, and training never converges to a good solution
 	- Vanishing gradients
 - In some case the opposite happens
-	- Gradients grow larger until layer
+	- Gradients grow larger until layer causes algorithm to diverge
+		- Exploding gradients
+- Sigmoid activation function and initialization scheme (normal distribution) causes the variance of the output of each layer to be greater than the variance of its inputs
+
+![[Pasted image 20260204093152.png]]
+
+- When the inputs become large, the function saturates at 0 or 1, with a derivative close to 0
+- When backpropagation kicks in it has no gradient to propagate through and is diluted
 
 ## Glorot and He Initialization
+
+- Need signal to flow properly in both direction
+- Need the variance of the outputs of each layer to be equal to the variance of its inputs
+- Fan-in and fan-out of the layers
+	- Input and output are equal
+- Connection weights of each layer must be initialized randomly
+
+$fan_{avg} = (fan_{in} + fan_{out})$
+
+- Xavier initialization or Glorot initialization
+
+**Glorot Initialization**
+
+![[Pasted image 20260204093548.png]]
+
+- Using Glorot initialization can seep up training
+
+![[Pasted image 20260204093700.png]]
+
+- Keras uses Glorot initialization by default with a uniform distribution
+
+```python
+import tensorflow as tf
+
+dense = keras.layers.Dense(50, activation="relu", kernel_initializer="he_normal")
+
+he_avg_init = tf.keras.initializers.VarianceScaling(scale=2., mode="fan_avg",
+			distribution="uniform")
+dense = tf.keras.layers.Dense(50, activation="sigmoid",
+			kernel_initializer=he_avg_init)
+```
+
 ## Better Activation Functions
+
+- Unstable gradients were cause by a poor choice of activation function
+- AF are better in DNN, such as ReLU, because it does not saturate for positive values
+	- Dying ReLU
+		- During training, some neurons "die", stop outputting other than 0
+		- A neuron dies when its weights get tweaked in a way that the input of the ReLU function is negative for all instances in the training set
+- Leaky ReLU to solve
+
+### Leaky ReLU
+
+$LeakyReLU_a(z) = max(az, z)$
+
+- $a$ defines how much the function "leaks"
+- Slope of the function for z < 0
+- Having the slope z < 0, ensure that leaky ReLU never die
+- Outperform strick ReLU
+- Randomized leaky ReLU (RReLU)
+- Parametric leaky ReLU (PReLU)
+	- $a$ is authorized to be learning during training
+	- Outperforms ReLU on large datasets, but overfitting on smaller
+
+![[Pasted image 20260204094434.png]]
+
+- Keras has `LeakyReLY, PReLU`
+
+```python
+leaky_reul = tf.keras.layers.LeakyReLU(alpha=0.2)
+dense = tf.keras.layers.Dense(50, activation=leaky_relu,
+			kernal_intializer="he_normal")
+```
+
+- ReLU, leaky ReLU, and PReLU are all non smooth functions
+- The discontinuity cases GD to bounce around the optimum, and slow down convergence
+
+### ELU and SELU
+
+- Exponential linear unit (ELU)
+	- Outperformed all the ReLU variances
+
+**ELU Activation Function**
+
+![[Pasted image 20260204094741.png]]
+
+- When z < 0, allows unit to have an average output closer to 0, and helps alleviate the vanishing
+- Non-zero gradient for z < 0, avoid dead neuron problem
+- When $a=1$, function is smooth
+- Slower to compute
+- Raster convergence rate during training
+
+![[Pasted image 20260204094924.png]]
+
+- Scaled ELU (SELU)
+	- Scaled variant of the ELU
+- If all hidden layers use the SELU, then the network will self-normalize
+- The output of each layer will tend to preserve a mean of 0, and standard deviation of 1
+- Input feature must be standardized
+- Hidden layer weights must be initialized using LeCun normal initialization
+- Self-normalizing property is only guaranteed with plain MLPs
+- Cannot use regularization techniques
+
+### GELU, Switch, and Mish
+
+- GELU
+	- Smooth variant of the ReLU activation functions
+	- $\phi$ is the standard Gaussian cumulative distribution function (CDF)
+
+**GELU Activation Function**
+
+![[Pasted image 20260204095310.png]]
+
+- Neither convex or monotonic
+- Curvature at every point
+	- Easier for GD to find complex patterns
+- Outperforms every activation function so far
+- More computationally intensive
+
+![[Pasted image 20260204095446.png]]
+
+- Sigmoid linear unit (SiLU)
+	- Also called Switch
+- Mish
+	- Smooth, non-convex, and non-monotonic variant of ReLU
+
+- Switch is better default for more complex tasks
+
 ## Batch Normalization
+
+- Batch normalization (BN) that addresses vanishing/exploding gradients
+- Adding an operation in the model just before or after the activation function
+- Zero-centres and normalizes each input, the scales and shifts the result using two new parameter vectors per layer
+	- Scaling
+	- Shifting
+- Algorithm needs to estimate each input's mean and standard deviation
+- Evaluates the mean and standard deviation of the input over the current mini-bactch
+
+**Batch normalization algorithm**
+
+
+
+### Implementing batch normalization with Keras
+
 ## Gradient Clipping
 
 # Reusing Pretrained Layers
