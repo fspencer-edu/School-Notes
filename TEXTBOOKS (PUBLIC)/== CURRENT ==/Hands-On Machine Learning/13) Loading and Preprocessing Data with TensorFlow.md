@@ -288,17 +288,202 @@ for epoch in range(n_epochs):
 	for X_batch, y_batch in train_set:
 		[...] # perform one gradient descent step
 		
+# Create a TF function that ttrains the model for a whole epoch
+@tf.function
+def train_one_epoch(model, optimizer, loss_fn, train_set):
+	for X_batch, y_batch in train_set:
+		with tf.GradientTape() as tape:
+			y_pred = model(X_batch)
+			main_loss = tf.reduce_mean(loss_fn(y_batch, y_pred))
+			loss = tf.add_n([main_loss] + model.losses)
+		gradients = tape.gradient(loss, model.trainable_variables)
+		optimizer.appy_gradients(zip(gradients, model.trainable_variables))
 		
+optimizer = tf.keras.optimizer.SGD(learning_rate=0.01)
+loss_fn = tf.keras.losses.mean_squared_error
+for epoch in range(n_epochs):
+	print("\rEpoch {}/{}".format(epoch + 1, n_epoch), end="")
+	train_one_epoch(model, optimizer, loss_fn, train_set)
 ```
-
 
 # The TFRecord Format
 
+- TFRecord format is TF preferred format for storing large amount of data
+- Simple binary format containing a sequence of binary of varying sizes
+	- Length
+	- CRC checksum for length
+	- Data
+	- CRC checksum for data
+
+```python
+with tf.io.TFRecordWriter("my_data.tfrecord") as f:
+	f.write(b"This is the first record")
+	f.write(b"This is the second record")
+	
+# Read one or more files
+filepaths = ["my_data.tfrecord"]
+dataset = tf.data.TFRecordDataset(filepaths)
+for item in dataset:
+	print(item)
+tf.Tensor(b'This is the first record', shape=(), dtype=string)
+tf.Tensor(b'And this is the second record', shape=(), dtype=string)
+```
+
+- By default will read one by one
+
+
 ## Compressed TFRecord Files
+
+- Compress TFRecords
+
+```python
+options = tf.io.TFRecordOptions(compression_type="GZIP")
+with tf.io.TFRecordWriter("my_compressed.tfrecord", options) as f:
+	f.write(b"Compress, compress, compress!")
+	
+# read compressed file
+dataset = tf.data.TFRecordDataset(["my_compressed.tfrecord"],
+				compression_type="GZIP")
+```
+
 ## A Brief Introduction to Protocol Buffers
+
+- TFRecords files contain serialized protocol buffers (protobufs)
+- Portable extensible, and efficient binary format developed by Google (2001)
+
+```python
+syntax = "proto3";
+message Person {
+	string name = 1;
+	int32 id = 2;
+	repeated string email = 3;
+}
+```
+
+- Using version 3 format, specifies `Person` objects, that has a name, id, and zero or more `email` fields
+- Compile `.proto` file using `protoc`, to generate access classes in Python
+
+```python
+from person_pb2 impor Person
+person = Person(name="A1", id=123, email["a@b.com"])
+print(person)
+name: "Al"
+id: 123
+email: "a@b.com"
+person.name
+'A1'
+person.name = "Fiona"
+person.email[0]
+'a@b.com'
+person.email.append("c@d.com"
+serialized = person.SerializeToString()
+b'\n\x05Fiona\x10{\x1a\x07a@b.com\x1a\x07c@d.com'
+person2 = Person()
+person2.ParseFromString(serialized)
+27
+person == person2
+True
+```
+
+- Create an `Person` instance
+- Save the serialized object to a TFRecord file, then load, and parse it
+- `ParseFromString()` is not a TF operation
+- Use wrapper `tf.py_function()` operation or `tf.io.decode_proto()`
+- Generally use the predefined protobuf for which TF provides dedicated parsing operations
+
 ## TensorFlow Protobufs
+
+- Main protobuf is used in a `TFRecord` file is the `Example`
+	- One instance in the dataset
+	- List of named features
+
+```python
+syntax = "proto3";
+message BytesList { repeated bytes value = 1; }
+message FloatList { repeated float value = 1 [packed = true]; }
+message Int64List { repeated int64 value = 1 [packed = true]; }
+message Feature {
+    oneof kind {
+        BytesList bytes_list = 1;
+        FloatList float_list = 2;
+        Int64List int64_list = 3;
+    }
+};
+message Features { map<string, Feature> feature = 1; };
+message Example { Features features = 1; };
+```
+
+- TF developers may decide to add more fields to it
+
+```python
+from tensorflow.train import ByteList, FloatList, Int64List
+from tensorflow.train impot Feature, Features, Example
+
+person_example = Example(
+	features=Features(
+		feature={
+			"name": Feature(bytes_list=BytesList(value=[b"Fiona"])),
+            "id": Feature(int64_list=Int64List(value=[123])),
+            "emails": Feature(bytes_list=BytesList(value=[b"a@b.com",
+                                                          b"c@d.com"]))
+		}
+	)
+)
+
+# wrap code in smaller helper function
+with tf.io.TFRecordWriter("my_contacts.tfrecord") a f:
+	for _ in range(5):
+		f.write(person_example.SerializeToString())
+```
+- Write more than 5 `Example`
+- Create a conversion script that reads from current format, creates an `Example` protobuf for each instance, serialized them, and saves to several TFRecords (shuffling)
+
 ## Loading and Parsing Examples
+
+- Code defines a description dictionary, then creates a `TFRecordDataset` and applied a custom preprocessing function to it to parse each serialized protobuf
+
+```python
+feature_description = {
+	"name": tf.io.FixedLenFeature([], tf.string, default_value=""),
+    "id": tf.io.FixedLenFeature([], tf.int64, default_value=0),
+    "emails": tf.io.VarLenFeature(tf.string),
+}
+
+def parse(serialized_example):
+	return tf.io.parse_single_example(serialized_exmple, feature_description)
+	
+dataset = tf.data.TFRecordDataset(["my_contacts.tfrecrod"]).map(parse)
+for parsed_example in dataset:
+	print(parse_example)
+```
+
+- Convert a sparse tensor to a dense tensor, `tf.sparse.to_dense()`
+
+```python
+>>> tf.sparse.to_dense(parsed_example["emails"], default_value=b"")
+<tf.Tensor: [...] dtype=string, numpy=array([b'a@b.com', b'c@d.com'], [...])>
+>>> parsed_example["emails"].values
+<tf.Tensor: [...] dtype=string, numpy=array([b'a@b.com', b'c@d.com'], [...])>
+
+# Parse by batch
+def parse(serialized_examples):
+	return tf.io.parse_example(serialized_examples, feature_description)
+	
+dataset = tf.data.TFRecordDataset(["my_contacts.tfrecord"]).batch(2).map(parse)
+for parsed_examples in dataset:
+	print(parsed_examples)
+```
 ## Handling Lists of Lists Using the SequenceExample Protobuf
+
+```python
+message FeatureList { repeated Feature feature = 1 };
+message FeatureLists { maps<string, FeatureList> feature_list = 1; };
+message SequenceExample {
+	Features context = 1;
+	FeatureLists feature_lists = 2;
+};
+```
+
 
 # Keras Preprocessing Layers
 
