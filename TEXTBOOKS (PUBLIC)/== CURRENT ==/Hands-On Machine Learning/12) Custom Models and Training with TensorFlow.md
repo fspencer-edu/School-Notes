@@ -686,10 +686,10 @@ def mu_softplus(z)
 	return result, my_softplus_gradients
 ```
 
-![[Pasted image 20260205115527.png]]
+<img src="/images/Pasted image 20260205115527.png" alt="image" width="500">
 
 - This form is not stable for large values
-![[Pasted image 20260205115553.png]]
+<img src="/images/Pasted image 20260205115553.png" alt="image" width="500">
 
 
 ## Custom Training Loops

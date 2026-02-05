@@ -11,10 +11,84 @@
             "id": "dec5b052cac145ba",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/1) First Steps.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "1) First Steps"
+            }
+          },
+          {
+            "id": "bc78437362b0f966",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/2) Building Blocks.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2) Building Blocks"
+            }
+          },
+          {
+            "id": "108e1745c83905a8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/3) Control Flow.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "3) Control Flow"
+            }
+          },
+          {
+            "id": "011a988b8f8192c3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/4) Data Abstractions.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "4) Data Abstractions"
+            }
+          },
+          {
+            "id": "691c6a7a8f98dfe1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/6) Generic Server Processes.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "6) Generic Server Processes"
+            }
+          },
+          {
+            "id": "4f7b47e438a595e3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/ToDo.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "ToDo"
             }
           }
         ]
@@ -168,8 +242,25 @@
   },
   "active": "dec5b052cac145ba",
   "lastOpenFiles": [
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/13) Loading and Preprocessing Data with TensorFlow.md",
+    "Pasted image 20260205141941.png",
+    "Pasted image 20260205141738.png",
+    "Pasted image 20260205141021.png",
     "PRIVATE/ToDo.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/1) First Steps.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/2) Building Blocks.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/6) Generic Server Processes.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/5) Concurrency Primitives.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/4) Data Abstractions.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/3) Control Flow.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/0) Elixir in Action, 3rd Edition.md",
+    "images/Pasted image 20260205090146.png",
+    "images/Pasted image 20260205095516.png",
+    "images/Pasted image 20260205095528.png",
+    "images/Pasted image 20260205115527.png",
+    "images/Pasted image 20260205091034.png",
+    "images/Pasted image 20260205085928.png",
+    "images/Pasted image 20260205115553.png",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/13) Loading and Preprocessing Data with TensorFlow.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/19) Training and Deploying TensorFlow Models at Scale.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/18) Reinforcement Learning.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/17) Auto-encoders, GANs, and Diffusion Models.md",
@@ -178,13 +269,7 @@
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/14) Deep Computer Vision Using Convolutional Neural Networks.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/12) Custom Models and Training with TensorFlow.md",
     "Pasted image 20260205115553.png",
-    "Pasted image 20260205115527.png",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/11) Training Deep Neural Networks.md",
-    "Pasted image 20260205095528.png",
-    "Pasted image 20260205095516.png",
-    "Pasted image 20260205091034.png",
-    "Pasted image 20260205090146.png",
-    "Pasted image 20260205085928.png",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Kubeflow for ML/0) Kubeflow for Machine Learning.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats. for CS/0) Probability and Statistics for CS.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Kubeflow for ML",
@@ -198,20 +283,10 @@
     "TEXTBOOKS (PUBLIC)/== TODO ==/Infrastructure as Code",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Mastering API Architecture/0) Mastering API Architecture.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Cloud Computing",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Python for Data Analysis/0) Python for Data Analysis.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Mastering API Architecture",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/R for Data Science/0) R for Data Science.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Python for Data Analysis",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Data Wrangling with Python/0) Data Wrangling with Python.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/R for Data Science",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Python and R for DS/0) Python vs. R for Data Science.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Data Wrangling with Python",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Data Engineering/0) Data Engineering.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Python and R for DS",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Spark/0) Spark.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Practical Data Science with Hadoop/0) Practical DS with Hadoop and Spark.md",
-    "images/Pasted image 20260204110756.png",
-    "images/Pasted image 20260204110826.png",
-    "Pasted image 20260204110826.png"
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Python and R for DS"
   ]
 }

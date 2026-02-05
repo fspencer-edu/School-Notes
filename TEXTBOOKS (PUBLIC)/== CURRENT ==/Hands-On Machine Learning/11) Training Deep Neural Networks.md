@@ -444,7 +444,7 @@ optimizer = tf.keras.optimizers.SGD(learning_rate=0.001, momentum=0.9,
 
 **RMSProp Algorithm**
 
-![[Pasted image 20260205085928.png]]
+<img src="/images/Pasted image 20260205085928.png" alt="image" width="500">
 
 ```python
 optimizer = tf.keras.optimizers.RMSprop(learning_rate=0.001, rho=0.9)
@@ -461,7 +461,7 @@ optimizer = tf.keras.optimizers.RMSprop(learning_rate=0.001, rho=0.9)
 
 **Adam Algorithm**
 
-![[Pasted image 20260205090146.png]]
+<img src="/images/Pasted image 20260205090146.png" alt="image" width="500">
 
 $t$ = iteration number
 - In step 1, computes exponentially decaying average rather than exponentially decaying sum
@@ -498,7 +498,7 @@ optimizer = tf.keras.Adam(learning_rate=0.001, beta_1=0.9, beta_2=0.999)
 - Apply a string $\ell_1$ regularization during training
 	- Pushes optimizer to zero
 
-![[Pasted image 20260205091034.png]]
+<img src="/images/Pasted image 20260205091034.png" alt="image" width="500">
 
 # Learning Rate Scheduling
 
@@ -732,8 +732,8 @@ dense = tf.keras.layers.Dense(
 
 # Summary and Practical Guidelines
 
-![[Pasted image 20260205095516.png]]
+<img src="/images/Pasted image 20260205095516.png" alt="image" width="500">
 
-![[Pasted image 20260205095528.png]]
+<img src="/images/Pasted image 20260205095528.png" alt="image" width="500">
 
 - 
