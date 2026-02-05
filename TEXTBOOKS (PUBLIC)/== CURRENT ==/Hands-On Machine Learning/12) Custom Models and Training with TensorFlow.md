@@ -351,10 +351,135 @@ precision([0, 1, 0, 0, 1, 0, 1, 1], [1, 0, 1, 1, 0, 0, 0, 0])
 <tf.Tensor: shape=(), dtype=float32, numpy=0.5>
 ```
 
+- Streaming metric (stateful metric)
+	- Gradually updates precision
+- `result()` gets the current value of the metric
+
+
+```python
+precision.result()
+<tf.Tensor: shape=(), dtype=float32, numpy=0.5>
+precision.variables
+[<tf.Variable 'true_positives:0' [...], numpy=array([4.], dtype=float32)>,
+ <tf.Variable 'false_positives:0' [...], numpy=array([4.], dtype=float32)>]
+precision.reset_states() # both variables get reset to 0.0
+```
+
+- Create a subclass of metrics for custom streaming metrics
+
+```python
+Class HuberMetric(tf.keras.metrics.Metric):
+	def __init__(self, threshold=1.0, **kwargs):
+		super().__init__(**kwargs)
+		self.threshold = threshold
+		self.huber_fn = create_huber(threshold)
+		self.total = self.add_weight("total", initializer="zeros")
+		self.count = self.add_weight("count", initializer="zeros")
+		
+	def update_state(self, y_true, y_pred, sample_weight=None):
+		sample_netrics = self.huber_fn(y_rue, y_pred)
+		self.total.assign_add(tf.reduce_sum(sample_metrics))
+		self.count(assign_add(tf.cast(tf.size(y_true), tf.float32)))
+		
+	def result(self):
+		return self.total / self.count
+		
+	def get_config(self):
+		base_config = super().get_config()
+		return {**base_config, "threshold": self.threshold}
+```
+
+- Constructor ass weights to create the variables needed to keep track of metric's state over multiple matches
+- Update called then you use an instance
+- Result computes and returns the final result
+
+- Keras takes care of variable persistence
+- Keras automatically call for each batch, and keep track of the mean during each epoch
+
+
+## Custom Layers
+
+- To create a custom layer with no weights, wrap it in `tf.keras.layers.lambda`
+
+```python
+exponential_layer = tf.keras.layers.Lambda(lambda x: tf.exp(x))
+```
+- To build a custom stateful layer, create a subclass of `tf.keras.layers.Layer`
+
+```python
+class MyDense(tf.keras.layers.Layer):
+	def __init__(self, units, activation=None, **kwargs):
+		super().__init__(**kwargs)
+		self.units = units
+		self.activation = tf.keras.activations.get(activation)
+		
+	def build(self, batch_input_shape):
+		self.kernel = self.add_weight(
+			name="kerne", shape=[batch_input_shape[-1], self.units],
+			initializer="glorot_normal")
+		self.bias = self.add_weight(
+			name="bias", shape=[self.units], initializer="zeros")
+			
+	def call(self, X):
+		return self.activation(X @ self.kernel + self.bias)
+		
+	def get_config(self):
+		base_config = super().get_config()
+		return {**base_config, "units":self.units,
+				"activation":tf.keras.activations.serialize(self.activation)}
+```
+
+- Constructors takes all the hyperparameters as arguments
+- `build()` creates the layer's variables by calling `add_weight()`
+- `call()` method perform the desired operations
+	- Compute matrix multiplication
+	- Add bias vector
+	- Apply activation function
+- `get_config()` returns values
+
+- Toy layer takes two inputs and return 3 outputs
+
+```python
+class MyMultiLayer(tf.keras.layers.Layer):
+	def call(self, X):
+		X1, X2 = X
+		return X1 + X2, X1 * X2, X1 / X2
+		
+# create a layer that add Gaussian noise during training, not during testing
+class MyGaussianNoise(tf.keras.layers.Layer):
+	def __init-_(self, stddev, **kwarfs):
+		super()__init__(**kwargs)
+		self.stddev = stddev
+		
+	def call(self, X, training=False):
+		if training:
+			noise = tf.random.normal(tf.shape(X), stddev=self.stddev)
+			return X + noise
+		else:
+			return X
+```
+
 ## Custom Models
+
+- To create a custom model, subclass `tf.keras.Model`, create layers and variables int he constructor, and implement the `call()`
+- Inputs go through a first dense layer, then residual block (composed of two dense layers and an addition operation), then through the same residual block 3 more times, then second residual block, and a final dense output layer
+- Create model with loops and skip connections
+- Create a `ResidualBlock` layer
 
 <img src="/images/Pasted image 20260204105646.png" alt="image" width="500">
 
+```python
+class ResidualBlock(tf.keras.layers.Layer):
+	def __init__(self, n_layers, n_neurons, **kwargs):
+		super().__init__(**kwargs)
+		self.hidden = [tf.keras.layers.Dense(n_neurons, activation="relu",
+							kernal_initializer="he_normal"),
+					for _ in range(n_layers)]
+					
+	def call(self, inputs):
+		Z = inputs
+		for layer in self.
+```
 ## Losses and Metrics Based on Model Internals
 ## Computing Gradients Using Autodiff
 ## Custom Training Loops
