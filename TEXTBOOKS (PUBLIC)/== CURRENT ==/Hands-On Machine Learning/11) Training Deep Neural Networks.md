@@ -502,20 +502,150 @@ optimizer = tf.keras.Adam(learning_rate=0.001, beta_1=0.9, beta_2=0.999)
 
 # Learning Rate Scheduling
 
-- 
+- Find a good learning rate by training the model for a few hundred iterations, exponentially increasing the learning rate from small to large
+- Choose the learning rate slightly lower than the one at which the learning curve starts to rise again
+- Reinitialize model and train it with that learning rate
+
+- Start with a large learning rate, and reduce it once training stops, to reach a faster optimal constant learning rate
+
+**Learning Schedules**
+- Exponential
+	- Set learning rate to $\eta(t) = \eta_00.1^{t/s}$
+	- Will gradually drop by a factor of 10 every step
+- Piecewise
+	- use a constant learning rate for number of epochs
+	- Then a smaller learning rate for another number of epochs
+- Performance
+	- Measure the validation error every $N$ steps and reduce the learning rate by a factor of $\lambda$ when the error stops dropping
+- Power
+	- Set the learning rate to a function of iteration number
+	- $t: \eta(t) = \eta_0/(1+t/s)^c$
+	- Learning rate drops each step
+- 1cycle
+	- Starts by increasing the initial learning rate, growing linearly down to $\eta_0$ halfway through training
+	- Decreases the learning rate again the second half
+	- Super-convergence
 
 <img src="/images/Pasted image 20260204105525.png" alt="image" width="500">
+- Both performance scheduling and exponential scheduling performed well
+- Favoured exponential scheduling because it was easy to tune
 
+```python
+def exponential_decay_fn(epoch):
+	return 0.01 * 0.01 ** (epoch/20)
+	
+def exponential_decay(lr0, s):
+	def exponential_decay_fn(epoch):
+		return lr0 * 0.01 ** (epoch/2)
+	return exponential_decay_fn
+
+exponential_decay_fn = exponential_decay(lr0=0.02, s=20)
+
+lr_scheduler = tf.keras.callbacks.LearningRateScheduler(exponential_decay_fn)
+history = model.fit(X_train, y_train, [...], callbacks=[lr_scheduler])
+```
+
+- `LearningRateScheduler` will update the optimizer's `learning_rate` attribute at the beginning of each epoch
+- Schedule function can optionally take the current learning rate as a second argument
+
+```python
+def exponential_decay_fn(epoch, lr):
+	return lr * 0.01 ** (1/20)
+```
+
+- Optimizer and learning rate is saved with model
+- Epoch does not get saves, and resets to 0
+- Set the `fit()` method's `initial_epoch=epoch`
+- Piecewise constant scheduling
+
+```python
+def piecewise_constant_fn(epoch):
+	if epoch < 5:
+		return 0.01
+	elif epoch < 15:
+		return 0.005
+	else:
+		return 0.001
+		
+# multiply 0.5 when best val. does not improve 5 consecutive epochs
+lr_scheduler = tf.keras.callbacks.ReduceLROnPlateau(factor=0.5, patience=5)
+history = model.fit(X_train, y_train, [...], callbacks=[lr_scheduler])
+
+# define a lr, then pass to optimizer
+# updates at each step, rather than at each epoch
+batch_size = 32
+n_epochs = 20
+n_steps = n_epochs * np.ceil(len(X_train) / batch_size)
+scheduled_learning_rate = tf.keras.optimizers.schedules.ExponentialDecay(
+	initial_learning_rate=0.01, decay_steps=n_steps, decay_rate=0.1)
+optimizer = tf.keras.optimizers.SGD(learning_rate=scheduled_learning_rate)
+```
+
+```python
+# power scheduling
+lr_schedule = tf.keras.optimizer.schedules.InverseTimeDecay(
+	initial_learning_rate=0.01,
+	decay_steps=10_000,
+	decay_rate=1.0,
+	staircase=False
+)
+optimizer = tf.keras.optimizers.SGD(learning_rate=lr_schedule)
+```
 
 # Avoiding Overfitting Through Regularization
 
+- The best regularization technique is early stopping
+- Batch normalization to solve the unstable gradients
+- $\ell_1$ and $\ell_2$ regularization
+- Dropout
+- Max-norm regularization
+
 ## $\ell_1$ and $\ell_2$ Regularization
 
+- Use $\ell_2$ regularization to constrain a neural network's connection weights, and $\ell_1$ for a sparse model
+
+```python
+layer = tf.keras.layers.Dense(100, activation="relu",
+		kernel_initizlier="he_normal",
+		kernel_regularizer=tf.keras.regularizers.12(0.01))
+```
+
+- `12()` returns a regularizer that will be called at each step during training to compute the regularization loss
+	- This is added to the final loss
+- Apply the same regularizer to all layers in network, as well as same activation function and the same initialization strategy
+- `functools.partial()`, thin wrapper for any callable function
+
+```python
+from functools import partial
+
+RegularizedDense = partial(tf.keras.laysers.Dense,
+							activation="relu",
+							kernel_initializer="he_normal",
+							kernel_regularizer=tf.keras.regularizer.12(0.01))
+model = tf.keras.Sequential([
+	tf.keras.layers.Fatten(input_shape[28,28]),
+	RegularizedDense(100),
+	RegularizedDense(100),
+	RegularizedDense(10, activation="softmax")
+])
+```
 ## Dropout
+
+- Dropout is one of the most popular regularization techniques for DNN
+- 1-2% accuracy boost
+- At every training step, every neuron has a probability $p$ of being temporarily dropped out (ignored during training step)
+- Dropout rate, $p$, is set 10% and 50^
+- After training, neurons don't get dropped
+- Neurons train with dropout cannot co-adapt with their neighbouring neurons
+- Become less sensitive to changes in the input, and result in a more robust network that generalizes better
+
 ## Monte Carlo (MC) Dropout
 ## Max-Norm Regularization
 
 
 <img src="/images/Pasted image 20260204105547.png" alt="image" width="500">
+
+- NN is an averaging ensemble of all the smaller NN
+- Apply dropout only to neurons in the top one to three layers (excluding output)
 
 # Summary and Practical Guidelines
