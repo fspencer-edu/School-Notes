@@ -478,10 +478,169 @@ class ResidualBlock(tf.keras.layers.Layer):
 					
 	def call(self, inputs):
 		Z = inputs
-		for layer in self.
+		for layer in self.hidden:
+			Z = layer(Z)
+		return inputs + Z
 ```
+
+- `hiddn` attribute contain trackable objects, so their variables are automatically addded to layer's list of variables
+
+```python
+class ResidualRegressor(tf.keras.Model):
+	def __init__(self, output_dim, **kwargs):
+		super().__init__(**kwargs)
+		self.hidden1 = tf.keras.layers.Dense(30, activation="relu",
+							kernel_initializer="he_normal")
+		self.block1 = ResidualBlock(2, 30)
+		self.block2 = ResidualBlock(2, 30)
+		self.out = tf.keras.layers.Dense(output_dim)
+		
+	def call(self, inputs):
+		Z = self.hidden1(inputs)
+		for _ in range(1 + 3)L
+			Z = self.block1(Z)
+		Z = self.block2(Z)
+		return self.out(Z)
+```
+
+- Create the layers in the constructor and use them in the `call()` method
+- `Model` has extra functionalities compared to `Layer` class
+- Build almost any model
+	- Sequential API
+	- Functional API
+	- Subclassing API
+
 ## Losses and Metrics Based on Model Internals
+
+- Custom losses and metrics are based on the labels and predictions
+- To define a custom loss based on model internals, compute it based on any part of the model
+- Pass the result to `add_loss()`
+- Build a custom regression MLP model composed of a stack of 5 hidden layers, plus an output layer
+- Loss associated with output is called the reconstruction loss
+	- Mean squared different between reconstruction and the inputs
+- Loss improves generalization (regularization loss)
+- Add custom metrics using `add_metric()`
+
+```python
+class ReconstructingRegressor(tf.keras.Model):
+	def __init__(self, output_dim, **kwargs):
+		super()__init__(**kwargs)
+		self.hidden = [tf.keras.layers.Dense(30, activation="relu",
+					kernel _initializer="he_normal")
+					for _ in range(5)]
+					
+		self.out = tf.keras.layers.Dense(output_dim)
+		self.reconstruction_mean = tf.keras.metrics.Mean(
+			name="reconstruction_error")
+			
+		def build(self, batch_input_shape):
+			n_inputs = batch_input_shape[-1]
+			self.recontruct = tf.keras.layers.Dense(n_inputs)
+			
+		def call(self, inputs, training=False):
+			Z = inputs
+			for layer in self.hidden:
+				Z = layer(Z)
+			reconstruction = self.reconstruct(Z)
+			recon_loss = tf.reduce_mean(tf.square(reconstruction - inputs))
+			self.add_loss(0.05 * recon_loss)
+			if training:
+				result = self.reconstruction_mean(recon_loss)
+				self.add_netric(result)
+			return self.out(Z)
+```
+
+- Constructor creates the DNN with 5 dense hidden layers and one dense output layer
+- Create a `Mean` streaming metric to keep track of the reconstruction error during training
+- `build()` creates an extra dense layer that will be used to reconstruct the inputs of the model
+- `call()` method processes the inputs through all 5 hidden layers, passes the result through reconstruction layer
+	- Computes the reconstruction loss, and add it to the model's list of losses
+	- Scale down the reconstruction loss my multiplying it by 0.05
+- During training, the `call()` method updates the reconstruction metric and adds it to the model
+- `call()` method passes the output of the hidden layers to the output layer and returns its output
+
+```python
+Epoch 1/5
+363/363 [========] - 1s 820us/step - loss: 0.7640 - reconstruction_error: 1.2728
+Epoch 2/5
+363/363 [========] - 0s 809us/step - loss: 0.4584 - reconstruction_error: 0.6340
+[...]
+```
+
+- Total loss and reconstruction loss will go down
+- For some architectures such as GAN, customize the training loop
+
 ## Computing Gradients Using Autodiff
+
+```python
+def f(w1, w2):
+	return 3 * w2 ** 2 + 2 ** w1 * w2
+```
+
+- Analytically find the partial derivative of this function
+- Compute an approximation of each partial derivative by measuring how much the function's output changes when is is tweaks
+
+```python
+w1, w2 = 5, 3
+eps = 1e-6
+(f(w1 - eps, w2) - f(w1, w2)) / eps
+36.000003007075065
+(f(w1, w2 + eps) - f(w1, w2)) / eps
+10.000000003174137
+
+# reverse-mode autodiff
+w1, w2 = tf.Variable(5.), tf.Variable(3.)
+with tf.GradientTape() as tape:
+	z = f(w1, w2)
+	
+gradients = tape.gradient(z, [w1, w2])
+```
+
+- `tf.GradientTape`
+	- Automatically record every operation that involves a variable, and finally we ask this tape to compute the gradients of the result `z` with regards to both variables
+
+```python
+>>> gradients
+[<tf.Tensor: shape=(), dtype=float32, numpy=36.0>,
+ <tf.Tensor: shape=(), dtype=float32, numpy=10.0>]
+```
+
+- To save memory only put the strict min inside the gradient tape block
+- Tape is automatically erased immediately after `gradiet()` is called
+
+```python
+with tf.GradientTape() as tape:
+    z = f(w1, w2)
+
+dz_dw1 = tape.gradient(z, w1)  # returns tensor 36.0
+dz_dw2 = tape.gradient(z, w2)  # raises a RuntimeError!
+
+# make tape persistent and delete it each time to free resources
+with tf.GradientTape(persistent=True) as tape:
+    z = f(w1, w2)
+
+dz_dw1 = tape.gradient(z, w1)  # returns tensor 36.0
+dz_dw2 = tape.gradient(z, w2)  # returns tensor 10.0, works fine now!
+del tape
+
+# tape will only track operations involving variables
+c1, c2 = tf.constant(5.), tf.constant(3.)
+with tf.GradientTape() as tape:
+    z = f(c1, c2)
+
+gradients = tape.gradient(z, [c1, c2])  # returns [None, None
+
+# force the tape to watch any tensors, to record every operation
+with tf.GradientTape() as tape:
+    tape.watch(c1)
+    tape.watch(c2)
+    z = f(c1, c2)
+
+gradients = tape.gradient(z, [c1, c2])  # returns [tensor 36., tensor 10.]
+```
+
+- 
+
 ## Custom Training Loops
 
 # TensorFlow Functions and Graphs
