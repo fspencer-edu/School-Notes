@@ -428,22 +428,81 @@ optimizer = tf.keras.optimizers.SGD(learning_rate=0.001, momentum=0.9,
 **AdaGrad Algorithm**
 
 <img src="/images/Pasted image 20260204105357.png" alt="image" width="500">
-
-
-
+- First step accumulates the square of the gradients into the vector $s$
+- Gradient vector is scaled down by a factor of $\sqrt{s+ \epsilon}$
+- Algorithm decays the learning rate, and faster for steep dimensions
+- Adaptive learning
 
 <img src="/images/Pasted image 20260204105510.png" alt="image" width="500">
-
-
-
-
+- Performs well for simple quadratic problems
+- Stops too early when training neural networks
 
 ## RMSProp
+
+- Accumulates only the gradients from the most recent iterations
+- Exponential decay
+
+**RMSProp Algorithm**
+
+![[Pasted image 20260205085928.png]]
+
+```python
+optimizer = tf.keras.optimizers.RMSprop(learning_rate=0.001, rho=0.9)
+```
+
 ## Adam
+
+- Adam (Adaptive moment estimation)
+- Combines the momentum optimization and RMSProp
+- Keeps track of an exponentially decaying average of past gradients
+- Keeps track of an exponentially decaying average of past squared gradients
+- Mean is called the first moment
+- Variance is called the second moment
+
+**Adam Algorithm**
+
+![[Pasted image 20260205090146.png]]
+
+$t$ = iteration number
+- In step 1, computes exponentially decaying average rather than exponentially decaying sum
+
+```python
+optimizer = tf.keras.Adam(learning_rate=0.001, beta_1=0.9, beta_2=0.999)
+```
+
+- Adam requires less tuning of the learning rate hyperparameter $\eta$
+
 ## AdaMax
+
+- Adam scales down the parameter updates by the square root of $s$
+- AdaMax replaced the $\ell_2$ norm with $\ell_{∞}$ 
+- More stable, but depends on dataset
+
 ## Nadam
+
+- Adam with Nesterov trick
+- Converge gaster
+
 ## AdamW
+
+- Integrates a regularization techniques called weight decay
+- Weight decay reduces the size of the model's weight each training iteration by multiplying them by a decay factor such as 0.99
+
+- Adaptive optimization methods help model converge fast
+- Although not always the best case
+- All optimization techniques are first-order partial derivatives
+- All optimization algorithm discussed produce dense models
+	- Parameters will be non-zero
+- Use a sparse model for faster and less memory intense models
+	- Train model as usual, remove tiny weights and set them to zero
+- Apply a string $\ell_1$ regularization during training
+	- Pushes optimizer to zero
+
+![[Pasted image 20260205091034.png]]
+
 # Learning Rate Scheduling
+
+- 
 
 <img src="/images/Pasted image 20260204105525.png" alt="image" width="500">
 
