@@ -143,17 +143,214 @@ array([[ 1.,  4.,  9.],
 <tf.Tensor: id=136, shape=(), dtype=float32, numpy=42.0>
 ```
 
-
-
 ## Variables
+
+- `tf.Tensor` values are immutable
+- Cannot use regular tensors to implement weights in a NN
+- Other parameters need to change over time
+
+```python
+v = tf.Variable([[1., 2., 3.], [4., 5., 6.]])
+<tf.Variable 'Variable:0' shape=(2, 3) dtype=float32, numpy=
+array([[1., 2., 3.],
+       [4., 5., 6.]], dtype=float32)>
+       
+v.assign(2 * v)           # v now equals [[2., 4., 6.], [8., 10., 12.]]
+v[0, 1].assign(42)        # v now equals [[2., 42., 6.], [8., 10., 12.]]
+v[:, 2].assign([0., 1.])  # v now equals [[2., 42., 0.], [8., 10., 1.]]
+v.scatter_nd_update(      # v now equals [[100., 42., 0.], [8., 10., 200.]]
+    indices=[[0, 0], [1, 2]], updates=[100., 200.])
+    
+# direct assignment will not work
+>>> v[1] = [7., 8., 9.]
+[...] TypeError: 'ResourceVariable' object does not support item assignment
+
+```
+
+- `tf.Variable` acts like a tensor, but can be modified in place using `assign()`
+- Keras provides an `add_weight()` method that will modify TF
+- Model parameters are updated directly by the optimizers
+
 ## Other Data Structures
+
+- TF support other data structures
+
+- Sparse tensors, `tf.SparseTensor`
+	- Represents tensors containing mostly zeros
+- Tensor arrays, `tf.TensorArray`
+	- Lists of all tensors
+	- Fixed length by default
+	- Same shape and data type
+- Ragged tensors, `tf.RaggedTensor`
+	- Represents a list of tensors, of same rank and data type
+- String tensors
+	- `tf.string`
+	- Represent byte strings
+	- Encoded to UTF-8
+- Sets
+	- Regular tensors
+- Queues
+	- Store tensors across multiple steps
+	- FIFO
+	- Priority queues
+	- Shuffle
+	- Batch
+	- Padding
+
 
 # Customizing Models and Training Algorithms
 
 ## Custom Loss Functions
+
+- Use the Huber loss instead of MSE
+- Huber loss is available in Keras
+- Create a function that takes the lebels and the mode's predictions as arguments
+- Use TF operations to compute a tensor containing all the losses
+
+```python
+def huber_fn(y_true, y_pred):
+	error = y_true - y_pred
+	is_small_error = tf.abs(error) < 1
+	squared_loss = tf.sqaure(error) / 2
+	linear_loss = tf.abs(error) -0.5
+	return tf.where(is_small_error, squared_loss, linear_loss)
+	
+mode.compile(loss=huber_fn, optimizer="nadam")
+model.fit(X_train, y_train, [...])
+```
+
 ## Saving and Loading Models That Contain Custom Components
+
+- Saving a model containing a custom loss function work
+- But when loading it, provide a dictionary that maps the function names to actual functions
+
+```python
+model = tf.keras.models.load_model("my_model_with_a_custom_loss",
+				custom_object={"huber_fn": huber_fn})
+```
+
+- Function that creates a configured loss function
+
+```python
+def create_huber(threshold=1.0):
+	def huber_fn(y_true, y_pred):
+		error = y_true - y_pred
+		is_small_error = tf.abs(error) < threshold
+		squared_loss = tf.squared(error) /2
+		linear_loss = threshold * tf.abs(error) - threshold ** 2 / 2
+		return tf.where(is_small_error, squared_loss, linear_loss)
+	return huber_fn
+	
+model.compile(loss=create_huber(2.0), optimizer="nadam")
+```
+
+- When the model is saved, `threshold` will not be saved
+
+```python
+nodel = tf.keras.model.load_model(
+	"my_model_with_a_custom_loss_threshold_2",
+	custom_objects={"huber_fn":create_huber(2.0)}
+)
+
+# subclass with loss class
+class HuberLoss(tf.keras.losses.Loss):
+	def __init__(self, threshold=1.0, **kwargs):
+		self.threshold = threshold
+		super().__init__(**kwards)
+		
+	def call(self, y_true, y_pred):
+		error = y_true - y_pred
+		is_small_error = tf.abs(error) < self.threshold
+		squared_loss = tf.abs(error) < self.threshold
+		linear_loss = self.threshold * tf.abs(error) - self.threshold**2 / 2
+		return.where(is_small_error, squared_loss, linear)loss
+
+	def get_config(self):
+		base_config = super().get_config()
+		return {**base_config, "threshold": self.threshold}
+```
+
+- Constructor `**kwargs` accepts and passes to parent
+- Loss will by the sum of instance losses, weighted by the sample weights
+- `call()` takes the labels and predictions, computes all the instance losses, and returns them
+- `get_config()` returns a dictionary mapping each hyperparameter name to its value
+
+```python
+model.compile(loss=HuberLoss(2.), optimizer="nadam")
+
+# threshold will be saved with model
+model = tf.keras.models.load_model("my_model_with_a_custom_loss_class",
+				custom_objects={"HuberLoss": HuberLoss})
+```
+
 ## Custom Activation Functions, Initializers, Regularizers, and Constraints
+
+```python
+def my_softplus(z):
+	return tf.math.log(1.0 + tf.exp(z))
+	
+def my_glorot_initializer(shape, dtype=tf.float32):
+	stddev = tf.sqrt(2. / (shape[0] + shape[1]))
+	return tf.random.normal(shape, stddev=stddev, dtype=dtype)
+	
+def my_11_regularizer(weights):
+	return tf.reduce_sum(tf.abs(0.01 * weights))
+	
+def my_positive_weights(weights):
+	return tf.where(wegithts < 0., tf.zeros_like(weights), weights)
+```
+
+- Arguments depend on the type of custom function
+- Custom functions are used normally
+
+```python
+layer = tf.keras.layers.Dense(1, activation=my_softplus,
+				kernel_initializer=my_glorot_initializer,
+				kernel_regularizer=my_11_regularizer,
+				kernel_constraint_my_positive_weights)
+```
+
+- Use subclass to save hyperparameters with model
+
+```python
+class MyL1Regularizer(tf.keras.regularizers.Regularizer):
+	def __init__(self, factor):
+		self.factor = factor
+		
+	def __call__(self, weights):
+		return tf.reduce_sum(tf.abs(self.factor * weights))
+		
+	def get_config(self):
+		return {"factor": self.factor}
+```
+
 ## Custom Metrics
+
+- Losses and metrics are conceptually not the same
+- Losses
+	- Used by GD to train a model, differentiable
+	- Gradients should not be zero
+- Metrics
+	- Used to evaluate a model
+	- More easily interpretable
+	- Non-differentiable or have zero gradients
+- In most cases, defining a custom metric function is the same as a custom loss function
+
+```python
+model.compile(loss="mse", optimizer="nadam", metrics=[create_huber(2.0)])
+```
+
+- For each batch training, Keras will compute this metric and keep track of its mean since the beginning of the epoch
+- Keep track of the the true positives and false positives to compute precision
+
+```python
+precision = tf.keras.metrics.Precision()
+precision([0, 1, 1, 1, 0, 1, 0, 1], [1, 1, 0, 1, 0, 1, 0, 1])
+<tf.Tensor: shape=(), dtype=float32, numpy=0.8>
+precision([0, 1, 0, 0, 1, 0, 1, 1], [1, 0, 1, 1, 0, 0, 0, 0])
+<tf.Tensor: shape=(), dtype=float32, numpy=0.5>
+```
+
 ## Custom Models
 
 <img src="/images/Pasted image 20260204105646.png" alt="image" width="500">
