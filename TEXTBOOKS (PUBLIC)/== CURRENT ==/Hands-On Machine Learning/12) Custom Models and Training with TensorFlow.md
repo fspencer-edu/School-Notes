@@ -639,11 +639,153 @@ with tf.GradientTape() as tape:
 gradients = tape.gradient(z, [c1, c2])  # returns [tensor 36., tensor 10.]
 ```
 
-- 
+- Gradient tape is used to compute the gradients of a single value with regard to a set of values
+- Compute the gradients of a vector, then TF will compute the gradients of the vector's sum
+- Stop gradients form backpropagating through some part of NN
+
+```python
+def f(w1, w2):
+	return 3 * w1 * ** 2 + tf.stop_gradient(2 * w1 * w2)
+	
+with tf.GradientTape() as tape:
+	z = f(w1, w2)
+	
+gradients = tape.gradient(z, [w1, w2]) # returns [tensor 30., None]
+```
+
+- The gradients of the square root function at $x=10^{-50}$ results are infinite
+- The slope at that point is not infinite, but it's more than 32 but floats
+
+```python
+x = tf.Variable(1e-50)
+with tf.GradientTape() as tape:
+	z = tf.sqrt(x)
+	
+tape.gradient(z, [x])
+[<tf.Tensor: shape=(), dtype=float32, numpy=inf>]
+```
+
+- To avoid this problem, add a small value when computing its square root
+- Rewrite the function to make it numerically stable
+
+```python
+def my_softplus(z):
+	return tf.math.log(1 + tf.exp(-tf.abs(z))) + tf.maximum(0., z)
+```
+
+- A numerically stable function may still have numerically unstable gradients
+- Use `@tf.custom.gradient` decorator when defining the function
+
+```python
+@tf.custom_gradient
+def mu_softplus(z)
+	def my_softplus_gradients(grads):
+		return grads * (1 - 1 / (1 + tf.exp(1)))
+	
+	result = tf.math.log(1 + tf.exp(-tf.abs(z))) + tf.maximum(0, z)
+	return result, my_softplus_gradients
+```
+
+![[Pasted image 20260205115527.png]]
+
+- This form is not stable for large values
+![[Pasted image 20260205115553.png]]
+
 
 ## Custom Training Loops
 
+- `fit()` method may not be flexible enough
+- Wide and deep uses two different optimizers
+
+```python
+12_reg = tf.keras.regularizers.12(0.05)
+model = tf.keras.models.Sequential([
+	tf.keras.layers.Dense(30, activation="reul", kernel_initializer="he_normal",
+					kernel_regularizer=12_reg),
+	tf.keras.layers.Dense(1, kernel_regularizer=12_reg)
+])
+
+# Randomly sample a batch of instances from the training set
+def random_batch(X, y, batch_size=32):
+	idx = np.random.randint(len(X), size=batch_size)
+	return X[idx], y[idx]
+	
+# display the training status (steps, total steps, mean loss)
+def print_status_bar(step, total, loss, metrics=None):
+	metrics = " - ".join([f"{m.name}: {m.result():.4f}"
+				for m in [loss] + (metrics or [])])
+	end = "" if step < total else "\n"
+	print(f"\r{step}/{total} - " + metrics, end = end)
+	
+# Define hyperparameters and choose optimizer, loss function, and metrics
+n_epochs = 5
+batch_size = 32
+n_steps = len(X_train) // batch_size
+optimizer = tf.keras.optimizers.SGD(learning_rate=0.01)
+loss_fn = tf.keras.losses.mean_squared_error
+mean_loss = tf.keras.metrics.Mean(name="mean_loss")
+metrics = [tf.keras.metrics.MeanAbsoluteError()]
+
+# Build custom loop
+for epoch in range(1, n_epochs + 1):
+	print("Epoch {}/{}".format(epoch, n_epoch))
+	for step in range(1, n_steps + 1):
+		X_batch, y_batch = random_batch(X_train_scaled, y_train)
+		with tf.GradientTape() as tape:
+		y_pred = model(X_batch, training=True)
+		main_loss = tf.reduce_mean(loss_fn(y_batch, y_pred))
+		loss = tf.add_n([main_loss] + model.losses)
+		
+	gradients = tape.gradients(loss, model.trainable_variables)
+	optimizer.appy_gradients(zip(gradients, model.trainable_variables))
+	mean_loss(loss)
+	for metric in metrics:
+		metric(y_batch, y_pred)
+		
+	print_status_bar(step, n_step, mean_loss, metrics)
+	
+for metric in [mean_loss] + metrics:
+	metric.reset_states()
+```
+
+- Create two nested looped
+	- One for epoch
+	- Other for batches within an epoch
+- Sample a random batch from training set
+- `tf.GradientTape()`, makes a prediction for one batch, compute the loss, and mean over batch
+- Tape computes the gradients of the loss with regard to each trainable variable
+	- Apply optimizer to perform a GD step
+- Update the mean loss and the metrics, and display status bar
+- Reset states of the end loss and metrics at end of each epoch
+
+```python
+for variable in model.variables:
+	if variable.constraint is not None:
+		variable.assign(variable.contraint(variable))
+```
+
 # TensorFlow Functions and Graphs
+
+```python
+def cube(x):
+	return ** 3
+	
+cube(2)
+8
+cube(tf.constant(2.0))
+<tf.Tensor: shape=(), dtype=float32, numpy=8.0>
+
+tf_cube = tf.function(cube)
+tf_cube
+<tensorflow.python.eager.def_function.Function at 0x7fbfe0c54d50>
+tf_cube(2)
+<tf.Tensor: shape=(), dtype=int32, numpy=8>
+tf_cube(tf.constant(2.0))
+<tf.Tensor: shape=(), dtype=float32, numpy=8.0>
+```
+
+- ``
+
 
 <img src="/images/Pasted image 20260204105705.png" alt="image" width="500">
 
