@@ -784,10 +784,54 @@ tf_cube(tf.constant(2.0))
 <tf.Tensor: shape=(), dtype=float32, numpy=8.0>
 ```
 
-- ``
+- `tf.function()` analyzed the computations performed by the `cube()` functions
+- Also use `tf.function` as a decorator
 
+```python
+@tf.function
+def tf_cube(x):
+	return x **3
+	
+>>> tf_cube.python_function(2)
+8
+```
+
+- TF optimizes the computation graph, pruning nodes, simplifying expressions
+- TF executes the operations in the graph ,in the appropriate order
+- Run faster than original Python functions
+- Set `jit_compile=True`
+	- TF will use accelerated algebra (XLA) to compile dedicated kernels for graph
+	- Computation gets compiled into a single kernel
+- Keras automatically converts function into TF function
+- TF function generates a new graph for every unique set of input shaped and data types and caches it for subsequent calls
+- Polymorphism
+- If a numerical Python value is passed to a TF function, a new graph will be generated for every distinct value
+- Python values should be reserved for arguments that will have few unique values
+
+## AutoGraph and Tracing
+
+- Analyzes the Python function's source code to capture al the control flow statements
+- AutoGraph
+	- 
 
 <img src="/images/Pasted image 20260204105705.png" alt="image" width="500">
 
-## AutoGraph and Tracing
+- TF called the upgraded function, and passes a symbolic tensor
+- Run a graph node, TF operations do not perform any computations
+- Nodes represent operations, and arrow represent tensors
+- Call `tf.autograph,to_code(sum_squares.python_function)` to view generated function's source code
+
+
 ## TF Function Rules
+
+- Converting a Python function that performs TF operations into a TF function is trivial
+
+**Rules**
+- An external library call will only run during tracing
+	- Not part of graph
+- Call other Python functions or TF functions, should follow the same rules
+- If the function creates a TF variables (stateful object), it must do so upon the first call, and use then, or else there will be an exception
+	- Create variables outside the TF function, and assign a new value to the variable
+- Source code of Python function should be available to TF
+- TF will only capture `for` loops that iterate over a tensor or dataset
+- Prefer a vectorized implementation, rather loops
