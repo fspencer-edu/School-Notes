@@ -8,20 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "6e9b3706862b2421",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/11) Training Deep Neural Networks.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "11) Training Deep Neural Networks"
-            }
-          },
-          {
             "id": "10e04a9e36a407d8",
             "type": "leaf",
             "state": {
@@ -33,6 +19,48 @@
               },
               "icon": "lucide-file",
               "title": "12) Custom Models and Training with TensorFlow"
+            }
+          },
+          {
+            "id": "1858d6c5e62706a1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/13) Loading and Preprocessing Data with TensorFlow.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "13) Loading and Preprocessing Data with TensorFlow"
+            }
+          },
+          {
+            "id": "d88b293e376becf8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/14) Deep Computer Vision Using Convolutional Neural Networks.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "14) Deep Computer Vision Using Convolutional Neural Networks"
+            }
+          },
+          {
+            "id": "03f5d8b5309926c1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/15) Processing Sequences Using RNNs and CNNs.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "15) Processing Sequences Using RNNs and CNNs"
             }
           }
         ]
@@ -184,13 +212,18 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "6e9b3706862b2421",
+  "active": "10e04a9e36a407d8",
   "lastOpenFiles": [
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/15) Processing Sequences Using RNNs and CNNs.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/14) Deep Computer Vision Using Convolutional Neural Networks.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/13) Loading and Preprocessing Data with TensorFlow.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/12) Custom Models and Training with TensorFlow.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/11) Training Deep Neural Networks.md",
+    "Pasted image 20260205095528.png",
+    "Pasted image 20260205095516.png",
     "Pasted image 20260205091034.png",
     "Pasted image 20260205090146.png",
     "Pasted image 20260205085928.png",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/12) Custom Models and Training with TensorFlow.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/11) Training Deep Neural Networks.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Kubeflow for ML/0) Kubeflow for Machine Learning.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats. for CS/0) Probability and Statistics for CS.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Kubeflow for ML",
@@ -222,15 +255,10 @@
     "TEXTBOOKS (PUBLIC)/== TODO ==/Python Best Practices/0) Python Best Practices.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/0) Test-Drive Development with Python.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Zero Trust Networks/0) Zero Trust Networks.md",
-    "TEXTBOOKS (PUBLIC)/Data Mining/0) Data Mining.md",
-    "TEXTBOOKS (PUBLIC)/Genetics- Genes to Genomes/0) Genetics - Genes to Genomes.md",
     "images/Pasted image 20260204110756.png",
     "images/Pasted image 20260204110826.png",
     "Pasted image 20260204110826.png",
     "Pasted image 20260204110756.png",
-    "images/Pasted image 20260204110453.png",
-    "images/Pasted image 20260204105738.png",
-    "images/Pasted image 20260204105705.png",
-    "images/Pasted image 20260204105856.png"
+    "images/Pasted image 20260204110453.png"
   ]
 }

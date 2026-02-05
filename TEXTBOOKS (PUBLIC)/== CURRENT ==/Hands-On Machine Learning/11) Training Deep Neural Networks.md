@@ -639,13 +639,101 @@ model = tf.keras.Sequential([
 - Neurons train with dropout cannot co-adapt with their neighbouring neurons
 - Become less sensitive to changes in the input, and result in a more robust network that generalizes better
 
-## Monte Carlo (MC) Dropout
-## Max-Norm Regularization
-
-
 <img src="/images/Pasted image 20260204105547.png" alt="image" width="500">
 
 - NN is an averaging ensemble of all the smaller NN
 - Apply dropout only to neurons in the top one to three layers (excluding output)
+- Multiply each neuron's input connection weights by four during training
+	- Divide connection weights by the keep probability $(1-p)$ durning training
+
+```python
+model = tf.keras.Sequential([
+	tf.keras.layers.Flatten(input_shape[28, 28]),
+	tf.keras.layers.Dropout(rate=0.2),
+	tf.keras.layers.Dense(100, ativation="relu",
+					kernel_initialization="he_normal"),
+	tf.keras.layers.Dropout(rate=0.2),
+	tf.keras.layers.Dense(100, activation="relu",
+					kernel_initialization="he_normal"),
+		tf.keras.layers.Dropout(rate=0.2)
+		tf.keras.layers.Dense(10, activation="softmax")
+])
+[...]
+```
+
+- Using Dropout, may overfit the training set, and have similar training and validation losses
+- Evaluate training loss without dropout
+- Alpha dropout
+	- Variant that preserves the mean and standard deviation of its inputs
+
+## Monte Carlo (MC) Dropout
+
+- Connection between dropout networks and approximation Bayesian inference
+- MC dropout
+	- Boost the performance of any trained dropout model without having to retrain it of modify it
+	- Provides a better measure of model's uncertainty
+
+```python
+import numpy as np
+y_probas = np.stack([model(X_test, training=True)
+				for sample in range(100)])
+y_probas = y_probas.mean(axis=0)
+```
+
+- `model(X)` returns a tensor rather than a NumPy array
+- Ensures the `Dropout` layer remains active, so all prediction swill be different
+- Compute average over 100 predictions
+
+```python
+>>> model.predict(X_test[:1]).round(3)
+array([[0.   , 0.   , 0.   , 0.   , 0.   , 0.024, 0.   , 0.132, 0.   ,
+        0.844]], dtype=float32
+        
+>>> y_proba[0].round(3)
+array([0.   , 0.   , 0.   , 0.   , 0.   , 0.067, 0.   , 0.209, 0.001,
+       0.723], dtype=float32)
+       
+>>> y_std = y_probas.std(axis=0)
+>>> y_std[0].round(3)
+array([0.   , 0.   , 0.   , 0.001, 0.   , 0.096, 0.   , 0.162, 0.001,
+       0.183], dtype=float32)
+       
+>>> y_pred = y_proba.argmax(axis=1)
+>>> accuracy = (y_pred == y_test).sum() / len(y_test)
+>>> accuracy
+0.8717
+```
+
+- The model is confident 84.4% that this image belongs to class 9
+- MC dropout tends to improve the reliability of the model's probability estimates
+- Standard deviation is 0.183
+
+- Replace `Dropout` layer with `MCDropout`
+
+```python
+class MCDropout(tf.keras.layers.Dropout):
+	def call(self, inputs, ttraining=False):
+		return super().call(inputs, training=True)
+```
+
+## Max-Norm Regularization
+
+- For each neuron, it constrains the weight $w$ of the incoming connections
+- Does not add a regularization loss term to the overall loss function
+- Reducing $r$ increases the amount of regularization and helps reduce overfitting
+
+```python
+dense = tf.keras.layers.Dense(
+	100, activaton="relu", kernel_initializer="he_normal",
+	kernel_constraint=tf.keras.constraints.max_norm(1.0))
+```
+
+ - After each training iteration, the mode's `fit()` method will call the object returned by `max_norm()`
 
 # Summary and Practical Guidelines
+
+![[Pasted image 20260205095516.png]]
+
+![[Pasted image 20260205095528.png]]
+
+- 
