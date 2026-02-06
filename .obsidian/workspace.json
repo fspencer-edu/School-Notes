@@ -53,13 +53,18 @@
             "id": "15eb780385e87f1b",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Foundation of Psychology/Test 1 - Ch.1 to Ch.3.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Test 1 - Ch.1 to Ch.3"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -208,8 +213,13 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "108e1745c83905a8",
+  "active": "15eb780385e87f1b",
   "lastOpenFiles": [
+    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/0) Introduction to Psychology and Neuroscience.md",
+    "PRIVATE/Winter 2026/Foundation of Psychology/Test 1 - Ch.1 to Ch.3.md",
+    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/8) Language and Intelligence.md",
+    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/9) Development.md",
+    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/7) Learning.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/3) Control Flow.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/4) Data Abstractions.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/2) Building Blocks.md",
@@ -244,11 +254,7 @@
     "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats. for CS",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Building Microservices/0) Building Microservices.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Learn TensorFlow",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Infrastructure as Code/0) Infrastructure as Code.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Guide to Essential Math/0) Guide to Essential Math.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Cloud Computing/0) Cloud Computing.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Infrastructure as Code",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Mastering API Architecture/0) Mastering API Architecture.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Cloud Computing",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Mastering API Architecture",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Python for Data Analysis",
