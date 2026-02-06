@@ -48,6 +48,16 @@
               "icon": "lucide-file",
               "title": "6) Generic Server Processes"
             }
+          },
+          {
+            "id": "15eb780385e87f1b",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
           }
         ]
       }
@@ -200,6 +210,7 @@
   },
   "active": "108e1745c83905a8",
   "lastOpenFiles": [
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/3) Control Flow.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/4) Data Abstractions.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/2) Building Blocks.md",
     "Pasted image 20260206103533.png",
@@ -208,7 +219,6 @@
     "Pasted image 20260205164847.png",
     "Pasted image 20260205164705.png",
     "Pasted image 20260205164030.png",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/3) Control Flow.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/1) First Steps.md",
     "Pasted image 20260205141941.png",
     "Pasted image 20260205141738.png",
