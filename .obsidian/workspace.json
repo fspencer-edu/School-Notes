@@ -48,23 +48,8 @@
               "icon": "lucide-file",
               "title": "6) Generic Server Processes"
             }
-          },
-          {
-            "id": "15eb780385e87f1b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Foundation of Psychology/Test 1 - Ch.1 to Ch.3.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Test 1 - Ch.1 to Ch.3"
-            }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -213,10 +198,11 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "15eb780385e87f1b",
+  "active": "108e1745c83905a8",
   "lastOpenFiles": [
-    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/0) Introduction to Psychology and Neuroscience.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/6) Generic Server Processes.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Test 1 - Ch.1 to Ch.3.md",
+    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/0) Introduction to Psychology and Neuroscience.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/8) Language and Intelligence.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/9) Development.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/7) Learning.md",
@@ -234,7 +220,6 @@
     "Pasted image 20260205141738.png",
     "Pasted image 20260205141021.png",
     "PRIVATE/ToDo.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/6) Generic Server Processes.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/5) Concurrency Primitives.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/0) Elixir in Action, 3rd Edition.md",
     "images/Pasted image 20260205090146.png",
