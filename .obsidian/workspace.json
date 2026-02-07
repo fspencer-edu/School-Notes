@@ -8,20 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "108e1745c83905a8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/3) Control Flow.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "3) Control Flow"
-            }
-          },
-          {
             "id": "011a988b8f8192c3",
             "type": "leaf",
             "state": {
@@ -48,8 +34,23 @@
               "icon": "lucide-file",
               "title": "6) Generic Server Processes"
             }
+          },
+          {
+            "id": "7061ed1de288dec0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/== TODO ==/Kubeflow for ML/3) Kubeflow Design - Beyond the Basics.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "3) Kubeflow Design - Beyond the Basics"
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -106,8 +107,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "f79334738d86d2cb",
@@ -198,16 +198,28 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "108e1745c83905a8",
+  "active": "7061ed1de288dec0",
   "lastOpenFiles": [
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Kubeflow for ML/2) Hello Kubeflow.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Kubeflow for ML/1) Kubeflow - What It Is and Who It Is For.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Kubeflow for ML/10) Hyperparameter Tuning and Automated Machine Learning.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Kubeflow for ML/0) Kubeflow for Machine Learning.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Kubeflow for ML/3) Kubeflow Design - Beyond the Basics.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Kubeflow for ML/4) Kubeflow Pipelines.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Kubeflow for ML/5) Data and Feature Preparation.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Kubeflow for ML/6) Artifact and Metadata Store.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Kubeflow for ML/7) Training a Machine Learning Model.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Kubeflow for ML/8) Model Inference.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Kubeflow for ML/9) Case Study Using Multiple Tools.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Cloud Computing/0) Cloud Computing.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/4) Data Abstractions.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/3) Control Flow.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/6) Generic Server Processes.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Test 1 - Ch.1 to Ch.3.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/0) Introduction to Psychology and Neuroscience.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/8) Language and Intelligence.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/9) Development.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/7) Learning.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/3) Control Flow.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/4) Data Abstractions.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/2) Building Blocks.md",
     "Pasted image 20260206103533.png",
     "Pasted image 20260205165040.png",
@@ -224,20 +236,8 @@
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/0) Elixir in Action, 3rd Edition.md",
     "images/Pasted image 20260205090146.png",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/13) Loading and Preprocessing Data with TensorFlow.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/19) Training and Deploying TensorFlow Models at Scale.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/18) Reinforcement Learning.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/17) Auto-encoders, GANs, and Diffusion Models.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/16) Natural Language Processing with RNNs and Attention.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/15) Processing Sequences Using RNNs and CNNs.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/14) Deep Computer Vision Using Convolutional Neural Networks.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/12) Custom Models and Training with TensorFlow.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/11) Training Deep Neural Networks.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Kubeflow for ML/0) Kubeflow for Machine Learning.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats. for CS/0) Probability and Statistics for CS.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Kubeflow for ML",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Learn TensorFlow/0) Learning TensorFlow.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats. for CS",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Building Microservices/0) Building Microservices.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Learn TensorFlow",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Infrastructure as Code",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Cloud Computing",
