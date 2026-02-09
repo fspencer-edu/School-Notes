@@ -78,7 +78,7 @@
             }
           },
           {
-            "id": "c8cac45ee3dccd28",
+            "id": "f9752d13b4422cb9",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -162,7 +162,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -311,17 +311,19 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "f6e0e705bcaed3f5",
+  "active": "f9752d13b4422cb9",
   "lastOpenFiles": [
-    "PRIVATE/Winter 2026/Discrete Structures/Textbook/3) The Logic of Quantified Statements.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/5) Sequences, Mathematical Induction, and Recursion.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/9) Counting and Probability.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/7) Properties of Functions.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/6) Set Theory.md",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/4) Elementary Number Theory and Methods of Proof.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/3) The Logic of Quantified Statements.md",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/1) Speaking Mathematically.md",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/12) Regular Expression and Finite-State Automata.md",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/11) Analysis of Algorithm Efficiency.md",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/10) Theory of Graphs and Trees.md",
-    "PRIVATE/Winter 2026/Discrete Structures/Textbook/9) Counting and Probability.md",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/0) Discrete Mathematics with Applications.md",
-    "PRIVATE/Winter 2026/Discrete Structures/Textbook/7) Properties of Functions.md",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/2) The Logic of Compound Statements.md",
     "Pasted image 20260209121223.png",
     "Pasted image 20260209121113.png",
@@ -329,8 +331,6 @@
     "Pasted image 20260209120109.png",
     "Pasted image 20260209115000.png",
     "Pasted image 20260209114143.png",
-    "PRIVATE/Winter 2026/Discrete Structures/Textbook/6) Set Theory.md",
-    "PRIVATE/Winter 2026/Discrete Structures/Textbook/5) Sequences, Mathematical Induction, and Recursion.md",
     "Pasted image 20260209112445.png",
     "Pasted image 20260209112218.png",
     "Pasted image 20260209112215.png",
