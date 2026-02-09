@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "d21a73e22c52ff67",
+        "id": "52d671c2bcb54c6c",
         "type": "tabs",
         "children": [
           {
-            "id": "e1d034f94d82d35f",
+            "id": "dc84779c63b16670",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TEXTBOOKS (PUBLIC)/== TODO ==/Building Machine Learning Pipelines/8) Model Deployment with TensorFlow Serving.md",
+                "file": "PRIVATE/Winter 2026/Discrete Structures/Textbook/1) Speaking Mathematically.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "8) Model Deployment with TensorFlow Serving"
+              "title": "1) Speaking Mathematically"
             }
           }
         ]
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "f79334738d86d2cb",
@@ -169,8 +170,19 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "e1d034f94d82d35f",
+  "active": "dc84779c63b16670",
   "lastOpenFiles": [
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/0) Discrete Mathematics with Applications.md",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/1) Introduction (Data Mining).md",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/2) Data.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Building Machine Learning Pipelines/15) The Future of Pipelines and Next Steps.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Building Machine Learning Pipelines/14) Data Privacy for Machine Learning.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Building Machine Learning Pipelines/13) Feedback Loops.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Building Machine Learning Pipelines/12) Pipelines Part 2 - Kubeflow Pipelines.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Building Machine Learning Pipelines/11) Pipelines Part 1 - Apache Beam and Apache Airflow.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Building Machine Learning Pipelines/10) Advanced TensorFlow Extended.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Building Machine Learning Pipelines/9) Advanced Model Deployments with TensorFlow Serving.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Building Machine Learning Pipelines/8) Model Deployment with TensorFlow Serving.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Building Machine Learning Pipelines/7) Model Analysis and Validation.md",
     "PRIVATE/Winter 2026/Computer Networks/Textbook/1) Computer Networks and the Internet.md",
     "PRIVATE/Winter 2026/Computer Networks/Textbook/3) Transport Layer.md",
@@ -197,17 +209,6 @@
     "TEXTBOOKS (PUBLIC)/== TODO ==/Building Machine Learning Pipelines/3) Data Ingestion.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Building Machine Learning Pipelines/2) Introduction to TensorFlow Extended.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Building Machine Learning Pipelines/1) Introduction-ML.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/4) Data Abstractions.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Building Machine Learning Pipelines/15) The Future of Pipelines and Next Steps.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Building Machine Learning Pipelines/0) Building Machine Learning Pipelines.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Building Applications with AI Agents/0) Building App. with AI Agents.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/6) Generic Server Processes.md",
-    "TEXTBOOKS (PUBLIC)/Docker/1) Introduction.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Building Machine Learning Pipelines/8) Model Deployment with TensorFlow Serving.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Building Machine Learning Pipelines/9) Advanced Model Deployments with TensorFlow Serving.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Building Machine Learning Pipelines/10) Advanced TensorFlow Extended.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Building Machine Learning Pipelines/11) Pipelines Part 1 - Apache Beam and Apache Airflow.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Building Machine Learning Pipelines/12) Pipelines Part 2 - Kubeflow Pipelines.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Kubeflow for ML",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats. for CS",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Learn TensorFlow",
