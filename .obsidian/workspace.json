@@ -105,7 +105,8 @@
               "title": "7) Properties of Functions"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -254,8 +255,13 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "dc84779c63b16670",
+  "active": "b97e023391817fb0",
   "lastOpenFiles": [
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/1) Speaking Mathematically.md",
+    "Pasted image 20260209121223.png",
+    "Pasted image 20260209121113.png",
+    "Pasted image 20260209120631.png",
+    "Pasted image 20260209120109.png",
     "Pasted image 20260209115000.png",
     "Pasted image 20260209114143.png",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/7) Properties of Functions.md",
@@ -264,12 +270,10 @@
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/4) Elementary Number Theory and Methods of Proof.md",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/3) The Logic of Quantified Statements.md",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/2) The Logic of Compound Statements.md",
-    "PRIVATE/Winter 2026/Discrete Structures/Textbook/1) Speaking Mathematically.md",
     "Pasted image 20260209112445.png",
     "Pasted image 20260209112218.png",
     "Pasted image 20260209112215.png",
     "Pasted image 20260209111521.png",
-    "Pasted image 20260209104939.png",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/0) Discrete Mathematics with Applications.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/1) Introduction (Data Mining).md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/2) Data.md",
@@ -288,10 +292,6 @@
     "PRIVATE/Winter 2026/Computer Networks/Lec Notes/Lec 1 - Introduction.md",
     "PRIVATE/Winter 2026/Computer Networks/Lec Notes/Lec 2 - Application Layer.md",
     "PRIVATE/Winter 2026/Data Mining/Lab/Lab 4.md",
-    "train_test_acc.png",
-    "Screenshot 2026-02-08 at 9.13.09 PM.png",
-    "Pasted image 20260208200015.png",
-    "Pasted image 20260208180556.png",
     "PRIVATE/Winter 2026/Computer Networks/Lec Notes",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Kubeflow for ML",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats. for CS",
