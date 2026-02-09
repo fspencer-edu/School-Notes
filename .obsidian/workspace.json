@@ -161,8 +161,7 @@
               "title": "12) Regular Expression and Finite-State Automata"
             }
           }
-        ],
-        "currentTab": 5
+        ]
       }
     ],
     "direction": "vertical"
@@ -311,12 +310,15 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "f9752d13b4422cb9",
+  "active": "dc84779c63b16670",
   "lastOpenFiles": [
-    "PRIVATE/Winter 2026/Discrete Structures/Textbook/5) Sequences, Mathematical Induction, and Recursion.md",
-    "PRIVATE/Winter 2026/Discrete Structures/Textbook/9) Counting and Probability.md",
+    "Pasted image 20260209142815.png",
+    "Pasted image 20260209142810.png",
+    "Pasted image 20260209142757.png",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/7) Properties of Functions.md",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/6) Set Theory.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/5) Sequences, Mathematical Induction, and Recursion.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/9) Counting and Probability.md",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/4) Elementary Number Theory and Methods of Proof.md",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/3) The Logic of Quantified Statements.md",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/1) Speaking Mathematically.md",
@@ -333,8 +335,6 @@
     "Pasted image 20260209114143.png",
     "Pasted image 20260209112445.png",
     "Pasted image 20260209112218.png",
-    "Pasted image 20260209112215.png",
-    "Pasted image 20260209111521.png",
     "PRIVATE/Winter 2026/Data Mining/Textbook/1) Introduction (Data Mining).md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/2) Data.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Building Machine Learning Pipelines/15) The Future of Pipelines and Next Steps.md",
@@ -348,7 +348,6 @@
     "TEXTBOOKS (PUBLIC)/== TODO ==/Building Machine Learning Pipelines/7) Model Analysis and Validation.md",
     "PRIVATE/Winter 2026/Computer Networks/Textbook/1) Computer Networks and the Internet.md",
     "PRIVATE/Winter 2026/Computer Networks/Textbook/3) Transport Layer.md",
-    "PRIVATE/Winter 2026/Computer Networks/Textbook/2) Application Layer.md",
     "PRIVATE/Winter 2026/Computer Networks/Lec Notes",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Kubeflow for ML",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats. for CS",
