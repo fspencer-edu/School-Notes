@@ -4,7 +4,7 @@
     "pageSize": "Letter",
     "landscape": false,
     "margin": "0",
-    "downscalePercent": 45
+    "downscalePercent": 68
   },
   "promptDelete": false,
   "alwaysUpdateLinks": true
