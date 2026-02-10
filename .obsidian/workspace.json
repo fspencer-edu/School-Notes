@@ -153,16 +153,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TEXTBOOKS (PUBLIC)/== TODO ==/Building Microservices/4) Integration.md",
+                "file": "TEXTBOOKS (PUBLIC)/== TODO ==/Building Microservices/7) Testing.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "4) Integration"
+              "title": "7) Testing"
             }
           }
-        ],
-        "currentTab": 10
+        ]
       }
     ],
     "direction": "vertical"
@@ -219,7 +218,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "f79334738d86d2cb",
@@ -310,18 +310,19 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "127c95e9a70ecd7a",
+  "active": "65f9743bedcf5a38",
   "lastOpenFiles": [
+    "Pasted image 20260210130853.png",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Building Microservices/7) Testing.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Building Microservices/6) Deployment.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Building Microservices/5) Splitting the Monolith.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Building Microservices/4) Integration.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Building Microservices/3) How to Model Services.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Building Microservices/2) The Evolutionary Architect.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Building Microservices/1) Microservices.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Building Microservices/0) Building Microservices.md",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/12) Regular Expression and Finite-State Automata.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Building Microservices/12) Brining it All Together.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Building Microservices/4) Integration.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Building Microservices/5) Splitting the Monolith.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Building Microservices/6) Deployment.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Building Microservices/7) Testing.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Building Microservices/8) Monitoring.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Building Microservices/9) Security.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Building Microservices/10) Conway's Law and System Design.md",
@@ -347,7 +348,6 @@
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/3) The Logic of Quantified Statements.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Python for Data Analysis/13) Introduction to Modeling Libraries in Python.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Python for Data Analysis/12) Advanced Pandas.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Python for Data Analysis/11) Time Series.md",
     "PRIVATE/Winter 2026/Computer Networks/Lec Notes",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Kubeflow for ML",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats. for CS",

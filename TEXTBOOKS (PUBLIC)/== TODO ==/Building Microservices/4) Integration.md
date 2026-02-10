@@ -1,10 +1,10 @@
 # Locking for the Ideal Integration Technology
 
-# Interfacing with Custoemrs
+# Interfacing with Customers
 
 # The Shared Database
 
-# Sychronous vs. Asychronous
+# Synchronous vs. Asynchronous
 
 # Orchestration vs Choreography
 
@@ -12,4 +12,20 @@
 
 # REST
 
-# I
+# Implementing Asynchronous Event-Based Calibration
+
+# Services as State Machines
+
+# Reactive Extensions
+
+# DRY and the Peril of Code Reuse in a Microservice World
+
+# Access by Reference
+
+# Versioning
+
+# User Interfaces
+
+# Integrating with Third-Party Software
+
+# Summary
