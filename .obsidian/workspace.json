@@ -160,8 +160,23 @@
               "icon": "lucide-file",
               "title": "12) Regular Expression and Finite-State Automata"
             }
+          },
+          {
+            "id": "cb2361ef2e8f5f8b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/== TODO ==/Infrastructure as Code/0) Infrastructure as Code.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "0) Infrastructure as Code"
+            }
           }
-        ]
+        ],
+        "currentTab": 11
       }
     ],
     "direction": "vertical"
@@ -218,8 +233,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "f79334738d86d2cb",
@@ -310,8 +324,12 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "b97e023391817fb0",
+  "active": "cb2361ef2e8f5f8b",
   "lastOpenFiles": [
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Full Stack Testing/0) Full Stack Testing.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/2) The Logic of Compound Statements.md",
+    "Pasted image 20260210090455.png",
+    "Pasted image 20260210090200.png",
     "Pasted image 20260210085801.png",
     "Pasted image 20260210085739.png",
     "Pasted image 20260210085724.png",
@@ -320,12 +338,8 @@
     "images/Pasted image 20260210085311.png",
     "images/Pasted image 20260210084741.png",
     "images/Pasted image 20260210085259.png",
-    "images/Pasted image 20260210085102.png",
-    "images/Pasted image 20260210085249.png",
-    "images/Pasted image 20260210084913.png",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/3) The Logic of Quantified Statements.md",
     "Untitled 1.md",
-    "PRIVATE/Winter 2026/Discrete Structures/Textbook/2) The Logic of Compound Statements.md",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/12) Regular Expression and Finite-State Automata.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/5) Concurrency Primitives.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/4) Data Abstractions.md",
