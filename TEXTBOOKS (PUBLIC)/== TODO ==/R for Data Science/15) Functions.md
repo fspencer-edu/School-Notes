@@ -4,4 +4,10 @@
 
 # Functions Are for Humans and Computers
 
-# Cond
+# Conditional Execution
+
+# Function Arguments
+
+# Return Values
+
+# Environment

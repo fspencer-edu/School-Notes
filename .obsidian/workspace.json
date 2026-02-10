@@ -181,12 +181,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TEXTBOOKS (PUBLIC)/== TODO ==/R for Data Science/15) Functions.md",
+                "file": "TEXTBOOKS (PUBLIC)/== TODO ==/R for Data Science/18) Model Basics with Modelr.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "15) Functions"
+              "title": "18) Model Basics with Modelr"
             }
           }
         ],
@@ -340,6 +340,9 @@
   },
   "active": "b9ce3579751200ef",
   "lastOpenFiles": [
+    "TEXTBOOKS (PUBLIC)/== TODO ==/R for Data Science/17) Iteration with Purrr.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/R for Data Science/16) Vectors.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/R for Data Science/15) Functions.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/R for Data Science/14) Pipes with Magrittr.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/R for Data Science/13) Dates and Times with Lubridate.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/R for Data Science/12) Factors with Forcats.md",
@@ -355,9 +358,6 @@
     "TEXTBOOKS (PUBLIC)/== TODO ==/R for Data Science/2) Workflow - Basics.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/R for Data Science/1) Data Visualization with Ggplot2.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/R for Data Science/0) R for Data Science.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/R for Data Science/15) Functions.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/R for Data Science/16) Vectors.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/R for Data Science/17) Iteration with Purrr.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/R for Data Science/18) Model Basics with Modelr.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/R for Data Science/19) Model Building.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/R for Data Science/20) Many Models with Purrr ad Broom.md",
