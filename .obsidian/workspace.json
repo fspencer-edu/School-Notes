@@ -167,16 +167,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TEXTBOOKS (PUBLIC)/== TODO ==/Cloud Computing/12) Technical and Legal Issues in Cloud Computing.md",
+                "file": "TEXTBOOKS (PUBLIC)/== TODO ==/Math for Programmers/1) Learning Math with Code.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "12) Technical and Legal Issues in Cloud Computing"
+              "title": "1) Learning Math with Code"
+            }
+          },
+          {
+            "id": "b9ce3579751200ef",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/== TODO ==/Math for Programmers/0) Math for Programmers.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "0) Math for Programmers"
             }
           }
         ],
-        "currentTab": 11
+        "currentTab": 12
       }
     ],
     "direction": "vertical"
@@ -324,36 +338,36 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "05538a1bcae4abd6",
+  "active": "b9ce3579751200ef",
   "lastOpenFiles": [
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Cloud Computing/11) Cloud Security.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Cloud Computing/10) Cloud Computing Development Tools.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Cloud Computing/9) Resource Management in Cloud.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Cloud Computing/8) SLA Management in Cloud Computing.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Cloud Computing/7) Capacity Planning in lLoud.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Cloud Computing/6) SaaS and PaaS in Cloud.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Cloud Computing/5) Infrastructure-as-a-Service (IaaS) Delivery Model in Cloud.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Cloud Computing/4) Virtualization.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Cloud Computing/3) Multicore Architectures.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Cloud Computing/2) Distributed and Parallel Computing.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Cloud Computing/1) Introduction - Cloud Computing.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Cloud Computing/12) Technical and Legal Issues in Cloud Computing.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Cloud Computing/0) Cloud Computing.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Building Microservices/12) Brining it All Together.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Building Microservices/11) Microservices at Scale.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Building Microservices/10) Conway's Law and System Design.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Building Microservices/9) Security.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Building Microservices/8) Monitoring.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Building Microservices/7) Testing.md",
-    "PRIVATE/Winter 2026/Discrete Structures/Textbook/3) The Logic of Quantified Statements.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Math for Programmers/1) Learning Math with Code.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Math for Programmers/0) Math for Programmers.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Mastering API Architecture/0) Mastering API Architecture.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Math for Programmers/16) Training Neural Networks.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Math for Programmers/2) Drawing with 2D Vector.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Math for Programmers/3) Ascending to the 3D World.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Math for Programmers/4) Transforming Vectors and Graphics.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Math for Programmers/5) Computing Transformations with Matrices.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Math for Programmers/6) Generalizing to Higher Dimensions.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Math for Programmers/7) Solving Systems of Linear Equations.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Math for Programmers/8) Understanding Rates of Change.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Math for Programmers/9) Simulating Moving Objects.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Math for Programmers/10) Working with Symbolic Expressions.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Math for Programmers/11) Simulating Force Fields.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Math for Programmers/12) Optimizing a Physical System.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Math for Programmers/13) Analyzing Sound Waves with a Fourier Series.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Math for Programmers/14) Fitting Functions to Data.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Math for Programmers/15) Classifying Data with Logistic Regression.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Linux/0) Efficient Linux at the Command Line.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Learn TensorFlow/10) Exporting and Serving Models with TensorFlow.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Learn TensorFlow/9) Distributed TensorFlow.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Learn TensorFlow/8) Queues, Threads, and Reading Data.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Learn TensorFlow/7) TensorFlow Abstractions and Simplifications.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Learn TensorFlow/6) Text II - Word Vectors, Advanced RNN, and Embedding Visualization.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Learn TensorFlow/5) Text I - Working with Test and Sequences, and TensorBoard Visualization.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Learn TensorFlow/4) Convolutional Neural Networks.md",
     "Pasted image 20260210133041.png",
     "Pasted image 20260210130853.png",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Building Microservices/6) Deployment.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Building Microservices/5) Splitting the Monolith.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Building Microservices/4) Integration.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Building Microservices/3) How to Model Services.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Building Microservices/2) The Evolutionary Architect.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Building Microservices/1) Microservices.md",
     "images/Pasted image 20260210090455.png",
     "images/Pasted image 20260210104744.png",
     "images/Pasted image 20260210114026.png",
