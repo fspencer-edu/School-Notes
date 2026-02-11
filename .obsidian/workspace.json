@@ -175,8 +175,7 @@
               "title": "15) Other Topics in The Use of Regression Analysis"
             }
           }
-        ],
-        "currentTab": 11
+        ]
       }
     ],
     "direction": "vertical"
@@ -233,7 +232,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "f79334738d86d2cb",
@@ -324,8 +324,12 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "b9ce3579751200ef",
+  "active": "f6e0e705bcaed3f5",
   "lastOpenFiles": [
+    "Pasted image 20260211115345.png",
+    "Pasted image 20260211114930.png",
+    "Pasted image 20260211114028.png",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Intro. to Linear Regression Analysis/15) Other Topics in The Use of Regression Analysis.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Intro. to Linear Regression Analysis/14) Regression Analysis of Time Series Data.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Intro. to Linear Regression Analysis/13) Generalized Linear Models.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Intro. to Linear Regression Analysis/12) Introduction to Non-Linear Regression.md",
@@ -350,8 +354,6 @@
     "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats. for CS/8) Introduction to Statistics.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats. for CS/7) Queuing Systems.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats. for CS/6) Stochastic Processes.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats. for CS/5) Computer Simulations and Monte Carlo Methods.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats. for CS/4) Continuous Distributions.md",
     "images/Pasted image 20260211101925.png",
     "images/Pasted image 20260211101058.png",
     "images/Pasted image 20260211104254.png",
@@ -360,8 +362,6 @@
     "images/Pasted image 20260211103844.png",
     "images/Pasted image 20260211102903.png",
     "images/Pasted image 20260211100134.png",
-    "images/Pasted image 20260211105449.png",
-    "images/Pasted image 20260211095500.png",
     "PRIVATE/Winter 2026/Computer Networks/Lec Notes",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Kubeflow for ML",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats. for CS",
