@@ -189,8 +189,7 @@
               "title": "2) Probability"
             }
           }
-        ],
-        "currentTab": 12
+        ]
       }
     ],
     "direction": "vertical"
@@ -247,7 +246,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "f79334738d86d2cb",
@@ -338,13 +338,13 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "b9ce3579751200ef",
+  "active": "65f9743bedcf5a38",
   "lastOpenFiles": [
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats. for CS/2) Probability.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats. for CS/1) Introduction - Prob. and Stats..md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats. for CS/3) Discrete Random Variables and Their Distributions.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats. for CS/11) Regression.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats. for CS/0) Probability and Statistics for CS.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats. for CS/2) Probability.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats. for CS/4) Continuous Distributions.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats. for CS/5) Computer Simulations and Monte Carlo Methods.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats. for CS/6) Stochastic Processes.md",
