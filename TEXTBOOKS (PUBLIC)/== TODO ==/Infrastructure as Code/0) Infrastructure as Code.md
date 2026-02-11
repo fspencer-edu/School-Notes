@@ -2,24 +2,24 @@
 
 https://learning.oreilly.com/library/view/infrastructure-as-code/9781098114664/
 
-1) What Is Infrastructure as Code?
-2) Principles of Cloud Age Infrastructure
-3) Infrastructure Platforms
-4) Core Practice - Define Everything as Code
-5) Building Infrastructure Stacks as Code
-6) Building Environments with Stacks
-7) Configuring Stacks Instances
-8) Core Practice - Continuously Test and Deliver
-9) Testing Infrastructure Stacks
-10) Application Runtimes
-11) Building Servers as Code
-12) Managing Changes to Servers
-13) Server Images as Code
-14) Building Clusters as Code
-15) Core Practice - Small, Simple Pieces
-16) Building Stacks from Components
-17) Using Stacks as Components
-18) Organizing Infrastructure Code
-19) Delivering Infrastructure Code
-20) Team Workflows
-21) Safely Changing Infrastructure
+[[1) What Is Infrastructure as Code?]]
+[[2) Principles of Cloud Age Infrastructure]]
+[[3) Infrastructure Platforms]]
+[[4) Core Practice - Define Everything as Code]]
+[[5) Building Infrastructure Stacks as Code]]
+[[6) Building Environments with Stacks]]
+[[7) Configuring Stacks Instances]]
+[[8) Core Practice - Continuously Test and Deliver]]
+[[9) Testing Infrastructure Stacks]]
+[[10) Application Runtimes]]
+[[11) Building Servers as Code]]
+[[12) Managing Changes to Servers]]
+[[13) Server Images as Code]]
+[[14) Building Clusters as Code]]
+[[15) Core Practice - Small, Simple Pieces]]
+[[16) Building Stacks from Components]]
+[[17) Using Stacks as Components]]
+[[18) Organizing Infrastructure Code]]
+[[19) Delivering Infrastructure Code]]
+[[20) Team Workflows]]
+[[21) Safely Changing Infrastructure]]

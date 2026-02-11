@@ -21,4 +21,14 @@ https://learning.oreilly.com/library/view/test-driven-development-with/978149195
 13) Validation at the Database Layer
 14) A Simple Form
 15) More Advanced Forms
-16) Dipping Our Toes, Very 
+16) Dipping Our Toes, Very Tentatively, Intro JS
+17) Developing Our New Code
+18) User Authentication, Spiking, and De-Spoking
+19) Using Mocks to Test External Dependencies or Reduce Duplication
+20) Test Fixtures and a Decorator for Explicit Waits
+21) Server-Side Debugging
+22) Finishing My Lists - Outside-In TDD
+23) Test Isolation
+24) Continuous Integration (CI)
+25) The Token Social Bit, The Page Pattern
+26) Fast Tests, Slow Tests
