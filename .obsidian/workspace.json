@@ -181,16 +181,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/14) IBM Watson and Cognitive Computing.md",
+                "file": "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/16) Deep Learning.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "14) IBM Watson and Cognitive Computing"
+              "title": "16) Deep Learning"
             }
           }
-        ],
-        "currentTab": 12
+        ]
       }
     ],
     "direction": "vertical"
@@ -247,7 +246,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "f79334738d86d2cb",
@@ -338,8 +338,22 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "229c7f92499e5a39",
+  "active": "255ba31cb7332660",
   "lastOpenFiles": [
+    "Pasted image 20260212144830.png",
+    "Pasted image 20260212144641.png",
+    "Pasted image 20260212144456.png",
+    "Pasted image 20260212144418.png",
+    "Pasted image 20260212144407.png",
+    "Pasted image 20260212144308.png",
+    "Pasted image 20260212144111.png",
+    "Pasted image 20260212144001.png",
+    "Pasted image 20260212143743.png",
+    "Pasted image 20260212143712.png",
+    "Pasted image 20260212143634.png",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/16) Deep Learning.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/15) Machine Learning - Classification, Regression and Clustering.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/14) IBM Watson and Cognitive Computing.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/13) Data Mining Twitter.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/12) Natural Language Processing (NLP).md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/11) Computer Science Thinking - Recursion, Searching, Sorting, and Big O.md",
@@ -356,26 +370,12 @@
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/9) Isolating Error Effects.md",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/5) Sequences, Mathematical Induction, and Recursion.md",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/4) Elementary Number Theory and Methods of Proof.md",
-    "Pasted image 20260212134354.png",
-    "Pasted image 20260212134343.png",
-    "Pasted image 20260212134331.png",
-    "Pasted image 20260212134318.png",
-    "Pasted image 20260212134307.png",
-    "Pasted image 20260212134253.png",
-    "Pasted image 20260212134233.png",
-    "Pasted image 20260212134214.png",
-    "Pasted image 20260212134200.png",
-    "Pasted image 20260212134054.png",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/0) Intro to Python for Computer Science and Data Science - Learning to Program with AI, Big Data and The Cloud.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Guide to Essential Math/14) Complex Variables.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Guide to Essential Math/13) Partial Differential Equations and Special Functions.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Guide to Essential Math/12) Vector Analysis.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Guide to Essential Math/11) Multivariable Calculus.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Guide to Essential Math/10) Group Theory.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Guide to Essential Math/9) Matrix Algebra.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Guide to Essential Math/8) Differential Equations.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Guide to Essential Math/7) Series and Integrals.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Guide to Essential Math/6) Calculus.md",
     "PRIVATE/Winter 2026/Computer Networks/Lec Notes",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Kubeflow for ML",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats. for CS",
