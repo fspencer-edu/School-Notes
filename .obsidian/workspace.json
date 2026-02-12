@@ -195,16 +195,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/18) User Authentication, Spiking, and De-Spoking.md",
+                "file": "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/26) Fast Tests, Slow Tests.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "18) User Authentication, Spiking, and De-Spoking"
+              "title": "26) Fast Tests, Slow Tests"
             }
           }
-        ],
-        "currentTab": 13
+        ]
       }
     ],
     "direction": "vertical"
@@ -261,7 +260,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "f79334738d86d2cb",
@@ -352,8 +352,26 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "229c7f92499e5a39",
+  "active": "255ba31cb7332660",
   "lastOpenFiles": [
+    "Pasted image 20260212163739.png",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/12) Regular Expression and Finite-State Automata.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/11) Analysis of Algorithm Efficiency.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/10) Theory of Graphs and Trees.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/9) Counting and Probability.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/8) Properties of Relation.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/7) Properties of Functions.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/6) Set Theory.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/5) Sequences, Mathematical Induction, and Recursion.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/26) Fast Tests, Slow Tests.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/25) The Token Social Bit, The Page Pattern.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/24) Continuous Integration (CI).md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/23) Test Isolation.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/22) Finishing My Lists - Outside-In TDD.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/21) Server-Side Debugging.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/20) Test Fixtures and a Decorator for Explicit Waits.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/19) Using Mocks to Test External Dependencies or Reduce Duplication.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/18) User Authentication, Spiking, and De-Spoking.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/17) Developing Our New Code.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/16) Dipping Our Toes, Very Tentatively, Intro JS.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/15) More Advanced Forms.md",
@@ -362,8 +380,6 @@
     "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/12) Splitting Our Tests Into Multiple Files, and a Generic Wait Helper.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/11) Automating Deployment with Fabric.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/10) Getting to a Production - Ready Deployment.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/10) Beyond GenServer.md",
-    "PRIVATE/Winter 2026/Discrete Structures/Textbook/5) Sequences, Mathematical Induction, and Recursion.md",
     "Pasted image 20260212161107.png",
     "Pasted image 20260212161056.png",
     "Pasted image 20260212161042.png",
@@ -372,22 +388,6 @@
     "Pasted image 20260212160908.png",
     "Pasted image 20260212160846.png",
     "Pasted image 20260212160835.png",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/9) Testing Deployment Using a Staging Site.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/8) Prettification - Layout and Styling, and What to Test About It.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/7) Working Incrementally.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/6) Improving Functional Tests - Ensuring Isolation and Removing Voodoo Sleeps.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/5) Saving User Input - Testing the Database.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/4) What Are We Doing with All Test Tests? (Refactoring).md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/3) Testing a Simple Home Page with Unit Tests.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/2) Extending Our Functional Test Using the Unittest Module.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/1) Getting Django Set Up Using a Functional Test.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/0) Test-Drive Development with Python.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/System Design on AWS/16) Designing a Social Network and Newsfeed System.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/System Design on AWS/15) Designing A Web Crawler and Search Engine.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/System Design on AWS/4) Caching Policies and Strategies.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/System Design on AWS/3) Non-relational Stores.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/System Design on AWS/2) Storage Types and Relational Stores.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/System Design on AWS/1) System design Trade-Offs and Guidelines.md",
     "images/Pasted image 20260212150154.png",
     "images/Pasted image 20260212143712.png",
     "PRIVATE/Winter 2026/Computer Networks/Lec Notes",
