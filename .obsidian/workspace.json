@@ -175,7 +175,8 @@
               "title": "15) Other Topics in The Use of Regression Analysis"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -324,19 +325,19 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "f6e0e705bcaed3f5",
+  "active": "255ba31cb7332660",
   "lastOpenFiles": [
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/4) Elementary Number Theory and Methods of Proof.md",
+    "Pasted image 20260211225748.png",
+    "Pasted image 20260211225707.png",
+    "Pasted image 20260211225132.png",
+    "Pasted image 20260211225032.png",
+    "Pasted image 20260211224744.png",
+    "Pasted image 20260211224122.png",
     "Pasted image 20260211223754.png",
     "Pasted image 20260211222920.png",
     "Pasted image 20260211222908.png",
     "Pasted image 20260211222517.png",
-    "Pasted image 20260211221539.png",
-    "Pasted image 20260211122012.png",
-    "Pasted image 20260211121022.png",
-    "Pasted image 20260211120624.png",
-    "Pasted image 20260211115929.png",
-    "Pasted image 20260211115345.png",
-    "Pasted image 20260211114930.png",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Intro. to Linear Regression Analysis/15) Other Topics in The Use of Regression Analysis.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Intro. to Linear Regression Analysis/14) Regression Analysis of Time Series Data.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Intro. to Linear Regression Analysis/13) Generalized Linear Models.md",
