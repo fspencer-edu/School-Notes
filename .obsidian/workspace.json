@@ -203,8 +203,7 @@
               "title": "1) Introduction To Computer and Python"
             }
           }
-        ],
-        "currentTab": 13
+        ]
       }
     ],
     "direction": "vertical"
@@ -261,7 +260,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "f79334738d86d2cb",
@@ -352,9 +352,17 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "229c7f92499e5a39",
+  "active": "f6e0e705bcaed3f5",
   "lastOpenFiles": [
+    "Pasted image 20260212123612.png",
+    "Pasted image 20260212123329.png",
+    "Pasted image 20260212122603.png",
+    "Pasted image 20260212122554.png",
+    "Pasted image 20260212122457.png",
+    "Pasted image 20260212122134.png",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/1) Introduction To Computer and Python.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/0) Intro to Python for Computer Science and Data Science - Learning to Program with AI, Big Data and The Cloud.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/4) Functions.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Guide to Essential Math/14) Complex Variables.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Guide to Essential Math/13) Partial Differential Equations and Special Functions.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Guide to Essential Math/12) Vector Analysis.md",
@@ -369,8 +377,6 @@
     "TEXTBOOKS (PUBLIC)/== TODO ==/Guide to Essential Math/3) Algebra.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Guide to Essential Math/2) Numbers.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Guide to Essential Math/1) Mathematical Thinking.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/1) Introduction To Computer and Python.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/4) Functions.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/2) Introduction to Python Programming.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/17) Big Data - Hadoop, Spark, NoSQL, and IoT.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/5) Sequences - Lists and Tuples.md",
@@ -379,17 +385,11 @@
     "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/6) Dictionaries and Sets.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/7) Array-Oriented Programming with NumPy.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/9) Files and Exceptions.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/11) Computer Science Thinking - Recursion, Searching, Sorting, and Big O.md",
     "Pasted image 20260212110000.png",
     "Pasted image 20260212092532.png",
     "Pasted image 20260212091233.png",
     "images/Pasted image 20260212081441.png",
     "images/Pasted image 20260212082835.png",
-    "images/Pasted image 20260211225032.png",
-    "images/Pasted image 20260212082918.png",
-    "images/Pasted image 20260211222920.png",
-    "images/Pasted image 20260211222908.png",
-    "images/Pasted image 20260211120624.png",
     "PRIVATE/Winter 2026/Computer Networks/Lec Notes",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Kubeflow for ML",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats. for CS",
