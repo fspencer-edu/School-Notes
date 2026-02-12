@@ -181,12 +181,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/1) Introduction To Computer and Python.md",
+                "file": "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/14) IBM Watson and Cognitive Computing.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1) Introduction To Computer and Python"
+              "title": "14) IBM Watson and Cognitive Computing"
             }
           }
         ],
@@ -340,8 +340,20 @@
   },
   "active": "229c7f92499e5a39",
   "lastOpenFiles": [
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/9) Isolating Error Effects.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/13) Data Mining Twitter.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/12) Natural Language Processing (NLP).md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/11) Computer Science Thinking - Recursion, Searching, Sorting, and Big O.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/10) Object-Oriented Programming.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/9) Files and Exceptions.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/8) Strings - A Deeper Look.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/7) Array-Oriented Programming with NumPy.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/6) Dictionaries and Sets.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/5) Sequences - Lists and Tuples.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/4) Functions.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/3) Control Statements and Program Development.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/2) Introduction to Python Programming.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/1) Introduction To Computer and Python.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/9) Isolating Error Effects.md",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/5) Sequences, Mathematical Induction, and Recursion.md",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/4) Elementary Number Theory and Methods of Proof.md",
     "Pasted image 20260212134354.png",
@@ -355,7 +367,6 @@
     "Pasted image 20260212134200.png",
     "Pasted image 20260212134054.png",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/0) Intro to Python for Computer Science and Data Science - Learning to Program with AI, Big Data and The Cloud.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/4) Functions.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Guide to Essential Math/14) Complex Variables.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Guide to Essential Math/13) Partial Differential Equations and Special Functions.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Guide to Essential Math/12) Vector Analysis.md",
@@ -365,17 +376,6 @@
     "TEXTBOOKS (PUBLIC)/== TODO ==/Guide to Essential Math/8) Differential Equations.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Guide to Essential Math/7) Series and Integrals.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Guide to Essential Math/6) Calculus.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Guide to Essential Math/5) Analytic Geometry.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Guide to Essential Math/4) Trigonometry.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Guide to Essential Math/3) Algebra.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Guide to Essential Math/2) Numbers.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Guide to Essential Math/1) Mathematical Thinking.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/2) Introduction to Python Programming.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/17) Big Data - Hadoop, Spark, NoSQL, and IoT.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/5) Sequences - Lists and Tuples.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/8) Strings - A Deeper Look.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/3) Control Statements and Program Development.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/6) Dictionaries and Sets.md",
     "PRIVATE/Winter 2026/Computer Networks/Lec Notes",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Kubeflow for ML",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats. for CS",
