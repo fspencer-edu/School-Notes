@@ -189,7 +189,8 @@
               "title": "16) Deep Learning"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -338,19 +339,23 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "255ba31cb7332660",
+  "active": "f9752d13b4422cb9",
   "lastOpenFiles": [
-    "Pasted image 20260212144830.png",
-    "Pasted image 20260212144641.png",
-    "Pasted image 20260212144456.png",
-    "Pasted image 20260212144418.png",
-    "Pasted image 20260212144407.png",
-    "Pasted image 20260212144308.png",
-    "Pasted image 20260212144111.png",
-    "Pasted image 20260212144001.png",
-    "Pasted image 20260212143743.png",
-    "Pasted image 20260212143712.png",
-    "Pasted image 20260212143634.png",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/5) Sequences, Mathematical Induction, and Recursion.md",
+    "images/Pasted image 20260212150154.png",
+    "images/Pasted image 20260212143712.png",
+    "images/Pasted image 20260212151101.png",
+    "images/Pasted image 20260212150223.png",
+    "images/Pasted image 20260212144308.png",
+    "images/Pasted image 20260212150618.png",
+    "images/Pasted image 20260212144641.png",
+    "images/Pasted image 20260212144456.png",
+    "images/Pasted image 20260212143515.png",
+    "images/Pasted image 20260212145818.png",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/6) Generic Server Processes.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/10) Beyond GenServer.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/9) Isolating Error Effects.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/7) Building A Concurrent System.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/16) Deep Learning.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/15) Machine Learning - Classification, Regression and Clustering.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/14) IBM Watson and Cognitive Computing.md",
@@ -367,15 +372,10 @@
     "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/3) Control Statements and Program Development.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/2) Introduction to Python Programming.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/1) Introduction To Computer and Python.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/9) Isolating Error Effects.md",
-    "PRIVATE/Winter 2026/Discrete Structures/Textbook/5) Sequences, Mathematical Induction, and Recursion.md",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/4) Elementary Number Theory and Methods of Proof.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Intro to Python for CS Data Science/0) Intro to Python for Computer Science and Data Science - Learning to Program with AI, Big Data and The Cloud.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Guide to Essential Math/14) Complex Variables.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Guide to Essential Math/13) Partial Differential Equations and Special Functions.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Guide to Essential Math/12) Vector Analysis.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Guide to Essential Math/11) Multivariable Calculus.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Guide to Essential Math/10) Group Theory.md",
     "PRIVATE/Winter 2026/Computer Networks/Lec Notes",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Kubeflow for ML",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats. for CS",
