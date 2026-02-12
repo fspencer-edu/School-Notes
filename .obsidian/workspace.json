@@ -203,7 +203,8 @@
               "title": "26) Fast Tests, Slow Tests"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -352,17 +353,27 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "255ba31cb7332660",
+  "active": "f9752d13b4422cb9",
   "lastOpenFiles": [
-    "Pasted image 20260212163739.png",
+    "Pasted image 20260212171900.png",
+    "Pasted image 20260212171849.png",
+    "Pasted image 20260212171840.png",
+    "Pasted image 20260212171830.png",
+    "Pasted image 20260212171819.png",
+    "Pasted image 20260212171803.png",
+    "Pasted image 20260212171754.png",
+    "Pasted image 20260212171742.png",
+    "Pasted image 20260212171729.png",
+    "Pasted image 20260212171715.png",
+    "Pasted image 20260212171701.png",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/5) Sequences, Mathematical Induction, and Recursion.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/6) Set Theory.md",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/12) Regular Expression and Finite-State Automata.md",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/11) Analysis of Algorithm Efficiency.md",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/10) Theory of Graphs and Trees.md",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/9) Counting and Probability.md",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/8) Properties of Relation.md",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/7) Properties of Functions.md",
-    "PRIVATE/Winter 2026/Discrete Structures/Textbook/6) Set Theory.md",
-    "PRIVATE/Winter 2026/Discrete Structures/Textbook/5) Sequences, Mathematical Induction, and Recursion.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/26) Fast Tests, Slow Tests.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/25) The Token Social Bit, The Page Pattern.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/24) Continuous Integration (CI).md",
@@ -380,16 +391,6 @@
     "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/12) Splitting Our Tests Into Multiple Files, and a Generic Wait Helper.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/11) Automating Deployment with Fabric.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/10) Getting to a Production - Ready Deployment.md",
-    "Pasted image 20260212161107.png",
-    "Pasted image 20260212161056.png",
-    "Pasted image 20260212161042.png",
-    "Pasted image 20260212161022.png",
-    "Pasted image 20260212160919.png",
-    "Pasted image 20260212160908.png",
-    "Pasted image 20260212160846.png",
-    "Pasted image 20260212160835.png",
-    "images/Pasted image 20260212150154.png",
-    "images/Pasted image 20260212143712.png",
     "PRIVATE/Winter 2026/Computer Networks/Lec Notes",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Kubeflow for ML",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats. for CS",
