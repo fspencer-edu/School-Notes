@@ -120,20 +120,6 @@
             }
           },
           {
-            "id": "ed72ce42af7edadb",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/6) Generic Server Processes.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "6) Generic Server Processes"
-            }
-          },
-          {
             "id": "0efe01140db24dfb",
             "type": "leaf",
             "state": {
@@ -217,8 +203,7 @@
               "title": "ToDo"
             }
           }
-        ],
-        "currentTab": 8
+        ]
       }
     ],
     "direction": "vertical"
@@ -367,13 +352,16 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "ed72ce42af7edadb",
+  "active": "255ba31cb7332660",
   "lastOpenFiles": [
+    "Pasted image 20260213123754.png",
+    "Pasted image 20260213123440.png",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/7) Building A Concurrent System.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/10) Beyond GenServer.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/6) Generic Server Processes.md",
+    "Pasted image 20260213121504.png",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/9) Isolating Error Effects.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/8) Fault Tolerance Basics.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/7) Building A Concurrent System.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/6) Generic Server Processes.md",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/5) Sequences, Mathematical Induction, and Recursion.md",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/12) Regular Expression and Finite-State Automata.md",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/11) Analysis of Algorithm Efficiency.md",
@@ -391,8 +379,6 @@
     "images/Pasted image 20260212171819.png",
     "images/Pasted image 20260212171428.png",
     "images/Pasted image 20260212170939.png",
-    "images/Pasted image 20260212171628.png",
-    "images/Pasted image 20260212172334.png",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/26) Fast Tests, Slow Tests.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/25) The Token Social Bit, The Page Pattern.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/24) Continuous Integration (CI).md",
@@ -404,7 +390,6 @@
     "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/18) User Authentication, Spiking, and De-Spoking.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/17) Developing Our New Code.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/16) Dipping Our Toes, Very Tentatively, Intro JS.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/15) More Advanced Forms.md",
     "PRIVATE/Winter 2026/Computer Networks/Lec Notes",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Kubeflow for ML",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats. for CS",
