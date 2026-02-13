@@ -217,7 +217,8 @@
               "title": "ToDo"
             }
           }
-        ]
+        ],
+        "currentTab": 8
       }
     ],
     "direction": "vertical"
@@ -366,10 +367,17 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "255ba31cb7332660",
+  "active": "ed72ce42af7edadb",
   "lastOpenFiles": [
-    "PRIVATE/ToDo.md",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/5) Sequences, Mathematical Induction, and Recursion.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/12) Regular Expression and Finite-State Automata.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/11) Analysis of Algorithm Efficiency.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/10) Theory of Graphs and Trees.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/9) Counting and Probability.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/8) Properties of Relation.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/7) Properties of Functions.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/6) Set Theory.md",
+    "PRIVATE/ToDo.md",
     "images/Pasted image 20260212171830.png",
     "images/Pasted image 20260212170521.png",
     "images/Pasted image 20260212171039.png",
@@ -380,13 +388,6 @@
     "images/Pasted image 20260212170939.png",
     "images/Pasted image 20260212171628.png",
     "images/Pasted image 20260212172334.png",
-    "PRIVATE/Winter 2026/Discrete Structures/Textbook/7) Properties of Functions.md",
-    "PRIVATE/Winter 2026/Discrete Structures/Textbook/6) Set Theory.md",
-    "PRIVATE/Winter 2026/Discrete Structures/Textbook/12) Regular Expression and Finite-State Automata.md",
-    "PRIVATE/Winter 2026/Discrete Structures/Textbook/11) Analysis of Algorithm Efficiency.md",
-    "PRIVATE/Winter 2026/Discrete Structures/Textbook/10) Theory of Graphs and Trees.md",
-    "PRIVATE/Winter 2026/Discrete Structures/Textbook/9) Counting and Probability.md",
-    "PRIVATE/Winter 2026/Discrete Structures/Textbook/8) Properties of Relation.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/26) Fast Tests, Slow Tests.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/25) The Token Social Bit, The Page Pattern.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/24) Continuous Integration (CI).md",
