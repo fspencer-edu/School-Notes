@@ -167,16 +167,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TEXTBOOKS (PUBLIC)/== TODO ==/Spark/33) Ecosystem and Community.md",
+                "file": "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/10) Beyond GenServer.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "33) Ecosystem and Community"
+              "title": "10) Beyond GenServer"
             }
           }
         ],
-        "currentTab": 11
+        "currentTab": 8
       }
     ],
     "direction": "vertical"
@@ -233,7 +233,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "f79334738d86d2cb",
@@ -324,8 +325,12 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "a9b04cef9dfb1f34",
+  "active": "0efe01140db24dfb",
   "lastOpenFiles": [
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/10) Beyond GenServer.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Spark/33) Ecosystem and Community.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/9) Isolating Error Effects.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/7) Building A Concurrent System.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Spark/32) Language Specifics - Python and R.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Spark/31) Deep Learning.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Spark/30) Graph Analytics.md",
@@ -348,10 +353,6 @@
     "TEXTBOOKS (PUBLIC)/== TODO ==/Spark/13) Advanced RDDs.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Spark/12) Resilient Distributed Datasets (RDDs).md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Spark/11) Datasets.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Spark/10) Spark SQL.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Spark/9) Data Structures.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Spark/8) Joins.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Spark/7) Aggregations.md",
     "Pasted image 20260213124922.png",
     "Pasted image 20260213124906.png",
     "Pasted image 20260213124852.png",
