@@ -148,7 +148,7 @@
             }
           }
         ],
-        "currentTab": 9
+        "currentTab": 8
       }
     ],
     "direction": "vertical"
@@ -205,7 +205,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "f79334738d86d2cb",
@@ -296,8 +297,9 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "4b42844fb84d194d",
+  "active": "cd683b0b58c5de87",
   "lastOpenFiles": [
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Real World Haskell/0) Real World Haskell.md",
     "images/Pasted image 20260213124852.png",
     "images/Pasted image 20260216210957.png",
     "images/Pasted image 20260213185657.png",
@@ -308,9 +310,7 @@
     "images/Pasted image 20260215161049.png",
     "images/Pasted image 20260213171102.png",
     "images/Pasted image 20260213124922.png",
-    "images/Pasted image 20260216211544.png",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/0) Effective Haskell.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Real World Haskell/0) Real World Haskell.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Real World Haskell",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/13) Running The System.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/12) Building A Distributed System.md",
