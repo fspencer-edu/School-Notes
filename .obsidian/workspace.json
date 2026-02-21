@@ -120,20 +120,6 @@
             }
           },
           {
-            "id": "027ef1f5c1d43187",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/2) Working with Lists.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "2) Working with Lists"
-            }
-          },
-          {
             "id": "94d9b96a91f03d16",
             "type": "leaf",
             "state": {
@@ -465,15 +451,23 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "027ef1f5c1d43187",
+  "active": "94d9b96a91f03d16",
   "lastOpenFiles": [
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/2) Working with Lists.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Elementary Linear Algebra/4) General Vector Spaces.md.tmp",
+    "images/Pasted image 20260221142621.png",
+    "images/Pasted image 20260219214959.png",
+    "images/Pasted image 20260219214846.png",
+    "images/Pasted image 20260217211600.png",
+    "images/Pasted image 20260221143241.png",
+    "Pasted image 20260221143241.png",
+    "Pasted image 20260221142621.png",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/8) Working with the Local System.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/7) Understanding IO.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/6) Type Classes.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/5) Creating and Structuring Haskell Projects.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/4) Creating New Types.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/3) Getting Started with Types.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/2) Working with Lists.md",
     "Pasted image 20260219214959.png",
     "Pasted image 20260219214846.png",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/1) Getting Started with Haskell.md",
@@ -490,13 +484,6 @@
     "TEXTBOOKS (PUBLIC)/== TODO ==/Leaning Go",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/13) Running The System.md",
     "Pasted image 20260217211600.png",
-    "images/Pasted image 20260213124852.png",
-    "images/Pasted image 20260216210957.png",
-    "images/Pasted image 20260213185657.png",
-    "images/Pasted image 20260216141816.png",
-    "images/Pasted image 20260213123440.png",
-    "images/Pasted image 20260216201929.png",
-    "images/Pasted image 20260216211118.png",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Real World Haskell",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/12) Building A Distributed System.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/11) Working With Components.md",
@@ -510,7 +497,6 @@
     "TEXTBOOKS (PUBLIC)/== TODO ==/Learn TensorFlow",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Infrastructure as Code",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Cloud Computing",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Mastering API Architecture",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Python for Data Analysis"
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Mastering API Architecture"
   ]
 }
