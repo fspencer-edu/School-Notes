@@ -288,7 +288,7 @@
             }
           }
         ],
-        "currentTab": 8
+        "currentTab": 19
       }
     ],
     "direction": "vertical"
@@ -345,8 +345,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "f79334738d86d2cb",
@@ -437,10 +436,13 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "f86f0aafa09d4ce7",
+  "active": "bc76b39c1c9966be",
   "lastOpenFiles": [
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/3) Getting Started with Types.md",
+    "PRIVATE/Winter 2026/Data Mining/Lab/Lab 5.md",
+    "confusion_matrix.png",
+    "Screenshot 2026-02-22 at 3.26.13 PM.png",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/4) Creating New Types.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/3) Getting Started with Types.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/2) Working with Lists.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Elementary Linear Algebra/4) General Vector Spaces.md.tmp",
     "images/Pasted image 20260221142621.png",
@@ -455,7 +457,6 @@
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/6) Type Classes.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/5) Creating and Structuring Haskell Projects.md",
     "Pasted image 20260219214959.png",
-    "Pasted image 20260219214846.png",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/1) Getting Started with Haskell.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/15) Programming with Types.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/14) Building Efficient Programs.md",
@@ -469,14 +470,12 @@
     "TEXTBOOKS (PUBLIC)/== TODO ==/Leaning Go/0) Learning Go.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Leaning Go",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/13) Running The System.md",
-    "Pasted image 20260217211600.png",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Real World Haskell",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/12) Building A Distributed System.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/11) Working With Components.md",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/12) Regular Expression and Finite-State Automata.md",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/11) Analysis of Algorithm Efficiency.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/10) Beyond GenServer.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/9) Isolating Error Effects.md",
     "PRIVATE/Winter 2026/Computer Networks/Lec Notes",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Kubeflow for ML",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats. for CS",
