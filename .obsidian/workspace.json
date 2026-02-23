@@ -167,12 +167,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PRIVATE/Winter 2026/Comparative Prog. Languages/SmallTalk/Lecture/Smalltalk.md",
+                "file": "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Elixir Lecture.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Smalltalk"
+              "title": "Elixir Lecture"
             }
           },
           {
@@ -341,10 +341,11 @@
   },
   "active": "52b7b9943dbd8dab",
   "lastOpenFiles": [
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/SmallTalk/Smalltalk Lecture.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Elixir Lecture.md",
     "Pasted image 20260222215308.png",
     "PRIVATE/ToDo.md",
     "Pasted image 20260222215216.png",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/SmallTalk/Lecture/Smalltalk.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/SmallTalk/Lecture",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/2) The Logic of Compound Statements.md",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/5) Sequences, Mathematical Induction, and Recursion.md",
@@ -378,7 +379,6 @@
     "images/Pasted image 20260217211600.png",
     "images/Pasted image 20260221143241.png",
     "Pasted image 20260221143241.png",
-    "Pasted image 20260221142621.png",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Leaning Go",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Real World Haskell",
     "PRIVATE/Winter 2026/Computer Networks/Lec Notes",
