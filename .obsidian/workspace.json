@@ -8,16 +8,189 @@
         "type": "tabs",
         "children": [
           {
-            "id": "5d0153601fcc7386",
+            "id": "3188dfb8d5136699",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Discrete Structures/Textbook/2) The Logic of Compound Statements.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "2) The Logic of Compound Statements"
+            }
+          },
+          {
+            "id": "857ef719938a466a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Discrete Structures/Textbook/3) The Logic of Quantified Statements.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "3) The Logic of Quantified Statements"
+            }
+          },
+          {
+            "id": "d110f0a04b57a2ae",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Discrete Structures/Textbook/4) Elementary Number Theory and Methods of Proof.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "4) Elementary Number Theory and Methods of Proof"
+            }
+          },
+          {
+            "id": "c8c7c9ff4cf33b4a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Discrete Structures/Textbook/5) Sequences, Mathematical Induction, and Recursion.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "5) Sequences, Mathematical Induction, and Recursion"
+            }
+          },
+          {
+            "id": "b39fa6824e770a8a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Discrete Structures/Textbook/6) Set Theory.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "6) Set Theory"
+            }
+          },
+          {
+            "id": "263bb909fb62c8d3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Discrete Structures/Textbook/7) Properties of Functions.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "7) Properties of Functions"
+            }
+          },
+          {
+            "id": "b273314b1e9429a0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Discrete Structures/Textbook/8) Properties of Relation.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "8) Properties of Relation"
+            }
+          },
+          {
+            "id": "01ad7ea6f3c897a2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Discrete Structures/Textbook/9) Counting and Probability.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "9) Counting and Probability"
+            }
+          },
+          {
+            "id": "5d1a0b412b3f8415",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Discrete Structures/Textbook/10) Theory of Graphs and Trees.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "10) Theory of Graphs and Trees"
+            }
+          },
+          {
+            "id": "7fbdac5185aabb08",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Discrete Structures/Textbook/11) Analysis of Algorithm Efficiency.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "11) Analysis of Algorithm Efficiency"
+            }
+          },
+          {
+            "id": "5c1e1d9cddb0d56b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Discrete Structures/Textbook/12) Regular Expression and Finite-State Automata.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "12) Regular Expression and Finite-State Automata"
+            }
+          },
+          {
+            "id": "52b7b9943dbd8dab",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Comparative Prog. Languages/SmallTalk/Lecture/Smalltalk.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Smalltalk"
+            }
+          },
+          {
+            "id": "fbfefc0e72188c4c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/ToDo.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "ToDo"
             }
           }
-        ]
+        ],
+        "currentTab": 11
       }
     ],
     "direction": "vertical"
@@ -166,8 +339,24 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "5d0153601fcc7386",
+  "active": "52b7b9943dbd8dab",
   "lastOpenFiles": [
+    "PRIVATE/ToDo.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/SmallTalk/Lecture/Smalltalk.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/SmallTalk/Lecture",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/2) The Logic of Compound Statements.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/5) Sequences, Mathematical Induction, and Recursion.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/6) Set Theory.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/1) Speaking Mathematically.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/12) Regular Expression and Finite-State Automata.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/11) Analysis of Algorithm Efficiency.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/10) Theory of Graphs and Trees.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/9) Counting and Probability.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/8) Properties of Relation.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/7) Properties of Functions.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/4) Elementary Number Theory and Methods of Proof.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/3) The Logic of Quantified Statements.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/0) Discrete Mathematics with Applications.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/15) Programming with Types.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/14) Building Efficient Programs.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/13) Building Applications with Many Effects.md",
@@ -179,20 +368,8 @@
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/7) Understanding IO.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/6) Type Classes.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/5) Creating and Structuring Haskell Projects.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/4) Creating New Types.md",
-    "PRIVATE/Winter 2026/Discrete Structures/Textbook/12) Regular Expression and Finite-State Automata.md",
-    "PRIVATE/Winter 2026/Discrete Structures/Textbook/11) Analysis of Algorithm Efficiency.md",
-    "PRIVATE/Winter 2026/Discrete Structures/Textbook/10) Theory of Graphs and Trees.md",
-    "PRIVATE/Winter 2026/Discrete Structures/Textbook/9) Counting and Probability.md",
-    "PRIVATE/Winter 2026/Discrete Structures/Textbook/8) Properties of Relation.md",
-    "PRIVATE/Winter 2026/Discrete Structures/Textbook/7) Properties of Functions.md",
-    "PRIVATE/Winter 2026/Discrete Structures/Textbook/6) Set Theory.md",
-    "PRIVATE/Winter 2026/Discrete Structures/Textbook/5) Sequences, Mathematical Induction, and Recursion.md",
-    "PRIVATE/Winter 2026/Data Mining/Lab/Lab 5.md",
     "confusion_matrix.png",
     "Screenshot 2026-02-22 at 3.26.13 PM.png",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/3) Getting Started with Types.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/2) Working with Lists.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Elementary Linear Algebra/4) General Vector Spaces.md.tmp",
     "images/Pasted image 20260221142621.png",
     "images/Pasted image 20260219214959.png",
@@ -202,9 +379,6 @@
     "Pasted image 20260221143241.png",
     "Pasted image 20260221142621.png",
     "Pasted image 20260219214959.png",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/1) Getting Started with Haskell.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/0) Effective Haskell.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Real World Haskell/0) Real World Haskell.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Leaning Go",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Real World Haskell",
     "PRIVATE/Winter 2026/Computer Networks/Lec Notes",
@@ -212,7 +386,6 @@
     "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats. for CS",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Learn TensorFlow",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Infrastructure as Code",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Cloud Computing",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Mastering API Architecture"
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Cloud Computing"
   ]
 }
