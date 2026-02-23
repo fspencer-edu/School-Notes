@@ -167,12 +167,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Elixir Lecture.md",
+                "file": "PRIVATE/Winter 2026/Comparative Prog. Languages/SmallTalk/Smalltalk Lecture.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Elixir Lecture"
+              "title": "Smalltalk Lecture"
             }
           },
           {
@@ -341,10 +341,11 @@
   },
   "active": "52b7b9943dbd8dab",
   "lastOpenFiles": [
+    "PRIVATE/ToDo.md",
+    "Untitled.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/SmallTalk/Smalltalk Lecture.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Elixir Lecture.md",
     "Pasted image 20260222215308.png",
-    "PRIVATE/ToDo.md",
     "Pasted image 20260222215216.png",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/SmallTalk/Lecture",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/2) The Logic of Compound Statements.md",
@@ -369,7 +370,6 @@
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/9) Introducing Monads.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/8) Working with the Local System.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/7) Understanding IO.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/6) Type Classes.md",
     "confusion_matrix.png",
     "Screenshot 2026-02-22 at 3.26.13 PM.png",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Elementary Linear Algebra/4) General Vector Spaces.md.tmp",
