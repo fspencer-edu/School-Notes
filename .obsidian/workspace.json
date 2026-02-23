@@ -181,16 +181,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PRIVATE/ToDo.md",
+                "file": "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Elixir Lecture.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ToDo"
+              "title": "Elixir Lecture"
             }
           }
         ],
-        "currentTab": 11
+        "currentTab": 12
       }
     ],
     "direction": "vertical"
@@ -339,13 +339,13 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "52b7b9943dbd8dab",
+  "active": "fbfefc0e72188c4c",
   "lastOpenFiles": [
-    "Pasted image 20260223001111.png",
-    "PRIVATE/ToDo.md",
-    "Untitled.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/SmallTalk/Smalltalk Lecture.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Elixir Lecture.md",
+    "PRIVATE/ToDo.md",
+    "Pasted image 20260223001111.png",
+    "Untitled.md",
     "Pasted image 20260222215308.png",
     "Pasted image 20260222215216.png",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/SmallTalk/Lecture",
@@ -378,7 +378,6 @@
     "images/Pasted image 20260219214846.png",
     "images/Pasted image 20260217211600.png",
     "images/Pasted image 20260221143241.png",
-    "Pasted image 20260221143241.png",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Leaning Go",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Real World Haskell",
     "PRIVATE/Winter 2026/Computer Networks/Lec Notes",
