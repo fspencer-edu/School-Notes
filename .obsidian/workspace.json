@@ -4,291 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "52d671c2bcb54c6c",
+        "id": "84d1ad1a83064605",
         "type": "tabs",
         "children": [
           {
-            "id": "255ba31cb7332660",
+            "id": "5d0153601fcc7386",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Discrete Structures/Textbook/5) Sequences, Mathematical Induction, and Recursion.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "5) Sequences, Mathematical Induction, and Recursion"
-            }
-          },
-          {
-            "id": "f9752d13b4422cb9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Discrete Structures/Textbook/6) Set Theory.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "6) Set Theory"
-            }
-          },
-          {
-            "id": "74c8f099202fa3d9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Discrete Structures/Textbook/7) Properties of Functions.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "7) Properties of Functions"
-            }
-          },
-          {
-            "id": "a6c66a164fd78afa",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Discrete Structures/Textbook/8) Properties of Relation.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "8) Properties of Relation"
-            }
-          },
-          {
-            "id": "b9b723ef7b93445b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Discrete Structures/Textbook/9) Counting and Probability.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "9) Counting and Probability"
-            }
-          },
-          {
-            "id": "5f8ed77e1f94a7b8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Discrete Structures/Textbook/10) Theory of Graphs and Trees.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "10) Theory of Graphs and Trees"
-            }
-          },
-          {
-            "id": "f1dd33da248b7348",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Discrete Structures/Textbook/11) Analysis of Algorithm Efficiency.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "11) Analysis of Algorithm Efficiency"
-            }
-          },
-          {
-            "id": "b11f27d22d8391d5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Discrete Structures/Textbook/12) Regular Expression and Finite-State Automata.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "12) Regular Expression and Finite-State Automata"
-            }
-          },
-          {
-            "id": "f86f0aafa09d4ce7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/4) Creating New Types.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "4) Creating New Types"
-            }
-          },
-          {
-            "id": "f00dca5a6befaf6c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/5) Creating and Structuring Haskell Projects.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "5) Creating and Structuring Haskell Projects"
-            }
-          },
-          {
-            "id": "8abe641df9e11fcb",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/6) Type Classes.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "6) Type Classes"
-            }
-          },
-          {
-            "id": "2d7d441989412587",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/7) Understanding IO.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "7) Understanding IO"
-            }
-          },
-          {
-            "id": "85f33be14c61dbb5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/8) Working with the Local System.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "8) Working with the Local System"
-            }
-          },
-          {
-            "id": "89b76b5bb797292c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/9) Introducing Monads.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "9) Introducing Monads"
-            }
-          },
-          {
-            "id": "1db82fc52db16f76",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/10) Mutable Data in the Real World.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "10) Mutable Data in the Real World"
-            }
-          },
-          {
-            "id": "cd55d7be420f8418",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/11) Serializing Heterogeneous Data.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "11) Serializing Heterogeneous Data"
-            }
-          },
-          {
-            "id": "ba753079f141a73b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/12) Deserializing Heterogeneous Data.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "12) Deserializing Heterogeneous Data"
-            }
-          },
-          {
-            "id": "ef03e69bee1cce65",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/13) Building Applications with Many Effects.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "13) Building Applications with Many Effects"
-            }
-          },
-          {
-            "id": "fb12ad9584e07562",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/14) Building Efficient Programs.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "14) Building Efficient Programs"
-            }
-          },
-          {
-            "id": "bc76b39c1c9966be",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/15) Programming with Types.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "15) Programming with Types"
+              "title": "New tab"
             }
           }
-        ],
-        "currentTab": 19
+        ]
       }
     ],
     "direction": "vertical"
@@ -345,7 +74,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "f79334738d86d2cb",
@@ -436,12 +166,31 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "bc76b39c1c9966be",
+  "active": "5d0153601fcc7386",
   "lastOpenFiles": [
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/15) Programming with Types.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/14) Building Efficient Programs.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/13) Building Applications with Many Effects.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/12) Deserializing Heterogeneous Data.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/11) Serializing Heterogeneous Data.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/10) Mutable Data in the Real World.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/9) Introducing Monads.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/8) Working with the Local System.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/7) Understanding IO.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/6) Type Classes.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/5) Creating and Structuring Haskell Projects.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/4) Creating New Types.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/12) Regular Expression and Finite-State Automata.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/11) Analysis of Algorithm Efficiency.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/10) Theory of Graphs and Trees.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/9) Counting and Probability.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/8) Properties of Relation.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/7) Properties of Functions.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/6) Set Theory.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Textbook/5) Sequences, Mathematical Induction, and Recursion.md",
     "PRIVATE/Winter 2026/Data Mining/Lab/Lab 5.md",
     "confusion_matrix.png",
     "Screenshot 2026-02-22 at 3.26.13 PM.png",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/4) Creating New Types.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/3) Getting Started with Types.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/2) Working with Lists.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Elementary Linear Algebra/4) General Vector Spaces.md.tmp",
@@ -452,30 +201,12 @@
     "images/Pasted image 20260221143241.png",
     "Pasted image 20260221143241.png",
     "Pasted image 20260221142621.png",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/8) Working with the Local System.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/7) Understanding IO.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/6) Type Classes.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/5) Creating and Structuring Haskell Projects.md",
     "Pasted image 20260219214959.png",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/1) Getting Started with Haskell.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/15) Programming with Types.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/14) Building Efficient Programs.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/13) Building Applications with Many Effects.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/12) Deserializing Heterogeneous Data.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/11) Serializing Heterogeneous Data.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/10) Mutable Data in the Real World.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/9) Introducing Monads.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/0) Effective Haskell.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Real World Haskell/0) Real World Haskell.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Leaning Go/0) Learning Go.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Leaning Go",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/13) Running The System.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Real World Haskell",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/12) Building A Distributed System.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/11) Working With Components.md",
-    "PRIVATE/Winter 2026/Discrete Structures/Textbook/12) Regular Expression and Finite-State Automata.md",
-    "PRIVATE/Winter 2026/Discrete Structures/Textbook/11) Analysis of Algorithm Efficiency.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/10) Beyond GenServer.md",
     "PRIVATE/Winter 2026/Computer Networks/Lec Notes",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Kubeflow for ML",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats. for CS",
