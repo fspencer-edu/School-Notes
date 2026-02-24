@@ -48,8 +48,107 @@
               "icon": "lucide-file",
               "title": "Lec 0 - Introduction"
             }
+          },
+          {
+            "id": "37994c053f636542",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 1 - Single Inheritance.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Lec 1 - Single Inheritance"
+            }
+          },
+          {
+            "id": "25557cf4aa8bdfb3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 2a - Sex Linked Inheritance.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Lec 2a - Sex Linked Inheritance"
+            }
+          },
+          {
+            "id": "1d9342aac43dd48a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 2b - Pedigrees.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Lec 2b - Pedigrees"
+            }
+          },
+          {
+            "id": "9e2836601d5e2c67",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 3 - Independent Assortment.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Lec 3 - Independent Assortment"
+            }
+          },
+          {
+            "id": "d7bb23a3d53f14a0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 4a - Extranuclear.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Lec 4a - Extranuclear"
+            }
+          },
+          {
+            "id": "132dffa310cf7adb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 4b and 5 - Genetic Linkage.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Lec 4b and 5 - Genetic Linkage"
+            }
+          },
+          {
+            "id": "08094ed0c1835072",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 5 - Chi Square.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Lec 5 - Chi Square"
+            }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -198,10 +297,19 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "fbfefc0e72188c4c",
+  "active": "1d9342aac43dd48a",
   "lastOpenFiles": [
-    "PRIVATE/ToDo.md",
+    "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 2a - Sex Linked Inheritance.md",
+    "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 1 - Single Inheritance.md",
     "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 0 - Introduction.md",
+    "Pasted image 20260224155945.png",
+    "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 5 - Chi Square.md",
+    "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 4b and 5 - Genetic Linkage.md",
+    "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 4a - Extranuclear.md",
+    "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 3 - Independent Assortment.md",
+    "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 2b - Pedigrees.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Elixir Lecture.md",
+    "PRIVATE/ToDo.md",
     "PRIVATE/Winter 2026/Data Mining/Assignment/Assignment 1.md",
     "PRIVATE/Winter 2026/Discrete Structures/Lec Notes/Module 2 - Graph Theory.md",
     "images/Pasted image 20260224085358.png",
@@ -213,17 +321,8 @@
     "images/Pasted image 20260224092622.png",
     "images/Pasted image 20260224090430.png",
     "images/Pasted image 20260224092145.png",
-    "images/Pasted image 20260224085405.png",
     "PRIVATE/Winter 2026/Discrete Structures/Lec Notes/Module 1 - Induction.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Elixir Lecture.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/SmallTalk/Smalltalk Lecture.md",
-    "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 5 - Chi Square.md",
-    "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 4b and 5 - Genetic Linkage.md",
-    "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 4a - Extranuclear.md",
-    "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 3 - Independent Assortment.md",
-    "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 2b - Pedigrees.md",
-    "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 2a - Sex Linked Inheritance.md",
-    "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 1 - Single Inheritance.md",
     "PRIVATE/Winter 2026/Data Mining/Lec Notes/Lec 4 - Alternative Methods.md",
     "PRIVATE/Winter 2026/Data Mining/Assignment",
     "PRIVATE/Winter 2026/Data Mining/Lec Notes/Lec 3 - Classification and Overfitting.md",
