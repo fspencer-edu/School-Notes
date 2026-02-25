@@ -134,7 +134,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -283,8 +283,12 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "25557cf4aa8bdfb3",
+  "active": "37994c053f636542",
   "lastOpenFiles": [
+    "PRIVATE/ToDo.md",
+    "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 5 - Chi Square.md",
+    "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 2a - Sex Linked Inheritance.md",
+    "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 2b - Pedigrees.md",
     "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 1 - Single Inheritance.md",
     "Pasted image 20260224172512.png",
     "Pasted image 20260224172406.png",
@@ -297,14 +301,10 @@
     "Pasted image 20260224171802.png",
     "Pasted image 20260224171308.png",
     "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 0 - Introduction.md",
-    "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 5 - Chi Square.md",
     "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 4b and 5 - Genetic Linkage.md",
     "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 4a - Extranuclear.md",
     "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 3 - Independent Assortment.md",
-    "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 2b - Pedigrees.md",
-    "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 2a - Sex Linked Inheritance.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Elixir Lecture.md",
-    "PRIVATE/ToDo.md",
     "PRIVATE/Winter 2026/Data Mining/Assignment/Assignment 1.md",
     "PRIVATE/Winter 2026/Discrete Structures/Lec Notes/Module 2 - Graph Theory.md",
     "PRIVATE/Winter 2026/Discrete Structures/Lec Notes/Module 1 - Induction.md",
