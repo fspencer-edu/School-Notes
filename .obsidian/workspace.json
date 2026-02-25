@@ -92,20 +92,6 @@
             }
           },
           {
-            "id": "aa0577fd396ee4e0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Data Mining/Textbook/2) Data.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "2) Data"
-            }
-          },
-          {
             "id": "c78ae00616b945fd",
             "type": "leaf",
             "state": {
@@ -311,14 +297,15 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "aa0577fd396ee4e0",
+  "active": "c78ae00616b945fd",
   "lastOpenFiles": [
-    "PRIVATE/Winter 2026/Data Mining/Textbook/1) Introduction (Data Mining).md",
-    "PRIVATE/Winter 2026/Data Mining/Textbook/6) Association Analysis - Basic Concepts and Algorithms.md",
-    "PRIVATE/Winter 2026/Data Mining/Textbook/5) Classification - Alternative Techniques.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/4) Classification - Basic Concepts, Decision Trees, and Model Evaluation.md",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/5) Classification - Alternative Techniques.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/3) Exploring Data.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/2) Data.md",
+    "PRIVATE/ToDo.md",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/1) Introduction (Data Mining).md",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/6) Association Analysis - Basic Concepts and Algorithms.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/0) Intro to Data Mining.md",
     "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 3 - Independent Assortment.md",
     "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 5 - Chi Square.md",
@@ -337,7 +324,6 @@
     "images/Pasted image 20260225091613.png",
     "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 2a - Sex Linked Inheritance.md",
     "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 1 - Single Inheritance.md",
-    "PRIVATE/ToDo.md",
     "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 0 - Introduction.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Elixir Lecture.md",
     "PRIVATE/Winter 2026/Data Mining/Assignment/Assignment 1.md",
