@@ -78,7 +78,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -227,20 +227,21 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "132dffa310cf7adb",
+  "active": "e05e3741d59a1df4",
   "lastOpenFiles": [
-    "Pasted image 20260226171200.png",
-    "Pasted image 20260226171119.png",
-    "Pasted image 20260226170952.png",
-    "Pasted image 20260226170752.png",
+    "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 4b and 5 - Genetic Linkage.md",
+    "Pasted image 20260226174159.png",
+    "Pasted image 20260226174057.png",
+    "Pasted image 20260226174035.png",
+    "Untitled.base",
+    "Pasted image 20260226173858.png",
+    "Pasted image 20260226173828.png",
+    "Pasted image 20260226173739.png",
+    "Pasted image 20260226173613.png",
+    "Pasted image 20260226173601.png",
+    "Pasted image 20260226173304.png",
+    "Pasted image 20260226173121.png",
     "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 4a - Extranuclear.md",
-    "Pasted image 20260226170257.png",
-    "Pasted image 20260226170137.png",
-    "Pasted image 20260226170056.png",
-    "Pasted image 20260226170009.png",
-    "Pasted image 20260226165934.png",
-    "Pasted image 20260226165838.png",
-    "Pasted image 20260226165521.png",
     "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 3 - Independent Assortment.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/5) Classification - Alternative Techniques.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/6) Association Analysis - Basic Concepts and Algorithms.md",
@@ -252,7 +253,6 @@
     "PRIVATE/ToDo.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/1) Introduction (Data Mining).md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/0) Intro to Data Mining.md",
-    "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 4b and 5 - Genetic Linkage.md",
     "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 2b - Pedigrees.md",
     "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 2a - Sex Linked Inheritance.md",
     "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 1 - Single Inheritance.md",
@@ -273,7 +273,6 @@
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Real World Haskell",
     "PRIVATE/Winter 2026/Computer Networks/Lec Notes",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Kubeflow for ML",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats. for CS",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Learn TensorFlow"
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats. for CS"
   ]
 }
