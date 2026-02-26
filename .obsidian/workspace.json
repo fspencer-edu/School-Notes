@@ -36,34 +36,6 @@
             }
           },
           {
-            "id": "9e2836601d5e2c67",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 3 - Independent Assortment.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Lec 3 - Independent Assortment"
-            }
-          },
-          {
-            "id": "d7bb23a3d53f14a0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 4a - Extranuclear.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Lec 4a - Extranuclear"
-            }
-          },
-          {
             "id": "132dffa310cf7adb",
             "type": "leaf",
             "state": {
@@ -255,19 +227,21 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "9e2836601d5e2c67",
+  "active": "132dffa310cf7adb",
   "lastOpenFiles": [
-    "Pasted image 20260226164351.png",
-    "Pasted image 20260226164321.png",
-    "Pasted image 20260226164258.png",
-    "Pasted image 20260226164229.png",
-    "Pasted image 20260226164149.png",
-    "Pasted image 20260226164030.png",
-    "Pasted image 20260226163813.png",
-    "Pasted image 20260226163738.png",
-    "Pasted image 20260226163512.png",
-    "Pasted image 20260226161757.png",
-    "Pasted image 20260226161659.png",
+    "Pasted image 20260226171200.png",
+    "Pasted image 20260226171119.png",
+    "Pasted image 20260226170952.png",
+    "Pasted image 20260226170752.png",
+    "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 4a - Extranuclear.md",
+    "Pasted image 20260226170257.png",
+    "Pasted image 20260226170137.png",
+    "Pasted image 20260226170056.png",
+    "Pasted image 20260226170009.png",
+    "Pasted image 20260226165934.png",
+    "Pasted image 20260226165838.png",
+    "Pasted image 20260226165521.png",
+    "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 3 - Independent Assortment.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/5) Classification - Alternative Techniques.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/6) Association Analysis - Basic Concepts and Algorithms.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/7) Association Analysis - Advanced Concepts.md",
@@ -278,9 +252,7 @@
     "PRIVATE/ToDo.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/1) Introduction (Data Mining).md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/0) Intro to Data Mining.md",
-    "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 3 - Independent Assortment.md",
     "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 4b and 5 - Genetic Linkage.md",
-    "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 4a - Extranuclear.md",
     "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 2b - Pedigrees.md",
     "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 2a - Sex Linked Inheritance.md",
     "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 1 - Single Inheritance.md",
