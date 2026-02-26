@@ -120,7 +120,7 @@
             }
           }
         ],
-        "currentTab": 7
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -269,10 +269,16 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "d2f7469a14db87a3",
+  "active": "fcb6e3fecbfb96ce",
   "lastOpenFiles": [
-    "PRIVATE/Winter 2026/Data Mining/Textbook/5) Classification - Alternative Techniques.md",
+    "Pasted image 20260226085531.png",
+    "Pasted image 20260226084700.png",
+    "Pasted image 20260226084516.png",
+    "Pasted image 20260226084258.png",
+    "Pasted image 20260226084110.png",
+    "Pasted image 20260226083740.png",
     "PRIVATE/Winter 2026/Data Mining/Textbook/6) Association Analysis - Basic Concepts and Algorithms.md",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/5) Classification - Alternative Techniques.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/4) Classification - Basic Concepts, Decision Trees, and Model Evaluation.md",
     "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 5 - Chi Square.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/3) Exploring Data.md",
@@ -289,11 +295,6 @@
     "Pasted image 20260225095612.png",
     "Pasted image 20260225093417.png",
     "Pasted image 20260225093311.png",
-    "Pasted image 20260225093220.png",
-    "Pasted image 20260225093118.png",
-    "Pasted image 20260225093059.png",
-    "images/Pasted image 20260225085738.png",
-    "images/Pasted image 20260225091613.png",
     "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 2a - Sex Linked Inheritance.md",
     "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 1 - Single Inheritance.md",
     "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 0 - Introduction.md",
@@ -308,7 +309,6 @@
     "PRIVATE/Winter 2026/Data Mining/Lec Notes/Lec 2 - Data.md",
     "PRIVATE/Winter 2026/Data Mining/Lec Notes/Lec 1 - Intro.md",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/3) The Logic of Quantified Statements.md.tmp",
-    "PRIVATE/Winter 2026/Discrete Structures/Textbook/12) Regular Expression and Finite-State Automata.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/SmallTalk/Lecture",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Elementary Linear Algebra/4) General Vector Spaces.md.tmp",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Leaning Go",
