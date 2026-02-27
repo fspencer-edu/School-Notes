@@ -69,16 +69,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PRIVATE/Winter 2026/Data Mining/Textbook/5) Classification - Alternative Techniques.md",
+                "file": "PRIVATE/Winter 2026/Genetics/Midterm - Questions.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "5) Classification - Alternative Techniques"
+              "title": "Midterm - Questions"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -227,29 +227,30 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "132dffa310cf7adb",
+  "active": "fcb6e3fecbfb96ce",
   "lastOpenFiles": [
-    "Pasted image 20260226224853.png",
-    "Pasted image 20260226224721.png",
-    "Pasted image 20260226224517.png",
-    "Pasted image 20260226224336.png",
-    "Pasted image 20260226224153.png",
-    "Pasted image 20260226222803.png",
-    "Pasted image 20260226222626.png",
-    "Pasted image 20260226222303.png",
-    "Pasted image 20260226222202.png",
-    "Pasted image 20260226221901.png",
-    "Pasted image 20260226221851.png",
-    "PRIVATE/ToDo.md",
     "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 4b and 5 - Genetic Linkage.md",
+    "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 5 - Chi Square.md",
+    "PRIVATE/Winter 2026/Genetics/Midterm - Questions.md",
+    "PRIVATE/Winter 2026/Genetics/Midterm - Review.md",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/5) Classification - Alternative Techniques.md",
     "Untitled.base",
+    "images/Pasted image 20260226220657.png",
+    "images/Pasted image 20260226174057.png",
+    "images/Pasted image 20260226140523.png",
+    "images/Pasted image 20260226125608.png",
+    "images/Pasted image 20260226160355.png",
+    "images/Pasted image 20260226173739.png",
+    "images/Pasted image 20260226135744.png",
+    "images/Pasted image 20260226140456.png",
+    "images/Pasted image 20260226110249.png",
+    "images/Pasted image 20260226103235.png",
+    "PRIVATE/ToDo.md",
     "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 4a - Extranuclear.md",
     "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 3 - Independent Assortment.md",
-    "PRIVATE/Winter 2026/Data Mining/Textbook/5) Classification - Alternative Techniques.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/6) Association Analysis - Basic Concepts and Algorithms.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/7) Association Analysis - Advanced Concepts.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/4) Classification - Basic Concepts, Decision Trees, and Model Evaluation.md",
-    "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 5 - Chi Square.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/3) Exploring Data.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/2) Data.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/1) Introduction (Data Mining).md",
@@ -266,7 +267,6 @@
     "PRIVATE/Winter 2026/Data Mining/Lec Notes/Lec 4 - Alternative Methods.md",
     "PRIVATE/Winter 2026/Data Mining/Assignment",
     "PRIVATE/Winter 2026/Data Mining/Lec Notes/Lec 3 - Classification and Overfitting.md",
-    "PRIVATE/Winter 2026/Data Mining/Lec Notes/Lec 2 - Data.md",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/3) The Logic of Quantified Statements.md.tmp",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/SmallTalk/Lecture",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Elementary Linear Algebra/4) General Vector Spaces.md.tmp",
