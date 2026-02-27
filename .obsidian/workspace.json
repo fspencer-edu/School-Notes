@@ -78,7 +78,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -227,8 +227,14 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "e05e3741d59a1df4",
+  "active": "132dffa310cf7adb",
   "lastOpenFiles": [
+    "Pasted image 20260226221901.png",
+    "Pasted image 20260226221851.png",
+    "Pasted image 20260226221839.png",
+    "Pasted image 20260226221254.png",
+    "Pasted image 20260226220657.png",
+    "PRIVATE/ToDo.md",
     "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 4b and 5 - Genetic Linkage.md",
     "Pasted image 20260226174159.png",
     "Pasted image 20260226174057.png",
@@ -237,10 +243,6 @@
     "Pasted image 20260226173858.png",
     "Pasted image 20260226173828.png",
     "Pasted image 20260226173739.png",
-    "Pasted image 20260226173613.png",
-    "Pasted image 20260226173601.png",
-    "Pasted image 20260226173304.png",
-    "Pasted image 20260226173121.png",
     "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 4a - Extranuclear.md",
     "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 3 - Independent Assortment.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/5) Classification - Alternative Techniques.md",
@@ -250,7 +252,6 @@
     "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 5 - Chi Square.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/3) Exploring Data.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/2) Data.md",
-    "PRIVATE/ToDo.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/1) Introduction (Data Mining).md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/0) Intro to Data Mining.md",
     "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 2b - Pedigrees.md",
