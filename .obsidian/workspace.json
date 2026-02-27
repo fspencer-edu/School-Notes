@@ -120,7 +120,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -269,9 +269,21 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "e05e3741d59a1df4",
+  "active": "88e5698b67dafdbe",
   "lastOpenFiles": [
+    "Pasted image 20260227081731.png",
+    "Pasted image 20260227081644.png",
+    "Pasted image 20260227081510.png",
+    "Pasted image 20260227080736.png",
+    "Pasted image 20260227080540.png",
     "PRIVATE/Winter 2026/Data Mining/Data Mining Midterm - Review.md",
+    "Pasted image 20260227080505.png",
+    "Pasted image 20260227080424.png",
+    "Pasted image 20260227080057.png",
+    "Pasted image 20260227080029.png",
+    "Pasted image 20260227075651.png",
+    "Pasted image 20260227075610.png",
+    "PRIVATE/ToDo.md",
     "PRIVATE/Winter 2026/Data Mining/Lec Notes/Lec 1 - Intro.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/5) Classification - Alternative Techniques.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/6) Association Analysis - Basic Concepts and Algorithms.md",
@@ -280,22 +292,11 @@
     "PRIVATE/Winter 2026/Data Mining/Textbook/2) Data.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/1) Introduction (Data Mining).md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/0) Intro to Data Mining.md",
-    "PRIVATE/ToDo.md",
     "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 5 - Chi Square.md",
     "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 4b and 5 - Genetic Linkage.md",
     "PRIVATE/Winter 2026/Genetics/Midterm - Questions.md",
     "PRIVATE/Winter 2026/Genetics/Midterm - Review.md",
     "Untitled.base",
-    "images/Pasted image 20260226220657.png",
-    "images/Pasted image 20260226174057.png",
-    "images/Pasted image 20260226140523.png",
-    "images/Pasted image 20260226125608.png",
-    "images/Pasted image 20260226160355.png",
-    "images/Pasted image 20260226173739.png",
-    "images/Pasted image 20260226135744.png",
-    "images/Pasted image 20260226140456.png",
-    "images/Pasted image 20260226110249.png",
-    "images/Pasted image 20260226103235.png",
     "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 4a - Extranuclear.md",
     "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 3 - Independent Assortment.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/7) Association Analysis - Advanced Concepts.md",
@@ -307,7 +308,6 @@
     "PRIVATE/Winter 2026/Data Mining/Assignment/Assignment 1.md",
     "PRIVATE/Winter 2026/Discrete Structures/Lec Notes/Module 2 - Graph Theory.md",
     "PRIVATE/Winter 2026/Discrete Structures/Lec Notes/Module 1 - Induction.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/SmallTalk/Smalltalk Lecture.md",
     "PRIVATE/Winter 2026/Data Mining/Assignment",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/3) The Logic of Quantified Statements.md.tmp",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/SmallTalk/Lecture",
