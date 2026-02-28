@@ -120,7 +120,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -269,10 +269,11 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "c29742baac2847c6",
+  "active": "e13a6fddae835e09",
   "lastOpenFiles": [
-    "PRIVATE/Winter 2026/Data Mining/Textbook/6) Association Analysis - Basic Concepts and Algorithms.md",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/7) Association Analysis - Advanced Concepts.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/7) DNA - Structure and Replication.md",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/6) Association Analysis - Basic Concepts and Algorithms.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/8) RNA - Transcription, Processing, and Decay.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/6) The Genetics of Bacteria and Their Viruses.md",
     "Pasted image 20260228130509.png",
@@ -287,7 +288,6 @@
     "PRIVATE/Winter 2026/Data Mining/Textbook/10) Anomaly Detection.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/9) Cluster Analysis - Additional Issues and Algorithms.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/8) Cluster Analysis - Basic Concepts and Algorithms.md",
-    "PRIVATE/Winter 2026/Data Mining/Textbook/7) Association Analysis - Advanced Concepts.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Midterm - Elixir.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Midterm  - Smalltalk.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Elixir Lecture.md",
