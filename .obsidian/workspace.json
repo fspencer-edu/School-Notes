@@ -90,9 +90,37 @@
               "icon": "lucide-file",
               "title": "10) Anomaly Detection"
             }
+          },
+          {
+            "id": "c29742baac2847c6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Genetics/Textbook/7) DNA - Structure and Replication.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "7) DNA - Structure and Replication"
+            }
+          },
+          {
+            "id": "03fa671ab68ecb9d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Genetics/Textbook/8) RNA - Transcription, Processing, and Decay.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "8) RNA - Transcription, Processing, and Decay"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -241,8 +269,16 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "54f0f2f145c4db98",
+  "active": "c29742baac2847c6",
   "lastOpenFiles": [
+    "PRIVATE/Winter 2026/Data Mining/Textbook/6) Association Analysis - Basic Concepts and Algorithms.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/7) DNA - Structure and Replication.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/8) RNA - Transcription, Processing, and Decay.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/6) The Genetics of Bacteria and Their Viruses.md",
+    "Pasted image 20260228130509.png",
+    "Pasted image 20260228130419.png",
+    "Pasted image 20260228130329.png",
+    "Pasted image 20260228130033.png",
     "Pasted image 20260228125405.png",
     "Pasted image 20260228124927.png",
     "Pasted image 20260228123713.png",
@@ -252,7 +288,6 @@
     "PRIVATE/Winter 2026/Data Mining/Textbook/9) Cluster Analysis - Additional Issues and Algorithms.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/8) Cluster Analysis - Basic Concepts and Algorithms.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/7) Association Analysis - Advanced Concepts.md",
-    "PRIVATE/Winter 2026/Data Mining/Textbook/6) Association Analysis - Basic Concepts and Algorithms.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Midterm - Elixir.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Midterm  - Smalltalk.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Elixir Lecture.md",
@@ -268,17 +303,10 @@
     "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 0 - Introduction.md",
     "images/Pasted image 20260227081644.png",
     "images/Pasted image 20260227081731.png",
-    "images/Pasted image 20260227093916.png",
-    "images/Pasted image 20260227080029.png",
-    "images/Pasted image 20260227092602.png",
-    "images/Pasted image 20260227091645.png",
-    "images/Pasted image 20260227080505.png",
     "PRIVATE/Winter 2026/Data Mining/Data Mining Midterm - Review.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/5) Classification - Alternative Techniques.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/4) Classification - Basic Concepts, Decision Trees, and Model Evaluation.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/3) Exploring Data.md",
-    "PRIVATE/Winter 2026/Data Mining/Textbook/1) Introduction (Data Mining).md",
-    "PRIVATE/Winter 2026/Data Mining/Lec Notes/Lec 4 - Alternative Methods.md",
     "Untitled.base",
     "PRIVATE/Winter 2026/Data Mining/Assignment",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/3) The Logic of Quantified Statements.md.tmp",
