@@ -91,7 +91,8 @@
               "title": "10) Anomaly Detection"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -240,14 +241,14 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "039320e5b13c09e3",
+  "active": "54f0f2f145c4db98",
   "lastOpenFiles": [
+    "PRIVATE/ToDo.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/10) Anomaly Detection.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/9) Cluster Analysis - Additional Issues and Algorithms.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/8) Cluster Analysis - Basic Concepts and Algorithms.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/7) Association Analysis - Advanced Concepts.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/6) Association Analysis - Basic Concepts and Algorithms.md",
-    "PRIVATE/ToDo.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Midterm - Elixir.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Midterm  - Smalltalk.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Elixir Lecture.md",
