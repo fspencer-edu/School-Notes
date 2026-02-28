@@ -4,53 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "4854ff68da220fb5",
+        "id": "231cd6cd6c0625f6",
         "type": "tabs",
         "children": [
           {
-            "id": "dfa75c572dc11a07",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Comparative Prog. Languages/SmallTalk/Smalltalk Lecture.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Smalltalk Lecture"
-            }
-          },
-          {
-            "id": "e715733f45de1e74",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Elixir Lecture.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Elixir Lecture"
-            }
-          },
-          {
-            "id": "d1c9201fb58aa9c7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Comparative Prog. Languages/Midterm - Elixir.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Midterm - Elixir"
-            }
-          },
-          {
-            "id": "e0f6de642b66b181",
+            "id": "039320e5b13c09e3",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -64,21 +22,76 @@
             }
           },
           {
-            "id": "da89774136b9a182",
+            "id": "54f0f2f145c4db98",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PRIVATE/Winter 2026/Comparative Prog. Languages/Midterm  - Smalltalk.md",
+                "file": "PRIVATE/Winter 2026/Data Mining/Textbook/6) Association Analysis - Basic Concepts and Algorithms.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Midterm  - Smalltalk"
+              "title": "6) Association Analysis - Basic Concepts and Algorithms"
+            }
+          },
+          {
+            "id": "e5f9592fdf6ce543",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Data Mining/Textbook/7) Association Analysis - Advanced Concepts.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "7) Association Analysis - Advanced Concepts"
+            }
+          },
+          {
+            "id": "e13a6fddae835e09",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Data Mining/Textbook/8) Cluster Analysis - Basic Concepts and Algorithms.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "8) Cluster Analysis - Basic Concepts and Algorithms"
+            }
+          },
+          {
+            "id": "f096b6359aefd368",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Data Mining/Textbook/9) Cluster Analysis - Additional Issues and Algorithms.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "9) Cluster Analysis - Additional Issues and Algorithms"
+            }
+          },
+          {
+            "id": "b9ef92a525d9d58b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Data Mining/Textbook/10) Anomaly Detection.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "10) Anomaly Detection"
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "vertical"
@@ -227,13 +240,18 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "da89774136b9a182",
+  "active": "039320e5b13c09e3",
   "lastOpenFiles": [
+    "PRIVATE/Winter 2026/Data Mining/Textbook/10) Anomaly Detection.md",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/9) Cluster Analysis - Additional Issues and Algorithms.md",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/8) Cluster Analysis - Basic Concepts and Algorithms.md",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/7) Association Analysis - Advanced Concepts.md",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/6) Association Analysis - Basic Concepts and Algorithms.md",
+    "PRIVATE/ToDo.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Midterm - Elixir.md",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Midterm  - Smalltalk.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Elixir Lecture.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/SmallTalk/Smalltalk Lecture.md",
-    "PRIVATE/ToDo.md",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Midterm  - Smalltalk.md",
     "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 2a - Sex Linked Inheritance.md",
     "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 3 - Independent Assortment.md",
     "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 2b - Pedigrees.md",
@@ -253,7 +271,6 @@
     "images/Pasted image 20260227075610.png",
     "images/Pasted image 20260227093221.png",
     "images/Pasted image 20260227091800.png",
-    "PRIVATE/Winter 2026/Data Mining/Textbook/6) Association Analysis - Basic Concepts and Algorithms.md",
     "PRIVATE/Winter 2026/Data Mining/Data Mining Midterm - Review.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/5) Classification - Alternative Techniques.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/4) Classification - Basic Concepts, Decision Trees, and Model Evaluation.md",
@@ -261,11 +278,7 @@
     "PRIVATE/Winter 2026/Data Mining/Textbook/1) Introduction (Data Mining).md",
     "PRIVATE/Winter 2026/Data Mining/Lec Notes/Lec 4 - Alternative Methods.md",
     "PRIVATE/Winter 2026/Data Mining/Lec Notes/Lec 1 - Intro.md",
-    "PRIVATE/Winter 2026/Data Mining/Textbook/2) Data.md",
-    "PRIVATE/Winter 2026/Data Mining/Textbook/0) Intro to Data Mining.md",
-    "PRIVATE/Winter 2026/Genetics/Midterm - Questions.md",
     "Untitled.base",
-    "PRIVATE/Winter 2026/Data Mining/Textbook/7) Association Analysis - Advanced Concepts.md",
     "PRIVATE/Winter 2026/Data Mining/Assignment",
     "PRIVATE/Winter 2026/Discrete Structures/Textbook/3) The Logic of Quantified Statements.md.tmp",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/SmallTalk/Lecture",
