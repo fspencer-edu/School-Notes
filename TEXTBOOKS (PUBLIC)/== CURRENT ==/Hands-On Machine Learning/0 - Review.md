@@ -263,9 +263,101 @@ $\epsilon$ = tolerance
 - Polynomial regression
 	- Quadratic
 
-- 
+- Learning curves
+
+- 3 generalization errors
+	- Bias
+	- Variance
+	- Irreducible error
 
 
+- Regularized linear models
+	- Ridge regression (Tikhonov regularization)
+
+- Ridge regression cost function
+
+![[Pasted image 20260301215936.png]]
+
+- Ridge regression closed-form solution
+
+![[Pasted image 20260301220041.png]]
+
+
+![[Pasted image 20260301220056.png]]
+
+- Lasso regression
+	- Least absolute shrinkage and selection operator regression
+	- Uses the $\ell_1$ norm of the weight vector instead of the square of the $\ell_2$ norm 
+
+![[Pasted image 20260301220210.png]]
+
+![[Pasted image 20260301220227.png]]
+
+
+- Lasso regression sub-gradient vector
+
+![[Pasted image 20260301220336.png]]
+
+- Elastic net cost function
+	- Between lasso and ridge
+
+![[Pasted image 20260301220359.png]]
+
+- Early stopping
+	- Deep copy hyperparameter and learned parameters
+
+- Logistic regression model estimated probability (vectorized form)
+
+![[Pasted image 20260301220520.png]]
+
+- Logistic function
+
+![[Pasted image 20260301220545.png]]
+
+- Logistic regression model prediction using a 50% threshold probability
+
+![[Pasted image 20260301220615.png]]
+
+- Cost function of a single training instance
+
+![[Pasted image 20260301220640.png]]
+
+
+- Logistic regression cost function (log loss)
+
+![[Pasted image 20260301220651.png]]
+
+- Logistic cost function partial derivatives
+
+![[Pasted image 20260301220722.png]]
+
+- Decision boundary
+
+- Softmax regression
+	- Multi-nominal logistic regression
+	- Used for mutually exclusive classes
+
+- Softmax score for class k
+
+![[Pasted image 20260301220901.png]]
+
+- Softmax function
+
+![[Pasted image 20260301220918.png]]
+
+- Softmax regression classifier prediction
+
+![[Pasted image 20260301220947.png]]
+
+- Cross entropy cost function
+
+![[Pasted image 20260301221025.png]]
+
+- Cross entropy gradient vector for class k
+
+![[Pasted image 20260301221047.png]]
+
+![[Pasted image 20260301221057.png]]
 
 ## Support Vector Machines
 
