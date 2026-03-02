@@ -347,16 +347,111 @@ model = tf.keras.Sequential([
 ])
 early_stopping_cb = tf.keras.callbacks.EarlyStopping(
 	monitor="val_mae", patience=50, restore_best_weights=True)
-opt = tf.
+opt = tf.keras.optimizers.SGD(learning_rate=0.02, momentum=0.9)
+model.compile(loss=tf.keras.losses.Huber(), optimizer=opt, metrics=["mae"])
+history = model.fit(train_ds, validation_data=valida_ds, epochs=500m
+		callbacks=[early_stopping_cb])
 ```
 
+- Model reaches a validation MAE of 37,866
+	- Better than naive forecast, worse than SARIMA
+
 ## Forecasting Using a Simple RNN
+
+- Run a basic RNN
+- Containing a single recurrent layer with one recurrent neuron
+
+```python
+model = tf.keras.Sequential([
+	tf.keras.layers.SimpleRNN(1, input_shape=[None, 1])
+])
+```
+
+- All recurrent layers in Keras expect 3D inputs of shape `[batch size, time steps, dimensionality]`, where dimensionality is 1 for univariate time series and and more for multivariate
+- The initial state is set to 0, and is passed to a single recurrent neuron, with the value of the first time step
+- Neuron computes a weighed sum plus bias term, and applies the activation function to the result
+- The new state is passed to the same recurrent neuron with the next input value, and the process is repeated until the last time step
+
+- Model issues
+	- Model only has a single recurrent neuron
+	- The time series contains values from 0 to about 1.4
+- Create a model with a larger recurrent layer, containing 32 recurrent neurons, add a dense output layer on top of it with a single output neuron and no activation function
+
+```python
+univar_model = tf.keras.Sequential([
+	tf.keras.layers.SimpleRNN(32, input_shape=[None, 1]),
+	tf.keras.layers.Dense(1)
+])
+```
+
+- This produces a better model, and beats SARIMA
+	- Without removing trend and seasonality
+	- Improve with stationary
+
 ## Forecasting Using a Deep RNN
 
+- Stack multiple layers of cells for a deep RNN
+
 <img src="/images/Pasted image 20260204110615.png" alt="image" width="500">
+- Stack recurrent layers
+- Use `LSTM` or a `GRU` layer
+- The first two are sequences-to-sequence layers
+- The last one is a sequence-to-vector layer
+- Add dense layer to produce the model's forecast
+
+```python
+deep_model = tf.keras.Sequential([
+	tf.keras.layers.SimpleRNN(32, return_sequences=True, input_shape=[None, 1]),
+	tf.keras.layers.SimpleRNN(32, return_sequences=True),
+	tf.keras.layers.SimpleRNN(32),
+	tf.keras.layers.Dense(1)
+])
+```
+- Reaches a better MAE, but not shallow RNN
 
 ## Forecasting Multivariate Time Series
+
+- A great quality of NN is their flexibility
+	- Deal with multivariate time series
+- Forecast the rail time series using both the bus and rail data as input
+- Shift the day type series one day into the future, so that the model is given tomorrow's data type as input
+
+```python
+df_mulvar = df[["bus", "rail"]] / 1e6
+df_mulvar["next_day_type"] = df["day_type"].shift(-1)
+df_mulvar = pd.get_dummies(df_mulvar)
+
+# split data: training, valid, test
+mulvar_train = df_mulvar["2016-01":"2018-12"]
+mulvar_valid = df_mulvar["2019-01":"2019-05"]
+mulvar_test = df_mulvar["2019-06":]
+
+# create the datasets
+train_mulvar_ds = tf.keras.utils.timeseries_dataset_from_array(
+	mulvar_train.to_numpy(),
+	targets=mulvar_train["rail"][seq_length:],
+	[...]
+)
+valid_mulvar_ds = tf.keras.utils.timeseries_dataset_from_array(
+	mulvar_valid.to_numpy(),
+	targets=mulvar_valid["rail"][seq_length:],
+	[...]
+)
+
+# create RNN
+mulvar_model = tf.keras.Sequential([
+	tf.keras.layers.SimpleRNN(32, input_shape=[None, 5]),
+	tf.keras.layers.Dense(1)
+])
+```
+
+- The only difference form the univariate mode to multivariate is the input shape
+- Using a single model for multiple related tasks often results in better performance than using a separate model for each task
+
 ## Forecasting Several Time Steps Ahead
+
+- 
+
 
 <img src="/images/Pasted image 20260204110632.png" alt="image" width="500">
 
