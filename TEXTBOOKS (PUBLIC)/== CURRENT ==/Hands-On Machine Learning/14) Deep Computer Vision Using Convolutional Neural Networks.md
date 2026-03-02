@@ -303,30 +303,120 @@ model = tf.keras.Sequential([
 
 - Data augmentation increases the size of training, increased variants of each training instance
 - Adding white noise does not help
-- 
+- Synthetic minority oversampling technique (SMOTE)
 
 <img src="/images/Pasted image 20260204110117.png" alt="image" width="500">
 
+- Local response normalization (LRN)
+	- AlexNet also uses a competitive normalization step immediately after the ReLU step of layers C1 and C2
+	- The most strongly activate neurons inhibit other neurons located at the same position in the neighbouring feature maps
+
+- Local response normalization (LRN)
+
+![[Pasted image 20260302123506.png]]
+
+$b_i$ = normalized output of the neuron located in feature map i
+$a_i$ = activation of that neuron after the ReLU step, but before normalization
+$k, \alpha, \beta, r$ = hyperparameters (bias, depth radius)
+$f_n$ = number of feature maps
+
+- A $r=2$ shows that a neuron has a strong activation, and will inhibit the activation of the neurons located in the feature maps immediately above of below
+
+- A variance of AlexNet is ZF net
+	- Tweaked hyperparameters
+		- Number of feature maps
+		- Kernel size
+		- Stride
 
 ## GoogLeNet
 
+- Uses sub-networks called inception modules
+	- Use parameters more efficiently than previous architectures
+- 3 x 3 + 1(S)
+	- 3 x 3 kernel, stride 1, and same padding
+- The input signal is fed to the 4 different layers in parallel
+- All convolutional layers use the ReLU activation function
+- Top convolutional layer used different kernel sizes, allowing them to capture patterns at different scaled
+- Concatenate all the output along the depth dimension in the final concatenation layer
+
 <img src="/images/Pasted image 20260204110127.png" alt="image" width="500">
+- 1 x 1 kernels
+	- Capture patterns along the depth dimension (across channels)
+	- Output fewer feature maps than their input
+		- Serve as bottleneck layers, to reduce dimensionality
+	- Each pair of convolutional layers, act like a single powerful convolutional layer, to capture more complex patterns
+
+
+- The number of feature maps output by each convolutional layer and each pooling layer is shown before the kernel size
+- 9 inception modules
+
+- First 2 layers divide the image's height and width by 4
+- Local response normalization layer ensures that the previous layers learn a wide variety of features
+- Two convolutional layers follow
+	- Bottleneck layer
+- Local response normalization layer ensures that the previous layers capture a wide variety of patterns
+- Max pooling layer reduces the image height and width by 2
+- CNNs backbone
+	- A tall stack of 9 interception modules, interleaves with a couple of max pooling layers to reduce dimensionality and speed up the net
+- Global average pooling layer outputs the mean of each feature map
+	- Drops any remaining spatial information
+- Dropout for regularization
+- Softmax activation function to output estimated class probabilities
 
 <img src="/images/Pasted image 20260204110140.png" alt="image" width="500">
 
 ## VGGNet
+
+- 2 or 3 convolutional layers and a pooling layer, repeated
 ## ResNet
 
+- Residual Network (ResNet)
+- Skip connections (shortcut connections)
+	- The signal feeding into a layer is also added to the output of a layer located higher up the stack
+- When training a neural network, the goal is to make it model a target function $h(x)$
+- Residual learning
 
 <img src="/images/Pasted image 20260204110150.png" alt="image" width="500">
-## Xception
+
+- When a regular neural network is initialized, its weights are close to zero, so the output is close to zero
+- With skip connections, the resulting network outputs a copy of its inputs
+	- Initially models the identity function
+	- If the target function is close to the identity function, this speed up training
+- With many skip connections, the network can start making progress even if several layers have not started learning yet
+- The signal can easily make its way across the entire network
+- The deep residual network can be seen as a stack of residual units (RUs)
+
+- ResNet architecture
+	- Starts and ends like GoogLeNet (without a dropout layer)
+	- Between is a deep stack of residual units
+	- Each residual unit is composed of two convolutional layers (no pooling layers), with batch normalization (BN), and RELU activation
+
 
 <img src="/images/Pasted image 20260204110225.png" alt="image" width="500">
 
 <img src="/images/Pasted image 20260204110236.png" alt="image" width="500">
-
+- The number of feature maps is doubled every few residual units, at the same time as their height and width are halved
+- Inputs cannot be added directly to the outputs of the residual unit because they do not have the same shape
+- Inputs are passed through a 1 x 1 convolutional layer with stride 2 and the right number of output feature maps
 
 <img src="/images/Pasted image 20260204110248.png" alt="image" width="500">
+- Different variations of this architecture with different number of layers
+
+## Xception
+
+- Variant of GoogLeNet architecture
+	- Extreme Inception
+- Merges GoogLeNet and ResNet, but it replaced the inception modules with a special type of layer called a depthwise separable convolution layer
+- Regular convolutional layer filters
+	- Spatial patterns
+	- Cross channel patterns
+- Separable convolutional layer
+	- Separates spatial and cross channel patterns
+- Applied a single spatial filter to each input feature map
+- Exclusively look for cross channel patterns with a 1 x 1 filter
+
+- 
+
 
 <img src="/images/Pasted image 20260204110257.png" alt="image" width="500">
 
