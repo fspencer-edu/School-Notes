@@ -386,13 +386,81 @@ $\epsilon$ = tolerance
 
 - Hard and soft margin problems are both convex quadratic optimization problems with linear constraints
 	- Quadratic programming (QP) problems
-- Hinge loss or squared hidge loss
-- 
+- Hinge loss or squared hinge loss
+
+- Dual form of the linear SVM objective
+
+![[Pasted image 20260301230248.png]]
+
+- Dual solution to primal solution
+
+![[Pasted image 20260301230355.png]]
+
+- Second-degree polynomial mapping
+
+![[Pasted image 20260301230437.png]]
+
+- Kernel trick for a second-degree polynomial mapping
+
+![[Pasted image 20260301230455.png]]
+
+- Common kernels
+
+![[Pasted image 20260301230523.png]]
+
+- Making predictions with a kernelized SVM
+
+![[Pasted image 20260301230556.png]]
+
+
+- Using the kernel trick to compute the bias term
+
+![[Pasted image 20260301230615.png]]
+
 
 
 ## Decision Trees
 
+- Tree components
+	- Root node
+	- Internal/split node
+	- Leaf node
+
+- Gini impurity
+
+![[Pasted image 20260301230834.png]]
+
+- Classification and Regression Tree (CART)
+	- Greedy algorithm
+
+- CART cost function for classification
+
+![[Pasted image 20260301231015.png]]
+
+- Complexity
+	- NP-complete
+	- $O(exp(m))$
+
+- Entropy
+
+![[Pasted image 20260301231143.png]]
+
+- $\chi^2$ test
+	- Estimate the probability that the improvement is purely the result of chance (null hypothesis)
+
+
+- Decision tree regressor
+
+- CART cost function for regression
+
+![[Pasted image 20260301231408.png]]
+
+- Axis orientation
+	- Solve with PCA
+
 ## Ensemble Learning and Random Forests
+
+- 
 
 ## Dimensionality Reduction
 
