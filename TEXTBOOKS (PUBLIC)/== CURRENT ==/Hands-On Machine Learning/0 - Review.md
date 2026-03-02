@@ -497,14 +497,135 @@ $\epsilon$ = tolerance
 
 - Dimensionality reduction
 	- Projection
+		- Random projection
+			- `GaussianRandomProjection`
+			- `SparseRandomProjection`
 	- Manifold learning
+		- Locally linear embedding (LLE)
 	- Principal component analysis (PCA)
+		- Explained variance ratio
+		- Reconstruction error
+		- Randomized PCA
+		- Incremental PCA (IPCA)
+
+
+- Other dimensionality reduction techniques
+	- Multidimensional scaling (MDS)
+		- `sklearn.manifold.MDS`
+	- Isomap
+		- `sklearn.maniford.Isomap`
+	- t-distributed stochastic neighbour embedding (t-SNE)
+		- `sklearn.manifold.TSNE`
+	- Linear discriminant analysis (LDA)
+		- `sklearn.discriminant_analysis.LinearDiscriminantAnalysis`
+
+- Principal component matrix
+
+![[Pasted image 20260302085008.png]]
+
+- Projecting the training set down to d dimensions
+
+![[Pasted image 20260302085049.png]]
+
+- PCA inverse transformation, back to the original number of dimensions
+
+![[Pasted image 20260302085207.png]]
+
+- LLE step 1: Linearly modeling local relationships
+
+![[Pasted image 20260302085439.png]]
+
+- LLE step 2: Reducing dimensionality while preserving relationships
+
+![[Pasted image 20260302085503.png]]
+
 
 ## Unsupervised Learning
+
+- Clustering
+	- k-means
+		- Centroid initialization
+		- Accelerated k-means
+		- Mini-batch k-means
+		- Silhouette score
+	- Density estimation
+		-  Density based spatial clustering of applications with noise (DBSCAN)
+			- Hierarchical DBSCAN (HDDBSCAN)
+		- Probability density function (PDF)
+	- Anomaly detection
+		- Fast-MCD (minimum covariance determinant)
+		- Isolation forest
+		- Local outlier factor (LOF)
+		- One-class SVM
+		- OCA and other dimensionality reduction with inverse transformation
+
+- Other clustering algorithms
+	- Agglomerative clustering
+	- BIRCH (balanced iterative reducing and clustering using hierarchies)
+	- Mean shift
+	- Affinity propagation
+	- Spectral clustering
+
+- Uncertainty sampling
+
+- Gaussian mixture model (GMM)
+
+- Bayesian information criterion (BIC) and Akaike information criterion (AIC)
+
+![[Pasted image 20260302090453.png]]
+
 
 # Part 2 - Neural Networks and Deep Learning
 
 ## Introduction to Artificial Neural Networks with Keras
+
+- Artificial neural networks (ANNs)
+- Perceptron
+	- Linear threshold unit (LTU)
+	- Heaviside step function
+
+- Common step functions used in perception (threshold=0)
+
+![[Pasted image 20260302090924.png]]
+
+- Layer types
+	- Input layer
+	- Dense layer
+	- Output layer
+
+- Computing the outputs of a fully connected layer
+
+![[Pasted image 20260302091001.png]]
+
+- Components
+	- Output matrix, $\hat{Y}$
+	- Activation function, $\theta$
+	- Matrix of input features, $X$
+	- Weight matrix, $W$
+	- Bias, $b$
+
+- Perception learning rule (weight update)
+
+![[Pasted image 20260302091127.png]]
+
+- Multilayer perceptrons
+	- Feedforward neural network (FNN)
+	- Deep neural network (DNN)
+	- Reverse-mode automatic differentiation (forward, and backward)
+	- Backpropagation
+		- Chain rule
+
+- Activation functions
+	- Sigmoid
+	- Hyperbolic tangent
+		- $tanh(z) = 2\sigma(2z)-1$
+	- Rectified linear unit function
+		- $ReLU(z) = max(0, z)$
+	- Softmax
+
+- Loss function
+	- x-entropy
+
 
 ## Training Deep Neural Networks
 
