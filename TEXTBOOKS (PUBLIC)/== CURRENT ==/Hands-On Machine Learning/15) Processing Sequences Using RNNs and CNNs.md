@@ -133,18 +133,223 @@ rail    0.089948
 dtype: float64
 ```
 - Mean absolute percentage error (MAPE)
-	- Naive forecasts give us a MAPE of ~8.3^ 
+	- Naive forecasts give us a MAPE of ~8.3% for bus and 9.0% for rail
+- Metrics to evaluate forecasts
+	- MAE
+	- MAPE
+	- MSE
+- Find yearly seasonality
 
+```python
+period = slice("2001", "2019")
+df_monthy = df.resample('M').mean()
+rolling_average_12_months = df_monthly[period].rolling(window=12).mean()
 
+fig, ax = plt.subplots(figzie=(8, 4))
+df_monthly[period].plot(ax=ax, marker=".")
+rolling_average_month.plot(ax=ax, grid=True, legend=False)
+plt.show()
+```
 <img src="/images/Pasted image 20260204110548.png" alt="image" width="500">
-
-
+```python
+df_monthly.diff(12)[period].plot(grid=True, marker=".", figsize=(8, 3))
+plt.show()
+```
 
 <img src="/images/Pasted image 20260204110601.png" alt="image" width="500">
+- Differencing removes yearly seasonality, and long term trends
+- Easier to study a stationary time series
+	- Statistical properties remain constant over time, without any seasonality or trends
 
 ## The ARMA Model Family
+
+- Autoregressive moving average (ARMA) model
+	- Computes its forecasts using a simple weighted sum of lagged values and corrects these forecasts by adding a moving average
+
+- Forecasting using an ARMA model
+
+![[Pasted image 20260302174748.png]]
+
+First sum
+$\alpha_i$ = learned weights 
+$p$ = hyperparameter
+
+Second sum
+$\epsilon_{(t)}$ = forecast errors
+$\theta_i$ = learned weights
+
+- Model assumes that the time series is stationary
+- Running 2 rounds of differencing will eliminate quadratic trends
+- Order of integration
+	- Running $d$ consecutive rounds of differencing computes an approximation of the $d^{th}$ order derivative of the time series
+- Seasonal ARIMA (SARIMA)
+	- It models the time series in the same way as ARMIA
+	- Models a seasonal component for a given frequency
+
+```python
+from statsmodels.tsa.arima.model import ARMIA
+
+origin, today = "2019-01-01", "2019-05-31"
+rail_series = df.loc[origin:today]["rail"].asfreq("D")
+model = ARIMA(rail_series,
+			  order=(1, 0, 0),
+			  seasonal_order=(0, 1, 1, 7))
+model = model.fit()
+y_pred = model.forecast() # 427,758.6
+```
+
+- Take the rail ridership from the start up to today, and use daily frequency
+- Create an ARIMA instance, passing it all the data until today, and set hyperparameters, and seasonal order
+- Fit the model, and use it to make a forecast for tomorrow
+	- Predicts => 427,758.6
+	- Actual =>  379,044
+- 12.9% error
+- Make forecasts for every day in March, April, and May, and compute the MAE
+
+```python
+origin, start_date, end_date = "2019-01-01", "2019-03-01", "2019-05-31"
+time_period = pd.date_range(start_date, end_date)
+rail_series = df.loc[origin:end_date]["rail"].asfreq("D")
+y_preds = []
+for today in time_period.shift(-1):
+    model = ARIMA(rail_series[origin:today],  # train on data up to "today"
+                  order=(1, 0, 0),
+                  seasonal_order=(0, 1, 1, 7))
+    model = model.fit()  # note that we retrain the model every day!
+    y_pred = model.forecast()[0]
+    y_preds.append(y_pred)
+
+y_preds = pd.Series(y_preds, index=time_period)
+mae = (y_preds - rail_series[time_period]).abs().mean() # 32,040.7
+```
+- Choosing hyperparameters
+	- Brute-force approach
+	- Run search grid
+
 ## Preparing the Data for Machine Learning Models
+
+- Use ML models to forecast this time series
+- Forecast tomorrow's ridership based on the ridership of the past 8 weeks of data
+- The inputs of out models will be sequences
+- Use 56-day window from the past as training data, and target for each window will be the value immediately following it
+
+```python
+import tensorflow as tf
+my_series = [0, 1, 2, 3, 4, 5]
+my_dataset = tf.keras.utils.timeseries_dataset_from_array(
+	my_series,
+	targets=my_series[3:],
+	sequence_length=3,
+	batch_size=2
+)
+list(my_dataset)
+[(<tf.Tensor: shape=(2, 3), dtype=int32, numpy=
+  array([[0, 1, 2],
+         [1, 2, 3]], dtype=int32)>,
+  <tf.Tensor: shape=(2,), dtype=int32, numpy=array([3, 4], dtype=int32)>),
+ (<tf.Tensor: shape=(1, 3), dtype=int32, numpy=array([[2, 3, 4]], dtype=int32)>,
+  <tf.Tensor: shape=(1,), dtype=int32, numpy=array([5], dtype=int32)>)]
+```
+
+- Each sample in the dataset is a window of length 3, along with its corresponding target
+	- `[0, 1, 2], [1, 2, 3], [2, 3, 4]`
+		- Targets are 3, 4, 5
+- Another way to get the same result is to use the `window()` method
+
+```python
+for window_dataset in tf.data.Dataset.range(6).window(4, shift=1):
+	for element in window_dataset:
+		print(f"{element}", end=" ")
+	print()
+0 1 2 3
+1 2 3 4
+2 3 4 5
+3 4 5
+4 5
+5
+```
+
+- The dataset contains 6 windows, each shifted by one step compared to the previous one
+- The last 3 windows are smaller because they have reached the end
+	- Remove these smaller windows
+		- `drop_remainder=True`
+- Returns a nested dataset
+- Cannot use a nested dataset directly for training (expect tensors)
+- Call `flat_map()`
+	- Converts a nested dataset into a flat dataset
+	- Takes a function, to transform each dataset in the nested dataset before flatting
+
+```python
+dataset = tf.data.Dataset.range(6).window(4, shift=1, drop_remainder=True)
+dataset = dataset.flat_map(lambda window_dataset: window_dataset.batch(4)
+for window_tensor in datasetL
+	print(f"{window_tensor}")
+[0 1 2 3]
+[1 2 3 4]
+[2 3 4 5]
+
+# helper function: extract windows from a dataset
+def to_windows(dataset, length):
+	dataset = dataset.window(length, shift=1, drop_remainder=True)
+	return dataset.flat_map(lambda window_df: window_ds.batch(length))
+	
+# split each window into inputs and targets
+dataset = to_windos(tf.data.Dataset.range(6), 4)
+dataset = dataset.map(lambda window: (window[:-1], window[-1]))
+list(dataset.batch(2))
+[(<tf.Tensor: shape=(2, 3), dtype=int64, numpy=
+  array([[0, 1, 2],
+         [1, 2, 3]])>,
+  <tf.Tensor: shape=(2,), dtype=int64, numpy=array([3, 4])>),
+ (<tf.Tensor: shape=(1, 3), dtype=int64, numpy=array([[2, 3, 4]])>,
+  <tf.Tensor: shape=(1,), dtype=int64, numpy=array([5])>)]
+```
+
+- Before training, split data into a training period, a validation period, and a test period
+
+```python
+# scaled down rail data
+rail_train = df["rail"]["2016-01":"2018-12"] / 1e6
+rail_valid = df["rail"]["2019-01":"2019-05"] / 1e6
+rail_test = df["rail"]["2019-06":] / 1e6
+```
+- Since gradient descent expects the instances in the training set to be independent and identically distributed (IDD)
+	- Shuffle training windows
+
+```python
+seq_length = 56
+train_ds = tf.keras.utils.timeseries_dataset_from_array(
+	rail_train.to_numpy(),
+	targets=rail_train[seq_length:],
+	sequence_length=seq_length,
+	batch_size=32,
+	shuffle=True,
+	seed=42
+)
+
+valid_ds = tf.keras.utils.timeseries_dataset_from_array(
+	rail_valid.to_numpy(),
+	targets=rail_valid[seq_length:],
+	sequence_length=seq_length,
+	batch_size=32
+)
+```
+
 ## Forecasting Using a Linear Model
+
+- Use a linear model
+	- Huber loss
+
+```python
+tf.random.set_seed(42)
+model = tf.keras.Sequential([
+	tf.keras.layers.Dense(1, input_shape=[seq_length])
+])
+early_stopping_cb = tf.keras.callbacks.EarlyStopping(
+	monitor="val_mae", patience=50, restore_best_weights=True)
+opt = tf.
+```
+
 ## Forecasting Using a Simple RNN
 ## Forecasting Using a Deep RNN
 
