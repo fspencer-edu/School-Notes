@@ -135,11 +135,137 @@ Performance Measure
 		- Row = actual classes
 
 ```c
-[a, b]
+[a, b
+ c, d]
+ 
+[TN, FP,
+ FN, TP]
 ```
+- Precision
 
+![[Pasted image 20260301212827.png]]
+
+- Recall/sensitivity or true positive rate (TPR)
+
+![[Pasted image 20260301212841.png]]
+
+- $F_1$ score/harmonic mean of precision and recall
+
+![[Pasted image 20260301213020.png]]
+
+- Precision/recall trade-off
+	- Decision function
+	- Decision threshold
+
+- ROC curve (Receiver Operating Characteristic)
+	- FPR vs. TPR
+	- AUC (area under the curve)
+
+- Binary classifiers
+	- Stochastic gradient descent
+	- Single value decomposition
+- Multinomial classifiers
+	- Logistic regression
+	- Random forest
+	- Gaussian Naives Bayes
+
+- Training strategies
+	- One vs all
+	- One vs one
+
+- Error analysis
+	- Weights
+	- Data augmentation
+
+- Multilabel classification
+	- Binary tags
+
+- Support and confidence
+	- `ClassifierChain`
+
+- Multioutput classification
 
 ## Training Models
+
+- Models
+	- Closed
+	- Iterative
+
+- Linear regression model prediction
+
+![[Pasted image 20260301214211.png]]
+
+- Linear regression model prediction (vectorized form)
+
+![[Pasted image 20260301214250.png]]
+
+- Components
+	- Predicted value
+	- Feature value
+	- Parameters
+	- Bias/intercept term
+
+
+- MSE cost function for a linear regression model
+
+![[Pasted image 20260301214402.png]]
+
+- Normal equation
+
+![[Pasted image 20260301214420.png]]
+
+```python
+from sklearn.preprocessing import add_dummy_feature
+
+X_b = add_dummy_feature(X)
+theta_best = np.linalg.inv(X_b.T @ X_b) @ X_b @ y
+
+>>> theta_best
+array([[4.21509616],
+       [2.77011339]])
+```
+
+function => $y = 4 +3x_1$ + Gaussian noise
+
+predicted => $\theta_0 = 4.215, \theta_1 = 2.770$
+
+- Singular value decomposition (SVD)
+	- Pseudoinverse = $X^+ = V \sum^+U^T$
+	- Moore-Penrose inverse
+
+- Gradient descent
+	- Random initialization
+	- Learning rate
+	- Feature scaling
+
+- Batch gradient descent
+	- Partial derivative
+
+![[Pasted image 20260301215136.png]]
+
+- Gradient vector of the cost function
+
+![[Pasted image 20260301215157.png]]
+
+- Gradient descent step
+
+![[Pasted image 20260301215213.png]]
+$\eta$ - learning rate
+$\epsilon$ = tolerance
+
+- Stochastic gradient descent
+	- Learning schedule
+
+- Mini-batch gradient descent
+
+![[Pasted image 20260301215557.png]]
+
+- Polynomial regression
+	- Quadratic
+
+- 
+
+
 
 ## Support Vector Machines
 
