@@ -626,8 +626,195 @@ $\epsilon$ = tolerance
 - Loss function
 	- x-entropy
 
+- Model optimization
+	- Callbacks
+	- Neural network hyperparameters
+		- Parameter efficiency
+		- Learning rate
+		- Optimizer
+		- Batch size
+		- Activation function
+		- Number of iterations
+	- Transfer learning
+
+- Keras
+
+```python
+# Wide and deep model
+
+import numpy as np
+import tensorflow as tf
+from sklearn.model_selection import train_test_split
+
+# 0 - load/prepare data
+
+# 1 - train.valid/test split
+X_train_full, X_test, y_train_full, y_test = train_test_split(
+	X, y, test_size=0.2, random_state=42
+)
+X_train, X_valid, y_train, y_valid = train_test_split(
+	X_train_full, y_train_full, test_size=0.2, random_state=42
+)
+
+# 2 - splice wide/deep inputs
+# wide: 5 features
+# deep: 6 features
+X_train_wide, X_train_deep = X_train[:, :5], X_train[:, 2:]
+X_valid_wide, X_valid_deep = X_train[:, :5], X_train[:, 2:]
+X_test_wide, X_test_deep = X_train[:, :5], X_train[:, 2:]
+
+X_new_wide, X_new_deep = X_test_wide[:3], X_test_deep[:3]
+
+# 3 - build the wide and deep model
+input_wide = tf.keras.layers.Input(shape=[5], name"wide_input")
+input_deep = tf.keras.layers.Input(shape=[5], name"deep_input")
+
+norm_layer_wide = tf.keras.layers.Normalization(name="wide_norm")
+norm_layer_deep = tf.keras.layers.Normalization(name="deeo_norm")
+
+norm_wide = norm_layer_wide(input_wide)
+norm_deep = norm_layer_wide(input_deep)
+
+hidden1 = tf.keras.layers.Dense(30, activation="relu", name="hidden1")(norm_deep)
+hidden2 = tf.keras.layers.Dense(30, activation="relu", name="hidden2")(hidden1)
+
+concat = tf.keras.layers.Concatenate(name="concat")([norm_wide, hidden2])
+output = tf.keras.layers.Dense(1, name="output")(concat)
+
+model = tf.keras.Model(inputs=[input_wide, input_deep], outputs=output, name="wide_deep_model")
+
+# 4 - adapt normalization layers
+norm_layer_wide.adapt(X_train_wide)
+norm_layer_deep.adapt(X_train_deep)
+
+# 5 - compile
+optimizer = tf.keras.optimizer.Adam(learning_rate=1e-3)
+model.compile(loss="mse", optimizer=optimizer, metrics=[tf.keras.metrics.RootMeanSquaredError()])
+
+model.summary()
+
+# 6 - train
+history = model.fit(
+	(X_train_wide, X_train_deep),
+	y_train,
+	epochs=20,
+	validation_data((X_valid_wide, X_valid_deep), y_valid),
+	verbose=1
+)
+
+# 7 - evaluate
+mse_test, rmse_test = model.evaluate((X_test_wide, X_test_deep), y_test, verbose=0)
+print(f"Test MSE: {mse_test:.4f}")
+print(f"Test RMSE: {rmse_test:.4f}")
+
+# 8 - Predict
+y_pred = model.precict((X_new_wide, X_new_deep), verbose=0)
+print("Predications for 3 samples:\n", y_pred.reshape(-1)) 
+```
 
 ## Training Deep Neural Networks
+
+- Gradient problems
+	- Vanishing
+	- Exploding
+
+- Glorot initialization (sigmoid activation function)
+
+![[Pasted image 20260302093518.png]]
+
+- Leaky ReLU
+- Randomized leaky ReLU (RReLU)
+- Parametric leaky ReLU (PReLU)
+- Exponential linear unit (ELU)
+- Scaled ELU (SELU)
+- Gaussian Error Linear Unit (GELU)
+- Sigmoid linear unit (SiLU)
+- Swish
+- Mish
+
+- ELU activation function
+
+![[Pasted image 20260302093629.png]]
+
+- GELU activation function
+
+![[Pasted image 20260302093730.png]]
+
+![[Pasted image 20260302093825.png]]
+
+- Batch normalization algorithm
+
+![[Pasted image 20260302093903.png]]
+
+- Gradient clipping
+- Transfer learning
+
+- Unsupervised model
+	- Autoencoder
+	- Generative adversarial network (GAN)
+- Greedy layer-wise pretraining
+
+- Optimization algorithms
+	- Momentum
+	- Nesterov accelerated gradient
+	- AdaGrad
+	- RMSProp
+	- Adam
+
+- Momentum algorithm
+
+![[Pasted image 20260302094223.png]]
+
+- Nesterov accelerated gradient (NAG) algorithm
+
+![[Pasted image 20260302094243.png]]
+
+![[Pasted image 20260302094300.png]]
+
+- AdaGrad algorithm
+
+![[Pasted image 20260302094315.png]]
+
+
+![[Pasted image 20260302094344.png]]
+
+
+- RMSProp algorithm
+
+![[Pasted image 20260302094331.png]]
+
+- Adaptive moment estimation (Adam)
+	- AdaMax
+	- Nadam
+	- AdamW
+
+![[Pasted image 20260302094426.png]]
+
+
+- Learning rate scheduling
+	- Exponential
+	- Piecewise constant
+	- Performance
+	- Power
+	- 1cycle
+
+![[Pasted image 20260302094509.png]]
+
+- Avoiding overfitting through regularization
+	- $\ell_1$ and $\ell_2$ Regularization
+
+- Dropout regularization
+	- Monte Carlo (MC) dropout
+- Max-Norm regularization
+
+- Default DNN configuration (hyperparameter => default value)
+	- Kernel initializer => He initialization
+	- Activation function => ReLU is shallow, Swish if deep
+	- Normalization => non if sh
+
+
+- DNN configuration for self-normalization net
+
 
 ## Custom Models and Training with TensorFlow
 
