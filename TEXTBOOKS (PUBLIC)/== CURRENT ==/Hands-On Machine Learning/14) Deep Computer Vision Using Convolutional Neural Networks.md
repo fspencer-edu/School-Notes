@@ -708,14 +708,107 @@ model.compile(loss=["sparse_categorical_crossentropy", "mse"],
 
 <img src="/images/Pasted image 20260204110354.png" alt="image" width="500">
 - Non-max suppression
-	- Get rid of all the bounding boxes for which the objectness score is below
-
+	- Get rid of all the bounding boxes for which the objectness score is below some threshold
+	- Find the remaining bounding box with the highest objectness score, and remove remaining ones
+	- Repeat step 2 until there are not more bounding boxes to get rid of
 
 ## Fully Convolutional Networks
-## Your Only Look Once
+
+- Semantic segmentation
+	- Task of classifying every pixel in an image according to the class of the object it belongs to
+- To convert a dense layer to a convolutional layer, the number of filters in the convolutional layer must be equal to the number of units in the dense layer, the filter size must be equal to the size of the input feature maps, and use `"valid"` padding
+- FCN contains only convolutional layers, it can be trained and executed on images of any size
+
+- CNN for flower classification and localization, outputs 10 numbers
+	- 0 to 4 are sent through the softmax activation function, and this gives the class probabilities
+	- Output 5 is sent through the sigmoid activation function, and gives the objectness score
+	- 6 and 7 represent the bounding box's centre coodtndates
+		- Normalized
+	- 8 and 9 represent the bounding box's height and width
+
+- FCN will process the whole image only once, and will output a grid where each cell contains 10 numbers (5 class probabilities, 1 objectness score, and 4 bounding box coordinates)
+- You only look once (YOLO)
 
 <img src="/images/Pasted image 20260204110405.png" alt="image" width="500">
 
+## Your Only Look Once
+
+- YOLO is fast and accurate object detection architecture
+- Run in real time on a video
+- For each grid cell, YOLO only considers objects whose bounding box centre lies within that cell
+	- Bounding box coordinates are relative
+- Outputs two bounding boxes for each grid cell, which allows the model to handle cases where two objects are close to each other
+- Outputs a class probability distribution for each grid cell
+	- Probability map
+	- Anchor priors
+
+- Mean average precision (maP)
+- Average precision (AP)
+
+- Object detection
+	- YOLOv5
+	- SSD
+	- Faster R-CNN
+		- Region proposal network (RPN)
+	- EfficentDET
+
 # Object Tracking
 
+- Object tracking is the task of identifying an image
+	- Moving
+	- Changing sizes
+	- Changing appearances
+		- Light conditions
+		- Backgrounds
+- DeepSORT
+	- Kalman filters
+		- Estimates the more likely current position of an object given prior detections, assuming that objects tend to move at a constant speed
+		- Uses deep learning model to measure the resemblance between new detections and existing tracked objects
+	- Hungarian algorithm
+		- Maps new detections to existing track objects
+
 # Semantic Segmentation
+
+- Each pixel is classified according to the class of the object it belongs to
+- When images go through a regular CNN, they gradually lose their spatial resolution
+- Regular CNN may end up known that there's a person somewhere
+- Takes a pretrained CNN and turns it into an FCN
+	- CNN applies an overall stride of 32 to the input image
+	- Add upsampling layer that multiples the resolution by 32
+		- Bilinear interpolation
+		- Transposed convolutional layer
+			- Stretching the image by inserting empty rows and columns, then performing a regular convolution
+- In a transposed convolutional layer, the stride defined how much the input will be stretched, not the size of the filter step
+
+![[Pasted image 20260302150406.png]]
+
+- Convolutional layers
+	- `tf.keras.layers.Conv1D`
+	- `tf.keras.layers.Conv32`
+	- `dilation_rate`
+		- a-trous convolutional layer
+
+- Transposed convolutional layers are imprecise
+- Add skip connections from lower layers
+	- This recovered some of the spatial resolution that was lost in the earlier pooling layers
+	- Output of the original CNN goes through
+		- Upsample x 2
+		- Add the output of a lower layer
+		- Upsample x 2
+		- Add the output of an even lower layer
+		- Upsample x 8
+- Super resolution
+	- Scale up beyond the size of the original image
+
+![[Pasted image 20260302150649.png]]
+
+- Instance segmentation is similar to semantic segmentation
+- Mask R-CNN
+	- Extends the Faster R-CNN model by producing a pixel mask for each bounding box
+- Adversarial learning
+	- Make the network more resistant to images designed to fool it
+- Explainability
+	- Understanding why the network makes a specific classification
+- Image generation
+- Single-shot learning
+	- A system that can recognize an object after it has seen it once
