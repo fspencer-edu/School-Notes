@@ -1,11 +1,14 @@
+- Convolutional neural networks (CNNs) emerge from the study of the brain's visual cortex, and how they have been used in computer image recognition
 
-<img src="/images/Pasted image 20260204105856.png" alt="image" width="500">
+
 
 # The Architecture of the Visual Cortex
 
+- Visual cortex
+	- Many neuraon in
 
 
-
+<img src="/images/Pasted image 20260204105856.png" alt="image" width="500">
 
 # Convolutional Layers
 

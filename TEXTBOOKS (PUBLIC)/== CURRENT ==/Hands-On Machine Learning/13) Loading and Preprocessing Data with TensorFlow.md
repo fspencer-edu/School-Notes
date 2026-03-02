@@ -711,14 +711,164 @@ str_lookup_layer = tf.keras.layers.StringLookup()
 str_lookup_layer.adapt(ocean_prox)
 lookup_and_embed = tf.keras.Sequential([
 	str_lookup_layer,
-	tf.k
+	tf.keras.layers.Embedding(input_dim=str_lookup_layer.vocabulary_size(),
+		output_dim=2)
 ])
+
+lookup_and_embed(np.array([["<1H OCEAN"], ["ISLAND"], ["<1H OCEAN"]]))
+<tf.Tensor: shape=(3, 2), dtype=float32, numpy=
+array([[-0.01896119,  0.02223358],
+       [ 0.02401174,  0.03724445],
+       [-0.01896119,  0.02223358]], dtype=float32)>
 ```
+
+- Create a Keras model that can process a categorical test feature along with regular numerical features and learn an embedding for each category
+
+```python
+X_train_num, X_train_cat, y_train = [...]
+X_valid_num, X_valid_cat, y_valid = [...]
+
+num_input = tf.keras.layers.Input(shape=[8], name="num")
+cat_input = tf.keras.layers.Input(shape=[], dtype=tf.string, name="cat")
+cat_embeddings = lookup_and_embed(cat_input)
+encoded_inputs = tf.keras.layers.concatenate([num_input, cat_embeddings])
+outputs = tf.keras.layers.Dense(1)(encoded_inputs)
+model = tf.keras.models.Model(inputs=[num_input, cat_input], outputs=[outputs])
+model.compile(loss="mse", optimizer="sdg")
+history = model.fit((X_train_num, X_train_cat), y_train, epochs=5,
+		validation_data=((X_valid_num, X_valid_cat), y_valid))
+```
+
+- takes two inputs, which contains  numerical features per instance, and a categorical input, that contains a single categorical text input per instance
+- Encodes each ocean-proximity to trainable embedding
+- Concatenates the numerical inputs and embeddings
+- Compile the model and train it
 
 ## Text Preprocessing
 
+- `TextVectorization`
+
+```python
+train_data = ["To be", "!(to be)", "That's the question", "Be, be, be."]
+text_vec_layer = tf.keras.layers.TextVectorization()
+text_vec_layer.adapt(train_data)
+text_vec_layer(["Be good!", "Question: be or be?"])
+array([[2, 1, 0, 0],
+       [6, 2, 1, 2]])>
+```
+
+- Vocab was learned from the 4 sentences in the training data
+	- OOV -> 1
+	- "be" -> 2
+	- "to" -> 3
+	- Padding of 0
+- Preserve the case and punctuation, `standarize=None`
+- Prevent splitting, `split=None`
+
+
+- Term-frequency x inverse-document-frequency (TF-IDF)
+	- Words that occur frequently in the training data are down-weighted, and rare words up-weighted
+
+```python
+text_vec_layer = tf.keras.layers.TextVectorization(output_mode="tf_idf")
+text_vec_layer.adapt(train_data)
+text_vec_layer(["Be good!", "Question: be or be?"])
+<tf.Tensor: shape=(2, 6), dtype=float32, numpy=
+array([[0.96725637, 0.6931472 , 0. , 0. , 0. , 0.        ],
+       [0.96725637, 1.3862944 , 0. , 0. , 0. , 1.0986123 ]], dtype=float32)>
+```
 
 ## Using Pretrained Language Model Components
+
+- Model components are called modules
+- Contain both pre-processing code and pretrained weights
+
+```python
+import tensorflow_hub as hub
+hub_layer = hub.KerasLayer("https://tfhub.dev/google/nnlm-en-dim50/2")
+sentence_embeddings = hub_layer(tf.constant(["To be", "Not to be"]))
+sentence_embeddings.numpy().rount(2)
+array([[-0.25,  0.28,  0.01,  0.1 ,  [...] ,  0.05,  0.31],
+       [-0.2 ,  0.2 , -0.08,  0.02,  [...] , -0.04,  0.15]], dtype=float32)
+```
+
+- This module is a sentence encoder
+	- Takes strings as input and encodes each one as a single vector
+- Hugging Face
+
 ## Image Preprocessing Layers
 
+- Keras API for image preprocessing layers
+	- `tf.keras.layers.Resizing`
+	- `tf.keras.layers.Rescaling`
+	- `tf.keras.layers.CenterCrop`
+
+```python
+from sklearn.datasets import load_sample_images
+
+images = load_sample_images()["images"]
+crop_image_layer = tf.keras.layers.CenterCrop(height=100, width=100)
+cropped_images = crop_image_layer(images)
+```
+
+- Data augmentation
+	- `RandomCrop`
+	- `RandomFlip`
+	- `RandomTranslation`
+	- `RandomRotation`
+	- `RandomZoom`
+	- `RandomHeight`
+	- `RandomWeight`
+	- `RandomConstrast`
+
+
 # The TensorFlow Datasets Project
+
+- TensorFlow Datasets (TFDS) project makes is easy to load common datasets
+
+```python
+import tensorflow_datasets as tfds
+
+datasets = tfds.load(name="mnist")
+mnist_train, mnist_test = datasets["train"], datasets["test"]
+
+# train model
+for batch in msist_train.shuffle(10_000, seed=42).batch(32).prefetch(1):
+	images = batch["image"]
+	labels = batch["label"]
+```
+
+- Each item in the dataset is a dictionary containing both features and labels
+- Transform the dataset to be a tuple containing two elements
+
+```python
+mnist_train = mnist_train.shuffle(buffer_size=10_000, size=42).batch(32)
+msnist_Train = mnist_train.map(lambda items: (items["image"], items["label"]))
+mnist_train = mnist_train.prefecth(1)
+```
+
+- Split the data
+	- 90% for training
+	- 10% for validation
+	- 100% for testing
+
+```python
+train_set, valid_set, test_set = tfds.load(
+	name="mnist",
+	split=["train[:90%]", "train[90%:]", "test"],
+	as_superivsed=True
+)
+
+train_set = train_set.shuffle(buffer_size=10_000, seed=42).batch(32).prefetch(1)
+valid_set = valid_set.batch(32).cache()
+test_set = test_set.batch(32).cache()
+tf.random.set_seed(42)
+model = tf.keras.Sequential([
+	tf.keras.layers.Flatten(input_shape=[28, 28]),
+	tf.keras.layers.Dense(10, activation="softmax")
+])
+model.compile(loss="sparse_categorcal_crossentropy", optimizer="nadam",
+			metrics=["accuracy"])
+history = model.fit(train_set, validation_data=valid_set, epochs=5)
+test_loss, test_accuracy = model.evaluate(test_set)
+```
