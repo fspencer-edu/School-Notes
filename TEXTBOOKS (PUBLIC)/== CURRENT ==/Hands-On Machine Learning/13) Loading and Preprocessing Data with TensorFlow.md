@@ -548,16 +548,173 @@ y_pred = final_model(X_new)
 ```
 
 <img src="/images/Pasted image 20260204105817.png" alt="image" width="500">
+- Apply an adapt `Normalization` layer to the input feature of each batch in a dataset
 
+```python
+dataset = dataset.map(lambda X, y: (norm_layer(X), y))
+```
+
+- Write custom Keras layers
+
+```python
+import numpy as np
+
+class MyNormalization(tf.keras.layers.Layer):
+	def adapt(self, X):
+		self.mean_ = np.mean(X, axis=0, keepdims=True)
+		self.std_ = np.std(X, axis=0, keepdims=True)
+		
+	def call(self, inputs):
+		eps = tf.keras.backend.epsilon()
+		return (inputs - self.mean) / (self.std_ + eps)
+```
 
 ## The Discretization Layer
+
+- Convert age feature to 3 categories, less than 18, 18 t0 50, and 50 or over
+
+```python
+age = tf.constant([[10.], [93.], [57.], [18.], [37.], [5.]])
+discretize_layer = tf.keras.layers.Discretization(bin_boundaries=[18., 50.])
+age_cat = discretize_layer(age)
+age_cat
+<tf.Tensor: shape=(6, 1), dtype=int64, numpy=array([[0],[2],[2],[1],[1],[0]])>
+```
+
+- Instead of bin boundaries, provide number of bins `num_bins=3`
+- Use one-hot encoding on the discretized values
+
 ## The CategoryEncoding Layer
+
+- One-hot encode age features
+
+```python
+onehot_layer = tf.keras.layers.CategoryEncoding(num_tokens=3)
+onehot_laer(age_cat)
+<tf.Tensor: shape=(6, 3), dtype=float32, numpy=
+array([[0., 1., 0.],
+       [0., 0., 1.],
+       [0., 0., 1.],
+       [0., 1., 0.],
+       [0., 0., 1.],
+       [1., 0., 0.]], dtype=float32)>
+```
+
+- Use count encoding, to contain the number of occurrences of each category
+- Multi hot encoding and count encoding loses information
+- For multi-hot encoding concatenate the outputs
+
+```python
+# two category (non-concate)
+two_age_cat = np.array([1, 0], [2, 2], [2, 0])
+onehot_layer(two_age_cat)
+<tf.Tensor: shape=(3, 3), dtype=float32, numpy=
+array([[1., 1., 0.],
+       [0., 0., 1.],
+       [1., 0., 1.]], dtype=float32)>
+
+# two category (concate)
+onehot_layer = tf.keras.layers.CategoryEncoding(num_tokens=3+3)
+onehot_layer(two_age_cat + [0, 3])
+<tf.Tensor: shape=(3, 6), dtype=float32, numpy=
+array([[0., 1., 0., 1., 0., 0.],
+       [0., 0., 1., 0., 0., 1.],
+       [0., 0., 1., 1., 0., 0.]], dtype=float32)>
+```
+
 ## The StringLookup Layer
+
+```python
+cities = ["Auckland", "Paris", "Paris", "San Francisco"]
+str_lookup_layer = tf.keras.layers.StringLookup()
+str_lookup_layer.adapt(cities)
+str_lookup_layer([["Paris"], ["Auckland"], ["Auckland"], ["Montreal"]])
+<tf.Tensor: shape=(4, 1), dtype=int64, numpy=array([[1], [3], [3], [0]])>
+
+# one-hot encoding
+str_look_layer = tf.keras.layers.StringLookup(output_mode="one_hot")
+str_lookup_layer.adapt(cities)
+str_lookup_layer([["Paris"], ["Auckland"], ["Auckland"], ["Montreal"]])
+<tf.Tensor: shape=(4, 4), dtype=float32, numpy=
+array([[0., 1., 0., 0.],
+       [0., 0., 0., 1.],
+       [0., 0., 0., 1.],
+       [1., 0., 0., 0.]], dtype=float32)>
+```
+- Ordered by frequency, reverse alphabetical order
+0 → `[OOV]`
+1 → Paris
+2 → San Francisco
+3 → Auckland
+
+- Finds that there are 3 distinct categories
+- Unknown categories are mapped to 0
+
+- Each unknown category (OOV) will get mapped pseudo-randomly to one of the OOV buckets, using a hash function
+
+```python
+str_lookup_layer = tf.keras.layers.StringLookup(num_oov_indices=5)
+str_lookup_layer.adapt(cities)
+str_lookup_layer([["Paris"], ["Auckland"], ["Foo"], ["Bar"], ["Baz"]])
+<tf.Tensor: shape=(4, 1), dtype=int64, numpy=array([[5], [7], [4], [3], [4]])>
+```
+0 → OOV bucket 1
+1 → OOV bucket 2
+2 → OOV bucket 3
+3 → OOV bucket 4
+4 → OOV bucket 5
+5 → Paris
+6 → San Francisco
+7 → Auckland
+
 ## The Hashing Layer
+
+- For each category, the `Hashing` layer computes a hash, modulo the number of buckets
+
+```python
+hashing_layer = tf.keras.layers.Hashing(num_bins=10)
+hashing_layer([["Paris"], ["Tokyo"], ["Auckland"], ["Montreal"]])
+<tf.Tensor: shape=(4, 1), dtype=int64, numpy=array([[0], [1], [9], [1]])>
+```
+
 ## Encoding Categorical Features Using Embeddings
 
+
+- An embedding is a dense representation of some higher-dimensional data
+	- Compute a small dense vector from a large set of categorical data
+- Initialized randomly, trained by gradient descent
+- Representation learning
+	- Word embeddings
 <img src="/images/Pasted image 20260204105827.png" alt="image" width="500">
 <img src="/images/Pasted image 20260204105837.png" alt="image" width="500">
+- Word embeddings capture biases
+- Embedding matrix
+	- One row per category
+	- One column per embedding dimension
+
+```python
+tf.random.set_seed(42)
+embedding_layer = tf.keras.layers.Embedding(input_dim=5, output_dim=2)
+embedding_layer(np.array[2, 4, 2])
+<tf.Tensor: shape=(3, 2), dtype=float32, numpy=
+array([[-0.04663396,  0.01846724],
+       [-0.02736737, -0.02768031],
+       [-0.04663396,  0.01846724]], dtype=float32)>
+```
+
+- Embed a categorical text attribute
+
+```python
+tf.random.set_seed(42)
+ocean_prox = ["<1H OCEAN", "INLAND", "NEAR OCEAN", "NEAR BAY", "ISLAND"]
+str_lookup_layer = tf.keras.layers.StringLookup()
+str_lookup_layer.adapt(ocean_prox)
+lookup_and_embed = tf.keras.Sequential([
+	str_lookup_layer,
+	tf.k
+])
+```
+
 ## Text Preprocessing
 
 

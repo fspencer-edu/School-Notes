@@ -48,11 +48,11 @@ Performance Measure
 - Root mean squared error (RMSE)
 	- Prediction error is $\hat{y} - y$
 
-![[Pasted image 20260301164634.png]]
+<img src="/images/Pasted image 20260301164634.png" alt="image" width="500">
 
 - Mean absolute error (MAE)
 
-![[Pasted image 20260301164904.png]]
+<img src="/images/Pasted image 20260301164904.png" alt="image" width="500">
 
 - Standard correlation coefficient (Pearson's)
 	- `corr()`
@@ -143,15 +143,15 @@ Performance Measure
 ```
 - Precision
 
-![[Pasted image 20260301212827.png]]
+<img src="/images/Pasted image 20260301212827.png" alt="image" width="500">
 
 - Recall/sensitivity or true positive rate (TPR)
 
-![[Pasted image 20260301212841.png]]
+<img src="/images/Pasted image 20260301212841.png" alt="image" width="500">
 
 - $F_1$ score/harmonic mean of precision and recall
 
-![[Pasted image 20260301213020.png]]
+<img src="/images/Pasted image 20260301213020.png" alt="image" width="500">
 
 - Precision/recall trade-off
 	- Decision function
@@ -193,11 +193,11 @@ Performance Measure
 
 - Linear regression model prediction
 
-![[Pasted image 20260301214211.png]]
+<img src="/images/Pasted image 20260301214211.png" alt="image" width="500">
 
 - Linear regression model prediction (vectorized form)
 
-![[Pasted image 20260301214250.png]]
+<img src="/images/Pasted image 20260301214250.png" alt="image" width="500">
 
 - Components
 	- Predicted value
@@ -208,11 +208,11 @@ Performance Measure
 
 - MSE cost function for a linear regression model
 
-![[Pasted image 20260301214402.png]]
+<img src="/images/Pasted image 20260301214402.png" alt="image" width="500">
 
 - Normal equation
 
-![[Pasted image 20260301214420.png]]
+<img src="/images/Pasted image 20260301214420.png" alt="image" width="500">
 
 ```python
 from sklearn.preprocessing import add_dummy_feature
@@ -241,15 +241,15 @@ predicted => $\theta_0 = 4.215, \theta_1 = 2.770$
 - Batch gradient descent
 	- Partial derivative
 
-![[Pasted image 20260301215136.png]]
+<img src="/images/Pasted image 20260301215136.png" alt="image" width="500">
 
 - Gradient vector of the cost function
 
-![[Pasted image 20260301215157.png]]
+<img src="/images/Pasted image 20260301215157.png" alt="image" width="500">
 
 - Gradient descent step
 
-![[Pasted image 20260301215213.png]]
+<img src="/images/Pasted image 20260301215213.png" alt="image" width="500">
 $\eta$ - learning rate
 $\epsilon$ = tolerance
 
@@ -258,7 +258,7 @@ $\epsilon$ = tolerance
 
 - Mini-batch gradient descent
 
-![[Pasted image 20260301215557.png]]
+<img src="/images/Pasted image 20260301215557.png" alt="image" width="500">
 
 - Polynomial regression
 	- Quadratic
@@ -276,60 +276,60 @@ $\epsilon$ = tolerance
 
 - Ridge regression cost function
 
-![[Pasted image 20260301215936.png]]
+<img src="/images/Pasted image 20260301215936.png" alt="image" width="500">
 
 - Ridge regression closed-form solution
 
-![[Pasted image 20260301220041.png]]
+<img src="/images/Pasted image 20260301220041.png" alt="image" width="500">
 
 
-![[Pasted image 20260301220056.png]]
+<img src="/images/Pasted image 20260301220056.png" alt="image" width="500">
 
 - Lasso regression
 	- Least absolute shrinkage and selection operator regression
 	- Uses the $\ell_1$ norm of the weight vector instead of the square of the $\ell_2$ norm 
 
-![[Pasted image 20260301220210.png]]
+<img src="/images/Pasted image 20260301220210.png" alt="image" width="500">
 
-![[Pasted image 20260301220227.png]]
+<img src="/images/Pasted image 20260301220227.png" alt="image" width="500">
 
 
 - Lasso regression sub-gradient vector
 
-![[Pasted image 20260301220336.png]]
+<img src="/images/Pasted image 20260301220336.png" alt="image" width="500">
 
 - Elastic net cost function
 	- Between lasso and ridge
 
-![[Pasted image 20260301220359.png]]
+<img src="/images/Pasted image 20260301220359.png" alt="image" width="500">
 
 - Early stopping
 	- Deep copy hyperparameter and learned parameters
 
 - Logistic regression model estimated probability (vectorized form)
 
-![[Pasted image 20260301220520.png]]
+<img src="/images/Pasted image 20260301220520.png" alt="image" width="500">
 
 - Logistic function
 
-![[Pasted image 20260301220545.png]]
+<img src="/images/Pasted image 20260301220545.png" alt="image" width="500">
 
 - Logistic regression model prediction using a 50% threshold probability
 
-![[Pasted image 20260301220615.png]]
+<img src="/images/Pasted image 20260301220615.png" alt="image" width="500">
 
 - Cost function of a single training instance
 
-![[Pasted image 20260301220640.png]]
+<img src="/images/Pasted image 20260301220640.png" alt="image" width="500">
 
 
 - Logistic regression cost function (log loss)
 
-![[Pasted image 20260301220651.png]]
+<img src="/images/Pasted image 20260301220651.png" alt="image" width="500">
 
 - Logistic cost function partial derivatives
 
-![[Pasted image 20260301220722.png]]
+<img src="/images/Pasted image 20260301220722.png" alt="image" width="500">
 
 - Decision boundary
 
@@ -339,25 +339,25 @@ $\epsilon$ = tolerance
 
 - Softmax score for class k
 
-![[Pasted image 20260301220901.png]]
+<img src="/images/Pasted image 20260301220901.png" alt="image" width="500">
 
 - Softmax function
 
-![[Pasted image 20260301220918.png]]
+<img src="/images/Pasted image 20260301220918.png" alt="image" width="500">
 
 - Softmax regression classifier prediction
 
-![[Pasted image 20260301220947.png]]
+<img src="/images/Pasted image 20260301220947.png" alt="image" width="500">
 
 - Cross entropy cost function
 
-![[Pasted image 20260301221025.png]]
+<img src="/images/Pasted image 20260301221025.png" alt="image" width="500">
 
 - Cross entropy gradient vector for class k
 
-![[Pasted image 20260301221047.png]]
+<img src="/images/Pasted image 20260301221047.png" alt="image" width="500">
 
-![[Pasted image 20260301221057.png]]
+<img src="/images/Pasted image 20260301221057.png" alt="image" width="500">
 
 ## Support Vector Machines
 
@@ -378,11 +378,11 @@ $\epsilon$ = tolerance
 
 - Hard margin linear SVM classifier objective
 
-![[Pasted image 20260301225936.png]]
+<img src="/images/Pasted image 20260301225936.png" alt="image" width="500">
 
 - Soft margin linear SVM classifier objective
 
-![[Pasted image 20260301230008.png]]
+<img src="/images/Pasted image 20260301230008.png" alt="image" width="500">
 
 - Hard and soft margin problems are both convex quadratic optimization problems with linear constraints
 	- Quadratic programming (QP) problems
@@ -390,32 +390,32 @@ $\epsilon$ = tolerance
 
 - Dual form of the linear SVM objective
 
-![[Pasted image 20260301230248.png]]
+<img src="/images/Pasted image 20260301230248.png" alt="image" width="500">
 
 - Dual solution to primal solution
 
-![[Pasted image 20260301230355.png]]
+<img src="/images/Pasted image 20260301230355.png" alt="image" width="500">
 
 - Second-degree polynomial mapping
 
-![[Pasted image 20260301230437.png]]
+<img src="/images/Pasted image 20260301230437.png" alt="image" width="500">
 
 - Kernel trick for a second-degree polynomial mapping
 
-![[Pasted image 20260301230455.png]]
+<img src="/images/Pasted image 20260301230455.png" alt="image" width="500">
 
 - Common kernels
 
-![[Pasted image 20260301230523.png]]
+<img src="/images/Pasted image 20260301230523.png" alt="image" width="500">
 
 - Making predictions with a kernelized SVM
 
-![[Pasted image 20260301230556.png]]
+<img src="/images/Pasted image 20260301230556.png" alt="image" width="500">
 
 
 - Using the kernel trick to compute the bias term
 
-![[Pasted image 20260301230615.png]]
+<img src="/images/Pasted image 20260301230615.png" alt="image" width="500">
 
 
 
@@ -428,14 +428,14 @@ $\epsilon$ = tolerance
 
 - Gini impurity
 
-![[Pasted image 20260301230834.png]]
+<img src="/images/Pasted image 20260301230834.png" alt="image" width="500">
 
 - Classification and Regression Tree (CART)
 	- Greedy algorithm
 
 - CART cost function for classification
 
-![[Pasted image 20260301231015.png]]
+<img src="/images/Pasted image 20260301231015.png" alt="image" width="500">
 
 - Complexity
 	- NP-complete
@@ -443,7 +443,7 @@ $\epsilon$ = tolerance
 
 - Entropy
 
-![[Pasted image 20260301231143.png]]
+<img src="/images/Pasted image 20260301231143.png" alt="image" width="500">
 
 - $\chi^2$ test
 	- Estimate the probability that the improvement is purely the result of chance (null hypothesis)
@@ -453,7 +453,7 @@ $\epsilon$ = tolerance
 
 - CART cost function for regression
 
-![[Pasted image 20260301231408.png]]
+<img src="/images/Pasted image 20260301231408.png" alt="image" width="500">
 
 - Axis orientation
 	- Solve with PCA
@@ -481,15 +481,15 @@ $\epsilon$ = tolerance
 
 - Weighted error rate of the jth predicator
 
-![[Pasted image 20260302084433.png]]
+<img src="/images/Pasted image 20260302084433.png" alt="image" width="500">
 
 - Predictor weight
 
-![[Pasted image 20260302084447.png]]
+<img src="/images/Pasted image 20260302084447.png" alt="image" width="500">
 
 - Weight update rule
 
-![[Pasted image 20260302084500.png]]
+<img src="/images/Pasted image 20260302084500.png" alt="image" width="500">
 
 
 
@@ -521,23 +521,23 @@ $\epsilon$ = tolerance
 
 - Principal component matrix
 
-![[Pasted image 20260302085008.png]]
+<img src="/images/Pasted image 20260302085008.png" alt="image" width="500">
 
 - Projecting the training set down to d dimensions
 
-![[Pasted image 20260302085049.png]]
+<img src="/images/Pasted image 20260302085049.png" alt="image" width="500">
 
 - PCA inverse transformation, back to the original number of dimensions
 
-![[Pasted image 20260302085207.png]]
+<img src="/images/Pasted image 20260302085207.png" alt="image" width="500">
 
 - LLE step 1: Linearly modeling local relationships
 
-![[Pasted image 20260302085439.png]]
+<img src="/images/Pasted image 20260302085439.png" alt="image" width="500">
 
 - LLE step 2: Reducing dimensionality while preserving relationships
 
-![[Pasted image 20260302085503.png]]
+<img src="/images/Pasted image 20260302085503.png" alt="image" width="500">
 
 
 ## Unsupervised Learning
@@ -572,7 +572,7 @@ $\epsilon$ = tolerance
 
 - Bayesian information criterion (BIC) and Akaike information criterion (AIC)
 
-![[Pasted image 20260302090453.png]]
+<img src="/images/Pasted image 20260302090453.png" alt="image" width="500">
 
 
 # Part 2 - Neural Networks and Deep Learning
@@ -586,7 +586,7 @@ $\epsilon$ = tolerance
 
 - Common step functions used in perception (threshold=0)
 
-![[Pasted image 20260302090924.png]]
+<img src="/images/Pasted image 20260302090924.png" alt="image" width="500">
 
 - Layer types
 	- Input layer
@@ -595,7 +595,7 @@ $\epsilon$ = tolerance
 
 - Computing the outputs of a fully connected layer
 
-![[Pasted image 20260302091001.png]]
+<img src="/images/Pasted image 20260302091001.png" alt="image" width="500">
 
 - Components
 	- Output matrix, $\hat{Y}$
@@ -606,7 +606,7 @@ $\epsilon$ = tolerance
 
 - Perception learning rule (weight update)
 
-![[Pasted image 20260302091127.png]]
+<img src="/images/Pasted image 20260302091127.png" alt="image" width="500">
 
 - Multilayer perceptrons
 	- Feedforward neural network (FNN)
@@ -720,7 +720,7 @@ print("Predications for 3 samples:\n", y_pred.reshape(-1))
 
 - Glorot initialization (sigmoid activation function)
 
-![[Pasted image 20260302093518.png]]
+<img src="/images/Pasted image 20260302093518.png" alt="image" width="500">
 
 - Leaky ReLU
 - Randomized leaky ReLU (RReLU)
@@ -734,17 +734,17 @@ print("Predications for 3 samples:\n", y_pred.reshape(-1))
 
 - ELU activation function
 
-![[Pasted image 20260302093629.png]]
+<img src="/images/Pasted image 20260302093629.png" alt="image" width="500">
 
 - GELU activation function
 
-![[Pasted image 20260302093730.png]]
+<img src="/images/Pasted image 20260302093730.png" alt="image" width="500">
 
-![[Pasted image 20260302093825.png]]
+<img src="/images/Pasted image 20260302093825.png" alt="image" width="500">
 
 - Batch normalization algorithm
 
-![[Pasted image 20260302093903.png]]
+<img src="/images/Pasted image 20260302093903.png" alt="image" width="500">
 
 - Gradient clipping
 - Transfer learning
@@ -763,32 +763,32 @@ print("Predications for 3 samples:\n", y_pred.reshape(-1))
 
 - Momentum algorithm
 
-![[Pasted image 20260302094223.png]]
+<img src="/images/Pasted image 20260302094223.png" alt="image" width="500">
 
 - Nesterov accelerated gradient (NAG) algorithm
 
-![[Pasted image 20260302094243.png]]
+<img src="/images/Pasted image 20260302094243.png" alt="image" width="500">
 
-![[Pasted image 20260302094300.png]]
+<img src="/images/Pasted image 20260302094300.png" alt="image" width="500">
 
 - AdaGrad algorithm
 
-![[Pasted image 20260302094315.png]]
+<img src="/images/Pasted image 20260302094315.png" alt="image" width="500">
 
 
-![[Pasted image 20260302094344.png]]
+<img src="/images/Pasted image 20260302094344.png" alt="image" width="500">
 
 
 - RMSProp algorithm
 
-![[Pasted image 20260302094331.png]]
+<img src="/images/Pasted image 20260302094331.png" alt="image" width="500">
 
 - Adaptive moment estimation (Adam)
 	- AdaMax
 	- Nadam
 	- AdamW
 
-![[Pasted image 20260302094426.png]]
+<img src="/images/Pasted image 20260302094426.png" alt="image" width="500">
 
 
 - Learning rate scheduling
@@ -798,7 +798,7 @@ print("Predications for 3 samples:\n", y_pred.reshape(-1))
 	- Power
 	- 1cycle
 
-![[Pasted image 20260302094509.png]]
+<img src="/images/Pasted image 20260302094509.png" alt="image" width="500">
 
 - Avoiding overfitting through regularization
 	- $\ell_1$ and $\ell_2$ Regularization
@@ -826,7 +826,7 @@ print("Predications for 3 samples:\n", y_pred.reshape(-1))
 
 ## Custom Models and Training with TensorFlow
 
-![[Pasted image 20260302095208.png]]
+<img src="/images/Pasted image 20260302095208.png" alt="image" width="500">
 
 - TensorFlow data structures
 	- Sparse tensors
