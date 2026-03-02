@@ -55,7 +55,31 @@ Performance Measure
 
 ![[Pasted image 20260301164904.png]]
 
+- Standard correlation coefficient (Pearson's)
+	- `corr()`
 
+
+- Measures
+	- Standard deviation
+	- Percentiles
+
+- Training
+	- Random samples
+	- Stratified sampling
+
+- Data cleaning
+	- Imputation
+		- `fillna()`
+		- `SimpleImputer`
+	- Remove redundant attributes
+		- `dropna(), drop()`
+
+- Scikit-Learn objects
+	- Consistency
+		- Estimators
+		- Transformers
+		- Predictors
+	- Ins
 
 
 
