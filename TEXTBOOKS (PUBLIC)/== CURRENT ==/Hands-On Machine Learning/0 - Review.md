@@ -23,7 +23,8 @@
 - Models
 	- Linear regression
 	- K-nearest neighbour (KNN)
-
+	- Decision tree regressor
+	- Random forest regressor
 
 - Training data results
 	- Underfitting
@@ -38,9 +39,7 @@
 
 ## End-to-End Machine Learning Project
 
-- Pipelines
-
-- Model
+- Models
 	- Multiple regression
 	- Univariate regression
 	- Multivariate regression
@@ -79,11 +78,66 @@ Performance Measure
 		- Estimators
 		- Transformers
 		- Predictors
-	- Ins
+	- Inspection
+	- Non-proliferation of classes
+	- Composition
+	- Sensible defaults
 
+- Categorical data types
+	- `OrdinalEncoder`
+	- `OneHotEncoder`
+		- Sparse matrix
+	- `get_dummies(df)`
+		- Converts each categorical feature into a one-hot representation, with one binary feature per category
 
+- Replace category with a learnable, low-dimensional vector called embedding
+	- Representation learning
+
+- Feature scaling
+	- Min-max scaling (normalization)
+		- `MinMaxScaler(feature_range=(-1, 1))`
+	- Standardization
+		- `StandardScaler()`
+
+- Distribution
+	- Bucketizing
+- Similarity
+	- Radial basis function (RBF)
+
+- Transformations
+	- `inverse_transform()`
+	- `TransformedTargetRegressor`
+	- `FunctionTransfomer`
+	- `ColumnTransformer`
+
+- Evaluation on training set
+	- k-fold cross validation
+	- Bootstrap
+
+- Hyperparameters
+	- `GridSearchCV`
+	- `RandomizedSearchCV`
+
+- Feature importance
+	- `feature_importances_`
 
 ## Classification
+
+- Binary classifier
+	- Stochastic radient descent (SGD)
+
+- Measuring accuracy
+	- Cross validation
+		- Stratified k folds
+	- Dummy classifier
+	- Confusion matrix (CM)
+		- Column = predicted classes
+		- Row = actual classes
+
+```c
+[a, b]
+```
+
 
 ## Training Models
 
