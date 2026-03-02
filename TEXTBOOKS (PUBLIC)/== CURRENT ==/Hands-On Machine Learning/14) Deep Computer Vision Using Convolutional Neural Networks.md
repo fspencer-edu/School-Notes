@@ -161,23 +161,149 @@ biases.shape
 	- Aggregates the inputs using a max or mean function
 
 - Max pooling layer
-	- 2 x 2
+	- 2 x 2 pooling kernel, with a stride of 2 and no padding
+	- Max value of the pooling kernel is 5, and is propagated to the next layer
+	- Compresses the images
 
 <img src="/images/Pasted image 20260204110030.png" alt="image" width="500">
+
+- Introduces invariance to small translations
+	- Bright pixels have a lower value than dark pixels
+	- All the images are same image, but shifted by one and two pixels to the right
+	- Max pooling layer for images A and B are the same
+	- Max pooling produces a small amount of rotational invariance and scale invariance
+- Goal is equivariance
+	- A small change to the inputs should lead to a corresponding small change in the output
 
 <img src="/images/Pasted image 20260204110039.png" alt="image" width="500">
 
 # Implementing Pooling Layers with Keras
 
+- Pooling layers
+	- `MaxPool2D`
+	- `AvgPool2D`
+
+```python
+max_pool = tf.keras.layers.MaxPool2D(pool_size=2)
+```
+
+- Max and average pooling can be performed along the depth dimension instead of spatial dimension
+	- CNN can lear to be invariance to various feature
+
+```python
+class DepthPool(tf.keras.layers.Layer):
+	def __init__(self, pool_size=2, **kwargs):
+		super().__init__(**kwargs)
+		self.pool_size = pool_size
+		
+	def call(self, inputs):
+		shape = tf.shape(inputs)
+		groups = shape[-1]
+		new_shape = tf.concat([shape[:-1], [groups, self.pool_size]], axis=0)
+		return tf.reduce_max(tf.reshape(inputs, new_shape), axis=-1)
+```
+
+- Reshaped its inputs to split the channels into groups of the pool size, then computes the max of each group
+
 <img src="/images/Pasted image 20260204110051.png" alt="image" width="500">
 
+- Global average pooling
+	- Compute the mean of each entire feature map
+	- Averaging pooling layer using a pooling kernel with the same spatial dimensions as the inputs
+	- Used before the output layer
+
+```python
+global_avg_pool = tf.keras.layers.GlobalAvgPool2D()
+
+global_avg_pool = tf.keras.layers.Lambda(
+	lambda X: tf.reduce_mean(X, axis=[1, 2])
+)
+
+global_avg_pools(images)
+<tf.Tensor: shape=(2, 3), dtype=float32, numpy=
+array([[0.64338624, 0.5971759 , 0.5824972 ],
+       [0.76306933, 0.26011038, 0.10849128]], dtype=float32)>
+```
+
+- Get the mean intensity of red, greed, and blue for each image
 
 # CNN Architectures
 
+- CNN architecture
+	- Stacks a few convolutional layers
+		- Each on followed by a ReLU layer
+	- Pooling layer
+	- Another few convolutional layers (+ReLU)
+	- Another pooling layer
+- As the image gets smaller, it obtained more feature maps
+- At the top, a regular feed-forward neural network is added
+- Final layer outputs the prediction (a softmax layer)
+
+- A common mistake is to used convolutional kernels that are too large
+	- Large kernels are used in the beginning layers
 <img src="/images/Pasted image 20260204110103.png" alt="image" width="500">
+```python
+from functools import partial
+
+DefaultConv2D = partial(tf.keras.layers.Conv2D, kernel_size=3, padding="same",
+				activation="relu", kernel_initializer="he_normal")
+				
+model = tf.keras.Sequential([
+	DefaultConv2D(filters=64, kernel_size=7, input_shape=[28, 28, 1]),
+	tf.keras.layers.MaxPool2D(),
+	DefaultConv2D(filters=128),
+	DefaultConv2D(filters=128),
+	tf.keras.layers.MaxPool2D(),
+	DefaultConv2D(filters=256),
+	DefaultConv2D(filters=256),
+	tf.keras.layers.MaxPool2D(),
+	tf.keras.layers.Flatten(),
+	tf.keras.layers.Dense(units=128, activation="relu",
+					kernel_initializer="he_normal"),
+	tf.keras.layers.Droppout(0.5),
+	tf.keras.layers.Dense(units=64, activation="relu",
+					kernel_initializer="he_normal"),
+	tf.keras.layers.Dropout(0.5),
+	tf.keras.layers.Dense(units=10, activation="softmax")
+])
+```
+
+- Set a default convolutional layer with `functools.partial()`
+- Create the `Sequential` model
+	- 64 large filters (7 x 7)
+	- Default stride of 1
+	- Single colour channel
+- Add a max pooling layer that uses the default pool size of 2
+- Repeat the same structure twice
+	- Two convolutional layers followed by a max pooling layer
+- The number of tilers double as we climb up the CNN
+	- Number of low-level feature are low
+- The output layer has 10 units, and uses the softmax activation function
+	- Flatten the inputs before the first dense layer, since is uses 1D array for features for each instance
+	- Add 2 dropout layers, to reduce overfitting
+
+- The compiled model should reach over 92% accuracy on test set
+- Variants of the architecture have been developed
 
 ## LaNet-5
+
+- Used for handwritten digit recognition (MNIST)
+
+![[Pasted image 20260302123012.png]]
+
 ## AlexNet
+
+![[Pasted image 20260302123053.png]]
+
+- To reduce overfitting, the 2 regularization techniques are used
+	- Dropout with a 50% dropout rate during training to the outputs of layers F9 and F10
+	- Data augmentation by randomly shifted the training images by various offsets
+		- Flipping them horizontally
+		- Change the light conditions
+
+- Data augmentation increases the size of training, increased variants of each training instance
+- Adding white noise does not help
+- 
 
 <img src="/images/Pasted image 20260204110117.png" alt="image" width="500">
 
