@@ -361,6 +361,35 @@ $\epsilon$ = tolerance
 
 ## Support Vector Machines
 
+- SVM
+	- Linear
+	- Non-linear
+	- Regression
+	- Novelty detection
+
+- Margin classification
+	- Soft
+	- Hard
+
+- Polynomial kernel
+- Similarity features
+- Gaussian RBF kernel
+- String kernels
+
+- Hard margin linear SVM classifier objective
+
+![[Pasted image 20260301225936.png]]
+
+- Soft margin linear SVM classifier objective
+
+![[Pasted image 20260301230008.png]]
+
+- Hard and soft margin problems are both convex quadratic optimization problems with linear constraints
+	- Quadratic programming (QP) problems
+- Hinge loss or squared hidge loss
+- 
+
+
 ## Decision Trees
 
 ## Ensemble Learning and Random Forests
@@ -377,7 +406,7 @@ $\epsilon$ = tolerance
 
 ## Custom Models and Training with TensorFlow
 
-## Loading and PReprocessing
+## Loading and Preprocessing
 
 ## Deep Computer Vision Using Convolutional Neural Networks
 
