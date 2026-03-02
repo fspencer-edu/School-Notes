@@ -232,7 +232,7 @@
             }
           }
         ],
-        "currentTab": 8
+        "currentTab": 9
       }
     ],
     "direction": "vertical"
@@ -381,8 +381,11 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "79e0c73529852017",
+  "active": "59d6335f08e61b43",
   "lastOpenFiles": [
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/0 - Review.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/13) Loading and Preprocessing Data with TensorFlow.md",
+    "Pasted image 20260302095208.png",
     "Pasted image 20260302094509.png",
     "Pasted image 20260302094426.png",
     "Pasted image 20260302094344.png",
@@ -392,16 +395,12 @@
     "Pasted image 20260302094300.png",
     "Pasted image 20260302094243.png",
     "Pasted image 20260302094223.png",
-    "Pasted image 20260302093903.png",
-    "Pasted image 20260302093825.png",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/19) Training and Deploying TensorFlow Models at Scale.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/18) Reinforcement Learning.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/17) Auto-encoders, GANs, and Diffusion Models.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/16) Natural Language Processing with RNNs and Attention.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/15) Processing Sequences Using RNNs and CNNs.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/14) Deep Computer Vision Using Convolutional Neural Networks.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/13) Loading and Preprocessing Data with TensorFlow.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/0 - Review.md",
     "PRIVATE/Winter 2026/Data Mining/Lab/Lab 6 - Data Mining.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/12) Custom Models and Training with TensorFlow.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/10) Introduction to Artificial Neural Networks with Keras.md",

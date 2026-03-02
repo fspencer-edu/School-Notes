@@ -810,15 +810,47 @@ print("Predications for 3 samples:\n", y_pred.reshape(-1))
 - Default DNN configuration (hyperparameter => default value)
 	- Kernel initializer => He initialization
 	- Activation function => ReLU is shallow, Swish if deep
-	- Normalization => non if sh
+	- Normalization => none if shallow, batch norm if deep
+	- Regularization => early stopping, weight decay if needed
+	- Optimizer => Nesterov accelerated gradients or AdamW
+	- Learning rate schedule => Performance or 1 cycle
 
 
 - DNN configuration for self-normalization net
-
+	- Kernel initialization => LeCun
+	- Activation function => SELU
+	- Normalization => None
+	- Regularization => Alpha dropout
+	- Optimizer => Nesterov accelerated gradients
+	- Learning rate => Performance or 1 cycle
 
 ## Custom Models and Training with TensorFlow
 
+![[Pasted image 20260302095208.png]]
+
+- TensorFlow data structures
+	- Sparse tensors
+	- Tensor arrays
+	- Ragged tansors
+	- String tensors
+	- Sets
+	- Queues
+
 ## Loading and Preprocessing
+
+- TFRecord format
+	- CRC checksum
+	- Protobufs
+- Chaining transformations
+- Shuffling data
+- Interleaving lines
+- Prefetching
+- Discretization
+- Category encoding layer
+	- Multi-hot encoding
+- Hasing collision
+- Embedding
+- Representation learning
 
 ## Deep Computer Vision Using Convolutional Neural Networks
 

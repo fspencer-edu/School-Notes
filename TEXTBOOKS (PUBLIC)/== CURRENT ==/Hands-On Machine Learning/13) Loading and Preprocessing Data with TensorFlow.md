@@ -483,13 +483,69 @@ message SequenceExample {
 	FeatureLists feature_lists = 2;
 };
 ```
+- If the feature list contain sequences of varying sizes, convert them to ragged tensors
 
+```python
+parsed_content, parsed_feature_lists = tf.io.parse_signle_sequence_example(
+	serizlized_sequence_example, context_feature_descriptions,
+	sequence_feature_descriptions
+)
+parsed_content = tf.RaggedTensor.from_sparse(parsed_feature_lists["content"])
+```
 
 # Keras Preprocessing Layers
 
+- Preparing data
+	- Normalization the numerical features
+	- Encoding the categorical features
+	- Cropping and resizing images
+
 ## The Normalization Layer
 
+- Specify the mean and variance of each feature when creaming the layer
+- Pass the training set to the layer's `adapt()`method before fitting the model
+
+```python
+norm_layer = tf.keras.layers.Normalization()
+model = tf.keras.models.Sequential([
+	norm_layer,
+	tf.keras.layers.Dense(1)
+])
+
+# train model
+model.compile(loss="mse", optimizer=tf.keras.optimizer.SGD(leaning_rate=2e-3))
+norm_layer.adapt(X_train)
+model.fit(X_train, y_train, validation_data=(X_valid, y_valid), epochs=5)
+```
+
+- Deploy the model to production without normalizing again
+
 <img src="/images/Pasted image 20260204105806.png" alt="image" width="500">
+- Including the preprocessing layer directly i the model is easy, but slows down training
+	- Happens once per epoch
+- Normalize the entire training set once before training instead
+
+```python
+norm_layer = tf.keras.layers.Normalization()
+norm_layer.adapt(X_train)
+X_train_scaled = norm_layer(X_train)
+X_valid_scaled = norm_layer(X_valid)
+
+# train model on the scaled data
+model = tf.keras.models.Sequential([tf.keras.layers.Dense(1)])
+model.comple(loss="mse", optimizer=tf.keras.optimizers.SGD(learning_rate=2e-3))
+model.fit(X_train_Scaled, y_train, epoch=5,
+	validation_data=(X_valid_scaled, y_valid))
+```
+
+- Create a new model that wraps both the adapted `Normalization` layer and the trained model
+	- Preprocess new inputs
+
+```python
+final_model = tf.keras.Sequential([norm_layer, model])
+X_new = X_test[:3]
+y_pred = final_model(X_new)
+```
 
 <img src="/images/Pasted image 20260204105817.png" alt="image" width="500">
 
@@ -503,6 +559,8 @@ message SequenceExample {
 <img src="/images/Pasted image 20260204105827.png" alt="image" width="500">
 <img src="/images/Pasted image 20260204105837.png" alt="image" width="500">
 ## Text Preprocessing
+
+
 ## Using Pretrained Language Model Components
 ## Image Preprocessing Layers
 
