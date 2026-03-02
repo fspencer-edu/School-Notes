@@ -60,7 +60,7 @@
 		- RGB
 - Computing the output of a neuron in a convolutional layer
 
-![[Pasted image 20260302113740.png]]
+<img src="/images/Pasted image 20260302113740.png" alt="image" width="500">
 
 $z_{i, j, k}$ = output of the neuron
 $x_{i', j', k'}$ = output of the neuron located in layer l-1
@@ -289,11 +289,11 @@ model = tf.keras.Sequential([
 
 - Used for handwritten digit recognition (MNIST)
 
-![[Pasted image 20260302123012.png]]
+<img src="/images/Pasted image 20260302123012.png" alt="image" width="500">
 
 ## AlexNet
 
-![[Pasted image 20260302123053.png]]
+<img src="/images/Pasted image 20260302123053.png" alt="image" width="500">
 
 - To reduce overfitting, the 2 regularization techniques are used
 	- Dropout with a 50% dropout rate during training to the outputs of layers F9 and F10
@@ -313,7 +313,7 @@ model = tf.keras.Sequential([
 
 - Local response normalization (LRN)
 
-![[Pasted image 20260302123506.png]]
+<img src="/images/Pasted image 20260302123506.png" alt="image" width="500">
 
 $b_i$ = normalized output of the neuron located in feature map i
 $a_i$ = activation of that neuron after the ReLU step, but before normalization
@@ -415,31 +415,178 @@ $f_n$ = number of feature maps
 - Applied a single spatial filter to each input feature map
 - Exclusively look for cross channel patterns with a 1 x 1 filter
 
-- 
+- Xception starts with 2 regular convolutional layers, the result uses only separable convolutions, plus a few max pooling layers, and a final layer
+- An inception module contains convolutional layers with 1 x 1 filters
+	- Only cross channel patterns
+- Convolutional layers that sit on top of inception modules are regular convolutional layers that look for both spatial and cross channel patterns
+- Separable convolutional layers use fewer parameters, less memory, and fewer computations than regular convolutional layers
+	- Perform better
+	- `SeperableConv2D`
+	- `DepthwiseConv2D`
 
 
 <img src="/images/Pasted image 20260204110257.png" alt="image" width="500">
 
-
 ## SENet
 
+- Squeeze and Excitation Network (SENet)
+- Extends using inception networks and REsNets, and boosts their performance
+- Adds a small neural network, called an SE block, to every inception model or residual unit in the original architecture
 
 <img src="/images/Pasted image 20260204110307.png" alt="image" width="500">
+- SE block analyses the output of the unit it is attached to, focusing exclusively on the depth dimension
+- Learns which features are most active together
+- Uses this to recalibrate the feature maps
+	- Boost connected features, and reduces irrelevant feature maps
 
 <img src="/images/Pasted image 20260204110317.png" alt="image" width="500">
+- SE block components
+	- A global average pooling layer
+	- A hidden dense layer using the ReLU activation function
+	- Dense output layer using sigmoid activation function
 
 <img src="/images/Pasted image 20260204110327.png" alt="image" width="500">
 
+- The global average pooling computes the mean activation for each feature map
+	- 256 -> 256
+- SE layer, reduces feature maps to 16 dimensions
+	- Embedding of the distribution of feature responses
+	- Bottleneck step forces the SE block to learn a general representation of the feature combinations
+- Output layer takes the embedding and outputs a recalibration vector containing one number per feature map, `[0, 1]`
+	- Feature maps are multiplied by this recalibration vector, so irrelevant features get scaled down, while relevant are left along
+
 ## Other Noteworthy Architectures
 
+- ResNetXt
+- DenseNet
+- MobileNet
+- CSPNet (Cross Stage Partial Network)
+- EfficientNet
+	Compound scaling
+
 ## Choosing the Right CNN Architecture
+
+- Large models are more accurate, but are also more computationally expensive
+
+
+<img src="/images/Pasted image 20260302131446.png" alt="image" width="500">
 
 
 # Implementing a ResNet-34 CNN Using Keras
 
+- Most CNN architectures are implemented naturally using Keras
+- Create all the layers
+	- Main layers
+	- Skip layers
+
+```python
+DefaultConv2D = partial(tf.keras.layers.Conv2D, kernel_size=3, strides=1,
+			padding="same", kernel_initializer="he_normal",
+			use_bias=False)
+			
+class RedisualUnit(tf.keras.layers.Layer):
+	def __init__(self, filters, strides=1, activation="relu", **kwargs):
+		super().__init__(**kwargs)
+		self.activation = tf.keras.activations.get(activation)
+		self.main_layers = [
+			DefaultConv2D(filters, strides=strides),
+			tf.keras.layers.BatchNormalization(),
+			self.activation,
+			DefaultConv2D(filters),
+			tf.keras.layers.BatchNormalization()
+		]
+		self.skip_layers = []
+		if strides > 1:
+			self.skip_layers = [
+				DeffaultConv2D(filters, kernel_size=1, strides=strides).
+				tf.keras.layers.BatchNormalization()
+			]
+			
+	def call(self, inputs):
+		Z = inputs
+		for layer in self.main_layers:
+			Z = layer(Z)
+		skip_Z = inputs
+		for layer in self.skip_layers:
+			skip_Z = layer(skip_Z)
+		return self.activation(Z + skip_Z)
+```
+- ResNet-34 model
+	- Treat each residual unit a single layer
+
+```python
+model = tf.keras.Sequential([
+	DefaultConv2D(64, kernel_size=7, strides=2, input_shape=[224, 224, 3]),
+	tf.keras.layers.BatchNormalization(),
+	tf.keras.layers.Activation("relu"),
+	tf.keras.layers.MaxPool2D(pool_size=3, strides=2 padding="same")
+])
+
+prev_filters = 64
+for filters in [64] * 3 + [128] * 4 + [256] * 6 + [512] * 3:
+	strides = 1 if filters == prev_filters else 2
+	model.add(ResidualUnit(filters, strides=strides))
+	prev_filters = filters
+	
+model.add(tf.keras.layers.GlobalAvgPool2D())
+model.add(tf.keras.layers.Flatten())
+model.add(tf.keras.layers.Dense(10, activation="softmax"))
+```
+
+- The first 3 RUs have 64 filters, then the next 4 RUs have 128
+- At each iteration, set the stride to 1 when the number of filters is the same as the previous RU, or else set to 2
+- Add RU, and update `prev_filters`
+
 # Using Pretrained Models from Keras
 
+- Pretrained networks are available with a single line of code
+	- `tf.keras.applications`
+
+```python
+# load ResNet-50 odel
+model = tf.keras.applications.ResNet50(weight="imagenet")
+
+# resize images
+images = load_sample_images()["images"]
+images_resized = tf.keras.layers.Resizing(height=244, width=244,
+			crop_to_aspect_ratio=True)(images)
+			
+# models rpovide a preprocessing function
+inputs = tf.keras.applications.resnet50.preprocess_input(images_resized)
+
+Y_proba = model.predict(inputs)
+Y_proba.shape
+(2, 1000)
+
+# return top K predictions
+top_K = tf.keras.applications.resnet50.decode_predictions(Y_proba, top=3)
+for image_index in range(len(images)):
+	print(f"Image #{image_index}")
+	for class_id, name, y_proba in top_K[image_index]:
+		print(f"{class_id} - [name:12s]{y_prob:.2%}")
+		
+Image #0
+  n03877845 - palace       54.69%
+  n03781244 - monastery    24.72%
+  n02825657 - bell_cote    18.55%
+Image #1
+  n04522168 - vase         32.66%
+  n11939491 - daisy        17.81%
+  n03530642 - honeycomb    12.06%
+```
+- The correct classes are palace and dahlia
+	- Correct for first image but not second
+
+
 # Pretrained Models for Transfer Learning
+
+- To build an image classifier, reuse the lower layers of a pretrained model
+- Train a model to classify pictures of flowers, with reused of Xception model
+
+```python
+import tensorflow_datasets as tfds
+dataset, info = tfds.load("tf_flowers", as_supervised)
+```
 
 # Classification and Localization
 
