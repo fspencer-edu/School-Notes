@@ -628,14 +628,88 @@ data_augmentation = tf.keras.Sequential([
 ])
 ```
 
+- Load an Xception model, pretrained on ImageNet
+- Exclude the top of the entwork
+	- Excludes the global average pooling layer, and the dense output layer
 
+```python
+base_model = tf.keras.applications.xception.Xception(weight="imagenet",
+			include_top=False)
+avg = tf.keras.layers.GlobalAveragePooling2D()(base_model.output)
+output = tf.keras.layers.Dense(n_classes, activation="softmax")(avg)
+model = tf.keras.Model(inputs=base_model.input, output=output)
+
+# Freeze the weights of the pretrained layers
+for layer in base_model.layers:
+	layer.trainable = False
+	
+# compile and start training
+optimizer = tf.keras.optimizers.SGD(learning_rate=0.1, momentum=0.9)
+model.compile(loss="sparse_categorical_crossentropy", optimizer=optimizer,
+			metrics=["accuracy"])
+history = model.fit(train_set, validation_data=valid_set, epochs=3)
+
+# unfreeze some of the base model's top layers, then continue training
+for layer in base_model.layers[56:]:
+	layer.trainable =True
+	
+# recompile model
+optimizer = tf.keras.optimizers.SGD(learning_rate=0.1, momentum=0.9)
+model.compile(loss="sparse_categorical_crossentropy", optimizer=optimizer,
+				metrics=["accuracy"])
+history = model.fit(train_set, validation_data=valid_set, epochs=10)
+```
 
 # Classification and Localization
 
+- Localizing an object in a picture can be expressed as a regression task
+	- Predict a bounding box around the object
+	- Predict horizontal and vertical coordinates of the object's centre, with height and width
+- Add a second dense output layer with 4 units
+- Train using MSE loss
+
+```python
+base_model = tf.keras.applications.xception.Xception(weight="imagenet",
+				include_top=False)
+avg = tf.keras.layers.GlobalAveragePoolin2D()(base_model.output)
+class_output = tf.keras.layers.Dense(n_classes, activation="softmax")(avg)
+loc_output = tf.keras.layers.Dense(4)(avg)
+model = tf.keras.Model(inputs=base_model.input,
+			outputs=[class_output, loc_output])
+optimizer = tf.keras.optimizer.SGD(learning_rate=0.01, momentum=0.9)
+model.compile(loss=["sparse_categorical_crossentropy", "mse"],
+		loss_weights=[0.8, 0.2],
+		optimizer=optimizer, metrics=["accuracy"]
+)
+```
+
+- Annotate images with bounding boxes
+	- VGG image Annotator
+	- LabelImg
+	- OpenLabeler
+	- ImgLab
+	- LabelBox
+	- Supervisely
+- Create a dataset whose items will be batches or preprocessed images along with their class labels and their bounding boxes
+	- `(images, (class_labels, bounding_boxes))`
+- Intersection over union (IoU)
+	- Area of overlap between predicted bounding box and the target bounding box, divided by the area of their unions
+
 <img src="/images/Pasted image 20260204110343.png" alt="image" width="500">
 
-<img src="/images/Pasted image 20260204110354.png" alt="image" width="500">
+
 # Object Detection
+
+- Object detection
+	- Classifying and localizing multiple objects in an image
+- Take a CNN that was trained to classify and locate a single object roughly centred in the image, slide the CNN across the image and make predictions at each step
+- CNN was trained to predict the objectness score
+	- Estimated probability that the image does contain an object centred near the middle
+
+<img src="/images/Pasted image 20260204110354.png" alt="image" width="500">
+- Non-max suppression
+	- Get rid of all the bounding boxes for which the objectness score is below
+
 
 ## Fully Convolutional Networks
 ## Your Only Look Once
