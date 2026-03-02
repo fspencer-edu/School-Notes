@@ -460,9 +460,45 @@ $\epsilon$ = tolerance
 
 ## Ensemble Learning and Random Forests
 
-- 
+- Ensemble learning
+	- `VotingClassifier`
+	- Stacking
+
+- Sampling
+	- Bagging
+	- Pasting
+
+- Random patches method
+	- Sampling both training instances and features
+- Random subspaces method
+	- Keeping all training instances, but sampling features
+
+- Boosting
+	- AdaBoost
+		- SAMME (Stagewise Additive MOdeling using a Multiclass Exponential loss function)
+	- Gradient boosting
+		- Histogram -based gradient boosting (HGB)
+
+- Weighted error rate of the jth predicator
+
+![[Pasted image 20260302084433.png]]
+
+- Predictor weight
+
+![[Pasted image 20260302084447.png]]
+
+- Weight update rule
+
+![[Pasted image 20260302084500.png]]
+
+
 
 ## Dimensionality Reduction
+
+- Dimensionality reduction
+	- Projection
+	- Manifold learning
+	- Principal component analysis (PCA)
 
 ## Unsupervised Learning
 
