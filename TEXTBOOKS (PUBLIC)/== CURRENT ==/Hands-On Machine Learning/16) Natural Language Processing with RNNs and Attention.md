@@ -358,6 +358,30 @@ model.fit(train_set, validation_data=valid_set, epochs=1)
 
 # An Encoder-Decoder Network for Neural Machine Translation
 
+- English sentences are fed as inputs to the encoder
+- The decoder outputs the Spanish translation
+- Spanish translations are also used as inputs to the decoder turning training, but shifted back by one step
+- Teach forcing
+	- Decoder is given the input is should have output previous step
+	- Decoder is given the start-of-sequence (SOS) token, and the decoder is expected to end the sequence with an end-of-sequence (EOS) token
+- Each word is initially represented by its ID
+- Word embedding are then fed to the encoder and decoder
+- Decoder outputs a score for each word in the output vocab
+- Softmax activation function turns these scores into probabilities
+	- Word with the highest probability is the output
+
+![[Pasted image 20260303111856.png]]
+
+- After training (inference time), the target sentence will not feed to the decoder
+- Feed the word that is has just output at the previous step
+- Feeding the decoder the previous target token to feeding the previous output token during training
+
+![[Pasted image 20260303112012.png]]
+
+
+
+
+
 ## Bidirectional RNNs
 
 ## Beam Search
