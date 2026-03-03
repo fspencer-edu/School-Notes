@@ -450,7 +450,16 @@ mulvar_model = tf.keras.Sequential([
 
 ## Forecasting Several Time Steps Ahead
 
-- 
+```python
+import numpy as np
+X = rail_valid.to_numpy()[np.newaxis, :seq_length, np.newaxis]
+for step_ahead in range(14):
+	y_pred_one = univar_model.predict(X)
+	X = np.concatenate([X, y_pred_one.reshape(1, 1, 1)], axis=1)
+```
+
+- Take the rail ridership of the first 56 days of the validation period, and convert the data to a numpy array
+- Repeatidely use the model to f
 
 
 <img src="/images/Pasted image 20260204110632.png" alt="image" width="500">
