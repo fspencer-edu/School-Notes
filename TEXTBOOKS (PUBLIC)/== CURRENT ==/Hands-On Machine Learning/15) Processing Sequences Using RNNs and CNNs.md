@@ -26,10 +26,10 @@
 
 - Output of a recurrent layer for a single instance
 
-![[Pasted image 20260302172159.png]]
+<img src="/images/Pasted image 20260302172159.png" alt="image" width="500">
 
 - Output of a layer of recurrent neurons for all instance in a pass (mini-batch)
-![[Pasted image 20260302172252.png]]
+<img src="/images/Pasted image 20260302172252.png" alt="image" width="500">
 
 ## Memory Cells
 
@@ -168,7 +168,7 @@ plt.show()
 
 - Forecasting using an ARMA model
 
-![[Pasted image 20260302174748.png]]
+<img src="/images/Pasted image 20260302174748.png" alt="image" width="500">
 
 First sum
 $\alpha_i$ = learned weights 
@@ -592,14 +592,140 @@ y_pred_14 = seq2seq_model.predict(X)[0, -1]
 	- Faster optimizers
 	- Dropout
 - Non-saturating activation functions may not help as much here
+	- RNNs reuse the same weights at every time step, when a small increase in weights gets applied repeatedly, it causes an exploding gradient
 	- Smaller learning rate
 	- Saturating activation function
 		- Hyperbolic tangent
 	- Gradient clipping
-- 
+- Apply BN between layers with `BatchNormalization`
+- Layer normalization
+	- Normalizes across the features dimension
+	- Same in training and testing
+	- Learns a scale and an offset parameter for each input
+	- Use right after the linear combination of the inputs and the hidden state
+- Define a custom memory cell
+	- Take 2 arguments, inputs at current time, and hidden states from previous time step
+
+```python
+class LNSimpleRNNCell(tf.keras.layers.Layer):
+	def __init__(self, units, activation="tanh", **kwargs):
+		super().__init__(**kwargs)
+		self.state_size = units
+		self.output_size = units
+		self.simple_rnn_cell = tf.keras.layers.SimpleRNNCell(units, 
+						activation=None)
+		self.layer_norm = tf.keras.layers.LayerNormalization()
+		self.activation = tf.keras.activations.get(activation)
+		
+	def call(self, inputs, states):
+		outputs, new_states = self.simple_rnn_cell(inputs, states)
+		norm_outputs = self.activation(self.layer_norm(outputs))
+		return norm_outputs, [norm_outputs]
+		
+custom_ln_model = tf.keras.Sequential([
+	tf.keras.layer.RNN(LNSimpleRNNCell(32), return_sequence=True, 
+					input_shape=[None, 5]),
+	tf.keras.layers.Dense(14)
+])
+```
+
+- Constructor takes the number of units, activation functions, a size of state and output
+- Create a custom cell to apply dropout between each time step
+- Most recurrent layers and calls provided by Keras have `dropout` and `recurrent_dropout` hyperparameters
+- Have some error bars with prediction
+	- MC (Monte Carlo) dropout
+
+## Tackling the Short-Term Memory Problem
+
+- Some data is lost at each step in the RNN
+- RNN's state contains no trace of the first inputs
+
+### LSTM Cells
+
+- Long short-term memory (LSTM)
+
+```python
+model = tf.keras.Sequential([
+	tf.keras.layers.LSTM(32, return_sequences=True, input_shape=[None, 5]),
+	tf.keras.layers.Dense(14)
+])
+```
+
+- 2 vectors
+	- $h_{(t)}$ = short term
+	- $c_{(t)}$ = long term
 
 <img src="/images/Pasted image 20260204110649.png" alt="image" width="500">
+- Network can learn what to store in the long-term state, and what to discard
+- Forget gate
+	- Drops memories, and adds new memories via additional operator from input gate
+	- The result is sent out
+- Short term state is the cell's output for the long term time step
+- Current and previous short-term state are red to 4 different fully connected layers
+	- Output of short-term state goes to long-term state
+		- Gate controllers
+			- Logistic activation
+
+- LSTM cell can learn to recognize an important input, store it in long-term state, and extract it
+
+- LSTM computations
+
+<img src="/images/Pasted image 20260302221444.png" alt="image" width="500">
+
+
+### CRU Cells
+
+- Gates recurrent unit
+	- Simplified version of the LSTM cell
+- Both state vectors are merged into a single $h_{(t)}$
+- A single gate controller $z_{(t)}$ controls both the forget and input gate
+- No output gate
+	- The full state vector is output at every time step
 
 <img src="/images/Pasted image 20260204110704.png" alt="image" width="500">
 
-## Tackling the Short-Term Memory Problem
+- GRU computations
+
+<img src="/images/Pasted image 20260302221648.png" alt="image" width="500">
+
+
+## Using 1D convolutional layers to process sequences
+
+- 1D convolutional layer slides several kernels across a sequence, producing a 1D feature map per kernel
+- 2D convolutional layer works by sliding several fairly small kernel across an image, producing 2D feature maps
+- Build a neural network composed of a mix of recurrent layers and 1D convolutional layers
+
+```python
+conv_rnn_model = tf.keras.Sequential([
+    tf.keras.layers.Conv1D(filters=32, kernel_size=4, strides=2,
+                           activation="relu", input_shape=[None, 5]),
+    tf.keras.layers.GRU(32, return_sequences=True),
+    tf.keras.layers.Dense(14)
+])
+
+longer_train = to_seq2seq_dataset(mulvar_train, seq_length=112,
+                                       shuffle=True, seed=42)
+longer_valid = to_seq2seq_dataset(mulvar_valid, seq_length=112)
+downsampled_train = longer_train.map(lambda X, Y: (X, Y[:, 3::2]))
+downsampled_valid = longer_valid.map(lambda X, Y: (X, Y[:, 3::2]))
+[...]  # compile and fit the model using the downsampled datasets
+```
+
+### WaveNet
+
+- Stacked 1D convolutional layers, doubling the dilation rate at every layer
+- Lower layers learn short-term patterns, while the higher learn long-term patterns
+
+<img src="/images/Pasted image 20260302222047.png" alt="image" width="500">
+
+- Stacking 10 identical layers is equivalent to a convolutional layer with a kernel of size 1024
+
+```python
+wavenet_model = tf.keras.Sequential()
+wavenet_model.add(tf.keras.layers.Input(shape=[None, 5]))
+for rate in (1, 2, 4, 8) * 2:
+	wavenet_model.add(tf.keras.layers.Conv1D(
+	filters=32, kernel_size=2, padding="causal", activation="relu",
+	dilation_rate=rate))
+wavenet_model.add(tf.keras.layers.Conv1D(filters=14, kernel_size=1))
+```

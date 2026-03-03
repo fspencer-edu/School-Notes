@@ -780,7 +780,7 @@ model.compile(loss=["sparse_categorical_crossentropy", "mse"],
 			- Stretching the image by inserting empty rows and columns, then performing a regular convolution
 - In a transposed convolutional layer, the stride defined how much the input will be stretched, not the size of the filter step
 
-![[Pasted image 20260302150406.png]]
+<img src="/images/Pasted image 20260302150406.png" alt="image" width="500">
 
 - Convolutional layers
 	- `tf.keras.layers.Conv1D`
@@ -800,7 +800,7 @@ model.compile(loss=["sparse_categorical_crossentropy", "mse"],
 - Super resolution
 	- Scale up beyond the size of the original image
 
-![[Pasted image 20260302150649.png]]
+<img src="/images/Pasted image 20260302150649.png" alt="image" width="500">
 
 - Instance segmentation is similar to semantic segmentation
 - Mask R-CNN
