@@ -287,11 +287,74 @@ modile.compile(loss="binary_crossentropy", optimizer="nadam"),
 history = model.fit(train_set, validation_data=valid_set, epochs=2)
 ```
 
-- 
+- The output will be the estimated probability that the review expresses a positive sentiment
+- The reviews have different lengths, and adds padding tokens to make them as long as the longest sequence in the batch
 
 ## Masking
 
+- Making the model ignore padding tokens
+	- `mask_zero=true`
+- `Embedding` layer creates a mask tensor equal to `tf.math.not_equal(inputs, 0)`
+- Some layers need to update the mask before propagating it to the next layer
+	- Computes mask
+		- Takes inputs and previous mask
+		- Finds the updated mask
+
+```python
+inputs = tf.keras.layers.Input(shape=[], dtype=tf.string)
+tokens_ids = text_vec_layer(inputs)
+mask = tf.math.not_equal(token_ids, 0)
+Z = tf.keras.layers.Emedding(vocab_size, embed_size)(token_ids)
+Z = tf.keras.layers.GRU(128, dropout=0.2)(Z, mask=mask)
+outputs = tf.keras.layers.Dense(1, activation="sigmoid")(Z)
+model = tf.keras.Model(inputs=[inputs], outptus=[outputs])
+
+# ragged tensors
+text_vec_layer_ragged = tf.keras.layers.TextVectorization(
+	max_tokens_vocab_size, ragged=True)
+text_vec_layer_ragged.adapt(train_set.map(lambda reviews, labels: reviews))
+text_vec_layer_ragged(["Great movie!", "This is DiCaprio's best role."])
+<tf.RaggedTensor [[86, 18], [11, 7, 1, 116, 217]]>
+
+text_vec_layer(["Great movie!", "This is DiCaprio's best role."])
+<tf.Tensor: shape=(2, 5), dtype=int64, numpy=
+array([[ 86,  18,   0,   0,   0],
+       [ 11,   7,   1, 116, 217]])>
+```
+
+- Not possible to use ragged tensors as targets while running on the GPU
+- Visualize the embeddings in TensorBoard as they are being learned
+
+
 ## Reusing Pretrained Embeddings and Language Models
+
+- Reuse word embeddings from a large text corpus
+- Pretrained models
+	- Word2vec embeddings
+	- GloBVe embeddings
+	- FastText embeddings
+- A word has a single representation
+- Embeddings from Language Models (ELMo)
+	- Contextualized word embeddings learned from the internal states of a deep bidirectional language model
+
+```python
+import os
+import tensorflow_hub as hub
+
+os.environ["TFHUB_CACHE_DIR"] = "my_tfhub_cache"
+model = tf.keras.Sequential([
+	hub.KerasLayer("https://tfhub.dev/google/universal-sentence-encoder/4",
+	trainable=True, dtype=tf.string, input_shape([]),
+	tf.keras.layers.Dense(64, activation="relu"),
+	tf.keras.layers.Dense(1, activation="sigmoid")
+])
+modle.compile(loss="binary_crossentropy", optimizer="nadam",
+				metrics=["accuracy"])
+model.fit(train_set, validation_data=valid_set, epochs=1)
+```
+
+- By default TensorFlow Hub modules are saved to a temporary directory
+- Downloaded every time it is run
 
 # An Encoder-Decoder Network for Neural Machine Translation
 
