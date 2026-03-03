@@ -459,19 +459,147 @@ for step_ahead in range(14):
 ```
 
 - Take the rail ridership of the first 56 days of the validation period, and convert the data to a numpy array
-- Repeatidely use the model to f
-
+- Repeatedly use the model to forecast the next value, and append each forecast to the input series, along the same time axis
+- Errors accumulate
 
 <img src="/images/Pasted image 20260204110632.png" alt="image" width="500">
 
+- Predict the next batch of value in one shot
+- Use a sequence-to-vector mode, to output 14 values instead of 1
+- Change the targets to be vectors containing the next 14 values
+	- `timeseries_dataset_from_array()`
+- Create datasets without targets and with longer sequences
+- Map a custom function to each batch of sequence, splitting them input inputs and targets
+
+```python
+def split_inputs_and_targets(mulvar_series, ahead=14, target_col=1):
+	return mulvar_series[:, :-ahead], mulvar_series[:, -ahead:, target_col]
+	
+ahead_train_ds = tf.keras.utils.timeseries_dataset_from_array(
+	mulvar_train.to_numpy(),
+	targets=None,
+	sequence_length=seq_length + 14,
+	[...]
+).map(split_inputs_and_targets)
+ahead_valid_ds = tf.keras.utils.timeseries_dataset_from_array(
+	mulvar_valid.to_numpy(),
+	targets=None,
+	sequence_length=seq_length + 14,
+	batch_size=32
+).map(split_inputs_and_targets)
+
+# output layer to have 14 units instead of 1
+ahead_model = tf.keras.Sequential([
+	tf.keras.SimpleRNN(32, input_shape=[None, 5]),
+	tf.keras.layers.Dense(14)
+])
+
+# predict the next 14 values
+X = mulvar_valid-=.to_numpy()[np.newaxis, :seq_length]
+Y_pred = ahead_model.predict(X)
+```
+
+- This approach does not accumulate errors
+- A better model is sequence-to-sequence (seq2seq)
+
 ## Forecasting Using a Sequence to Sequence Model
 
+- Change sequence-to-vector RNN into sequence-to-sequence
+	- Predict the next 4 values at each and every time step
+	- The loss will contain a term for the output of the RNN at each and every time step, not just for the output at the last step
+	- More error gradients flowing through the model
+- Helps stabilize and speed up training
+- The targets are sequences of consecutive windows, shifted by one time steps each time step
+- Use `to_windows()` to get windows of consecutive windows
+
+```python
+my_series = tf.data.Dataset.range(7)
+dataset = to_windows(to_windows(my_series, 3), 4)
+list(dataset)
+[<tf.Tensor: shape=(4, 3), dtype=int64, numpy=
+ array([[0, 1, 2],
+        [1, 2, 3],
+        [2, 3, 4],
+        [3, 4, 5]])>,
+ <tf.Tensor: shape=(4, 3), dtype=int64, numpy=
+ array([[1, 2, 3],
+        [2, 3, 4],
+        [3, 4, 5],
+        [4, 5, 6]])>]
+        
+# split windows into inputs and targets
+dataset = dataset.map(lambda S: (S[:, 0], S[:, 1:]))
+list(dataset)
+[(<tf.Tensor: shape=(4,), dtype=int64, numpy=array([0, 1, 2, 3])>,
+  <tf.Tensor: shape=(4, 2), dtype=int64, numpy=
+  array([[1, 2],
+         [2, 3],
+         [3, 4],
+         [4, 5]])>),
+ (<tf.Tensor: shape=(4,), dtype=int64, numpy=array([1, 2, 3, 4])>,
+  <tf.Tensor: shape=(4, 2), dtype=int64, numpy=
+  array([[2, 3],
+         [3, 4],
+         [4, 5],
+         [5, 6]])>)]
+```
+
+Input => `[0, 1, 2, 3]`
+Targets => `[[1, 2], [2, 3], [3, 4], [4, 5]]`
+
+- Targets contain values that appear in the inputs
+- At each time step, an RNN only known about past time (causal model)
+
+```python
+# shuffling and batching
+def to_seq2seq_dataset(series, seq_length=56, ahead=14, target_col=1,
+			batch_size=32, shuffle=False, seed=None):
+	ds = to_windows(tf.data.Dataset.from_tensor_slices(series), ahead + 1)
+	ds = to_windows(ds, seq_length).map(
+		lambda S: (S[:, 0], S[:, 1:, target_col]))
+	if shuffle:
+		ds = ds.shuffle(8 * batch_size, seed=seed)
+	return ds.batch(batch_size)
+	
+# create datasets
+seq2seq_train = to_seq2seq_dataset(mulvar_train, shuffle=True, seed=42)
+seq2seq_valid = t0_seq2seq_dataset(mulvar_valid)
+
+# build tne seq2seq model
+seq2seq_model = tf.keras.Sequential([
+	tf.keras.layers.SimpleRNN(32, return_sequence=True, input_shape=[None, 5]),
+	tf.keras.layers.Dense(14)
+])
+
+# forecast the next 14 days
+X = mulvar_valid.to_numpy()[np.newaxis, :seq_length]
+y_pred_14 = seq2seq_model.predict(X)[0, -1]
+```
+
+- During training, the model's outputs are used, but after training only the output of the last time step matters, and the rest is ignored
+- Combine forecasting multiple steps ahead, then take its output and append it to the inputs, then rule the model again
 
 # Handling Long Sequences
+
+- To train an RNN on long sequence, iterative over many steps
+- Suffers from unstable gradients
+- Forgets the first inputs in the sequence
+
+## Fighting the Unstable Gradients Problem
+
+- Mitigate unstable gradients
+	- Good parameter initialization
+	- Faster optimizers
+	- Dropout
+- Non-saturating activation functions may not help as much here
+	- Smaller learning rate
+	- Saturating activation function
+		- Hyperbolic tangent
+	- Gradient clipping
+- 
 
 <img src="/images/Pasted image 20260204110649.png" alt="image" width="500">
 
 <img src="/images/Pasted image 20260204110704.png" alt="image" width="500">
 
-## Fighting the Unstable Gradients Problem
 ## Tackling the Short-Term Memory Problem
