@@ -379,12 +379,160 @@ model.fit(train_set, validation_data=valid_set, epochs=1)
 ![[Pasted image 20260303112012.png]]
 
 
+```python
+# download dataset
+url = "https://storage.googleapis.com/download.tensorflow.org/data/spa-eng.zip"
+path = tf.keras.utils.get_file("spa-eng.zip", origin=url, cache_dir="datasets",
+                               extract=True)
+text = (Path(path).with_name("spa-eng") / "spa.txt").read_text()
 
+# each lines contains a Eng, and Spa translation separated by a tabe
+# remove spanish characters, and parse the sentence pairs, and shuffle
+import numpy as np
+text = text.replace("¡", "").replace("¿", "")
+pairs = [line.split("\t") for ilne in text.splitlines()]
+np.random.shuffle(pairs)
+sentences_en, sentences_es = zip(*pairs)
 
+for i in range(3):
+	print(sentences_en[i], "=>", sentences_es[i])
+How boring! => Qué aburrimiento!
+I love sports. => Adoro el deporte.
+Would you like to swap jobs? => Te gustaría que intercambiemos los trabajos?
+
+# create two text vec layers (one per langauge)
+vocab_size = 1000
+max_length = 50
+text_vec_layer_en = tf.keras.layers.TextVectorization(
+	vocab_size, output_sequence_length=max_length)
+text_vec_layer_es = tf.keras.layers.TextVectorization(
+	vocab_size, output_sequence_length=max_length)
+text_vec_layer_en.adapt(sentences_en)
+text_vec_layer_es.adapt([f"startofseq {S} endofseq"] for s in sequences_es)
+```
+
+- Input sequence will be passed with zeros to reach 50 tokens long
+- Longer sequences will be cropped to 50
+- The added strings are SOS and EOS tokens
+
+```python
+>>> text_vec_layer_en.get_vocabulary()[:10]
+['', '[UNK]', 'the', 'i', 'to', 'you', 'tom', 'a', 'is', 'he']
+>>> text_vec_layer_es.get_vocabulary()[:10]
+['', '[UNK]', 'startofseq', 'endofseq', 'de', 'que', 'a', 'no', 'tom', 'la']
+
+# train and valid set
+X_train = tf.constant(sentences_en[:100_000])
+X_valid = tf.constant(sentences_en[100_000:])
+X_train_dec = tf.constant([f"startofseq {s}" for s in sentences_es[:100_000]])
+X_valid_dec = tf.constant([f"startofseq {s}" for s in sentences_es[100_000:]])
+Y_train = text_vec_layer_es([f"{s} endofseq" for s in sentences_es[:100_000]])
+Y_valid = text_vec_layer_es([f"{s} endofseq" for s in sentences_es[100_000:]])
+
+# build model
+encoder_inputs = tf.keras.layers.Input(shape=[], dtype=tf.string)
+decoder_inputs = tf.keras.layers.Input(shape=[], dtype=tf.string)
+
+# encode sentences
+embed_size = 128
+encoder_input_ids = text_vec_layer_en(encoder_inputs)
+decoder_input_ids = text_vec_layer_es(decoder_inputs)
+encoder_embedding_layer = tf.keras.layers.Embedding(vocab_size, embed_size,
+			mask_zero=True)
+decoder_embedding_layer = tf.keras.layers.Embedding(vocab_size, embed_size,
+			mask_zero=True)
+encoder_embeddings = encoder_embeddings_layer(encoder_input_ids)
+decoder_embeddings = decoder_embeddings_layer(decoder_input_ids)
+
+# create the encoder and pass embedded inputs
+encoder = tf.keras.layers.LSTM(512, return_state=True)
+encoder_outputs, *encoder_state = encoder(encoder_embeddings)
+
+# Use double state from LSTM layer as the initial state of the decoder
+decoder = tf.keras.layers.LSTM(512, return_sequences=True)
+decoder_outputs = decoder(decoder_embeddings, initial_state=encoder_state)
+
+# pass decoder's outputs through a Dense layer with softmax act. fn. to get proba
+output_layer = tf.keras.layers.Dense(vocab_size, activation="softmax")
+Y_proba = output_layer(decoder_outputs)
+```
+
+- Sampled softmax
+	- Look only at the logits output by the model for the correct word and for a random sample of incorrect words, then compute an approximation of the loss based on these logits
+- Tie the weights of the output layer to the transpose of the decoder's embedding matrix
+	- Reduces the model parameters
+	- Orthogonal matrix
+
+```python
+model = tf.keras.Model(inputs=[encoder_inputs, decoder_inputs],
+			outputs=[Y_proba])
+model.compile(loss="sparse_categorical_crossentropy", optimizer="nadam",
+			metrics=["accuracy"])
+model.fit((X_train, X_train_dec), y_train, epochs=10,
+			validation_data=((X_valid, X_valid_dec), Y_valid))
+```
+- After training, the decoder expects the input to be the word that was predicted at the previous time step
+	- Autoregressive models
+- Write a custom memory call that keeps track of the previous output and feeds it to the next encoder
+
+```python
+def translate(sentence_en):
+	translation = ""
+	for word_idx in range(max_length):
+		X = np.array([sentence_en])
+		X_dec = np.array(["startofseq " + translation])
+		y_proba = model.predict((X, X_dec))[0, word_idx]
+		predicted_word_id = np.argmax(y_proba)
+		predicted_word = text_vec_layer_es.get_vocabulary()[predicted_word_id]
+		if predicted_word == "endofseq":
+			break
+		translation += " " + predicted_word
+	return translation .strip()
+	
+>>> translate("I like soccer")
+'me gusta el fútbol'
+>>> translate("I like soccer and also going to the beach")
+'me gusta el fútbol y a veces mismo al bus'
+```
+
+- To increase the training set size add more `LSTM` layers to both the encoder and decoder
 
 ## Bidirectional RNNs
 
+- Causal (cannot look into the future)
+	- At each time step, a regular recurrent layer only look as past and present inputs before generating its output
+		- Seq2seq in decoder
+		- Forecasting
+- For classification tasks it is preferable to look ahead at the next words before encoding a word
+	- Seq2seq in encoder
+- Bidirectional recurrent layer
+	- Run 2 recurrent layers on the same inputs, one reading the words from left, and other from right
+
+![[Pasted image 20260303114540.png]]
+
+- Wrap a recurrent layer
+
+```python
+encoder = tf.keras.layers.Bidirectional(
+	tf.keras.layers.LSTM(256, return_state=True))
+```
+- Bidirectional layer will create a clone of the `LSTM` layer (but in the reverse direction)
+- Run both and concatenate their outputs
+- This layer will return 4 states instead of 2
+	- The final short-term and long-term (forward, and backward)
+	- Decoder takes 2 states (short and long-term)
+		- Decoder is unidirectional
+
+```python
+# concat. the short and long terms states
+encoder_outputs, *encoder_state = encoder(encoder_embeddings)
+encoder_state = [tf.concat(encoder_state[::2], axis=-1)],
+				tf.concat(encoder_state[1::2], axis=-1)
+```
+
 ## Beam Search
+
+
 # Attention Mechanisms
 
 ## Attention Is All You Need: The Original Transformer Architecture
