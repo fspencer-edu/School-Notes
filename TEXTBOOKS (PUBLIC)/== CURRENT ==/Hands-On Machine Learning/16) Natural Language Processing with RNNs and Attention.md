@@ -200,11 +200,94 @@ def to_dataset_for_stateful_rnn(sequence, length):
 stateful_train_set = to_dataset_for_stateful_rnn(encoded[:1_000_000], length)
 stateful_valid_set = to_dataset_for_stateful_rnn(encoded[1_000_000:1_060_000],
                                                  length)
-statefule_test_set = to_datas
+statefule_test_set = to_dataset_for_stateful_rnn(encoded[1_060_000:], length)
 ```
 
+![[Pasted image 20260303082855.png]]
+
+```python
+model = tf.keras.Sequential([
+	tf.keras.layers.Embedding(input_dim=n_tokens, output_dim=16,
+				batch_input_shape=[1, None]),
+	tf.keras.layers.GRU(128, return_sequences=True, stateful=True),
+	tf.keras.layers.Dense(n_tokens, activation="softmax")
+])
+
+# reset the state, at the end of each epoch
+class ResetStatesCallback(tf.keras.callbacks.Callback):
+	def on_epoch_begin(self, epoch, log):
+		self.model.reset_states()
+		
+# compoile and train model
+model.compile(loss="sparse_categorical_crossentropy", optimizer="nadam",
+				metrics=["accuracy"])
+history = model.fit(stateful_train_set, validation_data=stateful_valid_set,
+			epochs=10, callbacks=[ResetStatesCallback(), model_ckpt])
+```
+
+- The model can make predictions for batches of the same size during training
+- Create an identical stateless model, and copy the stateful model's weights to this model
+
+- Sentiment neuron
 
 # Sentiment Analysis
+
+```python
+import tensorflow_datasets as tfds
+
+raw_train_set, raw_valid_set, raw_test_test = tfds.load(
+	name="imdb_reviews",
+	split=["train[:90%]", "train[90%:]", "test"],
+	as_superivsed=True
+)
+tf.random.set_seed(42)
+train_set = raw_train_set.shuffle(5000, seed=42).batch(32).prefetch(1)
+valid_set = raw_valid_set.batch(32).prefetch(1)
+test_set = raw_test_set.batch(32).prefetch(1)
+
+for review, label in raw_train_set.take(4):
+	print(review.numpy().decode("utf-8"))
+	print("Label:", label.numpy())
+This was an absolutely terrible movie. Don't be lured in by Christopher [...]
+Label: 0
+I have been known to fall asleep during films, but this is usually due to [...]
+Label: 0
+Mann photographs the Alberta Rocky Mountains in a superb fashion, and [...]
+Label: 0
+This is the kind of film for a snowy Sunday afternoon when the rest of the [...]
+Label: 1
+```
+
+- To analyze sentiment, preprocess the text by splitting into words instead of characters
+- Tokenize and detokenize text at the subword level
+- Byte pair encoding (BPE)
+	- Splitting the whole training set into individual characters (including spaces)
+	- Then repeatedly merging the more frequently adjacent pairs until the vocabulary reaches the desired size
+- Subword regularization
+	- Improves accuracy and robustness
+	- Add randomness in tokenization during training
+- For IMDb, use 1000 tokens with 998 more frequent words plus a padding token and a token for unknown words
+
+```python
+vocab_size =1000
+text_vec_layer = tf.keras.layers.TextVectorization(max_tokens=vocab_size)
+text_vec_layer.adapt(train_set.map(lambda reviews, lambdas: reviews))
+
+# create and train model
+embed_size = 128
+tf.random.set_seed(42)
+model = tf.keras.Sequential([
+	text_vec_layer,
+	tf.keras.layers.Embedding(vocab_size, embed_size),
+	tf.keras.layers.FRU(128),
+	tf.keras.layers.Dense(1, activation="sigmoid")
+])
+modile.compile(loss="binary_crossentropy", optimizer="nadam"),
+			metrics=["accuracy"]
+history = model.fit(train_set, validation_data=valid_set, epochs=2)
+```
+
+- 
 
 ## Masking
 
