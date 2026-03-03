@@ -18,16 +18,191 @@
 
 # Generating Shakespearean Text Using a Character RNN
 
-- 
-
-
 ## Creating the Training Dataset
+
+```python
+import tensorflow as tf
+
+shakespeare_url = "https://homl.info/shakespeare" 
+filepath = tf.keras.utils.get_file("shakespeare.txt", shakespear_url)
+with open(filepath) as f:
+	shakespeare_text = f.read()
+	
+print(shakespeare_text[:80])
+First Citizen:
+Before we proceed any further, hear me speak.
+
+All:
+Speak, speak.
+```
+
+- Use `TextVectorization` layer to encode this text
+- Split to character-level encoding, and use lower case letters
+
+```python
+text_vec_layer = tf.keras.layers.TextVectorization(split="character", standardize="lower")
+text_vec_layer.adapt([shakespeare_text])
+encoded = text_vec_layer([shakespeare_text])[0]
+```
+0 => padding tokens
+1 => unknown characters
+
+```python
+encoded -= 2
+n_tokens = text_vec_layer.vocabulary_size() - 2
+dataset_size = len(encoded) # chars = 1,115,394
+```
+
+- Convert this long sequence into a dataset of windows that we can use to train a sequence-to-sequence RNN
+
+```python
+def to_dataset(sequence, length, shuffle=False, seed=None, batch_size=32):
+	ds = tf.data.Dataset.from_tensor_slices(sequences)
+	ds = ds.window(length + 1, shift=1, drop_remainder=True)
+	ds. = ds.flat_map(lambda window_ds: window_ds.batch(length + 1))
+	if shuffle:
+		ds = ds.shuffle(buffer_size=100_000, seed=seed)
+	ds = ds.batch(batch_size)
+	return ds.map(lambda window: (window[:, :-1], window[:, 1:])).prefetch(1)
+```
+- Takes a sequence as input, and creates a dataset containing all the window of desired length
+- Increases the length by once
+- Shuffle the windows, batches them, splits then into input/output pairs, and activates prefetching
 
 <img src="/images/Pasted image 20260204110756.png" alt="image" width="500">
 
+```python
+# training, valid, test
+length = 100
+tf.random.set_seed(42)
+train_set = to_dataset(encoded[:1_000_000], length=length, shuffle=True,
+			seed=42)
+valid_set = to_dataset(encoded[1_000_000:1_060_000], length=length)
+test_set = to_dataset(encoded[1_060_000:], length=length)
+```
+
+- Set the window length to 100
+
+
 ## Building and Training the Char-RNN Model
+
+- Build and train a model with one `GRU` layer composed of 128 units
+
+```python
+model = tf.keras.Sequential([
+	tf.keras.layers.Embedding(input_dim=n_tokens, output_dim=16),
+	tf.keras.layers.GRU(128, return_sequences=True),
+	tf.keras.layers.Dense(n_tokens, activation="softmax")
+])
+model.compiile(loss="spares_categorical_crossentropy", optimizer="nadam",
+		metrics=["acrruacy"])
+nidek_ckpt = tf.keras.callbacks.ModelCheckpoint(
+	"my_shakespear_model", monitor="val_accuracy", save_best_only=True)
+history = model.fit(train_set, validation_data=valid_set, epochs=10, 
+			callbacks=[model_ckpt])
+```
+
+- Use the `Embedding` layer to encode the character IDs
+	- Input is a 2D tensor `[batch size, window length]`
+	- Output is a 3D tensor `[batch size, window length, embedding size]`
+- Use a `Dense` layer for the output layer with 39 distinct characters in the text
+- Compile the model with cross-entropy loss and a Nadam optimizer
+- Train models for several epochs and save the best model with `ModelCheckpoint`
+
+- Wrap the final model layer, as the first layer plus `Lambda` layer to subtract 2 from the character Ids (remove padding and unknown tokens)
+
+```python
+shakespeare_model = tf.keras.Sequential([
+	text_vec_layer,
+	tf.keras.layers.Lambda(lambda X: X - 2),
+	model
+])
+
+# predict the next char
+y_proba = shakespeare_model.predict(["To be or not to b"])[0, -1]
+y_pred = tf.argmax(y_proba)
+text_vec_layer.get_vocabulary()[y_pred + 2]
+'e'
+```
+
 ## Generating Fake Shakespearean Text
+
+- Greedy decoding
+	- Generate new text using the char-RNN model
+	- Iteratively guess the next letter
+- Instead, sample the next characters randomly, with a probability equal to the estimated probability, using `tf.random.categorical()`
+	- Generate a more diverse and interesting text
+
+```python
+log_probas = tf.math.log([[0.5, 0.4, 0.1]])
+tf.random.set_seed(42)
+tf.random.categorical(log_probas, num_samples=8)
+<tf.Tensor: shape=(1, 8), dtype=int64, numpy=array([[0, 1, 0, 2, 1, 0, 0, 1]])>
+```
+
+- Divide the logits by a number called temperature,
+- A temperature close to zero favours high-probability characters, while a high temperature gives all characters an equal probability
+	- Used for more rigid and precise text (math equations)
+
+```python
+def next_char(text, temperature=1):
+	y_proba = shakespeare_model.predict([text])[0, -1:]
+	rescaled_logits = tf.math.log(y_proba) / temperature
+	char_id = tf.random.categorical(rescaled_logits, num_samples=1)[0, 0]
+	return text_vec_layer.get_vocabulary()[char_id + 2]
+	
+# get the next char and append to the text
+def extend_text(text, n_char=50, temperature=1):
+	for _ in range(n_chars):
+		text += next_char(text, temperature)
+	return text
+	
+# generate text with diff. temperature
+tf.random.set_seed(42)
+print(extend_text("To be or not to be", temperature=0.01))
+To be or not to be the duke
+as it is a proper strange death,
+and the
+
+print(extend_text("To be or not to be", temperature=1))
+To be or not to behold?
+second push:
+gremio, lord all, a sistermen,
+
+print(extend_text("To be or not to be", temperature=100))
+To be or not to bef ,mt'&o3fpadm!$
+wh!nse?bws3est--vgerdjw?c-y-ewznq
+```
+
+- Nucleus sampling
+	- To generate more convincing text, a common technique is to sample only from the top k characters, or from the smallest set of top characters whose total probability exceeds some threshold
+- Beam search
+
+
 ## Stateful RNN
+
+- Stateless RNNs
+	- At each training iteration the model starts with a hidden state full of zeros, then is updates this state at each time step
+- Stateful RNNs
+	- Preserve final state after processing a training batch and use it as the initial state for the next raining batch
+- Use sequential and non-overlapping input sequences
+	- `shift=length`
+	- No shuffle
+- Set a batch size of 1
+
+```python
+def to_dataset_for_stateful_rnn(sequence, length):
+	ds = tf.data.Dataset.from_tensor_slices(sequences)
+	ds = ds.window(length + 1, shift=length, drop_remainder=True)
+	ds = ds.flat_map(lambda window: window.batch(length =1)).batch(1)
+	return ds.map(lamda window: (window[:, :-1], window[:, 1:])).prefetch(1)
+	
+stateful_train_set = to_dataset_for_stateful_rnn(encoded[:1_000_000], length)
+stateful_valid_set = to_dataset_for_stateful_rnn(encoded[1_000_000:1_060_000],
+                                                 length)
+statefule_test_set = to_datas
+```
+
 
 # Sentiment Analysis
 
