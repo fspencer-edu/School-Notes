@@ -1,4 +1,25 @@
+- NLP tasks
+	- Text classification
+	- Translation
+	- Summarization
+	- Question answering
+- Character RNN
+- Stateless RNN
+- Stateful RNN
+- Sentiment analysis
+- Neural machine translation (NMT)
+
+- Attention mechanisms
+- Transformer
+
+- Models
+	- GPT
+	- BERT
+
 # Generating Shakespearean Text Using a Character RNN
+
+- 
+
 
 ## Creating the Training Dataset
 
