@@ -171,12 +171,162 @@ model = tf.keras.Sequential([
 
 ![[Pasted image 20260304131736.png]]
 
-- A good action may be followed by bad a
-
+- A good action may be followed by bad actions, resulting in a good action getting a low return
+- Action advantage
+	- Estimate how much better or worse an action is, compared to the other possible actions
+	- Run many episodes and normalize all the action returns
 
 # Policy Gradients
 
+- PG algorithms optimize the parameters of a policy by following the gradients toward higher rewards
+- REINFORCE
+	- NN policy play the games several times
+		- Computes the gradients that would make the chosen action more likely
+	- Computes each action's advantage
+	- If action is positive, apply gradient, to make more likely in the future
+	- If negative, opposite gradient is applied
+	- Compute the mean of the resulting gradient vectors, and use it ti perform a gradient descent step
+
+```python
+# one episode
+def play_one_step(env, obs, model, loss_fn):
+	with tf.GradientTape() as tape:
+		left_proba = model(obs[np.newaxis])
+		action = (tf.random.uniform([1, 1]) > left_proba)
+		y_target = tf.constant([[1.]]) - tf.cast(action, tf.float32)
+		loss = tf.reduce_mean(loss_fn(y_target, left_proba))
+		
+	grads = tape.gradient(loss, model.trainable_variables)
+	obs, reward, done, truncated, info = env.step(int(action))
+	return obs, reward, done, truncated, grads
+```
+
+- Cal the model with a single observation
+- Sample a random float between 0 and 1, and check if it is greater than `left_proba`
+- Define the target probability of going left
+	- If the action is left, the probability will be 1
+	- If the action is right, the probability will be -
+- Compute the loss, and use the tape to compute the gradient of the loss with regard to the model's trainable variable
+- Play the selection actions, return the new observation, reward, episode ending, truncated, and gradients
+
+```python
+# multiple episodes
+def play_multiple_episodes(env, n_episodes, n_max_steps, model, loss_fn):
+	all_rewards = []
+	all_grads = []
+	for episode in range(n_episodes):
+		current_rewards = []
+		current_grads = []
+		obs, info = env.reset()
+		for step in range(n_max_steps):
+			obs, reward, done, truncated, grads = play_one_step(
+				env, obs, model, loss_fn)
+			current_rewards.append(reward)
+			current_grads.append(grads)
+			if done or truncated:
+				break
+				
+		all_rewards.append(current_rewards)
+		all_grads.append(current_grads)
+	
+	return all_rewards, all_grads
+```
+
+- Returns a list of reward lists and gradient lists per episode
+- The function is play several time, then it will go back and look at all the rewards, discount them, and normalize them
+- Compute the sum of future discounted rewards at each step
+- Normalize discounted rewards (returns)
+
+```python
+def discount_rewards(rewrads, discount_factor):
+	discounted = np.array(rewards)
+	for step in range(len(rewards) - 2, -1, -1):
+		discounted[step] += discounted[step + 1] * discounted_factor
+	return discounted
+	
+def discount_and_normalize_rewards(all_rewards, discount_factor):
+	all_dicounted_rewards = [discount_rewards(rewards, discount_factor)
+		for rewards in all_rewards]
+	flat_rewards = np.concatenate(all_discounted_rewards)
+	reward_mean = flat_rewards.mean()
+	reward_std = flat_rewards.std()
+	return [(discounted_rewards - rewward_mean) / reward_std
+		for discounted_rewards in all_dicounted_rewards]
+		
+discount_rewards([10, 0, -50], discount_factor=0.8)
+array([-22, -40, -50])
+
+discount_and_normalize_rewards([[10, 0, -50], [10, 20]],
+...                                discount_factor=0.8)
+[array([-0.28435071, -0.86597718, -1.18910299]),
+ array([1.26665318, 1.0727777 ])]
+```
+
+- The first episode is worse, then the second
+- Run the algorithm with the hyperparameters
+
+```python
+n_iterations = 150
+n_episodes_per_update = 10
+n_max_steps = 200
+discount_factor = 0.95
+optimizer = tf.keras.optimizers.Nadam(learning_rate=0.01)
+loss_fn = tf.keras.losses.binary_crossentropy
+```
+
+```python
+# build and run training loop
+for iteration in range(n_iteration):
+	all_rewards, add_grads = play_multiple_episodes(
+		env, n_episodes_per_update, n_max_steps, model, loss_fn
+	)
+	all_final_rewards = discount_and_normalize_rewards(all_rewards,
+			discount_factor)
+	all_mean_grads = []
+	for var_index in range(len(model.trainable_variables)):
+		mean_grads = tf.reduce_mean(
+			[final_reward * all_grads[episode_index][step][var_index]
+			for episode_index, final_rewards in enumearte(all_final_rewards)
+				for step, final_reward in enumerate(final_rewards)], axis=0
+		)
+		all_mean_grads.append(mean_grads)
+		
+	optimizer.apply_gradients(zip(all_mean_grads, model.trainable_variables))
+```
+
+- At each training iteration, the loop called `play_multiple_episodes()`
+	- Returns the rewards and gradients for each step
+- Call `discount_and_normalize_rewards()`
+	- Compute each action's normalized advantage
+- go through each trainable variable and compute the weighted mean of the gradients for that variable over all episodes and steps
+- Apply the mean gradients using the optimizer
+	- The model's trainable variables are tweaked
+
+- This code will train the NN policy, and will learn to balance the pole on the cart
+- Mean reward is 200 per episode (close to max)
+- Sample inefficient
+	- Needs to explore the game for a long time to make progress
+- Actor-critic
+	- Class of RL that combine policy-based and value-based approaches
+
 # Markov Decision Processes
+
+- Markov chains
+	- Stochastic processes with no memory
+	- Fixed number of states
+	- Randomly evolved from one state to another
+	- Depends only on the pair, not on past states
+
+![[Pasted image 20260304134517.png]]
+
+- Start in state $s_0$, there is a 70% chance that is will remain in that state at the next step
+- If it does to state $s_1$, it will then most likely go to state $s_2$ (90%), then back to $s_1$
+- Fall into state $s_4$ and remain there forever (terminal state)
+
+- At each step, an agent can choose one of several possible actions, and the transition probabilities depend on the chosen action
+- Some state transitions return reward
+- Agent's goal is to find a policy to maximize reward over time
+- 
 
 # Temporal Difference Learning
 
