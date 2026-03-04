@@ -1,5 +1,5 @@
 
-![[Pasted image 20260304084619.png]]
+<img src="/images/Pasted image 20260304084619.png" alt="image" width="500">
 
 1) Introduction
 2) Statistical Learning

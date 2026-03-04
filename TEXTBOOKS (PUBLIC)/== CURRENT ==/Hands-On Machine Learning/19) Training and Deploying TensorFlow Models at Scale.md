@@ -22,7 +22,7 @@
 - Writing in C++
 - Sustain a high load, serve multiple version, and watch a model repository to automatically deploy version
 
-![[Pasted image 20260304161908.png]]
+<img src="/images/Pasted image 20260304161908.png" alt="image" width="500">
 
 
 ### Exporing SavedModels
@@ -284,7 +284,7 @@ Unloading servable version {name: my_mnist_model version: 1}
 	- XGBoost
 	- AWS SageMaker and Microsoft AI Platform
 
-![[Pasted image 20260304165237.png]]
+<img src="/images/Pasted image 20260304165237.png" alt="image" width="500">
 
 
 ## Creating a Prediction Service on Vertex AI
@@ -510,7 +510,7 @@ with open("my_converted_savedmodel.tflite", "wb") as f:
 	- Quantizes the weights after training
 	- Finds max absolute weight value, m, then maps the floating-point range -m to +m to the fixed point (integer)
 
-![[Pasted image 20260304172312.png]]
+<img src="/images/Pasted image 20260304172312.png" alt="image" width="500">
 
 ```python
 converter.optimizations = [tf.lite.Optimize.DEFAULT]
@@ -563,7 +563,7 @@ mobilenet.load().then(model => {
 	- Sophisticated optimizers
 - Training a  large NN on a single machine is computationally expensive
 
-![[Pasted image 20260304174043.png]]
+<img src="/images/Pasted image 20260304174043.png" alt="image" width="500">
 
 
 ## Getting Your Own GPU
@@ -583,12 +583,12 @@ mobilenet.load().then(model => {
 			- Forward and backward convolutions
 			- Pooling
 
-![[Pasted image 20260304174343.png]]
+<img src="/images/Pasted image 20260304174343.png" alt="image" width="500">
 
 - `nvidia-smi`
 	- Checks that drivers and libraries are installed
 
-![[Pasted image 20260304174435.png]]
+<img src="/images/Pasted image 20260304174435.png" alt="image" width="500">
 
 ```python
 physical_gpus = tf.config.list_physical_device("GPU")
@@ -610,7 +610,7 @@ $ CUDA_DEVICE_ORDER=PCI_BUS_ID CUDA_VISIBLE_DEVICES=0,1 python3 program_1.py
 $ CUDA_DEVICE_ORDER=PCI_BUS_ID CUDA_VISIBLE_DEVICES=3,2 python3 program_2.py
 ```
 
-![[Pasted image 20260304174634.png]]
+<img src="/images/Pasted image 20260304174634.png" alt="image" width="500">
 
 - Tell TF to use a specific amount of GPU RAM
 	- Logical GPU device (virtual GPU device) for each physical GPU device and set the memory to 2 GiB
@@ -622,7 +622,7 @@ for gpu in physical_gpus:
         [tf.config.LogicalDeviceConfiguration(memory_limit=2048)]
     )
 ```
-![[Pasted image 20260304174752.png]]
+<img src="/images/Pasted image 20260304174752.png" alt="image" width="500">
 
 - Another option is to tell TF to grab memory only when needed
 
@@ -689,7 +689,7 @@ tf.config.set_logical_device_configuration(
 - Once the dependency counter reaches zero, it is pushed to the evaluation queue of its device
 - Returned when computed
 
-![[Pasted image 20260304175441.png]]
+<img src="/images/Pasted image 20260304175441.png" alt="image" width="500">
 
 - Operations in the CPU's evaluation queue are dispatches to a thread pool called the inter-op thread pool
 	- If there are multiple cores, then operations are parallel
@@ -730,18 +730,18 @@ tf.config.set_logical_device_configuration(
 - Slice the model vertically
 	- But this requires cross-device communication
 
-![[Pasted image 20260304180258.png]]
+<img src="/images/Pasted image 20260304180258.png" alt="image" width="500">
 
 - Some NN architectures, such as convolutional NN, contain layers that are only partially connected to the lower layers, so it is easier to chunk
 
-![[Pasted image 20260304180334.png]]
+<img src="/images/Pasted image 20260304180334.png" alt="image" width="500">
 
 - Deep recurrent NN can be split more efficiently
 - Split horizontally by placing each layer on a different device, and feed the network with an input sequence to process, then at the first time step only one device will be active
 - At the second step two will be active, and the signal propagates to the output layer
 - All devices are active simultaneously
 
-![[Pasted image 20260304180454.png]]
+<img src="/images/Pasted image 20260304180454.png" alt="image" width="500">
 
 - Model parallelism may speed up running or training some types of NN, but not al
 
@@ -759,7 +759,7 @@ tf.config.set_logical_device_configuration(
 - AllReduce algorithm
 	- Multiple nodes collaborate to efficiently perform a reduce operation, while ensuring all nodes obtain the same final result
 
-![[Pasted image 20260304180906.png]]
+<img src="/images/Pasted image 20260304180906.png" alt="image" width="500">
 
 
 ### Data Parallelism with Centralized Parameters
@@ -768,7 +768,7 @@ tf.config.set_logical_device_configuration(
 - Place all the parameters on one or more CPU-only servers called parameter services, who host and update the parameters
 	- Allows synchronous or asynchronous updates
 
-![[Pasted image 20260304181007.png]]
+<img src="/images/Pasted image 20260304181007.png" alt="image" width="500">
 
 
 **Synchronous Updates**
@@ -791,7 +791,7 @@ tf.config.set_logical_device_configuration(
 	- Slow down convergence, introducing noise, and wobble effects
 
 
-![[Pasted image 20260304181419.png]]
+<img src="/images/Pasted image 20260304181419.png" alt="image" width="500">
 
 - Reduce state gradients
 	- Reduce the learning rate
@@ -811,27 +811,308 @@ tf.config.set_logical_device_configuration(
 		- Each stage alternates one round of forward and back propagation
 	- Pulls a mini-batch from its input queue, processes it, and sends the output to the next stage's input queue, then pulls one mini-batch of gradients from its gradient queue, back propagates these gradients and updates its model parameters
 
-![[Pasted image 20260304181843.png]]
+<img src="/images/Pasted image 20260304181843.png" alt="image" width="500">
 
 - Mini batch #5
 	- When through stage 1 during forward pass, gradients from #4 have not been back propagated, but in #5 gradients flow back to stage 1
-- Weight stashgin
-	- Each stage saves weights
+- Weight stashing
+	- Each stage saves weights during forward propagation and restores then during backpropagation
+- Pathways
+	- Uses automated model parallelism
+	- Asynchronous gang scheduling
+- Use a few powerful GPUs rather than many weak GPUs
+- Group GPUs on a well interconnected server
+- Drop float precision from 32 to 16 bit
+- When using centralized parameters, shard (split) the parameters across multiple parameter servers
 
 
 ## Training at Scale Using the Distribution Strategies API
 
-- 
+- Distribution strategies API
+- Create a `MirroredStrategy` object
+	- Uses NVIDIA Collective Communications Library (NCCL)
+- Wrap the creation and complication of the model inside that context
 
+```python
+strategy = tf.distribute.MirroredStrategy()
+
+with strategy.scope():
+    model = tf.keras.Sequential([...])  # create a Keras model normally
+    model.compile([...])  # compile the model normally
+
+batch_size = 100  # preferably divisible by the number of replicas
+model.fit(X_train, y_train, epochs=10,
+          validation_data=(X_valid, y_valid), batch_size=batch_size)
+          
+>>> type(model.weights[0])
+tensorflow.python.distribute.values.MirroredVariable
+
+with strategy.scope():
+    model = tf.keras.models.load_model("my_mirrored_model")
+    
+strategy = tf.distribute.MirroredStrategy(devices=["/gpu:0", "/gpu:1"])
+
+strategy = tf.distribute.experimental.CentralStorageStrategy()
+```
+
+- `fit()` will automatically split each training batch across all the replicas
+- Make predictions efficiently
 
 ## Training a Model on a TensorFlow Cluster
 
-- 
+- A TensorFlow cluster is a group of TensorFlow processes running in parallel, on different machines
+	- Each task or TF server has an IP address, port, and a type (role/job)
+		- Worker, chief, ps, evaluator
 
+- Each worker performs computations
+- The chief performs computations, and handles extra work
+	- Writing logs or saving checkpoints
+- A parameter server keeps track of variable values
+	- CPU
+- An evaluator takes care of evaluation
+
+
+- Cluster specification
+	- Define each task's IP address, TCP port, and type
+
+```python
+cluster_spec = {
+    "worker": [
+        "machine-a.example.com:2222",     # /job:worker/task:0
+        "machine-b.example.com:2222"      # /job:worker/task:1
+    ],
+    "ps": ["machine-a.example.com:2221"]  # /job:ps/task:0
+}
+```
+
+- In general, there is a single task per machine
+- Every task in the cluster may communicate with every other task
+	- Configure firewall to authorize all communications between these machines on these ports
+
+
+<img src="/images/Pasted image 20260304182827.png" alt="image" width="500">
+
+- When a task is started, give it a cluster spec, type, and index
+	- `TF_CONFIG` environment variable
+	- JSON dictionary
+	- Define environment variable output of Python
+
+```python
+os.environ["TF_CONFIG"] = json.dumps({
+    "cluster": cluster_spec,
+    "task": {"type": "worker", "index": 0}
+})
+```
+
+- Train a model on a cluster
+
+```python
+import tempfile
+import tensorflow as tf
+
+strategy = tf.distribute.MultiWorkerMirroredStrategy()  # at the start!
+resolver = tf.distribute.cluster_resolver.TFConfigClusterResolver()
+print(f"Starting task {resolver.task_type} #{resolver.task_id}")
+[...] # load and split the MNIST dataset
+
+with strategy.scope():
+    model = tf.keras.Sequential([...])  # build the Keras model
+    model.compile([...])  # compile the model
+
+model.fit(X_train, y_train, validation_data=(X_valid, y_valid), epochs=10)
+
+if resolver.task_id == 0:  # the chief saves the model to the right location
+    model.save("my_mnist_multiworker_model", save_format="tf")
+else:
+    tmpdir = tempfile.mkdtemp()  # other workers save to a temporary directory
+    model.save(tmpdir, save_format="tf")
+    tf.io.gfile.rmtree(tmpdir)  # and we can delete this directory at the end!
+```
+- Start the script on the first workers
+- 2 All Reduce implementations
+	- A ring AllReduce algorithm based on gRPC for network communications
+	- NCLL's implementation
+
+```python
+strategy = tf.distribute.MultiWorkerMirroredStrategy(
+    communication_options=tf.distribute.experimental.CommunicationOptions(
+        implementation=tf.distribute.experimental.CollectiveCommunication.NCCL))
+        
+resolver = tf.distribute.cluster_resolver.TPUClusterResolver()
+tf.tpu.experimental.initialize_tpu_system(resolver)
+strategy = tf.distribute.experimental.TPUStrategy(resolver)
+```
 ## Running Larger Training Jobs on Vertex AI
 
-- 
+- Vertex AI allows you to create custom training jobs with your own training code
+- Change where the chief should save the model, checkpoints, and logs
+- Save to GCS, instead of local directory
+	- `AIP_MODEL_DIR`
+
+```python
+import os
+[...]  # other imports, create MultiWorkerMirroredStrategy, and resolver
+
+if resolver.task_type == "chief":
+    model_dir = os.getenv("AIP_MODEL_DIR")  # paths provided by Vertex AI
+    tensorboard_log_dir = os.getenv("AIP_TENSORBOARD_LOG_DIR")
+    checkpoint_dir = os.getenv("AIP_CHECKPOINT_DIR")
+else:
+    tmp_dir = Path(tempfile.mkdtemp())  # other workers use temporary dirs
+    model_dir = tmp_dir / "model"
+    tensorboard_log_dir = tmp_dir / "logs"
+    checkpoint_dir = tmp_dir / "ckpt"
+
+callbacks = [tf.keras.callbacks.TensorBoard(tensorboard_log_dir),
+             tf.keras.callbacks.ModelCheckpoint(checkpoint_dir)]
+[...]  # build and  compile using the strategy scope, just like earlier
+model.fit(X_train, y_train, validation_data=(X_valid, y_valid), epochs=10,
+          callbacks=callbacks)
+model.save(model_dir, save_format="tf")
+```
+
+- Create a custom training job on Vertex AI, based on this script
+- Specify job name, path, Docker image, predictions, additional Python libraries, and bucket used for staging
+
+```python
+custom_training_job = aiplatform.CustomTrainingJob(
+    display_name="my_custom_training_job",
+    script_path="my_vertex_ai_training_task.py",
+    container_uri="gcr.io/cloud-aiplatform/training/tf-gpu.2-4:latest",
+    model_serving_container_image_uri=server_image,
+    requirements=["gcsfs==2022.3.0"],  # not needed, this is just an example
+    staging_bucket=f"gs://{bucket_name}/staging"
+)
+
+# 2 workers
+mnist_model2 = custom_training_job.run(
+    machine_type="n1-standard-4",
+    replica_count=2,
+    accelerator_type="NVIDIA_TESLA_K80",
+    accelerator_count=2,
+)
+```
+
+- Vertex AI will return the training script and the trained model
+- Deploy is to an endpoint, or use it to make batch predictions
+
 
 ## Hyperparameter Tuning on Vertex AI
 
-- 
+- Vertex AI's hyperparameter tuning service is based on a Bayesian optimization algorithm
+	- Find optimal combinations of hyperparameters
+
+```python
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("--n_hidden", type=int, default=2)
+parser.add_argument("--n_neurons", type=int, default=256)
+parser.add_argument("--learning_rate", type=float, default=1e-2)
+parser.add_argument("--optimizer", default="adam")
+args = parser.parse_args()
+```
+- Hyperparameters call the script multiple times, with different hyperparameter values
+	- Each run is called a trial, and the set of trials is called a study
+- Training script uses the HP to build and compile a model
+- Use mirrored distribution, if needed
+
+
+```python
+import tensorflow as tf
+
+def build_model(args):
+    with tf.distribute.MirroredStrategy().scope():
+        model = tf.keras.Sequential()
+        model.add(tf.keras.layers.Flatten(input_shape=[28, 28], dtype=tf.uint8))
+        for _ in range(args.n_hidden):
+            model.add(tf.keras.layers.Dense(args.n_neurons, activation="relu"))
+        model.add(tf.keras.layers.Dense(10, activation="softmax"))
+        opt = tf.keras.optimizers.get(args.optimizer)
+        opt.learning_rate = args.learning_rate
+        model.compile(loss="sparse_categorical_crossentropy", optimizer=opt,
+                      metrics=["accuracy"])
+        return model
+
+[...]  # load the dataset
+model = build_model(args)
+history = model.fit([...])
+```
+
+- Script reports the model's performance back to HP
+
+```python
+import hypertune
+
+hypertune = hypertune.HyperTune()
+hypertune.report_hyperparameter_tuning_metric(
+    hyperparameter_metric_tag="accuracy",  # name of the reported metric
+    metric_value=max(history.history["val_accuracy"]),  # metric value
+    global_step=model.optimizer.iterations.numpy(),
+)
+
+# define a custom job
+trial_job = aiplatform.CustomJob.from_local_script(
+    display_name="my_search_trial_job",
+    script_path="my_vertex_ai_trial.py",  # path to your training script
+    container_uri="gcr.io/cloud-aiplatform/training/tf-gpu.2-4:latest",
+    staging_bucket=f"gs://{bucket_name}/staging",
+    accelerator_type="NVIDIA_TESLA_K80",
+    accelerator_count=2,  # in this example, each trial will have 2 GPUs
+)
+
+# create and run HP tuning job
+from google.cloud.aiplatform import hyperparameter_tuning as hpt
+
+hp_job = aiplatform.HyperparameterTuningJob(
+    display_name="my_hp_search_job",
+    custom_job=trial_job,
+    metric_spec={"accuracy": "maximize"},
+    parameter_spec={
+        "learning_rate": hpt.DoubleParameterSpec(min=1e-3, max=10, scale="log"),
+        "n_neurons": hpt.IntegerParameterSpec(min=1, max=300, scale="linear"),
+        "n_hidden": hpt.IntegerParameterSpec(min=1, max=10, scale="linear"),
+        "optimizer": hpt.CategoricalParameterSpec(["sgd", "adam"]),
+    },
+    max_trial_count=100,
+    parallel_trial_count=20,
+)
+hp_job.run()
+```
+
+- We tall Vertex AI to max. the metric "accuracy"
+- Define the search space, using a log scale for the learning rate and a linear scale for other hyperparameters
+- Max trials to 100
+- Max trials running in parallel is 20
+
+- Fetch the trail results
+- Each trial result is represented as a protobuf objects
+
+```python
+def get_final_metric(trial, metric_id):
+    for metric in trial.final_measurement.metrics:
+        if metric.metric_id == metric_id:
+            return metric.value
+
+trials = hp_job.trials
+trial_accuracies = [get_final_metric(trial, "accuracy") for trial in trials]
+best_trial = trials[np.argmax(trial_accuracies)]
+
+>>> max(trial_accuracies)
+0.977400004863739
+>>> best_trial.id
+'98'
+>>> best_trial.parameters
+[parameter_id: "learning_rate" value { number_value: 0.001 },
+ parameter_id: "n_hidden" value { number_value: 8.0 },
+ parameter_id: "n_neurons" value { number_value: 216.0 },
+ parameter_id: "optimizer" value { string_value: "adam" }
+]
+```
+
+- Get this trial's SavedModel, train it more, deploy it to production
+- Create an AutoML training job, pointing to the dataset and specifying max number of computes hours
+- Keras Tuner
+	- `KERASTUNER_TUNER_ID` = chief
+	- `KERASTUNER_ORACLE_IP`
+	- `KERASTUNER_ORACLE_PORT`

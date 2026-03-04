@@ -42,7 +42,7 @@
 	- Decoder/generative network
 		- Converts the internal representation to the outputs
 
-![[Pasted image 20260304093239.png]]
+<img src="/images/Pasted image 20260304093239.png" alt="image" width="500">
 
 - An autoencoder has the same architecture as a multilayer perceptron (MLP)
 - The outputs are called reconstructions
@@ -78,7 +78,7 @@ codings = encoder.predict(X_train)
 - `X_train` is used as inputs and the target
 - Autoencoder found the best 2D plane to project the data onto
 
-![[Pasted image 20260304093900.png]]
+<img src="/images/Pasted image 20260304093900.png" alt="image" width="500">
 
 
 # Stacked Autoencoders
@@ -133,7 +133,7 @@ plot_reconstruction(stacked_ae)
 plt.show()
 ```
 
-![[Pasted image 20260304094656.png]]
+<img src="/images/Pasted image 20260304094656.png" alt="image" width="500">
 
 ## Visualizing the Fashion MNIST Dataset
 
@@ -153,7 +153,7 @@ plt.scatter(X_valid_2D[:, 0], X_valid_2D[:, 1], c=y_valid, s=10, cmap="tab10")
 plt.show()
 ```
 
-![[Pasted image 20260304094924.png]]
+<img src="/images/Pasted image 20260304094924.png" alt="image" width="500">
 
 - The t-SNE algorithm identified several cluster that match the classes
 
@@ -162,7 +162,7 @@ plt.show()
 
 - With limited labeled training data, a solution is to find a neural network that performs a similar task and reuse its lower layers
 
-![[Pasted image 20260304095102.png]]
+<img src="/images/Pasted image 20260304095102.png" alt="image" width="500">
 
 - Train an autoencoder using all the training data, then reuse its encoder layers to create a new neural network
 
@@ -216,7 +216,7 @@ tied_ae = tf.keras.Sequential([tied_encoder, tied_decoder])
 - Rather than training the whole stacked autoencoder, it is possible to train one shallow autoencoder at a time, then stack all of them into a single stacked autoencoder
 - Greedy layer-wise training
 
-![[Pasted image 20260304095744.png]]
+<img src="/images/Pasted image 20260304095744.png" alt="image" width="500">
 
 - During the first phase of training, the first AE learns to reconstruct the inputs
 - Then the entire training set uses the first autoencoder, and outputs a new training set
@@ -283,11 +283,11 @@ dropout_decoder = tf.keras.Sequential([
 dropout_ae = tf.keras.Sequential([dropout_encoder, dropout_decoder])
 ```
 
-![[Pasted image 20260304100542.png]]
+<img src="/images/Pasted image 20260304100542.png" alt="image" width="500">
 
 - The AU guesses the details that are not in the input
 
-![[Pasted image 20260304100608.png]]
+<img src="/images/Pasted image 20260304100608.png" alt="image" width="500">
 
 # Spares Autoencoders
 
@@ -325,16 +325,16 @@ sparse_11_ae = tf.keras.Sequential([sparse_11_encoder, sparse_11_decoder])
 	- Stronger gradients than the MSSE
 
 
-![[Pasted image 20260304101439.png]]
+<img src="/images/Pasted image 20260304101439.png" alt="image" width="500">
 
 
 - Kullback-Leibler Divergence
 
-![[Pasted image 20260304101457.png]]
+<img src="/images/Pasted image 20260304101457.png" alt="image" width="500">
 
 - KL divergence between the target sparsity $p$ and the actual sparsity $q$
 
-![[Pasted image 20260304101553.png]]
+<img src="/images/Pasted image 20260304101553.png" alt="image" width="500">
 
  - Sum of the losses and add the result to the cost function
 	 - Multiply the sparsity loss by a sparsity weight hyperparameter
@@ -385,7 +385,7 @@ sparse_kl_ae = tf.keras.Sequential([sparse_kl_encoder, sparse_kl_decoder])
 
 - Find a good approximation of the data distribution
 
-![[Pasted image 20260304102451.png]]
+<img src="/images/Pasted image 20260304102451.png" alt="image" width="500">
 
 - Instead of directly producing a coding for a given input, the encoder produces a mean coding, $\micro$, and standard deviation, $\sigma$
 - Coding is then sampled randomly from a Gaussian distribution with mean and std
@@ -400,12 +400,12 @@ sparse_kl_ae = tf.keras.Sequential([sparse_kl_encoder, sparse_kl_decoder])
 
 - Variational autoencoder's latent loss
 
-![[Pasted image 20260304102824.png]]
+<img src="/images/Pasted image 20260304102824.png" alt="image" width="500">
 
 - A common tweak to the variational autoencoder's architecture is to make the encoder output, $\gamma = log(\sigma)^2$
 
 - Variational AE's latent loss
-![[Pasted image 20260304102930.png]]
+<img src="/images/Pasted image 20260304102930.png" alt="image" width="500">
 
 
 ```python
@@ -461,7 +461,7 @@ codings = tf.random.normal(shape=[3 * 7, codings_size])
 images = variational_decoder(codings).numpy()
 ```
 
-![[Pasted image 20260304103830.png]]
+<img src="/images/Pasted image 20260304103830.png" alt="image" width="500">
 
 - Variational AE make is possible to perform semantic interpolation
 	- Instead of interpolating between two images at the pixel level, interpolate at the codings level
@@ -472,7 +472,7 @@ codings[:, 3] = np.linspace(-0.8, 0.8, 7)
 images = variational_decoder(codings).numpy()
 ```
 
-![[Pasted image 20260304104001.png]]
+<img src="/images/Pasted image 20260304104001.png" alt="image" width="500">
 
 # Generative Adversarial Networks
 
@@ -483,7 +483,7 @@ images = variational_decoder(codings).numpy()
 	- Discriminator
 		- Takes a fake or real image from the generator as input, and determines the category
 
-![[Pasted image 20260304104141.png]]
+<img src="/images/Pasted image 20260304104141.png" alt="image" width="500">
 
 - Each iteration has 2 phases
 	- Train the discriminator
@@ -568,7 +568,7 @@ codings = tf.random.normal(shape=[batch_size, codings_size])
 generated_iamges = generator.predict(codings)
 ```
 
-![[Pasted image 20260304105633.png]]
+<img src="/images/Pasted image 20260304105633.png" alt="image" width="500">
 
 ## The Difficulties of Training GANs
 
@@ -627,12 +627,12 @@ X_train_dcgan = X_train.reshape(-1, 28, 28, 1) * 2. - 1.
 - Before training the GAN, rescale the training set to the same range
 - Build the dataset then compile and train this model
 
-![[Pasted image 20260304114923.png]]
+<img src="/images/Pasted image 20260304114923.png" alt="image" width="500">
 
 - Codings that were used to generate the images were averages, and an image was generated based on the resulting mean codings
 - Mean computed in the latent space
 
-![[Pasted image 20260304115059.png]]
+<img src="/images/Pasted image 20260304115059.png" alt="image" width="500">
 
 - Add each image's class as an extra input to both the generator and the discriminator
 	- Conditional GAN (CGAN)
@@ -644,7 +644,7 @@ X_train_dcgan = X_train.reshape(-1, 28, 28, 1) * 2. - 1.
 - Extra layer is added at the end of generator and beginning of discriminator
 - Fade-in/fade-out technique is used when a new convolutional layer is added to the discriminator
 
-![[Pasted image 20260304115328.png]]
+<img src="/images/Pasted image 20260304115328.png" alt="image" width="500">
 
 
 - Other techniques for stable training
@@ -679,7 +679,7 @@ X_train_dcgan = X_train.reshape(-1, 28, 28, 1) * 2. - 1.
 	- Each noise layer is followed by an adaptive instance normalization (AdaIN)
 		- Standardizes each feature map independently, then uses the stuye vector to determine the scale and offset of each feature map
 
-![[Pasted image 20260304120116.png]]
+<img src="/images/Pasted image 20260304120116.png" alt="image" width="500">
 
 - GAN is able to use the provided noise to add the right amount of stochasticity to each part of the image
 - Each noise input consists of a single feature map full of Gaussian noise, which broadcast to all feature map and scaled using learned per-feature scaling factors ("B" boxes)
@@ -707,7 +707,7 @@ DDPM
 
 - Probability distribution q of the forward diffusion process
 
-![[Pasted image 20260304121018.png]]
+<img src="/images/Pasted image 20260304121018.png" alt="image" width="500">
 
 - Shortcut the forward process
 - Sample an image $x_t$ given $x_0$ without computing $x_1, x_2, ...$
@@ -716,15 +716,15 @@ DDPM
 
 - Shortcut for the forward diffusion process
 
-![[Pasted image 20260304121141.png]]
+<img src="/images/Pasted image 20260304121141.png" alt="image" width="500">
 
 - Create many new images, to perform revers process, $x_t$ to $x_t-1$
 
-![[Pasted image 20260304121224.png]]
+<img src="/images/Pasted image 20260304121224.png" alt="image" width="500">
 
 - Variance schedule equations for the forward diffusion process
 
-![[Pasted image 20260304121307.png]]
+<img src="/images/Pasted image 20260304121307.png" alt="image" width="500">
 
 ```python
 def variance_schedule(T, s=0.008, max_beta=0.999):
@@ -788,7 +788,7 @@ history = model.fit(train_set, validation_data=valid_set, epochs=100)
 - Once the model is trained, you it to generated new image
 - Going one step in reverse in the diffusion process
 
-![[Pasted image 20260304122454.png]]
+<img src="/images/Pasted image 20260304122454.png" alt="image" width="500">
 
 ```python
 # reverse process, to generate images
@@ -810,7 +810,7 @@ def generate(model, batch_size=32):
 X_gen = generate(model)
 ```
 
-![[Pasted image 20260304122731.png]]
+<img src="/images/Pasted image 20260304122731.png" alt="image" width="500">
 
 - Latent diffusion models
 	- Diffusion process takes place in latent space, rather than pixel space

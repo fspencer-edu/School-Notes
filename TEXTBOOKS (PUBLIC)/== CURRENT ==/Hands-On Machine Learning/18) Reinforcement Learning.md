@@ -12,7 +12,7 @@
 - The algorithm a software agents uses to determined its actions is called its policy
 - The policy cloud be a NN taking observations as inputs and outputting the action to take
 
-![[Pasted image 20260304125317.png]]
+<img src="/images/Pasted image 20260304125317.png" alt="image" width="500">
 
 - Policy does not have to be deterministic
 - Stochastic policy
@@ -28,7 +28,7 @@
 	- Makes the 20 survivors produce offspring
 	- Continue iterating through generations until a good policy is reached
 
-![[Pasted image 20260304125601.png]]
+<img src="/images/Pasted image 20260304125601.png" alt="image" width="500">
 
 
 - Policy gradients (PC)
@@ -57,7 +57,7 @@ import gym
 env = gym.make("CartPole-v1", render_mode="rgb_array")
 ```
 
-![[Pasted image 20260304130051.png]]
+<img src="/images/Pasted image 20260304130051.png" alt="image" width="500">
 
 - After the environment is created, initialize it using it using `reset()`
 - Observations depend on the type of environment
@@ -139,7 +139,7 @@ import numpy as np
 	- Take an observation as input, and then output the action to be executed
 	- Estimate a probability for each action, and select an action randomly
 
-![[Pasted image 20260304130958.png]]
+<img src="/images/Pasted image 20260304130958.png" alt="image" width="500">
 
 - Choosing random action, instead of the highest score lets the agent find the right balance between exploring new actions and exploiting the actions that are known to work well
 - Exploration/exploitation dilemma
@@ -169,7 +169,7 @@ model = tf.keras.Sequential([
 		- $\gamma$ = 0 => future rewards don't count for much compared to immediate rewards
 		- $\gamma$ = 1 => future rewards count for more compared to immediate rewards
 
-![[Pasted image 20260304131736.png]]
+<img src="/images/Pasted image 20260304131736.png" alt="image" width="500">
 
 - A good action may be followed by bad actions, resulting in a good action getting a low return
 - Action advantage
@@ -317,7 +317,7 @@ for iteration in range(n_iteration):
 	- Randomly evolved from one state to another
 	- Depends only on the pair, not on past states
 
-![[Pasted image 20260304134517.png]]
+<img src="/images/Pasted image 20260304134517.png" alt="image" width="500">
 
 - Start in state $s_0$, there is a 70% chance that is will remain in that state at the next step
 - If it does to state $s_1$, it will then most likely go to state $s_2$ (90%), then back to $s_1$
@@ -327,7 +327,7 @@ for iteration in range(n_iteration):
 - Some state transitions return reward
 - Agent's goal is to find a policy to maximize reward over time
 
-![[Pasted image 20260304134752.png]]
+<img src="/images/Pasted image 20260304134752.png" alt="image" width="500">
 
 Circles => States
 Diamonds => Discrete actions
@@ -344,7 +344,7 @@ Diamonds => Discrete actions
 
 - Bellman optimality equation
 
-![[Pasted image 20260304135254.png]]
+<img src="/images/Pasted image 20260304135254.png" alt="image" width="500">
 
 - Initialize all the state value estimates to zero
 - Iteratively update then using the value iteration algorithm
@@ -353,7 +353,7 @@ Diamonds => Discrete actions
 
 - Value iteration algorithm
 
-![[Pasted image 20260304135351.png]]
+<img src="/images/Pasted image 20260304135351.png" alt="image" width="500">
 
 - The algorithm is an example of dynamic programming
 - Optimal state values help evaluate a policy, but does not give the optimal policy
@@ -363,12 +363,12 @@ Diamonds => Discrete actions
 
 - Q-value iteration algorithm
 
-![[Pasted image 20260304135533.png]]
+<img src="/images/Pasted image 20260304135533.png" alt="image" width="500">
 
 $\pi*(s)$ = optimal policy
 
 
-![[Pasted image 20260304135604.png]]
+<img src="/images/Pasted image 20260304135604.png" alt="image" width="500">
 
 ```python
 transition_probabilities = [  # shape=[s, a, s']
@@ -430,9 +430,9 @@ Optimal policy
 
 - TD Learning Algorithm
 
-![[Pasted image 20260304140319.png]]
+<img src="/images/Pasted image 20260304140319.png" alt="image" width="500">
 
-![[Pasted image 20260304140330.png]]
+<img src="/images/Pasted image 20260304140330.png" alt="image" width="500">
 
 - TD learning is similar to stochastic gradient descent
 	- Handles one sample at a time
@@ -447,7 +447,7 @@ Optimal policy
 
 - Q-Learning algorithm
 
-![[Pasted image 20260304140542.png]]
+<img src="/images/Pasted image 20260304140542.png" alt="image" width="500">
 
 - For each state-action pair (s, a), the algorithm keeps track of a running average of the rewards the agents gets upon leaving the state s with action a, plus the sum of discounted future rewards is expects
 	- Take the max of the Q-values for the next state s'
@@ -484,7 +484,7 @@ for iteration in range(10_000):
 - Q-learning algorithm takes about 8,000
 	- Not knowing the transition prob. or rewards make it difficult to find the optimal policy
 
-![[Pasted image 20260304141127.png]]
+<img src="/images/Pasted image 20260304141127.png" alt="image" width="500">
 
 - Q-learning algorithm is also called the off-policy
 	- Policy being trained is not necessarily the one. used during training
@@ -503,7 +503,7 @@ for iteration in range(10_000):
 
 - Q-learning using an exploration function
 
-![[Pasted image 20260304145652.png]]
+<img src="/images/Pasted image 20260304145652.png" alt="image" width="500">
 
 ## Approximate Q-Learning and Deep Q-Learning
 
@@ -519,7 +519,7 @@ for iteration in range(10_000):
 
 - Target Q-value
 
-![[Pasted image 20260304150121.png]]
+<img src="/images/Pasted image 20260304150121.png" alt="image" width="500">
 
 - The target Q-value can be used during training step using any gradient descent algorithm
 - Minimize the squared error between the estimated Q-value and target Q-value, or the Huber loss to reduce the algorithm's sensitivity to large errors
@@ -634,7 +634,7 @@ for episode in range(600):
 - At each step, compute the epsilon value for the greedy policy (1 to 0.01 linearly)
 - If we past eps 50, call the training step function to train the model on one batch sampled from the replay buffer
 
-![[Pasted image 20260304152131.png]]
+<img src="/images/Pasted image 20260304152131.png" alt="image" width="500">
 
 - Catastrophic forgetting
 	- As the agent explores the environment, it updates it policy, but what it learns in one part of the environment may break what is learned early in other parts of the environment

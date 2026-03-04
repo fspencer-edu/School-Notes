@@ -22,7 +22,7 @@
             }
           },
           {
-            "id": "54f0f2f145c4db98",
+            "id": "b6a6351fccc3a0af",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -36,7 +36,7 @@
             }
           },
           {
-            "id": "e5f9592fdf6ce543",
+            "id": "52737ef116dc5b84",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -50,7 +50,7 @@
             }
           },
           {
-            "id": "e13a6fddae835e09",
+            "id": "8763f3ef7b4e3e4c",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -64,7 +64,7 @@
             }
           },
           {
-            "id": "f096b6359aefd368",
+            "id": "f883579cf37d643f",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -78,7 +78,7 @@
             }
           },
           {
-            "id": "b9ef92a525d9d58b",
+            "id": "c810d9a07eaab946",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -90,51 +90,9 @@
               "icon": "lucide-file",
               "title": "10) Anomaly Detection"
             }
-          },
-          {
-            "id": "c29742baac2847c6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Genetics/Textbook/7) DNA - Structure and Replication.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "7) DNA - Structure and Replication"
-            }
-          },
-          {
-            "id": "03fa671ab68ecb9d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Genetics/Textbook/8) RNA - Transcription, Processing, and Decay.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "8) RNA - Transcription, Processing, and Decay"
-            }
-          },
-          {
-            "id": "131152b9e6e8c83a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/19) Training and Deploying TensorFlow Models at Scale.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "19) Training and Deploying TensorFlow Models at Scale"
-            }
           }
         ],
-        "currentTab": 8
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -191,8 +149,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "f79334738d86d2cb",
@@ -283,20 +240,28 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "131152b9e6e8c83a",
+  "active": "c810d9a07eaab946",
   "lastOpenFiles": [
-    "Pasted image 20260304181843.png",
-    "Pasted image 20260304181419.png",
-    "Pasted image 20260304181007.png",
-    "Pasted image 20260304180906.png",
-    "Pasted image 20260304180454.png",
-    "Pasted image 20260304180334.png",
-    "Pasted image 20260304180258.png",
-    "Pasted image 20260304175441.png",
-    "Pasted image 20260304174752.png",
-    "Pasted image 20260304174634.png",
-    "Pasted image 20260304174435.png",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/9) Cluster Analysis - Additional Issues and Algorithms.md",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/8) Cluster Analysis - Basic Concepts and Algorithms.md",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/7) Association Analysis - Advanced Concepts.md",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/6) Association Analysis - Basic Concepts and Algorithms.md",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/5) Classification - Alternative Techniques.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/9) Testing Deployment Using a Staging Site.md.tmp",
+    "images/Pasted image 20260304102824.png",
+    "images/Pasted image 20260304121018.png",
+    "images/Pasted image 20260304174435.png",
+    "images/Pasted image 20260304121224.png",
+    "images/Pasted image 20260304114923.png",
+    "images/Pasted image 20260304085020.png",
+    "images/Pasted image 20260304174634.png",
+    "images/Pasted image 20260304094924.png",
+    "images/Pasted image 20260304140542.png",
+    "images/Pasted image 20260304135254.png",
     "PRIVATE/ToDo.md",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/10) Anomaly Detection.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/7) DNA - Structure and Replication.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/8) RNA - Transcription, Processing, and Decay.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/19) Training and Deploying TensorFlow Models at Scale.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/18) Reinforcement Learning.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/17) Auto-encoders, GANs, and Diffusion Models.md",
@@ -318,18 +283,10 @@
     "TEXTBOOKS (PUBLIC)/Todo - Links.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Math for Machine Learning",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Generative Deep Learning/0) Generative Deep Learning.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/0) GANs in Action.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Generative Deep Learning",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Computer Vision/0) Computer Vision - Algorithms and Applications.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/GANs",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Generative AI Design Patterns/0) Generative AI Design Patterns.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Deep Learning/0) Deep Learning.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Generative AI Design Patterns",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/AI Agents with MCP/0) AI Agents with MCP.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Deep Learning",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Markdown and Pandoc/0) Markdown and Pandoc.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/AI Agents with MCP",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Natural Language Processing with Transformers/0) Natural Language Processing with Transformers.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Markdown and Pandoc"
+    "TEXTBOOKS (PUBLIC)/== TODO ==/AI Agents with MCP"
   ]
 }

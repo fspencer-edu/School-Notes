@@ -1,4 +1,4 @@
-![[Pasted image 20260304085020.png]]
+<img src="/images/Pasted image 20260304085020.png" alt="image" width="500">
 
 1) Probability Models
 2) Random Variables and Distributions
