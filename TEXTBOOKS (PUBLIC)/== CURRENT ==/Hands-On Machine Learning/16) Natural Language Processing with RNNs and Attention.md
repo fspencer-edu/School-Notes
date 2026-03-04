@@ -701,11 +701,114 @@ $1/\sqrt{d_{keys}}$ = scales down similarity score
 ![[Pasted image 20260303203538.png]]
 
 
-- 
+- Word representation encodes many different characteristics of a word
+	- Meaning
+	- Position
+	- Tense
+- Multiple different linear transformations of the values, keys, and queries allow the model to apply many different projections of the world representation int different subspaces
+- Concatenate all the results and project them to the original space
 
+```python
+N = 2
+num_heads = 8
+dropout_rate = 0.1
+u_units = 128
+encoder_pad_mask = tf.math.not_equal(encoder_input_ids, 0)[:, tf.newaxis]
+Z = encoder_in
+for _ in range(N):
+	skip = Z
+	attn_layer = tf.keras.layers.MultiHeadAttnetion(
+		num_heads=num_heads, key_dim=embed_size, dropout=dropout_rate)
+	Z = attn_layer(Z, value=Z, attention_mask=encoder_pad_mask)
+	Z = tf.keras.layers.LayerNormalization()(tf.keras.layers.Add()([Z, skip]))
+	skip = Z
+	Z = tf.keras.layers.Dense(n_units, activation="relu")(Z)
+	Z = tf.keras.layers.Dense(embed_size)(Z)
+	Z = tf.keras.layers.Dropout(dropout_rate)(Z)
+	Z = tf.keras.layers.LayerNormalization()(tf.keras.layers.Add())([Z, skip])
+```
 
+- `MultiHeadAttention` layer accepts an `attention_mask` argument, (batch size, max query length, max value length)
+- Padding tokens in the values will be ignored correctly
+- Layer will compute the outputs for every token, including padding tokens
+	- Mask the outputs that correspond to padding tokens
+- `Add` layer supports automatic masking
+	- Add `Z` and `skip`, to mask the outputs
+- Add a padding mask and a causal mask for the decoder
+
+```python
+decoder_pad_mask = tf.math.not_equal(decoder_input_ids, 0)[:, tf.newaxis]
+causal_mask = tf.linalg.band_part(
+	tf.ones((batch_max_len_dec, batch_max_len_dec), tf.bool), -1, 0
+)
+```
+
+- The attention mask, causes the first query token to attend to the first value token, and the second of the first two, the third for the first three
+
+```python
+encoder_outputs = Z
+Z = decoder_in
+for _ in range(N):
+	skip = Z
+	attn_layer = tf.keras.layers.MultiHeadAttention(
+		num_heads=num_heads, key_dim=embed_size, dropout=dropout_rate
+	)
+	Z = attn_layer(Z, value=Z, attention_mask=causal_mask & decoder_pad_mask)
+	Z = tf.keras.layers.LayerNormalization()(tf.keras.layers.Add())([Z, skip])
+	skip = Z
+	attn_layer = tf.keras.layers.MultiHeadAttention(
+		num_head=num_heads, key_dim=embed_size, dropout=dropout_rate
+	)
+	Z = attn_layer(Z, value=encoder_outputs, attention_mask=encoder_pad_mask)
+	Z = tf.keras.layers.LayerNormalization()(tf.keras.layers.Add())([Z, skip])
+	skip = Z
+	Z = tf.keras.layers.Dense(n_units, activation="relu")(Z)
+	Z = tf.keras.Dense(embed_size)(Z)
+	Z = tf.keras.layers.LayerNormalization()(tf.keras.layers.Add())([Z, skip])
+```
+
+- The first attention layer, uses a causal and decoder pad mask
+- The second attention layer, uses only the encoder pad mask
+
+```python
+# final output layer, compile, and train
+Y_proba = tf.keras.layers.Dense(vocab_size, activation="softmax")(Z)
+model = tf.keras.Model(inputs=[encoder_inputs, decoder_inputs], 
+				outputs=[Y_proba])
+model.compile(loss="sparse_categorical_crossentropy", optimizer="nadam",
+			metrics=["accuracy"])
+model.fit((X_train, X_train_dec), Y_train, epochs=10,
+			validation_data=((X_valid, X_valid_dec), Y_valid))
+```
 
 # An Avalanche of Transformer Models
+
+- Tasks in unsupervised learning
+	- Text classification
+	- Entailment
+		- A imposes, involved, or implies B
+	- Similarity
+	- Question answering
+- Self-supervised pretraining
+	- Non-masked multi-head attention layers
+	- Masked language model (MLM)
+		- Trained to predict the masked words
+	- Next sentence prediction (NSP)
+		- Trained to predict whether 2 sentences are consecutive or not
+
+- For NSP tasks, a class token is inserted at the start of every input, and corresponding output
+- Segment embedding
+	- Added on top of each token's positional embeddings
+- MLM
+	- Some input words are masked and the model predicts those words
+
+![[Pasted image 20260303220422.png]]
+
+- After unsupervised pretraining, the model is fined tuned
+	- Text classification
+		- Sentiment analysis
+	- All output t
+
 
 # Vision Transformers
 
