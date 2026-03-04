@@ -652,15 +652,186 @@ tf.config.set_logical_device_configuration(
 - Keras and tf.data do a good job of placing operations and variables where they belong
 	- Place the data preprocessing operation on the CPU
 	- Place NN operations on GPUs
-	- GPUs have limited communicati
+	- GPUs have limited communication bandwidth, avoid unnecessary data transfer into and out of the GPUs
+	- Adding more CPU RAM to a machine is cheap
+	- GPU RAM is baked into the GPU, and is expensive
+
+
+- All variables and operations will be placed on the first GPU, except for variables and operations that do not have GPU kernel
+	- Placed on the CPU
+
+```python
+>>> a = tf.Variable([1., 2., 3.])  # float32 variable goes to the GPU
+>>> a.device
+'/job:localhost/replica:0/task:0/device:GPU:0'
+>>> b = tf.Variable([1, 2, 3])  # int32 variable goes to the CPU
+>>> b.device
+'/job:localhost/replica:0/task:0/device:CPU:0'
+```
+
+- The second variable is placed on the CPU because there are no GPU kernels for integer variables, or for operations involving integer tensors
+
+```python
+>>> with tf.device("/cpu:0"):
+...     c = tf.Variable([1., 2., 3.])
+...
+>>> c.device
+'/job:localhost/replica:0/task:0/device:CPU:0'
+```
+
+- CPU is always treated as a single device
 
 ## Parallel Execution Across Multiple Devices
 
+- When a TF runs a function, it starts by analyzing its graph to find the list of operations that need to be evaluates, and counts how many dependencies each of them has
+- TF adds each operation with zero dependencies to the evaluation queue of this operation's device
+- Dependency counter of each operation that depends on it is decremented
+- Once the dependency counter reaches zero, it is pushed to the evaluation queue of its device
+- Returned when computed
+
+![[Pasted image 20260304175441.png]]
+
+- Operations in the CPU's evaluation queue are dispatches to a thread pool called the inter-op thread pool
+	- If there are multiple cores, then operations are parallel
+	- Kernels split their tasks into multiple sub-operations, placed on another evaluation queue, and dispatched to intra-op thread pool
+- For GPU
+	- Operations are evaluated sequentially
+	- More operations have multi-threaded GPU kernels
+		- CUDA
+		- cuDNN
+	- No need for inter-op thread pools
+- A, B, and C are source ops
+	- Immediately evaluated
+- A and B are placed on the CPU (inter-op) and processed in parallel
+	- A is split into 3 parts in an intra-op thread pool
+- C goes to GPU #0
+	- cuDNN, manages its own intra-op thread pool
+- If C finishes first, the dependency counters of D and E are decremented and they reach 0
+- TF function modified a stateful resource, such as a variable
+	- Ensures that the order of execution matches the order in the code
+- Control threads
+
+- Exploit GPU operations
+	- Train models in parallel
+	- Train model on a single GPU and perform all the preprocessing in parallel on the CPU
+	- Model takes 2 images as input and processes them using 2 CNNs before joining their outputs
+	- Create an efficient ensemble
+
 # Training Models Across Multiple Devices
 
+2 approaches to training a single model across multiple devices
+1. Model parallelism
+2. Data parallelism
+
 ## Model Parallelism
+
+- To train on multiple devices, split model into separate chunks and run each chuck on a different device
+- Fully connected networks are compromised when split
+- Slice the model vertically
+	- But this requires cross-device communication
+
+![[Pasted image 20260304180258.png]]
+
+- Some NN architectures, such as convolutional NN, contain layers that are only partially connected to the lower layers, so it is easier to chunk
+
+![[Pasted image 20260304180334.png]]
+
+- Deep recurrent NN can be split more efficiently
+- Split horizontally by placing each layer on a different device, and feed the network with an input sequence to process, then at the first time step only one device will be active
+- At the second step two will be active, and the signal propagates to the output layer
+- All devices are active simultaneously
+
+![[Pasted image 20260304180454.png]]
+
+- Model parallelism may speed up running or training some types of NN, but not al
+
+
 ## Data Parallelism
+
+- Data parallelism or single program, multiple data (SPMD)
+	- Another way to parallelize the training of NN is to replicate it on every device and run each training step on all replicas, using a different mini-batch
+	- Gradients are averaged, and the result is used to update the model parameters
+
+### Data Parallelism Using the Mirrored Strategy
+
+- Simplest approach is to completely mirror all the model parameters across all the GPUs
+- Expects the same parameter updates
+- AllReduce algorithm
+	- Multiple nodes collaborate to efficiently perform a reduce operation, while ensuring all nodes obtain the same final result
+
+![[Pasted image 20260304180906.png]]
+
+
+### Data Parallelism with Centralized Parameters
+
+- Store the model parameters outside the GPU device in workers on the CPU
+- Place all the parameters on one or more CPU-only servers called parameter services, who host and update the parameters
+	- Allows synchronous or asynchronous updates
+
+![[Pasted image 20260304181007.png]]
+
+
+**Synchronous Updates**
+- The aggregator waits until all gradients are available before it computes the average gradients and passes then to the optimizer, which updates the model parameters
+- Some devices are slower, so fast devices need to wait
+- Parameters are copied to every device (uses bandwidth)
+- Spare replicas
+	- Ignore gradients from the slowest few replicas
+
+
+**Asynchronous Updates**
+
+- When a replica has finished computing the gradients, the gradients are immediately used to update the model parameters
+- No aggregation
+- Work independently
+
+
+- Data parallelism with asynchronous updates is attractive because of its simplicity, no delay, ad better use of bandwidth
+- Stale gradients
+	- Slow down convergence, introducing noise, and wobble effects
+
+
+![[Pasted image 20260304181419.png]]
+
+- Reduce state gradients
+	- Reduce the learning rate
+	- Drop state gradients of scale them down
+	- Adjust the mini-batch size
+	- Start the few epochs using one replica (warmup phase)
+
+
+### Bandwidth Saturation
+
+- Saturation is more severe for large dense models
+- Pipeline parallelism
+	- Combines model parallelism and data parallelism
+		- Model is chopped into consecutive parts (stages)
+		- Each of which is trained on a different machine
+		- Asynchronous pipeline in which all machines work in parallel with little idle time
+		- Each stage alternates one round of forward and back propagation
+	- Pulls a mini-batch from its input queue, processes it, and sends the output to the next stage's input queue, then pulls one mini-batch of gradients from its gradient queue, back propagates these gradients and updates its model parameters
+
+![[Pasted image 20260304181843.png]]
+
+- Mini batch #5
+	- When through stage 1 during forward pass, gradients from #4 have not been back propagated, but in #5 gradients flow back to stage 1
+- Weight stashgin
+	- Each stage saves weights
+
+
 ## Training at Scale Using the Distribution Strategies API
+
+- 
+
+
 ## Training a Model on a TensorFlow Cluster
+
+- 
+
 ## Running Larger Training Jobs on Vertex AI
+
+- 
+
 ## Hyperparameter Tuning on Vertex AI
+
+- 
