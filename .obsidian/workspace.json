@@ -313,6 +313,10 @@
   },
   "active": "3adec897447e3704",
   "lastOpenFiles": [
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/19) Training and Deploying TensorFlow Models at Scale.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/18) Reinforcement Learning.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/17) Auto-encoders, GANs, and Diffusion Models.md",
+    "Pasted image 20260304105633.png",
     "Pasted image 20260304104141.png",
     "Pasted image 20260304104001.png",
     "Pasted image 20260304103830.png",
@@ -322,8 +326,6 @@
     "Pasted image 20260304101553.png",
     "Pasted image 20260304101457.png",
     "Pasted image 20260304101439.png",
-    "Pasted image 20260304100608.png",
-    "Pasted image 20260304100542.png",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Statistics/0) Statistical Learning in Python.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Practical Data Science with Hadoop/0) Practical DS with Hadoop and Spark.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats. for CS/0) Probability and Statistics for CS.md",
@@ -331,10 +333,8 @@
     "TEXTBOOKS (PUBLIC)/== TODO ==/Linear Algebra/0) Linear Algebra.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Linear Algebra",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/17) Auto-encoders, GANs, and Diffusion Models.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Statistics",
     "PRIVATE/ToDo.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/19) Training and Deploying TensorFlow Models at Scale.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Mining/10) Introduction to Weka.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Mining/9) Moving On - Applications and Beyond.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Mining/8) Ensemble Learning.md",
@@ -357,7 +357,6 @@
     "TEXTBOOKS (PUBLIC)/== TODO ==/Markdown and Pandoc/0) Markdown and Pandoc.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/AI Agents with MCP",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Natural Language Processing with Transformers/0) Natural Language Processing with Transformers.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Markdown and Pandoc",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/18) Reinforcement Learning.md"
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Markdown and Pandoc"
   ]
 }

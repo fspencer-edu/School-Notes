@@ -489,11 +489,120 @@ images = variational_decoder(codings).numpy()
 	- Train the discriminator
 		- Real images are sampled from the training set, and is compete with an equal number of fake images from generator
 		- Binary cross-entropy loss
-		- Backpropagation on
+		- Backpropagation optimizes the weights of the discriminator
+	- Train the generator
+		- Produce another batch of fake images
+		- Produce images that the discriminator will believe to be rule
+		- Weights of the discriminator are froze during this step, backprop. only affects the generator
 
+- Generator never sees any real images
+- The better the discriminator gets, the more information about the real images is contained in these secondhand gradients
+
+- Build the generator and discriminator
+	- Generator is similar to an AE decoder
+	- Discriminator is a regular binary classifier
+
+```python
+codings_size = 30
+Dense = tf.keras.layers.Dense
+generator = tf.keras.Sequential([
+	Dense(100, activation="relu", kernel_initialization="he_normal"),
+	Dense(150, activation="relu", kernel_initialization="he_normal"),
+	Dense(28 * 28, activation="sigmoid"),
+	tf.keras.layers.Reshape([28, 28])
+])
+discriminator = tf.keras.Sequential([
+	tf.keras.layers.Flatten(),
+	Dense(150, activation="relu", kernel_initialization="he_normal"),
+	Dense(100, activation="relu", kernel_initialization="he_normal"),
+	Dense(1, activation="sigmoid")
+])
+gan = tf.keras.Sequential([generator, discriminator])
+```
+
+- Use binary cross-entropy loss
+- Generator will only be trained through `gan` model, so we do not need to compile it at all
+- Discriminator should not be trained during the second phase
+
+```python
+discriminator.compile(loss="binary_crossentropy", optimizer="nadam")
+discriminator.trainable = False
+gan.compile(loss="binary_crossentropy", optimizer="rmsprop")
+
+# write a custom training loop
+batch_size = 32
+daraset = tf.data.Dataset.from_tensor_slices(X_train).shuffle(buffer_size=1000)
+dataset = dataset.batch(batch_size, drop_remainder=True).prefetch(1)
+
+def train_gan(gan, dataset, batch_size, codings_size, n_epochs):
+	generator, discriminator = gan.layers
+	for epoch in range(n_epochs):
+		for X_batch in dataset:
+			# phase 1 - training the disc.
+			noise = tf.random.normal(shape=[batch_size, codings_size])
+			generated_images = generator(noise)
+			X_fake_and_real = tf.concat([generated_images, X_batch], axis=0)
+			y1 = tf.constant([[0.]] * batch_size + [[1.]] * batch_size)
+			discriminator.train_on_batch(X_fake_and_real, y1)
+			# phase 2 - training the gen.
+			noise = tf.random.normal(shape=[batch_size, codings_size])
+			y2 = tf.constant([[1.]] * batch_size)
+			gan.train_on_batch(noise, y2)
+			
+train_gan(gan, dataset, batch_size, codings_size, n_epochs=50)
+```
+
+- Phase 1
+	- Feed Gaussian noise to the generator to produce fake images
+	- Concatenate with real images
+	- The targets `y1` are set to 0 and 1, fake and real
+	- Train the discriminator on this batch
+- Phase 2
+	- Feed the GAN some Gaussian noise
+	- Generator produces fake images to discriminator
+	- Improve the generator (want discriminator to fail)
+		- Discriminator is not trainable in this part
+
+```python
+codings = tf.random.normal(shape=[batch_size, codings_size])
+generated_iamges = generator.predict(codings)
+```
+
+![[Pasted image 20260304105633.png]]
 
 ## The Difficulties of Training GANs
+
+- Nash equilibrium
+	- No player would be better off changing their own strategy
+- GAN can only reach a single Nash equilibrium
+	- Generator produces realistic images, and the discriminator is forced to guess (50% real, 50% fake)
+- Mode collapse
+	- The generator's outputs gradually become less diverse
+	- Generator forgets and produces only one type of class
+- Experience relay
+	- Storing the images produces by the generator at each iteration in a replay buffer
+	- Training the discriminator using real images and fake images from this buffer
+- Mini-batch discrimination
+	- Measures how similar images are across the batch and provides this statistic to the discriminator
+
 ## Deep Convolutional GANs
+
+- Deep convolutional GANs (DCGANs)
+	- Replace any pooling layers with strided convolutions and transposed convolutions
+	- Use batch normalization
+	- Remove fully connected hidden layers for deeper architectures
+	- Use ReLU activation in the generator for all layers except the output layer, use tanh instead
+	- Use leaky ReLU activation in the discriminator for all layers
+
+
+```python
+coding_size = 100
+
+generator = tf.keras.Sequenti
+```
+
+
+
 ## Progressive Growing of GANs
 ## StyleGANs
 
