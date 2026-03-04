@@ -729,5 +729,90 @@ DDPM
 ```python
 def variance_schedule(T, s=0.008, max_beta=0.999):
 	t = np.arrange(T + 1)
+	f = np.cos((t / T + s) / (1 + s) * np.pi / 2) ** 2
+	alpha = np.clip(f[1:] / f[:-1], 1 - max_beta, 1)
+	alpha = np.append(1, alpha).astype(np.float32)
+	beta = 1 - alpha
+	alpha_cumprod = np.cumprod(alpha)
+	return alpha, alpha_cumprod, beta
 	
+T = 4000
+alpha, alpha_cumprod, beta = variance_schedule(T)
+
+# create noisy images
+def prepare_batch(X):
+	X = tf.caast(X[..., tf.newaxis], tf.float32) * 2 - 1
+	X_shape = tf.shape(X)
+	t = tf.random.uniform([X_shape[0]], minval=1, maxval=T + 1, dtype=tf.int32)
+	alpha_cm = tf.gather(alpha_cumprod, t)
+	alpha_cm = tf.reshape(alpha_cm, [X_shape[0]] + [1] * (len(X_shape) - 1))
+	noise = tf.random.normal(X_shape)
+	return {
+		"X_noise:" alpha_cm ** 0.5 * X + (1 - alpha_cm) ** 0.5 * noise,
+			"time": t,
+	}, noise
 ```
+
+- Add a channel axis
+- `t` create a vector containing a random time step for each image, between 1 and T
+- Use `tf.gather()` to get the value of `alpha_cumprod` for each of the time steps int he vector
+- Reshape `alpha_cm`
+- Generate Gaussian noise with mean 0 and variance 1
+- Apply the diffusion process to the images
+- Model will predict the noise that should be subtracted from the input image to get the original image
+
+```python
+# create training dataset and validation
+def prepare_dataset(X, batch_size=32, shuffle=False):
+	ds = tf.data.Dataset.from_tensor_slices(X)
+	if shuffle:
+		ds = ds.shuffle(buffer_size=10_000)
+	return ds.batch(batch_size).map(prepare_batch).prefetch(1)
+	
+train_set = prepare_dataset(X_train, batch_size=32, shuffle=True)
+valid_set = prepare_dataset(X_valid, batch_size=32)
+
+# build diffusion model
+def build_diffusion_model():
+	X_noisy = tf.keras.layers.Input(shape=[28, 28, 1], name="X_noisy")
+	time_input = tf.keras.layers.Input(shape=[], dtype=tf.int32, name="time")
+	[...] # build model
+	outputs = [...] # predict the noise
+	return tf.keras.Model(inputs=[X_noisy, time_input], outputs=[outputs])
+	
+model = build_diffision_model()
+model.compile(loss=tf.keras.losses.Huber(), optimizer="nadam")
+history = model.fit(train_set, validation_data=valid_set, epochs=100)
+```
+
+- Once the model is trained, you it to generated new image
+- Going one step in reverse in the diffusion process
+
+![[Pasted image 20260304122454.png]]
+
+```python
+# reverse process, to generate images
+def generate(model, batch_size=32):
+	X = tf.random.normal([batch_size, 28, 28, 1])
+	for t in range(T, 0, -1):
+		noise = (tf.random.normal if t > 1 else tf.zeros)(tf.shape(X))
+		X_noise = model({
+			"X_noisy": X,
+			"time": tf.constant([t] * batch_sze)
+		})
+		X = (
+			1 / alpha[t] ** 5
+			* (X - beta[t] / (1 - alpha_cumprod[t]) ** 0.5 * X_noise)
+			+ (1 - alpha[t]) ** 0.5 * noise
+		)
+	return X
+	
+X_gen = generate(model)
+```
+
+![[Pasted image 20260304122731.png]]
+
+- Latent diffusion models
+	- Diffusion process takes place in latent space, rather than pixel space
+	- AE used to compress each training image into a smaller latent space
+- Stable diffusion

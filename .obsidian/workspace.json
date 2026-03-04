@@ -120,20 +120,6 @@
             }
           },
           {
-            "id": "3adec897447e3704",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/17) Auto-encoders, GANs, and Diffusion Models.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "17) Auto-encoders, GANs, and Diffusion Models"
-            }
-          },
-          {
             "id": "e8f156e00ac6c338",
             "type": "leaf",
             "state": {
@@ -311,10 +297,12 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "3adec897447e3704",
+  "active": "e8f156e00ac6c338",
   "lastOpenFiles": [
-    "PRIVATE/ToDo.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/17) Auto-encoders, GANs, and Diffusion Models.md",
+    "Pasted image 20260304122731.png",
+    "Pasted image 20260304122454.png",
+    "PRIVATE/ToDo.md",
     "Pasted image 20260304121307.png",
     "Pasted image 20260304121224.png",
     "Pasted image 20260304121141.png",
@@ -325,8 +313,6 @@
     "Pasted image 20260304114923.png",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/19) Training and Deploying TensorFlow Models at Scale.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/18) Reinforcement Learning.md",
-    "Pasted image 20260304105633.png",
-    "Pasted image 20260304104141.png",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Statistics/0) Statistical Learning in Python.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Practical Data Science with Hadoop/0) Practical DS with Hadoop and Spark.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats. for CS/0) Probability and Statistics for CS.md",
