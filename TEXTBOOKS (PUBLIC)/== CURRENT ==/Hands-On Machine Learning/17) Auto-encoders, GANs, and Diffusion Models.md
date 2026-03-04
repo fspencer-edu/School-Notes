@@ -108,20 +108,217 @@ history = stacked_ae.fit(X_train, X_train, epochs=20,
 			validation_data(X_train, X_valid))
 ```
 
+- Split the autoencoder into 2 submodels
+- Encoder takes a flattened image
+- The decoder takes codings of size 30, and processes them
+- Train the model using `X_train` as inputs and targets
+
 ## Visualizing the Reconstructions
+
+```python
+import numpy as np
+
+def plot_reconstructions(model, images=X_valid, n_images=5):
+	reconstructions = np.clip(model.predict(images[:n_images]), 0, 1)
+	fit = plt.figure(figsize=(n_images * 1.5, 3))
+	for image_index in range(n_images):
+		flt.subplot(2, n_images, 1 + image_index)
+		plt.imshow(images[image_index], cmap="binary")
+		plt.axis("off")
+		plt.subplot(2, n_images, 1 + n_images + image_index)
+		plt.imshow(reconstructions[image_index], cmap="binary")
+		plt.axis("off")
+		
+plot_reconstruction(stacked_ae)
+plt.show()
+```
+
+![[Pasted image 20260304094656.png]]
+
 ## Visualizing the Fashion MNIST Dataset
+
+- Use the autoencoder to reduce the dataset's dimensionality
+- Use dimensionality reduction algorithm for visualization
+	- t-SNE
+
+```python
+from sklearn.manifold import TSNE
+
+X_valid_compressed. stacked_encoder.predict(X_valid)
+tsne = TSNE(init="pca", learning_rate="auto", random_state=42)
+X_valid_2D = tsne.fit_transform(X_valid_compressed)
+
+# plot dataset
+plt.scatter(X_valid_2D[:, 0], X_valid_2D[:, 1], c=y_valid, s=10, cmap="tab10")
+plt.show()
+```
+
+![[Pasted image 20260304094924.png]]
+
+- The t-SNE algorithm identified several cluster that match the classes
+
+
 ## Unsupervised Pretraining Using Stacked Autoencoder
+
+- With limited labeled training data, a solution is to find a neural network that performs a similar task and reuse its lower layers
+
+![[Pasted image 20260304095102.png]]
+
+- Train an autoencoder using all the training data, then reuse its encoder layers to create a new neural network
+
 ## Trying Weights
 
+- When an AE is neatly symmetrical, a common technique is to tie the weights of the decoder layer to the weights of the encoder layer
+	- Halves the number of weights in the model
 
+```python
+class DenseTranspose(tf.keras.layers.Layer):
+	def __init__(self, dense, activation=None, **kwargs):
+		super().__init__(**kwargs)
+		self.dense = dense
+		self.activation = tf.keras.activations.get(activation)
+		
+	def build(self, batch_input_shape):
+		self.biases = self.add_weight(name="bias",
+					shape=self.dense.input_shape,
+					initalizer="zeros")
+					
+	def call(self, inputs):
+		Z = tf.matmul(inputs, self.dense.weights[0], transpose_b=True)
+		return self.activation(Z + self.biases)
+```
+
+- The custom layer acts like a dense layer, but uses another dense layer's weight
+	- Transposed is equivalent to transposing the second argument
+- Build a new stacked autoencoder, with the decoder's dense layers tied to the encoder's
+
+```python
+dense_1 = tf.keras.layer.Dense(100, activation="relu")
+dense_2 = tf.keras.layer.Dense(30, activation="relu")
+
+tied_encoder = tf.keras.Sequential([
+	tf.keras.layers.Flatten(),
+	dense_1,
+	dense_2
+])
+
+tied_decoder = tf.keras.Sequential([
+	DenseTranspose(dense_2, activation="relu"),
+	DenseTransport(dense_1),
+	tf.keras.layers.Reshape([28, 28])
+])
+
+tied_ae = tf.keras.Sequential([tied_encoder, tied_decoder])
+```
 
 ## Training One Autoencoder at a Time
 
+- Rather than training the whole stacked autoencoder, it is possible to train one shallow autoencoder at a time, then stack all of them into a single stacked autoencoder
+- Greedy layer-wise training
+
+![[Pasted image 20260304095744.png]]
+
+- During the first phase of training, the first AE learns to reconstruct the inputs
+- Then the entire training set uses the first autoencoder, and outputs a new training set
+- The second AE uses the new training set
+- Stack the hidden layers, then output layers in reverse order
+
 # Convolutional Autoencoders
+
+- To work with images, an autoencoder will need a convolutional autoencoder
+- The encoder is a regular CNN composed of convolutional layers and pooling layers
+- The decoder must do the reverse
+	- Upscale the image, and reduce its depth
+
+```python
+conv_encoder = tf.keras.Sequential([
+    tf.keras.layers.Reshape([28, 28, 1]),
+    tf.keras.layers.Conv2D(16, 3, padding="same", activation="relu"),
+    tf.keras.layers.MaxPool2D(pool_size=2),  # output: 14 × 14 x 16
+    tf.keras.layers.Conv2D(32, 3, padding="same", activation="relu"),
+    tf.keras.layers.MaxPool2D(pool_size=2),  # output: 7 × 7 x 32
+    tf.keras.layers.Conv2D(64, 3, padding="same", activation="relu"),
+    tf.keras.layers.MaxPool2D(pool_size=2),  # output: 3 × 3 x 64
+    tf.keras.layers.Conv2D(30, 3, padding="same", activation="relu"),
+    tf.keras.layers.GlobalAvgPool2D()  # output: 30
+])
+conv_decoder = tf.keras.Sequential([
+    tf.keras.layers.Dense(3 * 3 * 16),
+    tf.keras.layers.Reshape((3, 3, 16)),
+    tf.keras.layers.Conv2DTranspose(32, 3, strides=2, activation="relu"),
+    tf.keras.layers.Conv2DTranspose(16, 3, strides=2, padding="same",
+                                    activation="relu"),
+    tf.keras.layers.Conv2DTranspose(1, 3, strides=2, padding="same"),
+    tf.keras.layers.Reshape([28, 28])
+])
+conv_ae = tf.keras.Sequential([conv_encoder, conv_decoder])
+```
+
+- Also possible to create autoencoder with other architecture types
+	- RNNs
+- Overcomplete autoencoder
+	- Coding layers that are large than the input
 
 # Denoising Autoencoders
 
+- For AE to learn features, add noise to inputs, training it to recover the original
+- Stacked denoising autoencoders
+	- Gaussian
+	- Random
+- Regular stacked AE with an additional `Dropout` layer in the encoder's inputs
+
+```python
+dropout_encoder = tf.keras.Sequential([
+	tf.keras.layers.Flatten(),
+	tf.keras.layers.Dropout(0.5),
+	tf.keras.layers.Dense(100, activation="relu"),
+	tf.keras.layers.Dense(30, activation="relu")
+])
+
+dropout_decoder = tf.keras.Sequential([
+	tf.keras.layers.Dense(100, activation="relu"),
+	tf.keras.layers.Dense(28 * 28),
+	tf.keras.layers.Reshape([28, 28])
+])
+dropout_ae = tf.keras.Sequential([dropout_encoder, dropout_decoder])
+```
+
+![[Pasted image 20260304100542.png]]
+
+- The AU guesses the details that are not in the input
+
+![[Pasted image 20260304100608.png]]
+
 # Spares Autoencoders
+
+- Another type of constraint is sparsity
+	- Adding an appropriate term to the cost function
+	- AE is pushed to reduce the number of active neurons in the coding layer
+	- Coding layers end up representing a useful feature
+- Use sigmoid activation in the coding layer (0 and 1)
+- A large coding layer
+- Add $\ell_1$ regularization to coding layer's activations
+
+```python
+sparse_11_encoder = tf.keras.Sequential([
+	tf.keras.layers.Flatten(),
+	tf.keras.layers.Dense(100, activation="relu"),
+	tf.keras.layers.Dense(300, activation="sigmoid"),
+	tf.keras.layers.ActivityRegularization(11=1e-4)
+])
+spare_11_decoder = tf.keras.Sequential([
+	tf.keras.layers.Dense(100, activation="relu"),
+	tf.keras.layers.Dense(28 * 28),
+	tf.keras.layers.Reshape([28, 28])
+])
+sparse_11_ae = tf.keras.Sequential([sparse_11_encoder, sparse_11_decoder])
+```
+
+- `ActivityRegularization`
+	- Returns its inputs, bus as a side effect is adds a training loss equal to the sum of the absolute values of its inputs
+- Penalty will encourage the NN to produce encodings close to 0
+- Penalized if it does not reconstruct the inputs correctl
+
 
 # Variational Autoencoders
 
