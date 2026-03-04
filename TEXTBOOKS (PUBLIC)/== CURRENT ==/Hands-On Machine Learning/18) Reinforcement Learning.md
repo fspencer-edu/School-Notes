@@ -683,10 +683,56 @@ if episode % 50 == 0:
 def training_step(batch_size):
 	experiences = sample_experiences(batch_size)
 	states, actions, rewards, next_states, dones, truncateds = experiences
-	next_Q_values = model,
+	next_Q_values = model.predict(next_staets, verbose=0)
+	best_next_actions = next_Q_values.argamax(axis=1)
+	next_mask = tf.one_hot(best_next_actions, n_outputs).numpy()
+	max_next_Q_values = (target.predict(next_states, verbose=0) * next_mask
+				).sum(axis=1)
+	[...]
 ```
 
 ## Prioritized Experience Replay
+
+- Importance sampling (IS) or prioritized experience replay (PER)
+	- Instead of sample uniformly from the replay buffer, sample important experience more frequently
+- Measure the magnitude of the TD error, $\delta = r + \gamma \cdot V(s') - V(s)$
+- A large TD error indicates that a transition is surprising, and worth learning from
+- When it is sampled, the TD error is computed, and this experience's priority is set to $p = |\delta|$ (small value)
+- Since the samples will be biased toward important experiences, compensate for this bias during training by down weighting the experiences according to their importance, or else the model will overfit the important experiences
+- Important samples should be sampled more, but will have lower weight during training
+
+
 ## Dueling DQN
 
+- Dueling DQN
+	- Q-value of state-action pair => $Q(s, a) = V(s) + A(s, a)$
+		- $V(s)$ = value of state s
+		- $A(s, a)$ = advantage of taken the action a in state s
+- The model estimates both the value of the state and the advantage of each possible action
+- Best action should hae an advantage of 0, the model subtracts the max. pred. advatnage from all predicted advantages
+
+```python
+input_state = tf.keras.layers.Input(shape=[4])
+hidden1 = tf.keras.layers.Dense(32, activation="relu")(input_state)
+hidden2 = tf.keras.layers.Dense(32, activation="relu")(hidden1)
+state_values = tf.keras.layers.Dense(1)(hidden1)
+raw_advantages = tf.keras.layers.Dense(n_outputs)(hidden2)
+advantages = raw_advantages - tf.reduce_max(raw_advantages, axis=1,
+			keepdims=True)
+Q_values = state_values + advantages
+model = tf.keras.Model(inputs=[input_states], outputs=[Q_values])
+```
+
+- Rainbow
+	- Combines 6 techniques into an agent
+
 # Overview of Some Popular RL Algorithms
+
+- AlphaGo
+- Actor-critic algorithms
+- Asynchronous advantage actor-critic (A3C)
+- Advantage actor-critic (A2C)
+- Soft actor-critic (SAC)
+- Proximal policy optimization (PPO)
+- Curiosity-based exploration
+- Open-ended learning (OEL)
