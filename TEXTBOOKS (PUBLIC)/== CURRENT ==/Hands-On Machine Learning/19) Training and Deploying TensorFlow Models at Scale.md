@@ -266,12 +266,240 @@ Unloading servable version {name: my_mnist_model version: 1}
 - Automatic batching capabilities
 	- `--enable_batching`
 - When TF Serving receives multiple requests within a short period of time, it will automatically batch them together before using the model
+- TF Serving dispatches each prediction to the right client
+- If there are many QPS, use multiple servers and load-balance the queries
+	- Kubernetes
+		- An open source system for simplifying container orchestration across many servers
+	- Amazon AWS
+	- Microsoft Azure
+	- Google Cloud Platform
+	- IBM Cloud
+	- Alibaba Cloud
+	- Oracle Cloud
+	- PaaS
+- Vertex AI
+	- Only platform with TPU
+	- Supports TensorFlow 2
+	- Scikit-Leran
+	- XGBoost
+	- AWS SageMaker and Microsoft AI Platform
+
+![[Pasted image 20260304165237.png]]
 
 
 ## Creating a Prediction Service on Vertex AI
+
+- Vertex AI is a platform within Google Cloud Platform (GCP) that offers a wide range of AI-related tools and services
+- AutoML
+	- Architecture search
+- Manage trained models, use them to make batch predictions on large amount of data, schedule multiple jobs for data workflows, serve your models via REST or gPRC as scale, and experiment with your data and models within a hosted Jupyter environment (Workbench)
+- Matching Engine
+- GCP also includes other AI services
+	- Vision
+	- Translation
+	- Speech-to-text
+
+1. Log in to your Google account
+2. Every resource in GCP belongs to a project
+
+- Write a script to automate the GCP
+- Google Cloud's CLI, `gcloud`
+- `gsutil`
+	- Interact with Google Cloud Storage
+
+- Authenticate GCP
+
+```python
+from google.colab import auth
+
+auth.authentication_user()
+```
+
+- The authentication process is based on OAuth 2.0
+- When an application needs to access a service on GCP on its own behalf, not with a user, then is should use a service account
+- Google's Workload Identity
+	- Map the right service account to each Kubernetes service account
+- Create a Google Cloud Storage bucket to store SavedModels
+
+```python
+from google.cloud import storage
+
+project_id = "my_project"
+bucket_name = "my_bucket"
+location = "us-centrall"
+
+storage_client = storage.Client(project=project_id)
+bucket = storage_client.create_bucket(bucket_name, location=location)
+```
+
+- GCS uses a single worldwide namespace for buckets
+	- DNS naming conventions
+	- Public
+	- Use domain name or project ID
+- Update the model directory to the new bucket
+- Files in GCS are called blobs or objects
+- Blob names can be arbitrary Unicode strings, and can contain forward slashes
+
+```python
+def upload_directory(bucket, dirpath):
+	dirpath = Path(dirpath)
+	for filepath in dirpath.glob("**/*")
+		if filepath.is_file():
+			blob = bucket.blob(filepath.relative_to(dirpath.parent).as_posix())
+			blob.upload_from_filepath(filepath)
+			
+upload_directory(bucket, "my_mnist_model")
+```
+
+- Speed up the file upload with multithreading
+
+```python
+!gsutil -m cp -r my_mnist_model gs://{bucket_name}/
+```
+
+- To communicate with Vertex AI, use `google-cloud-aiplatform` library
+- Create an endpoint
+	- Client application
+
+```python
+from google.cloud import aiplatform
+
+server_image = "gcr.io/cloud-aiplatform/prediction/tf2-gpu.2-8:latest"
+
+aiplatform.init(project=project_id, location=location)
+mnist_model = aiplatform.Model.upload(
+    display_name="mnist",
+    artifact_uri=f"gs://{bucket_name}/my_mnist_model/0001",
+    serving_container_image_uri=server_image,
+)
+
+# deploy model to this endpoint
+endpoint = aiplatform.Endpoint.create(display_name="mnist-endpoint")
+
+endpoint.deploy(
+    mnist_model,
+    min_replica_count=1,
+    max_replica_count=5,
+    machine_type="n1-standard-4",
+    accelerator_type="NVIDIA_TESLA_K80",
+    accelerator_count=1
+)
+```
+- This code take a few minutes to run, because Vertex AI needs to set up a VM
+- GCP enforces various GPU quotas
+- Vertex AI will initially spawn the min number of compute nodes
+- If QPS rate goes down, it removes node
+- Cost is linked to load, machine, and accelerator types
+
+```python
+response = endpoint.predict(instances=X_new.tolist())
+```
+- Convert the images to a Python list
+
+```python
+>>> import numpy as np
+>>> np.round(response.predictions, 2)
+array([[0.  , 0.  , 0.  , 0.  , 0.  , 0.  , 0.  , 1.  , 0.  , 0.  ],
+       [0.  , 0.  , 0.99, 0.01, 0.  , 0.  , 0.  , 0.  , 0.  , 0.  ],
+       [0.  , 0.97, 0.01, 0.  , 0.  , 0.  , 0.  , 0.01, 0.  , 0.  ]])
+       
+endpoint.undeploy_all()  # undeploy all models from the endpoint
+endpoint.delete()
+```
+
+- The prediction is the same on the cloud
+
 ## Running Batch Prediction Jobs on Vertex AI
 
+- Instead of calling the prediction service repeatedly, ask Vertex AI to run a prediction job
+	- Does not require an endpoint, only a model
+- Prepare a batch, upload it to GCS
+	- Create a file containing one instance per line, with JSON (JSON lines)
+	- Pass this to Vertex AI
+
+```python
+batch_path = Path("my_mnist_batch")
+batch_path.mkdir(exist_ok=True)
+with open(batch_path / "my_mnist_batch.jsonl", "w") as jsonl_file:
+	for image in X_test[:100].tolist():
+		jsonl_file.write(json.dumps(image))
+		jsonl_file.write("\n")
+		
+upload_directory(bucket, batch_path)
+```
+
+- To launch the prediction job, specify the name, and type and number of machines, and accelerators to use
+
+```python
+batch_prediction_job = mnist_model.batch_predict(
+    job_display_name="my_batch_prediction_job",
+    machine_type="n1-standard-4",
+    starting_replica_count=1,
+    max_replica_count=5,
+    accelerator_type="NVIDIA_TESLA_K80",
+    accelerator_count=1,
+    gcs_source=[f"gs://{bucket_name}/{batch_path.name}/my_mnist_batch.jsonl"],
+    gcs_destination_prefix=f"gs://{bucket_name}/my_mnist_predictions/",
+    sync=True  # set to False if you don't want to wait for completion
+)
+
+```
+- For large batches, split the input into multiple JSON lines file and list them all via the `gcs_source`
+- Each value is a directory containing an instance and its corresponding prediction
+- The instances are listed in the same order as the input
+	- Also outputs prediction-errors file
+
+```python
+y_probas = []
+for blob in batch_prediction_job.iter_outputs():
+    if "prediction.results" in blob.name:
+        for line in blob.download_as_text().splitlines():
+            y_proba = json.loads(line)["prediction"]
+            y_probas.append(y_proba)
+            
+>>> y_pred = np.argmax(y_probas, axis=1)
+>>> accuracy = np.sum(y_pred == y_test[:100]) / 100
+0.98
+```
+
+- Delete model, bucket, or batch prediction job
+
+```python
+for prefix in ["my_mnist_model/", "my_mnist_batch/", "my_mnist_predictions/"]:
+    blobs = bucket.list_blobs(prefix=prefix)
+    for blob in blobs:
+        blob.delete()
+
+bucket.delete()  # if the bucket is empty
+batch_prediction_job.delete()
+```
+
 # Deploying a Model to a Mobile or Embedded Device
+
+- ML models are not limited to running on big centralized servers with multiple GPUs
+- They can also run closer to source of data (edge computing)
+	- Without internet
+	- Reduces latency
+	- Improve pricacy
+- A large model may not fit in the device
+- TFLite
+	- Reduce the model size, and RAM usage
+	- Reduce the computations for each prediction
+	- Reduce latency, battery usage, and heating
+	- Adapt the model to device-specific constraints
+
+- TFLite's model converter can take a SavedModel and compress it to a lighter format based on FlatBuffer
+- Load FlatBuffers straight to RAM without preprocessing
+- Interpreter will execute it to make predictions
+
+```python
+converted = tf.lite.TFLiteConverter.from_saved_model(str(model_path))
+tflite_model = converter.convert()
+with open("my_converted_savedmodel.tflite", "wb") as f:
+	f.write(tflite_nodel)
+```
+
+- 
 
 # Running a Model in a Web Page
 
