@@ -326,13 +326,179 @@ for iteration in range(n_iteration):
 - At each step, an agent can choose one of several possible actions, and the transition probabilities depend on the chosen action
 - Some state transitions return reward
 - Agent's goal is to find a policy to maximize reward over time
-- 
+
+![[Pasted image 20260304134752.png]]
+
+Circles => States
+Diamonds => Discrete actions
+
+- $s_0$ -> $a_0$
+- $s_1$ -> $a_0$ or $a_2$ (fire)
+- $s_2$ -> $a_1$
+
+- Estimate the optimal state value of any state, $V*(S)$
+	- Sum of all discounted feature rewards the agent can expect on average after it reaches the state, assuming is acts optimally
+- Bellman optimality equation
+	- Recursive equation says that if the agent act optimally, then the optimal value of the current state is equal to the reward it will get on average after taking one optimal action, plus the expected optimal value of all possible next states
+
+
+- Bellman optimality equation
+
+![[Pasted image 20260304135254.png]]
+
+- Initialize all the state value estimates to zero
+- Iteratively update then using the value iteration algorithm
+- Estimates will guarantee to converge to the optimal state values
+
+
+- Value iteration algorithm
+
+![[Pasted image 20260304135351.png]]
+
+- The algorithm is an example of dynamic programming
+- Optimal state values help evaluate a policy, but does not give the optimal policy
+- Estimate the optimal state-action values (Q-values)
+	- State-action pair (s, a), $Q*(s, a)$
+	- Sum of discounted feature rewards the agent can expect on average after it reaches the state s and chooses action a, but before it sees the output of this action
+
+- Q-value iteration algorithm
+
+![[Pasted image 20260304135533.png]]
+
+$\pi*(s)$ = optimal policy
+
+
+![[Pasted image 20260304135604.png]]
+
+```python
+transition_probabilities = [  # shape=[s, a, s']
+    [[0.7, 0.3, 0.0], [1.0, 0.0, 0.0], [0.8, 0.2, 0.0]],
+    [[0.0, 1.0, 0.0], None, [0.0, 0.0, 1.0]],
+    [None, [0.8, 0.1, 0.1], None]
+]
+rewards = [  # shape=[s, a, s']
+    [[+10, 0, 0], [0, 0, 0], [0, 0, 0]],
+    [[0, 0, 0], [0, 0, 0], [0, 0, -50]],
+    [[0, 0, 0], [+40, 0, 0], [0, 0, 0]]
+]
+possible_actions = [[0, 1, 2], [0, 2], [1]]
+
+# init. Q-values to zero, -inf for impossible actions
+Q_values = np.full((3, 3), -np.inf)  # -np.inf for impossible actions
+for state, actions in enumerate(possible_actions):
+    Q_values[state, actions] = 0.0  # for all possible actions
+    
+# Q-value iteration
+gamma = 0.90 # discount factor
+for iteration in range(50)
+	Q_prev = Q_values.copy()
+	for s in range(3):
+		for a in possible_actions[s]:
+			Q_values[s, a] = np.sum([
+				transition_probabilities[s][a][sp]
+				* (rewards[s][a][sp] + gamma * Q_prev[sp].max())
+				for sp in range(3)])
+				
+>>> Q_values
+array([[18.91891892, 17.02702702, 13.62162162],
+       [ 0.        ,        -inf, -4.87971488],
+       [       -inf, 50.13365013,        -inf]])
+       
+Q_values.argmax(axis=1)  # optimal action for each state
+array([0, 0, 1])
+```
+
+Optimal policy
+- $s_0$ -> $a_0$
+- $s_1$ -> $a_0$
+- $s_2$ -> $a_1$
+
+- If the discount factor increases to 0.95 from 0.90, the $s_1$ -> $a_2$ (fire)
+	- More value for the future reward, the more pain that is endured
+
 
 # Temporal Difference Learning
 
+- RL problems with discrete actions can be modelled as Markov decision processes (MDP)
+- Agent initially does not know that the transitions probabilities are T(s, a, s') and the rewards R(s, a s')
+- For the agent to learn, it must experience each state and transition at least one
+- Temporal different (TD) learning
+	- Takes into account the agent has partial knowledge of MDP
+	- Exploration policy
+		- TD learning algorithm updates the estimates of the state values based on the transitions and rewards that are observed
+
+
+- TD Learning Algorithm
+
+![[Pasted image 20260304140319.png]]
+
+![[Pasted image 20260304140330.png]]
+
+- TD learning is similar to stochastic gradient descent
+	- Handles one sample at a time
+	- Converge if you gradually reduce the learning rate
+	- Otherwise, bound around the optimum Q-values
+
 # Q-Learning
 
+- Q-learning algorithm is an adaptation of the Q-value iteration
+- Watching an agent play (randomly) and gradually improves its estimated of the Q-values
+- When is has accurate Q-values, then the optimal policy is chosen from the highest Q-value (greedy policy)
+
+- Q-Learning algorithm
+
+![[Pasted image 20260304140542.png]]
+
+- For each state-action pair (s, a), the algorithm keeps track of a running average of the rewards the agents gets upon leaving the state s with action a, plus the sum of discounted future rewards is expects
+	- Take the max of the Q-values for the next state s'
+
+```python
+# step function, get resulting state and reward
+def step(state, action):
+	probas = transition_probabilities[state][action]
+	next_state = np.random.choice([0, 1, 2], p=probas)
+	reward = rewards[state][action][next_state]
+	return next_state, reward
+	
+# exploration policy
+def exploration_policy(state):
+	return np.random.choice(possible_actions[state])
+	
+# init. Q-value
+alpha0 = 0.05  # initial learning rate
+decay = 0.005  # learning rate decay
+gamma = 0.90  # discount factor
+state = 0  # initial state
+
+for iteration in range(10_000):
+	action = exploration_policy(state)
+	next_state, reward = step(state, action)
+	next_value = Q_values[next_state].max() # greedy policy
+	alpha = alpha 0 / (1 + iteartion * decay)
+	Q_values[state, action] *= 1 - alpha
+	Q_values[state, action] += alpha * (reward + gamma * next_value)
+	state = next_state
+```
+- Algorithm will converge the optimal Q-values
+- Q-value iteration converges in less than 20 iterations
+- Q-learning algorithm takes about 8,000
+	- Not knowing the transition prob. or rewards make it difficult to find the optimal policy
+
+![[Pasted image 20260304141127.png]]
+
+- Q-learning algorithm is also called the off-policy
+	- Policy being trained is not necessarily the one. used during training
+	- Policy being executed (exploration) was random, while trained was never used
+	- After training, the optimal policy corresponds to the systematically choosing the action with the highest Q-value
+- Policy gradients is an on-policy
+	- Explores the world using the policy being trained
+
 ## Exploration Policies
+
+- Q-learning can work only if the exploration policy explores the MDP throughly enough
+- 
+
+
 ## Approximate Q-Learning and Deep Q-Learning
 
 # Implementing Deep Q-Learning
