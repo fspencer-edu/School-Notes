@@ -495,11 +495,25 @@ for iteration in range(10_000):
 
 ## Exploration Policies
 
-- Q-learning can work only if the exploration policy explores the MDP throughly enough
-- 
+- Q-learning can work only if the exploration policy explores the MDP thoroughly enough
+- Better option is to use the $\epsilon$-greedy policy
+	- At each step is acts randomly with probability, $\epsilon$ or greedy with probability $1 -\epsilon$
+- The advantages is that is will spend more time exploring the interesting parts of the environment
+- Rather than relying only on chance for exploration, another approach is to encourage the exploration policy to try actions that is has not tried before
 
+- Q-learning using an exploration function
+
+![[Pasted image 20260304145652.png]]
 
 ## Approximate Q-Learning and Deep Q-Learning
+
+- The main problem with Q-learning is that is does not scaled well to large MDPs with many states and actions
+- Approximate Q-learning
+	- Find function $Q_{\theta}(s,a)$ that approximates the Q-value of any state-action pair (s, a) using a manageable number of parameters
+- Using deep NN can work better than linear combinations of extracted features
+- DNN used to estimated Q-values is called a deep Q-network (DQN)
+	- Deep Q-learning
+- Execute the DQN on the next state, s' for all possile a
 
 # Implementing Deep Q-Learning
 
