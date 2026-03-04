@@ -564,9 +564,114 @@ encoder_state = [tf.concat(encoder_state[::2], axis=-1)],
 	- Outputs a score (energy) for each encoder output
 	- Measures how well each output is aligned with the decoder's previous hidden state
 - Scores go through a softmax layer to get a final weight for each encoder output
+- Bahdanau attention
+	- All weights for a given decoder time step add up to 1
+	- Concatenates the encoder output with decoder's previous hidden state (concatenate attention/additive attention)
 
+- Luong attention/multiplicative attention
+	- Measure the similarity between on of the encoder's outputs and the decoder's previous hidden state
+		- Computes the dot product of these two vectors
+	- Both vectors have the same dimensionality
+- "General" dot product approach
+	- Encoder outputs first go through a fully connected layer (without a bias term) before the dot products are computed
+
+- Attention mechanisms
+
+![[Pasted image 20260303200431.png]]
+
+```python
+encoder = tf.keras.layers.Bidirectional(
+	tf.keras.layers.LSTM(256, return_sequences=True, return_state=True)
+)
+```
+- Create the attention layer and pass it the decoder's states and encoder's outputs
+- Write a memory cell for decoder's states
+
+```python
+attention_layer = tf.keras.layers.Attention()
+attention_outputs = attention_layer([decoder_outputs, encoder_outputs])
+output_layer = tf.keras.layers.Dense(vocab_size, activation="softmax")
+Y_proba = output_layer(attention_outputs)
+
+# train model
+>>> translate("I like soccer and also going to the beach")
+'me gusta el fútbol y también ir a la playa'
+```
+
+- Attention layer provides a way to focus attention on the model on part of the inputs
+	- Differentiable memory retrieval mechanism
+- Directionally lookup
+	- Subject, verb
+- Computes a similarity measure between the query at each key in the dictionary, and use the softmax function to convert these similarity scores to weights that add up to 1
+- `Attention` and `AdditiveAttention` layers both except a list as input
+	- Queries, keys, and values
+- Decoder outputs are the queries
+	- Returns a weighted sum of the encoder outputs that are most similar to the decoder output
+- Encoder outputs are the keys and values
 
 ## Attention Is All You Need: The Original Transformer Architecture
+
+- Transformer
+	- Model is not recurrent
+		- Reduces vanishing or exploding gradients
+	- NMT without recurrent or convolutional layers, just attention mechanisms
+- Each embedding layer outputs a 3D tensor (batch size, sequence length, embedding size)
+- Tensors are transformed, but remain the same shape
+
+![[Pasted image 20260303201317.png]]
+
+- At inference time, call the transformer multiple times, producing the translations one word at a time, with partial translations to the decoder
+- The encoder transforms the inputs, until it captures the meaning of the word
+
+Encoder: "like" => to be fond of
+
+Decoder: "SOS me gusta el fútbol" -> "el + 1" => "fútbol"
+
+- Both encoder and decoder contain modules that are stacked N times
+- Each word is treated independently from each other
+	- Encoder's multi-head attention layer updates each word representation by attending to all words in the same sentence
+- Decoder's masked multi-head attention layer does the same thing, but when it processes a word (causal layer)
+- Decoder's upper multi-head attention layer is where the decoder pays attention to the words in the English sentence
+	- Cross-attention
+- Positional encodings are dense vectors
+
+## Positional Encodings
+
+- A positional encoding is a dense vector that encodes the position of a word within a sentence
+- Encoder all the positions form 0 to max sequence length in batch, then add to word embeddings
+- Broadcasting will ensure that the positional encodings get applied to every input sequence
+
+```python
+max_length = 50
+embed_size = 128
+pos_embed_layer = tf.keras.layer.Embedding(max_length, embed_size)
+batch_max_len_enc = tf.shape(encoder_embeddings)[1]
+encoder_in = encoder_embeddings + pos_embed_layer(tf.range(batch_max_len_enc))
+batch_max_len_dec = tf.shape(decoder_embeddings)[1]
+decoder_in = decoder_embeddings + pos_embed_layer(tf.range(batch_max_len_dec))
+```
+
+- Assumes embeddings are regular tensors, not ragged tensors
+- Instead of trainable positional encodings, use fixed positional encodings, based on the sine and cosine functions at different frequencies
+
+- Sine/cosine positional encodings
+
+![[Pasted image 20260303202605.png]]
+
+- Model as access to the absolute position for each word in the sentence because there is a unique positional encoding for each position
+- Precompute encoding matrix in the constructor
+
+```python
+class PositionalEncoding(tf.keras.layes.Layer):
+	def __init__(self, max_length, embed_size, dtype=tf.float32, **kwargs):
+		super().__init__(dtype=dtype, **kwargs)
+		assert embed_size % 2 == 0, "embed_size must be even"
+		p, i = np.meshgrid(np.arange(max_length),
+					2 * np.arange(embed_size // 2))
+		pos_emb = np.empty((1, max_length, embed_size))
+		pos_emb[0, :, ::2] = np.sin(p / 10_000 ** (i / embed_size)).T
+		pos_emb[0, :, 1::2] = np.sin(p / 10_000 ** (i / embed_size)).T
+```
 
 # An Avalanche of Transformer Models
 
