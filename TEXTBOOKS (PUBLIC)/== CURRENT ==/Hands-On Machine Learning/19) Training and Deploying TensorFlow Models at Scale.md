@@ -499,15 +499,161 @@ with open("my_converted_savedmodel.tflite", "wb") as f:
 	f.write(tflite_nodel)
 ```
 
-- 
+- The converted optimizes the model
+- Prunes all the operations that are not needed to make predictions
+	- Training operations
+- Batch normalization layers are folded into the previous layer's addition and multiplication operations
+- Smaller bit-widths
+	- Half-floats (16 bits)
+- Quantizing the model weights down to fixed-point, 8-bit integers
+- Post-training quantization
+	- Quantizes the weights after training
+	- Finds max absolute weight value, m, then maps the floating-point range -m to +m to the fixed point (integer)
+
+![[Pasted image 20260304172312.png]]
+
+```python
+converter.optimizations = [tf.lite.Optimize.DEFAULT]
+```
+
+- At runtime the quantized weights get converted back to floats before they are used
+- Accuracy loss is acceptable (float point errors)
+- Quantizes the activations so that computations can be done with integers
+- Quantization-aware training
+	- Adding fake quantization operations to the model so it can learn to ignore the quantization noise during training
 
 # Running a Model in a Web Page
 
+- Running the ML model on the client side, rather that server side can be used
+	- Web application in situations where the user's connectivity is slow
+	- When you need the model's responses to be fas
+	- Web service makes predictions based on some private user data
+- TensorFlow.js
+	- Load TFLite model
+- The following JS script imports the TFJS library, download pretrained MobileNet Model, and uses the model to classify an image and log the prediction
+
+```python
+import "https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest";
+import "https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@1.0.0";
+
+const image = document.getElementById("image");
+
+mobilenet.load().then(model => {
+	model.classify(image).then(predictions => {
+		for (var i = 0; i < predictions.length; i++) {
+			let className = predictions[i].className
+			let proba = (predictions[i].probability * 100).toFixed(1)
+			console.log(className + " : " + proba + "%");
+		}
+	});
+});
+```
+
+- Turn a website into a progressive web app (PWA)
+	- Site that respects a number of criteria that allow it to be views in any browser, and installed as a standalone app on a mobile device
+	- Use a service worker to work offline
+- TFJS also supports training a model directly in the web browser
+	- Federated learning
+
+
 # Using GPUs to Speed Up Computations
 
+- Speed up training
+	- Better weight initialization
+	- Sophisticated optimizers
+- Training a  large NN on a single machine is computationally expensive
+
+![[Pasted image 20260304174043.png]]
+
+
 ## Getting Your Own GPU
+
+- Train your models locally to avoid uploading data to cloud
+- GPU characteristics
+	- > 10 GM of RAM
+	- Bandwidth
+	- Cores
+	- Cooling system
+- Compute Unified Device Architecture library (CUDA) toolkit
+	- Allows developers to use CUDA-enabled GPUs for computations
+	- Deep Neural Network library (cuDNN)
+		- GPU-acclerlerated library
+			- Activation layers
+			- Normalization
+			- Forward and backward convolutions
+			- Pooling
+
+![[Pasted image 20260304174343.png]]
+
+- `nvidia-smi`
+	- Checks that drivers and libraries are installed
+
+![[Pasted image 20260304174435.png]]
+
+```python
+physical_gpus = tf.config.list_physical_device("GPU")
+physical_gpus
+[PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+```
+
 ## Managing the GPU RAM
+
+- By default TF uses almost all the RAM available
+- Does this to limit GPU RAM fragmentation
+- Split the GPU between multiple processes, to run more than one
+
+- Split programs per GPUs
+
+```python
+$ CUDA_DEVICE_ORDER=PCI_BUS_ID CUDA_VISIBLE_DEVICES=0,1 python3 program_1.py
+# and in another terminal:
+$ CUDA_DEVICE_ORDER=PCI_BUS_ID CUDA_VISIBLE_DEVICES=3,2 python3 program_2.py
+```
+
+![[Pasted image 20260304174634.png]]
+
+- Tell TF to use a specific amount of GPU RAM
+	- Logical GPU device (virtual GPU device) for each physical GPU device and set the memory to 2 GiB
+
+```python
+for gpu in physical_gpus:
+    tf.config.set_logical_device_configuration(
+        gpu,
+        [tf.config.LogicalDeviceConfiguration(memory_limit=2048)]
+    )
+```
+![[Pasted image 20260304174752.png]]
+
+- Another option is to tell TF to grab memory only when needed
+
+```python
+for gpu in physical_gpus:
+	tf.config.experiental.set_memory_growth(gpu, True)
+```
+
+- Split a GPU into two or more logical devices
+	- Only have one physical GPU
+
+```python
+tf.config.set_logical_device_configuration(
+    physical_gpus[0],
+    [tf.config.LogicalDeviceConfiguration(memory_limit=2048),
+     tf.config.LogicalDeviceConfiguration(memory_limit=2048)]
+)
+
+>>> logical_gpus = tf.config.list_logical_devices("GPU")
+>>> logical_gpus
+[LogicalDevice(name='/device:GPU:0', device_type='GPU'),
+ LogicalDevice(name='/device:GPU:1', device_type='GPU')]
+```
+
 ## Placing Operations and Variables on Devices
+
+- Keras and tf.data do a good job of placing operations and variables where they belong
+	- Place the data preprocessing operation on the CPU
+	- Place NN operations on GPUs
+	- GPUs have limited communicati
+
 ## Parallel Execution Across Multiple Devices
 
 # Training Models Across Multiple Devices
