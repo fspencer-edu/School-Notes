@@ -670,8 +670,40 @@ class PositionalEncoding(tf.keras.layes.Layer):
 					2 * np.arange(embed_size // 2))
 		pos_emb = np.empty((1, max_length, embed_size))
 		pos_emb[0, :, ::2] = np.sin(p / 10_000 ** (i / embed_size)).T
-		pos_emb[0, :, 1::2] = np.sin(p / 10_000 ** (i / embed_size)).T
+		pos_emb[0, :, 1::2] = np.cos(p / 10_000 ** (i / embed_size)).T
+		self.pos_encodings = tf.constant(pos_emb.astype(self.dtype))
+		self.supports_masking = True
+		
+	def call(self, inputs):
+		batch_max_length = tf.shape(inputs)[1]
+		return inputs + self.pos_encdings[:, :batch_max_length]
+		
+# use this layer to add the pos. encoding to the encoder's inputs
+pos_embed_layer = PositionalEncoding(max_length, embed_size)
+encoder_in = pos_embed_layer(encoder_embeddings)
+decoder_in = pos_embed_layer(decoder_embeddings)
 ```
+
+## Multi-head Attention
+
+- Scaled dot product attention layer
+
+![[Pasted image 20260303203305.png]]
+
+$Q$ = matrix containing one row per query
+$K$ = matrix containing one row per key
+$V$ = matrix containing one row per value
+$QK^T$ = Contains one similarity score for each query.key pair
+$1/\sqrt{d_{keys}}$ = scales down similarity score
+
+- `Attention` layer's input are like Q, K, and V, with an extra batch dimension
+
+![[Pasted image 20260303203538.png]]
+
+
+- 
+
+
 
 # An Avalanche of Transformer Models
 
