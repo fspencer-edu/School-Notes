@@ -513,14 +513,179 @@ for iteration in range(10_000):
 - Using deep NN can work better than linear combinations of extracted features
 - DNN used to estimated Q-values is called a deep Q-network (DQN)
 	- Deep Q-learning
-- Execute the DQN on the next state, s' for all possile a
+- Execute the DQN on the next state, s' for all possible actions a'
+- Pick the highest Q-value and discount it, resulting in an estimate of the sum of future discounted rewards
+- By summing the reward r and future discounted value estimate, we get a target Q-value y(s, a)
+
+- Target Q-value
+
+![[Pasted image 20260304150121.png]]
+
+- The target Q-value can be used during training step using any gradient descent algorithm
+- Minimize the squared error between the estimated Q-value and target Q-value, or the Huber loss to reduce the algorithm's sensitivity to large errors
 
 # Implementing Deep Q-Learning
+
+- NN that takes a state-action pair as input, and outputs an approximate Q-value
+- Use a NN that takes only a state as input, and outputs one approximate Q-value for each possible action
+- Choose the largest predicted Q-value
+- Instead of training the DQN on the latest experiences, stores all the experiences in a replay buffer/memory
+- Sample a random training batch from it at each training iteration
+
+```python
+input_shape = [4]  # == env.observation_space.shape
+n_outputs = 2  # == env.action_space.n
+
+model = tf.keras.Sequential([
+	tf.keras.layers.Dense(32, activation="elu", input_shape=input_shape),
+	tf.keras.Dense(32, activation="elu"),
+	tf.keras.layers.Dense(n_outputs)
+])
+
+def epsilon_greedy_policy(state, epsilon=0):
+	if np.random.rand() < epsilon:
+		return np.random.randint(n_outputs)
+	else:
+		Q_values = model.predict(state[np.newaxis], verbose=0)[0]
+		return Q_values.argmax()
+		
+from collections import deque
+replay_buffer = deque(maxlen=2000)
+```
+- A deque is a queue elements that can be efficiently added or removed from both ends
+- Random access can be slow if the queue gets long
+	- Use a circular buffer for long sequences
+- 6 elements
+	- state
+	- action
+	- Reward
+	- Next state
+	- Ended boolean
+	- Truncated boolean
+
+```python
+# sample a random experience, and return 6 elements
+def sample_experiences(batch_size):
+	indices = np.random.randint(len(replay_buffer), size=batch_size)
+	batch = [replay_buffer[index] for index in indices]
+	return [
+		np.array([experience[field_index] for experience in batch])
+		for field_idnex in range(6)
+	] # [states, actions, rewards, next_states, dones, truncateds]
+	
+# single step
+def play_one_step(env, state, epsilon):
+	action = epsilon_greedy_policy(state, epsilon)
+	next_state, reward, done, truncated, info = env.step(action)
+	replay_buffer.append((state, action, reward, next_state, done, truncated))
+	return next_state, reward, done, truncated, info
+	
+# batch of experiences from the replay buffer and train with single grad. descent
+batch_size = 32
+discount_factor = 0.95
+optimizer = tf.keras.optimizers.Nadam(learning_rate=1e-2)
+loss_fn = tf.keras.losses.mean_squared_error
+
+def training_step(batch_size):
+	experiences = sample_experiences(batch_size)
+	states, actions, rewards, next_states, dones, truncateds = experiences
+	next_Q_values = model.predict(next_states, verbose=0)
+	max_next_Q_values = next_Q_values.max(axis=1)
+	runs = 1.0 - (dones | truncateds)
+	target_Q_values = rewards + runs * discount_factor * max_next_Q_values
+	target_Q_values = target_Q_values.reshape(-1, 1)
+	mask = tf.hot_one(actions, n_outputs)
+	wiith tf.GradientTape() as tape:
+		all_Q_values = model(states)
+		Q_values = tf.reduce_sum(all_Q_values * mask, axis=1, keepdims=True)
+		loss = tf.reduce_mean(loss_fn(target_Q_values, Q_values))
+		
+	grads = tape.gradient(loss, model.trainable_variables)
+	optimizer.apply_gradients(zip(grads, model.trainable_variables))
+```
+
+- Define hyperparameters, and create the optimizer and loss function
+- `training_step()`
+	- Starts by sampling a batch of experiences, then uses the DQN to predict the Q-value for each possible action in each next state
+	- Keep the max Q-value for each next state
+	- Compute the target Q-value for each state-action pair
+- Use DQN to compute the Q-value for each state-action, but the DQN will also output the Q-values for the other possible actions
+	- Mask out all the Q-values
+	- Use one hot encoding to convert an array of action indices into a mask
+- Compute the loss
+	- Mean squared error between target and prediction Q-values
+- Perform a gradient descent step to minimize the loss with regards to the model's trainable variables
+
+```python
+# train model
+for episode in range(600):
+	obs, info = env.reset()
+	for step in range(200):
+		epsilon = max(1 - episode / 500, 0.01)
+		obs, reward, done, truncated, info = play_one_step(env, obs, epsilon)
+		if done or truncated:
+			break
+			
+	if episode > 50:
+		training_step(batch_size)
+```
+
+- Run 600 eps, each with a max of 200 steps
+- At each step, compute the epsilon value for the greedy policy (1 to 0.01 linearly)
+- If we past eps 50, call the training step function to train the model on one batch sampled from the replay buffer
+
+![[Pasted image 20260304152131.png]]
+
+- Catastrophic forgetting
+	- As the agent explores the environment, it updates it policy, but what it learns in one part of the environment may break what is learned early in other parts of the environment
+		- Increase the replay buffer
+		- Tune leraning rate
+		- Activation function
+- Loss is poor indicator of the model's performance
 
 # Deep Q-Learning Variants
 
 ## Fixed Q-Value Targets
+
+- In the basic deep Q-learning algorithm
+	- Model is used to make predictions and set its own targets
+- This can lead to a unstable feedback loop
+	- Diverge, oscillate, freeze
+- Online model
+	- Learns at each step and is used to move the agent around
+- Target model
+	- Define the target
+
+```python
+target = tf.keras.models.clone_model(model)
+target.set_weights(model.get_weights())
+
+# use target model instead of online model
+next_Q_values = target.predict(next_states, verbose=0)
+
+# copy weights of online model to target model, at regular intervals
+if episode % 50 == 0:
+	target.set_weights(model.get_weights())
+```
+
+- The target model is updated less often than the online model
+- Q-value targets are more stable, and the feedback look is dampened
+
 ## Double DQN
+
+- Double DQN
+	- Target network is prone to overestimating Q-values
+	- Some Q-values are greater than others by change
+	- The target model will always select the largest Q-value, which overestimated the true Q-value
+	- Using online model instead of the target model when selecting the best actions for the next states
+
+```python
+def training_step(batch_size):
+	experiences = sample_experiences(batch_size)
+	states, actions, rewards, next_states, dones, truncateds = experiences
+	next_Q_values = model,
+```
+
 ## Prioritized Experience Replay
 ## Dueling DQN
 
