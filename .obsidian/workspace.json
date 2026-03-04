@@ -167,12 +167,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TEXTBOOKS (PUBLIC)/== TODO ==/Markdown and Pandoc/0) Markdown and Pandoc.md",
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Mining/8) Ensemble Learning.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "0) Markdown and Pandoc"
+              "title": "8) Ensemble Learning"
             }
           }
         ],
@@ -326,8 +326,28 @@
   },
   "active": "96fca1a5f0595b09",
   "lastOpenFiles": [
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Natural Language Processing with Transformers/0) Natural Language Processing with Transformers.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Mining/7) Data Transformations.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Mining/8) Ensemble Learning.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Mining/6) Implementation - Real Machine Learning Schemes.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Mining/4) Algorithms - The Basic Method.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Math for Machine Learning/0) Mathematics for Machine Learning.md",
+    "images/Pasted image 20260304082606.png",
+    "Pasted image 20260304082606.png",
+    "TEXTBOOKS (PUBLIC)/Todo - Links.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Math for Machine Learning",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Generative Deep Learning/0) Generative Deep Learning.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/0) GANs in Action.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Generative Deep Learning",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Computer Vision/0) Computer Vision - Algorithms and Applications.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/GANs",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Generative AI Design Patterns/0) Generative AI Design Patterns.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Deep Learning/0) Deep Learning.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Generative AI Design Patterns",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/AI Agents with MCP/0) AI Agents with MCP.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Deep Learning",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Markdown and Pandoc/0) Markdown and Pandoc.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/AI Agents with MCP",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Natural Language Processing with Transformers/0) Natural Language Processing with Transformers.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Markdown and Pandoc",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Natural Language Processing with Transformers",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/17) Auto-encoders, GANs, and Diffusion Models.md",
@@ -342,10 +362,6 @@
     "images/Pasted image 20260303112012.png",
     "images/Pasted image 20260303220422.png",
     "images/Pasted image 20260303221103.png",
-    "images/Pasted image 20260303195219.png",
-    "images/Pasted image 20260303111856.png",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Mining/7) Data Transformations.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Mining/6) Implementation - Real Machine Learning Schemes.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Science from Scratch/27) Go Forth and Do Data Science.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Science from Scratch/26) Data Ethics.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Science from Scratch/25) MapReduce.md",
@@ -354,23 +370,7 @@
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Science from Scratch/22) Network Analysis.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Science from Scratch/21) Natural Language Processing.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Science from Scratch/20) Clustering.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Science from Scratch/19) Deep Learning.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Science from Scratch/18) Neural Networks.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Science from Scratch/17) Decision Trees.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Science from Scratch/16) Logistic Regression.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Science from Scratch/15) Multiple Regression.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Science from Scratch/14) Simple Linear Regression.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Science from Scratch/13) Naive Bayes.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Science from Scratch/12) K-Nearest Neighbours.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Science from Scratch/11) Machine Learning.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Science from Scratch/10) Working with Data.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Science from Scratch",
-    "Table of Contents.base",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Building Applications with AI Agents/1) Introduction To Agents.md.tmp",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Building Applications with AI Agents/10) Monitoring In Production.md.tmp",
-    "TEXTBOOKS (PUBLIC)/Docker/9) The Path To Production Containers.md.tmp",
-    "PRIVATE/Winter 2026/Data Mining/Assignment",
-    "PRIVATE/Winter 2026/Discrete Structures/Textbook/3) The Logic of Quantified Statements.md.tmp",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/SmallTalk/Lecture"
+    "Table of Contents.base"
   ]
 }
