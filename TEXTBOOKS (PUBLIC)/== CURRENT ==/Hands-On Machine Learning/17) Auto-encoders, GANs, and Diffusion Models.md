@@ -598,12 +598,136 @@ generated_iamges = generator.predict(codings)
 ```python
 coding_size = 100
 
-generator = tf.keras.Sequenti
+generator = tf.keras.Sequential([
+	tf.keras.layers.Dense(7 * 7 * 128),
+	tf.keras.Reshape([7, 7, 128]),
+	tf.keras.layers.BatchNormalization(),
+	tf.keras.layers.Conv2DTranspose(64, kernel_size=5, strides=2,
+				padding="same", activation="relu"),
+	tf.keras.layers.BatchNormalization(),
+	tf.keras.layers.Conv2DTranspose(1, kernel_size=5, strides=2,
+				padding="same", activation="tanh"),
+])
+
+discriminator = tf.keras.Sequential([
+	tf.keras.layers.Conv2D(64, kernel_size=5, strides=2, padding="same",
+				activation=tf.keras.layers.LeakyReLU(0.2)),
+	tf.keras.layers.Dropout(0.4),
+	tf.keras.layers.Conv2D(128, kernel_size=5, strides=2, padding="same",
+				activation=tf.keras.layers.LeakyReLU(0.2)),
+	tf.keras.layers.Dropout(0.4),
+	tf.keras.layers.Flatten(),
+	tf.keras.layers.Dense(1, activation="sigmoid")
+])
+gan = tf.keras.Sequential([generator, discriminator])
+
+X_train_dcgan = X_train.reshape(-1, 28, 28, 1) * 2. - 1.
 ```
 
+- Before training the GAN, rescale the training set to the same range
+- Build the dataset then compile and train this model
 
+![[Pasted image 20260304114923.png]]
+
+- Codings that were used to generate the images were averages, and an image was generated based on the resulting mean codings
+- Mean computed in the latent space
+
+![[Pasted image 20260304115059.png]]
+
+- Add each image's class as an extra input to both the generator and the discriminator
+	- Conditional GAN (CGAN)
 
 ## Progressive Growing of GANs
+
+- Generating small images at the beginning of training, then gradually adding convolutional layers to both the generator and the discriminator to produce large images
+	- Greedy-layer-wise training of stacked AE
+- Extra layer is added at the end of generator and beginning of discriminator
+- Fade-in/fade-out technique is used when a new convolutional layer is added to the discriminator
+
+![[Pasted image 20260304115328.png]]
+
+
+- Other techniques for stable training
+	- Mini-batch standard deviation layer
+		- Added near the end of the discriminator
+		- Computes the std across all channels and all instance in the back
+	- Equalized learning rate
+		- Initializes all weights using GD with mean 0 and std 1, rather than He
+		- Weights are scaled down at runtime by the same factor as in He
+	- Pixelwise normalization layer
+		- Added after each convolutional layer in the generator
+		- Normalizes each activation based on all the activations in the same image and at the same location, but across all channels
+		- Avoids explosions in the activations due to excessive competition
+
+- Measure similarity between local image structure of the generated images and the training images, at every scale
+
 ## StyleGANs
 
+- SoTA in high-resolution image generation
+- Style transfer techniques in the generator to ensure that the generated images have the same local structure as the training images, at every scale
+
+2 Networks
+- Mapping network
+	- 8 layer MLP that maps the latent representations, $Z$ to a vector $w$
+	- Vector goes through multiple affine transformations
+	- Maps the codings to multiple style vectors
+- Synthesis network
+	- Generates the images
+	- Constant learned input (after training)
+	- Multiple convolutional and upsampling layers
+	- Noise is added to the input and to all the output of the convolutional layers (before activation)
+	- Each noise layer is followed by an adaptive instance normalization (AdaIN)
+		- Standardizes each feature map independently, then uses the stuye vector to determine the scale and offset of each feature map
+
+![[Pasted image 20260304120116.png]]
+
+- GAN is able to use the provided noise to add the right amount of stochasticity to each part of the image
+- Each noise input consists of a single feature map full of Gaussian noise, which broadcast to all feature map and scaled using learned per-feature scaling factors ("B" boxes)
+- StyleGAN uses mixing regularization where a percentage of the generated images are produces using 2 different codings
+
+$c_1$ and $c_2$ => mapping network => $w_1$ and $w_2$ 
+
+- Synthesis network generates an image based on the styles $w_1$ for the first levels and $w_2$ for the remaining levels
+
 # Diffusion Models
+
+- Tools from thermodynamics to model a diffusion process
+- Train a model to learn the reverse process
+	- Start from a mixed state, then unmix
+- Denoising diffusion probabilistic model (DDPM)
+	- Long time compared to GANs or VAE
+
+DDPM
+- Start with an image, $x_0$
+- At each time step t add a bit of Gaussian noise to the image, with mean 0 and variance $\beta_t$
+- Noise is independent for each pixel (isotropic)
+- Obtain, $x_t$, until image is hidden by noise
+- Last step, $T$, where the image is drowned in noise (forward process)
+- Pixel values get rescaled at each step by $\sqrt{1-\beta_t}$
+
+- Probability distribution q of the forward diffusion process
+
+![[Pasted image 20260304121018.png]]
+
+- Shortcut the forward process
+- Sample an image $x_t$ given $x_0$ without computing $x_1, x_2, ...$
+- Sum of multiple Gaussian distributions is also a Gaussian distribution
+	- Noise is added in one shot
+
+- Shortcut for the forward diffusion process
+
+![[Pasted image 20260304121141.png]]
+
+- Create many new images, to perform revers process, $x_t$ to $x_t-1$
+
+![[Pasted image 20260304121224.png]]
+
+- Variance schedule equations for the forward diffusion process
+
+![[Pasted image 20260304121307.png]]
+
+```python
+def variance_schedule(T, s=0.008, max_beta=0.999):
+	t = np.arrange(T + 1)
+	
+```
