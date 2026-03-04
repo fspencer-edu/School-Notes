@@ -317,14 +317,180 @@ sparse_11_ae = tf.keras.Sequential([sparse_11_encoder, sparse_11_decoder])
 - `ActivityRegularization`
 	- Returns its inputs, bus as a side effect is adds a training loss equal to the sum of the absolute values of its inputs
 - Penalty will encourage the NN to produce encodings close to 0
-- Penalized if it does not reconstruct the inputs correctl
+- Penalized if it does not reconstruct the inputs correctly
+- Measure the actual sparsity of the coding layer at each training iteration
+- Compute the average activation of each neuron in the coding layer, over the whole training batch
+- Penalize the neurons that are too, and not enough active by adding a sparsity loss to the cost function
+- Kullback-Leibler (KL) divergence
+	- Stronger gradients than the MSSE
 
+
+![[Pasted image 20260304101439.png]]
+
+
+- Kullback-Leibler Divergence
+
+![[Pasted image 20260304101457.png]]
+
+- KL divergence between the target sparsity $p$ and the actual sparsity $q$
+
+![[Pasted image 20260304101553.png]]
+
+ - Sum of the losses and add the result to the cost function
+	 - Multiply the sparsity loss by a sparsity weight hyperparameter
+
+```python
+kl_divergence = tf.keras.losses.kullback_leibler_divergence
+
+class KLDivergenceRegularizer(tf.keras.regularizers.Regularizer):
+	def __init__(self, weight, target):
+		self.weight = weight
+		self.target = target
+		
+	def __call__(self, inputs):
+		mean_activities = tf.reduce_mean(inputs, axis=0)
+		return self.weight * (
+			kl_divergence(self.target, mean_activities) +
+			kl_divergence(1. - self.target, 1. - mean_activities))
+			
+# sparse AE
+kld_reg = KLDivergenceRegularizer(weight=5e-3, target=0.1)
+sparse_kl_encoder = tf.keras.Sequential([
+	tf.keras.layers.Flatten(),
+	tf.keras.layers.Dense(100, activation="relu"),
+	tf.keras.layers.Dense(300, activation="sigmoid",
+				activity_regularizer=kld_red),
+])
+sparse_kl_decoder = tf.keras.Sequential([
+	tf.keras.layers.Dense(100, activation="relu"),
+	tf.keras.layers.Dense(28 * 28),
+	tf.keras.layers.Reshape([28, 28])
+])
+sparse_kl_ae = tf.keras.Sequential([sparse_kl_encoder, sparse_kl_decoder])
+```
 
 # Variational Autoencoders
 
+- Variational autoencoders (VAEs)
+	- Probabilistic AE
+		- Outputs are partly determined by chance
+	- Generative AE
+		- Generate new instance that look like they were sampled from the training set
+
+- RBM need to wait for the network to stablize into a "thermal equilibrium" before sampling a new instance
+- Approximate Bayesian inference
+	- Updating a probability distribution based on new data
+- Original distribution = prior
+- Updated distribution = posterior
+
+- Find a good approximation of the data distribution
+
+![[Pasted image 20260304102451.png]]
+
+- Instead of directly producing a coding for a given input, the encoder produces a mean coding, $\micro$, and standard deviation, $\sigma$
+- Coding is then sampled randomly from a Gaussian distribution with mean and std
+- The decoder samples the coding normally
+- Training instance goes through this AE, encoder produces mean and std, then a coding is sampled randomly, coding id decoded
+- During training, the cost function pushes the codings to migrate within the coding space (latent space)
+- Cost function
+	- Reconstruction loss
+		- MSE
+	- Latent loss
+		- KL divergence between the target distribution and the actual distribution of the codings
+
+- Variational autoencoder's latent loss
+
+![[Pasted image 20260304102824.png]]
+
+- A common tweak to the variational autoencoder's architecture is to make the encoder output, $\gamma = log(\sigma)^2$
+
+- Variational AE's latent loss
+![[Pasted image 20260304102930.png]]
+
+
+```python
+class Sampling(tf.keras.layers.Layer):
+	def call(self, inputs):
+		mean, log_var = inputs
+		return tf.random.normal(tf.shape(log_var)) * tf.exp(log_var / 2) + mean
+# encoder
+coding_size = 10
+inputs = tf.keras.layers.Input(shape=[28, 28])
+Z = tf.keras.layers.Flatten()(inputs)
+Z = tf.keras.layers.Dense(150, activation="relu")(Z)
+Z = tf.keras.layers.Dense(100, activation="relu")(Z)
+codings_mean = tf.keras.layers.Dense(coding_size)(Z) # μ
+codings_log_var = tf.keras.layers.Dense(coding_size)(Z) # γ
+codings = Sampilng()([codings_mean, codings_log_var])
+variational_encoder = tf.keras.Model(
+	inputs=[inputs], outputs=[codings_mean, codings_log_var, codings]
+)
+# decoder
+decoder_inputs = tf.keras.layers.Input(shape=[codings_size])
+x = tf.keras.layers.Dense(100, activation="relu")(decoder_inputs)
+x = tf.keras.layers.Dense(150, activation="relu")(x)
+x = tf.keras.layers.Dense(28 * 29)(x)
+outputs = tf.keras.layers.Reshape([28, 28])(x)
+variational_decoder = tf.keras.Model(inputs=[decoder_inputs], outputs=[outputs])
+
+# variational AE
+_, _, codings = variational_encoder(inputs)
+reconstructions = variational_decoder(codings)
+variational_ae = tf.keras.Model(inputs=[inputs], outputs=[reconstructions])
+
+# Add latent and reconstruction loss
+latent_loss = -0.5 * tf.reduce_sum(
+	1 + codings_log_var - tf.exp(codings_log_var) - tf.square(codings_mean),
+	axis=-1)
+variational_ae.add_loss(tf.reduce_mean(latent_loss) / 784.)
+
+# compile and fit AE
+variational_ae.compile(loss="mse", optimizer="nadam")
+history = variational_ae.fit(X_train, X_train, epochs=25, batch_size=128,
+			validation_data(X_valid, X_valid))
+```
+
 # Generating Fashion MNIST Images
 
+
+- Generate images that look like fashion items
+- Sample random codings from a Gaussian distribution and decode them
+
+```python
+codings = tf.random.normal(shape=[3 * 7, codings_size])
+images = variational_decoder(codings).numpy()
+```
+
+![[Pasted image 20260304103830.png]]
+
+- Variational AE make is possible to perform semantic interpolation
+	- Instead of interpolating between two images at the pixel level, interpolate at the codings level
+
+```python
+codings = np.zeros([7, codings_size])
+codings[:, 3] = np.linspace(-0.8, 0.8, 7)
+images = variational_decoder(codings).numpy()
+```
+
+![[Pasted image 20260304104001.png]]
+
 # Generative Adversarial Networks
+
+- GAN is composed of 2 NN
+	- Generator
+		- Takes a random distribution as input, and outputs some data
+		- Similar to decoder in a variational AE
+	- Discriminator
+		- Takes a fake or real image from the generator as input, and determines the category
+
+![[Pasted image 20260304104141.png]]
+
+- Each iteration has 2 phases
+	- Train the discriminator
+		- Real images are sampled from the training set, and is compete with an equal number of fake images from generator
+		- Binary cross-entropy loss
+		- Backpropagation on
+
 
 ## The Difficulties of Training GANs
 ## Deep Convolutional GANs
