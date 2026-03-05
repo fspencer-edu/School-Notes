@@ -6,7 +6,8 @@
 	- Function that takes a vector as input and returns an output, while preserving the geometry
 - Matrices
 	- Rectangular arrays of numbers that can represent linear transformation
-- 
+- Vector space
+- Systems of linear equations
 
 # Picturing 2D Vectors
 
