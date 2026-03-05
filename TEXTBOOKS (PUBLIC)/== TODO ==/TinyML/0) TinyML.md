@@ -1,0 +1,24 @@
+![](https://learning.oreilly.com/covers/urn:orm:book:9781492052036/400w/)
+https://learning.oreilly.com/library/view/tinyml/9781492052036/
+
+1) Introduction
+2) Getting Started
+3) Getting Up To Speed on Machine Learning
+4) The "Hello, World" of TinyML - Building and Training a Model
+5) Building An Application
+6) Deploying to Microcontrollers
+7) Wake-World Detection - Building An Application
+8) Wake-World Detection - Training A Model
+9) Person Detection - Building An Application
+10) Person Detection - Training A Model
+11) Magic Wand - Building An Application
+12) Magic Wand - Training A Model
+13) TensorFlow Lite for Microcontrollers
+14) Designing Your Own TinyML Applications
+15) Optimizing Latency
+16) Optimizing Energy Usage
+17) Optimizing Model and Binary Size
+18) Debugging
+19) Porting Models from TensorFlow to TensorFlow Lite
+20) Privacy, Security, and Deployment
+21) Learning More
