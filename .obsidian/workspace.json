@@ -92,7 +92,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -149,7 +149,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "f79334738d86d2cb",
@@ -240,8 +241,9 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "c810d9a07eaab946",
+  "active": "b6a6351fccc3a0af",
   "lastOpenFiles": [
+    "PRIVATE/Winter 2026/Data Mining/Textbook/10) Anomaly Detection.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/9) Cluster Analysis - Additional Issues and Algorithms.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/8) Cluster Analysis - Basic Concepts and Algorithms.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/7) Association Analysis - Advanced Concepts.md",
@@ -259,7 +261,6 @@
     "images/Pasted image 20260304140542.png",
     "images/Pasted image 20260304135254.png",
     "PRIVATE/ToDo.md",
-    "PRIVATE/Winter 2026/Data Mining/Textbook/10) Anomaly Detection.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/7) DNA - Structure and Replication.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/8) RNA - Transcription, Processing, and Decay.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/19) Training and Deploying TensorFlow Models at Scale.md",
