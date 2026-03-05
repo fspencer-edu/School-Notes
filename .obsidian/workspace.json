@@ -22,34 +22,6 @@
             }
           },
           {
-            "id": "b6a6351fccc3a0af",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Data Mining/Textbook/6) Association Analysis - Basic Concepts and Algorithms.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "6) Association Analysis - Basic Concepts and Algorithms"
-            }
-          },
-          {
-            "id": "52737ef116dc5b84",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Data Mining/Textbook/7) Association Analysis - Advanced Concepts.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "7) Association Analysis - Advanced Concepts"
-            }
-          },
-          {
             "id": "8763f3ef7b4e3e4c",
             "type": "leaf",
             "state": {
@@ -241,24 +213,23 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "b6a6351fccc3a0af",
+  "active": "8763f3ef7b4e3e4c",
   "lastOpenFiles": [
-    "Pasted image 20260305101005.png",
-    "Pasted image 20260305100914.png",
-    "Pasted image 20260305100858.png",
-    "Pasted image 20260305100803.png",
-    "Pasted image 20260305100606.png",
-    "Pasted image 20260305100525.png",
-    "Pasted image 20260305100449.png",
-    "Pasted image 20260305100409.png",
-    "Pasted image 20260305100234.png",
-    "Pasted image 20260305095926.png",
-    "Pasted image 20260305095325.png",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/10) Anomaly Detection.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/9) Cluster Analysis - Additional Issues and Algorithms.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/8) Cluster Analysis - Basic Concepts and Algorithms.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/7) Association Analysis - Advanced Concepts.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/6) Association Analysis - Basic Concepts and Algorithms.md",
-    "PRIVATE/Winter 2026/Data Mining/Textbook/10) Anomaly Detection.md",
+    "Pasted image 20260305105847.png",
+    "Pasted image 20260305105740.png",
+    "Pasted image 20260305105628.png",
+    "Pasted image 20260305105518.png",
+    "Pasted image 20260305105433.png",
+    "Pasted image 20260305105224.png",
+    "Pasted image 20260305104847.png",
+    "Pasted image 20260305104705.png",
+    "Pasted image 20260305104610.png",
+    "Pasted image 20260305104426.png",
     "PRIVATE/Winter 2026/Data Mining/Textbook/5) Classification - Alternative Techniques.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/9) Testing Deployment Using a Staging Site.md.tmp",
     "PRIVATE/ToDo.md",
