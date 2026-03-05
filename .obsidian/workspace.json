@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PRIVATE/Winter 2026/Data Mining/Textbook/8) Cluster Analysis - Basic Concepts and Algorithms.md",
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/2) Drawing with 2D Vector.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "8) Cluster Analysis - Basic Concepts and Algorithms"
+              "title": "2) Drawing with 2D Vector"
             }
           },
           {
@@ -215,17 +215,19 @@
   },
   "active": "8763f3ef7b4e3e4c",
   "lastOpenFiles": [
-    "Pasted image 20260305160005.png",
-    "Pasted image 20260305155300.png",
-    "Pasted image 20260305155248.png",
-    "Pasted image 20260305155236.png",
-    "Pasted image 20260305155224.png",
-    "Pasted image 20260305155031.png",
-    "Pasted image 20260305154628.png",
-    "Pasted image 20260305153824.png",
-    "Pasted image 20260305153302.png",
-    "Pasted image 20260305153205.png",
-    "Pasted image 20260305153037.png",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/1) Learning Math with Code.md",
+    "Pasted image 20260305163514.png",
+    "Pasted image 20260305163309.png",
+    "Pasted image 20260305163254.png",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/0) Math for Programmers.md",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/8) Cluster Analysis - Basic Concepts and Algorithms.md",
+    "images/Pasted image 20260305155248.png",
+    "images/Pasted image 20260305121720.png",
+    "images/Pasted image 20260305155300.png",
+    "images/Pasted image 20260305141348.png",
+    "images/Pasted image 20260305122200.png",
+    "images/Pasted image 20260305124459.png",
+    "images/Pasted image 20260305152518.png",
     "PRIVATE/Winter 2026/Data Mining/Textbook/10) Anomaly Detection.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/AI and ML for Device Dev./0) AI and Machine Learning for On-Device Development.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Deep Learning for Cloud, Mobile, and Edge/0) Practical Deep Learning for Cloud, Mobile, and Edge.md",
@@ -238,7 +240,6 @@
     "TEXTBOOKS (PUBLIC)/== TODO ==/TinyML",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Cloud Computing/3) Multicore Architectures.md.tmp",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Python for Data Analysis/13) Introduction to Modeling Libraries in Python.md.tmp",
-    "PRIVATE/Winter 2026/Data Mining/Textbook/8) Cluster Analysis - Basic Concepts and Algorithms.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/9) Cluster Analysis - Additional Issues and Algorithms.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/7) Association Analysis - Advanced Concepts.md",
     "PRIVATE/Winter 2026/Data Mining/Textbook/6) Association Analysis - Basic Concepts and Algorithms.md",
@@ -247,9 +248,9 @@
     "PRIVATE/ToDo.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/7) DNA - Structure and Replication.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/8) RNA - Transcription, Processing, and Decay.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/19) Training and Deploying TensorFlow Models at Scale.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/18) Reinforcement Learning.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Hands-On Machine Learning/17) Auto-encoders, GANs, and Diffusion Models.md",
+    "TEXTBOOKS (PUBLIC)/== COMPLETE ==/Hands-On Machine Learning/19) Training and Deploying TensorFlow Models at Scale.md",
+    "TEXTBOOKS (PUBLIC)/== COMPLETE ==/Hands-On Machine Learning/18) Reinforcement Learning.md",
+    "TEXTBOOKS (PUBLIC)/== COMPLETE ==/Hands-On Machine Learning/17) Auto-encoders, GANs, and Diffusion Models.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Statistics/0) Statistical Learning in Python.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Practical Data Science with Hadoop/0) Practical DS with Hadoop and Spark.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats. for CS/0) Probability and Statistics for CS.md",
@@ -259,7 +260,6 @@
     "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Statistics",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Mining/10) Introduction to Weka.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Mining/9) Moving On - Applications and Beyond.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Mining/8) Ensemble Learning.md"
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Mining/9) Moving On - Applications and Beyond.md"
   ]
 }
