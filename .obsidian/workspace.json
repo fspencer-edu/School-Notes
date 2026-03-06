@@ -41,6 +41,104 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "PRIVATE/Winter 2026/Genetics/Textbook/8) RNA - Transcription, Processing, and Decay.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "8) RNA - Transcription, Processing, and Decay"
+            }
+          },
+          {
+            "id": "fc5cdae5ab5821c8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Genetics/Textbook/9) Proteins and Their Synthesis.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "9) Proteins and Their Synthesis"
+            }
+          },
+          {
+            "id": "9020aecd697d9585",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Genetics/Textbook/10) Gene Isolation and Manipulation.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "10) Gene Isolation and Manipulation"
+            }
+          },
+          {
+            "id": "260696c4c44a0d98",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Genetics/Textbook/11) Regulation of Gene Expression in Bacteria and Their Viruses.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "11) Regulation of Gene Expression in Bacteria and Their Viruses"
+            }
+          },
+          {
+            "id": "0b4d6302946d9149",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Genetics/Textbook/12) Regulation of Transcription in Eukaryotes.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "12) Regulation of Transcription in Eukaryotes"
+            }
+          },
+          {
+            "id": "9878db1a3a9fec7e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Genetics/Textbook/13) The Genetic Control of Development.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "13) The Genetic Control of Development"
+            }
+          },
+          {
+            "id": "d2a85ae5b40c7c20",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Genetics/Textbook/14) Genomes and Genomics.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "14) Genomes and Genomics"
+            }
+          },
+          {
+            "id": "9d0e79dc85d5ec04",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/1) Introduction to GANs.md",
                 "mode": "source",
                 "source": false
@@ -50,7 +148,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 9
       }
     ],
     "direction": "vertical"
@@ -198,15 +296,23 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "976f6781dfb2ef92",
+  "active": "9d0e79dc85d5ec04",
   "lastOpenFiles": [
+    "PRIVATE/Winter 2026/Genetics/Textbook/14) Genomes and Genomics.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/13) The Genetic Control of Development.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/12) Regulation of Transcription in Eukaryotes.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/11) Regulation of Gene Expression in Bacteria and Their Viruses.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/10) Gene Isolation and Manipulation.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/9) Proteins and Their Synthesis.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/8) RNA - Transcription, Processing, and Decay.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Guide to Essential Math/0) Guide to Essential Math.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/7) DNA - Structure and Replication.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Python for Data Analysis/0) Python for Data Analysis.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/0) GANs in Action.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/1) Introduction to GANs.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/2) Intro. to Generative Modeling with Autoencoders.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/12) Looking Ahead.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/1) Introduction to GANs.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/0) GANs in Action.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/7) DNA - Structure and Replication.md",
     "PRIVATE/ToDo.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/8) RNA - Transcription, Processing, and Decay.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Generative AI Design Patterns/1) Introduction - GenAI.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Generative AI Design Patterns/10) Composable Agentic Workflows.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/3) Your First GAN - Generating Handwritten Digits.md",
@@ -218,14 +324,6 @@
     "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/9) CycleGAN.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/10) Adversarial Examples.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/11) Practical Applications of GANs.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Generative AI Design Patterns/9) Setting Safeguards.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Generative AI Design Patterns/2) Controlling Content Style.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Generative AI Design Patterns/8) Addressing Constraints.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Generative AI Design Patterns/3) Adding Knowledge - Bass.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Generative AI Design Patterns/0) Generative AI Design Patterns.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Generative AI Design Patterns/4) Adding Knowledge - Syncopation.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Generative AI Design Patterns/5) Extending Model Capabilities.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Generative AI Design Patterns/6) Improving Reliability.md",
     "images/Pasted image 20260305195457.png",
     "images/Pasted image 20260305163514.png",
     "images/Pasted image 20260305195839.png",
