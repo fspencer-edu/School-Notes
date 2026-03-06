@@ -46,10 +46,46 @@
 
 ## GAN Training
 
-- 
+**GAN Training Algorithm**
+1) Train the discriminator
+	1) Take a random real example from the training dataset
+	2) Get a new random noise vector
+	3) Use generator to synthesis, $x^*$
+	4) Use discriminator to classify $x$ and $x^*$
+	5) Compute classification errors and backpropagate the total error
+		1) Updates the discriminators trainable parameters
+2) Train the generator
+	1) Get a new random noise vector
+		1) Synthesis $x^*$
+	2) Use the discriminator to classify $x^*$
+	3) Compute the classification error and backpropagate the error to update the generators trainable parameters
+
+**GAN Training Visualized**
+
+![[Pasted image 20260306174911.png]]
 
 
 ## Reaching Equilibrium
 
+- Zero-sum game
+	- Situation in which one player's gains equal the other player's losses
+- Nash equilibrium
+	- A point at which neither player can improve their situation or payoff by changing their actions
+
+**Nash Equilibrium**
+- Generator produces fake examples that are indistinguishable from the real data in the training dataset
+- Discriminator can at best randomly guess whether an example is real or fake
+
+- With equilibrium achieved, the GAN has converged
+- Nearly impossible to find the Nash equilibrium for GANs
+	- Complexities
+
 # Why Study GANs
+
+- Applications
+	- Hyper-realistic imagery
+	- Image-to-image translation
+	- Recommendations
+	- Diagnostic accuracy
+	- Artificial general intelligence
 
