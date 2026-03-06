@@ -22,161 +22,35 @@
             }
           },
           {
-            "id": "f883579cf37d643f",
+            "id": "8b37e46e7c359884",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PRIVATE/Winter 2026/Data Mining/Textbook/9) Cluster Analysis - Additional Issues and Algorithms.md",
+                "file": "PRIVATE/Winter 2026/Genetics/Textbook/7) DNA - Structure and Replication.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "9) Cluster Analysis - Additional Issues and Algorithms"
+              "title": "7) DNA - Structure and Replication"
             }
           },
           {
-            "id": "c810d9a07eaab946",
+            "id": "976f6781dfb2ef92",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PRIVATE/Winter 2026/Data Mining/Textbook/10) Anomaly Detection.md",
+                "file": "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/1) Introduction to GANs.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "10) Anomaly Detection"
-            }
-          },
-          {
-            "id": "d3e01003f04dbb4c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/8) Understanding Rates of Change.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "8) Understanding Rates of Change"
-            }
-          },
-          {
-            "id": "eba301d3532ba3c7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/9) Simulating Moving Objects.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "9) Simulating Moving Objects"
-            }
-          },
-          {
-            "id": "8de8adeb02e6d6e8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/10) Working with Symbolic Expressions.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "10) Working with Symbolic Expressions"
-            }
-          },
-          {
-            "id": "46b9d9c67088edbb",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/11) Simulating Force Fields.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "11) Simulating Force Fields"
-            }
-          },
-          {
-            "id": "c03a155b19f04c56",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/12) Optimizing a Physical System.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "12) Optimizing a Physical System"
-            }
-          },
-          {
-            "id": "fdcdb34247bc9d09",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/13) Analyzing Sound Waves with a Fourier Series.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "13) Analyzing Sound Waves with a Fourier Series"
-            }
-          },
-          {
-            "id": "8610ecdba66d421a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/14) Fitting Functions to Data.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "14) Fitting Functions to Data"
-            }
-          },
-          {
-            "id": "211721d8a0b379b1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/15) Classifying Data with Logistic Regression.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "15) Classifying Data with Logistic Regression"
-            }
-          },
-          {
-            "id": "df552f99084a6dbc",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/16) Training Neural Networks.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "16) Training Neural Networks"
+              "title": "1) Introduction to GANs"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -233,8 +107,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 318.5
   },
   "right": {
     "id": "f79334738d86d2cb",
@@ -325,49 +198,50 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "d3e01003f04dbb4c",
+  "active": "976f6781dfb2ef92",
   "lastOpenFiles": [
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/7) Solving Systems of Linear Equations.md",
-    "PRIVATE/Winter 2026/Data Mining/Textbook/10) Anomaly Detection.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/2) Intro. to Generative Modeling with Autoencoders.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/12) Looking Ahead.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/1) Introduction to GANs.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/0) GANs in Action.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/7) DNA - Structure and Replication.md",
+    "PRIVATE/ToDo.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/8) RNA - Transcription, Processing, and Decay.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Generative AI Design Patterns/1) Introduction - GenAI.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Generative AI Design Patterns/10) Composable Agentic Workflows.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/3) Your First GAN - Generating Handwritten Digits.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/4) Deep Convolutional GAN.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/5) Training and Common Challenges - GANing for Success.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/6) Progressing with GANs.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/7) Semi-Supervised GAN.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/8) Conditional GAN.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/9) CycleGAN.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/10) Adversarial Examples.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/11) Practical Applications of GANs.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Generative AI Design Patterns/9) Setting Safeguards.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Generative AI Design Patterns/2) Controlling Content Style.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Generative AI Design Patterns/8) Addressing Constraints.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Generative AI Design Patterns/3) Adding Knowledge - Bass.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Generative AI Design Patterns/0) Generative AI Design Patterns.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Generative AI Design Patterns/4) Adding Knowledge - Syncopation.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Generative AI Design Patterns/5) Extending Model Capabilities.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Generative AI Design Patterns/6) Improving Reliability.md",
     "images/Pasted image 20260305195457.png",
     "images/Pasted image 20260305163514.png",
     "images/Pasted image 20260305195839.png",
     "images/Pasted image 20260305163254.png",
     "images/Pasted image 20260305163309.png",
     "images/Pasted image 20260305194625.png",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/12) Optimizing a Physical System.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/11) Simulating Force Fields.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/10) Working with Symbolic Expressions.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/9) Simulating Moving Objects.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/8) Understanding Rates of Change.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/6) Generalizing to Higher Dimensions.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/5) Computing Transformations with Matrices.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/4) Transforming Vectors and Graphics.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/3) Ascending to the 3D World.md",
     "Pasted image 20260305195839.png",
     "Pasted image 20260305195457.png",
     "Pasted image 20260305194625.png",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/16) Training Neural Networks.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/15) Classifying Data with Logistic Regression.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/14) Fitting Functions to Data.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/13) Analyzing Sound Waves with a Fourier Series.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/2) Drawing with 2D Vector.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/1) Learning Math with Code.md",
     "Pasted image 20260305163514.png",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/0) Math for Programmers.md",
-    "PRIVATE/Winter 2026/Data Mining/Textbook/8) Cluster Analysis - Basic Concepts and Algorithms.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/AI and ML for Device Dev./0) AI and Machine Learning for On-Device Development.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Deep Learning for Cloud, Mobile, and Edge/0) Practical Deep Learning for Cloud, Mobile, and Edge.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/AI and ML for Device Dev.",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/TensorFlow/0) Learning TensorFlow.js.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Deep Learning for Cloud, Mobile, and Edge",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/TinyML/0) TinyML.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/TensorFlow",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Untitled.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/TinyML",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Cloud Computing/3) Multicore Architectures.md.tmp",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Python for Data Analysis/13) Introduction to Modeling Libraries in Python.md.tmp",
-    "PRIVATE/Winter 2026/Data Mining/Textbook/9) Cluster Analysis - Additional Issues and Algorithms.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/9) Testing Deployment Using a Staging Site.md.tmp",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Linear Algebra",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats",
