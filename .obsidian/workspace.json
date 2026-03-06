@@ -118,9 +118,23 @@
               "icon": "lucide-file",
               "title": "14) Genomes and Genomics"
             }
+          },
+          {
+            "id": "59b3c01a2195c072",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/1) Introduction to GANs.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "1) Introduction to GANs"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 8
       }
     ],
     "direction": "vertical"
@@ -269,8 +283,22 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "976f6781dfb2ef92",
+  "active": "59b3c01a2195c072",
   "lastOpenFiles": [
+    "Pasted image 20260306174407.png",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/12) Looking Ahead.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/11) Practical Applications of GANs.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/10) Adversarial Examples.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/9) CycleGAN.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/8) Conditional GAN.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/7) Semi-Supervised GAN.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/6) Progressing with GANs.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/5) Training and Common Challenges - GANing for Success.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/4) Deep Convolutional GAN.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/3) Your First GAN - Generating Handwritten Digits.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/2) Intro. to Generative Modeling with Autoencoders.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/1) Introduction to GANs.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/8) RNA - Transcription, Processing, and Decay.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/7) DNA - Structure and Replication.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/14) Genomes and Genomics.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/13) The Genetic Control of Development.md",
@@ -278,25 +306,12 @@
     "PRIVATE/Winter 2026/Genetics/Textbook/11) Regulation of Gene Expression in Bacteria and Their Viruses.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/10) Gene Isolation and Manipulation.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/9) Proteins and Their Synthesis.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/8) RNA - Transcription, Processing, and Decay.md",
     "Pasted image 20260306133805.png",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/1) Introduction to GANs.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Guide to Essential Math/0) Guide to Essential Math.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Python for Data Analysis/0) Python for Data Analysis.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/0) GANs in Action.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/2) Intro. to Generative Modeling with Autoencoders.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/12) Looking Ahead.md",
     "PRIVATE/ToDo.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Generative AI Design Patterns/1) Introduction - GenAI.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Generative AI Design Patterns/10) Composable Agentic Workflows.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/3) Your First GAN - Generating Handwritten Digits.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/4) Deep Convolutional GAN.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/5) Training and Common Challenges - GANing for Success.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/6) Progressing with GANs.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/7) Semi-Supervised GAN.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/8) Conditional GAN.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/9) CycleGAN.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/GANs/10) Adversarial Examples.md",
     "images/Pasted image 20260305195457.png",
     "images/Pasted image 20260305163514.png",
     "images/Pasted image 20260305195839.png",
