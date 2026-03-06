@@ -76,18 +76,138 @@
 - Clustering
 
 **Supervised Learning**
-- 
+- A type of ML where algorithms are trained using labeled datasets
 - Anomaly detection
 
-**Self-Super**
+**Self-Supervised**
+- ML that trains models on unlabeled data by automatically generator supervisory signals from the data's own structure
 
 ## New Take on an old idea
 
+- An autoencoder is composed of an encoder and a decoder
+	- Both have activation function and intermediate layers
+	- 2 weight matrices in each network
+		- Encoder (2): Input -> Intermediate, Intermediate -> Latent
+		- Decoder (2): Latent -> Intermediate, Intermediate -> Output
+
+- A network with one weight matrix, would resemble principal component analysis (PCA)
+	- Dimensionality reduction technique
+	- Numerically deterministic
+- Autoencoders are trained with a stochastic optimizer
+
 ## Generation using an autoencoder
+
+![[Pasted image 20260306182330.png]]
 
 ## Variational autoencoder
 
+- A variational autoencoder has a latent space represented as a distribution with a learned mean and standard deviation rather that a set of numbers
+- Multi-variate Gaussian
+- Bayes on Bayesian machine learning
+	- Find the right parameters defining a distribution
+	- Sample from the latent distribution to get numbers for the decoder
+
 # Code if Life
+
+- Keras is a high-level API for deep learning frameworks
+	- TensorFlow
+	- Microsoft Cognitive Toolkit (CNTK)
+	- Theano
+
+
+**Pooling**
+- A pooling block is an operation on a layer that allows us to pool several inputs into fewer
+- Reduces complexity
+- The API uses lambda functions to return constructors for another function
+- Sample from the latent space, and feed this information through to the decoder
+
+- Create an project that will generate handwritten digit based on the latent space, given an numerical input
+
+```python
+# imports
+from keras.layers import Input, Dense, Lambda
+from keras.models import Model
+from keras import backend as K
+from keras import objectives
+from keras.datasets import mnist
+import numpy as np
+
+# setting hyperparamters
+batch_size = 100
+original_dim = 28*28
+latent_dim = 2
+intermediate_dim = 256
+nb_epoch = 5
+epslion_std = 1.0
+
+# encoder
+x = Input(shape=(original_dim,), name="input")
+h = Dense(intermediate_dim, activation='relu', name="encoding")
+z_mean = Dense(latent_dim, mean="mean")(h)
+z_log_var = Dense(latent_dim, name="log-variance")(h)
+z = Lambda(sampling, output_shape(latent_dim,))([z_mean, z_log_var])
+encoder = Model(x, [z_mean, z_log_var, z], name="encoder")
+
+# Sampling helper function
+def sampling(args):
+	z_mean, z_log_var = args
+	epsilon = K.random_normal(shape=(batch_size, latent_dim), mean=0.)
+	return z_mean + K.exp(z_log_var / 2) * epsilon
+```
+- We learn the mean $\micro$ and variance $\sigma$
+- Where there is one $\omega$ connected through a sampling function
+- This allows us to train and sample
+- During generation, sample from this distribution according to learned parameters, and feed these values to the decoder
+
+![[Pasted image 20260306183759.png]]
+
+```python
+# decoder
+input_decoder = Input(shape=(latent_dim,), name="decocer_input")
+decoder_h = Dense(intermediate_dim, activation='relu',
+	name="decoder_h")(input_decoder)
+x_decoded = Dense(original_dim, activation='sigmoid',
+	name="flat_decoded")(decoder_h)
+	decoder = Model(input_deocder, x_decoded, name="decoder")
+	
+# combining the model
+output_combined = decoder(encoder(x)[2])
+vae = Model(x, output_combined)
+vae.summary()
+
+# Loss function
+def vae_loss(x, x_decoded_mean, z_log_var, z_mean,
+		original_dim=original_dim):
+	xent_loss = oroginal_dim * objectives.binary_crossentropy(
+		x, x_decoded_mean)
+	kl_loss = - 0.5 * K.sum(
+		1 + z_log_var - K.square(z_mean) - K.exp(z_log_var),
+			axis=-1)
+	return xent_loss + kl_loss
+	
+vae.compile(optimizer='rmsprop', loss=vae_loss)
+```
+
+**Binary Cross-Entropy**
+- Common loss function for two-class classification
+
+**KL divergence/Relative entropy**
+- Measures the difference between distributions
+- Kullback-Leiber divergence
+- Difference between cross-entropy of two distributions and their own entropy
+- Non-overlap of two distributions
+
+- Compiled
+	- RMSprop
+	- Adam
+	- Vanilla. stochastic gradient descent
+
+
+**Stochasitc Gradient Descent**
+- An optimization technique that allows ut to train complex models by figuring out the contribution of any given weight to an error and updating this weight
+
+- Train the model with t
+
 
 # Why Did We Try aGAN?
 
