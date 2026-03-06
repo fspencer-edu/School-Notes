@@ -1,6 +1,6 @@
 # Picturing vectors in 3D space
 
-![[Pasted image 20260305194625.png]]
+<img src="/images/Pasted image 20260305194625.png" alt="image" width="500">
 
 
 # Vector arithmetic in 3D
@@ -32,13 +32,13 @@
 
 - Right hand rule
 
-![[Pasted image 20260305195457.png]]
+<img src="/images/Pasted image 20260305195457.png" alt="image" width="500">
 
 # Rendering a 3D object in 2D
 
 - Projection
 
-![[Pasted image 20260305195839.png]]
+<img src="/images/Pasted image 20260305195839.png" alt="image" width="500">
 
 - Normal
 - Light source

@@ -16,9 +16,9 @@
 
 - 3D data
 
-![[Pasted image 20260305163254.png]]
+<img src="/images/Pasted image 20260305163254.png" alt="image" width="500">
 
-![[Pasted image 20260305163309.png]]
+<img src="/images/Pasted image 20260305163309.png" alt="image" width="500">
 
 - Calculus
 	- Differential equations
@@ -31,7 +31,7 @@
 - Darcy's law
 	- Predict flow rate of liquid through a porous  medium
 
-![[Pasted image 20260305163514.png]]
+<img src="/images/Pasted image 20260305163514.png" alt="image" width="500">
 
 $\Delta$ = gradient operator
 $\Delta p$ = gradient of the pressure function at a given spatial point
