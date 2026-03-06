@@ -39,13 +39,39 @@ draw(
 # Plane vector arithmetic
 
 - Vector addition
-- Pythago
-
+- Pythagorean theorem
+- Scalar multiplication
+- Vector subtraction
+- Displacement
+- Distance
 
 # Angles and trigonometry in the plane
 
+- Polar coordinates
+- Cartesian coordinates
+- Approximate, ~
+- Trigonmetric
+	- Sine
+	- Cosine
+	- Tangent
+- Radians
+- Inverse trigonometric function
+	- Arcsine
+	- Arccosine
+	- Arctangent
+
+
 # Transforming collections of vectors
 
+- Rotation
+- Translation
+- Reflection
+- Scaling
+
+
 # Drawing with Matplotlib
+
+
+
 
 # Summary

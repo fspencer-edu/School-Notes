@@ -22,20 +22,6 @@
             }
           },
           {
-            "id": "8763f3ef7b4e3e4c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/2) Drawing with 2D Vector.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "2) Drawing with 2D Vector"
-            }
-          },
-          {
             "id": "f883579cf37d643f",
             "type": "leaf",
             "state": {
@@ -62,9 +48,177 @@
               "icon": "lucide-file",
               "title": "10) Anomaly Detection"
             }
+          },
+          {
+            "id": "5f225ec34894e924",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/5) Computing Transformations with Matrices.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "5) Computing Transformations with Matrices"
+            }
+          },
+          {
+            "id": "b3f185fbbcbf619b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/6) Generalizing to Higher Dimensions.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "6) Generalizing to Higher Dimensions"
+            }
+          },
+          {
+            "id": "67f3aec2f6efa5fe",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/7) Solving Systems of Linear Equations.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "7) Solving Systems of Linear Equations"
+            }
+          },
+          {
+            "id": "d3e01003f04dbb4c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/8) Understanding Rates of Change.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "8) Understanding Rates of Change"
+            }
+          },
+          {
+            "id": "eba301d3532ba3c7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/9) Simulating Moving Objects.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "9) Simulating Moving Objects"
+            }
+          },
+          {
+            "id": "8de8adeb02e6d6e8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/10) Working with Symbolic Expressions.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "10) Working with Symbolic Expressions"
+            }
+          },
+          {
+            "id": "46b9d9c67088edbb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/11) Simulating Force Fields.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "11) Simulating Force Fields"
+            }
+          },
+          {
+            "id": "c03a155b19f04c56",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/12) Optimizing a Physical System.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "12) Optimizing a Physical System"
+            }
+          },
+          {
+            "id": "fdcdb34247bc9d09",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/13) Analyzing Sound Waves with a Fourier Series.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "13) Analyzing Sound Waves with a Fourier Series"
+            }
+          },
+          {
+            "id": "8610ecdba66d421a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/14) Fitting Functions to Data.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "14) Fitting Functions to Data"
+            }
+          },
+          {
+            "id": "211721d8a0b379b1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/15) Classifying Data with Logistic Regression.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "15) Classifying Data with Logistic Regression"
+            }
+          },
+          {
+            "id": "df552f99084a6dbc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/16) Training Neural Networks.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "16) Training Neural Networks"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -213,8 +367,27 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "8763f3ef7b4e3e4c",
+  "active": "5f225ec34894e924",
   "lastOpenFiles": [
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/4) Transforming Vectors and Graphics.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/3) Ascending to the 3D World.md",
+    "Pasted image 20260305195839.png",
+    "Pasted image 20260305195457.png",
+    "Pasted image 20260305194625.png",
+    "PRIVATE/Winter 2026/Data Mining/Textbook/10) Anomaly Detection.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/16) Training Neural Networks.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/15) Classifying Data with Logistic Regression.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/14) Fitting Functions to Data.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/13) Analyzing Sound Waves with a Fourier Series.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/12) Optimizing a Physical System.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/11) Simulating Force Fields.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/10) Working with Symbolic Expressions.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/9) Simulating Moving Objects.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/8) Understanding Rates of Change.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/7) Solving Systems of Linear Equations.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/6) Generalizing to Higher Dimensions.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/5) Computing Transformations with Matrices.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/2) Drawing with 2D Vector.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math for Programmers/1) Learning Math with Code.md",
     "Pasted image 20260305163514.png",
     "Pasted image 20260305163309.png",
@@ -225,10 +398,6 @@
     "images/Pasted image 20260305121720.png",
     "images/Pasted image 20260305155300.png",
     "images/Pasted image 20260305141348.png",
-    "images/Pasted image 20260305122200.png",
-    "images/Pasted image 20260305124459.png",
-    "images/Pasted image 20260305152518.png",
-    "PRIVATE/Winter 2026/Data Mining/Textbook/10) Anomaly Detection.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/AI and ML for Device Dev./0) AI and Machine Learning for On-Device Development.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Deep Learning for Cloud, Mobile, and Edge/0) Practical Deep Learning for Cloud, Mobile, and Edge.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/AI and ML for Device Dev.",
@@ -241,25 +410,9 @@
     "TEXTBOOKS (PUBLIC)/== TODO ==/Cloud Computing/3) Multicore Architectures.md.tmp",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Python for Data Analysis/13) Introduction to Modeling Libraries in Python.md.tmp",
     "PRIVATE/Winter 2026/Data Mining/Textbook/9) Cluster Analysis - Additional Issues and Algorithms.md",
-    "PRIVATE/Winter 2026/Data Mining/Textbook/7) Association Analysis - Advanced Concepts.md",
-    "PRIVATE/Winter 2026/Data Mining/Textbook/6) Association Analysis - Basic Concepts and Algorithms.md",
-    "PRIVATE/Winter 2026/Data Mining/Textbook/5) Classification - Alternative Techniques.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/9) Testing Deployment Using a Staging Site.md.tmp",
-    "PRIVATE/ToDo.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/7) DNA - Structure and Replication.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/8) RNA - Transcription, Processing, and Decay.md",
-    "TEXTBOOKS (PUBLIC)/== COMPLETE ==/Hands-On Machine Learning/19) Training and Deploying TensorFlow Models at Scale.md",
-    "TEXTBOOKS (PUBLIC)/== COMPLETE ==/Hands-On Machine Learning/18) Reinforcement Learning.md",
-    "TEXTBOOKS (PUBLIC)/== COMPLETE ==/Hands-On Machine Learning/17) Auto-encoders, GANs, and Diffusion Models.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Statistics/0) Statistical Learning in Python.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Practical Data Science with Hadoop/0) Practical DS with Hadoop and Spark.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats. for CS/0) Probability and Statistics for CS.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats/0) Probability and Statistics.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Linear Algebra/0) Linear Algebra.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Linear Algebra",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Statistics",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Mining/10) Introduction to Weka.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Mining/9) Moving On - Applications and Beyond.md"
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Statistics"
   ]
 }
