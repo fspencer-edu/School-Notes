@@ -102,7 +102,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -159,8 +159,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 318.5,
-    "collapsed": true
+    "width": 318.5
   },
   "right": {
     "id": "f79334738d86d2cb",
@@ -251,8 +250,16 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "9020aecd697d9585",
+  "active": "1f9815cc020ac453",
   "lastOpenFiles": [
+    "PRIVATE/Winter 2026/Genetics/Textbook/14) Genomes and Genomics.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/13) The Genetic Control of Development.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/12) Regulation of Transcription in Eukaryotes.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/11) Regulation of Gene Expression in Bacteria and Their Viruses.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/10) Gene Isolation and Manipulation.md",
+    "Pasted image 20260307180950.png",
+    "Pasted image 20260307180437.png",
+    "Pasted image 20260307180422.png",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/3) Control Flow.md.tmp",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Computer Networking - Top Down/8. Security in Computer Networks.md.tmp",
     "images/Pasted image 20260307150833.png",
@@ -262,14 +269,6 @@
     "images/Pasted image 20260307150503.png",
     "images/Pasted image 20260307160830.png",
     "images/Pasted image 20260307151025.png",
-    "images/Pasted image 20260307143434.png",
-    "images/Pasted image 20260307163135.png",
-    "images/Pasted image 20260307144200.png",
-    "PRIVATE/Winter 2026/Genetics/Textbook/11) Regulation of Gene Expression in Bacteria and Their Viruses.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/10) Gene Isolation and Manipulation.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/13) The Genetic Control of Development.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/12) Regulation of Transcription in Eukaryotes.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/14) Genomes and Genomics.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/9) Proteins and Their Synthesis.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/8) RNA - Transcription, Processing, and Decay.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/4) Deep Convolutional GAN.md",
@@ -297,7 +296,6 @@
     "TEXTBOOKS (PUBLIC)/== TODO ==/Cloud Computing/3) Multicore Architectures.md.tmp",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Python for Data Analysis/13) Introduction to Modeling Libraries in Python.md.tmp",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/9) Testing Deployment Using a Staging Site.md.tmp",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Linear Algebra",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats"
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Linear Algebra"
   ]
 }
