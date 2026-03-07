@@ -148,7 +148,7 @@
             }
           }
         ],
-        "currentTab": 8
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -297,8 +297,11 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "693747ed64f5ea8e",
+  "active": "976f6781dfb2ef92",
   "lastOpenFiles": [
+    "Pasted image 20260307111721.png",
+    "Pasted image 20260307110709.png",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/3) Your First GAN - Generating Handwritten Digits.md",
     "Pasted image 20260306193550.png",
     "Pasted image 20260306193055.png",
     "Pasted image 20260306192842.png",
@@ -309,10 +312,7 @@
     "Pasted image 20260306184955.png",
     "Pasted image 20260306183759.png",
     "Pasted image 20260306182330.png",
-    "Pasted image 20260306181123.png",
-    "Pasted image 20260306180808.png",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/4) Deep Convolutional GAN.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/3) Your First GAN - Generating Handwritten Digits.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/1) Introduction to GANs.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/12) Looking Ahead.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/11) Practical Applications of GANs.md",
