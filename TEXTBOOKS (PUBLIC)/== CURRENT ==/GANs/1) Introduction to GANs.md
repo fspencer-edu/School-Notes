@@ -34,7 +34,7 @@
 
 # GANs in Action
 
-![[Pasted image 20260306174407.png]]
+<img src="/images/Pasted image 20260306174407.png" alt="image" width="500">
 
 - Training dataset, $x$
 - Random noise vector, $z$
@@ -62,7 +62,7 @@
 
 **GAN Training Visualized**
 
-![[Pasted image 20260306174911.png]]
+<img src="/images/Pasted image 20260306174911.png" alt="image" width="500">
 
 
 ## Reaching Equilibrium

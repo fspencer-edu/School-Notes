@@ -33,7 +33,7 @@
 	- Root mean squared error (RMSE)
 	- AUC
 
-![[Pasted image 20260306180808.png]]
+<img src="/images/Pasted image 20260306180808.png" alt="image" width="500">
 
 
 # What is an Autoencoder Made of?
@@ -48,7 +48,7 @@
 	1) Reconstruct the original object into the original dimension
 	2) Mirror image of the encoder, from z to $x^*$
 
-![[Pasted image 20260306181123.png]]
+<img src="/images/Pasted image 20260306181123.png" alt="image" width="500">
 
 **Autoencoder Training**
 1) Take images x and feed them through the autoencoder
@@ -97,7 +97,7 @@
 
 ## Generation using an autoencoder
 
-![[Pasted image 20260306182330.png]]
+<img src="/images/Pasted image 20260306182330.png" alt="image" width="500">
 
 ## Variational autoencoder
 
@@ -159,7 +159,7 @@ def sampling(args):
 - This allows us to train and sample
 - During generation, sample from this distribution according to learned parameters, and feed these values to the decoder
 
-![[Pasted image 20260306183759.png]]
+<img src="/images/Pasted image 20260306183759.png" alt="image" width="500">
 
 ```python
 # decoder
@@ -222,9 +222,9 @@ vae.fit(x_train, x_train,
 	validation_data=(x_test, x_test), verbose=1)
 ```
 
-![[Pasted image 20260306184955.png]]
+<img src="/images/Pasted image 20260306184955.png" alt="image" width="500">
 
-![[Pasted image 20260306185011.png]]
+<img src="/images/Pasted image 20260306185011.png" alt="image" width="500">
 
 
 

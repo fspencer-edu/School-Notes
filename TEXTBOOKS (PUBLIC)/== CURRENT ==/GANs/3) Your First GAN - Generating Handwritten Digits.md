@@ -5,7 +5,7 @@
 	- NN each with its own cost function
 - The two networks are trained by backpropagation using the discriminator's loss
 
-![[Pasted image 20260306192022.png]]
+<img src="/images/Pasted image 20260306192022.png" alt="image" width="500">
 
 - Generator's goal is to produce examples that capture the data distribution of the training dataset
 - Object recognition models learn the patterns in images to discern an image's content
@@ -34,14 +34,14 @@ Discriminator's cost function = $J^{D}(\theta^{(G)}\theta^{(D)})$
 
 - Training of a traditional NN is an optimization problem
 
-![[Pasted image 20260306192703.png]]
+<img src="/images/Pasted image 20260306192703.png" alt="image" width="500">
 
 - GAN training can be described as a game, rather than optimization
 - GAN training ends when two network reach Nash equilibrium
 	- Generator cost function is minimized 
 	- Discriminator cost function is minimized 
 
-![[Pasted image 20260306192842.png]]
+<img src="/images/Pasted image 20260306192842.png" alt="image" width="500">
 
 - High-dimensional, non-convex training of GANs
 - Training GANs successfully requires trails and error
@@ -54,7 +54,7 @@ $D(x)$ => 1
 $D(x*)$ => 0
 
 
-![[Pasted image 20260306193055.png]]
+<img src="/images/Pasted image 20260306193055.png" alt="image" width="500">
 
 ## Conflicting objectives
 
@@ -88,7 +88,7 @@ FP, $D(x*) =1$
 
 # Generating Handwritten Digits
 
-![[Pasted image 20260306193550.png]]
+<img src="/images/Pasted image 20260306193550.png" alt="image" width="500">
 
 - Create a GAN that learns to produce realistic handwriting digits
 
