@@ -22,20 +22,6 @@
             }
           },
           {
-            "id": "fc5cdae5ab5821c8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Genetics/Textbook/9) Proteins and Their Synthesis.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "9) Proteins and Their Synthesis"
-            }
-          },
-          {
             "id": "9020aecd697d9585",
             "type": "leaf",
             "state": {
@@ -255,8 +241,15 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "fc5cdae5ab5821c8",
+  "active": "9020aecd697d9585",
   "lastOpenFiles": [
+    "Pasted image 20260307173059.png",
+    "PRIVATE/Winter 2026/Genetics/Textbook/11) Regulation of Gene Expression in Bacteria and Their Viruses.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/13) The Genetic Control of Development.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/12) Regulation of Transcription in Eukaryotes.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/14) Genomes and Genomics.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/10) Gene Isolation and Manipulation.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/9) Proteins and Their Synthesis.md",
     "Pasted image 20260307165546.png",
     "Pasted image 20260307163734.png",
     "Pasted image 20260307163659.png",
@@ -267,13 +260,6 @@
     "Pasted image 20260307161211.png",
     "Pasted image 20260307160830.png",
     "Pasted image 20260307160235.png",
-    "PRIVATE/Winter 2026/Genetics/Textbook/10) Gene Isolation and Manipulation.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/9) Proteins and Their Synthesis.md",
-    "Pasted image 20260307151204.png",
-    "PRIVATE/Winter 2026/Genetics/Textbook/14) Genomes and Genomics.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/13) The Genetic Control of Development.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/12) Regulation of Transcription in Eukaryotes.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/11) Regulation of Gene Expression in Bacteria and Their Viruses.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/8) RNA - Transcription, Processing, and Decay.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/4) Deep Convolutional GAN.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/3) Your First GAN - Generating Handwritten Digits.md",
