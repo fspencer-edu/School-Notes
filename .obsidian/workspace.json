@@ -90,6 +90,16 @@
               "icon": "lucide-file",
               "title": "14) Genomes and Genomics"
             }
+          },
+          {
+            "id": "1f9815cc020ac453",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
           }
         ],
         "currentTab": 1
@@ -243,23 +253,24 @@
   },
   "active": "9020aecd697d9585",
   "lastOpenFiles": [
-    "Pasted image 20260307173059.png",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/3) Control Flow.md.tmp",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Computer Networking - Top Down/8. Security in Computer Networks.md.tmp",
+    "images/Pasted image 20260307150833.png",
+    "images/Pasted image 20260307145753.png",
+    "images/Pasted image 20260307143337.png",
+    "images/Pasted image 20260307165546.png",
+    "images/Pasted image 20260307150503.png",
+    "images/Pasted image 20260307160830.png",
+    "images/Pasted image 20260307151025.png",
+    "images/Pasted image 20260307143434.png",
+    "images/Pasted image 20260307163135.png",
+    "images/Pasted image 20260307144200.png",
     "PRIVATE/Winter 2026/Genetics/Textbook/11) Regulation of Gene Expression in Bacteria and Their Viruses.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/10) Gene Isolation and Manipulation.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/13) The Genetic Control of Development.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/12) Regulation of Transcription in Eukaryotes.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/14) Genomes and Genomics.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/10) Gene Isolation and Manipulation.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/9) Proteins and Their Synthesis.md",
-    "Pasted image 20260307165546.png",
-    "Pasted image 20260307163734.png",
-    "Pasted image 20260307163659.png",
-    "Pasted image 20260307163135.png",
-    "Pasted image 20260307162205.png",
-    "Pasted image 20260307162140.png",
-    "Pasted image 20260307161601.png",
-    "Pasted image 20260307161211.png",
-    "Pasted image 20260307160830.png",
-    "Pasted image 20260307160235.png",
     "PRIVATE/Winter 2026/Genetics/Textbook/8) RNA - Transcription, Processing, and Decay.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/4) Deep Convolutional GAN.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/3) Your First GAN - Generating Handwritten Digits.md",
@@ -287,7 +298,6 @@
     "TEXTBOOKS (PUBLIC)/== TODO ==/Python for Data Analysis/13) Introduction to Modeling Libraries in Python.md.tmp",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/9) Testing Deployment Using a Staging Site.md.tmp",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Linear Algebra",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Statistics"
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Prob. and Stats"
   ]
 }
