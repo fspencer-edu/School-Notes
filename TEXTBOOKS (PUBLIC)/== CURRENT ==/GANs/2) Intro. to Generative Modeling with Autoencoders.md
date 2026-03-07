@@ -203,12 +203,42 @@ vae.compile(optimizer='rmsprop', loss=vae_loss)
 	- Vanilla. stochastic gradient descent
 
 
-**Stochasitc Gradient Descent**
-- An optimization technique that allows ut to train complex models by figuring out the contribution of any given weight to an error and updating this weight
+**Stochastic Gradient Descent**
+- An optimization technique that allows to to train complex models by figuring out the contribution of any given weight to an error and updating this weight
 
-- Train the model with t
+- Train the model with train-test split and input normalization
+
+```python
+x_train, y_train, x_test, y_test = mnist.load_data()
+x_train = x_train.astype('float32')/255.
+x_test = x_train.astype('float32')/255.
+
+x_train = x_train.reshape((len(x_train), np.prod(x_train.shape[1:]))) x_test.reshape((len(x_test), np.prod(x_test.shape[1:])))
+
+vae.fit(x_train, x_train,
+	shiffle=True,
+	nb_epoch=nb_epoch,
+	batch_size=batch_size,
+	validation_data=(x_test, x_test), verbose=1)
+```
+
+![[Pasted image 20260306184955.png]]
+
+![[Pasted image 20260306185011.png]]
+
 
 
 # Why Did We Try aGAN?
+
+**Bimodal**
+- Having 2 peaks, or modes
+
+- The point estimate can be wrong, and live in an area where there is no actual data sampled from the true distribution
+- We learned 2D normal distribution in the latent space centred around the origin
+- VAE uses the Gaussian as a way to build representation of the data it sees
+- VAEs do not scale up as well as GANs
+- VAEs live in the directly estimated max. likelihood model familty
+- GANs have an implicit and hard-to-analyze understanding of the real data distribution
+
 
 ## Summary
