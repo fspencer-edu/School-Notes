@@ -102,7 +102,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -159,7 +159,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 318.5
+    "width": 318.5,
+    "collapsed": true
   },
   "right": {
     "id": "f79334738d86d2cb",
@@ -250,8 +251,11 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "1f9815cc020ac453",
+  "active": "9020aecd697d9585",
   "lastOpenFiles": [
+    "Pasted image 20260307200228.png",
+    "Pasted image 20260307195830.png",
+    "Pasted image 20260307195525.png",
     "PRIVATE/Winter 2026/Genetics/Textbook/14) Genomes and Genomics.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/13) The Genetic Control of Development.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/12) Regulation of Transcription in Eukaryotes.md",
@@ -267,8 +271,6 @@
     "images/Pasted image 20260307143337.png",
     "images/Pasted image 20260307165546.png",
     "images/Pasted image 20260307150503.png",
-    "images/Pasted image 20260307160830.png",
-    "images/Pasted image 20260307151025.png",
     "PRIVATE/Winter 2026/Genetics/Textbook/9) Proteins and Their Synthesis.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/8) RNA - Transcription, Processing, and Decay.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/4) Deep Convolutional GAN.md",
