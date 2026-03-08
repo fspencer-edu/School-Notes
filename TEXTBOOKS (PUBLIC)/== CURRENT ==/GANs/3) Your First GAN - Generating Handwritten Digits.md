@@ -96,11 +96,41 @@ FP, $D(x*) =1$
 
 ```python
 # import
+%matplotlib inline
 
+import matplotlib.pyplot as plt
+import numpy as np
+
+from keras.datasts import mnist
+from keras.layers import Dense, Flatten, Reshape
+from keras.layers.advanced_activations import LeakyReLU
+from keras.models import Sequential
+from keras.optimizers import Adam
+
+# input dim.
+img_rows = 28
+img_cols = 28
+channels = 1
+
+img_shape = (img_rows, img_cols, channels)
+z_dim = 100
 ```
 
+## Implementing the generator
 
-## Implementing the generator## Implementing the discriminator
+- The generator is a NN with only a single hidden layer (leaky ReLU, small positive gradient)
+- Takes z as input, and produces a 28 x 28 x 1 image
+- Output layer uses the tanh activation function, `[-1, 1]`
+
+```python
+# generator
+def build_generator(img_shape, )
+```
+
+## Implementing the discriminator
+
+
+
 
 ## Building the model
 
