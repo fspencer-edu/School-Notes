@@ -190,7 +190,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -339,8 +339,9 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "549fa8c1f91d0dec",
+  "active": "260696c4c44a0d98",
   "lastOpenFiles": [
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/5) Training and Common Challenges - GANing for Success.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/12) Looking Ahead.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/11) Practical Applications of GANs.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/10) Adversarial Examples.md",
@@ -348,7 +349,6 @@
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/8) Conditional GAN.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/7) Semi-Supervised GAN.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/6) Progressing with GANs.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/5) Training and Common Challenges - GANing for Success.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/8) Exploring Docker Compose.md.tmp",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Software Eng. at Google/0) Software Engineering at Google.md.tmp",
     "images/Pasted image 20260307220149.png",
