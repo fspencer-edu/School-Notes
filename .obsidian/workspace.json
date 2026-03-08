@@ -147,8 +147,7 @@
               "title": "12) Looking Ahead"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -297,8 +296,9 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "d2a85ae5b40c7c20",
+  "active": "039320e5b13c09e3",
   "lastOpenFiles": [
+    "PRIVATE/Winter 2026/Genetics/Textbook/15) DNA Damage, Repair, and Mutation.md",
     "images/Pasted image 20260308142509.png",
     "images/Pasted image 20260308162829.png",
     "images/Pasted image 20260308160420.png",
@@ -309,7 +309,6 @@
     "images/Pasted image 20260308160740.png",
     "images/Pasted image 20260308141956.png",
     "images/Pasted image 20260308153215.png",
-    "images/Pasted image 20260308163315.png",
     "PRIVATE/Winter 2026/Genetics/Textbook/14) Genomes and Genomics.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/13) The Genetic Control of Development.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/5) Training and Common Challenges - GANing for Success.md",
