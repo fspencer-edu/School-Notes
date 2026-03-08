@@ -124,23 +124,153 @@ z_dim = 100
 
 ```python
 # generator
-def build_generator(img_shape, )
+def build_generator(img_shape, z_dim):
+	model = Sequential()
+	model.add(Dense(128, input_dim=z_dim))
+	model.add(LeakyReLU(alpha=0.01))
+	model.add(Dense(28*28*1, activation='tanh'))
+	model.add(Reshape(img_shape))
+	return model
 ```
 
 ## Implementing the discriminator
 
+- Takes a 28 x 28 x 1 image and outputs a probability indicating whether the input is real or fake
+- 2 NN, with 128 hidden units and a leaky ReLU activation function
+- Uses sigmoid as the output, `[0,1]`
 
-
+```python
+def build_discriminator(img_shape):
+	model = sequential()
+	model.add(Flatten(input_shape=img_shape))
+	model.add(Dense(128))
+	model.add(LeakyReLU(alpha=0.01))
+	model.add(Dense(1, activation='sigmoid'))
+	return model
+```
 
 ## Building the model
 
+- Use binary cross-entropy as the loss function to minimize during training
+	- Measures the difference between the computed and actual probabilities for predictions with 2 classes 
+- Use Adam optimization algorithm
+	- Adaptive moment estimation
+	- An advanced gradient-descent-based optimizer
+
+```python
+# build and compile GAN
+def build_gan(generator, discriminator):
+	model = sequential()
+	model.add(generator)
+	model.add(discriminator)
+	return model
+	
+discriminator = build_discriminator(img_shape)
+discriminator.compile(loss='binary_crossentropy',
+					  optimizer=Adam(),
+					  metrics=['accuracy'])
+					  
+generator = build_generator(img_shape, z_dim)
+discriminator.trainable = False
+
+gan = build_gan(generator, discriminator)
+gan.compile(loss='binary_crossentropy',
+			optimizer=Adam())
+```
+
+- `trainable` is set to false to keep discriminator's parameters fixed during generator training
+
 ## Training
 
+- Get a random mini-batch of MNIST images as real examples and generate a mini-batch of fake images from random noise vectors z
+- Train the discriminator network on images with noise, and keep the generators parameters fixed
+- Generate a mini-batch of fake images and use those to train the generator network, while keeping the discriminator fixed, and repeat
+- Rescale the image in the training from -1 to 1
+
+```python
+# GAN training loop
+losses = []
+accuracies = []
+iteration_checkpoints = []
+
+def train(iterations, batch_size, sample_intervals):
+	(X_train, _), (_, _) = mnist.load_data()
+	
+	X_train = X_train / 127.5 - 1.0
+	X_train = np.expand_dims(X_train, axis=3)
+	
+	real = np.one((batch_size, 1))
+	fake = np.zeros((batch_size, 1))
+	
+	for iteration in range(iterations):
+		idx = np.random.randint(0, X_train.shape[0], batch_size)
+		gen_ims = generator.predict(z)
+		
+		d_loss_real = discriminator.train_on_batch(imgs, real)
+		d_loss_fake = discriminator.train_on_batch(gen_imgs, fake)
+		d_loss, accuracy = 0.5 * np.add(d_loss_real, d_loss_fake)
+		
+		z = np.random.normal(0, 1, (batch_size, 100))
+		gen_imgs = generator.predict(z)
+		
+		g_loss = gan.train_on_batch(z, real)
+		
+		if (iteration + 1) % sample_interval == 0:
+			
+			losses.append((d_loss, g_loss))
+			accuracies.append(100.0 * accuracy)
+			iteration_checkpoints.append(iteration + 1)
+			
+			print("%d [D loss: %f, acc.: %.2f%%] [G loss: %f]" %
+				(iteration + 1, d_loss, 100.0 * accuracy, g_loss))
+				
+			sample_images(generator)
+		
+```
 ## Outputting sample images
+
+- `sample_images()` function, outputs a 4x4 grid of images synthesized by the generator after each iteration
+
+```python
+def sample_images(generator, image_grid_rows=4, image_grid_colums=4):
+	z = np.random.normal(0, 1, (image_grid_rows * image_grid_columns, z_dim))
+	gen_imgs = generator.predict(z)
+	gen_imgs = 0.5 * gen_imgs + 0.5
+	
+	fig, axis = plt.subplots(image_grid_rows,
+							 image_grid_columns,
+							 figsize=(4, 4),
+							 sharey=True,
+							 sharex=True)
+							 
+	cnt = 0
+	for i in range(image_grid_rows):
+		for i in range(image_grid_columns):
+			axsp[i, j].imshow(gen_imgs[cnt, :, :, 0], cmap='gray')
+			axs[i, j].axis('off')
+			cnt += 1
+```
 
 ## Running the model
 
+- Each mini-batch must be small enough to fit inside the processing memory (32 to 512)
+- Monitor training loss and set the iteration number around the point when the loss plateaus
+
+```python
+iterations = 20000
+batch_size = 128
+sample_interval = 1000
+
+train(iterations, batch_size, sample_intervals)
+```
+
 ## Inspecting the results
 
+![[Pasted image 20260307212857.png]]
 
+![[Pasted image 20260307212917.png]]
+
+
+![[Pasted image 20260307212942.png]]
 # Conclusion
+
