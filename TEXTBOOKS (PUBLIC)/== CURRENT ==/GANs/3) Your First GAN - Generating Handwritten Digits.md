@@ -266,11 +266,11 @@ train(iterations, batch_size, sample_intervals)
 
 ## Inspecting the results
 
-![[Pasted image 20260307212857.png]]
+<img src="/images/Pasted image 20260307212857.png" alt="image" width="500">
 
-![[Pasted image 20260307212917.png]]
+<img src="/images/Pasted image 20260307212917.png" alt="image" width="500">
 
 
-![[Pasted image 20260307212942.png]]
+<img src="/images/Pasted image 20260307212942.png" alt="image" width="500">
 # Conclusion
 

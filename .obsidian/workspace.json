@@ -78,20 +78,6 @@
             }
           },
           {
-            "id": "60a543109a5d3f96",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/4) Deep Convolutional GAN.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "4) Deep Convolutional GAN"
-            }
-          },
-          {
             "id": "549fa8c1f91d0dec",
             "type": "leaf",
             "state": {
@@ -103,6 +89,20 @@
               },
               "icon": "lucide-file",
               "title": "5) Training and Common Challenges - GANing for Success"
+            }
+          },
+          {
+            "id": "4407117ec78ea080",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/6) Progressing with GANs.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "6) Progressing with GANs"
             }
           },
           {
@@ -339,28 +339,30 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "60a543109a5d3f96",
+  "active": "549fa8c1f91d0dec",
   "lastOpenFiles": [
-    "Pasted image 20260307220149.png",
-    "Pasted image 20260307220009.png",
-    "Pasted image 20260307215329.png",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/5) Training and Common Challenges - GANing for Success.md",
-    "Pasted image 20260307214854.png",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/4) Deep Convolutional GAN.md",
-    "Pasted image 20260307213721.png",
-    "Pasted image 20260307213623.png",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/12) Looking Ahead.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/11) Practical Applications of GANs.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/10) Adversarial Examples.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/9) CycleGAN.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/8) Conditional GAN.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/7) Semi-Supervised GAN.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/6) Progressing with GANs.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/5) Training and Common Challenges - GANing for Success.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/8) Exploring Docker Compose.md.tmp",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Software Eng. at Google/0) Software Engineering at Google.md.tmp",
+    "images/Pasted image 20260307220149.png",
+    "images/Pasted image 20260307213623.png",
+    "images/Pasted image 20260307212854.png",
+    "images/Pasted image 20260307221246.png",
+    "images/Pasted image 20260307212857.png",
+    "images/Pasted image 20260307221222.png",
+    "images/Pasted image 20260307213721.png",
+    "images/Pasted image 20260307212942.png",
+    "images/Pasted image 20260307214854.png",
+    "images/Pasted image 20260307221211.png",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/4) Deep Convolutional GAN.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/3) Your First GAN - Generating Handwritten Digits.md",
-    "Pasted image 20260307212942.png",
-    "Pasted image 20260307212917.png",
-    "Pasted image 20260307212857.png",
-    "Pasted image 20260307212854.png",
-    "images/Pasted image 20260307180422.png",
     "PRIVATE/Winter 2026/Genetics/Textbook/11) Regulation of Gene Expression in Bacteria and Their Viruses.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/14) Genomes and Genomics.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/13) The Genetic Control of Development.md",
@@ -372,7 +374,6 @@
     "PRIVATE/Winter 2026/Genetics/Textbook/8) RNA - Transcription, Processing, and Decay.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/2) Intro. to Generative Modeling with Autoencoders.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/1) Introduction to GANs.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/6) Progressing with GANs.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/7) DNA - Structure and Replication.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Guide to Essential Math/0) Guide to Essential Math.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Python for Data Analysis/0) Python for Data Analysis.md",
@@ -384,8 +385,6 @@
     "TEXTBOOKS (PUBLIC)/== TODO ==/TensorFlow",
     "TEXTBOOKS (PUBLIC)/== TODO ==/TinyML",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Cloud Computing/3) Multicore Architectures.md.tmp",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Python for Data Analysis/13) Introduction to Modeling Libraries in Python.md.tmp",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Test-Driven Dev. (Python)/9) Testing Deployment Using a Staging Site.md.tmp",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Linear Algebra"
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Python for Data Analysis/13) Introduction to Modeling Libraries in Python.md.tmp"
   ]
 }

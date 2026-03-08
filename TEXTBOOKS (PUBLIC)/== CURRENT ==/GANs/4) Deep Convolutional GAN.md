@@ -23,12 +23,12 @@
 
 ## ConvNets visualized
 
-![[Pasted image 20260307213623.png]]
+<img src="/images/Pasted image 20260307213623.png" alt="image" width="500">
 
 - The input volume is usually 3D, and there are several stacked filters
 - Each filter produces a single values per step
 
-![[Pasted image 20260307213721.png]]
+<img src="/images/Pasted image 20260307213721.png" alt="image" width="500">
 
 # Brief History of the DCGAN
 
@@ -70,7 +70,7 @@ $y = \gamma \hat{x} + \beta$
 
 - Use DCGAN architecture for the MNIST dataset
 
-![[Pasted image 20260307214854.png]]
+<img src="/images/Pasted image 20260307214854.png" alt="image" width="500">
 
 
 ## Importing modules and specifying model input dimensions
@@ -108,7 +108,7 @@ z_dim = 100
 	- Take a vector and up-size it to an image
 	- Used to increase the width and height, while reducing depth
 
-![[Pasted image 20260307215329.png]]
+<img src="/images/Pasted image 20260307215329.png" alt="image" width="500">
 
 - After each transposed convolutional layer, apply batch normalization and the leaky ReLU activation function
 - The final layer, uses tanh and removes batch normalization
@@ -148,7 +148,7 @@ def build_generator(z_dim):
 - Takes an image and outputs a prediction vector
 - Binary classification, real or fake
 
-![[Pasted image 20260307220009.png]]
+<img src="/images/Pasted image 20260307220009.png" alt="image" width="500">
 
 1. Convolutional layer 28 x 28 x 1 => 14 x 14 x 32 tensor
 2. Leaky ReLU activation function
@@ -214,9 +214,71 @@ discriminator.compile(loss='binary_crossentropy',
 					 optimizer=Adam(),
 					 metrics=['accuracy'])
 					 
-generator = build_generator()
+generator = build_generator(z_dim)
+discriminator.trainable = False
+
+gan = build_gan(generator, discriminator)
+gan.compile(loss='binary_crossentropy', optimizer=Adam())
+
+# training loop
+losses = []
+accuracies = []
+iteration_checkpoints = []
+
+def train(iterations, batch_size, sample_interval):
+	(X_train, _), (_, _) = mnist.load_data()
+	
+	X_train = X_train = 127.5 - 1.0
+	X_train = np.extend_dims(X_train, axis=3)
+	
+	real = np.ones((batch_size, 1))
+	fake = np.zeros((batch_size, 1))
+	
+	for iteration in range(iterations):
+		idx = np.randomint(0, X_train.shape[0], batch_size)
+		imgs = X_train[idx]
+		
+		z = np.random.normal(0, 1, (batch_size, 100))
+		gen_imgs = generator.predict(z)
+		
+		d_loss_real = discriminator.train_on_batch(imgs, real)
+		d_loss_fake = discriminator.train_on_batch(imgs, fake)
+		d_loss, accuracy = 0.5 * np.add(d_loss_real, d_loss_fake)
+		
+		z = np.random.normal(0, 1, (batch_size, 100))
+		gen_imgs = generator.predict(z)
+		
+		g_loss = gan.train_on_batch(z, real)
+		
+		if (iteration + 1) % sample_interval == 0:
+			losses.append((d_loss, g_loss))
+			accuracies.append(100.0 * accuracy)
+			iteration_chceckpoints.append(iteration + 1)
+			
+			print("%d [D loss: %f, acc.: %.2f%%] [G loss: %f]" %       
+                  (iteration + 1, d_loss, 100.0 * accuracy, g_loss))
+
+            sample_images(generator)  
+```
+
+```python
+# run model
+iterations = 1000
+batch_size = 128
+sample_interval = 1000
+
+train(iterations, batch_size, sample_intervals)
 ```
 
 ## Model output
 
+<img src="/images/Pasted image 20260307221211.png" alt="image" width="500">
+
+<img src="/images/Pasted image 20260307221222.png" alt="image" width="500">
+
+<img src="/images/Pasted image 20260307221246.png" alt="image" width="500">
+
+
 # Conclusion
+
+- Discriminator and generator can be represented by any differentiable function

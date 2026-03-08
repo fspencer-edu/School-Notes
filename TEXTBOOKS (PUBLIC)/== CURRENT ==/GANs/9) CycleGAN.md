@@ -8,8 +8,24 @@
 
 # Architecture
 
+## CycleGAN Architecture: Building the network
+## Generator architecture
+## Discriminator architecture
+
+
 # Object-oriented design of GANs
 
 # CycleGAN
 
+## Building the network
+## Building the generator
+## Building the discriminator
+## Training the CycleGAN
+
+## Running the CycleGAN
+
+
 # Expansions, augmentations, and applications
+
+## Augmented CycleGAN
+## Application
