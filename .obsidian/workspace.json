@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TEXTBOOKS (PUBLIC)/== TODO ==/Practical Statistics/0) Practical Statistics for DS.md",
+                "file": "TEXTBOOKS (PUBLIC)/== TODO ==/Git/0) Learning Git.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "0) Practical Statistics for DS"
+              "title": "0) Learning Git"
             }
           }
         ],
@@ -214,9 +214,26 @@
   },
   "active": "9a75825babe9918a",
   "lastOpenFiles": [
+    "Pasted image 20260309171418.png",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Swift/0) Swift Programming.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Git/0) Learning Git.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Git",
+    "Pasted image 20260309171236.png",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/SQL/0) Learning SQL.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Swift",
+    "Pasted image 20260309171030.png",
+    "Pasted image 20260309171024.png",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Architecture Patterns with Py/0) Architecture Patterns with Python.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/SQL",
+    "Pasted image 20260309170821.png",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Google Cloud Platform/0) Google Cloud Platform in Action.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Architecture Patterns with Py",
+    "Pasted image 20260309170606.png",
+    "Pasted image 20260309170600.png",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Practical Statistics/0) Practical Statistics for DS.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Google Cloud Platform",
     "Pasted image 20260309164219.png",
     "TEXTBOOKS (PUBLIC)/== TODO ==/RAG with Python/0) RAG with Python Cookbook.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Practical Statistics/0) Practical Statistics for DS.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Practical Statistics/Untitled",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Practical Statistics",
     "Pasted image 20260309164026.png",
@@ -231,9 +248,7 @@
     "TEXTBOOKS (PUBLIC)/== TODO ==/Data Science on AWS",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Natural Language Processing with Transformers/0) Natural Language Processing with Transformers.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Reinforcement Learning/0) Reinforcement Learning.md",
-    "Pasted image 20260309162506.png",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Deep Learning for Cloud, Mobile, and Edge/0) Practical Deep Learning for Cloud, Mobile, and Edge.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Reinforcement Learning",
     "TEXTBOOKS (PUBLIC)/== TODO ==/TensorFlow/0) Learning TensorFlow.js.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Kubeflow for ML/0) Kubeflow for Machine Learning.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Kubeflow for ML/1) Kubeflow - What It Is and Who It Is For.md",
@@ -244,21 +259,6 @@
     "TEXTBOOKS (PUBLIC)/== TODO ==/Learn TensorFlow/1) Introduction - TensorFlow.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Learn TensorFlow/0) Learning TensorFlow.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/TinyML/0) TinyML.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/TinyML/9) Person Detection - Building An Application.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/TinyML/3) Getting Up To Speed on Machine Learning.md",
-    "images/Pasted image 20260309150436.png",
-    "images/Pasted image 20260309150408.png",
-    "images/Pasted image 20260309152959.png",
-    "images/Pasted image 20260309155833.png",
-    "images/Pasted image 20260309152524.png",
-    "images/Pasted image 20260309153012.png",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/10) Adversarial Examples.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/9) CycleGAN.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/8) Conditional GAN.md",
-    "PRIVATE/ToDo.md",
-    "PRIVATE/Winter 2026/Discrete Structures/Notes/Discrete Math.pdf",
-    "Discrete Math.pdf",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Rust/Textbook/10) Traits and Generics.md.tmp",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Mining/5) Credibility - Evaluating What's Been Learned.md.tmp"
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/TinyML/9) Person Detection - Building An Application.md"
   ]
 }
