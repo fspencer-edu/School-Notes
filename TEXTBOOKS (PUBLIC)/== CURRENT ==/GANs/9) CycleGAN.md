@@ -9,7 +9,7 @@
 - Previously, the latent vector seeding the generation was an uninterpretable vector
 - Conditioning on a complete image, of the same dimensionality as the output image, that is then provided to the network as a label
 
-![[Pasted image 20260309150921.png]]
+<img src="/images/Pasted image 20260309150921.png" alt="image" width="500">
 
 - Mapping
 	- Semantic labels to photorealistic images
@@ -29,7 +29,7 @@ $(\hat{a})$ = reconstructed picture
 - Ideally the original and reconstructed picture is the same
 - Measure their loss on a pixel level, with cycle-consistency loss
 
-![[Pasted image 20260309151254.png]]
+<img src="/images/Pasted image 20260309151254.png" alt="image" width="500">
 
 - Back-translation
 	- Measure the cycle-consistency loss by how much the first and third sentences differ
@@ -62,7 +62,7 @@ $(\hat{a})$ = reconstructed picture
 	- Penalize unnecessary changes to the image
 
 
-![[Pasted image 20260309151928.png]]
+<img src="/images/Pasted image 20260309151928.png" alt="image" width="500">
 
 **Losses**
 - Adversarial loss
@@ -77,7 +77,7 @@ $(\hat{a})$ = reconstructed picture
 	- 2 CGAN joined together
 - An input image x and the reconstructed image x* are fed through the latent space z
 
-![[Pasted image 20260309152211.png]]
+<img src="/images/Pasted image 20260309152211.png" alt="image" width="500">
 
 - In CycleGAN the latent space has equal dimensionality
 - CycleGAN needs to find domain B
@@ -95,7 +95,7 @@ $(\hat{a})$ = reconstructed picture
 - B-A-A
 	- Starts from an image in domain B
 
-![[Pasted image 20260309152524.png]]
+<img src="/images/Pasted image 20260309152524.png" alt="image" width="500">
 
 
 - Path 1
@@ -127,7 +127,7 @@ $(\hat{a})$ = reconstructed picture
 
 - U-net architecture
 
-![[Pasted image 20260309153012.png]]
+<img src="/images/Pasted image 20260309153012.png" alt="image" width="500">
 
 
 - Use standard convolutional layers to the encoder
@@ -452,7 +452,7 @@ gan = CycleGAN()
 gan.train(epochs=100, batch_size=64, sample_interval=10)
 ```
 
-![[Pasted image 20260309155645.png]]
+<img src="/images/Pasted image 20260309155645.png" alt="image" width="500">
 
 
 # Expansions, augmentations, and applications
@@ -461,11 +461,11 @@ gan.train(epochs=100, batch_size=64, sample_interval=10)
 
 - Learning Many-to-Many mappings from unpaired data
 
-![[Pasted image 20260309155740.png]]
+<img src="/images/Pasted image 20260309155740.png" alt="image" width="500">
 
 ## Application
 
 
 - Cycle Consistent Adversarial Domain Adaptation (CyCADA)
 
-![[Pasted image 20260309155833.png]]
+<img src="/images/Pasted image 20260309155833.png" alt="image" width="500">

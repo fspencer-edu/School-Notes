@@ -307,9 +307,9 @@ def sample_images(image_grid_rows=2, image_grid_columns=5):
 			
 ```
 
-![[Pasted image 20260309150358.png]]
+<img src="/images/Pasted image 20260309150358.png" alt="image" width="500">
 
-![[Pasted image 20260309150408.png]]
+<img src="/images/Pasted image 20260309150408.png" alt="image" width="500">
 
 ## Training the model
 
@@ -321,7 +321,7 @@ train(iterations, batch_size, sample_interval)
 ```
 ## Inspecting the output: Targeted data generation
 
-![[Pasted image 20260309150436.png]]
+<img src="/images/Pasted image 20260309150436.png" alt="image" width="500">
 
 
 # Conclusion

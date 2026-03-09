@@ -41,16 +41,54 @@ print('Predicted:', pp.pprint(decode_predictions(preds, top=20)[0]))
 label = np.argmax(preds)     
 
 image = image[:, :, ::-1]                                                
-attack = foolbox.attacks.FGSM(fmodel, threshold=.9,                      7
-     criterion=ConfidentMisclassification(.9))                           7
-adversarial = attack(image, label)                                       8
+attack = foolbox.attacks.FGSM(fmodel, threshold=.9,                      
+     criterion=ConfidentMisclassification(.9))                          
+adversarial = attack(image, label)                                       
 
-new_preds = kmodel.predict(np.expand_dims(adversarial, axis=0))          9
+new_preds = kmodel.predict(np.expand_dims(adversarial, axis=0))          
 print('Predicted:', pp.pprint(decode_predictions(new_preds, top=20)[0]))
 ```
 
 
 # Signal and the noise
+
+```python
+# Guassian noise
+fit = plt.figure(figsize=(20, 20))
+sigma_list = list(max_vals.sigma)
+mu_list = list(max_vals.mu)
+conf_list = []
+
+def make_subplots(x, y, z, new_row=False):
+	rand_noise = np.random.normal(loc=mu, scale=sigma, size=(224, 224, 3))
+	rand_noise = np.clip(rand_noise, 0, 255.)
+	noise_preds = kmodel.predict(np.expand_dims(rand_noise, axis=)0)
+	prediction, num = decode_predictions(noise_preds, top=20)[1:3]
+	num = round(num * 100, 2)
+	conf_list.append(num)
+	ax = fig.add_subplot(x, y, z)
+	ax.annotate(prediciton, xy=(0.1, 0.6),
+			xycoords=ax.transAves, fontsize=16, color='yellow')
+	ax.annotate(f'{num}%', xy=(0.1, 0.4),
+			xycoords=ax.transAves, fontsize=20, color='orange')	
+	if new_row:
+		ax.annotate(f'$\mu$:{mu}, $\sigma$:{sigma}' ,
+                    xy=(-.2, 0.8), xycoords=ax.transAxes,
+                    rotation=90, fontsize=16, color='black')
+    ax.imshow(rand_noise / 255)                                         
+    ax.axis('off')
+    
+    for i in range(1,101):                                                    
+    if (i-1) % 10==0:
+        mu = mu_list.pop(0)
+        sigma = sigma_list.pop(0)
+        make_subplot(10,10, i, new_row=True)
+    else:
+        make_subplot(10,10, i)
+
+plt.show()
+```
+
 
 # Not all hope is lost
 
