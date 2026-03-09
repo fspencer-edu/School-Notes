@@ -36,6 +36,20 @@
             }
           },
           {
+            "id": "af5c782b1c61eacd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Genetics/Textbook/16) The Dynamic Genome - Transposable Elements.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "16) The Dynamic Genome - Transposable Elements"
+            }
+          },
+          {
             "id": "549fa8c1f91d0dec",
             "type": "leaf",
             "state": {
@@ -147,7 +161,8 @@
               "title": "12) Looking Ahead"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -296,9 +311,10 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "039320e5b13c09e3",
+  "active": "af5c782b1c61eacd",
   "lastOpenFiles": [
     "PRIVATE/Winter 2026/Genetics/Textbook/15) DNA Damage, Repair, and Mutation.md",
+    "PRIVATE/ToDo.md",
     "images/Pasted image 20260308142509.png",
     "images/Pasted image 20260308162829.png",
     "images/Pasted image 20260308160420.png",
@@ -336,7 +352,6 @@
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Guide to Essential Math/0) Guide to Essential Math.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Python for Data Analysis/0) Python for Data Analysis.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/0) GANs in Action.md",
-    "PRIVATE/ToDo.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Generative AI Design Patterns/1) Introduction - GenAI.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/AI and ML for Device Dev.",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Deep Learning for Cloud, Mobile, and Edge",
