@@ -298,22 +298,174 @@ Create generator
 5. Take `d1` and apply conv2d to get `d2`
 6. Take `d2` and apply conv2d to get `d3`
 7. Take `d3` and apply conv2d to get `d4`
-8. `u1`: upsample 
+8. `u1`: upsample `d4` and create a skip connection between `d3` and `u1`
+9. `u2`: upsample `u1` and create a skip connection between `d2` and `u2`
+10. `u3`: upsample `u2` and create a skip connection between `d1` and `u3`
+11. `u4`: use regular upsampling to get a 128 x 128 x 64 image
+12. Use a regular 2D conv to remove extra features and output an image
 
 
 ```python
 def build_generator(self):
+	"""U-Net Generator"""
 
-	def conv2d
+	def conv2d(layer_input, filters, f_size=4):
+		""""Downsampling"""
+		d = Conv2D(filters, kernel_size=f_size,
+					strides=2, padding='same')(layer_input)
+					
+		d = LeakyReLU(alpha=0.2)(d)
+		d = InstanceNormalization()(d)
+		return d
+		
+	def deconv2d(layer_input, skip_input, filters, f_size=4, dropout_rate=0):
+		"""Upsampling"""
+		u = UpSampling2D(size=2)(layer_input)
+		u = Conv2D(filters, kernel_size=f_size, strides=1, padding='same',
+					 activation='relu')(u)
+		if dropout_rate:
+			u = Dropout(dropout_rate)(u)
+		u = InstanceNormalization()(u)
+		u = Concatenate()([u, skip_input])
+		return u
+		
+	d0 = Input(shape=self.img_shape)
+	
+	d1 = conv2d(d0, self.gf)
+	d2 = conv2d(d1, self.gf * 2)
+	d3 = conv2d(d2, self.gf * 4)
+	d4 = conv2d(d3, self.gf * 8)
+	
+	u1 = deconv2d(d4, d3, self.gf * 4)
+	u2 = deconv2d(u1, d2, self.gf * 2)
+	u3 = deconv2d(u2, d1, self.gf)
+	
+	u4 = UpSampling2D(size=2)(u3)
+	output_img = Conv2D(self.channels, kernel_size=4,
+				strides=1, padding='same', activation='tanh')(u4)
+				
+	return Model(d0, output_img)
 ```
 
 ## Building the discriminator
+
+- Use helper functions
+
+1. Take input image and assign to `d1`
+2. Take `d1` and assign to `d2`
+3. Take `d2` and assign to `d3`
+4. Take `d3` and assign to `d4`
+5. Take `d4` and flatten by conv2d to 8 x 8 x 1 (average output)
+
+```python
+def build_discriminator(self):
+
+	def d_layer(layer_input, filters, f_size=4, normalization=True):
+		d = Conv2D(filters, kernel_size=f_size,
+				strides=2, padding='same')(layer_input)
+		d = LeakyReLU(alpha=0.2)(d)
+		if normalization:
+			d = InstanceNormalization()(d)
+		return d
+		
+	img = Input(shape=self.img_shape)
+	
+	d1 = d_layer(img, self.df, normalization=False)
+	d2 = d_layer(d1, self.df * 2)
+	d3 = d_layer(d2, self.df * 4)
+	d4 = d_layer(d3, self.df * 8)
+	
+	validity = Conv2D(1, kernel_size=4, strides=1, padding='same')(d4)
+	
+	return Model(img, validity)
+```
+
+
 ## Training the CycleGAN
 
+- Create the training look
+
+1. Train the discriminator
+	1. Take a mini-batch of random images from each domain
+	2. Use the $G_{AB}$ to translate $imgs_A$ to domain B and vice versa with $G_{BA}$
+	3. $D_A$
+		1. Compute $D_A(img_A, 1)$ => losses for real images in A
+		2. $D_A(G_{BA}(img_B),0)$ => losses of translated images from B
+		3. Add losses, 1 and 0 in $D_A$ serve as labels
+	4. $D_B$
+		1. Compute $D_B(img_B, 1)$ => losses for real images in A
+		2. $D_B(G_{AB}(img_A),0)$ => losses of translated images from B
+		3. Add losses, 1 and 0 in $D_B$ serve as labels
+	5. Add the losses to get the total discriminator loss
+2. Train the generator
+	1. Input the images from domain A and B
+		1. Output
+			1. $D_A(G_{BA}(img_B))$ => validity of A
+			2. $D_B(G_{AB}(img_A))$ => validity of B
+			3. $G_{BA}(G_{AB}(img_A))$ => reconstructed A
+			4. $G_{AB}(G_{BA}(img_B))$ => reconstructed B
+			5. $G_{BA}(imgs_A)$ => identity mapping of A
+			6. $G_{AB}(imgs_B)$ => identity mapping of B
+	2. Update parameters with
+		1. MSE for scalars (probabilities)
+		2. MAE for images (reconstructed or identity mapped)
+
+
+```python
+def train(self, epochs, batch_size=1, sample_interval=50):
+
+	start_time = datatime.datetime.now()
+	
+	valid = np.ones((batch_size,) + self.disc_patch)
+	fake = np.zeros((batch_size,) + self.disc_patch)
+	
+	for epoch in range(epochs):
+		for batch_i, (imgs_A, imgs_B) in enumerate(
+			self.data_loader.load_batch(batch_size)):
+			
+			fake_B = self.g_AB.predict(imgs_A)
+			fake_A = self.g_BA.predict(imgs_B)
+			
+			dA_loss_read = self.d_A.train_on_batch(imgs_A, valid)
+			dA_loss_fake = self.d_A.train_on_batch(fake_A, fake)
+			dA_loss = 0.5 * np.add(dA_loss_real, dA_loss_fake)
+			
+			dB_loss_read = self.d_B.train_on_batch(imgs_B, valid)
+			dB_loss_fake = self.d_B.train_on_batch(fake_B, fake)
+			dB_loss = 0.5 * np.add(dB_loss_real, dB_loss_fake)
+			
+			d_loss = 0.5 * np.add(dA_loss, dB_loss)
+			
+			g_loss = self.combined.train_on_batch([imgs_A, imgs_B],
+												  [valid, valid,
+												  imgs_A, imgs_B,
+												  imgs_A, imgs_B])
+												  
+			if batch_i % sample_interval == 0:
+				self.sample_images(epoch, batch_i)
+```
+
 ## Running the CycleGAN
+
+```python
+gan = CycleGAN()
+gan.train(epochs=100, batch_size=64, sample_interval=10)
+```
+
+![[Pasted image 20260309155645.png]]
 
 
 # Expansions, augmentations, and applications
 
 ## Augmented CycleGAN
+
+- Learning Many-to-Many mappings from unpaired data
+
+![[Pasted image 20260309155740.png]]
+
 ## Application
+
+
+- Cycle Consistent Adversarial Domain Adaptation (CyCADA)
+
+![[Pasted image 20260309155833.png]]
