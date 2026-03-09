@@ -1,4 +1,4 @@
-![[Pasted image 20260309170600.png]]
+<img src="/images/Pasted image 20260309170600.png" alt="image" width="500">
 
 https://learning.oreilly.com/library/view/google-cloud-platform/9781617293528/
 

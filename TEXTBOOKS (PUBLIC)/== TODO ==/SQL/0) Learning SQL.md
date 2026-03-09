@@ -1,4 +1,4 @@
-![[Pasted image 20260309171024.png]]
+<img src="/images/Pasted image 20260309171024.png" alt="image" width="500">
 
 https://learning.oreilly.com/library/view/learning-sql-3rd/9781492057604/
 

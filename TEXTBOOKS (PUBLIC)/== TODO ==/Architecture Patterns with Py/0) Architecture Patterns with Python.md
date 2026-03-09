@@ -1,4 +1,4 @@
-![[Pasted image 20260309170821.png]]
+<img src="/images/Pasted image 20260309170821.png" alt="image" width="500">
 
 https://learning.oreilly.com/library/view/architecture-patterns-with/9781492052197/
 

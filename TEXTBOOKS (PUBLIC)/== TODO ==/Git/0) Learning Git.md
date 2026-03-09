@@ -1,4 +1,4 @@
-![[Pasted image 20260309171418.png]]
+<img src="/images/Pasted image 20260309171418.png" alt="image" width="500">
 
 https://learning.oreilly.com/library/view/learning-git/9781098133900/
 
@@ -12,4 +12,5 @@ https://learning.oreilly.com/library/view/learning-git/9781098133900/
 8) Cloning and Fetching
 9) 3-Way Merges
 10) Merge Conflicts
-11) Rebai
+11) Rebasing
+12) Pull Requests

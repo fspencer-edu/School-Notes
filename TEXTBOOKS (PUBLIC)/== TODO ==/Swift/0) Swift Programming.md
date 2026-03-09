@@ -1,4 +1,4 @@
-![[Pasted image 20260309171236.png]]
+<img src="/images/Pasted image 20260309171236.png" alt="image" width="500">
 
 https://learning.oreilly.com/library/view/ios-15-programming/9781098118495/
 

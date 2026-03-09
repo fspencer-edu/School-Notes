@@ -1,4 +1,4 @@
-![[Pasted image 20260309162506.png]]
+<img src="/images/Pasted image 20260309162506.png" alt="image" width="500">
 
 https://learning.oreilly.com/library/view/reinforcement-learning/9781492072386/
 

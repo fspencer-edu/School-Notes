@@ -1,4 +1,4 @@
-![[Pasted image 20260309164026.png]]
+<img src="/images/Pasted image 20260309164026.png" alt="image" width="500">
 
 https://learning.oreilly.com/library/view/rag-with-python/9798341600553/
 

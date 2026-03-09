@@ -1,4 +1,4 @@
-![[Pasted image 20260309163229.png]]
+<img src="/images/Pasted image 20260309163229.png" alt="image" width="500">
 
 https://learning.oreilly.com/library/view/aws-system-administration/9781449342562/
 

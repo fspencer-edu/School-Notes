@@ -1,4 +1,4 @@
-![[Pasted image 20260309164219.png]]
+<img src="/images/Pasted image 20260309164219.png" alt="image" width="500">
 
 https://learning.oreilly.com/library/view/practical-statistics-for/9781492072935/
 
