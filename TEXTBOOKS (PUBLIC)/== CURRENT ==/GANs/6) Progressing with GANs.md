@@ -1,6 +1,22 @@
+
+- Progressive GAN
+	- Progressively growing and smoothing fading in higher-resolution layesr
+	- Mini-batch standard deviation
+	- Equalized learning rate
+	- Pixel-wise feature normalization
+
+**2 Examples**
+- Progressive GANs
+- Pretrained model using TFHub
+
+- ML automation
+	- Cloud AutoML
+	- Amazon SageMake
+	- PyTorch Hub
+
 # Latent space interpolation
 
-
+- 
 
 # They grow up so fast
 

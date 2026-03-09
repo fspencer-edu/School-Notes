@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/5) Training and Common Challenges - GANing for Success.md",
+                "file": "PRIVATE/Winter 2026/Genetics/Textbook/17) Large-Scale Chromosomal Changes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "5) Training and Common Challenges - GANing for Success"
+              "title": "17) Large-Scale Chromosomal Changes"
             }
           },
           {
@@ -162,7 +162,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -311,8 +311,12 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "549fa8c1f91d0dec",
+  "active": "4407117ec78ea080",
   "lastOpenFiles": [
+    "PRIVATE/Winter 2026/Genetics/Textbook/17) Large-Scale Chromosomal Changes.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/18) Population Genetics.md",
+    "PRIVATE/Winter 2026/Genetics/Textbook/16) The Dynamic Genome - Transposable Elements.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/5) Training and Common Challenges - GANing for Success.md",
     "Pasted image 20260308232422.png",
     "Pasted image 20260308232335.png",
     "Pasted image 20260308231725.png",
@@ -323,14 +327,11 @@
     "Pasted image 20260308230328.png",
     "Pasted image 20260308230214.png",
     "Pasted image 20260308225117.png",
-    "Pasted image 20260308224007.png",
     "PRIVATE/Winter 2026/Genetics/Textbook/15) DNA Damage, Repair, and Mutation.md",
     "PRIVATE/Winter 2026/Data Mining/Lab/Lab 7.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/16) The Dynamic Genome - Transposable Elements.md",
     "PRIVATE/ToDo.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/14) Genomes and Genomics.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/13) The Genetic Control of Development.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/5) Training and Common Challenges - GANing for Success.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/12) Regulation of Transcription in Eukaryotes.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/11) Regulation of Gene Expression in Bacteria and Their Viruses.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/12) Looking Ahead.md",
@@ -352,7 +353,6 @@
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/2) Intro. to Generative Modeling with Autoencoders.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/1) Introduction to GANs.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/7) DNA - Structure and Replication.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Guide to Essential Math/0) Guide to Essential Math.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/AI and ML for Device Dev.",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Deep Learning for Cloud, Mobile, and Edge",
     "TEXTBOOKS (PUBLIC)/== TODO ==/TensorFlow",

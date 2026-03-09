@@ -186,13 +186,29 @@ $f_w$ = discriminator
 
 - Naive weighed clipping can produce vanishing or exploding gradients
 - Restrict gradient norm or the discriminator output with respect to its input
-	- Weights should updated less than the ch
+	- Weights should updated less than the change of input
+- Penalize the gradients that do not focus on implementation details
+- Jacobian clamping
 ## Train the discriminator score
 
-- 
+- Pre-training the discriminator before the generator
+- More updates for discriminator per training cycle
+	- 5 D weights to 1 G
 
 ## Avoid sparse gradients
 
+- Max. pooling can lose small values for the entire field, and makes it harder to recover information
+- Average pooling, also looses information
+- Information loss using ReLU
+	- Negative values are lost
+	- Leaky Rely
+	- Sigmoid
+	- ELU
+	- Tanh
+- Minimize information loss
+
 ## Soft and noisy labels
 
-# Training Hacks
+- Add noise to labels or smooth them
+
+
