@@ -162,7 +162,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -311,8 +311,11 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "4407117ec78ea080",
+  "active": "d2a85ae5b40c7c20",
   "lastOpenFiles": [
+    "Pasted image 20260309080839.png",
+    "Pasted image 20260309080821.png",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/6) Progressing with GANs.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/17) Large-Scale Chromosomal Changes.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/18) Population Genetics.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/16) The Dynamic Genome - Transposable Elements.md",
@@ -326,7 +329,6 @@
     "Pasted image 20260308230425.png",
     "Pasted image 20260308230328.png",
     "Pasted image 20260308230214.png",
-    "Pasted image 20260308225117.png",
     "PRIVATE/Winter 2026/Genetics/Textbook/15) DNA Damage, Repair, and Mutation.md",
     "PRIVATE/Winter 2026/Data Mining/Lab/Lab 7.md",
     "PRIVATE/ToDo.md",
@@ -340,7 +342,6 @@
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/9) CycleGAN.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/8) Conditional GAN.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/7) Semi-Supervised GAN.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/6) Progressing with GANs.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/8) Exploring Docker Compose.md.tmp",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Software Eng. at Google/0) Software Engineering at Google.md.tmp",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/4) Deep Convolutional GAN.md",
@@ -352,7 +353,6 @@
     "PRIVATE/Winter 2026/Genetics/Textbook/8) RNA - Transcription, Processing, and Decay.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/2) Intro. to Generative Modeling with Autoencoders.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/1) Introduction to GANs.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/7) DNA - Structure and Replication.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/AI and ML for Device Dev.",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Deep Learning for Cloud, Mobile, and Edge",
     "TEXTBOOKS (PUBLIC)/== TODO ==/TensorFlow",
