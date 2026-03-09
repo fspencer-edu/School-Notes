@@ -168,9 +168,54 @@ def equalized_learning_rate(shape, gain, fan_in=None):
 3. Normalize ach vector $v$ to have a unit norm, $n_{i, i}$
 4. Pass that in the original tensor shape to the next layer
 
+- This formula normalizes (divides by the expression under the squared root) each vector constructed
+- Addition of a small noise term $(\epsilon)$
+	- Not dividing by zero
+- This term is applied only to the Generator
+	- Explosion in activation magnitudes leads to an arms race only if both networks participate
+
+```python
+def pixelwise_feat_norm(inputs, **kwargs):
+	normalization_constant = K.backend.sqrt(K.backend.mean(
+		inputs**2, axis=-1, keepdims=True) + 1.0e-8)
+	return inputs / normalization_constant
+```
+
 
 # Summary of key innovations
 
+
+![[Pasted image 20260309102010.png]]
+
+
+- Sliced Wasserstein distance (SWD)
+- Mini-batch does not work well, because, at a mega pixel resolution, there is not enough virtual RAM to load many images into the GPU memory
+
 # TensorFlow Hub and Hands-On
 
+```python
+import matplotlib.pyplot as plt
+import tensorflow as tf
+import tensorflow_hub as hub
+
+with tf.Graph().as_default():
+	module = hub.Module("https://tfhub.dev/google/progan-128/1")
+	latent_dim = 512
+	latent_vector = tf.random_normal([1, latent_dim], seed=1337)
+	interpolated_images = module(latent_vector)
+	with tf.Session() as session:
+	session.run(tf.global_variables_initializer())
+	image_out = session.run(interpolated_images)
+	
+plt.imshow(image_out.reshape(128, 128, 3))
+plt.show()
+```
+
 # Practical Applications
+
+
+![[Pasted image 20260309102424.png]]
+
+![[Pasted image 20260309102441.png]]
+
+- 
