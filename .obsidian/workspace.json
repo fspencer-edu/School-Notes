@@ -25,14 +25,12 @@
             "id": "da665ec12a0b433c",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/8) Conditional GAN.md",
-                "mode": "source",
-                "source": false
+                "file": "PRIVATE/Winter 2026/Discrete Structures/Notes/Discrete Math.pdf"
               },
-              "icon": "lucide-file",
-              "title": "8) Conditional GAN"
+              "icon": "lucide-file-text",
+              "title": "Discrete Math"
             }
           },
           {
@@ -149,8 +147,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 318.5,
-    "collapsed": true
+    "width": 318.5
   },
   "right": {
     "id": "f79334738d86d2cb",
@@ -241,11 +238,14 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "da665ec12a0b433c",
+  "active": "1447f193185fcea8",
   "lastOpenFiles": [
+    "PRIVATE/Winter 2026/Discrete Structures/Notes.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Notes",
+    "PRIVATE/Winter 2026/Discrete Structures/Notes/Discrete Math.pdf",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/8) Conditional GAN.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/20) Evolution of Genes, Traits, and Species.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/19) The Inheritance of Complex Traits.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/8) Conditional GAN.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/9) CycleGAN.md",
     "Pasted image 20260309121546.png",
     "Pasted image 20260309121118.png",
@@ -281,12 +281,9 @@
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/3) Control Flow.md.tmp",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Computer Networking - Top Down/8. Security in Computer Networks.md.tmp",
     "PRIVATE/Winter 2026/Genetics/Textbook/9) Proteins and Their Synthesis.md",
-    "PRIVATE/Winter 2026/Genetics/Textbook/8) RNA - Transcription, Processing, and Decay.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/AI and ML for Device Dev.",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Deep Learning for Cloud, Mobile, and Edge",
     "TEXTBOOKS (PUBLIC)/== TODO ==/TensorFlow",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/TinyML",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Cloud Computing/3) Multicore Architectures.md.tmp",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Python for Data Analysis/13) Introduction to Modeling Libraries in Python.md.tmp"
+    "TEXTBOOKS (PUBLIC)/== TODO ==/TinyML"
   ]
 }
