@@ -1,5 +1,5 @@
 
-![[Pasted image 20260308224007.png]]
+<img src="/images/Pasted image 20260308224007.png" alt="image" width="500">
 
 - All of these generative models are derived from maximum likelihood
 
@@ -29,7 +29,7 @@
 - A failure mode in an auxiliary classifier GAN (ACGAN)
 	- Generate examples of daisies from the ImageNet dataset
 
-![[Pasted image 20260308225117.png]]
+<img src="/images/Pasted image 20260308225117.png" alt="image" width="500">
 
 - The Inception classifier is not certain what the image is
 
@@ -76,7 +76,7 @@
 
 ## Min-Max GAN
 
-![[Pasted image 20260308230214.png]]
+<img src="/images/Pasted image 20260308230214.png" alt="image" width="500">
 
 $E$ = expectation
 $x$ = true data distribution
@@ -86,13 +86,13 @@ $G$ = generator function
 
 **Discriminator's Loss Function**
 
-![[Pasted image 20260308230328.png]]
+<img src="/images/Pasted image 20260308230328.png" alt="image" width="500">
 
  - The discriminator is trying to minimize the likelihood of mistaking a TN or FP
 
 **Generator's Loss Function**
 
-![[Pasted image 20260308230425.png]]
+<img src="/images/Pasted image 20260308230425.png" alt="image" width="500">
 
 - Distance metrics
 	- Jensen-Shannon divergence (JSD) is a symmetric version of KL divergence
@@ -108,13 +108,13 @@ $G$ = generator function
 	- Generator is trying to minimize the opposite of the second term of the discriminator
 		- "Get caught for the samples it generates"
 
-![[Pasted image 20260308230826.png]]
+<img src="/images/Pasted image 20260308230826.png" alt="image" width="500">
 
 
 - MM-GAN can easily saturate (get close to 0) which leads to slow convergence
 - Weight updates that are backpropogated are either 0 or tiny
 
-![[Pasted image 20260308231058.png]]
+<img src="/images/Pasted image 20260308231058.png" alt="image" width="500">
 
 - NS-GAN
 	- Initial training is faster
@@ -136,7 +136,7 @@ $G$ = generator function
 
 **WGAN-Discriminator**
 
-![[Pasted image 20260308231545.png]]
+<img src="/images/Pasted image 20260308231545.png" alt="image" width="500">
 
 $f_w$ = discriminator
 
@@ -145,7 +145,7 @@ $f_w$ = discriminator
 
 **WGAN-Generator**
 
-![[Pasted image 20260308231725.png]]
+<img src="/images/Pasted image 20260308231725.png" alt="image" width="500">
 
 - Min. the distance between the expectation of the real and generated distribution
 - The image is from the real of generated distribution
@@ -162,9 +162,9 @@ $f_w$ = discriminator
 - A gaussian distribution plot represents both the real and generated samples
 - z-axis represents the probability of that point being samples
 
-![[Pasted image 20260308232335.png]]
+<img src="/images/Pasted image 20260308232335.png" alt="image" width="500">
 
-![[Pasted image 20260308232422.png]]
+<img src="/images/Pasted image 20260308232422.png" alt="image" width="500">
 
 
 # Summary of Game Setups

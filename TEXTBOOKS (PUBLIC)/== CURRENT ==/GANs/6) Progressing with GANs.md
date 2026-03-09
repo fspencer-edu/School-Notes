@@ -34,9 +34,9 @@
 - Progressively smooth in and slowly introduce complexity
 	- Low-resolution convolutional layers to high-resolution
 
-![[Pasted image 20260309094442.png]]
+<img src="/images/Pasted image 20260309094442.png" alt="image" width="500">
 
-![[Pasted image 20260309094515.png]]
+<img src="/images/Pasted image 20260309094515.png" alt="image" width="500">
 
 - When the 16 x 16 resolution has trained enough, a transposed convolution in the Generator is introduced
 - Another convolution in the discriminator is added to get 32 x 32
@@ -149,15 +149,15 @@ def equalized_learning_rate(shape, gain, fan_in=None):
 
 ## Pixel-wise feature normalization in the generator
 
-![[Pasted image 20260309101324.png]]
+<img src="/images/Pasted image 20260309101324.png" alt="image" width="500">
 
 - Batch normalization is too memory intensive for our resolution
 - Pixel normalization
 	- Uses activation magnitude at each layer before the input is fed into the next layer
 
-![[Pasted image 20260309101424.png]]
+<img src="/images/Pasted image 20260309101424.png" alt="image" width="500">
 
-![[Pasted image 20260309101440.png]]
+<img src="/images/Pasted image 20260309101440.png" alt="image" width="500">
 
 **Pixel-wise Feature Normalization**
 1. Take the pixel value of the feature map $(fm)$ as position (x, y)
@@ -185,7 +185,7 @@ def pixelwise_feat_norm(inputs, **kwargs):
 # Summary of key innovations
 
 
-![[Pasted image 20260309102010.png]]
+<img src="/images/Pasted image 20260309102010.png" alt="image" width="500">
 
 
 - Sliced Wasserstein distance (SWD)
@@ -214,8 +214,8 @@ plt.show()
 # Practical Applications
 
 
-![[Pasted image 20260309102424.png]]
+<img src="/images/Pasted image 20260309102424.png" alt="image" width="500">
 
-![[Pasted image 20260309102441.png]]
+<img src="/images/Pasted image 20260309102441.png" alt="image" width="500">
 
 - 

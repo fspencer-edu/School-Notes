@@ -13,7 +13,7 @@
 - SGAN is a GAN whose discriminator is a multiclass classifier
 - Learns to distinguish between N + classes, where N is the number of classes in the training dataset, which one added for the fake generated samples
 
-![[Pasted image 20260309104332.png]]
+<img src="/images/Pasted image 20260309104332.png" alt="image" width="500">
 
 - Generator takes in a random noise vector z, and produces fake examples, $x*$
 - Discriminator receives 3 types of inputs
@@ -62,7 +62,7 @@
 - Uses softmax, to distinguish the real classes
 
 
-![[Pasted image 20260309105235.png]]
+<img src="/images/Pasted image 20260309105235.png" alt="image" width="500">
 
 
 - Softmax
@@ -287,11 +287,118 @@ def build_gan(generator, discriminator):
 	return model
 	
 discriminator_net = build_discriminator_new(img_shape)
-discriminator
+
+# supervised
+discriminator_supervised = build_discriminator_supervised(discriminator_net)
+discriminator_supervised.compile(loss='categorical_crossentropy',
+								 metrics=['accuracy'],
+								 optmizer=Adam())
+
+# unsupervised
+discriminator_unsupervised = build_discriminator_unsupervised(discriminator_net)
+discriminator_unsupervised.compile(loss='binary_crossentropy',
+								   optimizer=Adam())
+								   
+generator = build_generator(z_dim)
+discriminator_unsupervised.trainable = False
+gan = build_gan(generator, discriminator_unsuperivsed)
+gan.compile(loss='binary_crossentropy', optimizer=Adam())
 ```
 
 ## Training
 
+1. Train the discriminator (supervised)
+	1. Take a random mini-batch of labeled real examples (x, y)
+	2. Compute D((x, y)), update $\theta^{(D)}$ to minimize loss (multi-class)
+2. Train the discriminator (unsupervised)
+	1. Take a random mini=batch of unlabeled real examples
+	2. Compute D(x), and update $\theta^{(D)}$ to minimize loss (binary classifier)
+	3. Take a mini-batch of random noise vector z , and generate fake examples, $G(z) = x*$
+	4. Compute $D(x*)$, and  update $\theta^{(D)}$ to minimize loss (binary)
+3. Train the generator
+	1. Take a mini-batch of random noise z, and generate fake examples
+	2. Compute $D(x*)$, and update $\theta^{(D)}$ to maximize loss (binary)
+
+
+```python
+supervised_losses =[]
+iteration_checkpoints = []
+
+def train(iterations, batch_size, sample_intervals):
+	real = np.ones((batch_size, 1))
+	fake = np.zeros((batch_size, 1))
+	
+	for iteration in range(iterations):
+		imgs, labels = dataset.batch_labeled(batch_size)
+		labels = to_categorical(labels, num_classes=num_classes)
+		imgs_unlabeled = dataset.batch_unlabeled(batch_size)
+		
+		z = np.random.normal(0, 1, (batch_size, z_dim))
+		gen_imgs = generator.predict(x)
+		
+		d_loss_supervised, accuracy =
+			discriminator_supervised.train_on_batch(imgs, labels)
+			
+		d_loss_real =
+			discriminator_unsupervised.train_on_batch(imgs_unlabeled, real)
+			
+		d_loss_fake = discriminator_unsupervised.train_on_batch(gens_imgs, fake)
+		
+		d_loss_unsupervised = 0.5 * np.add(d_loss_real, d_loss_fake)
+		
+		z = np.random.normal(0, 1, (batch_size, z_dim))
+		
+		g_loss = gan.train_on_batch(z, np.ones((batch_size, 1)))
+		
+		if (iteration + 1) % sample_interval == 0:
+			supervised_losses.append(d_loss_supervised)
+			iteration_checkpoints.append(iteration + 1)
+			
+			print(
+			"%d [D loss supervised: %.4f, acc.: %.2f%%] [D loss" +
+                " unsupervised: %.4f] [G loss: %f]"
+                % (iteration + 1, d_loss_supervised, 100 * accuracy,
+                  (d_loss_unsupervised, g_loss))
+```
+
+**Training the model**
+
+- Use a smaller batch size for the 100 labeled examples for training
+- Number of iterations is determined by trail and error
+
+```python
+iterations = 8000
+batch_size = 32
+sample_interval = 800
+
+train(iterations, batch_size, sample_interval)
+```
+
+**Model training and test accuracy**
+
+```python
+x, y = dataset.test_set()
+y = to_categorical(y, num_classes=num_classes)
+
+_, accuracy = discriminator_supervised.evaluate(x, y)
+print("Test Accuracy: %.2f%%" % (100 * accuracy))
+```
+
 # Comparison to a Fully Supervised Classifier
 
+```python
+mnist_classifier = build_discriminator_supervised(
+			build_discriminator_net(img_shape))
+			
+mnist_classifier.compile(loss='categorical_crossentropy',
+						 metrics=['accuracy'],
+						 optimizer=Adam())
+```
+
+- Train the fully supervised classifier with the same 100 training examples
+- The unsupervised and supervised achieves 100% accuracy on the training dataset
+	- Unsupervised gets 89% on test dataset
+	- Supervised gets 70% on test set
+
 # Conclusion
+
