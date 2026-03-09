@@ -16,7 +16,7 @@
 
 ## CGAN Generator
 
-![[Pasted image 20260309120323.png]]
+<img src="/images/Pasted image 20260309120323.png" alt="image" width="500">
 
 $z$ = noise vector
 $y$ = conditional label
@@ -26,12 +26,12 @@ $G(z, y) = x*|y$ => x* conditioned on y
 - The discriminator receives real examples (x, y) and fake examples (x*| y, y)
 - Discriminator outputs a single probability indicating its conviction that the input is a real, matching pair
 
-![[Pasted image 20260309120536.png]]
+<img src="/images/Pasted image 20260309120536.png" alt="image" width="500">
 
 ## Summary Table
 ## Architecture diagram
 
-![[Pasted image 20260309120549.png]]
+<img src="/images/Pasted image 20260309120549.png" alt="image" width="500">
 
 - For each fake example, the same label y is passed to both the generator and discriminator
 - Discriminator is never explictily trained to reject mismatched pairs by being trained on real examples with mismatching labeles
@@ -76,7 +76,7 @@ num_classes = 10
 
 ## CGAN Generator
 
-![[Pasted image 20260309121118.png]]
+<img src="/images/Pasted image 20260309121118.png" alt="image" width="500">
 
 ```python
 def build_generator(z_dim):
@@ -123,7 +123,7 @@ def build_cgan_generator(z_dim):
 
 ## CGAN Discriminator
 
-![[Pasted image 20260309121546.png]]
+<img src="/images/Pasted image 20260309121546.png" alt="image" width="500">
 
 
 ```python
