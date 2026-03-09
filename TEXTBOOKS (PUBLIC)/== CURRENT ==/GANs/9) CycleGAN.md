@@ -47,21 +47,118 @@ $(\hat{a})$ = reconstructed picture
 
 - Adversarial loss
 	- Every translation with a generator has a corresponding discriminator, $D_A$ and $D_B$
-- Make sture that the translation from A to B is real, and also that the translation from our estimated 
-
+- Make sure that the translation from A to B is real, and also that the translation from our estimated A back to reconstructed B is real
+- Mappings
+	- A-B-A
+	- B-A-B
 
 # Identity loss
 
+- Identity loss
+	- Enforce that CycleGAN preserved the overall colour structure (temperature) of the picture
+	- Introduce a regularization term that helps us keep the tint of the picture consistent with the original image
+- Feed the images already in domain A to the Generator from B to A $(G_{BA})$
+- CycleCAN should understand that they are already in the correct contain
+	- Penalize unnecessary changes to the image
+
+
+![[Pasted image 20260309151928.png]]
+
+**Losses**
+- Adversarial loss
+- Cycle-consistency loss: forward pass
+- Cycle-consistency loss: backward pass
+- Overall loss
+- Identity loss
+
 # Architecture
 
+- CycleGAN builds on the CGAN architecture
+	- 2 CGAN joined together
+- An input image x and the reconstructed image x* are fed through the latent space z
+
+![[Pasted image 20260309152211.png]]
+
+- In CycleGAN the latent space has equal dimensionality
+- CycleGAN needs to find domain B
+- The two mappings are two autoencoders
+	- $F(G(a))$
+	- $G(F(a))$
+- Explicit loss function is substituted by the cycle-consistency loss
+- The 2 discriminators ensure that both translations look like real images in their respective domains
+
+
 ## CycleGAN Architecture: Building the network
+
+- A-B-A
+	- Starts from an image in domain A
+- B-A-A
+	- Starts from an image in domain B
+
+![[Pasted image 20260309152524.png]]
+
+
+- Path 1
+	- Goes to discriminator
+- Path 2
+	- Generator translates it to B
+	- Evaluated by the discriminator B
+	- Translated back to A, measure cyclic loss
+
+- The bottom image is is an off-by-one cycle of the top image
+
+
+- Generator from A to B
+	- Load a real picture from A or translation fro B to A
+	- Translate to domain B
+	- Create images in domain B
+- Generator from B to A
+	- Load real picture from B or translation from A to B
+	- Translate to domain A
+	- Create images in domain A
+- Discriminator A
+	- Provide a picture in A domain
+	- Output probability (update Generator from B to A)
+- Discriminator B
+	- Provide a picture in B domain
+	- Output probability (update Generator from A to B)
+
 ## Generator architecture
+
+- U-net architecture
+
+![[Pasted image 20260309153012.png]]
+
+
+- Use standard convolutional layers to the encoder
+- Create skip connections so that information has an easier time propagating through the network
+	- Concatenate the entire block to the equivalently colours tensor in the decoder part of the generator
+- The decoder uses de-convolutional layers with one final convolutional layer to upscale the image
+- Encoder
+	- Convolutional layers that reduce the resolutional of the feature map (D0 to D3)
+- Decoder
+	- De-convolutional layers (transposed convolutions) that upscaled the image (U1 to U4)
+
+
+- During downsampling we can can focus on classification and undserstanding of large regions
+- Higher-resolution skip connections preserves the detail that can then be accurately segmented
+- ResNet
+	- Fewer parameters
+	- Transformer
+		- Residual connections in lieu of the encoder-decoder skip connections
+
 ## Discriminator architecture
+
+- CycleGANs discriminator is based on the PatchGAN architecture
+- Do not get a single float as an output, rather a set of single-channel values, as a set of mini-discriminators, to average
+- This helps is scale to higher resolutions
 
 
 # Object-oriented design of GANs
 
+
 # CycleGAN
+
 
 ```python
 # import
@@ -151,11 +248,58 @@ class CycleGAN():
 										optimizer=optimizer)
 ```
 
+- `lambda_cycle` and `lambda_id`
+	- The first hyperparameter controls how strictly the cycle-consistency loss is enforced
+		- A higher value will ensure that your original  and reconstructed images are close together
+	- The second hyperparameter influences identity loss
+	- A lower values leads to unnecessary changes
+		- Inverting colours
 
 ## Building the network
 
+1. Create two discriminators, $D_A$ and $D_B$
+2. Create two generators
+	1. Instantiate $G_{AB}$ and $G_{BA}$
+	2. Create placeholders for the image input for both directions
+	3. Link them both to an image in the other domain
+	4. Create placeholders for the reconstructed images back in the original domain
+	5. Create the identity loss constraint for both directions
+	6. Set discriminators trainable parameter to false
+	7. Compile the two generators
+
+- The output from the `combined` model comes in lists of 6
+	- The following for A-B-A and B-A-B
+		- Validities from discriminator
+		- Reconstruction
+		- Identities losses
+
+- The first two are squared errors, and the rest are mean absolute errors
+- Relative weights are set by `lambda` factors
 
 ## Building the generator
+
+
+- Use skip connections
+- U-Net architecture
+
+1. Define the `conv2d()`
+	1. Standard 2D convolutional layer
+	2. Leaky ReLU activation
+	3. Instance normalization
+		1. Normalizes each feature map within each channel separately
+2. Define `deconv2d()` - transposed conv2d
+	1. Upsamples the `input_layer`
+	2. Possibly applies dropout
+	3. Always applies `InstanceNormalization`
+	4. Creates a skip connection between its output layer and layer of corresponding dimensionality from the downsampling
+Create generator
+3. Take input and assign to `d0`
+4. Run through a conv layer `d1`
+5. Take `d1` and apply conv2d to get `d2`
+6. Take `d2` and apply conv2d to get `d3`
+7. Take `d3` and apply conv2d to get `d4`
+8. `u1`: upsample 
+
 
 ```python
 def build_generator(self):
