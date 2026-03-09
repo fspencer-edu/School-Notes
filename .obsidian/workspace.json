@@ -8,32 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "039320e5b13c09e3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/ToDo.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "ToDo"
-            }
-          },
-          {
-            "id": "da665ec12a0b433c",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Discrete Structures/Notes/Discrete Math.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "Discrete Math"
-            }
-          },
-          {
             "id": "a2d4535c214d3b0f",
             "type": "leaf",
             "state": {
@@ -89,8 +63,7 @@
               "title": "12) Looking Ahead"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -147,7 +120,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 318.5
+    "width": 318.5,
+    "collapsed": true
   },
   "right": {
     "id": "f79334738d86d2cb",
@@ -238,8 +212,18 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "1447f193185fcea8",
+  "active": "a2d4535c214d3b0f",
   "lastOpenFiles": [
+    "Pasted image 20260309151254.png",
+    "Pasted image 20260309150921.png",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/10) Adversarial Examples.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/9) CycleGAN.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/8) Conditional GAN.md",
+    "Pasted image 20260309150436.png",
+    "Pasted image 20260309150408.png",
+    "Pasted image 20260309150358.png",
+    "PRIVATE/ToDo.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Notes/Discrete Math.pdf",
     "Discrete Math.pdf",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Rust/Textbook/10) Traits and Generics.md.tmp",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Mining/5) Credibility - Evaluating What's Been Learned.md.tmp",
@@ -251,21 +235,12 @@
     "images/Pasted image 20260309120323.png",
     "PRIVATE/Winter 2026/Discrete Structures/Notes.md",
     "PRIVATE/Winter 2026/Discrete Structures/Notes",
-    "PRIVATE/Winter 2026/Discrete Structures/Notes/Discrete Math.pdf",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/8) Conditional GAN.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/20) Evolution of Genes, Traits, and Species.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/19) The Inheritance of Complex Traits.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/9) CycleGAN.md",
     "Pasted image 20260309121546.png",
-    "Pasted image 20260309121118.png",
-    "Pasted image 20260309120549.png",
-    "Pasted image 20260309120536.png",
-    "Pasted image 20260309120323.png",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/7) Semi-Supervised GAN.md",
-    "PRIVATE/ToDo.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/12) Looking Ahead.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/11) Practical Applications of GANs.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/10) Adversarial Examples.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/6) Progressing with GANs.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/18) Population Genetics.md",
     "PRIVATE/Winter 2026/Genetics/Textbook/17) Large-Scale Chromosomal Changes.md",
@@ -284,7 +259,6 @@
     "PRIVATE/Winter 2026/Genetics/Textbook/10) Gene Isolation and Manipulation.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Elixir/Textbook/3) Control Flow.md.tmp",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Computer Networking - Top Down/8. Security in Computer Networks.md.tmp",
-    "PRIVATE/Winter 2026/Genetics/Textbook/9) Proteins and Their Synthesis.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/AI and ML for Device Dev."
+    "PRIVATE/Winter 2026/Genetics/Textbook/9) Proteins and Their Synthesis.md"
   ]
 }

@@ -76,6 +76,11 @@ num_classes = 10
 
 ## CGAN Generator
 
+- Take label y (from integer 0 to 9) and turn it into a dense vector of size `z_dim`
+- Combine the label embedding with the noise vector z into a joint representation with `Multiply`
+- Feed the resulting vector as input into the rest of the CGAN generator network to synthesize image
+
+
 <img src="/images/Pasted image 20260309121118.png" alt="image" width="500">
 
 ```python
@@ -123,8 +128,15 @@ def build_cgan_generator(z_dim):
 
 ## CGAN Discriminator
 
-<img src="/images/Pasted image 20260309121546.png" alt="image" width="500">
+- Take a label (0-9) and label turn label into a dense vector 28 x 28 x 1 (flattened image)
+- Reshape the label embeddings into the image dimensions (28 x 28 x 1)
+- Concatenate the reshaped label embedding onto the corresponding image, creating a joint representation
+- Feed the image-label joint representation as input into the GGAN discriminator
 
+<img src="/images/Pasted image 20260309121546.png" alt="image" width="500">
+- Adjust the model inputs dimensions to (28 x 28 x 2) to reflect the new input shape
+- Increase the depth of the first convolutional layer form 32 to 64
+- Use sigmoid activation function as the output layer
 
 ```python
 def build_discriminator(img_shape):
@@ -212,6 +224,14 @@ cgan.compile(loss='binary_crossentropy', optimizer=Adam())
 
 ## Training
 
+- Train the discriminator
+	- Take a random mini-batch of real examples and labels
+	- Computes D((x, y)) for the mini batch and backpropagate the binary classification loss
+	- Take mini-batch of random noise vectors and class labels (z, y) and generate fake examples G(z, y)
+	- Computes D((x*|y, y))
+- Train the generatir
+	- Take a mini-batch of random noise vectors and class labels (Z, y), generate fake examples
+	- Computes D(x*|y, y) to max. loss
 ```python
 accuracies = []
 losses = []
@@ -257,6 +277,10 @@ def train(iterations, batch_size, sample_intervals):
 
 ## Outputting sample images
 
+- Instead of a 4 x 4 grid of random digits
+- Generate 2 x 5 grid of numbers
+	- 1 to 5
+	- 6 to 9
 
 ```python
 def sample_images(image_grid_rows=2, image_grid_columns=5):
@@ -283,6 +307,10 @@ def sample_images(image_grid_rows=2, image_grid_columns=5):
 			
 ```
 
+![[Pasted image 20260309150358.png]]
+
+![[Pasted image 20260309150408.png]]
+
 ## Training the model
 
 ```python
@@ -291,9 +319,14 @@ batch_size = 32
 sample_interval = 1000
 train(iterations, batch_size, sample_interval)
 ```
-
-
 ## Inspecting the output: Targeted data generation
- 
+
+![[Pasted image 20260309150436.png]]
+
 
 # Conclusion
+
+- pix2pix
+	- Uses pairs of images to learn to translate from one domain into another
+- Scenarios
+	- Colourization tasks

@@ -1,8 +1,54 @@
+
+- CycleGANs
+	- ML models designed for image-to-image translation without requiring paired training data
+
 # Image-to-image translation
 
-# Cycle-consistency loss - there and back aGAN
+- Image-to-image translation
+	- Mapping an image from one domain to another
+- Previously, the latent vector seeding the generation was an uninterpretable vector
+- Conditioning on a complete image, of the same dimensionality as the output image, that is then provided to the network as a label
+
+![[Pasted image 20260309150921.png]]
+
+- Mapping
+	- Semantic labels to photorealistic images
+	- Satellite images to street view
+	- Images from day to night
+	- Back-and-white to colour
+	- Outlines to synthesized fashion items
+
+# Cycle-consistency loss: There and back aGAN
+
+ - Complete the cycle
+	 - Translate from one domain to another and back again
+
+$(a)$ = original picture
+$(\hat{a})$ = reconstructed picture
+
+- Ideally the original and reconstructed picture is the same
+- Measure their loss on a pixel level, with cycle-consistency loss
+
+![[Pasted image 20260309151254.png]]
+
+- Back-translation
+	- Measure the cycle-consistency loss by how much the first and third sentences differ
+- 2 Generators
+	- One translating from A to B => $G_{AB}$ called $G$
+	- One translating from B to A => $G_{BA}$ called$ F$
+- 2 losses
+	- Forward cycle-consistency loss
+		- $\hat{a} = F(G(a))=a$
+	- Backward cycle-consistency loss
+		- $\hat{b} = G(F(a))=b$
+
 
 # Adversarial loss
+
+- Adversarial loss
+	- Every translation with a generator has a corresponding discriminator, $D_A$ and $D_B$
+- Make sture that the translation from A to B is real, and also that the translation from our estimated 
+
 
 # Identity loss
 
