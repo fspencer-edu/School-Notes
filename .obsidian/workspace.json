@@ -11,10 +11,12 @@
             "id": "b36d5027a0b69099",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "New tab"
+              "type": "pdf",
+              "state": {
+                "file": "PDFs/Calculus/CalVol1.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "CalVol1"
             }
           }
         ]
@@ -167,15 +169,16 @@
   },
   "active": "b36d5027a0b69099",
   "lastOpenFiles": [
-    "Textbooks - PDF/Chapter_1_v8.1_cps706.pptx",
-    "Textbooks - PDF/Probability and Statistics.pdf",
-    "Textbooks - PDF/LinearAlgebra.pdf",
-    "Textbooks - PDF/CalVol1.pdf",
-    "Textbooks - PDF/DataMining.pdf",
-    "Textbooks - PDF/Psychology.pdf",
-    "Textbooks - PDF/DiscreteMath.pdf",
+    "PDFs/Calculus",
+    "PDFs/Chapter_1_v8.1_cps706.pptx",
+    "PDFs/Probability and Statistics.pdf",
+    "PDFs/LinearAlgebra.pdf",
+    "PDFs/Calculus/CalVol1.pdf",
+    "PDFs/DataMining.pdf",
+    "PDFs/Psychology.pdf",
+    "PDFs/DiscreteMath.pdf",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Generative Deep Learning/1) Generative Modeling.md",
-    "Textbooks - PDF",
+    "PDFs",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Generative Deep Learning/0) Generative Deep Learning.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Generative Deep Learning/2) Deep Learning.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Generative Deep Learning/3) Variational Autoencoders.md",
@@ -211,7 +214,6 @@
     "images/Pasted image 20260309215310.png",
     "images/Pasted image 20260309214907.png",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Angular",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/AWS",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Kafka"
+    "TEXTBOOKS (PUBLIC)/== TODO ==/AWS"
   ]
 }
