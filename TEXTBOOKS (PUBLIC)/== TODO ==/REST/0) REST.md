@@ -2,10 +2,10 @@
 
 https://learning.oreilly.com/library/view/rest-api-design/9781449317904/
 
-1) Introduction
-2) Identifier Design with URIs
-3) Interaction Design with HTTP
-4) Metadata Design
-5) Representation Design
-6) Client Concerns
-7) Final Thoughts
+[[1) Introduction - REST]]
+[[2) Identifier Design with URIs]]
+[[3) Interaction Design with HTTP]]
+[[4) Metadata Design]]
+[[5) Representation Design]]
+[[6) Client Concerns]]
+[[7) Final Thoughts]]
