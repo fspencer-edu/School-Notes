@@ -63,8 +63,7 @@
               "title": "ToDo"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -213,8 +212,9 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "fc3d73e6e1d80a5b",
+  "active": "a29f9d7a1ad1e604",
   "lastOpenFiles": [
+    "PRIVATE/ToDo.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/12) Looking Ahead.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Angular/0) Angular.md",
     "images/Pasted image 20260309163229.png",

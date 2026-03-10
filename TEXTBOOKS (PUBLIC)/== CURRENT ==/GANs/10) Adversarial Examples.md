@@ -2,6 +2,15 @@
 
 # Lies, damned lies, and distributions
 
+
+$\hat{y} = f_{\theta}(x)$ = classification
+
+$L = ||y - \hat{y}||$ = loss function
+
+$min_{\theta}||y - \hat{y}||$
+
+- Loss is the difference betw
+
 # Use and abuse of training
 
 ```python
