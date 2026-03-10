@@ -34,8 +34,19 @@
               "icon": "lucide-file",
               "title": "ToDo"
             }
+          },
+          {
+            "id": "57cfcae5e483393c",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -92,8 +103,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 318.5,
-    "collapsed": true
+    "width": 318.5
   },
   "right": {
     "id": "f79334738d86d2cb",
@@ -184,22 +194,23 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "3125648cee5ff945",
+  "active": "57cfcae5e483393c",
   "lastOpenFiles": [
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/11) Practical Applications of GANs.md",
-    "Pasted image 20260309222838.png",
-    "Pasted image 20260309222555.png",
-    "Pasted image 20260309222421.png",
-    "Pasted image 20260309221929.png",
-    "Pasted image 20260309221325.png",
-    "Pasted image 20260309221220.png",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/10) Adversarial Examples.md",
-    "Pasted image 20260309215620.png",
-    "Pasted image 20260309215542.png",
-    "Pasted image 20260309215423.png",
-    "Pasted image 20260309215310.png",
+    "images/Pasted image 20260310121347.png",
+    "images/Pasted image 20260309222555.png",
+    "images/Pasted image 20260309222838.png",
+    "images/Pasted image 20260309222421.png",
+    "images/Pasted image 20260309215310.png",
+    "images/Pasted image 20260309214907.png",
+    "images/Pasted image 20260309215423.png",
+    "images/Pasted image 20260309215620.png",
+    "images/Pasted image 20260309221220.png",
+    "images/Pasted image 20260309215542.png",
+    "images/Pasted image 20260309215155.png",
     "PRIVATE/ToDo.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/12) Looking Ahead.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/11) Practical Applications of GANs.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/GANs/10) Adversarial Examples.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Angular/0) Angular.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/AWS/0) Amazon Web Services.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Angular",
@@ -230,7 +241,6 @@
     "TEXTBOOKS (PUBLIC)/== TODO ==/Practical Statistics/0) Practical Statistics for DS.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/RAG with Python/0) RAG with Python Cookbook.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Data Science on AWS/0) Data Science on AWS.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/AWS System Admin./0) AWS System Administration.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Science from Scratch/0) Data Science from Scratch.md"
+    "TEXTBOOKS (PUBLIC)/== TODO ==/AWS System Admin./0) AWS System Administration.md"
   ]
 }

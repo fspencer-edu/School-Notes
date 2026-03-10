@@ -19,14 +19,14 @@ $\theta_{t+1} = \theta - \alpha * \dfrac{\partial L}{\partial \theta}$
 
 - Maximizing the error rather than minimizing it is easier
 
-![[Pasted image 20260309214907.png]]
+<img src="/images/Pasted image 20260309214907.png" alt="image" width="500">
 
 - With adversarial examples, we are conditioning on an entire image and trying to produce a domain transferred to a similar image
 - The generator can be a stochastic gradient ascent to fool the discriminator
 - Fast sign gradient method (FSGM)
 	- Start with the gradient update, look at the sign, and them make a step in the opposite direction
 
-![[Pasted image 20260309215155.png]]
+<img src="/images/Pasted image 20260309215155.png" alt="image" width="500">
 
 
 # Use and abuse of training
@@ -76,20 +76,20 @@ new_preds = kmodel.predict(np.expand_dims(adversarial, axis=0))
 print('Predicted:', pp.pprint(decode_predictions(new_preds, top=20)[0]))
 ```
 
-![[Pasted image 20260309215310.png]]
+<img src="/images/Pasted image 20260309215310.png" alt="image" width="500">
 
 - Adversarial examples generalize beyond deep learning and transfer to different ML techniques
 
 
-![[Pasted image 20260309215423.png]]
+<img src="/images/Pasted image 20260309215423.png" alt="image" width="500">
 
 # Signal and the noise
 
 - Many adversarial examples are easy to construct and can be fooled with Gaussian noise
 
-![[Pasted image 20260309215542.png]]
+<img src="/images/Pasted image 20260309215542.png" alt="image" width="500">
 
-![[Pasted image 20260309215620.png]]
+<img src="/images/Pasted image 20260309215620.png" alt="image" width="500">
 
 ```python
 # Guassian noise

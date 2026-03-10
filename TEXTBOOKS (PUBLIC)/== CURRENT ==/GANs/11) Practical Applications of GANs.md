@@ -23,7 +23,7 @@
 - Used the augmented dataset from step 1 with GAN produced synthetic examples to train a liver lesion classifier
 - DCGAN
 
-![[Pasted image 20260309221220.png]]
+<img src="/images/Pasted image 20260309221220.png" alt="image" width="500">
 
 - Input size = 64 x 64 x 1
 - 5 x 5 convolutional kernels
@@ -31,7 +31,7 @@
 
 ## Results
 
-![[Pasted image 20260309221325.png]]
+<img src="/images/Pasted image 20260309221325.png" alt="image" width="500">
 
 
 # GANs in fashion
@@ -55,7 +55,7 @@
 - The generator uses random noise and conditioning information to synthesize an image
 - The discriminator outputs a probability that a particular image-category is real or fake
 
-![[Pasted image 20260309221929.png]]
+<img src="/images/Pasted image 20260309221929.png" alt="image" width="500">
 
 - Each box represents a layer
 	- fc = fully connected layer
@@ -70,7 +70,7 @@
 - Used gradient ascent, to max. a reward function by iteratively moving in the direction fo the steepest increase
 
 
-![[Pasted image 20260309222421.png]]
+<img src="/images/Pasted image 20260309222421.png" alt="image" width="500">
 
 ## Adjusting existing items to better match individual preferences
 
@@ -78,7 +78,7 @@
 - To generate variations of some image A, find the latent vector zA that the generator would use to create the image
 - Produce images from neighbouring vectors to generate similar imges
 
-![[Pasted image 20260309222555.png]]
+<img src="/images/Pasted image 20260309222555.png" alt="image" width="500">
 
 - Find a vector z that the generator uses to synthesize an image similar to the real image, and use it as a proxy for the hypothetical z that would have produced the real image
 - Reconstruction loss
@@ -86,7 +86,7 @@
 	- The greater the loss, the more different a given pair of images is
 - Move around the latent space to points that generate images similar to the one we want to modify, while also optimizing for the preferences of the given user
 
-![[Pasted image 20260309222838.png]]
+<img src="/images/Pasted image 20260309222838.png" alt="image" width="500">
 
 
 # Conclusion
