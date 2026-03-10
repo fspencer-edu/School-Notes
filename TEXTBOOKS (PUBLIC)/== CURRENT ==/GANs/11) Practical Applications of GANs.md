@@ -31,14 +31,62 @@
 
 ## Results
 
-- 
+![[Pasted image 20260309221325.png]]
 
 
 # GANs in fashion
 
 ## Using GANs to design fashion
+
+- Using a dataset compiled from users, items, and reviews from Amazon, created models to recommend fashion and create it
+- For any person-item pair, it returns a preference score
+- The greater the score, the better match the item is
+- Created new fashion items matching the taste of an individual
+- Personalized alterations to existing items based on individual's preferences
+
 ## Methodology
+
+- CGAN
+	- Product's category as the conditioning label
+	- Dataset consisted of gender based clothing categories
+		- Tops
+		- Bottoms
+		- Shoes
+- The generator uses random noise and conditioning information to synthesize an image
+- The discriminator outputs a probability that a particular image-category is real or fake
+
+![[Pasted image 20260309221929.png]]
+
+- Each box represents a layer
+	- fc = fully connected layer
+	- st = strides
+
 ## Creating new items matching individual preferences
+
+- Preference maximization
+	- CGAN generator produces a fashion item maximizing an individual's preference
+- Constraint maximization
+	- The constraint is the size of the latent space, given by the size of the vector z
+- Used gradient ascent, to max. a reward function by iteratively moving in the direction fo the steepest increase
+
+
+![[Pasted image 20260309222421.png]]
+
 ## Adjusting existing items to better match individual preferences
+
+- Vectors that are close tend to produce images that are similar in terms of content and style
+- To generate variations of some image A, find the latent vector zA that the generator would use to create the image
+- Produce images from neighbouring vectors to generate similar imges
+
+![[Pasted image 20260309222555.png]]
+
+- Find a vector z that the generator uses to synthesize an image similar to the real image, and use it as a proxy for the hypothetical z that would have produced the real image
+- Reconstruction loss
+	- A measure of the difference between two images
+	- The greater the loss, the more different a given pair of images is
+- Move around the latent space to points that generate images similar to the one we want to modify, while also optimizing for the preferences of the given user
+
+![[Pasted image 20260309222838.png]]
+
 
 # Conclusion
