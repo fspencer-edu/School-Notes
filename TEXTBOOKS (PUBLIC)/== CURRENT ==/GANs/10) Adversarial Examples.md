@@ -1,5 +1,7 @@
 # Context of adversarial examples
 
+- Adversarial models attack with Gaussian noise by injecting carefully crafted, low-magnitude random perturbations into input data (images, 3D models, or text) to induce misclassification
+
 # Lies, damned lies, and distributions
 
 
@@ -9,7 +11,23 @@ $L = ||y - \hat{y}||$ = loss function
 
 $min_{\theta}||y - \hat{y}||$
 
-- Loss is the difference betw
+- Loss is the difference between the true and predicted label
+- SGD-based method takes batches of x
+- Takes the derivative of the loss function with respect to the current parameters $\theta_t$ multiplied by the learning rate ($\alpha$), which constitutes the new parameters, $(\theta_{t+1})$
+
+$\theta_{t+1} = \theta - \alpha * \dfrac{\partial L}{\partial \theta}$
+
+- Maximizing the error rather than minimizing it is easier
+
+![[Pasted image 20260309214907.png]]
+
+- With adversarial examples, we are conditioning on an entire image and trying to produce a domain transferred to a similar image
+- The generator can be a stochastic gradient ascent to fool the discriminator
+- Fast sign gradient method (FSGM)
+	- Start with the gradient update, look at the sign, and them make a step in the opposite direction
+
+![[Pasted image 20260309215155.png]]
+
 
 # Use and abuse of training
 
@@ -58,8 +76,20 @@ new_preds = kmodel.predict(np.expand_dims(adversarial, axis=0))
 print('Predicted:', pp.pprint(decode_predictions(new_preds, top=20)[0]))
 ```
 
+![[Pasted image 20260309215310.png]]
+
+- Adversarial examples generalize beyond deep learning and transfer to different ML techniques
+
+
+![[Pasted image 20260309215423.png]]
 
 # Signal and the noise
+
+- Many adversarial examples are easy to construct and can be fooled with Gaussian noise
+
+![[Pasted image 20260309215542.png]]
+
+![[Pasted image 20260309215620.png]]
 
 ```python
 # Guassian noise
@@ -98,9 +128,10 @@ def make_subplots(x, y, z, new_row=False):
 plt.show()
 ```
 
-
 # Not all hope is lost
 
-# Adversarial to GANs
+# Adversaries to GANs
 
 # Conclusion
+
+- Get adversarial noise that changes the label of a picture without changing the image perceptibility
