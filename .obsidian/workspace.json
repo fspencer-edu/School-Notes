@@ -13,12 +13,110 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PRIVATE/ToDo.md",
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/6) Exploring Docker.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ToDo"
+              "title": "6) Exploring Docker"
+            }
+          },
+          {
+            "id": "651266efd5c90b54",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/7) Debugging Containers.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "7) Debugging Containers"
+            }
+          },
+          {
+            "id": "677bffc808ef4f12",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/8) Exploring Docker Compose.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "8) Exploring Docker Compose"
+            }
+          },
+          {
+            "id": "268556677fb45545",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/9) The Path To Production Containers.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "9) The Path To Production Containers"
+            }
+          },
+          {
+            "id": "8a598b5447529e1e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/10) Docker At Scale.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "10) Docker At Scale"
+            }
+          },
+          {
+            "id": "acc747b177aa66b5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/11) Advanced Topics.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "11) Advanced Topics"
+            }
+          },
+          {
+            "id": "0035f314af2c452f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/12) Container Platform Design.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "12) Container Platform Design"
+            }
+          },
+          {
+            "id": "17176917862c0be4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/13) Conclusion.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "13) Conclusion"
             }
           }
         ]
@@ -78,7 +176,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 318.5
+    "width": 318.5,
+    "collapsed": true
   },
   "right": {
     "id": "f79334738d86d2cb",
@@ -171,6 +270,21 @@
   },
   "active": "74c6af28a472c71e",
   "lastOpenFiles": [
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/7) Debugging Containers.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/13) Conclusion.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/12) Container Platform Design.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/11) Advanced Topics.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/10) Docker At Scale.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/9) The Path To Production Containers.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/8) Exploring Docker Compose.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/6) Exploring Docker.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/5) Working With Docker Containers.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/0) Docker - Up and Running.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/4) Working With Docker Images.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/3) Installing Docker.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/2) The Docker Landscape.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/1) Introduction.md",
+    "PRIVATE/ToDo.md",
     "PDFs/Calculus/CalVol1.pdf",
     "PDFs/Calculus",
     "PDFs/Chapter_1_v8.1_cps706.pptx",
@@ -191,20 +305,6 @@
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Generative Deep Learning/8) Diffusion Models.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Generative Deep Learning/9) Transformers.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Generative Deep Learning/10) Advanced GANs.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Generative Deep Learning/11) Music Generation.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Generative Deep Learning/12) World Models.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Generative Deep Learning/13) Multimodel Models.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Generative Deep Learning/14) Conclusion - Generative.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/XML/0) XML.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Swift/0) Swift Programming.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Statistics/0) Statistical Learning in Python.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Reinforcement Learning/1) Why Reinforcement Learning.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Reinforcement Learning/0) Reinforcement Learning.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Reinforcement Learning/2) Markov Decision Processes, Dynamic Programming, and Monte Carlo Methods.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Reinforcement Learning/3) Temporal-Difference Learning, Q-Leaning, and N-Step Algorithms.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Reinforcement Learning/4) Deep Q-Networks.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Reinforcement Learning/5) Policy Gradient Methods.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Reinforcement Learning/6) Beyond Policy Gradients.md",
     "images/Pasted image 20260310123323.png",
     "images/Pasted image 20260310123601.png",
     "Pasted image 20260310123601.png",
@@ -215,7 +315,6 @@
     "images/Pasted image 20260309222421.png",
     "images/Pasted image 20260309215310.png",
     "images/Pasted image 20260309214907.png",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Angular",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/AWS"
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Angular"
   ]
 }
