@@ -326,11 +326,120 @@ $ docker events
 ```
 
 ### cAdvisor
-- 
 
+- Graph implementation
+	- DataDog
+	- GroundWork
+	- New Relic
+	- Prometheus
+	- Nagios
+
+```python
+# cAdvisor
+$ docker run \
+    --volume=/:/rootfs:ro \
+    --volume=/var/run:/var/run:rw \
+    --volume=/sys:/sys:ro \
+    --volume=/var/lib/docker/:/var/lib/docker:ro \
+    --publish=8080:8080 \
+    --detach=true \
+    --name=cadvisor \
+    google/cadvisor:latest
+
+Unable to find image 'google/cadvisor:latest' locally
+Pulling repository google/cadvisor
+f0643dafd7f5: Download complete
+...
+ba9b663a8908: Download complete
+Status: Downloaded newer image for google/cadvisor:latest
+f54e6bc0469f60fd74ddf30770039f1a7aa36a5eda6ef5100cddd9ad5fda350b
+```
+
+- See web interface of Docker host on port 8080
+
+![[Pasted image 20260310191058.png]]
+
+- cAdvisor provides a REST API endpoint, which can be used to monitor systems
+
+```json
+$ curl http://172.17.42.10:8080/api/v1.3/containers/
+{
+  "name": "/",
+  "subcontainers": [
+    {
+      "name": "/docker"
+    }
+  ],
+  "spec": {
+    "creation_time": "2015-04-05T00:05:40.249999996Z",
+    "has_cpu": true,
+    "cpu": {
+      "limit": 1024,
+      "max_limit": 0,
+      "mask": "0-7"
+    },
+```
 
 ## Prometheus Monitoring
 
+- Used to monitor distributed systems
+- Reaches out and gathers statistics from endpoints on a timed basis
+- Reconfigure the `dockerd` server to enable the experimental features
+- Expose metrics to listener on a specific port
+	- `--experimental` and `--metrics-addr=`
+
+```python
+daemon.json
+{
+  "experimental": true,
+  "metrics-addr": "0.0.0.0:9323"
+}
+
+# restart server and test endpoint
+$ systemctl restart docker
+$ curl -s http://localhost:9323/metrics | head -15
+# HELP builder_builds_failed_total Number of failed image builds
+# TYPE builder_builds_failed_total counter
+```
+
+- Write a config from Prometheus to run in a container
+
+```yaml
+# Scrape metrics every 5 seconds and name the monitor 'stats-monitor'
+global:
+  scrape_interval: 5s
+  external_labels:
+    monitor: 'stats-monitor'
+
+# We're going to name our job 'DockerStats' and we'll connect to the docker0
+# bridge address to get the stats. If your docker0 has a different IP address
+# then use that instead. 127.0.0.1 and localhost will not work.
+scrape_configs:
+  - job_name: 'DockerStats'
+    static_configs:
+    - targets: ['172.17.0.1:9323']
+      
+$ docker run -d -p 9090:9090 \
+    -v /tmp/prometheus/prometheus.yaml:/etc/prometheus.yaml \
+    prom/prometheus --config.file=/etc/prometheus.yaml
+```
+
+- This will run the container and volume mount config file
+
+![[Pasted image 20260310191603.png]]
+
+- Advanced dashboards
+	- DockProm
+
 ## Exploration
+
+- `docker cp`
+	- Copying files in and out of the container
+- `docker export`
+	- Saving a container's filesystem to a tarball
+- `docker save`
+	- Saving an image to a tarball
+- `docker import`
+	- Loading an image from a tarbal
 
 ## Wrap-Up
