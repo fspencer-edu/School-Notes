@@ -163,15 +163,44 @@ networks:
 - `depends_on: -mongo`
 	- Defines a container that must be running before this container can be started
 	- Health function
-- `ports`
+- `ports: - 3000:3000`
+	- Define all the ports mapped from container to host
 
+
+### zmachine
+- `expose: -80`
+	- Expose this port to the other containers on the Docker network
+	- Not the underlying host
 
 ## Launching Services
 
+```python
+$ cd rocketchat-hubot-demo/compose/unix
+
+docker-compose config
+
+docker-compose build
+Building mongo
+
+docker-compose up -d
+
+docker-compose logs
+```
+- Docker compose prefixes the network and container name with the name of the directory that contains you `docker-compose.yaml` file
+
+
 ## Exploring RocketChat
+
 
 ## Exercising Docker Compose
 
+- `docker-compose top`
+	- Provides insight on running services
+- `docker-comopse exec`
+	- Provides the container shell
+- `start, stop, pause, unpause`
+- `docker-compose down`
+	- Delete all the containers
 ## Wrap-Up
 
 
