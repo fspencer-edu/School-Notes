@@ -111,14 +111,98 @@
 
 ### Orchestration
 
-- 
-
+- Ability to command and organize applications and deployments across a whole system
+- Tools
+	- Capistrano
+	- Fabric
+	- Spotify's Helios
+	- Ansible's Docker
+	- New Relic's Centurion
 
 ### Service Discovery
+
+- Service discovery is the mechanism by which the application finds all the other services and resources it needs on the network
+- Stateless, static websites are the only systems that may not needs any service discovery
+- In traditional systems
+	- Load balancers where one of the primary means for service discovery
+	- Load balancers are used for reliability and scaling
+	- Track all of the endpoint associated with a particular service
+- Static database configurations or application configuration files
+- Docker does not address service discovery in your environment
+	- In Docker Swarm mode
+
+
+**Service Discovery Mechanisms**
+- Load balancers with well-known addresses
+- Round-robin records
+- DNS SRV records
+- Dynamic DNS systems
+- Multicast DNA
+- Overlay networks with well-known addresses
+- Gossip protocols
+	- Cassandra
+	- Seneca JS
+	- Sidecar
+- Bonjour protocol (Apple)
+- Apache Zookeeper
+- HashiCorp's Consul
+- CoreOS's etcd
 
 ### Production Wrap Up
 
 
 ## Docker and the DevOps Pipeline
+
+- Ability to test the application and all of its dependencies in the exact operating environment for production
+- Build an image, run on development box, then test the same image with the same application version and dependencies before shipping it to production servers
+
+### Overview
+
+- Pool of production servers that run Docker daemons
+- Multiple application
+- A build server and test worker boxes that are tied to the test server
+
+**Workflow**
+1) A build is triggered by some outside means
+2) The build server kicks off a Docker build
+3) The image is created on the local `docker`
+4) The image is tagged with a build number or commit hash
+5) A container is configured to run the test suite based on the newly built image
+6) The test suite is run against the container and the result is captured by the build server
+7) The build is marked as passing or failing
+8) Passed builds are shipped to an image store (registry)
+
+
+![[Pasted image 20260311120010.png]]
+
+
+- Pushed the latest code to a Git repo
+- Post-commit hook that triggers a build on each commit, so that job is kicked off on the build server
+- The job on the test server is set up to take to a `docker` on a test worker server
+	- Does not have `docker` running
+- Run `docker build` against that remote Docker server and it runs the Dockerfile, generating a new image on the remote Docker server
+- Once the image has been built, our test job will create and run a new container based on our new production image
+- In production, start `supervisor` to start an `nginx` instance and some Ruby unicorn web server instance behind
+
+```python
+$ docker run -e ENVIRONMENT=testing -e API_KEY=12345 \
+    -i -t awesome_app:version1 /opt/awesome_app/test.sh
+```
+- `docker run` will exit with the exit status of the command that was invoked in the container
+- For additional steps, capture output of the test run into a file, and debug from status messages
+- Take the passed build and push that image to the registry
+- The registry is the interchange point between builds and deployments
+- Take advantage of the client/server model to invoke the test on a different server from the test master server
+- Therefore, the system only ships applications that have correctly passed on the test suite
+- Container can also be test against any outside dependencies like databases or caches without having to mock them
+- Jenkins for CI
+
+### Outside Dependencies
+
+- Memcache
+- Redis instance
+
+- Solve the external dependencies to have a clean test environment
+- In Docker compose, our build job could express some dependencies between containers
 
 ## Wrap-Up
