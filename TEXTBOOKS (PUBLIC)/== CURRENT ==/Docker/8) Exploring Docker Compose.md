@@ -8,4 +8,4 @@
 
 ## Wrap-Up
 
-help me create a docker container for a simple web site, i have two domain names registers in pork bun, and i want to use cloudflare to create a tunnel so that i can host a site to the public
+there are two ip 192.168.6.192 and 172.17.0.1
