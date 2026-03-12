@@ -357,7 +357,7 @@ f54e6bc0469f60fd74ddf30770039f1a7aa36a5eda6ef5100cddd9ad5fda350b
 
 - See web interface of Docker host on port 8080
 
-![[Pasted image 20260310191058.png]]
+<img src="/images/Pasted image 20260310191058.png" alt="image" width="500">
 
 - cAdvisor provides a REST API endpoint, which can be used to monitor systems
 
@@ -426,7 +426,7 @@ $ docker run -d -p 9090:9090 \
 
 - This will run the container and volume mount config file
 
-![[Pasted image 20260310191603.png]]
+<img src="/images/Pasted image 20260310191603.png" alt="image" width="500">
 
 - Advanced dashboards
 	- DockProm

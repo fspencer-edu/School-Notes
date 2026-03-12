@@ -23,7 +23,7 @@
 	- Separate monitoring system
 	- Separate orchestration system
 
-![[Pasted image 20260311113154.png]]
+<img src="/images/Pasted image 20260311113154.png" alt="image" width="500">
 
 ### Job Control
 
@@ -173,7 +173,7 @@
 8) Passed builds are shipped to an image store (registry)
 
 
-![[Pasted image 20260311120010.png]]
+<img src="/images/Pasted image 20260311120010.png" alt="image" width="500">
 
 
 - Pushed the latest code to a Git repo

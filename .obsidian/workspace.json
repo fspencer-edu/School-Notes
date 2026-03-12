@@ -4,95 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "cb3f50d0d6e2a0fc",
+        "id": "427df671830ae144",
         "type": "tabs",
         "children": [
           {
-            "id": "8a598b5447529e1e",
+            "id": "c0d9751c39a41ad5",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/10) Docker At Scale.md",
+                "file": "PRIVATE/Winter 2026/Foundation of Psychology/Terms.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "10) Docker At Scale"
-            }
-          },
-          {
-            "id": "acc747b177aa66b5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/11) Advanced Topics.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "11) Advanced Topics"
-            }
-          },
-          {
-            "id": "0035f314af2c452f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/12) Container Platform Design.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "12) Container Platform Design"
-            }
-          },
-          {
-            "id": "17176917862c0be4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/13) Conclusion.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "13) Conclusion"
-            }
-          },
-          {
-            "id": "fa4102425181c067",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Kubernetes/0) Kubernetes.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "0) Kubernetes"
-            }
-          },
-          {
-            "id": "f3960b03511078a3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/ToDo.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "ToDo"
+              "title": "Terms"
             }
           }
-        ],
-        "currentTab": 5
+        ]
       }
     ],
     "direction": "vertical"
@@ -240,8 +169,32 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "f3960b03511078a3",
+  "active": "c0d9751c39a41ad5",
   "lastOpenFiles": [
+    "PRIVATE/Winter 2026/Foundation of Psychology/Test 1 - Ch.1 to Ch.3.md",
+    "PRIVATE/Winter 2026/Foundation of Psychology/Terms.md",
+    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/0) Introduction to Psychology and Neuroscience.md",
+    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/15) Treatment.md",
+    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/14) Psychopathology.md",
+    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/13) Stress and Health.md",
+    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/12) Social Psychology.md",
+    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/11) Personality.md",
+    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/10) Emotion and Motivation.md",
+    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/9) Development.md",
+    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/8) Language and Intelligence.md",
+    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/7) Learning.md",
+    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/6) Memory.md",
+    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/5) States of Consciousness.md",
+    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/4) Sensation and Perception.md",
+    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/3) Biological Basis of Behaviour.md",
+    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/2) Psychological Research.md",
+    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/1) Introduction to Psychology.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Spark/21) Structured Streaming Basics.md.tmp",
+    "images/Pasted image 20260311113154.png",
+    "images/Pasted image 20260311120010.png",
+    "images/Pasted image 20260310191603.png",
+    "images/Pasted image 20260310191058.png",
+    "PRIVATE/ToDo.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/10) Docker At Scale.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/9) The Path To Production Containers.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Kubernetes/0) Kubernetes.md",
@@ -251,21 +204,8 @@
     "Pasted image 20260311120010.png",
     "Pasted image 20260311113154.png",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/8) Exploring Docker Compose.md",
-    "PRIVATE/ToDo.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Kubernetes/kubectl Cheat Sheet.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Git/GIT Cheat Sheet.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/Docker Cheat Sheet.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/7) Debugging Containers.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Kubernetes/1) Network Introduction.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/6) Exploring Docker.md",
     "Pasted image 20260310191603.png",
     "Pasted image 20260310191058.png",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/5) Working With Docker Containers.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/0) Docker - Up and Running.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/4) Working With Docker Images.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/3) Installing Docker.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/2) The Docker Landscape.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/1) Introduction.md",
     "PDFs/Calculus/CalVol1.pdf",
     "PDFs/Calculus",
     "PDFs/Chapter_1_v8.1_cps706.pptx",
@@ -274,18 +214,8 @@
     "PDFs/DataMining.pdf",
     "PDFs/Psychology.pdf",
     "PDFs/DiscreteMath.pdf",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Generative Deep Learning/1) Generative Modeling.md",
     "PDFs",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Generative Deep Learning/0) Generative Deep Learning.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Generative Deep Learning/2) Deep Learning.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Generative Deep Learning/3) Variational Autoencoders.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Generative Deep Learning/4) Generative Adversarial Networks.md",
     "images/Pasted image 20260310123323.png",
-    "images/Pasted image 20260310123601.png",
-    "Pasted image 20260310123601.png",
-    "Pasted image 20260310123323.png",
-    "images/Pasted image 20260310121347.png",
-    "images/Pasted image 20260309222555.png",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Angular"
+    "images/Pasted image 20260310123601.png"
   ]
 }
