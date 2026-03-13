@@ -35,8 +35,7 @@
               "title": "ToDo"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -93,7 +92,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 318.5
+    "width": 318.5,
+    "collapsed": true
   },
   "right": {
     "id": "f79334738d86d2cb",
@@ -184,10 +184,10 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "b4b43be32e7a4f75",
+  "active": "c0d9751c39a41ad5",
   "lastOpenFiles": [
-    "PRIVATE/Winter 2026/Foundation of Psychology/Terms.md",
     "PRIVATE/ToDo.md",
+    "PRIVATE/Winter 2026/Foundation of Psychology/Terms.md",
     "Pasted image 20260312165522.png",
     "Pasted image 20260312164824.png",
     "Pasted image 20260312164617.png",
