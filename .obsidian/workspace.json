@@ -35,7 +35,8 @@
               "title": "ToDo"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -184,11 +185,11 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "c0d9751c39a41ad5",
+  "active": "b4b43be32e7a4f75",
   "lastOpenFiles": [
+    "PRIVATE/Winter 2026/Foundation of Psychology/Terms.md",
     "Pasted image 20260313123629.png",
     "PRIVATE/ToDo.md",
-    "PRIVATE/Winter 2026/Foundation of Psychology/Terms.md",
     "Pasted image 20260312165522.png",
     "Pasted image 20260312164824.png",
     "Pasted image 20260312164617.png",
@@ -222,7 +223,6 @@
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/12) Container Platform Design.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/11) Advanced Topics.md",
     "Pasted image 20260311120010.png",
-    "Pasted image 20260311113154.png",
     "PDFs/Calculus/CalVol1.pdf",
     "PDFs/Calculus",
     "PDFs/Chapter_1_v8.1_cps706.pptx",
