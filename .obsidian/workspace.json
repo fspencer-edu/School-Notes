@@ -35,7 +35,8 @@
               "title": "ToDo"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -184,10 +185,10 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "c0d9751c39a41ad5",
+  "active": "b4b43be32e7a4f75",
   "lastOpenFiles": [
-    "PRIVATE/ToDo.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Terms.md",
+    "PRIVATE/ToDo.md",
     "Pasted image 20260313123629.png",
     "Pasted image 20260312165522.png",
     "Pasted image 20260312164824.png",
