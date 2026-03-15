@@ -93,8 +93,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 318.5,
-    "collapsed": true
+    "width": 318.5
   },
   "right": {
     "id": "f79334738d86d2cb",
@@ -185,8 +184,13 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "b4b43be32e7a4f75",
+  "active": "1447f193185fcea8",
   "lastOpenFiles": [
+    "PRIVATE/test 1.ipynb",
+    "PDFs/test.ipynb",
+    "PRIVATE/Winter 2026/test.ipynb",
+    "PRIVATE/test.ipynb",
+    "test.ipynb",
     "Pasted image 20260314133341.png",
     "PRIVATE/Winter 2026/Foundation of Psychology/Terms.md",
     "PRIVATE/ToDo.md",
@@ -223,15 +227,10 @@
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/13) Conclusion.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/12) Container Platform Design.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/11) Advanced Topics.md",
-    "Pasted image 20260311120010.png",
     "PDFs/Calculus/CalVol1.pdf",
     "PDFs/Calculus",
     "PDFs/Chapter_1_v8.1_cps706.pptx",
     "PDFs/Probability and Statistics.pdf",
-    "PDFs/LinearAlgebra.pdf",
-    "PDFs/DataMining.pdf",
-    "PDFs/Psychology.pdf",
-    "PDFs/DiscreteMath.pdf",
-    "PDFs"
+    "PDFs/LinearAlgebra.pdf"
   ]
 }
