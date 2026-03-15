@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PRIVATE/ToDo.md",
+                "file": "PRIVATE/Winter 2026/Computer Networks/Lec Notes/Network Slides.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ToDo"
+              "title": "Network Slides"
             }
           }
         ],
@@ -93,7 +93,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 318.5
+    "width": 318.5,
+    "collapsed": true
   },
   "right": {
     "id": "f79334738d86d2cb",
@@ -184,8 +185,11 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "1447f193185fcea8",
+  "active": "b4b43be32e7a4f75",
   "lastOpenFiles": [
+    "PRIVATE/Winter 2026/Computer Networks/Lec Notes/Lec 1 - Introduction.md",
+    "PRIVATE/Winter 2026/Computer Networks/Lec Notes/Network Slides.md",
+    "PRIVATE/ToDo.md",
     "PRIVATE/test 1.ipynb",
     "PDFs/test.ipynb",
     "PRIVATE/Winter 2026/test.ipynb",
@@ -193,7 +197,6 @@
     "test.ipynb",
     "Pasted image 20260314133341.png",
     "PRIVATE/Winter 2026/Foundation of Psychology/Terms.md",
-    "PRIVATE/ToDo.md",
     "Pasted image 20260313123629.png",
     "Pasted image 20260312165522.png",
     "Pasted image 20260312164824.png",
@@ -226,11 +229,9 @@
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Kubernetes/0) Kubernetes.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/13) Conclusion.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/12) Container Platform Design.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Docker/11) Advanced Topics.md",
     "PDFs/Calculus/CalVol1.pdf",
     "PDFs/Calculus",
     "PDFs/Chapter_1_v8.1_cps706.pptx",
-    "PDFs/Probability and Statistics.pdf",
-    "PDFs/LinearAlgebra.pdf"
+    "PDFs/Probability and Statistics.pdf"
   ]
 }
