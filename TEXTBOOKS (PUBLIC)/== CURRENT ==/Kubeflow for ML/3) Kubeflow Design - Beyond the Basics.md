@@ -185,9 +185,35 @@ mc mb minio/kf-book-examples
 	- Rate limiting
 	- Access control
 	- End-to-end authentication
-- 
+- Integrates into any logging platform, or telemetry or policy systems
+- Secure, connect, and monitor microservices
+- Co-locates each service instance with a sidecar network proxy
+- All network traffic from an individual service instance flows via its local sidecar proxy to the appropriate destination
+- Data plane
+	- Proxies
+	- Mediate and control all network communication between pods
+- Control plane
+	- Manages and configures the proxies to route traffic
+
+- Envoy
+	- Failure handling
+	- Dynamic service discovery
+	- Load balancing
+- Mixer
+	- Enforces access control
+- Pilot
+- Galley
+	- Validation, ingestion, processing, and distribution component
+- Citadel
+	- Enables strong service to service and end-user authentication by providing identity and credential management
+- Kubeflow uses Istio to provide a proxy to the Kubeflow UI and to route requests securely
+
+![[Pasted image 20260317165856.png]]
 
 ## Knative
+
+- 
+
 ## Apache Spark
 
 ## Kubeflow Multiuser Isolation
