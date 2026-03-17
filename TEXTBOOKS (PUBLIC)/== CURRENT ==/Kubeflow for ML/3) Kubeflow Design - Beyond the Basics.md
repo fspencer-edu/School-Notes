@@ -19,18 +19,134 @@
 	- Workspace
 	- Data volumes
 	- Custom configurations
-- 
+- Bind the service account `default-editor` to limit/extend permissions of the notebook server
+- To execute all of the commands without leaving the notebook environment
+
+```python
+# create a new juypter notebook
+!kubectl create -f myspec.yaml
+```
+
 ## Training Operations
+
+- Kubeflow provides several training components to automate the execution of ml
+	- Chainer training
+	- MPI training
+	- Apache MXNet training
+	- PyTorch training
+	- TensorFlow training
+
+- Distributed training jobs are managed by application-specific controllers, known as operators
+- Extend the Kubernetes API to create, manage, and manipulate the state of resources
+- Run a distributed TF training job
+	- User just needs to provide a specification that describes the desired state (workers and parameters servers)
+
 ## Kubeflow Pipelines
+
+- Pipelines
+	- Allow you to orchestrate the execution of ML application
+	- Based on Argo Workflows
+	- Container-native workflow engine for Kubernetes
+- Python SDK
+- DSL compiler
+- Pipeline Service
+- Kubernetes resources
+- Orchestration controllers
+- Artifact storage
+	- Metadata
+	- Artifacts
+
+- Artifact store
+	- MiniIO server
+	- Google Cloud Storage (GCS)
+	- Amazon S3
+
+- Kubeflow can track data and metadata
+- Pipelines can expose the parameters of the underlying ML
+
 ## Hyperparameter Tuning
+
+- Traditional methods for tuning
+	- Grid search
+- Katlib
+	- Allows users to perform hyperparameter optimizations on Kubernetes clusters
+	- Inspired by Google vizier
+		- Black box optimization framework
+		- Leverages advanced searching algorithms to find the optimal hyperparameter configuration
+			- Bayesian optimization
+- 4 main concepts
+	- Experiment
+		- Runs over a feasible space
+		- Contains config describing the space, a set of trials
+	- Trial
+		- A list of parameter values, x, that will lead to a single evaluation of f(x)
+	- Job
+		- A process responsible for evaluating a pending trial and calculating its objective value
+	- Suggestion
+		- An algorithm to construct a parameter set
+			- Random
+			- Grid
+			- Hyperband
+			- Bayesian optimization
+
 ## Model Inference
+
+- Deploy ML models in production environments at scale
+	- TFServing
+	- Seldon serving
+	- PyTorch serving
+	- TensorRT
+- KFServing
+	- Generalizes the model inference concerns of autoscaling, networking, health checking, and server configuration
+- Implementation is based on leveraging Istio and Knative serving
+	- Knative serving
+		- Serverless containers on Kubernetes
+		- Provides middleware primitives
+			- Rapid deployment of serverless containers
+			- Automatic scaling up and down to zero
+			- Routing and network programming for Istio components
+- KFServing
+	- Preprocessor
+	- Predictor
+	- Postprocessor
 
 ## Metadata
 
+- Metadata management
+	- Provides capabilities to capture and track information about a model's creation
+	- Difficult to manage model's related information
+	- ML Metadata is both the infrastructure and a library for recording and retrieving metadata associated with an ML project
+		- Data source used for the model's creation
+		- The artifacts generated through the components/steps of the pipeline
+		- The executions of these components
+		- Pipeline and associated lineage information
+
+
+- Examples of ML Metadata operations
+	- List all artifacts of a specific type
+	- Compare two artifacts of the same time
+	- Show a DAG of all related executions and their input and output artifacts
+	- Display how an artifact was created
+	- Identify all artifacts that were created using a given artifact
+	- Determine if an execution has been ru non the same inputs before
+	- Record the query context of workflow runs
+
+
+![[Pasted image 20260317160304.png]]
 ## Component Summary
+
+- Add custom components
+
 # Support Components
 
 ## MinIO
+
+- The foundation of the pipeline architecture is shared storage
+- Keep data in external storage
+- Different cloud providers
+	- Amazon S3
+	- Azure Data Storage
+	- Google Cloud Storage
 ## Istio
 ## Knative
 ## Apache Spark
