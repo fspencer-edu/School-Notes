@@ -147,7 +147,46 @@
 	- Amazon S3
 	- Azure Data Storage
 	- Google Cloud Storage
+- Kubeflow ships with MinIO
+	- A high performance distributed object storage server
+	- Large-scale private cloud infrastructure
+	- Consistent gateway to public APIs
+- Deployed in different configuration
+	- Default is single container mode
+- Distributed MinIO
+	- Pool multiple failures and ensure full data protection
+- Provides S3 API on top of Azure Blob storage, GCS, Gluster, or NAS storage
+- Kubeflow installation hardcodes MinIO credential, which you used in the application
+	- Better to use a secrete, if switching to S3
+
+
+```python
+# port-forwarding to minio user
+kubectl port-forward -n kubeflow svc/minio-service 9000:9000 &
+
+# install MinIO on Mac
+brew install minio/stable/minio
+
+# config MinIO Client to take to Kubeflow's MinIO
+mc config host add minio http://localhost:9000 minio minio123
+
+# create a bucket
+mc mb minio/kf-book-examples
+```
+
 ## Istio
+
+- A service mesh providing vital features
+	- Service discovery
+	- Load balancing
+	- Failure recovery
+	- Metrics
+	- Monitoring
+	- Rate limiting
+	- Access control
+	- End-to-end authentication
+- 
+
 ## Knative
 ## Apache Spark
 
