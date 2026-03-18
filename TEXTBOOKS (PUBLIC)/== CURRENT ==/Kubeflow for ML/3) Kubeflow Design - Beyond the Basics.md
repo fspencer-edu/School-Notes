@@ -212,9 +212,37 @@ mc mb minio/kf-book-examples
 
 ## Knative
 
-- 
+- Built on Kubernetes and Istio
+- Knative Serving
+	- Support the deployment and serving of serverless applications
+	- Middleware primitives
+		- Rapid deployment of serverless containers
+		- Automatic scaling up and down to zero
+		- Routing and network programming for Istio components
+		- Point-in-time snapshots of deployed code and configurations
+- Control behaviour objects
+	- Service
+	- Route
+	- Configuration
+	- Revision
+
+![[Pasted image 20260318083138.png]]
+
+
 
 ## Apache Spark
 
+- Kubeflow has a built-in Spark operator for running Spark jobs
+- Integration for using Google's Dataproc and Amazon's Elastic Map Reduce (EMR)
+- Handle larger datasets and scale problems that cannot fit on a single machine
+
 ## Kubeflow Multiuser Isolation
+
+- Allows sharing the same pool of resources across different teams and users
+	- Administrator
+	- User
+	- Profile
+
 # Conclusion
+
+- 
