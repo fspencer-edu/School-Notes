@@ -8,7 +8,7 @@
 	- Insight
 - Model development life cycle (MDLC)
 
-![[Pasted image 20260317144928.png]]
+<img src="/images/Pasted image 20260317144928.png" alt="image" width="500">
 
 # Where Does Kubeflow Fit In?
 

@@ -1,5 +1,0 @@
-# Broadcast Variables
-
-# Accumulators
-
-# Conclusion

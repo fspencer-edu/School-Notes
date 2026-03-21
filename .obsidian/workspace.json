@@ -8,17 +8,31 @@
         "type": "tabs",
         "children": [
           {
-            "id": "64793f9492f1fe61",
+            "id": "f226f1ce4d6c3b53",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PRIVATE/Winter 2026/Computer Networks/Lec Notes/Lec 4 - Network Layer (Data Plane).md",
+                "file": "PRIVATE/Winter 2026/Genetics/Notes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Lec 4 - Network Layer (Data Plane)"
+              "title": "Notes"
+            }
+          },
+          {
+            "id": "527082f7bab67fc4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/ToDo.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "ToDo"
             }
           }
         ]
@@ -170,13 +184,33 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "64793f9492f1fe61",
+  "active": "f226f1ce4d6c3b53",
   "lastOpenFiles": [
-    "Pasted image 20260318093536.png",
-    "Pasted image 20260318093131.png",
-    "PRIVATE/Winter 2026/Computer Networks/Lec Notes/Network Slides.md",
-    "PRIVATE/Winter 2026/Computer Networks/Lec Notes/Lec 4 - Network Layer (Data Plane).md",
+    "images/Pasted image 20260321132841.png",
+    "images/Pasted image 20260321132850.png",
+    "images/Pasted image 20260321114944.png",
+    "Pasted image 20260321132850.png",
+    "Pasted image 20260321132841.png",
+    "Pasted image 20260321114944.png",
+    "Pasted image 20260319144802.png",
+    "Pasted image 20260319144439.png",
+    "Pasted image 20260319143643.png",
+    "Pasted image 20260319143351.png",
+    "Pasted image 20260319142043.png",
     "PRIVATE/ToDo.md",
+    "PRIVATE/Winter 2026/Genetics/Notes.md",
+    "PRIVATE/Winter 2026/Discrete Structures/Outline - Discrete Structures.md.tmp",
+    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/14) Psychopathology.md.tmp",
+    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/4) Sensation and Perception.md.tmp",
+    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/9) Development.md.tmp",
+    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/10) Emotion and Motivation.md.tmp",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/10) Mutable Data in the Real World.md.tmp",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/11) Serializing Heterogeneous Data.md.tmp",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/14) Building Efficient Programs.md.tmp",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/0) Effective Haskell.md.tmp",
+    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/13) Building Applications with Many Effects.md.tmp",
+    "PRIVATE/Winter 2026/Computer Networks/Lec Notes/Lec 4 - Network Layer (Data Plane).md",
+    "PRIVATE/Winter 2026/Computer Networks/Lec Notes/Network Slides.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Kubeflow for ML/10) Hyperparameter Tuning and Automated Machine Learning.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Kubeflow for ML/9) Case Study Using Multiple Tools.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Kubeflow for ML/8) Model Inference.md",
@@ -184,25 +218,11 @@
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Kubeflow for ML/6) Artifact and Metadata Store.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Kubeflow for ML/4) Kubeflow Pipelines.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Kubeflow for ML/3) Kubeflow Design - Beyond the Basics.md",
-    "Pasted image 20260318083138.png",
-    "Pasted image 20260317165856.png",
-    "Pasted image 20260317160304.png",
-    "Pasted image 20260317154001.png",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Kubeflow for ML/2) Hello Kubeflow.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Kubeflow for ML/1) Kubeflow - What It Is and Who It Is For.md",
-    "Pasted image 20260317144928.png",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Kubeflow for ML/5) Data and Feature Preparation.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Kubeflow for ML/0) Kubeflow for Machine Learning.md",
-    "images/Pasted image 20260315205051.png",
-    "images/Pasted image 20260315221522.png",
-    "images/Pasted image 20260315215527.png",
-    "images/Pasted image 20260315215127.png",
     "PRIVATE/Winter 2026/Computer Networks/Lec Notes/Lec 1 - Introduction.md",
-    "PRIVATE/test 1.ipynb",
-    "PDFs/test.ipynb",
-    "PRIVATE/Winter 2026/test.ipynb",
-    "PRIVATE/test.ipynb",
-    "test.ipynb",
     "PRIVATE/Winter 2026/Foundation of Psychology/Terms.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Test 1 - Ch.1 to Ch.3.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/0) Introduction to Psychology and Neuroscience.md",
@@ -211,12 +231,6 @@
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/13) Stress and Health.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/12) Social Psychology.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/11) Personality.md",
-    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/10) Emotion and Motivation.md",
-    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/9) Development.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Spark/21) Structured Streaming Basics.md.tmp",
-    "PDFs/Calculus/CalVol1.pdf",
-    "PDFs/Calculus",
-    "PDFs/Chapter_1_v8.1_cps706.pptx",
-    "PDFs/Probability and Statistics.pdf"
+    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/10) Emotion and Motivation.md"
   ]
 }

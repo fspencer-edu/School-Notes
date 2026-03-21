@@ -1,5 +1,5 @@
 
-![[Pasted image 20260317154001.png]]
+<img src="/images/Pasted image 20260317154001.png" alt="image" width="500">
 
 
 # Getting Around the Central Dashboard
@@ -132,7 +132,7 @@
 	- Record the query context of workflow runs
 
 
-![[Pasted image 20260317160304.png]]
+<img src="/images/Pasted image 20260317160304.png" alt="image" width="500">
 ## Component Summary
 
 - Add custom components
@@ -208,7 +208,7 @@ mc mb minio/kf-book-examples
 	- Enables strong service to service and end-user authentication by providing identity and credential management
 - Kubeflow uses Istio to provide a proxy to the Kubeflow UI and to route requests securely
 
-![[Pasted image 20260317165856.png]]
+<img src="/images/Pasted image 20260317165856.png" alt="image" width="500">
 
 ## Knative
 
@@ -226,7 +226,7 @@ mc mb minio/kf-book-examples
 	- Configuration
 	- Revision
 
-![[Pasted image 20260318083138.png]]
+<img src="/images/Pasted image 20260318083138.png" alt="image" width="500">
 
 
 

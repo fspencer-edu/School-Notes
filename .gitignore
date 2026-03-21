@@ -1,1 +1,6 @@
 /PRIVATE
+.DS_Store
+.obsidian/cache/
+.obsidian/workspace*.json
+.obsidian/workspace.json
+images/
