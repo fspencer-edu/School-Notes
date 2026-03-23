@@ -35,8 +35,7 @@
               "title": "ToDo"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -93,7 +92,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 318.5
+    "width": 318.5,
+    "collapsed": true
   },
   "right": {
     "id": "f79334738d86d2cb",
@@ -184,20 +184,21 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "cbd94aec1d7cb5fa",
+  "active": "f226f1ce4d6c3b53",
   "lastOpenFiles": [
-    "PRIVATE/Winter 2026/Genetics/Notes.md",
+    "Pasted image 20260323151740.png",
+    "Pasted image 20260323151728.png",
+    "Pasted image 20260323151304.png",
+    "Pasted image 20260323150952.png",
+    "Pasted image 20260323150748.png",
+    "Pasted image 20260323150112.png",
+    "Pasted image 20260323145918.png",
+    "Pasted image 20260323145827.png",
     "PRIVATE/ToDo.md",
+    "PRIVATE/Winter 2026/Genetics/Notes.md",
     "Pasted image 20260323134224.png",
     "Pasted image 20260323133610.png",
     "Pasted image 20260323132922.png",
-    "Pasted image 20260323132046.png",
-    "Pasted image 20260323101118.png",
-    "Pasted image 20260323100527.png",
-    "Pasted image 20260323095023.png",
-    "Pasted image 20260323094918.png",
-    "Pasted image 20260323094346.png",
-    "Pasted image 20260323085441.png",
     "PRIVATE/LEARN.md",
     "PRIVATE/Winter 2026/Data Mining/Lab/Lab 9.md",
     "PRIVATE/Winter 2026/Data Mining/Lab/Lab 8.md",
