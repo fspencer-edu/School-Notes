@@ -27,15 +27,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PRIVATE/ToDo.md",
+                "file": "PRIVATE/Winter 2026/Data Mining/Lab/Lab 9.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ToDo"
+              "title": "Lab 9"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -92,8 +93,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 318.5,
-    "collapsed": true
+    "width": 318.5
   },
   "right": {
     "id": "f79334738d86d2cb",
@@ -184,21 +184,22 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "f226f1ce4d6c3b53",
+  "active": "527082f7bab67fc4",
   "lastOpenFiles": [
+    "PRIVATE/ToDo.md",
+    "PRIVATE/Winter 2026/Data Mining/Lab/Lab 9.md",
+    "PRIVATE/Winter 2026/Data Mining/Lab/Lab 8.md",
+    "min_d.png",
+    "avg_d.png",
+    "max_d.png",
+    "elbow method.png",
+    "Pasted image 20260322202912.png",
+    "PRIVATE/Winter 2026/Genetics/Notes.md",
     "Pasted image 20260322195105.png",
     "Pasted image 20260322195040.png",
     "Pasted image 20260322194915.png",
     "Pasted image 20260322194737.png",
     "Pasted image 20260322194648.png",
-    "images/Pasted image 20260321143343.png",
-    "images/Pasted image 20260322100058.png",
-    "images/Pasted image 20260321145335.png",
-    "images/Pasted image 20260322112701.png",
-    "images/Pasted image 20260322114416.png",
-    "images/Pasted image 20260321143230.png",
-    "PRIVATE/ToDo.md",
-    "PRIVATE/Winter 2026/Genetics/Notes.md",
     "PRIVATE/Winter 2026/Discrete Structures/Outline - Discrete Structures.md.tmp",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/14) Psychopathology.md.tmp",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/4) Sensation and Perception.md.tmp",
@@ -230,7 +231,6 @@
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/14) Psychopathology.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/13) Stress and Health.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/12) Social Psychology.md",
-    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/11) Personality.md",
-    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/10) Emotion and Motivation.md"
+    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/11) Personality.md"
   ]
 }
