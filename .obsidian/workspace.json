@@ -35,8 +35,7 @@
               "title": "ToDo"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -185,10 +184,10 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "cbd94aec1d7cb5fa",
+  "active": "f226f1ce4d6c3b53",
   "lastOpenFiles": [
-    "PRIVATE/Winter 2026/Genetics/Notes.md",
     "PRIVATE/ToDo.md",
+    "PRIVATE/Winter 2026/Genetics/Notes.md",
     "Pasted image 20260323151740.png",
     "Pasted image 20260323151728.png",
     "Pasted image 20260323151304.png",
