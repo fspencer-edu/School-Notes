@@ -35,7 +35,8 @@
               "title": "ToDo"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -184,8 +185,9 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "b1114136ef973b59",
+  "active": "061adf3754cf9f18",
   "lastOpenFiles": [
+    "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 9 - Large Scale Chromosomal Changes.md",
     "Pasted image 20260325132048.png",
     "Pasted image 20260325131531.png",
     "Pasted image 20260325131503.png",
@@ -197,9 +199,7 @@
     "images/Pasted image 20260325104851.png",
     "images/Pasted image 20260325103532.png",
     "images/Pasted image 20260325114926.png",
-    "images/Pasted image 20260325114339.png",
     "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 8 - Transposable Elements.md",
-    "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 9 - Large Scale Chromosomal Changes.md",
     "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 7 - Gene Interaction.md",
     "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 5 - Chi Square.md",
     "PRIVATE/ToDo.md",
