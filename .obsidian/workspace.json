@@ -91,7 +91,8 @@
               "title": "Lec 7 - Basic Cluster Analysis"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -240,10 +241,10 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "154cad6aef35a644",
+  "active": "4e396e9647f05f60",
   "lastOpenFiles": [
-    "PRIVATE/Winter 2026/Genetics/Tutorial Review.md",
     "PRIVATE/ToDo.md",
+    "PRIVATE/Winter 2026/Genetics/Tutorial Review.md",
     "PRIVATE/Winter 2026/Data Mining/Lec Notes/Lec 7 - Basic Cluster Analysis.md",
     "PRIVATE/Winter 2026/Data Mining/Lec Notes/Lec 6 - Advanced Association Analysis.md",
     "PRIVATE/Winter 2026/Data Mining/Lec Notes/Lec 5 - Basic Association Analysis.md",
