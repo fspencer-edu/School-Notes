@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PRIVATE/Dev/App Ideas.md",
+                "file": "PRIVATE/Dev/fionaspencer.ca.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "App Ideas"
+              "title": "fionaspencer.ca"
             }
           },
           {
@@ -27,15 +27,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PRIVATE/ToDo.md",
+                "file": "PRIVATE/Dev/AWS.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ToDo"
+              "title": "AWS"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -92,8 +93,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 318.5,
-    "collapsed": true
+    "width": 318.5
   },
   "right": {
     "id": "f79334738d86d2cb",
@@ -184,15 +184,17 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "b1114136ef973b59",
+  "active": "061adf3754cf9f18",
   "lastOpenFiles": [
-    "PRIVATE/Dev/fionaspencer.ca.md",
+    "PRIVATE/Dev/Tools.md",
+    "PRIVATE/Dev/AWS.md",
     "PRIVATE/Dev/App Ideas.md",
+    "PRIVATE/ToDo.md",
+    "PRIVATE/Dev/fionaspencer.ca.md",
     "PRIVATE/Winter 2026/Genetics/Tutorial Review.md",
     "PRIVATE/Dev",
     "Pasted image 20260326160002.png",
     "Pasted image 20260326155122.png",
-    "PRIVATE/ToDo.md",
     "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 9 - Large Scale Chromosomal Changes.md",
     "Pasted image 20260325132048.png",
     "Pasted image 20260325131531.png",
@@ -229,8 +231,6 @@
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Kubeflow for ML/7) Training a Machine Learning Model.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Kubeflow for ML/6) Artifact and Metadata Store.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Kubeflow for ML/4) Kubeflow Pipelines.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Kubeflow for ML/3) Kubeflow Design - Beyond the Basics.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Kubeflow for ML/2) Hello Kubeflow.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Kubeflow for ML/1) Kubeflow - What It Is and Who It Is For.md"
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Kubeflow for ML/3) Kubeflow Design - Beyond the Basics.md"
   ]
 }
