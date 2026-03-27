@@ -92,7 +92,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -241,13 +241,13 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "6f822a03421346a7",
+  "active": "39312fbb65479825",
   "lastOpenFiles": [
-    "PRIVATE/Winter 2026/Data Mining/Lec Notes/Lec 4 - Alternative Methods.md",
-    "PRIVATE/Winter 2026/Data Mining/Lec Notes/Lec 5 - Basic Association Analysis.md",
-    "PRIVATE/Winter 2026/Data Mining/Lec Notes/0) Lecture Notes Overview.md",
-    "PRIVATE/Winter 2026/Data Mining/Lec Notes/Lec 7 - Basic Cluster Analysis.md",
     "PRIVATE/Winter 2026/Data Mining/Lec Notes/Lec 6 - Advanced Association Analysis.md",
+    "PRIVATE/Winter 2026/Data Mining/Lec Notes/Lec 7 - Basic Cluster Analysis.md",
+    "PRIVATE/Winter 2026/Data Mining/Lec Notes/Lec 5 - Basic Association Analysis.md",
+    "PRIVATE/Winter 2026/Data Mining/Lec Notes/Lec 4 - Alternative Methods.md",
+    "PRIVATE/Winter 2026/Data Mining/Lec Notes/0) Lecture Notes Overview.md",
     "Pasted image 20260327125428.png",
     "Pasted image 20260327125356.png",
     "Pasted image 20260327125329.png",
