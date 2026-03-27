@@ -92,7 +92,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -241,17 +241,18 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "39312fbb65479825",
+  "active": "4e396e9647f05f60",
   "lastOpenFiles": [
-    "PRIVATE/Winter 2026/Data Mining/Lec Notes/Lec 6 - Advanced Association Analysis.md",
+    "PRIVATE/ToDo.md",
+    "PRIVATE/Winter 2026/Genetics/Tutorial Review.md",
     "PRIVATE/Winter 2026/Data Mining/Lec Notes/Lec 7 - Basic Cluster Analysis.md",
+    "PRIVATE/Winter 2026/Data Mining/Lec Notes/Lec 6 - Advanced Association Analysis.md",
     "PRIVATE/Winter 2026/Data Mining/Lec Notes/Lec 5 - Basic Association Analysis.md",
     "PRIVATE/Winter 2026/Data Mining/Lec Notes/Lec 4 - Alternative Methods.md",
     "PRIVATE/Winter 2026/Data Mining/Lec Notes/0) Lecture Notes Overview.md",
     "Pasted image 20260327125428.png",
     "Pasted image 20260327125356.png",
     "Pasted image 20260327125329.png",
-    "PRIVATE/ToDo.md",
     "Pasted image 20260327122748.png",
     "Pasted image 20260327122708.png",
     "Pasted image 20260327122317.png",
@@ -261,7 +262,6 @@
     "Pasted image 20260327120838.png",
     "PRIVATE/Winter 2026/Data Mining/Lec Notes/Lec 1 - Intro.md",
     "PRIVATE/Dev/App Ideas.md",
-    "PRIVATE/Winter 2026/Genetics/Tutorial Review.md",
     "PRIVATE/Dev/MariaDB.md",
     "PRIVATE/Dev/SQL Overview.md",
     "PRIVATE/Dev/Database Integration Methods and Patterns.md",
