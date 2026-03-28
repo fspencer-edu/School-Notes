@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "079fb3f577977c7c",
+        "id": "9534d2e0177d9dde",
         "type": "tabs",
         "children": [
           {
-            "id": "e279e3034a165c20",
+            "id": "9b733a30b3ea71ae",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Architecture Patterns with Py/0) Architecture Patterns with Python.md",
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/RDB Design/0) Relational Database Design and Implementation.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "0) Architecture Patterns with Python"
+              "title": "0) Relational Database Design and Implementation"
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 318.5
+    "width": 276.5
   },
   "right": {
     "id": "f79334738d86d2cb",
@@ -169,52 +169,53 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "e279e3034a165c20",
+  "active": "9b733a30b3ea71ae",
   "lastOpenFiles": [
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/0) Learning MySQL and MariaDB.md",
-    "Pasted image 20260328162210.png",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Migrating to MariaDB/0) Migrating to MariaDB.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/0) Learning MySQL and MariaDB.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Fundamental of Software Architecture/0) Fundamentals of Software Architecture.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/SQL Queries/0) SQL Queries.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/SQL/0) Learning SQL.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Software Achitecture/0) Software Architecture.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/React/0) React.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/RDB Design/0) Relational Database Design and Implementation.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Designing Data Intensive App./0) Designing Data Intensive Applications.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Database Design/0) Database Design.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Engineering/0) Data Engineering.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Building Resilient Distributed Systems/0) Building Resilient Distributed Systems.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Architecture Patterns with Py/0) Architecture Patterns with Python.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Acting the System Design/0) Acting the System Design.md",
+    "Pasted image 20260328163126.png",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Fundamental of Software Architecture",
+    "Pasted image 20260328163044.png",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Software Achitecture",
+    "Pasted image 20260328162957.png",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Building Resilient Distributed Systems",
+    "Pasted image 20260328162738.png",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Database Design",
+    "Pasted image 20260328162657.png",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/SQL Queries",
+    "Pasted image 20260328162524.png",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/RDB Design",
+    "Pasted image 20260328162349.png",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Acting the System Design",
+    "Pasted image 20260328162210.png",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Untitled.md",
     "Pasted image 20260328162126.png",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Designing Data Intensive App./0) Designing Data Intensive Applications.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Migrating to MariaDB",
     "Pasted image 20260328162049.png",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/System Design on AWS/0) System Design on AWS.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Designing Data Intensive App.",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Kafka/0) Kafka for Architects.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Engineering/0) Data Engineering.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Architecture Patterns with Py/0) Architecture Patterns with Python.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Cloud Computing/0) Cloud Computing.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/AWS/0) Amazon Web Services.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Building Microservices/0) Building Microservices.md",
     "PRIVATE/ToDo.md",
-    "images/Pasted image 20260327120959.png",
-    "images/Pasted image 20260327120757.png",
-    "images/Pasted image 20260327120838.png",
-    "images/Pasted image 20260327125428.png",
-    "images/Pasted image 20260327120550.png",
-    "images/Pasted image 20260327125329.png",
-    "images/Pasted image 20260327121200.png",
     "PRIVATE/Winter 2026/Data Mining/Lec Notes/0) Lecture Notes Overview.md",
     "PRIVATE/Dev/MariaDB.md",
     "PRIVATE/Winter 2026/Data Mining/Lec Notes/Lec 6 - Advanced Association Analysis.md",
     "PRIVATE/Dev/App Ideas.md",
-    "PRIVATE/Winter 2026/Data Mining/Lec Notes/Lec 7 - Basic Cluster Analysis.md",
-    "PRIVATE/Dev/Projects/ETL - Analytics Dashboard.md",
-    "PRIVATE/Dev/Projects",
-    "PRIVATE/Winter 2026/Genetics/Tutorial Review.md",
-    "PRIVATE/Winter 2026/Data Mining/Lec Notes/Lec 5 - Basic Association Analysis.md",
-    "PRIVATE/Winter 2026/Data Mining/Lec Notes/Lec 4 - Alternative Methods.md",
-    "PRIVATE/Winter 2026/Data Mining/Lec Notes/Lec 1 - Intro.md",
-    "PRIVATE/Dev/SQL Overview.md",
-    "PRIVATE/Dev/Database Integration Methods and Patterns.md",
-    "PRIVATE/Dev/GCP Services.md",
-    "PRIVATE/Dev",
-    "PRIVATE/Winter 2026/Comparative Prog. Languages/Haskell/Textbook/12) Deserializing Heterogeneous Data.md.tmp",
-    "PRIVATE/Winter 2026/Data Mining/Textbook/7) Association Analysis - Advanced Concepts.md.tmp",
-    "README.md.tmp",
-    "PRIVATE/Winter 2026/Discrete Structures/Outline - Discrete Structures.md.tmp",
-    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/14) Psychopathology.md.tmp"
+    "PRIVATE/Winter 2026/Data Mining/Lec Notes/Lec 7 - Basic Cluster Analysis.md"
   ]
 }
