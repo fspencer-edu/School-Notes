@@ -8,20 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "a2cfaba9982a011e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/1) Introduction - MySQL and MariaDB.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "1) Introduction - MySQL and MariaDB"
-            }
-          },
-          {
             "id": "860c3e663215e227",
             "type": "leaf",
             "state": {
@@ -204,6 +190,20 @@
             }
           },
           {
+            "id": "4a35c2151522f3b7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/15) Bulk Importing Data.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "15) Bulk Importing Data"
+            }
+          },
+          {
             "id": "c971392fd70c3298",
             "type": "leaf",
             "state": {
@@ -216,8 +216,23 @@
               "icon": "lucide-file",
               "title": "16) Application Programming Interface"
             }
+          },
+          {
+            "id": "1104f07808ad6587",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Dev/Connections.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Connections"
+            }
           }
-        ]
+        ],
+        "currentTab": 15
       }
     ],
     "direction": "vertical"
@@ -274,8 +289,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 276.5,
-    "collapsed": true
+    "width": 276.5
   },
   "right": {
     "id": "f79334738d86d2cb",
@@ -366,10 +380,11 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "a2cfaba9982a011e",
+  "active": "1104f07808ad6587",
   "lastOpenFiles": [
+    "PRIVATE/Dev/MariaDB.md",
+    "PRIVATE/Dev/Connections.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/2) Installing MySQL and MariaDB.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/3) The Basics and the mysql Client.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/1) Introduction - MySQL and MariaDB.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/16) Application Programming Interface.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/15) Bulk Importing Data.md",
@@ -384,6 +399,7 @@
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/6) Inserting Data.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/5) Altering tables.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/4) Creating Databases and Tables.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/3) The Basics and the mysql Client.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/0) Learning MySQL and MariaDB.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Acting the System Design/0) Acing the System Design.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Visualization/0) Data Visualization.md",
@@ -407,8 +423,6 @@
     "TEXTBOOKS (PUBLIC)/== TODO ==/Principles of Data Wrangling",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Untitled.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Labour Economics/0) Labour Economics.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Principles of Economics/0) Principles of Economics.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Econometrics/0) Econometrics.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/The Effect",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Econometrics",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Labour Economics",

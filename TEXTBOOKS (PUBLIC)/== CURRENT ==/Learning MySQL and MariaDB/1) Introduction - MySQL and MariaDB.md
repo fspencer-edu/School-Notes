@@ -15,6 +15,17 @@
 
 ## The Values of MySQL and MariaDB
 
+- Scalable
+- Storage engine
+	- Manages queries and interfaces between a user's SQL statements and database's backend storage
+- Built-in functions
+
 ## Mailing Lists and Forums
 
+
 ## Other Books and Other Publications
+
+- MariaDB
+	- Online documentation
+- MySQL
+	- Online documentation on Oracle
