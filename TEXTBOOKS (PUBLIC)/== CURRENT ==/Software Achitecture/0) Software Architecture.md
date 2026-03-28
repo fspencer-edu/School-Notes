@@ -1,6 +1,6 @@
 https://learning.oreilly.com/library/view/software-architecture-the/9781492086888/
 
-![[Pasted image 20260328163044.png]]
+<img src="/images/Pasted image 20260328163044.png" alt="image" width="500">
 
 1) Best Practices
 2) Discerning Coupling in Software Achitecture

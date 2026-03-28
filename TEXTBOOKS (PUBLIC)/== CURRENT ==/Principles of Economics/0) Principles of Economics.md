@@ -1,4 +1,39 @@
 
 https://assets.openstax.org/oscms-prodcms/media/documents/Economics3e-WEB_AObkTqf.pdf
 
-![[Pasted image 20260328172107.png]]
+<img src="/images/Pasted image 20260328172107.png" alt="image" width="500">
+
+1) Welcome to Economics
+2) Choice in a World of Scarcity
+3) Demand and Supply
+4) Labour and Financial Markets
+5) Elasticity
+6) Consumer Choices
+7) Production, Costs, and Industry Structure
+8) Perfect Competition
+9) Monopoly
+10) Monopolistic Competition and Oligopoly
+11) Monopoly and Antitrust Policy
+12) Environmental Protection and Negative Externalities
+13) Positive Externalities and Public goods
+14) Labour Markets and Income
+15) Poverty and Economic Inequality
+16) Information, Risk, and, Insurance
+17) Final Markets
+18) Public Economy
+19) The Macroeconomic Perspective
+20) Economic Growth
+21) Unemployment
+22) Inflation
+23) The International Trade and Capital Flows
+24) The Aggregate Demand/Aggregate Supply Model
+25) The Keynesian Perspective
+26) The Neoclassical Perspective
+27) Mony and Banking
+28) Monetary Policy and Bank Regulation
+29) Exchange Rates and International Capital Flows
+30) Government Budgets and Fiscal Policy
+31) The Impacts of Government Borrowing
+32) Macroeconomics Policy Around the Wold
+33) International Trade
+34) Globalization and Protectionism

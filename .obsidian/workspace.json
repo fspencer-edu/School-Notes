@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "9534d2e0177d9dde",
+        "id": "12046c55fe277261",
         "type": "tabs",
         "children": [
           {
-            "id": "9b733a30b3ea71ae",
+            "id": "61bb31b5eab76832",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Principles of Economics/0) Principles of Economics.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "0) Principles of Economics"
+              "title": "New tab"
             }
           }
         ]
@@ -53,7 +49,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "Building Microser",
+                "query": "data wran",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -169,26 +165,46 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "9b733a30b3ea71ae",
+  "active": "1447f193185fcea8",
   "lastOpenFiles": [
-    "Pasted image 20260328172107.png",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Networking Programming/0) Networking Programming Essentials.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/AWS System Admin./9) Log Mangement.md.tmp",
+    "images/Pasted image 20260328174423.png",
+    "images/Pasted image 20260328162524.png",
+    "images/Pasted image 20260328170736.png",
+    "images/Pasted image 20260328172450.png",
+    "images/Pasted image 20260328162657.png",
+    "images/Pasted image 20260328162126.png",
+    "images/Pasted image 20260328170234.png",
+    "images/Pasted image 20260328174645.png",
+    "images/Pasted image 20260328172753.png",
+    "images/Pasted image 20260328172616.png",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Making Data Visual/0) Making Data Visual.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Visualization/0) Data Visualization.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Visualization/Untitled",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Visualization",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Principles of Data Wrangling/0) Principles of Data Wrangling.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Making Data Visual",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Data Wrangling with Python/0) Data Wrangling with Python.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Principles of Data Wrangling",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Untitled.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Labour Economics/0) Labour Economics.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Principles of Economics/0) Principles of Economics.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Econometrics/0) Econometrics.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/The Effect/0) The Effect.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/The Effect",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Econometrics",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Labour Economics",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Networking Programming/0) Networking Programming Essentials.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Principles of Economics",
-    "Pasted image 20260328171123.png",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Patterns of Enterprise Architecture/0) Patterns of Enterprise Application Architecture.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Networking Programming",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Production Ready MS/0) Production Ready Microservices.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Patterns of Enterprise Architecture",
-    "Pasted image 20260328170736.png",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Building Microservices/0) Building Microservices.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Production Ready MS",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Linux/0) Efficient Linux at the Command Line.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/TypeScript/0) Learn React with TypeScript.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/React/0) React.md",
-    "Pasted image 20260328170234.png",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/SQL Queries/0) SQL Queries.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/TypeScript",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Software Achitecture/0) Software Architecture.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/RDB Design/0) Relational Database Design and Implementation.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Migrating to MariaDB/0) Migrating to MariaDB.md",
@@ -196,26 +212,6 @@
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Fundamental of Software Architecture/0) Fundamentals of Software Architecture.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/SQL/0) Learning SQL.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Designing Data Intensive App./0) Designing Data Intensive Applications.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Database Design/0) Database Design.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Engineering/0) Data Engineering.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Building Resilient Distributed Systems/0) Building Resilient Distributed Systems.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Architecture Patterns with Py/0) Architecture Patterns with Python.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Acting the System Design/0) Acting the System Design.md",
-    "Pasted image 20260328163126.png",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Fundamental of Software Architecture",
-    "Pasted image 20260328163044.png",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Software Achitecture",
-    "Pasted image 20260328162957.png",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Building Resilient Distributed Systems",
-    "Pasted image 20260328162738.png",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Database Design",
-    "Pasted image 20260328162657.png",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/SQL Queries",
-    "Pasted image 20260328162524.png",
-    "Pasted image 20260328162349.png",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Untitled.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/System Design on AWS/0) System Design on AWS.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Kafka/0) Kafka for Architects.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Cloud Computing/0) Cloud Computing.md"
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Database Design/0) Database Design.md"
   ]
 }

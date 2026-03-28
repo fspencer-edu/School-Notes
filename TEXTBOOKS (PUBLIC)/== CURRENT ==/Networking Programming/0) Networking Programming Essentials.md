@@ -1,4 +1,4 @@
-![[Pasted image 20260328171123.png]]
+<img src="/images/Pasted image 20260328171123.png" alt="image" width="500">
 
 https://learning.oreilly.com/library/view/twisted-network-programming/9781449326104/
 

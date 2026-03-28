@@ -1,4 +1,4 @@
-![[Pasted image 20260328162957.png]]
+<img src="/images/Pasted image 20260328162957.png" alt="image" width="500">
 
 https://learning.oreilly.com/library/view/building-resilient-distributed/9781098163532/
 

@@ -1,4 +1,4 @@
-![[Pasted image 20260328162126.png]]
+<img src="/images/Pasted image 20260328162126.png" alt="image" width="500">
 
 
 https://learning.oreilly.com/library/view/migrating-to-mariadb/9781484239971/

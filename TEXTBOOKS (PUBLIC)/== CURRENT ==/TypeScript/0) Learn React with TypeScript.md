@@ -1,4 +1,4 @@
-![[Pasted image 20260328170234.png]]
+<img src="/images/Pasted image 20260328170234.png" alt="image" width="500">
 
 https://learning.oreilly.com/library/view/learn-react-with/9781836643173/
 

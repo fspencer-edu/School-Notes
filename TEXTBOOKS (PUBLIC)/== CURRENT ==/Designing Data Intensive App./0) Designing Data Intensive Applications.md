@@ -1,6 +1,6 @@
 https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781098119058/
 
-![[Pasted image 20260328162049.png]]
+<img src="/images/Pasted image 20260328162049.png" alt="image" width="500">
 
 
 1) Trade-Offs in Data Systems Architecture

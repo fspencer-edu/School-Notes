@@ -1,7 +1,7 @@
 
 https://learning.oreilly.com/library/view/relational-database-design/9780128499023/
 
-![[Pasted image 20260328162524.png]]
+<img src="/images/Pasted image 20260328162524.png" alt="image" width="500">
 
 
 1) The Database Environment

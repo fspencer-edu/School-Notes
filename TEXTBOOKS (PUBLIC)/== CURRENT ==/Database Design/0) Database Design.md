@@ -1,4 +1,4 @@
-![[Pasted image 20260328162738.png]]
+<img src="/images/Pasted image 20260328162738.png" alt="image" width="500">
 
 https://learning.oreilly.com/library/view/database-design-for/9780136788133/
 

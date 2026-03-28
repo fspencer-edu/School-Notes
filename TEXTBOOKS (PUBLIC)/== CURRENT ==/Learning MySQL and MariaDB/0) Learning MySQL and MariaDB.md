@@ -1,4 +1,4 @@
-![[Pasted image 20260328162210.png]]
+<img src="/images/Pasted image 20260328162210.png" alt="image" width="500">
 
 https://learning.oreilly.com/library/view/learning-mysql-and/9781449362898/
 
