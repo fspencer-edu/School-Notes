@@ -74,3 +74,50 @@ tar xvfz mysql-version.tar.gz
 ## Post-Installation
 
 ### Special Configuration
+
+- `/etc/my.cnf`
+	- Contains error logging and settings
+
+```python
+# Set root password
+mysqladmin -u root -p flush-privliedges password "new_pwd"
+
+# List of usernames and host on server
+mysql -u -root -p -e "SELECT User, Host FROM mysql.user;"
+```
+
+- Privileges are set based on a combination of the user's name and the user's host
+- Host
+	- `%` - wildcard
+		- Can be access from any location
+	- `localhost`
+		- Local host
+- Flush privileges to save the new passwords
+
+
+### Creating a User
+
+- Do not user root for general database management
+- Creates a user that has access to all databases and tables, and sets a password
+```python
+# creating a user
+mysql -u root p -e "GRANT USAGE ON *.*
+TO 'fiona'@'localhost'
+IDENTIFIED By 'pass1234';"
+```
+
+- This use has no privileges
+- To view data add `SELECT`
+
+```python
+# Get privileges for users
+mysql -u root -p -e "SHOW GRANTS FOR 'fiona'@'localhost' \G"
+```
+
+- Grant Options
+	- ``
+
+- Daemon
+	- Background process that runs continuously
+- Tar
+	-  Arhicing tools on many OS
