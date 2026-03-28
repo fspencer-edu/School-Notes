@@ -8,13 +8,213 @@
         "type": "tabs",
         "children": [
           {
-            "id": "61bb31b5eab76832",
+            "id": "a2cfaba9982a011e",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/1) Introduction - MySQL and MariaDB.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "1) Introduction - MySQL and MariaDB"
+            }
+          },
+          {
+            "id": "860c3e663215e227",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/2) Installing MySQL and MariaDB.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2) Installing MySQL and MariaDB"
+            }
+          },
+          {
+            "id": "2aad4c0fe9ab0af8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/3) The Basics and the mysql Client.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "3) The Basics and the mysql Client"
+            }
+          },
+          {
+            "id": "32b2138ccfe3eba2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/4) Creating Databases and Tables.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "4) Creating Databases and Tables"
+            }
+          },
+          {
+            "id": "526cd61c605c0465",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/5) Altering tables.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "5) Altering tables"
+            }
+          },
+          {
+            "id": "a33c2e6d40091dfe",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/6) Inserting Data.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "6) Inserting Data"
+            }
+          },
+          {
+            "id": "00998083633aa513",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/7) Selecting Data.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "7) Selecting Data"
+            }
+          },
+          {
+            "id": "0f9ea5119ed66b4e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/8) Updating and Deleting Data.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "8) Updating and Deleting Data"
+            }
+          },
+          {
+            "id": "9760ea5c2ca01e6e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/9) Joining and Sub-querying Data.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "9) Joining and Sub-querying Data"
+            }
+          },
+          {
+            "id": "e626eb6edb91f909",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/10) String Functions.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "10) String Functions"
+            }
+          },
+          {
+            "id": "82696d373527c44a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/11) Data and Time Functions.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "11) Data and Time Functions"
+            }
+          },
+          {
+            "id": "4b05bdf373bcf9fb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/12) Aggregate and Numeric Functions.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "12) Aggregate and Numeric Functions"
+            }
+          },
+          {
+            "id": "e9e692b17a5bfebb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/13) User Accounts and Privileges.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "13) User Accounts and Privileges"
+            }
+          },
+          {
+            "id": "26c4e0a3b85edba1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/14) Backing Up and Restoring Databases.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "14) Backing Up and Restoring Databases"
+            }
+          },
+          {
+            "id": "c971392fd70c3298",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/16) Application Programming Interface.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "16) Application Programming Interface"
             }
           }
         ]
@@ -74,7 +274,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 276.5
+    "width": 276.5,
+    "collapsed": true
   },
   "right": {
     "id": "f79334738d86d2cb",
@@ -165,8 +366,27 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "1447f193185fcea8",
+  "active": "a2cfaba9982a011e",
   "lastOpenFiles": [
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/2) Installing MySQL and MariaDB.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/3) The Basics and the mysql Client.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/1) Introduction - MySQL and MariaDB.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/16) Application Programming Interface.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/15) Bulk Importing Data.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/14) Backing Up and Restoring Databases.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/13) User Accounts and Privileges.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/12) Aggregate and Numeric Functions.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/11) Data and Time Functions.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/10) String Functions.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/9) Joining and Sub-querying Data.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/8) Updating and Deleting Data.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/7) Selecting Data.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/6) Inserting Data.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/5) Altering tables.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/4) Creating Databases and Tables.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/0) Learning MySQL and MariaDB.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Acting the System Design/0) Acing the System Design.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Visualization/0) Data Visualization.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/AWS System Admin./9) Log Mangement.md.tmp",
     "images/Pasted image 20260328174423.png",
     "images/Pasted image 20260328162524.png",
@@ -179,7 +399,6 @@
     "images/Pasted image 20260328172753.png",
     "images/Pasted image 20260328172616.png",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Making Data Visual/0) Making Data Visual.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Visualization/0) Data Visualization.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Visualization/Untitled",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Visualization",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Principles of Data Wrangling/0) Principles of Data Wrangling.md",
@@ -190,28 +409,10 @@
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Labour Economics/0) Labour Economics.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Principles of Economics/0) Principles of Economics.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Econometrics/0) Econometrics.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/The Effect/0) The Effect.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/The Effect",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Econometrics",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Labour Economics",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Networking Programming/0) Networking Programming Essentials.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Principles of Economics",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Patterns of Enterprise Architecture/0) Patterns of Enterprise Application Architecture.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Networking Programming",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Production Ready MS/0) Production Ready Microservices.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Patterns of Enterprise Architecture",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Building Microservices/0) Building Microservices.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Linux/0) Efficient Linux at the Command Line.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/TypeScript/0) Learn React with TypeScript.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/React/0) React.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/SQL Queries/0) SQL Queries.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Software Achitecture/0) Software Architecture.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/RDB Design/0) Relational Database Design and Implementation.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Migrating to MariaDB/0) Migrating to MariaDB.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/0) Learning MySQL and MariaDB.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Fundamental of Software Architecture/0) Fundamentals of Software Architecture.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/SQL/0) Learning SQL.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Designing Data Intensive App./0) Designing Data Intensive Applications.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Database Design/0) Database Design.md"
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Networking Programming"
   ]
 }
