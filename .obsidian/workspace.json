@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/RDB Design/0) Relational Database Design and Implementation.md",
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Principles of Economics/0) Principles of Economics.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "0) Relational Database Design and Implementation"
+              "title": "0) Principles of Economics"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "system design ",
+                "query": "Building Microser",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -171,14 +171,30 @@
   },
   "active": "9b733a30b3ea71ae",
   "lastOpenFiles": [
+    "Pasted image 20260328172107.png",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Networking Programming/0) Networking Programming Essentials.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Principles of Economics/0) Principles of Economics.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Principles of Economics",
+    "Pasted image 20260328171123.png",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Patterns of Enterprise Architecture/0) Patterns of Enterprise Application Architecture.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Networking Programming",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Production Ready MS/0) Production Ready Microservices.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Patterns of Enterprise Architecture",
+    "Pasted image 20260328170736.png",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Building Microservices/0) Building Microservices.md",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Production Ready MS",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Linux/0) Efficient Linux at the Command Line.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/TypeScript/0) Learn React with TypeScript.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/React/0) React.md",
+    "Pasted image 20260328170234.png",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/SQL Queries/0) SQL Queries.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/TypeScript",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Software Achitecture/0) Software Architecture.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/RDB Design/0) Relational Database Design and Implementation.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Migrating to MariaDB/0) Migrating to MariaDB.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/0) Learning MySQL and MariaDB.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Fundamental of Software Architecture/0) Fundamentals of Software Architecture.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/SQL Queries/0) SQL Queries.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/SQL/0) Learning SQL.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Software Achitecture/0) Software Architecture.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/React/0) React.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/RDB Design/0) Relational Database Design and Implementation.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Designing Data Intensive App./0) Designing Data Intensive Applications.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Database Design/0) Database Design.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Engineering/0) Data Engineering.md",
@@ -196,26 +212,10 @@
     "Pasted image 20260328162657.png",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/SQL Queries",
     "Pasted image 20260328162524.png",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/RDB Design",
     "Pasted image 20260328162349.png",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Acting the System Design",
-    "Pasted image 20260328162210.png",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Untitled.md",
-    "Pasted image 20260328162126.png",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Migrating to MariaDB",
-    "Pasted image 20260328162049.png",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/System Design on AWS/0) System Design on AWS.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Designing Data Intensive App.",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Kafka/0) Kafka for Architects.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Cloud Computing/0) Cloud Computing.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/AWS/0) Amazon Web Services.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Building Microservices/0) Building Microservices.md",
-    "PRIVATE/ToDo.md",
-    "PRIVATE/Winter 2026/Data Mining/Lec Notes/0) Lecture Notes Overview.md",
-    "PRIVATE/Dev/MariaDB.md",
-    "PRIVATE/Winter 2026/Data Mining/Lec Notes/Lec 6 - Advanced Association Analysis.md",
-    "PRIVATE/Dev/App Ideas.md",
-    "PRIVATE/Winter 2026/Data Mining/Lec Notes/Lec 7 - Basic Cluster Analysis.md"
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Cloud Computing/0) Cloud Computing.md"
   ]
 }
