@@ -132,23 +132,8 @@
               "icon": "lucide-file",
               "title": "16) Application Programming Interface"
             }
-          },
-          {
-            "id": "438e3b8a6a6e96b3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Database Design/0) Database Design.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "0) Database Design"
-            }
           }
-        ],
-        "currentTab": 9
+        ]
       }
     ],
     "direction": "vertical"
@@ -205,7 +190,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 276.5
+    "width": 276.5,
+    "collapsed": true
   },
   "right": {
     "id": "f79334738d86d2cb",
@@ -296,8 +282,11 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "438e3b8a6a6e96b3",
+  "active": "0f9ea5119ed66b4e",
   "lastOpenFiles": [
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/16) Application Programming Interface.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Database Design/0) Database Design.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/8) Updating and Deleting Data.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Visualization/0) Data Visualization.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Building Resilient Distributed Systems/1) What is Resiliency.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Building Resilient Distributed Systems/7) Progressive Collapse.md",
@@ -321,9 +310,6 @@
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Architecture Patterns with Py/10) Commands and Command Handler.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Architecture Patterns with Py/11) Event-Driven Architecture.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Architecture Patterns with Py/12) Command-Query Responsibility Segregation (CQRS).md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Acting the System Design/17) Design a Dashboard of Top 10 Products on Amazon by Sales Volume.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Acting the System Design/16) Design a News Feed.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Acting the System Design/0) Acing the System Design.md",
     "9) Design a Notification",
     "11) Autocomplete",
     "TEXTBOOKS (PUBLIC)/== TODO ==/AWS System Admin./9) Log Mangement.md.tmp",
