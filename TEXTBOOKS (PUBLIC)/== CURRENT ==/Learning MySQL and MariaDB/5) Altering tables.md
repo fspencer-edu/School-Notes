@@ -296,5 +296,119 @@ WHERE table_name = 'birds';
 +----------------+
 ```
 
+**Another Method to Alter and Create a Table**
+
+- If a table has a column that uses `AUTO_INCREMENT` the counter will be set to 0 for the new table
+
+```python
+CREATE TABLE birds_new LIKE birds;
+
+SHOW CREATE TABLE brids \G
+```
+
+- Create a new table and copy specific column's settings and data
+```python
+CREATE TABLE birds_details
+SELECT bird_id, description
+FROM birds;
+
+ALTER TABLE birds
+DROP COLUMN description
+```
+- `birds_id` does not use `AUTO_INCREMENT`
+
+**Renaming a Table**
+
+- Change an existing table
+- Delete the existing table, and rename the replacement table
+
+```python
+RENAME TABLE table_alt
+TO table1
+
+RENAME TABLE rookery.birds TO rookery.birds_old,
+test.birds_new TO rookery.birds;
+
+SHOW TABLES IN rookery LIKE 'birds%';
+
+DROP TABLE birds_olds;
+```
+- Rename the birds table to birds old, then rename and relocate the new bird table from the `test` database to `birds` in the `rookery` database
+
+**Reordering a Table**
+- SELECT statement has an `ORDER BY` clause
+	- Alphabetical
+	- Numerical
+
+```python
+SELECT * FROM country_codes
+LIMIT 5;
+
+ALTER TABLE country_codes
+ORDER BY counry_code;
+
+SELECT * FROM country_codes
+ORDER BY country_name
+LIMIT 5;
+```
+
 ## Indexes
+
+- Renaming a column that is indexed by using only an `ALTER TABLE` statement
+
+```python
+ALTER TABLE conservation_status
+CHANGE status_id conservation_status_id INT AUTO_INCREMENT PRIMARY KEY;
+
+Error
+```
+
+- An index is separate from the column upon which the index is based
+- Indexes are used to locate data quickly
+- Without an index, rows are searched sequentially
+- Index can jump directly to the row that matches the search pattern
+
+```python
+SHOW INDEX FROM birdwatchers.humans \G
+
+*************************** 1. row ***************************
+       Table: humans
+  Non_unique: 0
+    Key_name: PRIMARY
+Seq_in_index: 1
+ Column_name: human_id
+   Collation: A
+ Cardinality: 0
+    Sub_part: NULL
+      Packed: NULL
+        Null:
+  Index_type: BTREE
+     Comment:
+```
+
+- EXPLAIN
+	- Return information on how the `SELECT` statement searches the table and on what basis
+	- Execution type
+
+```python
+EXPLAIN SELECT * FROM birdwatchers.humans
+WHERE name_last = 'Hoolar' \G
+*************************** 1. row ***************************
+           id: 1
+  select_type: SIMPLE
+        table: humans
+         type: ALL
+possible_keys: NULL
+          key: NULL
+      key_len: NULL
+          ref: NULL
+         rows: 4
+        Extra: Using where
+```
+- `possible_keys` field 
+	- Shows the keys that the `SELECT` statement could have used
+- `key` field
+	- A key is the column on which a table is indexed
+
+
 ## Summary
