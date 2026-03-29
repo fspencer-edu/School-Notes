@@ -8,20 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "32b2138ccfe3eba2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/4) Creating Databases and Tables.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "4) Creating Databases and Tables"
-            }
-          },
-          {
             "id": "526cd61c605c0465",
             "type": "leaf",
             "state": {
@@ -338,8 +324,11 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "32b2138ccfe3eba2",
+  "active": "526cd61c605c0465",
   "lastOpenFiles": [
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/14) Backing Up and Restoring Databases.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/5) Altering tables.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/4) Creating Databases and Tables.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/3) The Basics and the mysql Client.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/2) Installing MySQL and MariaDB.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/16) Application Programming Interface.md",
@@ -347,7 +336,6 @@
     "PRIVATE/Dev/MariaDB.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/1) Introduction - MySQL and MariaDB.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/15) Bulk Importing Data.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/14) Backing Up and Restoring Databases.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/13) User Accounts and Privileges.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/12) Aggregate and Numeric Functions.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/11) Data and Time Functions.md",
@@ -356,8 +344,6 @@
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/8) Updating and Deleting Data.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/7) Selecting Data.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/6) Inserting Data.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/5) Altering tables.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/4) Creating Databases and Tables.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/0) Learning MySQL and MariaDB.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Acting the System Design/0) Acing the System Design.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Visualization/0) Data Visualization.md",
