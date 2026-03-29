@@ -115,9 +115,38 @@ mysql -u root -p -e "SHOW GRANTS FOR 'fiona'@'localhost' \G"
 ```
 
 - Grant Options
-	- ``
+
+```python
+GRANT privilege_list ON database.table To 'user'@'host;
+
+# Access
+SELECT -- read data
+INSERT -- add rows
+UPDATE -- modify rows
+DELETE -- remove rows
+
+# Structure
+CREATE
+DROP
+ALTER
+INDEX -- create/drop indexes
+
+# Admin
+GRANT OPTION -- grant priv. to others
+SUPER -- superlevel conrol
+PROCESS -- view running queries
+SHUTDOWN
+RELOAD -- reload priv. cache
+
+# Other
+EXECUTE -- run stored procedures
+LOCK TABLES -- lock tables
+REFERENCES -- foreign keys
+```
+
 
 - Daemon
 	- Background process that runs continuously
 - Tar
-	-  Arhicing tools on many OS
+	- Combined multiple files and folders into one file
+	- Does not compress by default
