@@ -110,7 +110,7 @@ LIMIT 2;
 - LIMIT
 	- Limit with order by can cause problem with MySQL replication
 
-1774816730883@@127.0.0.1@3308@mydb/test.sql
+
 ### Updating Multiple Tables
 
 ```python
