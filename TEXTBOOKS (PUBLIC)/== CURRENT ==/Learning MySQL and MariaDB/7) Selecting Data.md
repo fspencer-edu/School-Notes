@@ -244,8 +244,25 @@ AND families.scientific_name = 'Pelecanidae'
 +-------------+-----------------+
 | Pelecanidae |              10 |
 +-------------+-----------------+
+
+SELECT orders.scientific_name AS 'Order',
+families.scientific_name AS 'Family',
+COUNT(*) AS 'Number of Birds'
+FROM birds, bird_families AS families, bird_orders AS orders
+WHERE birds.family_id = families.family_id
+AND families.order_id = orders.order_id
+AND orders.scientific_name = 'Pelecaniformes'
+GROUP BY Family;
+
++----------------+-------------------+-----------------+
+| Order          | Family            | Number of Birds |
++----------------+-------------------+-----------------+
+| Pelecaniformes | Ardeidae          |             157 |
+| Pelecaniformes | Balaenicipitidae  |               1 |
+| Pelecaniformes | Pelecanidae       |              10 |
+| Pelecaniformes | Scopidae          |               3 |
+| Pelecaniformes | Threskiornithidae |              53 |
++----------------+-------------------+-----------------+
 ```
-
-
 
 ## Summary

@@ -8,20 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "00998083633aa513",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/7) Selecting Data.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "7) Selecting Data"
-            }
-          },
-          {
             "id": "0f9ea5119ed66b4e",
             "type": "leaf",
             "state": {
@@ -146,8 +132,23 @@
               "icon": "lucide-file",
               "title": "16) Application Programming Interface"
             }
+          },
+          {
+            "id": "438e3b8a6a6e96b3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Database Design/0) Database Design.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "0) Database Design"
+            }
           }
-        ]
+        ],
+        "currentTab": 9
       }
     ],
     "direction": "vertical"
@@ -204,8 +205,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 276.5,
-    "collapsed": true
+    "width": 276.5
   },
   "right": {
     "id": "f79334738d86d2cb",
@@ -296,29 +296,36 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "00998083633aa513",
+  "active": "438e3b8a6a6e96b3",
   "lastOpenFiles": [
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/6) Inserting Data.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/16) Application Programming Interface.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/15) Bulk Importing Data.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/14) Backing Up and Restoring Databases.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/13) User Accounts and Privileges.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/12) Aggregate and Numeric Functions.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/11) Data and Time Functions.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/10) String Functions.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/9) Joining and Sub-querying Data.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/5) Altering tables.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/4) Creating Databases and Tables.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/3) The Basics and the mysql Client.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/2) Installing MySQL and MariaDB.md",
-    "PRIVATE/Dev/Connections.md",
-    "PRIVATE/Dev/MariaDB.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/1) Introduction - MySQL and MariaDB.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/8) Updating and Deleting Data.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/7) Selecting Data.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Learning MySQL and MariaDB/0) Learning MySQL and MariaDB.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Acting the System Design/0) Acing the System Design.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Visualization/0) Data Visualization.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Building Resilient Distributed Systems/1) What is Resiliency.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Building Resilient Distributed Systems/7) Progressive Collapse.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Building Resilient Distributed Systems/0) Building Resilient Distributed Systems.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Building Resilient Distributed Systems/2) Timeouts.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Building Resilient Distributed Systems/3) Retries and Idempotency.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Building Resilient Distributed Systems/4) Thundering Herds.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Building Resilient Distributed Systems/5) Rate Liiting.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Building Resilient Distributed Systems/6) Message Brokers.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Architecture Patterns with Py/13) Dependency Injection (and Bootstrapping).md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Architecture Patterns with Py/0) Architecture Patterns with Python.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Architecture Patterns with Py/1) Domain Modeling.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Architecture Patterns with Py/2) Repository Pattern.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Architecture Patterns with Py/3) Coupling and Abstractions.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Architecture Patterns with Py/4) Flask API and Service Layer.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Architecture Patterns with Py/5) TDD In High Hear and Low Hear.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Architecture Patterns with Py/6) Unit of Work Pattern.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Architecture Patterns with Py/7) Aggregates and Consistency Boundaries.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Architecture Patterns with Py/8) Events and the Message Bus.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Architecture Patterns with Py/9) Going to town on the Message Bus.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Architecture Patterns with Py/10) Commands and Command Handler.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Architecture Patterns with Py/11) Event-Driven Architecture.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Architecture Patterns with Py/12) Command-Query Responsibility Segregation (CQRS).md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Acting the System Design/17) Design a Dashboard of Top 10 Products on Amazon by Sales Volume.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Acting the System Design/16) Design a News Feed.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Acting the System Design/0) Acing the System Design.md",
+    "9) Design a Notification",
+    "11) Autocomplete",
     "TEXTBOOKS (PUBLIC)/== TODO ==/AWS System Admin./9) Log Mangement.md.tmp",
     "images/Pasted image 20260328174423.png",
     "images/Pasted image 20260328162524.png",
@@ -330,19 +337,12 @@
     "images/Pasted image 20260328174645.png",
     "images/Pasted image 20260328172753.png",
     "images/Pasted image 20260328172616.png",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Making Data Visual/0) Making Data Visual.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Visualization/Untitled",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Visualization",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Principles of Data Wrangling/0) Principles of Data Wrangling.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Making Data Visual",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Data Wrangling with Python/0) Data Wrangling with Python.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Principles of Data Wrangling",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Untitled.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Labour Economics/0) Labour Economics.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/The Effect",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Econometrics",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Labour Economics",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Principles of Economics",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Networking Programming"
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Labour Economics"
   ]
 }
