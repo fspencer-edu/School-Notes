@@ -411,4 +411,84 @@ possible_keys: NULL
 	- A key is the column on which a table is indexed
 
 
+- To improve performance, create an index that combined the two columns
+- The key, or index, is called `human_names` and based on the values of the two columns
+
+```python
+ALTER TABLE birdwatchers.humans
+ADD INDEX human_names (name_last, name_first);
+
+SHOW CREATE TABLE birdwatches.humans \G
+
+*************************** 1. row ***************************
+       Table: humans
+Create Table: CREATE TABLE `humans` (
+  `human_id` int(11) NOT NULL AUTO_INCREMENT,
+  `formal_title` varchar(25) COLLATE latin1_bin DEFAULT NULL,
+  `name_first` varchar(25) COLLATE latin1_bin DEFAULT NULL,
+  `name_last` varchar(25) COLLATE latin1_bin DEFAULT NULL,
+  `email_address` varchar(255) COLLATE latin1_bin DEFAULT NULL,
+  PRIMARY KEY (`human_id`),
+  KEY `human_names` (`name_last`,`name_first`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_bin
+
+SHOW INDEX FROM birdwatchers.humans
+WHERE Key_name = 'human_names' \G
+
+*************************** 1. row ***************************
+       Table: humans
+  Non_unique: 1
+    Key_name: human_names
+Seq_in_index: 1
+ Column_name: name_last
+   Collation: A
+ Cardinality: NULL
+    Sub_part: NULL
+      Packed: NULL
+        Null: YES
+  Index_type: BTREE
+     Comment:
+*************************** 2. row ***************************
+       Table: humans
+  Non_unique: 1
+    Key_name: human_names
+Seq_in_index: 2
+ Column_name: name_first
+   Collation: A
+ Cardinality: NULL
+    Sub_part: NULL
+      Packed: NULL
+        Null: YES
+  Index_type: BTREE
+     Comment: 
+     
+EXPLAIN SELECT * FROM birdwatchers.humans
+WHERE name_last = 'Hollar' \G
+
+*************************** 1. row ***************************
+           id: 1
+  select_type: SIMPLE
+        table: humans
+         type: ref
+possible_keys: human_names
+          key: human_names
+      key_len: 28
+          ref: const
+         rows: 1
+        Extra: Using where
+```
+
+- Because the index is associated with the column, we need to remove that association in the index
+	- Otherwise, the index will be associated with a column that does not exist
+	- Tied to old name
+- Delete the index and rename the column, the add a new index on the new column name
+
+```python
+ALTER TABLE conservation_status
+DROP PRIMARY KEY,
+CHANGE status_id conservation_status_id INT PRIMARY KEY AUTO_INCREMENT;
+```
+
+- There is and can by only one primary key per table
+
 ## Summary
