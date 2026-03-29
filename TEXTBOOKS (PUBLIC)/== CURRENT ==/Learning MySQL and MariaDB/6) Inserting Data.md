@@ -398,17 +398,47 @@ brief_description: Indigobirds & Whydahs
 ### Priorities When Inserting Data
 
 - On a busy server there may be many transactions at the same time
-	- INSERT, UP
+	- INSERT, UPDATE, DELETE
+- Take priority over read statements
+	- SELECT
+- InnoDB
+	- Locks the rows, rather than the entire table
+- Locking a table could cause delays
+- Set the priorities for an `INSERT`
+	- `LOW_PRIORITY`
+	- `DELAYED`
+	- `HIGH_PRIORITY`
 
+```python
+INSERT LOW_PRIORITY INTO bird_signtings
 
+INSERT DELAYED INTO bird_sightings
+```
 
 **Lowering the priority of an insert**
 
+- `LOW_PRIORITY`
+	- Large data dumps
+	- Puts the `INSERT` statement in a queue, waiting for all of the current and pending requests to be completed
+	- If new requests are made, they are put ahead of it in queue
+	- Locks the table once a low priority statement has being to prevent inconsistent data writes
+
+
+
 **Delaying an INSERT**
+
+- `DELAYED`
+	- May be deprecated
+	- Similar to low priority
+	- Client is never informed whether the delayed insertion is made
+	- Stored in the server's memory
+	- Insertions are lost if server dies
+
 
 **Raising the priority of an INSERT**
 
-
-
+- `HIGH_PRIORITY`
+	- `INSERT` statements by default are higher priority than read-only SQL statements
+	- Makes writes less priority, and reads higher priority
 
 ## Summary
