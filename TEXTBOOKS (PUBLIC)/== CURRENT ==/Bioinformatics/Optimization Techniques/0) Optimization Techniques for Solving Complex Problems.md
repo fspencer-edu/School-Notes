@@ -1,0 +1,31 @@
+<img src="/images/Pasted image 20260405162033.png" alt="image" width="500">
+
+https://learning.oreilly.com/library/view/optimization-techniques-for/9780470293324/
+
+
+1) generating Automatic Projections by Means of Genetic Programming
+2) Neural Lazy Local Learning
+3) Optimization Using Genetic Algorithms with Micro-populations
+4) Analyzing Parallel Cellular Genetic Algorithms
+5) Evaluating New Advanced Multi-objective Metaheuristics
+6) Canonical Metaheuristics for Dynamic Optimization Problems
+7) Solving Constrained Optimization Problems with Hybrid Evolutionary Algorithms
+8) Optimization of Time Series Using Parallel, Adaptive, and Neural Techniques
+9) Using Reconfigurable Computing for Optimization of Cryptographic Algorithms
+10) Genetic Algorithms, Parallelism, and Reconfigurable Hardware
+11) Divide and Conquer
+12) Tools for Tree Searches - Branch and A Algorithms
+13) Tools for Tree Searches - Dynamic
+14) Automatic Search of Behaviour Strategies in Auctions
+15) Evolving Rules for Local Time Series Prediction
+16) Metaheuristics in Bioinformatics
+17) Optimal Location of Antennas in Telecommunication Networks
+18) Optimization of Image-Processing Algorithms Using FPGAs
+19) Application of Cellular Automata Algorithms to the Parallel Simulation of Laser Dynamics
+20) Dense Stereo Disparity from an Artificial Life Standpoint
+21) Exact, Metaheuristics
+22) Greedy Speeding
+23) Solving the KCT
+24) Experimental Study of GA-Based
+25) Remote Optimization Service
+26) Remote Services for Advanced Problem Optimization

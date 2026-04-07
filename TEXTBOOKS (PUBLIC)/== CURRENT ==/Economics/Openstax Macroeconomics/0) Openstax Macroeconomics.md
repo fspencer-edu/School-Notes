@@ -1,0 +1,26 @@
+<img src="/images/Pasted image 20260405155700.png" alt="image" width="500">
+
+https://assets.openstax.org/oscms-prodcms/media/documents/Macroeconomics3e-WEB_X69daYk.pdf?_gl=1*1natesz*_gcl_au*MTQ3Nzk2NDAyNi4xNzc1MzUyNDM2*_ga*MTExNjkwOTQzOC4xNzc1MzUyNDM2*_ga_T746F8B0QC*czE3NzU0MTE2MDMkbzIkZzEkdDE3NzU0MTg3ODAkajUwJGwwJGgxMTkxNTU0MzY3
+
+1) Welcome to Economics
+2) Choice in a World of Scarcity
+3) Demand and Supply
+4) Labour and Financial Markets
+5) Elasticity
+6) The Macroeconomic Perspective
+7) Economic Growth
+8) Unemployment
+9) Inflation
+10) The International Trade and Capital Flows
+11) The Aggregate Demand/Aggregate Supply Model
+12) The Keynesian Perspective
+13) The Neoclassical Perspective
+14) Money and Banking
+15) Monetary Policy and Bank Regulation
+16) Exchange Rates and International Capital Flows
+17) Government Budgets and Fiscal Policy
+18) The Impacts of Government Borrowing
+19) Macroeconomic Policy Around the World
+20) International Trade
+21) Globalization and Protectionism
+22) 
