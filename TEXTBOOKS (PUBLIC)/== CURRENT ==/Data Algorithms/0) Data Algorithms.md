@@ -11,4 +11,25 @@ https://learning.oreilly.com/library/view/data-algorithms/9781491906170/
 7) Market Basket Analysis
 8) Common Friends
 9) Recommendation Engines Using MapReduce
-10) Content-Based Recommendati
+10) Content-Based Recommendation
+11) Smarter Email Marketing with the Markov Model
+12) K-Means Clustering
+13) K-Nearest Neighbours
+14) Naive Bayes
+15) Sentiment Analysis
+16) Finding, Counting, and Listing All Triangles in Large Graphs
+17) K-Mer Counting
+18) DNA Sequencing
+19) Cox Regression
+20) Cochran-Armitage Test for Trend
+21) Allelic Frequency
+22) The T-Test
+23) Pearson Correlation
+24) DNA Base Count
+25) RNA Sequencing
+26) Gene Aggregation
+27) Linear Regression
+28) Map Reduce and Monoids
+29) The Small Files Problem
+30) Huge Cache for MapReduce
+31) The Bloom Filter
