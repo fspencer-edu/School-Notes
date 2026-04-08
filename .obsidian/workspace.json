@@ -11,10 +11,14 @@
             "id": "d13137194206085b",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 11 - Large Scale.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Lec 11 - Large Scale"
             }
           }
         ]
@@ -168,6 +172,18 @@
   },
   "active": "d13137194206085b",
   "lastOpenFiles": [
+    "Pasted image 20260407224858.png",
+    "Pasted image 20260407224839.png",
+    "Pasted image 20260407224812.png",
+    "Pasted image 20260407224727.png",
+    "Pasted image 20260407224421.png",
+    "Pasted image 20260407223749.png",
+    "Pasted image 20260407223724.png",
+    "Pasted image 20260407223540.png",
+    "Pasted image 20260407223528.png",
+    "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 8 - Transposable Elements.md",
+    "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 9 - Large Scale Chromosomal Changes.md",
+    "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 11 - Large Scale.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Algorithms/0) Data Algorithms.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Engineering/0) Data Engineering.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/SQL Queries/0) SQL Queries.md",
@@ -191,21 +207,9 @@
     "TEXTBOOKS (PUBLIC)/== COMPLETE ==/Computer Networking - Top Down/8. Security in Computer Networks.md",
     "TEXTBOOKS (PUBLIC)/== COMPLETE ==/Computer Networking - Top Down/7. Wireless and Mobile Networks.md",
     "TEXTBOOKS (PUBLIC)/== COMPLETE ==/Computer Networking - Top Down/6. The Link Layer and LANs.md",
-    "TEXTBOOKS (PUBLIC)/== COMPLETE ==/Computer Networking - Top Down/1. Computer Networks and the Internet.md",
-    "TEXTBOOKS (PUBLIC)/== COMPLETE ==/Computer Networking - Top Down/0. Computer Networking - Top Down Approach.md",
-    "TEXTBOOKS (PUBLIC)/== COMPLETE ==/Statistics/13) F Distribution and One-Way ANOVA.md",
     "Pasted image 20260407152053.png",
     "Pasted image 20260407150025.png",
-    "TEXTBOOKS (PUBLIC)/== COMPLETE ==/Statistics/Statistics - Formulas.md",
     "PRIVATE/Winter 2026/Computer Networks/Textbook/7) Wireless and Mobile Networks.md.tmp",
-    "images/Pasted image 20260407123421.png",
-    "images/Pasted image 20260407125332.png",
-    "images/Pasted image 20260406151820.png",
-    "images/Pasted image 20260406153603.png",
-    "images/Pasted image 20260407133609.png",
-    "images/Pasted image 20260407133726.png",
-    "images/Pasted image 20260407111222.png",
-    "images/Pasted image 20260407102844.png",
     "Table of Contents.base",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math. for ML",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Openstax Textbooks/Calculus/Calc. Vol 3",
