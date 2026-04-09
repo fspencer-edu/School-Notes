@@ -130,20 +130,91 @@
 - Established with a set of primary and foreign keys
 - Linking/associative table (third)
 
-**Importance of **
-
+**Importance of Relationships**
+- Create multi table views
+- Crucial to data integrity because it helps reduce redundant data and eliminate duplicate data
 
 ## Types of Relationships
 ### One-to-One
+
+- A single record in the first table is related to zero or one and only one record in the second table
+- Same for the second table
+- One table serves as the parent table, and other child
+- Take a copy of the parents table's primary key and add to structure of child table, as a foreign key
+- Both tables may share the same primary key
+
+![[Pasted image 20260409140136.png]]
+
 ### One-to-Many
+
+- Exists between a pair of tables when a single record in the first table can be related to zero, one, or many records in the second table
+- A single record in the second table can be related to only one record in the first
+- The "one" table is the parent
+- And the "many" represent the children
+- Take a copy of the parent's table's primary key and add to the children's tables, as foreign keys
+
+
+![[Pasted image 20260409140150.png]]
+
+
 ### Many-to-Many
+
+- Relationship when a single record in the first table can be related to zero, one, or many records in the second table, and vice versa
+- Establish relationship with a linking table
+	- Associate records from one table with another
+	- Take a copy of the primary key of each table, and use them to form the structure of the new table
+
+![[Pasted image 20260409140332.png]]
+
 ## Types of Participation
 
+- A table's participation within a relationship can be either mandatory or optional
+
+- Mandatory
+	- If you must enter at least one record into A before you can enter into B
+- Options
+	- No required to enter any records into A before B
+
 ## Degree of Participation
+
+- Degree of participation determines the minimum number of records that a given table must have associated with a single record in the related table
+- Max number of records that a given table is allowed to have associated with. single record in the related table
 
 ## Integrity-Related Terms
 
 ### Field Specification
 
+- A field specification (domain) represents all the elements of a field
+- Each field specification incorporates 3 types of elements
+	- General
+		- Fundamental information
+		- Field Name, Description, Parent Table
+	- Physical
+		- Data Type, Length, Character Support
+	- Logical
+		- Required Value, Range of Values, Null Support
+
+
 ### Data Integrity
 
+- Data integrity refers to the validity, consistency, and accuracy of the data in a database
+- The level of accuracy of information retrieved is in direct proportion of the level of data integrity imposed upon the database
+
+**4 Types of Data Integrity**
+- Table level integrity
+	- Also called entity integrity
+	- No duplicate record exists within the table
+	- The field that identifies each record within the table is unique and never Null
+- Field level integrity
+	- Domain integrity
+	- Ensures that the structure of every field is sound
+	- Values in each field are valid, consistent, and accurate
+	- Fields of the same type are consistently defined
+- Relationship level integrity
+	- Referential integrity
+	- Ensures that the relationship between a pair of tables is sound and synchronized when data is entered into, updated in, or deleted from either table
+- Business rules
+	- Impose restrictions or limitations on certain aspects of a database based on the ways an organization perceived and uses its data
+	- Range and types of values stored
+	- Type of participation and degree of participation
+	- Type of syncrhonization
