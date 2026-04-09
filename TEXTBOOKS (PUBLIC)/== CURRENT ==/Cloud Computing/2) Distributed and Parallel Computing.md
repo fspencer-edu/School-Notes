@@ -224,24 +224,123 @@ $n$ = speedup of improved part
 
 ## Bit-level
 
-- 
+- Increasing the word size reduces the number of instructions the process must execute to perform an operation on variables whose sizes are greater than the length of the worth
+- 16, 32, vs 64 -bit processors
 
 ## Task-level
+
+- Decomposition of a task into sub-tasks and then allocated each sub-task simultaneously and often cooperatively
+- Parallelism of various tasks and communication between
+
 ## Instruction-level
 
+- All modern processors have multi-stage instruction pipelines
+- Each stage corresponds to a different action the processor performs on the instruction in that stage
 
 # Flynn's Classical Taxonomy
 
+- Distinguishes multi=process computer architectures according to how they can be classified
+	- Instruction Stream
+	- Data Stream
+
+- 2 possible states
+	- Single
+	- Multiple
+- Classification based on instruction and data streams
+- Classification based on the structure of computers
+- Classification based on memory access
+- Classification based on grain size
+
+**Single Instruction, Single Data (SISD)**
+- A serial computer
+- Only one instruction by CPU during a clock cycle
+- Only one data stream
+- Deterministic execution
+- Older generation mainframes, minicomputers, single core
+
+**Single Instruction, Multiple Data (SIMD)**
+- Parallel computer
+- All processing units execute the same instruction at any given clock cycle
+- Each processing unit can operation on a different data element
+- High degree or regularity, graphics/image processing
+- Synchronous (lockstep) and deterministic execution
+- Processor arrays and vector pipelines
+- Most modern computers, with GPUs
+
+**Multiple Instruction, Single Data (MISD)**
+- A type of parallel computer
+- Each process unit operates on the data independently via separate instruction streams
+- A single data stream is fed into multiple process units
+- Few actual examples
+- Multiple frequency filters operating on a single stream
+- Cryptography
+
+**Multiple Instruction, Multiple Data (MIMD)**
+- Parallel computer
+- Every process may execute a different instruction stream
+- Syhchrononous or asynchronous, deterministic or non-deterministic
+- Most common type of parallel computer
+- Networked parallel computer clusters
+- Multi-processor SMP computer, multi-core PC
+
 # Classes of Parallel Computers
 
+- Parallel computers can be classified according to the level at which the hardware supports parallelism
+	- Distance between basic computing nodes
+
 ## Distributed computing
+
+- A distributed computer
+	- Distributed memory multiprocessor
+	- Processing elements are connected by a network
+	- Highly scalable
 ## Cluster computing
+
+- Many computers connected on a network and perform like a single entity
+- Each computer is called a node
+- Improve computational speed, and data integrity
+- Load balancing is more difficult
+- Beowulf cluster
+	- Multiple identical commercial off-the-shelf computers connected with TCP/IP Ethernet LAN
+- Use hardware for networking
 ## Grid computing
+
+- A group of networked computers which work together as. a virtual super computer
+	- Analyzing huge sets of data
+- Typically have not time dependency
+- Use computers which are part of the grid only when idle and operators can perform tasks unrelated to the grid
+- Connects geographically dispersed, heterogeneous computers to functions as a VM
+- Long-running batch processing tasks
+- Decentralized
+- Fixed, predetermined capacity
+
 ## Cloud computing
+
+- Provides on demand, virtualized resource centralized by cloud providers
+	- Servers
+	- Storage
+	- Databases
+	- Networkning
+	- Software
+	- Analytics
+- Flexible resources and economy of scale
 ## Massively parallel computing
 
+- MPP
+	- A single computer with many networked processors
+	- Similar characteristics as cluster, but have specialized interconnect networks
+	- Larger than clusters
+
 ## Specialized parallel computing
+
+- Uses multiple processing elements simultaneously—including specialized hardware like GPUs, FPGAs, and ASICs—to solve complex, compute-intensive problems by breaking them into smaller, independent tasks
+
 ## Vector processors
+
+- CPU or computer that can execute the same instruction on large sets of data
+- High-level operations that work on linear arrays of number of vecotrs
 
 ## Multi-core computing
 
+- A processor that includes multiple processing units on the same chip
+- Issue multiple instructions per clock cycle from multiple instruction streams
