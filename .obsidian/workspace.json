@@ -153,12 +153,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Cloud Computing/1) Introduction - Cloud Computing.md",
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Cloud Computing/2) Distributed and Parallel Computing.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1) Introduction - Cloud Computing"
+              "title": "2) Distributed and Parallel Computing"
             }
           }
         ],
@@ -313,9 +313,9 @@
   },
   "active": "36bb187f97e2f6f3",
   "lastOpenFiles": [
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Cloud Computing/1) Introduction - Cloud Computing.md",
     "Pasted image 20260409145659.png",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Cloud Computing/0) Cloud Computing.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Cloud Computing/1) Introduction - Cloud Computing.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Database Design/7) Establishing Table Structures.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Database Design/6) Analyzing the Current Database.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Database Design/5) Starting the Process.md",
@@ -346,7 +346,6 @@
     "images/Pasted image 20260409091512.png",
     "images/Pasted image 20260409102740.png",
     "images/Pasted image 20260409092041.png",
-    "images/Pasted image 20260409091011.png",
     "PRIVATE/Winter 2026/Data Mining/Lec Notes/Lec 6 - Advanced Association Analysis.md",
     "PRIVATE/Winter 2026/Data Mining/Lec Notes/Lec 5 - Basic Association Analysis.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/5) States of Consciousness.md.tmp",
