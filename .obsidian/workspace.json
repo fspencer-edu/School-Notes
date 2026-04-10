@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Visualization/1) From Data to Visualization.md",
+                "file": "TEXTBOOKS (PUBLIC)/Other Vaults/Data Mining/6. Implementations - Real Machine Learning Schemas.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1) From Data to Visualization"
+              "title": "6. Implementations - Real Machine Learning Schemas"
             }
           }
         ]
@@ -169,34 +169,36 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "1447f193185fcea8",
+  "active": "104ac764934ee546",
   "lastOpenFiles": [
+    "TEXTBOOKS (PUBLIC)/Other Vaults/Data Mining/5. Credibility - Evaluating What's Been Learned.md",
+    "TEXTBOOKS (PUBLIC)/Other Vaults/Data Mining/3. Output - Knowledge Representation.md",
+    "TEXTBOOKS (PUBLIC)/Other Vaults/Data Mining/2. Input - Concepts, Instances, and Attributes.md",
+    "TEXTBOOKS (PUBLIC)/Other Vaults/Data Mining/1. What's It All About?.md",
+    "TEXTBOOKS (PUBLIC)/Other Vaults/Data Mining/0. Data Mining.md",
+    "TEXTBOOKS (PUBLIC)/Other Vaults/Algorithms and Applications/1. Introduction - Algorithms and Applications.md",
+    "TEXTBOOKS (PUBLIC)/Other Vaults/Algorithms and Applications/0. CV - Algorithms and Applications.md",
+    "TEXTBOOKS (PUBLIC)/Other Vaults/Applied Embedded Electronics/0. Applied Embedded Electronics.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Visualization/1) From Data to Visualization.md",
+    "TEXTBOOKS (PUBLIC)/Other Vaults/CPS590/9. Uniprocessor Scheduling.md",
+    "TEXTBOOKS (PUBLIC)/Other Vaults/CPS590/Operating Systems - Internals and Design Principles.md",
+    "TEXTBOOKS (PUBLIC)/Other Vaults/CPS590/8. Virtual Memory.md",
+    "TEXTBOOKS (PUBLIC)/Other Vaults/CPS590/7. Memory Management.md",
+    "TEXTBOOKS (PUBLIC)/Other Vaults/CPS590/5. Concurrency - Mutual Exclusion and Synchronization.md",
+    "TEXTBOOKS (PUBLIC)/Other Vaults/CPS590/6. Concurrency - Deadlock and Starvation.md",
+    "TEXTBOOKS (PUBLIC)/Other Vaults/CPS590/3. Process Description and Control.md",
+    "TEXTBOOKS (PUBLIC)/Other Vaults/CPS590/4. Threads.md",
+    "TEXTBOOKS (PUBLIC)/Other Vaults/CPS590/2. Operating System Overview.md",
+    "TEXTBOOKS (PUBLIC)/Other Vaults/CPS590/0. Overview.md",
+    "TEXTBOOKS (PUBLIC)/Other Vaults/CPS590/1. Computer System Overview.md",
+    "TEXTBOOKS (PUBLIC)/Other Vaults/CPS590",
+    "TEXTBOOKS (PUBLIC)/Other Vaults",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Visualization/0) Data Visualization.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Visualization/29) Telling a Story and Making a Point.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Visualization/28) Choosing the Right Visualization Software.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Visualization/27) Understanding the Most Commonly Used Image File Formats.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Visualization/26) Don't Go 3D.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Visualization/25) Avoid Link Drawings.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Visualization/24) Use Larger Axis Labels.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Visualization/23) Balance the Data and Context.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Visualization/22) Titles, Captions, and Tables.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Visualization/21) Multipanel Figures.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Visualization/20) Redundant Coding.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Visualization/19) Common Pitfalls of Colour Use.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Visualization/18) Handling Overlapping Points.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Visualization/17) The Principle of Proportional Ink.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Visualization/16) Visualizing Uncertainty.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Visualization/15) Visualizing Geospatial Data.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Visualization/14) Visualizing Trends.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Visualization/13) Visualizing Time Series and Other Functions of an Independent Variables.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Visualization/12) Visualizing Associations Among Two or More Quantitative Variables.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Visualization/11) Visualizing Nested Proportions.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Visualization/10) Visualizing Proportions.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Visualization/9) Visualizing Many Distributions At Once.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Visualization/8) Visualizing Distributions - Empirical Cumulative Distribution Functions and Q-Q Plots.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Visualization/7) Visualizing Distributions - Histograms and Density Plots.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Visualization/6) Visualizing Amounts.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Visualization/5) Directory of Visualizations.md",
     "Table of Contents.base",
     "images/Pasted image 20260409140332.png",
     "images/Pasted image 20260409145659.png",
@@ -214,8 +216,6 @@
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Openstax Textbooks/Calculus/Calc. Vol 3",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Openstax Textbooks/Calculus/Calc. Vol 2",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Openstax Textbooks/Calculus/Calc. Vol 1",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Building Microservices/3) How to Model Services.md.tmp",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Building Microservices/2) The Evolutionary Architect.md.tmp",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Intro. to Linear Regression Analysis/8) Indicator Variables.md.tmp"
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Building Microservices/3) How to Model Services.md.tmp"
   ]
 }
