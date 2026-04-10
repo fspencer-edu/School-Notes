@@ -2,17 +2,17 @@
 
 https://cbpbu.ac.in/userfiles/file/2020/STUDY_MAT/ECO/2.pdf
 
-1) The Nature of Econometrics and Economic Data
-2) The Simple Regressional Model
-3) Multiple Regression Analysis - Estimation
-4) Multiple Regression Analysis - Inference
-5) Multiple Regression Analysis - OLS Asymptotics
-6) Multiple Regression Analysis - Further Issues
-7) multiple Regression Analysis with Qualitative information - Binary or Dummy Variables
-8) Heteroskedasticity
-9) More on Specification and Data Issues
-10) Basic Regression Analysis with Time Series Data
-11) Further Issues in using OLS with Time Series Data
+[[1) The Nature of Econometrics and Economic Data]]
+[[2) The Simple Regressional Model]]
+[[3) Multiple Regression Analysis - Estimation]]
+[[4) Multiple Regression Analysis - Inference]]
+[[5) Multiple Regression Analysis - OLS Asymptotics]]
+[[6) Multiple Regression Analysis - Further Issues]]
+[[7) multiple Regression Analysis with Qualitative information - Binary or Dummy Variables]]
+[[8) Heteroskedasticity]]
+[[9) More on Specification and Data Issues]]
+[[10) Basic Regression Analysis with Time Series Data]]
+[[11) Further Issues in using OLS with Time Series Data]]
 [[12) Serial Correlation and Heteroskedasticity in Time Series Regressions]]
 [[13) Pooling Cross Sections Across Time - Simple Panel Data Methods]]
 [[14) Advanced Panel Data Methods]]

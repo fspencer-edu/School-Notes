@@ -28,7 +28,7 @@
 	- Cloud service provider (CSP) provisions resources in the form of VM to users
 	- Users rend OS, CPU, memory, storage, and network resources
 
-![[Pasted image 20260409145659.png]]
+<img src="/images/Pasted image 20260409145659.png" alt="image" width="500">
 
 - Cloud computing
 	- Cost efficient, almost unlimited storage, backup and recovery, easy deployment

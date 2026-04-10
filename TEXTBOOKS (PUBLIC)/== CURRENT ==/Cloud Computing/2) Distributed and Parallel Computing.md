@@ -142,7 +142,7 @@
 	- The various processes often do not address related tasks
 - All stand-alone computers are parallel from a hardware perspective with multiple functional units, multiple execution units/cores, multiple hardware threads
 
-![[Pasted image 20260409153924.png]]
+<img src="/images/Pasted image 20260409153924.png" alt="image" width="500">
 
 - Computer development milestones
 	- Mechanical

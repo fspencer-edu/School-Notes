@@ -11,7 +11,7 @@ https://learning.oreilly.com/library/view/software-engineering-at/9781492082781/
 6) Leading at Scale
 7) Measuring Engineering Productivity
 8) Styles Guides and Rules
-9) Code Reivew
+9) Code Review
 10) Documentation
 11) Testing Overview
 12) Unit Testing

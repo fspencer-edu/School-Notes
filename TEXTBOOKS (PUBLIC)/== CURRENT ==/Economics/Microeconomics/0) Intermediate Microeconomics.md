@@ -2,40 +2,40 @@
 
 https://faculty.ksu.edu.sa/sites/default/files/microeco-_varian.pdf
 
-1) The Market
-2) Budget Constraint
-3) Preferences
-4) Utility
-5) Choice
-6) Demand
-7) Revealed Preference
-8) Slutsky Equation
-9) Buying and Selling
-10) Intertemporal Choice
-11) Asset Markets
-12) Uncertainty
-13) Risky Assets
-14) Consumer's Surplus
-15) Market Demand
-16) Auctions
-17) Technology
-18) Profit Maximization
-19) Cost Minimization
-20) Cost Curves
-21) Firm Supply
-22) Industry Supply
-23) Monopoly
-24) Monopoly Behaviour
-25) Factor Markets
-26) Oligopoly
-27) Game Theory
-28) Game Applications
-29) Behavioural Economics
-30) Exchange
-31) Production
-32) Welfare
-33) Externalities
-34) Information Technology
-35) Public Good
-36) Asymmetric Information
-37) 
+[[1) The Market]]
+[[2) Budget Constraint]]
+[[3) Preferences]]
+[[4) Utility]]
+[[5) Choice]]
+[[6) Demand]]
+[[7) Revealed Preference]]
+[[8) Slutsky Equation]]
+[[9) Buying and Selling]]
+[[10) Intertemporal Choice]]
+[[11) Asset Markets]]
+[[12) Uncertainty]]
+[[13) Risky Assets]]
+[[14) Consumer's Surplus]]
+[[15) Market Demand]]
+[[16) Equilibrium]]
+[[17) Auctions]]
+[[18) Technology]]
+[[19) Profit Maximization]]
+[[20) Cost Minimization]]
+[[21) Cost Curves]]
+[[22) Firm Supply]]
+[[23) Industry Supply]]
+[[24) Monopoly]]
+[[25) Monopoly Behaviour]]
+[[26) Factor Markets]]
+[[27) Oligopoly]]
+[[28) Game Theory]]
+[[29) Game Applications]]
+[[30) Behavioural Economics]]
+[[31) Exchange]]
+[[32) Production]]
+[[33) Welfare]]
+[[34) Externalities]]
+[[35) Information Technology]]
+[[36) Public Good]]
+[[37) Asymmetric Information]]

@@ -143,7 +143,7 @@
 - Take a copy of the parents table's primary key and add to structure of child table, as a foreign key
 - Both tables may share the same primary key
 
-![[Pasted image 20260409140136.png]]
+<img src="/images/Pasted image 20260409140136.png" alt="image" width="500">
 
 ### One-to-Many
 
@@ -154,7 +154,7 @@
 - Take a copy of the parent's table's primary key and add to the children's tables, as foreign keys
 
 
-![[Pasted image 20260409140150.png]]
+<img src="/images/Pasted image 20260409140150.png" alt="image" width="500">
 
 
 ### Many-to-Many
@@ -164,7 +164,7 @@
 	- Associate records from one table with another
 	- Take a copy of the primary key of each table, and use them to form the structure of the new table
 
-![[Pasted image 20260409140332.png]]
+<img src="/images/Pasted image 20260409140332.png" alt="image" width="500">
 
 ## Types of Participation
 
