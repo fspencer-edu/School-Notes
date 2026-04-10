@@ -167,12 +167,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PRIVATE/ToDo.md",
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Advanced Analytics with Spark/0) Advanced Analytics with Spark.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ToDo"
+              "title": "0) Advanced Analytics with Spark"
             }
           }
         ],
@@ -326,6 +326,14 @@
   },
   "active": "718599b9bf60af39",
   "lastOpenFiles": [
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Bioinformatics/Stategies in Biomedical Data Science/0) Strategies in Biomedical Data Science.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Bioinformatics/Probabilistic Methods for Bioinfo./0) Probabilistic Methods for Bioinformatics.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Bioinformatics/Genomics in the Cloud/0) Genomics in the Azure Cloud.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Bioinformatics/Optimization Techniques/0) Optimization Techniques for Solving Complex Problems.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Bioinformatics/Mastering Python for Bioinfo./0) Mastering Python for Bioinformatics.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Bioinformatics/Exon Bioinfo./0) Exon Bioinformatics.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Bioinformatics/All About Bioinformatics/0) All About Bioinformatics.md",
+    "PRIVATE/ToDo.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Cloud Computing/3) Multicore Architectures.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Cloud Computing/2) Distributed and Parallel Computing.md",
     "Pasted image 20260409153924.png",
@@ -349,19 +357,11 @@
     "Pasted image 20260409140332.png",
     "Pasted image 20260409140150.png",
     "Pasted image 20260409140136.png",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Database Design/2) Design Objectives.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Database Design/1) The Relational Database.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Database Design/0) Database Design.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/RDB Design/0) Relational Database Design and Implementation.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/SQL/0) Learning SQL.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/System Design on AWS/0) System Design on AWS.md",
-    "PRIVATE/Winter 2026/Data Mining/Lec Notes/Lec 7 - Basic Cluster Analysis.md",
     "images/Pasted image 20260409091529.png",
     "images/Pasted image 20260409100554.png",
     "images/Pasted image 20260409092220.png",
     "images/Pasted image 20260409091512.png",
     "images/Pasted image 20260409102740.png",
-    "PRIVATE/Winter 2026/Data Mining/Lec Notes/Lec 6 - Advanced Association Analysis.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/5) States of Consciousness.md.tmp",
     "PRIVATE/Winter 2026/Computer Networks/Textbook/7) Wireless and Mobile Networks.md.tmp",
     "Table of Contents.base",
