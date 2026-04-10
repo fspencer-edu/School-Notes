@@ -13,11 +13,11 @@ https://cbpbu.ac.in/userfiles/file/2020/STUDY_MAT/ECO/2.pdf
 9) More on Specification and Data Issues
 10) Basic Regression Analysis with Time Series Data
 11) Further Issues in using OLS with Time Series Data
-12) Serial Correlation and Heteroskedasticity in Time Series Regressions
-13) Pooling Cross Sections Across Time - Simple Panel Data Methods
-14) Advanced Panel Data Methods
-15) Instrumental Variables Estimation and Two Stage Least Squares
-16) Simultaneous Equations Models
-17) Limited Dependent Variable Models and Sample Selection Corrections
-18) Advanced Time Series Topics
-19) Carrying Out an Empirical Project
+[[12) Serial Correlation and Heteroskedasticity in Time Series Regressions]]
+[[13) Pooling Cross Sections Across Time - Simple Panel Data Methods]]
+[[14) Advanced Panel Data Methods]]
+[[15) Instrumental Variables Estimation and Two Stage Least Squares]]
+[[16) Simultaneous Equations Models]]
+[[17) Limited Dependent Variable Models and Sample Selection Corrections]]
+[[18) Advanced Time Series Topics]]
+[[19) Carrying Out an Empirical Project]]

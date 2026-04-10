@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "6585fe3f950825eb",
+        "id": "ffbb07fab31fcaed",
         "type": "tabs",
         "children": [
           {
-            "id": "4e81908d170f257f",
+            "id": "362e3b1046dba582",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Bioinformatics/Bioinformatics and Functional Genomics/1) Introduction - Bioinfo.md",
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Economics/Econometrics/0) Econometrics.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1) Introduction - Bioinfo"
+              "title": "0) Econometrics"
             }
           }
         ]
@@ -169,12 +169,18 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "4e81908d170f257f",
+  "active": "362e3b1046dba582",
   "lastOpenFiles": [
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Bioinformatics/Bioinformatics and Functional Genomics/0) Bioinformatics and Functional Genomics.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Bioinformatics/Bioinformatics and Functional Genomics/1) Introduction - Bioinfo.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Designing Data Intensive App./0) Designing Data Intensive Applications.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Visualization/0) Data Visualization.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Engineering/0) Data Engineering.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Algorithms/0) Data Algorithms.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Advanced Analytics with Spark/0) Advanced Analytics with Spark.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Bioinformatics/Bioinformatics and Functional Genomics/2) Access to Sequence Data and Related Information.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Bioinformatics/Bioinformatics and Functional Genomics/3) Pairwise Sequence Alignment.md",
+    "PRIVATE/ToDo.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Bioinformatics/Bioinformatics and Functional Genomics/1) Introduction - Bioinfo.md",
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Bioinformatics/Bioinformatics and Functional Genomics/0) Bioinformatics and Functional Genomics.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Cloud Computing/12) Technical and Legal Issues in Cloud Computing.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Database Design/16) In Closing.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Database Design/15) Bending or Breaking the Rules.md",
@@ -191,12 +197,6 @@
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Cloud Computing/9) Resource Management in Cloud.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Cloud Computing/8) SLA Management in Cloud Computing.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Cloud Computing/7) Capacity Planning in Cloud.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Cloud Computing/6) SaaS and PaaS in Cloud.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Cloud Computing/5) Infrastructure-as-a-Service (IaaS) Delivery Model in Cloud.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Cloud Computing/4) Virtualization.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Cloud Computing/3) Multicore Architectures.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Visualization/0) Data Visualization.md",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Engineering/0) Data Engineering.md",
     "Pasted image 20260409153924.png",
     "Pasted image 20260409145659.png",
     "Pasted image 20260409140332.png",

@@ -1,6 +1,6 @@
 # Organization of the Book
 
-# Bioinformatics
+# Bioinformatics: The Big Picture
 
 # Organization of the Chapters
 
