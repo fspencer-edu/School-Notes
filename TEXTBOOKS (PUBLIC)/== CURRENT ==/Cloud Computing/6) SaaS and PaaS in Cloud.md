@@ -1,6 +1,19 @@
+
 # SaaS in Cloud
 
+- Content delivery network (CDN)
+- Application programming interface (API)
+- MongoDB
+- Stackato
+- Web 2.0
+
 # SaaS Characteristics
+
+- Configuration and customization
+- Accelerated feature delivery
+- Open integration protocols
+- Collaborative functionality
+
 
 # SaaS Implementation
 
