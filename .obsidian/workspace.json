@@ -63,8 +63,7 @@
               "title": "15) Treatment"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -213,11 +212,12 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "98cc83c46b659906",
+  "active": "4c50c9d8dc30a72b",
   "lastOpenFiles": [
+    "Pasted image 20260410142404.png",
+    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/15) Treatment.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/14) Psychopathology.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/13) Stress and Health.md",
-    "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/15) Treatment.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/12) Social Psychology.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/0) Introduction to Psychology and Neuroscience.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/1) Introduction to Psychology.md",
@@ -240,7 +240,6 @@
     "TEXTBOOKS (PUBLIC)/Other Vaults/CPS590/6. Concurrency - Deadlock and Starvation.md",
     "TEXTBOOKS (PUBLIC)/Other Vaults/CPS590/3. Process Description and Control.md",
     "TEXTBOOKS (PUBLIC)/Other Vaults/CPS590/4. Threads.md",
-    "TEXTBOOKS (PUBLIC)/Other Vaults/CPS590/2. Operating System Overview.md",
     "TEXTBOOKS (PUBLIC)/Other Vaults/CPS590",
     "TEXTBOOKS (PUBLIC)/Other Vaults",
     "Table of Contents.base",
