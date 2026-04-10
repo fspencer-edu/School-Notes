@@ -4,21 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "c711643f48d1c80f",
+        "id": "e81184ac0bb65edc",
         "type": "tabs",
         "children": [
           {
-            "id": "20c2e3d77cb08599",
+            "id": "8ddc06fcd32dd17e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "bases",
               "state": {
-                "file": "PRIVATE/ToDo.md",
-                "mode": "source",
-                "source": false
+                "file": "Table of Contents.base",
+                "viewName": "Table"
               },
-              "icon": "lucide-file",
-              "title": "ToDo"
+              "icon": "lucide-table",
+              "title": "Table of Contents"
             }
           }
         ]
@@ -169,8 +168,9 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "20c2e3d77cb08599",
+  "active": "8ddc06fcd32dd17e",
   "lastOpenFiles": [
+    "PRIVATE/ToDo.md",
     "TEXTBOOKS (PUBLIC)/Todo - Links.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/XML/0) XML.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/TinyML/0) TinyML.md",
@@ -196,7 +196,6 @@
     "TEXTBOOKS (PUBLIC)/== TODO ==/Markdown and Pandoc/0) Markdown and Pandoc.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Linux/0) Efficient Linux at the Command Line.md",
     "TEXTBOOKS (PUBLIC)/== TODO ==/Linear Algebra/0) Linear Algebra.md",
-    "TEXTBOOKS (PUBLIC)/== TODO ==/Leaning Go/0) Learning Go.md",
     "images/Pasted image 20260409140332.png",
     "images/Pasted image 20260409145659.png",
     "images/Pasted image 20260409140136.png",
