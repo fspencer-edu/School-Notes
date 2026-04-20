@@ -64,7 +64,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -213,10 +213,10 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "768923389dde2576",
+  "active": "119d9c57c8d8f326",
   "lastOpenFiles": [
-    "PRIVATE/Winter 2026/Computer Networks/Lec Notes/Network Slides.md",
     "PRIVATE/Winter 2026/Computer Networks/Textbook/One Page - Sheet.md",
+    "PRIVATE/Winter 2026/Computer Networks/Lec Notes/Network Slides.md",
     "PRIVATE/Winter 2026/Computer Networks/Equation Sheet.md",
     "PRIVATE/Winter 2026/Data Mining/Final - Data Mining.md",
     "PRIVATE/Winter 2026/Computer Networks/Final - Computer Networks.md",
