@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PRIVATE/Winter 2026/Data Mining/Final - Data Mining.md",
+                "file": "PRIVATE/Winter 2026/Computer Networks/Lec Notes/Network Slides.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Final - Data Mining"
+              "title": "Network Slides"
             }
           },
           {
@@ -63,7 +63,8 @@
               "title": "ToDo"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -212,14 +213,15 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "4b93d7f01b5f1d64",
+  "active": "768923389dde2576",
   "lastOpenFiles": [
+    "PRIVATE/Winter 2026/Computer Networks/Lec Notes/Network Slides.md",
+    "PRIVATE/Winter 2026/Computer Networks/Equation Sheet.md",
+    "PRIVATE/Winter 2026/Data Mining/Final - Data Mining.md",
+    "PRIVATE/Winter 2026/Computer Networks/Final - Computer Networks.md",
     "Pasted image 20260419172102.png",
     "Pasted image 20260419171758.png",
-    "PRIVATE/Winter 2026/Data Mining/Final - Data Mining.md",
     "PRIVATE/ToDo.md",
-    "PRIVATE/Winter 2026/Computer Networks/Final - Computer Networks.md",
-    "PRIVATE/Winter 2026/Computer Networks/Equation Sheet.md",
     "PRIVATE/Winter 2026/Discrete Structures/Final - Discrete Structures.md",
     "Pasted image 20260416144540.png",
     "Pasted image 20260416144507.png",
@@ -231,7 +233,6 @@
     "PRIVATE/Winter 2026/Genetics/Final - Genetics.md",
     "Pasted image 20260416135807.png",
     "Pasted image 20260416135806.png",
-    "Pasted image 20260416135805.png",
     "PRIVATE/Winter 2026/Genetics/Genetics - Questions.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/14) Psychopathology.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/13) Stress and Health.md",
