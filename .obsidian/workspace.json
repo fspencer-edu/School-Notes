@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PRIVATE/Winter 2026/Computer Networks/Equation Sheet.md",
+                "file": "PRIVATE/Winter 2026/Computer Networks/Textbook/One Page - Sheet.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Equation Sheet"
+              "title": "One Page - Sheet"
             }
           },
           {
@@ -216,6 +216,7 @@
   "active": "768923389dde2576",
   "lastOpenFiles": [
     "PRIVATE/Winter 2026/Computer Networks/Lec Notes/Network Slides.md",
+    "PRIVATE/Winter 2026/Computer Networks/Textbook/One Page - Sheet.md",
     "PRIVATE/Winter 2026/Computer Networks/Equation Sheet.md",
     "PRIVATE/Winter 2026/Data Mining/Final - Data Mining.md",
     "PRIVATE/Winter 2026/Computer Networks/Final - Computer Networks.md",
@@ -250,7 +251,6 @@
     "TEXTBOOKS (PUBLIC)/Other Vaults/Algorithms and Applications/0. CV - Algorithms and Applications.md",
     "TEXTBOOKS (PUBLIC)/Other Vaults/Applied Embedded Electronics/0. Applied Embedded Electronics.md",
     "TEXTBOOKS (PUBLIC)/== CURRENT ==/Data Visualization/1) From Data to Visualization.md",
-    "TEXTBOOKS (PUBLIC)/Other Vaults/CPS590/9. Uniprocessor Scheduling.md",
     "TEXTBOOKS (PUBLIC)/Other Vaults/CPS590",
     "TEXTBOOKS (PUBLIC)/Other Vaults",
     "Table of Contents.base",
