@@ -37,7 +37,7 @@ Inheritance of alleles
 	- Expression
 
 
-![[Pasted image 20251030184522.png]]
+<img src="/images/Pasted image 20251030184522.png" alt="image" width="500">
 
 
 
@@ -96,11 +96,11 @@ Inheritance of alleles
 
 
 
-![[Pasted image 20251030191847.png]]
+<img src="/images/Pasted image 20251030191847.png" alt="image" width="500">
 
-![[Pasted image 20251030191903.png]]
+<img src="/images/Pasted image 20251030191903.png" alt="image" width="500">
 
-![[Pasted image 20251030191914.png]]
+<img src="/images/Pasted image 20251030191914.png" alt="image" width="500">
 
 **Genome Browsers**
 - A genome browser acts like a meta-database that brings information from many genomic databases
@@ -122,7 +122,7 @@ Inheritance of alleles
 - Square brackets for limits
 	- [Title]
 
-![[Pasted image 20251030192324.png]]
+<img src="/images/Pasted image 20251030192324.png" alt="image" width="500">
 
 
 - Additional tracks show binding sites for transcription factors, expression in specific tissues, and locations of known genetic variations (mutations or polymorphisms), methylation sites, repeated sequences, and comparisons with the genome of other organisms
@@ -135,7 +135,7 @@ Inheritance of alleles
 
 **Part 1: Genome Browsing to Identify Possible Disease-Associated Genes**
 
-![[Pasted image 20251030193406.png]]
+<img src="/images/Pasted image 20251030193406.png" alt="image" width="500">
 
 - GWAS requires a method to determine many genotypes for a large number of sites in the genome where genetic variation is known to occurs
 - DNA micro-array using allele-specific oligo-nucleotides
@@ -187,7 +187,7 @@ Inheritance of alleles
 	- Exons
 	- Protein
 
-![[Pasted image 20251030194738.png]]
+<img src="/images/Pasted image 20251030194738.png" alt="image" width="500">
 
 
 
@@ -227,7 +227,7 @@ Inheritance of alleles
 		- Decodes RNA to make protein
 
 
-![[Pasted image 20251030195618.png]]
+<img src="/images/Pasted image 20251030195618.png" alt="image" width="500">
 
 
 
@@ -250,8 +250,8 @@ Inheritance of alleles
 - Ribosomes use these for translation into 3-nucleotide codons (amino acids)
 - The resulting protein folds into a 3D structure
 
-![[Pasted image 20251030200055.png]]
+<img src="/images/Pasted image 20251030200055.png" alt="image" width="500">
 
-![[Pasted image 20251030200107.png]]
+<img src="/images/Pasted image 20251030200107.png" alt="image" width="500">
 
-![[Pasted image 20251030200116.png]]
+<img src="/images/Pasted image 20251030200116.png" alt="image" width="500">

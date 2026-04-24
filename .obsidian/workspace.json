@@ -4,53 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "72891601426147c7",
+        "id": "d26b3b9e4d03a043",
         "type": "tabs",
         "children": [
           {
-            "id": "f7daf2b265564d9c",
+            "id": "8d1361f9b9e1defc",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PRIVATE/Winter 2026/Genetics/Final - Genetics.md",
+                "file": "TEXTBOOKS (PUBLIC)/== CURRENT ==/Building Microservices/1) Microservices.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Final - Genetics"
-            }
-          },
-          {
-            "id": "38bb2cf9a708c570",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/ToDo.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "ToDo"
-            }
-          },
-          {
-            "id": "dda7605769430905",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PRIVATE/Winter 2026/Genetics/Tutorial Review.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Tutorial Review"
+              "title": "1) Microservices"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -199,14 +170,30 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "38bb2cf9a708c570",
+  "active": "8d1361f9b9e1defc",
   "lastOpenFiles": [
+    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Building Microservices/0) Building Microservices.md",
+    "PRIVATE/Winter 2026/Genetics/Lec Notes/Lec 2b - Pedigrees.md.tmp",
+    "PRIVATE/Winter 2026/Genetics/Final - Genetics.md.tmp",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Full Stack Testing/12) Moving Beyond in Testing.md.tmp",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Full Stack Testing/0) Full Stack Testing.md.tmp",
+    "TEXTBOOKS (PUBLIC)/== TODO ==/Data Wrangling with Python/0) Data Wrangling with Python.md.tmp",
+    "images/Pasted image 20260416143126.png",
+    "images/Pasted image 20260410142404.png",
+    "images/Pasted image 20260412185536.png",
+    "images/Pasted image 20260410165123.png",
+    "images/Pasted image 20260416144507.png",
+    "images/Pasted image 20260412185838.png",
+    "images/Pasted image 20260419171758.png",
+    "images/Pasted image 20260415175204.png",
+    "images/Pasted image 20260412193915.png",
+    "images/Pasted image 20260416143222.png",
     "PRIVATE/Winter 2026/Genetics/Tutorial Review.md",
+    "PRIVATE/ToDo.md",
     "PRIVATE/Winter 2026/Genetics/Midterm - Review.md",
     "PRIVATE/Winter 2026/Genetics/Final - Genetics.md",
     "PRIVATE/Winter 2026/Genetics/Genetics - Questions.md",
     "PRIVATE/Winter 2026/Genetics/Midterm - Questions.md",
-    "PRIVATE/ToDo.md",
     "PRIVATE/Winter 2026/Genetics/Outline - Genetics.md",
     "PRIVATE/Winter 2026/Comparative Prog. Languages/Final -Comparative Programming.md",
     "PRIVATE/Winter 2026/Data Mining/Final - Data Mining.md",
@@ -217,17 +204,7 @@
     "PRIVATE/Winter 2026/Computer Networks/Textbook/One Page - Sheet.md",
     "PRIVATE/Winter 2026/Computer Networks/Equation Sheet.md",
     "PRIVATE/Winter 2026/Computer Networks/Final - Computer Networks.md",
-    "Pasted image 20260419172102.png",
-    "Pasted image 20260419171758.png",
     "PRIVATE/Winter 2026/Discrete Structures/Final - Discrete Structures.md",
-    "Pasted image 20260416144540.png",
-    "Pasted image 20260416144507.png",
-    "Pasted image 20260416144029.png",
-    "Pasted image 20260416143222.png",
-    "Pasted image 20260416143126.png",
-    "Pasted image 20260416140408.png",
-    "Pasted image 20260416135807.png",
-    "Pasted image 20260416135806.png",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/14) Psychopathology.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/13) Stress and Health.md",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/15) Treatment.md",
@@ -236,16 +213,10 @@
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/1) Introduction to Psychology.md",
     "TEXTBOOKS (PUBLIC)/Other Vaults/Data Mining/6. Implementations - Real Machine Learning Schemas.md",
     "TEXTBOOKS (PUBLIC)/Other Vaults/Data Mining/5. Credibility - Evaluating What's Been Learned.md",
-    "TEXTBOOKS (PUBLIC)/Other Vaults/Data Mining/3. Output - Knowledge Representation.md",
     "TEXTBOOKS (PUBLIC)/Other Vaults/CPS590",
     "TEXTBOOKS (PUBLIC)/Other Vaults",
     "Table of Contents.base",
     "PRIVATE/Winter 2026/Foundation of Psychology/Textbook/5) States of Consciousness.md.tmp",
-    "PRIVATE/Winter 2026/Computer Networks/Textbook/7) Wireless and Mobile Networks.md.tmp",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Math. for ML",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Openstax Textbooks/Calculus/Calc. Vol 3",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Openstax Textbooks/Calculus/Calc. Vol 2",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Openstax Textbooks/Calculus/Calc. Vol 1",
-    "TEXTBOOKS (PUBLIC)/== CURRENT ==/Building Microservices/3) How to Model Services.md.tmp"
+    "PRIVATE/Winter 2026/Computer Networks/Textbook/7) Wireless and Mobile Networks.md.tmp"
   ]
 }

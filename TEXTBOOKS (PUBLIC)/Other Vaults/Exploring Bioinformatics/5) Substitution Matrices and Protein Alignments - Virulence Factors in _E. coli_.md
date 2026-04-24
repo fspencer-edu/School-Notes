@@ -25,7 +25,7 @@
 	- Paralogs
 
 
-![[Pasted image 20251031102833.png]]
+<img src="/images/Pasted image 20251031102833.png" alt="image" width="500">
 
 
 \* -> Identical
@@ -46,7 +46,7 @@
 	- High score -> Similar hydrophobicity values
 - Large numbers represent more hydrophobic amino acids
 
-![[Pasted image 20251031103311.png]]
+<img src="/images/Pasted image 20251031103311.png" alt="image" width="500">
 
 
 - Most substitution matrices are based on observed conservation of amino acids
@@ -60,7 +60,7 @@
 - Log-odds ration is more positive for likely (conservative) substitutions and negative for non-conservative substitutions
 - Multplied by 10 to allow rounding to the nearest integer
 
-![[Pasted image 20251031111209.png]]
+<img src="/images/Pasted image 20251031111209.png" alt="image" width="500">
 
 
 - Initial PAM matrix, PAM 1, was built from 71 known protein families and normalized to represent an average change of 1 amino acid in 100
@@ -68,7 +68,7 @@
 	- Time required for change to occur in 1% of amino acids
 
 
-![[Pasted image 20251031111324.png]]
+<img src="/images/Pasted image 20251031111324.png" alt="image" width="500">
 
 - PAM matrix shows that cysteine has a higher probability of remaining cysteine than being replaced by any other amino acid
 - Strong bias is due to unique role of its forming structurally important disulfide bonds
@@ -98,7 +98,7 @@ ANFNCFWS
 - Most protein alignment programs allow the user a choice of substitution matrix
 
 
-![[Pasted image 20251031112100.png]]
+<img src="/images/Pasted image 20251031112100.png" alt="image" width="500">
 
 ## Chapter Project: Using Protein Alignment to Investigate Functions of Virulence Factors
 
@@ -111,7 +111,7 @@ ANFNCFWS
 	- Pili and other bacterial surface features for host attachment
 	- Enzymes
 
-![[Pasted image 20251031112525.png]]
+<img src="/images/Pasted image 20251031112525.png" alt="image" width="500">
 
 ### Part 1: using Protein Alignment to Explore Protein Function
 
@@ -164,7 +164,7 @@ DAS (Dense alignment surface)
 	- BLOSUM 52
 - Use hash table or data structure to hold look up table
 
-![[Pasted image 20251031113632.png]]
+<img src="/images/Pasted image 20251031113632.png" alt="image" width="500">
 
 - FASTA-style comments
 - Each line has amino acid substitution values
@@ -177,9 +177,9 @@ DAS (Dense alignment surface)
 (\*) -> identical
 (:) -> similar
 
-![[Pasted image 20251031113951.png]]
+<img src="/images/Pasted image 20251031113951.png" alt="image" width="500">
 
-![[Pasted image 20251031114003.png]]
+<img src="/images/Pasted image 20251031114003.png" alt="image" width="500">
 
 ## Building a Substitution Matrix
 
@@ -192,7 +192,7 @@ DAS (Dense alignment surface)
 	- Training set should contain a significant number of sequences that are relevant to the known relationship
 	- Error-free as possible
 
-![[Pasted image 20251031114335.png]]
+<img src="/images/Pasted image 20251031114335.png" alt="image" width="500">
 
 - Build substitution matrix with pairwise alignments
 - Training set shows that alanine is frequently replaced by lysine
@@ -217,7 +217,7 @@ DAS (Dense alignment surface)
 - Count from 1
 
 
-![[Pasted image 20251031114939.png]]
+<img src="/images/Pasted image 20251031114939.png" alt="image" width="500">
 
 - Not all amino acids are present
 - Generate a matrix including only the amino acids present in training set
@@ -251,7 +251,7 @@ $log_2(0.89) = -0.17$
 
 
 **Exercises for Programming Courses**
-![[Pasted image 20251031120030.png]]
+<img src="/images/Pasted image 20251031120030.png" alt="image" width="500">
 
 **Annotating Genomes**
 - Process of assigning functional information to genome sequences is called annotating the genome
@@ -266,7 +266,7 @@ $log_2(0.89) = -0.17$
 - 20 amino acids in proteins with a distinct side chain and chemical properties
 
 
-![[Pasted image 20251031120300.png]]
+<img src="/images/Pasted image 20251031120300.png" alt="image" width="500">
 
 
 - Nucleotide sequence determined the linear sequence of amino acids
@@ -275,7 +275,7 @@ $log_2(0.89) = -0.17$
 - DNA-binding proteins has a stretch of amino acids that curve into a relatively rigid helix that fits into the major group of the DNA molecule
 
 
-![[Pasted image 20251031120308.png]]
+<img src="/images/Pasted image 20251031120308.png" alt="image" width="500">
 
 
 - Protein alignment can score exact matches and conservative substitutions
@@ -285,4 +285,4 @@ $log_2(0.89) = -0.17$
 	- Charge
 
 
-![[Pasted image 20251031120319.png]]
+<img src="/images/Pasted image 20251031120319.png" alt="image" width="500">

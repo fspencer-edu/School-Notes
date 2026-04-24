@@ -32,7 +32,7 @@ Commercial requirements
 - No write up, no read down
 
 Biba's Model
-![[Pasted image 20251104121711.png]]
+<img src="/images/Pasted image 20251104121711.png" alt="image" width="500">
 
 - OS LOCUS
 - Limit execution domains for each program to prevent untrusted software from altering data or other software

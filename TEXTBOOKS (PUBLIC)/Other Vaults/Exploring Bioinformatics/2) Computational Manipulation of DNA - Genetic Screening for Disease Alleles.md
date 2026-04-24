@@ -21,7 +21,7 @@
 	- Mutation that does not affects synthesis of localization of the protein
 	- Prevents opening of the channel
 
-![[Pasted image 20251030221934.png]]
+<img src="/images/Pasted image 20251030221934.png" alt="image" width="500">
 
 
 
@@ -49,7 +49,7 @@
 	- 3' -> 5'
 
 
-![[Pasted image 20251030222444.png]]
+<img src="/images/Pasted image 20251030222444.png" alt="image" width="500">
 
 ![Common misconceptions in biology: Making sense of the sense and antisense DNA  strands - IndiaBioscience](https://cdn.indiabioscience.org/media/articles/Maya-sense_fig-3.png)
 
@@ -78,7 +78,7 @@ DNA Manipulation Algorithm
 - Determine amino acids from triplet codons from genetic code table
 	- Start codon is the N-terminal
 
-![[Pasted image 20251030223139.png]]
+<img src="/images/Pasted image 20251030223139.png" alt="image" width="500">
 
 **Mutation Detection Algorithm**
 - Searching for alterations in protein sequence uses comparison of amino acids
@@ -118,7 +118,7 @@ DNA Manipulation Algorithm
 	- Non-sense
 	- Silent
 
-![[Pasted image 20251030224214.png]]
+<img src="/images/Pasted image 20251030224214.png" alt="image" width="500">
 
 
 
@@ -136,7 +136,7 @@ Output
 
 
 
-![[Pasted image 20251030224507.png]]
+<img src="/images/Pasted image 20251030224507.png" alt="image" width="500">
 
 ## Understanding the Problem: Insertions and Deletions
 
@@ -145,7 +145,7 @@ Output
 
 Align ACFTTA and ACTA
 
-![[Pasted image 20251030224703.png]]
+<img src="/images/Pasted image 20251030224703.png" alt="image" width="500">
 
 - Assume that the first sequence is the reference or wild-type
 	- Single mutation event
@@ -193,4 +193,4 @@ Align ACFTTA and ACTA
 	- Non-sense
 
 
-![[Pasted image 20251030225635.png]]
+<img src="/images/Pasted image 20251030225635.png" alt="image" width="500">

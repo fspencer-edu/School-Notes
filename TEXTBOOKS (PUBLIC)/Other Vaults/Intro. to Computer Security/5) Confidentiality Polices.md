@@ -21,7 +21,7 @@
 
 "S has discretionary read (write) access to O"
 
-![[Pasted image 20251104115051.png]]
+<img src="/images/Pasted image 20251104115051.png" alt="image" width="500">
 
 - Simple security condition, preliminary version
 	- S can read O if and only if $l_o$ <= l$_s$ has S has discretionary read access to O
@@ -32,7 +32,7 @@
 - Subjects have clearance at a security level and that objects are at the level of a security level
 
 
-![[Pasted image 20251104115452.png]]
+<img src="/images/Pasted image 20251104115452.png" alt="image" width="500">
 
 
 ## Example: The Data General B2 UNIX System
@@ -58,7 +58,7 @@
 	2. Users can execute programs
 
 
-![[Pasted image 20251104115827.png]]
+<img src="/images/Pasted image 20251104115827.png" alt="image" width="500">
 
 - To prevent leakage of information, only programs with the same MAC label as the directory can create files in that directory
 - Multilevel directory is a directory with a set of sub-directories, one for each label

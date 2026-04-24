@@ -8,7 +8,7 @@
 	- Secure
 - A secure system is a system that starts in an authorized state and cannot enter an unauthorized state
 
-![[Pasted image 20251104103416.png]]
+<img src="/images/Pasted image 20251104103416.png" alt="image" width="500">
 
 - Finite-state machine consists of 4 states and 5 transitions
 	- A = {s1, s2}

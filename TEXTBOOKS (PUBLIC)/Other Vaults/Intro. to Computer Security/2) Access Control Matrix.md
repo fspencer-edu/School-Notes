@@ -36,7 +36,7 @@ $A$ = specification
 	- Right, R
 - The set of protection states of the system represented by (S, O, A)
 
-![[Pasted image 20251104095335.png]]
+<img src="/images/Pasted image 20251104095335.png" alt="image" width="500">
 
 Process 1
 - Can read/write file 1
@@ -63,7 +63,7 @@ UNIX
 
 - The subject nob is configured to provided NFS service to a set of clients that does not include the host toadflax
 
-![[Pasted image 20251104095846.png]]
+<img src="/images/Pasted image 20251104095846.png" alt="image" width="500">
 
 - Access control matrices can model programming language accesses
 - Locking function to enforce the Bernstein conditions
@@ -71,7 +71,7 @@ UNIX
 	- When done, the process is accessible again
 	- Ensure data consistency
 - 
-![[Pasted image 20251104100034.png]]
+<img src="/images/Pasted image 20251104100034.png" alt="image" width="500">
 
 
 # Protection State Transitions

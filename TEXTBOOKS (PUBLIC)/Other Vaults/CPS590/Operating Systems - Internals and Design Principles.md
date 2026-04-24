@@ -1525,14 +1525,14 @@ _PROCESS CREATION_
 - OS is responsible for the creation of the new process
 - _Process spawning_, is the creation at the explicit request of another process
 - When a process spawns another (_parent process_), and the spawned (_child process_)
-![[Pasted image 20250128203325.png]]
+<img src="/images/Pasted image 20250128203325.png" alt="image" width="500">
 
 _PROCESS TERMINATION_
 - Any computer system must provide a means for a process to indicate its completion
 - A batch job should indicate a Halt instruction or an explicit OS service call for termination
 - In some operating systems, a process may be terminated by the process that created it, or when the parent process is itself terminated
 
-![[Pasted image 20250128203347.png]]
+<img src="/images/Pasted image 20250128203347.png" alt="image" width="500">
 
 **A Five-State Model**
 - The queue is a first-in-first-out list and the processor operates in _round-robin_ fashion on the available processes
@@ -1555,7 +1555,7 @@ _PROCESS TERMINATION_
 	1) A process that has been released from the pool of executable processes by the OS
 		1) Halted or aborted
 
-![[Pasted image 20250128203358.png]]
+<img src="/images/Pasted image 20250128203358.png" alt="image" width="500">
 - New and Exit states are constructs for process management
 - When a new state is defined
 	- The OS allocates and builds tables, and information concerning the process is maintained in control tables in main memory
@@ -1630,7 +1630,7 @@ _OTHER USES OF SUSPENSION_
 	- The process was placed in a suspended state by an agent; itself, parent process, or the OS, for the purpose of preventing its execution
 	- The process may not be removed from this state until the agent explicitly orders the removal
 
-![[Pasted image 20250130122551.png]]
+<img src="/images/Pasted image 20250130122551.png" alt="image" width="500">
 
 3.3. <font style="color:#A8A8A8; text-decoration: underline;">Process Description</font>  
 - OS schedules and dispatches processes for execution by the processor, allocates resources to processes, and responds to requests by user processes for basic services
@@ -1689,8 +1689,8 @@ _PROCESS LOCATION_
 - Modern operating system presume paging hardware that allows noncontiguous physical memory to support partially resident processes
 - Process tables maintained by the OS must show the location of each page of each process image
 
-![[Pasted image 20250130150610.png]]
-![[Pasted image 20250130152025.png]]
+<img src="/images/Pasted image 20250130150610.png" alt="image" width="500">
+<img src="/images/Pasted image 20250130152025.png" alt="image" width="500">
 
 _PROCESS ATTRIBUTES_
 - A complex multiprogramming system requires more information about each process
@@ -1722,7 +1722,7 @@ _PROCESS ATTRIBUTES_
 
 ![[Pasted image 20250130152051.png|335]]![[Pasted image 20250130152315.png|300]]
 
-![[Pasted image 20250130152108.png]]
+<img src="/images/Pasted image 20250130152108.png" alt="image" width="500">
 
 
 _THE ROLE OF THE PROCESS CONTROL BLOCK_
@@ -1739,7 +1739,7 @@ _THE ROLE OF THE PROCESS CONTROL BLOCK_
 - Trade-off is performance and the degree to which the remainder of the system software can be trusted to be correct
 
 
-![[Pasted image 20250130152441.png]]
+<img src="/images/Pasted image 20250130152441.png" alt="image" width="500">
 
    
 3.4. <font style="color:#A8A8A8; text-decoration: underline;">Process Control</font>  
@@ -1750,7 +1750,7 @@ _THE ROLE OF THE PROCESS CONTROL BLOCK_
 		- PSW, primitive I/O instructions, and instructions that relate to memory management
 - Certain regions of memory can only be accessed in the more-privileged mode
 
-![[Pasted image 20250130154403.png]]
+<img src="/images/Pasted image 20250130154403.png" alt="image" width="500">
 
 - The less-privileged mode is referred to as the _user mode_
 - More-privileged mode is the _system mode, control mode, or kernel mode_
@@ -1816,7 +1816,7 @@ _WHEN TO SWTIVH PROCESSES_
 - OS may be activated by _supervisor call_ from the program being executed
 	- A system call may place the user process in the Blocked state
 
-![[Pasted image 20250130155936.png]]
+<img src="/images/Pasted image 20250130155936.png" alt="image" width="500">
 
 
 _MODE SWITCHING_
@@ -1935,7 +1935,7 @@ _CHANGE OF PROCESS STATE_
 | Created                 | Process is newly created and not yet ready to run                                                                                |
 | Zombie                  | Process no longer exists, but it leaves a record for its parent process to collect                                               |
 
-![[Pasted image 20250130201131.png]]
+<img src="/images/Pasted image 20250130201131.png" alt="image" width="500">
 
 **Process Description**
 - 3 Parts of a UNIX Process image
@@ -2935,7 +2935,7 @@ Peterson's Algorithm
 _COMPETITION AMONG PROCESSES FOR RESOURCES_
 
 
-![[Pasted image 20250130205758.png]]
+<img src="/images/Pasted image 20250130205758.png" alt="image" width="500">
 
 _COOPERATION AMONG PROCESSES BY SHARING_
 
@@ -3017,7 +3017,7 @@ _PROPERTIES OF THE MACHINE-INSTRUCTION APPROACH_
 
 
 
-![[Pasted image 20250130210219.png]]
+<img src="/images/Pasted image 20250130210219.png" alt="image" width="500">
 **Message Format**
 ![[Pasted image 20250130210232.png|300]]
 **Queuing Discipline**
@@ -3390,7 +3390,7 @@ _DYNAMIC LINKER_
 ![[Pasted image 20250204010837.png|700]]
 
 
-**Paging![[Pasted image 20250204010945.png]]**
+**Paging<img src="/images/Pasted image 20250204010945.png" alt="image" width="500">**
 ![[Pasted image 20250204010856.png|600]]
 ![[Pasted image 20250204010914.png|600]]
 

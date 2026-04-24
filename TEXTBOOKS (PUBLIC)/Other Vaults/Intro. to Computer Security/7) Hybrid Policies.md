@@ -21,7 +21,7 @@ Definitions
 
 - COI(O) represent the COI class that contains object O
 
-![[Pasted image 20251104130134.png]]
+<img src="/images/Pasted image 20251104130134.png" alt="image" width="500">
 
 - Model distinguishes between sanitized data and unsanitized data
 
@@ -39,7 +39,7 @@ Bell-LaPadula Model
 - Cannot capture change over time
 
 
-![[Pasted image 20251104130527.png]]
+<img src="/images/Pasted image 20251104130527.png" alt="image" width="500">
 
 ## Clark-Wilson and Chinese Wall Models
 

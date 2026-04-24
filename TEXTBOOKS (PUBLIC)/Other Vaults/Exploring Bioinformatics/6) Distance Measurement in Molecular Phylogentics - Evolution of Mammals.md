@@ -22,7 +22,7 @@
 	- Fossil records
 	- Genetic sequence
 
-![[Pasted image 20251031130438.png]]
+<img src="/images/Pasted image 20251031130438.png" alt="image" width="500">
 
 - Natural selection
 	- Favourable alleles reduced others' contribution to the next generation
@@ -49,7 +49,7 @@ $r = K/2T$
 	- Radiometric dating
 	- Fossil record
 
-![[Pasted image 20251031131203.png]]
+<img src="/images/Pasted image 20251031131203.png" alt="image" width="500">
 
 **Jukes-Cantor Model**
 - Issues of substitutions is the "hidden" mutations
@@ -135,7 +135,7 @@ $GC_{s2}$ = fraction G+C in sequence 2
 - Whales and porpoises are more closely related to each other than to any of the other mammals
 - They are much more closely related to the camel than to the rodents or carnivores
 
-![[Pasted image 20251031133051.png]]
+<img src="/images/Pasted image 20251031133051.png" alt="image" width="500">
 
 - Phylogram
 	- Branch length is proportional to calculated evolutionary distance
@@ -160,7 +160,7 @@ $GC_{s2}$ = fraction G+C in sequence 2
 **Evolutionary Distance Algorithm Using the Jukes-Cantor Model**
 
 
-![[Pasted image 20251031133707.png]]
+<img src="/images/Pasted image 20251031133707.png" alt="image" width="500">
 
 ## Alignment and Evolutionary Distance
 
@@ -184,7 +184,7 @@ $GC_{s2}$ = fraction G+C in sequence 2
 		- Common ancestor
 	- Terminal nodes are modern species
 
-![[Pasted image 20251031134128.png]]
+<img src="/images/Pasted image 20251031134128.png" alt="image" width="500">
 
 - The two trees are rooted
 	- There is an oldest ancestor common to all species
@@ -226,7 +226,7 @@ $GC_{s2}$ = fraction G+C in sequence 2
 - Less critical regions of protein change faster, whereas introns, and regions between genes can change more rapidly
 
 
-![[Pasted image 20251031135224.png]]
+<img src="/images/Pasted image 20251031135224.png" alt="image" width="500">
 
 
 
@@ -243,4 +243,4 @@ $GC_{s2}$ = fraction G+C in sequence 2
 	- More likely to escape detected
 
 
-![[Pasted image 20251031135612.png]]
+<img src="/images/Pasted image 20251031135612.png" alt="image" width="500">

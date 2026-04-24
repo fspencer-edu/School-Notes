@@ -4,7 +4,7 @@
 	- Less than 30,000 genes
 - Annotation of the genome, the identification of genome elements and their functions is an ongoing effort
 
-![[Pasted image 20251103133246.png]]
+<img src="/images/Pasted image 20251103133246.png" alt="image" width="500">
 
 - A sequence-based methods of gene prediction are the most straight forward and reliable in prokaryotes
 - In eukaryotes, problems arise
@@ -15,7 +15,7 @@
 	- Very few unbroken ORF
 - Gene prediction is used to identify genes within a newly sequences genome, but is also valuable in identifying genes when a particular genome region has been associated with a disease or phenotype of interest
 
-![[Pasted image 20251103133546.png]]
+<img src="/images/Pasted image 20251103133546.png" alt="image" width="500">
 
 ## Bioinformatics Solutions: Content- and Probability-Based Gene Prediction
 
@@ -45,7 +45,7 @@
 - A exon-intron boundary would be expected to separate a region where the codon frequency closely matches the expected frequency for the organism from a region where the frequency matches poorly
 	- Intron-exon boundary would do the reverse
 
-![[Pasted image 20251103134304.png]]
+<img src="/images/Pasted image 20251103134304.png" alt="image" width="500">
 
 - Several codon usage measures are in common use
 	- Codon bias index (CBI)
@@ -58,9 +58,9 @@
 - Identification of CpG island adds valuable corroboration and can be used in combination with sequence-based methods and exon prediction techniques to help identify the first exon of a gene
 - Find CpG island with a frequency matching algorithm
 
-![[Pasted image 20251103134619.png]]
+<img src="/images/Pasted image 20251103134619.png" alt="image" width="500">
 
-![[Pasted image 20251103134627.png]]
+<img src="/images/Pasted image 20251103134627.png" alt="image" width="500">
 
 
 **HMMs for Gene Prediction**

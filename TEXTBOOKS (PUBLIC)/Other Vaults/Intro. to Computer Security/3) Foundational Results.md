@@ -23,7 +23,7 @@
 - A Turing machine T consists of a head and an infinite tape divided into cell numbered 1, 2, ..., from left to right
 - It is undecidable whether a given state of a given protection system is safe for a given generic right
 
-![[Pasted image 20251104102155.png]]
+<img src="/images/Pasted image 20251104102155.png" alt="image" width="500">
 
 **Computability Theory**
 - It is undecidable whether a given state of a protection system is safe for a given generic right

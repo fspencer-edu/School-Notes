@@ -56,12 +56,12 @@ _Probabilistic Algorithms_
 - Traversing the searched text, examining start and top codons
 - Parameters are values set when an algorithm starts that allow it to solve variations of problems
 
-![[Pasted image 20251103125356.png]]
+<img src="/images/Pasted image 20251103125356.png" alt="image" width="500">
 
 - ATG is not just a start codon, but is used every time the amino acid methionine occurs in a protein
 - ORF-like sequence would occur by change in non-coding DNA
 
-![[Pasted image 20251103125507.png]]
+<img src="/images/Pasted image 20251103125507.png" alt="image" width="500">
 
 - A simple ORF-finding algorithm will not be a very reliable method of gene prediction
 - Look for regulatory sequences
@@ -81,7 +81,7 @@ _Probabilistic Algorithms_
 - The ORF could occur in any of the six possible reading frames (three on each strand)
 - Gene prediction is more valuable if we can also annotate the genes with putative functions based on sequence comparison
 
-![[Pasted image 20251103130026.png]]
+<img src="/images/Pasted image 20251103130026.png" alt="image" width="500">
 
 
 ### Part 2: Sequence-Based ORF Identification Using NEBcutter
@@ -91,7 +91,7 @@ _Probabilistic Algorithms_
 - Identifies ORF and places then on a map of the DNA in relation to the restriction sites
 - Use the BLAST results to find a putative function for each ORF
 
-![[Pasted image 20251103130224.png]]
+<img src="/images/Pasted image 20251103130224.png" alt="image" width="500">
 
 ### Part 3: Shine-Dalgarno Prediction and Codon Usage Analysis with EasyGene
 
@@ -102,7 +102,7 @@ _Probabilistic Algorithms_
 - Content-based method
 	- Asks whether the codons used in the ORF match the typical codon usage for the organisms of interest
 
-![[Pasted image 20251103130540.png]]
+<img src="/images/Pasted image 20251103130540.png" alt="image" width="500">
 
 
 
@@ -116,7 +116,7 @@ _Probabilistic Algorithms_
 - Write code to implement to ORF finder algorithm
 - Limit scope to prokaryotic gene prediction
 
-![[Pasted image 20251103130735.png]]
+<img src="/images/Pasted image 20251103130735.png" alt="image" width="500">
 
 - Loop terminates as soon as a match is found
 - Calling the pattern-matching subroutine
@@ -135,7 +135,7 @@ _Probabilistic Algorithms_
 - Core promoter can be recognized by a consensus sequence TATA box
 - The transcriptional start site lies within an additional consensus sequence, the initiator sequence (Inr)
 
-![[Pasted image 20251103131209.png]]
+<img src="/images/Pasted image 20251103131209.png" alt="image" width="500">
 
 - ATG codons use as start site commonly occur within a sequence known as the Kozac sequence
 	- 5' gccRccATGG
@@ -175,7 +175,7 @@ _Probabilistic Algorithms_
 	- May contain multiple ORFs, each encoding a distinct protein
 - Identify unbroken ORFs by looking for start and stop codons
 
-![[Pasted image 20251103132614.png]]
+<img src="/images/Pasted image 20251103132614.png" alt="image" width="500">
 
 - DNA sequence that are important in gene expression in prokaryotes and eukaryotes
 	- Consensus sequences
@@ -183,6 +183,6 @@ _Probabilistic Algorithms_
 - Genes expressed at a high level tend to have closely matching promoters sequences, whereas weaker promoters are father from the consensus sequence
 - A graphical representation called a sequence logo gives a better idea of the relative occurrences of the four nucleotides at each position
 
-![[Pasted image 20251103132843.png]]
+<img src="/images/Pasted image 20251103132843.png" alt="image" width="500">
 
-![[Pasted image 20251103132906.png]]
+<img src="/images/Pasted image 20251103132906.png" alt="image" width="500">

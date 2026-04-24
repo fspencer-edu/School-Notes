@@ -45,7 +45,7 @@ $D_k = E^{-1}$
 
 - Enciphering functions belong to ciphertext
 
-![[Pasted image 20251104133232.png]]
+<img src="/images/Pasted image 20251104133232.png" alt="image" width="500">
 
 - Caesar has a key of 3
 - To decipher KHOOR use decipherment
@@ -89,7 +89,7 @@ LD
 
 - A substation cipher changes the characters in the plaintext
 
-![[Pasted image 20251104134000.png]]
+<img src="/images/Pasted image 20251104134000.png" alt="image" width="500">
 
 ```c
 KHOOR ZRUOG -> Hello World
@@ -99,7 +99,7 @@ KHOOR ZRUOG -> Hello World
 - The correlation should be a maximum when the key k translates the ciphertext into English
 - Using Konheim's model of single-character frequencies
 
-![[Pasted image 20251104134304.png]]
+<img src="/images/Pasted image 20251104134304.png" alt="image" width="500">
 
 
 Konheim Model
@@ -133,7 +133,7 @@ Substitution Cipher
 - Polyalphabetic
 - Multiple Caesar shifts
 
-![[Pasted image 20251104134631.png]]
+<img src="/images/Pasted image 20251104134631.png" alt="image" width="500">
 
 
 - Encrypts text by shifting each letter of plaintext by an amount by a key or phrase
@@ -157,33 +157,33 @@ $C = (P + K) mod 26$
 $P = (C + K) mod 26$
 
 
-![[Pasted image 20251104135124.png]]
+<img src="/images/Pasted image 20251104135124.png" alt="image" width="500">
 
 - The index of coincidence measures the difference in the frequencies of the letters in the ciphertext
 - Probability that two randomly chosen letters from ciphertext will be the same
 
-![[Pasted image 20251104135210.png]]
+<img src="/images/Pasted image 20251104135210.png" alt="image" width="500">
 
 - Lower the index of coincidence, the less variation
 - Considered unbreakable
 - Prussian cavalry noticed repetitions to identify key
 
-![[Pasted image 20251104135313.png]]
+<img src="/images/Pasted image 20251104135313.png" alt="image" width="500">
 
-![[Pasted image 20251104135325.png]]
+<img src="/images/Pasted image 20251104135325.png" alt="image" width="500">
 
 - OPK appears twice
 - Ciphertext repetitions are 9 characters apart
 
-![[Pasted image 20251104135413.png]]
+<img src="/images/Pasted image 20251104135413.png" alt="image" width="500">
 
 - GCD of 30 and 72 is 6
 - Compute the IC for each alphabet
 
-![[Pasted image 20251104135522.png]]
+<img src="/images/Pasted image 20251104135522.png" alt="image" width="500">
 
 
-![[Pasted image 20251104135505.png]]
+<img src="/images/Pasted image 20251104135505.png" alt="image" width="500">
 
 _Example: Decryption of Vigenere_
 
@@ -232,24 +232,24 @@ X => T: $P = (25 - 4) mod 26 = 0$
 	- 64 - 16 = 48
 - Right half produce 32 bits, then xor'ed into the left
 
-![[Pasted image 20251104140535.png]]
+<img src="/images/Pasted image 20251104140535.png" alt="image" width="500">
 
-![[Pasted image 20251104140551.png]]
+<img src="/images/Pasted image 20251104140551.png" alt="image" width="500">
 
 
 - Each set of 8 bits are put through substitution table (s-box)
 	- Catenated into 32-bit quantity
 - Complementary property
 
-![[Pasted image 20251104140708.png]]
+<img src="/images/Pasted image 20251104140708.png" alt="image" width="500">
 
 
-![[Pasted image 20251104140726.png]]
+<img src="/images/Pasted image 20251104140726.png" alt="image" width="500">
 
 
 - Biham and Shamir applied a technique called differential cryptanalysis to the DES
 
-![[Pasted image 20251104140834.png]]
+<img src="/images/Pasted image 20251104140834.png" alt="image" width="500">
 
 
 DES Process
@@ -399,7 +399,7 @@ SHA Checksum (Secure Hash Algorithm)
 - HMAC is a generic term for an algorithm that uses keyless hash functions and cryptographic key to produce keyed hash functions
 - Many countries restrict the import and export of software that implements cryptographic algorithms with keyed hash functions
 
-![[Pasted image 20251104143955.png]]
+<img src="/images/Pasted image 20251104143955.png" alt="image" width="500">
 
 
 

@@ -14,7 +14,7 @@
 	- Double-ended lipids
 - Prokaryotes could represent the modern remnants of the ancestors of all living things
 
-![[Pasted image 20251031140416.png]]
+<img src="/images/Pasted image 20251031140416.png" alt="image" width="500">
 
 
 - Archaea represent the oldest evolutionary line
@@ -33,7 +33,7 @@
 - Phylogeneticists call "tree space" intractably complex unless dataset is small
 
 
-![[Pasted image 20251031140809.png]]
+<img src="/images/Pasted image 20251031140809.png" alt="image" width="500">
 
 - All tree-building method depend on a multiple sequence alignment of the genes
 - A multiple alignment editor such as Jalview or BioEdit can be used to make adjustments
@@ -61,7 +61,7 @@ Character-Based Methods
 - Hierarchical clustering is use to related similar objects in largest clusters and larger ones
 - Agglomerative clustering begins with individual objects and then merges the cluster into a single large group
 
-![[Pasted image 20251031141326.png]]
+<img src="/images/Pasted image 20251031141326.png" alt="image" width="500">
 
 - To find distance between individual sequences
 	- Clustering requires linkage method, which determines how the distance metric is applied when two groups are compared
@@ -87,9 +87,9 @@ Centroid Linkage
 - Uses the distance between the centres of the clusters
 
 
-![[Pasted image 20251031141727.png]]
+<img src="/images/Pasted image 20251031141727.png" alt="image" width="500">
 
-![[Pasted image 20251031141759.png]]
+<img src="/images/Pasted image 20251031141759.png" alt="image" width="500">
 
 
 **Agglomerative Clustering Algorithm**
@@ -113,10 +113,10 @@ UPGMA (Unweighted Pair-Group Method with Arithmetic Mean)
 - Assumes constant rate of evolution
 
 
-![[Pasted image 20251031142301.png]]
+<img src="/images/Pasted image 20251031142301.png" alt="image" width="500">
 
 
-![[Pasted image 20251031142327.png]]
+<img src="/images/Pasted image 20251031142327.png" alt="image" width="500">
 
 ## Chapter Project: Placing the Archaea in the Tree of Life
 
@@ -168,12 +168,12 @@ emboss.bioinformatics.nl
 - Hierarchical clustering determined distances between clusters using a linkage method
 - A distance matrix was used to represent cluster distances
 
-![[Pasted image 20251102183320.png]]
+<img src="/images/Pasted image 20251102183320.png" alt="image" width="500">
 
 - This structure would not change during the program
 - Copy of the structure is made to represent merging clusters
 
-![[Pasted image 20251102183409.png]]
+<img src="/images/Pasted image 20251102183409.png" alt="image" width="500">
 
 - Reduce the size of the nested hash structure
 - Left with two keys that represent the final two clusters to merge
@@ -183,7 +183,7 @@ emboss.bioinformatics.nl
 
 - Cluster a set of data items from a set of sequence distances in a phylip formatted file
 
-![[Pasted image 20251102183548.png]]
+<img src="/images/Pasted image 20251102183548.png" alt="image" width="500">
 
 ### The Neighbour Joining Method
 
@@ -200,25 +200,25 @@ emboss.bioinformatics.nl
 - Each iteration of the clustering algorithm begins by calculating an r value for each cluster, representing the corrected net distance between it an all other clusters
 - Average distance between a given cluster, x, and each other cluster (i), with n total clusters
 
-![[Pasted image 20251102184510.png]]
+<img src="/images/Pasted image 20251102184510.png" alt="image" width="500">
 
 $d_ix$ = the distance between cluster x and i from previous iteration
 
 
 - r values are used to compute transition distances (td)
 
-![[Pasted image 20251102184608.png]]
+<img src="/images/Pasted image 20251102184608.png" alt="image" width="500">
 
 - The cluster pair that has the smallest transition distance is merges
 - New distances are calculated after the formed cluster (K)
 
-![[Pasted image 20251102184647.png]]
+<img src="/images/Pasted image 20251102184647.png" alt="image" width="500">
 
 - Process repeats fro all clusters
 - Branch lengths within the tree must be calculated
 - Distance from cluster i to k must be calculated as two branch lengths, from each of the clusters to their shared ancestor K
 
-![[Pasted image 20251102184807.png]]
+<img src="/images/Pasted image 20251102184807.png" alt="image" width="500">
 
 Find transformed values, $r_x = \sum d_{ix}/(n-3)$
 
@@ -232,7 +232,7 @@ $r_E = 10$
 - Lowest value in the transition matrix is in the cell represented by clusters A and B
 - New distance matrix is formed with AB
 
-![[Pasted image 20251102185017.png]]
+<img src="/images/Pasted image 20251102185017.png" alt="image" width="500">
 
 **Find Transition Matrix**
 
@@ -253,14 +253,14 @@ $d_{(AB), C} = (d_{AC} + d_{BC} - d_{AB}) /2 = (11 + 10 - 5)/2 = 8$
 - Merge implies two species have a common ancestor (AB)
 - To find the branch length apply
 
-![[Pasted image 20251102185058.png]]
+<img src="/images/Pasted image 20251102185058.png" alt="image" width="500">
 
 **Calculate Branch Lengths**
 
 $d_{A(AB)} = (5 + 13 - 12)/2 = 3$
 $d_{B(AB)} = (5 + 12 - 13)/2 = 2$
 
-![[Pasted image 20251102185134.png]]
+<img src="/images/Pasted image 20251102185134.png" alt="image" width="500">
 
 - Next iteration begins by re-calculating transformed r values
 
@@ -272,7 +272,7 @@ E = 8.5
 - Arbitrarily choose to merch AB with C or cluster D with E
 - New distance matrix is population with previous iteration distances, except for newly created cluster
 
-![[Pasted image 20251102185320.png]]
+<img src="/images/Pasted image 20251102185320.png" alt="image" width="500">
 
 - Now merge any of the remaining clusters
 - Choose to merge ABC and D
@@ -281,13 +281,13 @@ E = 8.5
 - UPGMA produced rooted trees
 - Trees match the original distances, demonstrating the additivity property of NJ method
 
-![[Pasted image 20251102185627.png]]
+<img src="/images/Pasted image 20251102185627.png" alt="image" width="500">
 
 **Programming the Solution**
 - The NJ method recalculated distances at each iteration from the previous cluster distances
 - Run NJ as linkage method
 
-![[Pasted image 20251102185759.png]]
+<img src="/images/Pasted image 20251102185759.png" alt="image" width="500">
 
 - ((C:1,B:0):0.5,(A:0.5,(D:0.5, E:0.5):1));, after merging D with E, DE with A, and C with B
 

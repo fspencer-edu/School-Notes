@@ -31,12 +31,12 @@ $d$ -> private key
 
 - Classical protocols rely on a trusted third party with a shared secret key
 
-![[Pasted image 20251105115711.png]]
+<img src="/images/Pasted image 20251105115711.png" alt="image" width="500">
 
 **Needham-Schroeder Protocol**
 
-![[Pasted image 20251105115804.png]]
-![[Pasted image 20251105115815.png]]
+<img src="/images/Pasted image 20251105115804.png" alt="image" width="500">
+<img src="/images/Pasted image 20251105115815.png" alt="image" width="500">
 
 - The two random numbers are generated, and cannot repeat between different protocol exchanges
 	- Nonces
@@ -44,14 +44,14 @@ $d$ -> private key
 
 
 **Otway-Rees Protocol**
-![[Pasted image 20251105115953.png]]
+<img src="/images/Pasted image 20251105115953.png" alt="image" width="500">
 
 - Uses timestamps
 ## Kerberos
 
 - Kerberos uses the Needham-Schroeder protocol. as modified by Denning and Saccor
 
-![[Pasted image 20251105120050.png]]
+<img src="/images/Pasted image 20251105120050.png" alt="image" width="500">
 
 - The ticket is the issuer's voucher for the identity of the requester of the service
 - The authenticator contains the identity of the sender of the ticket and is used

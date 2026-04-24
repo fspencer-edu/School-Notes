@@ -80,7 +80,7 @@ c -> 10111
 	- Host forwards message to nearest host
 
 
-![[Pasted image 20251105123920.png]]
+<img src="/images/Pasted image 20251105123920.png" alt="image" width="500">
 
 - Difference between end-to-end protocol and a link protocol is that the intermediate hosts play no part in an end-to-end protocol other than forwarding messages
 - Link protocol describes how each pair of intermediate hosts processes each message
@@ -104,7 +104,7 @@ c -> 10111
 - UA (user agent) hands message to the MTA (message transport, transfer agent)
 - MTA transfers the message to destination or another MTA
 
-![[Pasted image 20251105124547.png]]
+<img src="/images/Pasted image 20251105124547.png" alt="image" width="500">
 
 Privacy-Enhanced Electronic Mail (PEM)
 1. Confidentiality
@@ -159,7 +159,7 @@ Design goals of PEM
 		- IP is protected
 		- Either or both endpoints do not support IPsec
 
-![[Pasted image 20251105125433.png]]
+<img src="/images/Pasted image 20251105125433.png" alt="image" width="500">
 
 - Two protocols provides message security
 - Authentication header (AH) protocols provides message integrity and origin authentication
@@ -199,7 +199,7 @@ SPD has two entries for destinations
 	- ESP should precede AH
 - If AH precedes, then it protects the IP packets, but ESP would not protect IP headers
 
-![[Pasted image 20251105130330.png]]
+<img src="/images/Pasted image 20251105130330.png" alt="image" width="500">
 
 - The SA directs the packet to the encapsulated and forwarded to firewall
 - The innermost IP packet is forwarded to the equity and processed

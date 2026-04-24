@@ -15,11 +15,11 @@
 	 - Predicting protein structure and functions
 
 
-![[Pasted image 20251030230312.png]]
+<img src="/images/Pasted image 20251030230312.png" alt="image" width="500">
 
 
 
-![[Pasted image 20251030230330.png]]
+<img src="/images/Pasted image 20251030230330.png" alt="image" width="500">
 
 
 - "Strains of dog": groups of species that have distinct, inheritable genetic characteristics
@@ -43,7 +43,7 @@
 - Uses pairwise alignment algorithm
 	- Compares only one sequence to another at a time
 
-![[Pasted image 20251030230856.png]]
+<img src="/images/Pasted image 20251030230856.png" alt="image" width="500">
 
 - Hyphens -> gaps
 	- Insertions/deletions
@@ -77,7 +77,7 @@ CACGTAT
 - M => length of second sequence + 1
 - Start with a zero in the first cell and add a gap penalty of (-1) to each successive cell
 
-![[Pasted image 20251030231746.png]]
+<img src="/images/Pasted image 20251030231746.png" alt="image" width="500">
 
 1) If match, then score = 1, mismatch = 0
 2) Add match to score horizontal, diagonal, and horizontal cell
@@ -111,7 +111,7 @@ CACGTAT
 	- Imposes a larger penalty when a new gap is added
 	- Smaller when the gap is extended
 
-![[Pasted image 20251031083301.png]]
+<img src="/images/Pasted image 20251031083301.png" alt="image" width="500">
 
 - $H_1$ HA gene is thought to be the source of the HA genes found in all modern human and swine $H_1$ viruses
 
@@ -164,7 +164,7 @@ TAA AGC AAT TTG GTT TTT TTC CGA
 - HA and NA involved in releasing the viral progeny from host
 
 
-![[Pasted image 20251031084817.png]]
+<img src="/images/Pasted image 20251031084817.png" alt="image" width="500">
 
 
 
@@ -178,8 +178,8 @@ TAA AGC AAT TTG GTT TTT TTC CGA
 - A mutation in viral polymerase allows higher activity at lower temperatures in human respiratory tract
 - 
 
-![[Pasted image 20251031085115.png]]
+<img src="/images/Pasted image 20251031085115.png" alt="image" width="500">
 
-![[Pasted image 20251031085134.png]]
+<img src="/images/Pasted image 20251031085134.png" alt="image" width="500">
 
-![[Pasted image 20251031085144.png]]
+<img src="/images/Pasted image 20251031085144.png" alt="image" width="500">

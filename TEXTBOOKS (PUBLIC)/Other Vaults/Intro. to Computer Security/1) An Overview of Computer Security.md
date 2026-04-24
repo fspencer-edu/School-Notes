@@ -222,5 +222,5 @@ Assumptions
 
 - Human issues pervade each stage of the cycle
 
-![[Pasted image 20251104094500.png]]
+<img src="/images/Pasted image 20251104094500.png" alt="image" width="500">
 
