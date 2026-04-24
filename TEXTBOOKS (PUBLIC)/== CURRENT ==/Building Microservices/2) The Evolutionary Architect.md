@@ -73,15 +73,43 @@
 ## Exemplars
 
 - Written documentation
+- Code exemplars that are implemented
+
 ## Tailored Service Template
 
+- JVM based microcontainers
+	- Dropwizard
+	- Karyon
+- Circuit breaker library
+	- Hystrix
+- Metrics for response times and error rate
+	- Metrics
+
+- Sidecar services
+	- Communicate locally with a JVM that is using the appropriate libraries
 
 # Technical Debt
 
+- Accrue technical debt, and is something that is payed down
+
 # Exception Handling
 
-# Governance and Leading from teh Centre
+
+# Governance and Leading from the Centre
+
+- Control Objectives for Information and Related Technology (COBIT)
+	- Governance ensures that enterprise objectives are achieved by evaluating stakeholder needs, conditions, and options
+	- Monitoring performance, compliance, and progress against agreed-on direction and objectives
 
 # Building a Team
 
+- With microservices, there are multiple autonomous codebases that will have their own independent lifecycles
+
 # Summary
+
+- Vision
+- Empathy
+- Collaboration
+- Adaptability
+- Autonomy
+- Governance
