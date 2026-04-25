@@ -46,19 +46,34 @@
 ![[Pasted image 20260424135104.png]]
 
 - Stock item becomes a shared module between the two contexts
-- 
 
 ## Modules and Services
+
+- Modular boundaries become excellent candidates for microservices
+
 ## Premature Decomposition
  
-
+- Prematurely decomposing a system into microservices can be costly
 
 # Business Capabilities
 
+- Contexts have the capability to become key operations that will be exposed over the wire to other collaborators
+
 # Turtles All the Way Down
+
+- Think of coarser-grained contexts, then subdivide along nested contexts
+- Microservices
+	- Hidden inside another boundary
+	- Popped up into top-level contexts
 
 # Communication in Terms of Business Concepts
 
+- Terms and ideas that are shared between parts of the organization should be reflected in the interfaces
+- Forms being sent between microservices, are forms that are sent around an orgnaization
+
 # Techniques Boundary
+
+- Onion architecture
+	- RPC-batching mechanisms
 
 # Summary
