@@ -172,9 +172,68 @@ public interface CustomerRemote extends Remote {
 - The server create different representations of a `Customer` on request
 - A resource is completely decoupled from how it is stored internally
 	- JSON representation
-- Different 
+- Different styles of REST
+- Most commonly used over HTTP
+	- Serial or USB
+
+## REST and HTTP
+
+- HTTP verbs
+	- GET
+	- POST
+	- PUT
+- Conceptually there is one endpoint in the form of a `Customer` response, and operations are carried out into the HTTP protocol
+- HTTP also brings a large ecosystem of supporting tools and technologies
+- HTTP caching proxies, load balancers, monitoring tools
+- Security controls
+	- Auth
+	- Client certs
+- HTTP can be used to implement RPC
+	- SOAP gets routed over HTTP, with little specification
+
+## Hypermedia as the Engine of Application State
+
+- Hypermedia as the engine of application state (HATEOAS)
+- Hypermedia
+	- A concept whereby a piece of content contains links to various other pieces of content in a variety of formats
+	- Clients should perform interactions (leading to state transitions) with the server via these links to other resources
+
+- Hypermedia controls used on an album listing
+
+```xml
+<album>
+  <name>Give Blood</name>
+  <link rel="/artist" href="/artist/theBrakes" /> 1
+  <description>
+    Awesome, short, brutish, funny and loud. Must buy!
+  </description>
+  <link rel="/instantpurchase" href="/instantPurchase/1234" /> 2
+</album>
+```
+- 2 hypermedia controls
+	- `artist`
+	- `instantpurchase`
+- Controls to decouple the client and server yields significant benefits over time that greatly offset the small increase in the time it takes to get these protocols to run
+- Navigation of controls can be complex
+- Use links to allow consumers to navigate API endpoints
+	- Reduced coupling
+
+## JSON, XML, or Something Else?
+
+- 
+
+
+## Beware Too Much Convenience
+
+## Downsides to REST over HTTP
+
+
 
 # Implementing Asynchronous Event-Based Calibration
+
+## Technology Choices
+
+## Complexities of Asynchronous Architectures
 
 # Services as State Machines
 
@@ -183,11 +242,52 @@ public interface CustomerRemote extends Remote {
 # DRY and the Peril of Code Reuse in a Microservice World
 
 # Access by Reference
+## Client Libraries
+
 
 # Versioning
 
+## Defer It for a Long as Possible
+
+## Catch Breaking Changes Early
+
+## Use Semantic Versioning
+
+## Coexist Different Endpoints
+
+## Use Multiple Concurrent Service Versions
+
+
+
 # User Interfaces
 
+## Toward Digital
+
+## Constraints
+
+## API Composition
+
+## UI Fragment Composition
+
+## Backends for Frontends
+
+## A Hybrid Approach
+
+
 # Integrating with Third-Party Software
+
+## Lack of Control
+
+## Customization
+
+## Integration Spagetti
+
+## On Your Own Terms
+
+### Example: CMS as a Service
+
+### Example: The multirole CRM System
+
+## The Strangler Pattern
 
 # Summary
