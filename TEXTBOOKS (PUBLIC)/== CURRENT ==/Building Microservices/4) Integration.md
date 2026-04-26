@@ -279,37 +279,174 @@ public interface CustomerRemote extends Remote {
 
 - Reactive extensions also called Rx
 - A mechanism to compose the results of multiple calls together and run operations on them
+- Blocking or non-blocking calls
+- Observe the outcome of an operation and react when something changes
+- RxJava
+	- `map`
+	- `filter`
+- Compose multiple calls together, making handling concurrent calls to downstream services mush easier
 
 # DRY and the Peril of Code Reuse in a Microservice World
 
-# Access by Reference
+- DRY
+	- Don't repeat yourself
+- Pull duplicated code into abstractions that we can then calls from multiple places
+- Shared logging libraries
+
 ## Client Libraries
 
+- People that create both the server API and the client API
+	- Danger that logic that should exist on server starts leaking into the client
+- AWS
+	- SOAP or Rest web service calls can be made directly, but everyone ends up using just one of the various SDKs
+	- Client is in charge of when the upgrade happens
+- Netflix client libraries
+	- Service discovery
+	- Failure modes
+	- Logging
+	- Other libraries not ties to the service
+- Separate client code to handle the underlying transport protocol, from destination services
+
+# Access by Reference
+
+- Microservice will encompass the lifecycle of our core domain entities
+- If a memory of a resource is passed make sure the reference of the original resource is also passed
+- Accessing by reference can cause load on the customer service too be too great
+	- Cache to reduce load
+- Some services might not need to known about an entire resource
 
 # Versioning
 
 ## Defer It for a Long as Possible
 
+- Integration technology
+
+_Sample Response from the customer service_
+```xml
+<customer>
+  <firstname>Sam</firstname>
+  <lastname>Newman</lastname>
+  <email>sam@magpiebrain.com</email>
+  <telephoneNumber>555-1234-5678</telephoneNumber>
+</customer>
+```
+
+- Use XPath to pull out specific fields
+- Tolerant reader
+
+_A restructured Customer resource_
+```xml
+<customer>
+  <naming>
+    <firstname>Sam</firstname>
+    <lastname>Newman</lastname>
+    <nickname>Magpiebrain</nickname>
+    <fullname>Sam "Magpiebrain" Newman</fullname>
+  </naming>
+  <email>sam@magpiebrain.com</email>
+</customer>
+```
+
+- Postel's Law
+	- Robustness principle
+	- Be conservative in what you do, be liberal in what you accept from others
+
 ## Catch Breaking Changes Early
+
+- Consumer-driven contracts
+- Tests
 
 ## Use Semantic Versioning
 
+- A specification that allows versioning matching and easier integration
+- Each version number is in the form `MAJOR.MINOR.PATCH`
+- `MAJOR` increments, means it is backward incompatible
+- `MINOR` increments, new functionality has been added that should be backward compatible
+- `PATCH` state that bug fixes have been made to existing functionality
+
 ## Coexist Different Endpoints
+
+- Maintain the ability to release microservice independently of each other
+- Avoid forcing customers to upgrade in lock-step
+- Coexist both the old and new interfaces in the same running service
+- Deploy a new version of the service that exposes both the old and new versions of the endpoint
+- When consumers are no longer using the old endpoint, remove it along with any associated code
+
+![[Pasted image 20260426130225.png]]
+
+- Expand and contract pattern
+	- Phase breaking change in
+- HTTP or URI version numbers in request headers
+```python
+/v1/customer/
+/v2/customer/
+```
+
+- RPC
+	- Protocol buffers with methods in different namespaces
+
+```python
+v1.createCustomer
+v2.createCustomer
+```
 
 ## Use Multiple Concurrent Service Versions
 
+- Route older consumers to older versions, and newer users to the newer versions
+- Cost of changing older consumers it too high
+	- Legacy devices
+- Use of more `nginx` scripts
+- Manage persistent state
+- Customers created by either version of the service need to be stored and made visible to all services
 
+![[Pasted image 20260426130653.png]]
+
+- Coexisting concurrent service versions
+	- Blue/green deployment
+	- Canary releases
+- The longer it takes for you to get consumers upgraded to the newer version and released, the more you should look to coexist different endpoints in the same microservice rather than coexist entirely different versions
 
 # User Interfaces
 
 ## Toward Digital
 
+- Organizations have started to move away from thinking that web or mobile should be treated differently
+- Granular APIs
+- Compositional layers
+	- Places where we eave together various strands of the capabilities we offer
+
 ## Constraints
+
+- Web applications
+	- Browser version
+	- Resolution
+- Mobile
+	- Server communication
+	- Bandwidth
+	- Battery
+	- Touch gestures
+	- SMS service
 
 ## API Composition
 
+- Web
+	- JS HTTP requests
+- API gateway
+	- Expose calls that aggregate multiple underlying calls
+
+![[Pasted image 20260426131230.png]]
+
 ## UI Fragment Composition
 
+- Map everything back to UI controls
+- Pull these fragments in to create a UI
+- Assemble a series of coarser grained parts of UI
+	- Assemble entire planes of thick client application, or a set of pages for a website
+- Fragments are served up from server-side apps that are in turn making the appropriate API calls
+
+![[Pasted image 20260426131436.png]]
+
+- 
 ## Backends for Frontends
 
 ## A Hybrid Approach
