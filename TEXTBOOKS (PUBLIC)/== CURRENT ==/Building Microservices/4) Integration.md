@@ -220,24 +220,65 @@ public interface CustomerRemote extends Remote {
 
 ## JSON, XML, or Something Else?
 
-- 
+- JSON
+- XML
+- Hypertext Application Language (HAL)
 
+- Navigation
+	- Xpath
+	- Jsonpath
 
 ## Beware Too Much Convenience
 
 ## Downsides to REST over HTTP
 
-
+- REST
+	- Cannot easily generate a client stub a protocol like in RPC
+- Some web server frameworks do not support all the HTTP verbs
+- REST over HTTP payloads can be more compact than SOAP because is supports alternative formats like jsON or binary
+	- Some overhead
+	- Not great for large volumes of traffic
+	- Low latency communications
+- Server-to-server communications
+	- UDP
+	- RPC frameworks
+- RPC implementations may require advanced serialization and deserialization mechanisms
 
 # Implementing Asynchronous Event-Based Calibration
 
 ## Technology Choices
 
+1) Microservices to emit events
+2) Consumers to find out those events have happened
+
+- Message brokers
+	- RabbitMQ
+	- Handle both problems
+	- Producers use an API to publish an event to the broker
+	- Broker handles subscriptions, allowing consumers to be informed of events
+	- Complex development process
+- Middleware
+	- Queues
+- ATOM
+	- REST-compliant specification that defined semantics for publishing feed of resources
+	- HTTP is not good at low latency
+
 ## Complexities of Asynchronous Architectures
+
+- Ensure good monitoring
+- Correlation Ids
+	- Trace requests across process boundaries
+- Completing consumer pattern
+- Bad messages to message dead letter queue
 
 # Services as State Machines
 
+- Customer service controls all lifecycle events associated with the customer itself
+
 # Reactive Extensions
+
+- Reactive extensions also called Rx
+- A mechanism to compose the results of multiple calls together and run operations on them
 
 # DRY and the Peril of Code Reuse in a Microservice World
 
