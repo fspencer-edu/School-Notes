@@ -36,7 +36,7 @@
 - Database integration
 	- If other services want information form a service, they reach into the database
 
-![[Pasted image 20260424225659.png]]
+<img src="/images/Pasted image 20260424225659.png" alt="image" width="500">
 
 - Issues
 	- External parties are able to view and bind to internal implementation details
@@ -76,14 +76,14 @@
 	- Postal system sends out a welcome pack
 	- Send a welcome email to the customer
 
-![[Pasted image 20260424230449.png]]
+<img src="/images/Pasted image 20260424230449.png" alt="image" width="500">
 
 **Orchestration**
 - Rely on a central brain to guide and drive the process
 - Customer service can become too much of a central governing authority
 - Becomes a central point where logic starts to live
 
-![[Pasted image 20260424230705.png]]
+<img src="/images/Pasted image 20260424230705.png" alt="image" width="500">
 
 **Choreography**
 - Inform each pair of the system of its jobs
@@ -93,7 +93,7 @@
 - Additional work is needed to monitor and track the processes
 - Build a monitoring system the matches the view of the business process, then tracks what each of the services does as independent entities
 
-![[Pasted image 20260424230801.png]]
+<img src="/images/Pasted image 20260424230801.png" alt="image" width="500">
 
 - Systems that tend more toward the choreographed approach are more loosely coupled, and flexible to change
 - Each service should be smart enough to understand its role in the entire system
@@ -372,7 +372,7 @@ _A restructured Customer resource_
 - Deploy a new version of the service that exposes both the old and new versions of the endpoint
 - When consumers are no longer using the old endpoint, remove it along with any associated code
 
-![[Pasted image 20260426130225.png]]
+<img src="/images/Pasted image 20260426130225.png" alt="image" width="500">
 
 - Expand and contract pattern
 	- Phase breaking change in
@@ -399,7 +399,7 @@ v2.createCustomer
 - Manage persistent state
 - Customers created by either version of the service need to be stored and made visible to all services
 
-![[Pasted image 20260426130653.png]]
+<img src="/images/Pasted image 20260426130653.png" alt="image" width="500">
 
 - Coexisting concurrent service versions
 	- Blue/green deployment
@@ -434,7 +434,7 @@ v2.createCustomer
 - API gateway
 	- Expose calls that aggregate multiple underlying calls
 
-![[Pasted image 20260426131230.png]]
+<img src="/images/Pasted image 20260426131230.png" alt="image" width="500">
 
 ## UI Fragment Composition
 
@@ -444,28 +444,94 @@ v2.createCustomer
 	- Assemble entire planes of thick client application, or a set of pages for a website
 - Fragments are served up from server-side apps that are in turn making the appropriate API calls
 
-![[Pasted image 20260426131436.png]]
+<img src="/images/Pasted image 20260426131436.png" alt="image" width="500">
 
-- 
+- Need assembly layer to pull parts together
+- Server-side templating or URI routing
+- Ensuring consistency
+- Native applications (mobile)
+	- Hybrid approach
+	- Frontend application makes API calls and handles the UI itself
+- Services that cannot fit neatly into a widget or a page
+	- Cross-cutting a form of interactions
+	- Reduces decoupling
+
 ## Backends for Frontends
+
+- Server-side aggregation endpoint, or API gateway
+- Marshal multiple backend calls
+- Vary and aggregate content for different devices
+- Serve pages
+- Challenging when server-side endpoints become too thick
+
+<img src="/images/Pasted image 20260426131859.png" alt="image" width="500">
+
+- Loss isolation of various interfaces
+
+<img src="/images/Pasted image 20260426132004.png" alt="image" width="500">
+
+- Backends for frontends (BFFs)
+	- Allows team focusing on any given UI to also handle its own server-side components
+- API authentication and authorization layer, sits between BFFs and UIs
+- Aggregating layer
+	- Can take on logic that is should not
+- Business logic for backend should stay in the service themselves
+
 
 ## A Hybrid Approach
 
+- Logic associated with a specific service should live inside those services that handle those operations
 
 # Integrating with Third-Party Software
 
+- Commercial off-the-self software (COTS)
+- Software as a service (SaaS)
+- Most organizations tend to buy content management systems (CMSes)
+
 ## Lack of Control
+
+- COTS controls
+	- Integration
+	- Programming languages
+	- Configuration
+	- Version control
 
 ## Customization
 
 ## Integration Spagetti
 
+- Standardize on a small number of types of integration
+
 ## On Your Own Terms
+
+- Limit the number of different consumers of the customer tools
 
 ### Example: CMS as a Service
 
+- CMS is one of the most commonly use product that needs to be customized or integrated with
+- Dynamic content
+- Most CMSes also provide APIs to allow for content creation
+- Use a facade to abstract out the APIs for retrieving content
+
+<img src="/images/Pasted image 20260426132827.png" alt="image" width="500">
+
+
 ### Example: The multirole CRM System
 
+- Customer Relationship Management (CRM)
+	- Tool is an often-encountered
+	- Software systems that manage, analyze, and automate interactions between a business and its customers
+
+<img src="/images/Pasted image 20260426133111.png" alt="image" width="500">
+
+- After creating more facades on top of the CRM
+- Migration away from CRM, to an internal software solution or a microservices approach
+
 ## The Strangler Pattern
+
+- Strangler Application Patthen
+	- Capture and intercept calls to the old system
+	- Decide if you route these called to existing, legacy code, or direct them to new code
+- Replace functionality over time without requiring a large rewrite
 
 # Summary

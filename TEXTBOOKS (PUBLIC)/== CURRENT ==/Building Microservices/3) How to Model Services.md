@@ -43,7 +43,7 @@
  - Both have an explicit interface to the outside world
  - Details that only they need to know
 
-![[Pasted image 20260424135104.png]]
+<img src="/images/Pasted image 20260424135104.png" alt="image" width="500">
 
 - Stock item becomes a shared module between the two contexts
 

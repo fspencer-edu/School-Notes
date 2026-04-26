@@ -38,7 +38,7 @@
 
 ## A Real-World Example
 
-![[Pasted image 20260424132622.png]]
+<img src="/images/Pasted image 20260424132622.png" alt="image" width="500">
 
 # The Required Standard
 
