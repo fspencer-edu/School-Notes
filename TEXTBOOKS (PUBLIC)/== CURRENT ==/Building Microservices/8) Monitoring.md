@@ -12,9 +12,15 @@
 
 # Synthetic Monitoring
 
+## Implementing Semantic Monitoring
+
+
 # Correlation IDs
 
+
 # The Cascade
+
+
 
 # Standardization
 
