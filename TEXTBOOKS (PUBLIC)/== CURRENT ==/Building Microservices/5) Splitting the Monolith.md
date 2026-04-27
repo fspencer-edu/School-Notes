@@ -55,7 +55,7 @@
 - Repository layer
 	- Backed by a framework like Hibernate, to bind code to the database, making it easy to map objects or data structures to and form the database
 
-![[Pasted image 20260427001656.png]]
+<img src="/images/Pasted image 20260427001656.png" alt="image" width="500">
 
 - Hibernate
 	- Mapping file per bounded context
@@ -64,13 +64,13 @@
 
 # Example: Breaking Foreign Key Relationships
 
-![[Pasted image 20260427001844.png]]
+<img src="/images/Pasted image 20260427001844.png" alt="image" width="500">
 
 - Stop the finance code from reaching into the line item table, from the catalog code
 - Remove database integration
 - Expose the data via an API call in the catalog package that the finance code can call
 
-![[Pasted image 20260427001944.png]]
+<img src="/images/Pasted image 20260427001944.png" alt="image" width="500">
 
 - 2 database calls to generate the report
 - Removal of foreign key relationships
@@ -79,7 +79,7 @@
 
 # Example: Shared Static Data
 
-![[Pasted image 20260427002126.png]]
+<img src="/images/Pasted image 20260427002126.png" alt="image" width="500">
 
 - Duplicate table for each of our packages, with the long-term view that it will be duplicated within each service
 	- Potential consistency challenge
@@ -91,19 +91,19 @@
 
 - Shared mutable data
 
-![[Pasted image 20260427002348.png]]
+<img src="/images/Pasted image 20260427002348.png" alt="image" width="500">
 
 - Add the customer concrete to the current abstract concept
 - Create a new package called `Customer`
 - Use an API to expose `Customer` to other packages
 
-![[Pasted image 20260427002503.png]]
+<img src="/images/Pasted image 20260427002503.png" alt="image" width="500">
 
 # Example: Shared Tables
 
-![[Pasted image 20260427002532.png]]
+<img src="/images/Pasted image 20260427002532.png" alt="image" width="500">
 
-![[Pasted image 20260427002543.png]]
+<img src="/images/Pasted image 20260427002543.png" alt="image" width="500">
 
 - Split the table into two
 
@@ -113,7 +113,7 @@
 
 - Split out the schema, but keep the service together before splitting the application code into separate microservices
 
-![[Pasted image 20260427003650.png]]
+<img src="/images/Pasted image 20260427003650.png" alt="image" width="500">
 
 - A separate schema will increase the number of database called to perform a single action
 - Pull the data back from two locations, and join in memory
@@ -130,11 +130,11 @@
 - Microservices
 	- Multiple transactions to complete a task
 
-![[Pasted image 20260427003952.png]]
+<img src="/images/Pasted image 20260427003952.png" alt="image" width="500">
 
 - The order placing process spans two separate transactional boundaries
 
-![[Pasted image 20260427004026.png]]
+<img src="/images/Pasted image 20260427004026.png" alt="image" width="500">
 
 ## Try Again Later
 
@@ -194,7 +194,7 @@
 	- Backing the live system
 	- Reporting the system
 
-![[Pasted image 20260427004953.png]]
+<img src="/images/Pasted image 20260427004953.png" alt="image" width="500">
 
 # Data Retrieval via Service Calls
 
@@ -213,13 +213,13 @@
 - pulling
 	- HTTP overhead
 
-![[Pasted image 20260427005451.png]]
+<img src="/images/Pasted image 20260427005451.png" alt="image" width="500">
 
 - Cron job
 - Version control
 - Artifact to be deployed on application deployment
 
-![[Pasted image 20260427005624.png]]
+<img src="/images/Pasted image 20260427005624.png" alt="image" width="500">
 
 - A segmented schema may be less worthwhile, given the challenges of managing changes in the database
 
@@ -229,7 +229,7 @@
 
 # Event Data Pump
 
-![[Pasted image 20260427005812.png]]
+<img src="/images/Pasted image 20260427005812.png" alt="image" width="500">
 
 - 
 
