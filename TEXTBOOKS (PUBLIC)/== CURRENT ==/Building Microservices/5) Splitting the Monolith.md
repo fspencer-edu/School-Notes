@@ -161,27 +161,77 @@
 - Transaction manager
 	- Orchestrate the various transactions being done by underlying systems
 - Tries to ensure that everything remains in a consistent state
-- Communicating network boundries
+- Communicating network boundaries
 - Short-lived transactions
 - Two-phase commit
 	- First voting phase
 		- Each cohort in the transaction tells the manager to go ahead
-		- reliaed on all parties haldi
+		- Relies on all parties halting until central process continues
+	- Commit when all cohorts vote yes
+- Technology stacks
+	- Java's Transaction API
 
 ## So What to Do?
 
+- Distributed transactions are hard to get right and can inhibit scaling
+- In process order
+	- Logical processing of the order from end to end
 
 # Reporting
 
+- Split up how and where the data is stored
+- More difficult to report failures and log
+
 # The Reporting Database
+
+- Monolithic service
+	- All data is stored in one large database
+- Reporting across all the information is fairly easy
+	- Join across the data via SQL queries
+- Schema of the database is a shared API between the running service and any reporting system
+- Change in schema is difficult to manage
+- Limit options as to how the database can be optimized
+	- Backing the live system
+	- Reporting the system
+
+![[Pasted image 20260427004953.png]]
 
 # Data Retrieval via Service Calls
 
+- Pull the required data from the source system via API calls
+- Make multiple calls and assemble data
+- Becomes harder as when volumes become large
+- Reporting systems rely on third-party tools that except to retrieve data in a certain way
+- Cache headers to the resources exposed by the service
+	- Reverse proxy
+	- Potentially expensive cache miss from long tail of data
+	- Expose batch APIs
+
 # Data Pump
+
+- Rather than having a reporting system pull the data, have the data pushed to the reporting system
+- pulling
+	- HTTP overhead
+
+![[Pasted image 20260427005451.png]]
+
+- Cron job
+- Version control
+- Artifact to be deployed on application deployment
+
+![[Pasted image 20260427005624.png]]
+
+- A segmented schema may be less worthwhile, given the challenges of managing changes in the database
 
 ## Alternative Destinations
 
+- Data pump to populate JSON files in AWS S3
+
 # Event Data Pump
+
+![[Pasted image 20260427005812.png]]
+
+- 
 
 # Backup Data Pump
 
