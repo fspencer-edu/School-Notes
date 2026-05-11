@@ -6,7 +6,7 @@ Neoclassical perspective => long run
 
 - Keynesian perspective focuses on aggregate demand
 - Firms produce output only if they expect it to sell
-- 
+- test
 
 ### What Determines Consumption Expenditure?
 ### What Determines Investment Expenditure?
