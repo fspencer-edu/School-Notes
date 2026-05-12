@@ -6,19 +6,53 @@ Neoclassical perspective => long run
 
 - Keynesian perspective focuses on aggregate demand
 - Firms produce output only if they expect it to sell
-- test
+- Recessionary gap
+- Inflationary gap
 
 ### What Determines Consumption Expenditure?
+
+- Consumption expenditure
+	- Spending by households and individuals on durable goods, nondurable goods, and services
+- Durable goods
+	- Items that last and provide value over time
+- Non durable goods
+	- Groceries
+- Services
+	- Intangible goods that consumers buy
+
+3 Factors that affect consumption
+1. Disposable income
+2. Expected future income
+3. Wealth or credit
+
 ### What Determines Investment Expenditure?
+
+- 4 categories of investments
+	- Producer's durable equipment and software
+	- Non-residential structures
+	- Inventories
+	- Residential structures
+
+- Expectations of future profits
+- Interest rate
+
 ### What Determined Government Spending?
+
+- Government spending
+	- Federal
+	- State
+	- Local
+- Tax rates
+
 ### What Determines Net Exports?
 
+- Export expenditures add
 
 ## The Building Blocks of Keynesian Analysis
 
 
 ### Wage and Price Stickiness
-### The Two Keynesian Assumptions in the AD/AS oOdel
+### The Two Keynesian Assumptions in the AD/AS Model
 ### The Expenditure Multiplier
 
 ## The Philips Curve
