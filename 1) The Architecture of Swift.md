@@ -161,4 +161,75 @@ class Manny {
 
 - Object types can be instantiated
 	- Class, struct, enum
+- Instances can be created by using the object type's name as a function name and calling the function
+	- Parentheses
+- Send instance messages
+
+```swift
+class Dog {
+	func bark() {
+		print("woof")
+	}
+}
+
+let fido = Dog()
+fido.bark()
+```
+
+- Properties and methods are instance properties and methods
+- Declare a function without instantiation with a class function or a static function
+
+```swift
+class Dog {
+	var name = ""
+}
+let fido = Dog()
+fido.name = "Fido"
+```
+
+- The value of an instance property is defined with respect to a particular instance
+- An instance is responsible for the values for the lifetimes of its properties
+- An instance has state and is a device for maintaining state
+
+## Keyword Self
+
+- An instance is an object, and an object is the recipient of messages
+- `self`
+	- Keyword used whenever an instance of the appropriate type is expected
+
+```swift
+class Dog {
+	var name = ""
+	var saying = "woof"
+	func bark() {
+		print(self.saying)
+	}
+	func speak() {
+		self.bark()
+	}
+}
+```
+
+- `self` appears only in instance methods
+- Refers to this instance
+
+## Privacy
+
+- Change `var` to `let` for constant instance properties
+- `private` keyword
+	- Hide the property values from other types of objects
+- Object members are public by default
+- A class declaration defines a namespace
+	- Requires that objects use dot notation to refer to functions in the namespace
+- Force a reserved word to be an identifier with backticks
+
+```swift
+class `func` {
+}
+```
+
+## Design
+
+- Instance will persist according to the lifetime of the variable
+- Instance is visible to other instances according to scope of the variable
 - 
