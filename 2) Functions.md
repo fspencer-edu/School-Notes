@@ -261,4 +261,121 @@ print(d.name)
 
 - A function declared in the body of a function
 	- Local function
-- 
+
+## Recursion
+
+- A function that call call itself
+
+```swift
+func countDownFrom(_ ix:Int) {
+	print(ix)
+	if ix > 0 {
+		countDownFrom(ix - 1)
+	}
+}
+
+countDownFrom(5)
+```
+
+## Function as Value
+
+- Functions are first-class citizen
+	- Function can be used wherever a value is used
+	- A function can be assigned to a variable
+	- Passed as an argument
+	- Returns as the result of a function
+- Assign a value to a variable or pass a value into or out of a function only if it is the right type of value
+
+```swift
+func doThis(_ f:() -> ()) {
+	f()
+}
+
+func whatToDo() {
+	print("Hello")
+}
+
+doThis(whatToDo)
+```
+
+- Takes one function as a parameter, and has no return type
+
+```swift
+let size = CGSize(width:45, height:20)
+UIGraphicsBeginImageContextWithOptions(size, false, 0) 
+let p = UIBezierPath(
+    roundedRect: CGRect(x:0, y:0, width:45, height:20), cornerRadius: 8)
+p.stroke() 
+let result = UIGraphicsGetImageFromCurrentImageContext()! 
+UIGraphicsEndImageContext() 
+```
+
+- Generates an image of a rounded rectangle
+
+```swift
+func imageOfSize(_ size:CGSize, _ whatToDraw:() -> ()) -> UIImage {
+    UIGraphicsBeginImageContextWithOptions(size, false, 0)
+    whatToDraw()
+    let result = UIGraphicsGetImageFromCurrentImageContext()!
+    UIGraphicsEndImageContext()
+    return result
+}
+
+func drawing() {
+    let p = UIBezierPath(
+        roundedRect: CGRect(x:0, y:0, width:45, height:20),
+        cornerRadius: 8)
+    p.stroke()
+}
+let image = imageOfSize(CGSize(width:45, height:20), drawing)
+
+func whatToAnimate() { // self.myButton is a button in the interface
+    self.myButton.frame.origin.y += 20
+}
+func whatToDoLater(finished:Bool) {
+    print("finished: \(finished)")
+}
+UIView.animate(withDuration:0.4,
+    animations: whatToAnimate, completion: whatToDoLater)
+```
+
+- `\` is used for string interpolation
+- A function to be passed is called a handler or a block
+- Use type aliases to give a function type a name
+
+```swift
+typealias VoidVoidFunction = () -> ()
+
+func dothis(_ f:VoidVoidFunction) {
+	f()
+}
+```
+
+## Anonymous Functions
+
+- Use anonymous functions
+	- Create the function body, with no function declaration
+	- Express the function's parameter list and return type as the first thing inside the curly braces, followed by `in`
+
+```swift
+func whatToAnimate() {
+	self.myButton.frame.origin.y += 20
+}
+
+{
+	() -> () in
+	self.myButton.frame.origin.y += 20
+}
+
+func whatToDoLatter(finished:Bool) {
+	print("finished: \(finished)")
+}
+
+{
+	(finished:Bool) -> () in
+	print("finished: \(finished)")
+}
+```
+
+### Anonymous Functions Inline
+
