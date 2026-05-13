@@ -67,4 +67,98 @@ object.message()
 	- Used for constants
 	- Cannot have its initial value replaced
 	- More efficient
-	- 
+- Variables have type
+	- Variable type can not changed once declared
+	- Can be replaced with a difference type
+- Type names start with a capital letter
+- Variable names start with a small letter
+
+## Functions
+
+- Executable code must remain inside the body of a function
+- Delimited by curly braces
+
+```swift
+func go() {
+	let one = 1
+	var two = 2
+	two = one
+}
+```
+
+`main.swift`
+- Is the code that is ran when the program starts
+
+## Structure of a Swift File
+
+- Module `import` statements
+- Variable declarations
+- Function declarations
+- Object type declarations
+
+- Only a function body can contain executable code
+- Executable code cannot go directly inside a `class` declaration
+
+## Scope and Lifetime
+
+- Scope
+	- Things can see things at their own level and at a higher level containing them
+- A module
+- A file
+- Curly braces
+
+- Lifetime
+	- A thing lives as long as its surrounding scope lives
+	- A global variable lives as long as the file runs
+	- A variable at the top of a function or class exists only as long as the instance
+
+## Object Members
+
+```swift
+class Manny {
+	let name = "manny"
+	func sayName() {
+		print(name)
+	}
+}
+```
+
+- `name`
+	- Variable declared at the top level of an object declaration
+	- Property of that object
+- `sayName`
+	- Function declared at the top level of an object declaration
+	- Method of that objects
+- Items declared at the top level of an object declaration are called the members of that object
+	- Properties
+	- Methods
+	- Objects
+- Members defined the messages that are sent to that object
+
+
+## Namespaces
+
+- A namespace is a named region of a program
+- Namespaces help explain the significance of declaring an object at the top level of an object
+
+```swift
+class Manny {
+	class Klass {}
+}
+```
+
+- Code outside Manny, has to specify the namespace explicitly in order to pass through the barrier
+- `Manny.Klass`
+- Message sending allows you to see its scopes
+
+## Modules
+
+- Top level namespaces are modules
+- Swift is a module
+- Own app module overshadows any module imports
+
+## Instances
+
+- Object types can be instantiated
+	- Class, struct, enum
+- 
