@@ -379,3 +379,225 @@ func whatToDoLatter(finished:Bool) {
 
 ### Anonymous Functions Inline
 
+```swift
+UIView.animate(withDuration:0.4,
+	animations: {
+		() -> () in
+		self.myButton.frame.origin.y += 20
+	},
+	completion: {
+		(finished:Bool) -> () in
+		print("finished: \(finished)")
+	}
+)
+```
+
+### Anonymous Function Abbreviated Syntax
+
+- Omission of the return type
+	- Omit the arrow and the specification of the return type
+
+```swift
+UIView.animate(withDuration:0.4,
+    animations: {
+        () in
+        self.myButton.frame.origin.y += 20
+    }, completion: {
+        (finished:Bool) in
+        print("finished: \(finished)")
+})
+```
+
+- Omit the `in` if there are no parameters
+
+```swift
+UIView.animate(withDuration:0.4,
+    animations: {
+        self.myButton.frame.origin.y += 20
+    }, completion: {
+        (finished:Bool) in
+        print("finished: \(finished)")
+})
+```
+
+- Omit the parameter types
+
+```swift
+UIView.animate(withDuration:0.4,
+    animations: {
+        self.myButton.frame.origin.y += 20
+    }, completion: {
+        (finished) in 
+        print("finished: \(finished)")
+})
+```
+
+- Omit the parentheses
+
+```swift
+UIView.animate(withDuration:0.4,
+    animations: {
+        self.myButton.frame.origin.y += 20
+    }, completion: {
+        finished in // *
+        print("finished: \(finished)")
+})
+```
+
+- Omit `in` expression where there are parameters
+	- Use magic names, `$0`
+
+```swift
+UIView.animate(withDuration:0.4,
+    animations: {
+        self.myButton.frame.origin.y += 20
+    }, completion: {
+        print("finished: \($0)") 
+})
+```
+
+- Omit parameter names
+
+```swift
+UIView.animate(withDuration:0.4,
+    animations: {
+        self.myButton.frame.origin.y += 20
+    }, completion: {
+        _ in 
+        print("finished!")
+})
+```
+
+- Omit function argument labels
+	- Trailing closure syntax
+	- Pass the anonymous function argument outside the call's parentheses with no label
+
+```swift
+UIView.animate(withDuration:0.4,
+    animations: {
+        self.myButton.frame.origin.y += 20
+    }) { 
+        _ in
+        print("finished!")
+}
+```
+
+- Pass multiple anonymous function arguments
+	- First anonymous function takes no label
+	- Remaining function do have labels, with no comma
+
+```swift
+UIView.animate(withDuration:0.4) { 
+    self.myButton3.frame.origin.y += 20
+} completion: { // *
+    _ in
+    print("finished")
+}
+```
+
+- Omit calling function parentheses
+	- If there is a trailing closure and no parameters
+
+```swift
+func doThis(_ f:()) {
+	f()
+}
+
+doThis {
+	print("Hello")
+}
+```
+
+- Omit `return`
+
+```swift
+func greeting() -> String {
+    return "Howdy"
+}
+func performAndPrint(_ f:()->String) {
+    let s = f()
+    print(s)
+}
+performAndPrint {
+    greeting() // meaning: return greeting()
+}
+```
+
+- `map(_:)`
+	- Takes an array as a function
+
+```swift
+let arr = [2, 4, 6, 8]
+
+func doubleMe(i:Int) -> Int {
+	return i*2
+}
+
+let arr2 = arr.map(doubleMe)
+
+// Anonymous function
+
+let arr2 = arr.map ({
+	(i:Int) -> Int in
+	return i*2
+})
+
+// Omit parentheses
+
+let arr2 = arr.map {$0*2}
+```
+
+## Define and Call
+
+- Define an anonymous function and call it
+
+```swift
+{
+
+}()
+```
+
+- The curly braces define an anonymous function body
+- Parentheses call that anonymous function
+- Action can be taken at the point where is is needed
+
+```swift
+content.addAttribute(
+    .paragraphStyle,
+    value: {
+        let para = NSMutableParagraphStyle()
+        para.headIndent = 10
+        para.firstLineHeadIndent = 10
+        // ... more configuration of para ...
+        return para
+    }(),
+    range:NSRange(location:0, length:1))
+```
+
+## Closures
+
+- Swift functions are closures
+- Capture reference to external variables in scope within the body of the function
+
+```swift
+class Dog {
+    var whatThisDogSays = "woof" 
+    func bark() {
+        print(self.whatThisDogSays) 
+    }
+}
+```
+
+- `whatThisDogSays` is external to the function
+	- Declared outside the body of the function
+- `bark()`
+	- Code inside refers to the external variable
+- A function is a closure and it captures external variables referred to in its body
+
+### How Closures Improve Code
+
+- Functions are closures to make code more general
+
+```swift
+
+```
