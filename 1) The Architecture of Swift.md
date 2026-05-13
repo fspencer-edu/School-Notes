@@ -31,5 +31,5 @@ class Dog {
 - Message-sending is dot notation
 
 ```swift
-object.mess
+object.message()
 ```
