@@ -895,4 +895,51 @@ class Dog {
         }
     }
 }
+
+class Cat {
+    func purr() {
+    }
+    func purr(_ loudly:Bool) {
+    }
+}
+class Dog {
+    func test() {
+        let purrFunction = Cat.purr as (Cat) -> () -> Void
+    }
+}
 ```
+
+### Selectors
+
+- A selector is a kind of method reference
+- Requires a target (object reference)
+	- At runtime the method is called by running the selector into a message and sending it to the target
+	- Risky
+	- Construct a string representing a method's name
+
+```swift
+class ViewController : UIViewController {
+	@IBOutlet var button : UIButton!
+	func viewDidLoad() {
+		super.viewDidLoad()
+		self.button.addTarget(
+			self, action: "buttonPressed", for: .touchUpInside
+		)
+		@objc func buttonPressed(_ sender: Any) {
+		}
+	}
+}
+```
+
+- `self.button` is a button reference
+- When the button is tapped, the method is called
+- Swift provides a way to let the compiler form the selector
+	- `#selector`
+- Form an objective-c selector with a function reference inside the parentheses
+
+```swift
+self, action: #selector(buttonPressed), for: .touchUpInside
+```
+
+- Compiler validates the function reference
+- Compiler forms the objective-C selector
