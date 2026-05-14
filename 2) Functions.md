@@ -824,3 +824,75 @@ self.iv.image = makeRoundedRectangleMaker(CGSize(width:45, height:20))(8)
 
 - A bare name is a function reference
 - The lack of parentheses make is clear that this is a reference, and not a call
+- Pass a function as an argument
+	- Assign it to a variable
+
+```swift
+class Dog {
+	func bark() {
+		print("woof")
+	}
+	func bark(_ loudly:Bool) {
+		if loudly {
+			print("WOOF")
+		} else {
+			self.bark()
+		}
+	}
+	func test() {
+		let barkFunction = bark // compile error
+	}
+}
+
+func say(_ s:String, times:Int)
+
+func test() {
+	let barkFunction = bark(_:) // works
+}
+```
+
+- Bare name `bark` is ambiguous
+- Notation
+	- Full name
+	- Signature with `as`
+
+```swift
+func test() {
+	let barkFunction = bark as () -> () // works
+}
+
+class Dog {
+    func bark(loudly:Bool = false) {
+    }
+    func bark(softly:Bool) {
+    }
+    func test() {
+        self.bark() // fine
+        let barkFunction = bark // compile error
+    }
+}
+```
+
+- Use a type signature or `self` to reference the functions
+
+### Function Reference Scope
+
+- A function reference can supply further information about where a function is defined
+- Prefix with an instance or class to the function reference
+	- Dot notation
+	- Signature
+
+
+```swift
+class Dog {
+    func bark() {
+    }
+    func bark(_ loudly:Bool) {
+    }
+    func test() {
+        let f = {
+            return self.bark(_:) // self required here
+        }
+    }
+}
+```
