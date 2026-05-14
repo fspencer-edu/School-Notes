@@ -599,5 +599,228 @@ class Dog {
 - Functions are closures to make code more general
 
 ```swift
+let sz = CGSize(width:45, height:20)
+let image = imageOfSize(sz) {
+    let p = UIBezierPath(
+        roundedRect: CGRect(origin:CGPoint.zero, size:sz),
+        cornerRadius: 8)
+    p.stroke()
+}
+
+func makeRoundedRectangle(_ sz:CGSize) -> UIImage {
+    let image = imageOfSize(sz) {
+        let p = UIBezierPath(
+            roundedRect: CGRect(origin:CGPoint.zero, size:sz),
+            cornerRadius: 8)
+        p.stroke()
+    }
+    return image
+}
+```
+
+### Function Returning Function
+
+- Takes a CGSize parameter and returns a `() -> UIImage`
+	- Returns a function with no parameters
+- Return a function
+
+```swift
+func makeRoundedRectangleMaker(_ sz:CGSize) -> () -> UIImage { 
+    func f () -> UIImage { 
+        let im = imageOfSize(sz) {
+            let p = UIBezierPath(
+                roundedRect: CGRect(origin:CGPoint.zero, size:sz),
+                cornerRadius: )
+            p.stroke()
+        }
+        return im
+    }
+    return f 
+}
+
+let maker = makeRoundedRectangleMaker(CGSize(width:45, height:20))
+self.iv.image = maker()
+```
+
+### Closure Setting a Captured Variable
+
+- If the closure captures a reference to a variable outside itself, and it is seeable, then the closure can set the variable
+
+```swift
+func pass100 (_ f:(Int) -> ()) {
+	f(100)
+}
+
+var x = 0
+print(x)
+
+func setX(newX:Int) {
+	x = newX
+}
+
+pass100(setX)
+print(x)
+```
+
+- The `pass100` function has reached inside the function to change the value of `x`
+
+### Closure Preserving Captured Environment
+
+- When a closure captures its environment, it preserves that environment even if nothing else does
+
+```swift
+
+func countAdder(_ f: @escaping () -> ()) -> () -> () {
+	var ct = 0
+	return {
+		ct = ct + 1
+		print("count is \(ct)")
+		f()
+	}
+}
+```
+
+- The function accepts a function as its parameter and returns a function
+- The function that is returns calls the function that is accepts
+
+```swift
+func greet() {
+	print("Hello")
+}
+
+let countedGreet = countAdder(greet)
+countedGreet() // ?
+countedGreet() // ?
+countedGreet() // ?
+
+// output
+count is 1
+howdy
+count is 2
+howdy
+count is 3
+howdy
+```
+
+- `ct` variable must be declared outside the anonymous function
+
+### Escaping Closures
+
+- Escaping closure
+	- A function passed around as a value
+	- Preserved for later execution
+	- `@escaping`
+
+```swift
+func funcCaller(f:() -> ()) {
+	f()
+}
+```
+
+- Create the function internally
+- The returning function is an escaping closures
+
+```swift
+func funcMaker() -> () -> () {
+	return { print("hello") }
+}
+```
+
+- Make the type of the incoming parameter as escaping, and the compiler will be prompted to execute it later
+
+```swift
+func funcPasser(f:@escaping () -> ()) -> () -> () {
+	return f
+}
+```
+
+- `self` is used as a reference capture
+
+```swift
+let f1 = funcPasser {
+    print(view.bounds) // compile error, because self.view is implied
+}
+let f2 = funcPasser {
+    print(self.view.bounds) // ok
+}
+```
+
+### Capture Lists
+
+- Use square brackets outside an anonymous function to refer to a variable without capture
+- Capture list
+- Use `in` expression to capture list
+
+```swift
+var x = 0
+let f : () -> () = {
+	print(x)
+}
+f()
+x = 1
+f()
+
+// capture list
+let f : () -> () = { [x] in
+	print(x)
+}
+f()
+x = 1
+f()
+```
+
+- The capture lists prints `0` both times
+- Sets `x` as a constant
+- Capture list expression to another name
+
+```swift
+self.undoer.registerUndo(withTarget: self) {
+    [oldCenter = self.center] myself in
+    myself.setCenterUndoably(oldCenter)
+}
+```
+
+## Curried Functions
+
+```swift
+func makeRoundedRectangleMaker(_ sz:CGSize, _ r:CGFloat) -> () -> UIImage {
+    return {
+        imageOfSize(sz) {
+            let p = UIBezierPath(
+                roundedRect: CGRect(origin:CGPoint.zero, size:sz),
+                cornerRadius: r)
+            p.stroke()
+        }
+    }
+}
+
+let maker = makeRoundedRectangleMaker(CGSize(width:45, height:20), 8)
+
+
+// no parameters
+func makeRoundedRectangleMaker(_ sz:CGSize) -> (CGFloat) -> UIImage {
+    return { r in
+        imageOfSize(sz) {
+            let p = UIBezierPath(
+                roundedRect: CGRect(origin:CGPoint.zero, size:sz),
+                cornerRadius: r)
+            p.stroke()
+        }
+    }
+}
+
+let maker = makeRoundedRectangleMaker(CGSize(width:45, height:20))
+self.iv.image = maker(8)
+
+// or
+self.iv.image = makeRoundedRectangleMaker(CGSize(width:45, height:20))(8)
 
 ```
+
+- When a function returns a function that takes a parameter in this way is is called a curried function
+
+
+## Function References and Selectors
+
+- A bare name is a function reference
+- The lack of parentheses make is clear that this is a reference, and not a call
