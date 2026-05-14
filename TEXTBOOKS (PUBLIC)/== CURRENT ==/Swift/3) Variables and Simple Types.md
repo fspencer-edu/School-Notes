@@ -537,9 +537,80 @@ realStringExpecter(stringMaybe)
 - Test the optional for equality against `nil`
 - Specify an optional with no wrapped value
 - A variable typed as an Optional is `nil` automatically
-	- Implici
+	- Implicitly initialized
+- Cannot unwrap an optional containing nothing
+- Test Optional against `nil` before unwrapping it
 
 ### Optional Chains
+
+- Cannot send a message to the Optional itself
+- Unwrap the optional, to send the message to the actual thing wrapped inside
+- Unwrap in place
+
+```swift
+let stringMaybe : String? = "hello"
+let upper = stringMaybe!.uppercased()
+```
+
+- Optional chain
+	- The middle of the chain of dot-notation is an unwrapped optional
+- Optional optionally
+	- Safely send a message to an Optional that may be empty
+
+```swift
+var stringMaybe : String?
+let upper = stringMaybe?.uppercased()
+```
+
+- If an Optional chain contains an optionally unwrapped Optional, and produces a value, then the value is wrapped in an Optional itself
+- A view controller might or might not have a navigation controller
+	- `naviationController` property is an Optional
+
 #### Optional map and flatMap
 
+- `map(_:_)
+	- Parameters is an anonymous function
+	- Unwrapped the values
+
+```swift
+set s : String? = "hello"
+set s2 = s.map {{$0 + ", world"}.uppercased()}
+```
+
+- The Optional type does not have to be the same as the input Optional type
+- `flatMap(_:)`
+	- Coerce an Optional String to an Optional Int
+
+```swift
+let s : String? = // whatever
+let i = s.flatMap {Int($0)}
+```
+
 #### Comparison with Optional
+
+- An Optional gets special treatment
+	- The wrapped value is compared
+
+```swift
+let s : String? = "Howdy"
+if s == "Howdy" { // ... they _are_ equal!
+
+if i != nil && i! < 3 { // ... it _is_ less
+```
+
+- Unwrap for inequality comparisons
+
+#### Why Optionals?
+
+- Optionals are used to mark values as empty or erroneous
+
+```swift
+let arr = [1,2,3]
+let ix = arr.firstIndex(of:4)
+if ix == nil
+```
+
+- Interchange of object values with Objective-C
+- Cocoa API
+	- Auditing
+- Defer initialization of an instance property

@@ -51,7 +51,7 @@ Neoclassical perspective => long run
 - Changes in relative growth rates between countries
 - Changes in relative prices between countries
 
-![[Pasted image 20260512143728.png]]
+<img src="/images/Pasted image 20260512143728.png" alt="image" width="500">
 
 ## The Building Blocks of Keynesian Analysis
 
@@ -73,7 +73,7 @@ Neoclassical perspective => long run
 	- Changing prices uses company resources
 	- Menu costs
 
-![[Pasted image 20260512144535.png]]
+<img src="/images/Pasted image 20260512144535.png" alt="image" width="500">
 
 
 ### The Two Keynesian Assumptions in the AD/AS Model
@@ -99,14 +99,14 @@ $\frac{\Delta Y}{\Delta Spending} > 1$
 
 - Aggregate supply curve is more curve than the right angle
 
-![[Pasted image 20260512145239.png]]
+<img src="/images/Pasted image 20260512145239.png" alt="image" width="500">
 
 ### The Discovery of the Philip Curve
 
 - Phillips curve
 	- Tradeoff between the unemployment rate and the inflation rate
 
-![[Pasted image 20260512145332.png]]
+<img src="/images/Pasted image 20260512145332.png" alt="image" width="500">
 
 ### The Instability of the Philip Curve
 
@@ -127,7 +127,7 @@ $\frac{\Delta Y}{\Delta Spending} > 1$
 	- Tax cuts
 	- Direct increases in government spending
 
-![[Pasted image 20260512145710.png]]
+<img src="/images/Pasted image 20260512145710.png" alt="image" width="500">
 
 - Contractionary fiscal policy
 	- Economy is operating above potential GDP
