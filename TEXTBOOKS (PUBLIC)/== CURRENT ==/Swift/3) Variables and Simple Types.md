@@ -523,9 +523,22 @@ window.makeKeyAndVisible()
 
 #### Implicitly Unwrapped Optional
 
-- Swif
+- Declare the Optional type as being implicitly unwrapped
+- Value can be used directly where the wrapped type is expected
+
+```swift
+func realStringExpecter(_ s:String) {}
+var stringMaybe : String! = "howdy"
+realStringExpecter(stringMaybe)
+```
 
 ### Keyword `nil`
+
+- Test the optional for equality against `nil`
+- Specify an optional with no wrapped value
+- A variable typed as an Optional is `nil` automatically
+	- Implici
+
 ### Optional Chains
 #### Optional map and flatMap
 
