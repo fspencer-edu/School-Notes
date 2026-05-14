@@ -346,14 +346,185 @@ print(j) // 3, an Int
 	- `\n, \t, \", \\`
 - Regular expressions
 
-- String interpolrat
+- String interpolation
+	- `\(...)`
+- Concatenation
+	- `+`
+	- `a.append(b)`
+	- `joined(separator:space)`
 
 ### Character and String Index
+
+- Codepoints are numbers
+	- A single letter or symbol is a grapheme
+	- Unicode
+- String walk through
+	- `for...in`
+
+- String properties
+	- `s.first`
+	- `s.last`
+	- `s.firstIndex(of:"1")`
+	- `s.contains(where:)`
+	- `s.filter(_:)`
+	- `s.dropFirst()`
+	- `s.prefix(_:)`
+	- `s.suffix(_:)`
+	- `s.split {$0 == " '}`
+	- `map(_:)`
+	- `s.index(_:offsetBy:)`
+	- `s.index(before:)`
+	- `s.index(after:)`
+	- `s.insert(contentsOf:at:)`
+	- `s.remove(at:)`
+
 ### Range
+
+- Represents a pair of endpoints
+- Closed range operator
+	- `...`
+- Half open range operator
+	- . . <
+
+- Range through numbers
+
+```swift
+for ix in 1...3 {
+	print(ix)
+}
+```
+
+- `reversed()`
+- `contains(_:)`
+- `replaceSubrange(_:with:)`
+- `removeSubrange(_:)`
+
 ### Tuple
+
+- A tuple is a lightweight custom ordered collection of multiple variables
+- Values are surrounding by parentheses and separated by a comma 
+
+```swift
+var pair : (Int, String)
+pair = (1, "Tw0")
+```
+
+- Tuples are a pure Swift language feature
+- Not compatible with Cocoa and Objective-C
+
+```swift
+let ix: Int
+let s: String
+(ix, s) = (1, "Two")
+
+let (ix, s) = (1, "Two")
+
+// ignored value
+let pair = (1, "Two")
+let (_, s) = pair // now s is "Two"
+
+// swap
+(s1, s2) = (s2, s1)
+
+// enumerated
+let s = "hello"
+for (ix,c) in s.enumerated() {
+    print("character \(ix) is \(c)")
+}
+```
+
+- Refer to the individual elements of a tuple
+	- Index number
+	- Labels
+
+```swift
+let pair = (1, "Two")
+let ix = pair.0
+
+var pair = (first:1, second:"Two")
+let x = pair.first // 1
+pair.first = 2
+let y = pair.0 // 2
+```
+
+- `offset`
+	- Index number
+- `element`
+	- Character at offset
+
+
+```swift
+let s = "hello"
+for t in s.enumerated() {
+    print("character \(t.offset) is \(t.element)")
+}
+```
+
+- Pass, or return from a function, a tuple without labels where a corresponding tuple with labels is expected
+
+```swift
+func tupleMaker() -> (first:Int, second:String) {
+    return (1, "Two") // no labels here
+}
+let ix = tupleMaker().first // 1
+```
+
 ### Optional
-#### Unwrapping an Option
+
+- Optional object type
+	- Enum
+	- Wraps another object of any type
+
+```swift
+var stringMaybe = Optional("hello")
+```
+
+- Optional wrapping is assigned to a type
+
+```swift
+var stringMaybe = Optional("hello")
+stringMaybe = "bye"
+```
+
+- Declare type explicitly
+
+```swift
+Optional<String>
+
+var stringMaybe : String?
+```
+
+- To use an Optional where the type is expected, unwrap the Optional to retrieve the actual value
+
+#### Unwrapping an Optional
+
+- Unwrap operator
+- Postfixed exclamation mark
+
+```swift
+func realStringExpecter(_ s:String) {}
+let stringMaybe : String? = "hello"
+realStringExpecter(stringMaybe!)
+
+let stringMaybe : String? = "howdy"
+let upper = stringMaybe!.uppercased()
+```
+
+- Assign the unwrapped value once to a variable of the wrapped type and then use that variable
+
+```swift
+// self.window is an Optional wrapping a UIWindow
+let window = self.window!
+// now window (not self.window) is a UIWindow, not an Optional
+window.rootViewController = RootViewController()
+window.backgroundColor = UIColor.white
+window.makeKeyAndVisible()
+```
+
 #### Implicitly Unwrapped Optional
+
+- Swif
+
 ### Keyword `nil`
 ### Optional Chains
 #### Optional map and flatMap
