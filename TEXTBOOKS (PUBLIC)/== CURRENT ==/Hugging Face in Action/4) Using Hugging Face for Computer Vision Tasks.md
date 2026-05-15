@@ -258,10 +258,34 @@ for result in results:
 	print(result['label'])
 	display(result['mask'])
 	
-# apply mask to iri
+# apply mask to original image
+image = Image.open(requests.get(url, stream=True).raw)
+
+for result in results:
+	base_image = image.copy()
+	mask_image = result['mask']
+	base_image.paste(mask_image, mask=mask_image)
+	print(result['label'])
+	display(base_image)
+	
+# invert mask
+from PIL import ImageOps
+
+for result in results:
+    base_image = image.copy()
+    mask_image = result['mask']
+
+    mask_image = ImageOps.invert(mask_image)  #1
+    base_image.paste(mask_image, mask=mask_image)  #2
+    print(result['label'])  #3
+    display(base_image)
 ```
 
-### 
+![[Pasted image 20260515123953.png]]
+### Binding to Gradio
+
+- 
+
 ### 
 
 ## Video Classification
