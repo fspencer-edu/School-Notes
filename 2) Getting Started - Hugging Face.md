@@ -146,7 +146,24 @@ print(f"Using device: {device}")
 
 ### Downloading Files
 
-- 
+```python
+from huggingface_hub import hf_hub_download
 
-### 
-### 
+hf_hub_download(repo_id="google/pegasus-xsum",
+                filename = "config.json")
+                
+<home_directory>/.cache/huggingface/hub/
+models--google--pegasus-xsum/snapshots/
+8d8ffc158a3bee9fbb03afacdfc347c823c5ec8b/
+```
+
+- Authenticate application using tokens
+
+```python
+!pip install -U ipywidgets
+
+from huggingface_hub import login
+
+login()
+```
+
