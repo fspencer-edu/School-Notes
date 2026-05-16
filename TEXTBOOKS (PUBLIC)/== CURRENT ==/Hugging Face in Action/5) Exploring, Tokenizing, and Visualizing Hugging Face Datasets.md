@@ -359,9 +359,17 @@ def show_images(images, labels, labels_dict):
 		plt.subplot(5, 5, i + 1)
 		plt.imshow(images[i])
 		plt.title(labels_dict[labels[i]])
+		plt.axis('off')
+	plt.tight_layout()
+	plt.show()
+	
+train_samples = dataset['train'].shuffle(seed=42).select(range(25)) 
+
+
+images = [sample['img'] for sample in train_samples]
+class_labels = [sample['label'] for sample in train_samples]
+
+
+show_images(images, class_labels, labels)
 ```
 
-### 
-### 
-### 
-### 
