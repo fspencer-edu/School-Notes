@@ -209,9 +209,140 @@ for i, example in enumerate(dataset["train"]):
 ### Tokenizing datasets
 
 - HF datasets are compatible with build-in tokenizers and data loaders
-- 
 
-### 
-### 
+```python
+from transformers import AutoTokenizer
+
+dataset = load_dataset(dataset_id)
+tokenizer = AutoTokenizer.from_pretrained('bert-based-uncased')
+tokenized_dataset = dataset.map(
+	lambda examples:
+		tokenizer(examples['text'],
+				  truncaction = True,
+				  padding = 'max_length')
+		batched = True)
+```
+
+```python
+# tokenized dataset
+DatasetDict({
+    train: Dataset({
+        features: ['text', 'label', 'input_ids', 'token_type_ids',
+                   'attention_mask'],
+        num_rows: 25000
+    })
+    test: Dataset({
+        features: ['text', 'label', 'input_ids', 'token_type_ids',
+                   'attention_mask'],
+        num_rows: 25000
+    })
+    unsupervised: Dataset({
+        features: ['text', 'label', 'input_ids', 'token_type_ids',
+                   'attention_mask'],
+        num_rows: 50000
+    })
+})
+```
+
+- Each number in the `input_ids` represent the ID of corresponding token
+
+```python
+# convert tokens back
+tokens = tokenizer.convert_ids_to_tokens(
+             tokenized_dataset['train'][0]['input_ids'])
+print(tokens)
+
+   ['[CLS]', 'i', 'rented', 'i', 'am', 'curious', '-',
+```
+- `[CLS]`
+	- Start of string
+- `##`
+	- String continuation
+- `[PAD]`
+	- Padding in tokenized sequences
+
+- `token_type_ids`
+	- Used to differentiate among multiple segments of a single input
+		- Next-sentence prediction
+		- Question answering
+	- Help model determine which tokens belong to which segments
+- `attention_mask`
+	- Inform the model which tokens should be attended to
+		- 1 (attended to) or 0 (padding)
+
+![[Pasted image 20260515222840.png]]
 
 ## Visualizing Datasets
+
+### Using the twitter-financial-news-topic dataset
+
+- Dataset is an English language dataset containing an annotated corpus of finance-related tweets
+
+```python
+from datasets import load_dataset
+
+dataset = load_dataset('zeroshot/twitter-financial-news-topic')
+train_data = dataset['train']
+
+print(train_data[0])
+print(train_data[-1])
+
+# map topics for labels
+topics = {                                   
+    "LABEL_0": "Analyst Update",
+    "LABEL_1": "Fed | Central Banks",
+    "LABEL_2": "Company | Product News",
+    "LABEL_3": "Treasuries | Corporate Debt",
+    
+mapped_labels = [topics[f"LABEL_{label}"]    
+                 for label in train_data['label']]
+                 
+# plot dataset
+import matplotlib.pyplot as plt
+import numpy as np
+
+plt.figure(figsize=(10, 6))
+bins = np.arange(len(topics) + 1) - 0.5
+plt.hist(mapped_labels,
+		 bins = binsm
+		 edgecolor = 'black',
+		 color = 'skyblue,
+		 alpha = 0.7)
+		 
+plt.xticks(np.arange(len(topics)),
+		   list(topics.values()),
+		   rotation = 90,
+		   ha = 'center')
+		   
+plt.title("Topic Distribution - Twitter Financial News")
+plt.xlabel("Topics")
+plt.ylabel("Number of Tweets")
+plt.tight_layout()
+plt.show()
+```
+
+![[Pasted image 20260515223306.png]]
+
+### Using the CIFAR-10 dataset
+
+- ML model for computer vision
+- 60,000 labeled 32x32 colour images divided into 10 classes
+- CNN
+
+```python
+# download
+from datasets import load_dataset
+import matplotlib.pyplot as plt
+import numpy as np
+
+dataset = load_dataset('uoft-cs/cifar10')
+
+print(dataset)
+
+# display grid of images
+```
+
+### 
+### 
+### 
+### 
