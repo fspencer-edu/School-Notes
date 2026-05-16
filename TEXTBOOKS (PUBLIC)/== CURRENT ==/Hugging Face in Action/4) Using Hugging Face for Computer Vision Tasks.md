@@ -284,8 +284,73 @@ for result in results:
 ![[Pasted image 20260515123953.png]]
 ### Binding to Gradio
 
-- 
+`pip install gradio`
 
-### 
+- Gradio
+	- Open source Python library that simplifies creating user interfaces for ML models and other apps
+
+```python
+# function for model segmentations
+from transfomers import SegformerForSemanticSegmentation
+
+model = pipeline("image-segmentation",
+                 model="nvidia/segformer-b0-finetuned-ade-512-512")
+                 
+def segmentation(image, label):
+	image = Image.formarray(image)
+	results = model(image)
+	for result in results:
+		if result['label'] == label:
+			base_image = image.copy()
+			mask_image = result['mask']
+			mask_image = ImageOps.invert(mask_image)
+			base_image.paste(mask_image, mask=mask_image)
+			return(base_image)
+```
+
+- Image is sent as a NumPy array
+- Convert to PIL image with `Image.fromarray()`
+
+```python
+import gradio as gr
+
+image_input = gr.Image(label = "Image to segmentize")
+
+label = gr.Textbox(label = "Label to look for", placeholder = "Label")
+
+image_output = gr.Image(label = "Image with the mask applied")
+
+gr.Interface(segmentation,
+			[image_input, label],
+			 image_output).launch()
+```
 
 ## Video Classification
+
+### Installing the prerequisites
+
+- `MCG-NJU/videomae-base-short-finetuned-kinetics`
+
+- Decord
+	- Python package that provides efficient video decoding capabilities
+	- Extract frames from videos
+	- `pip install decord`
+	- `pip install eva-decord`
+### Downloading the videos for testing
+
+`python -m http.server`
+### Using the transformer pipeline object
+
+```python
+from transformer import pipeline
+
+video_classifier = pipeline("video-classification",
+                   model="MCG-NJU/videomae-base-short-finetuned-kinetics")
+                   
+video_classifier.model.config.id2label
+
+video_classifier(
+    'http://localhost:8000/pexels-pat-whelen-5621707 (1080p).mp4')
+
+```
+
