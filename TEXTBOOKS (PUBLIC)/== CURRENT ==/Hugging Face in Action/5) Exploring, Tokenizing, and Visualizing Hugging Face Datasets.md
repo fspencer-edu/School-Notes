@@ -340,6 +340,25 @@ dataset = load_dataset('uoft-cs/cifar10')
 print(dataset)
 
 # display grid of images
+labels = {  #1
+    0: "airplane",
+    1: "automobile",
+    2: "bird",
+    3: "cat",
+    4: "deer",
+    5: "dog",
+    6: "frog",
+    7: "horse",
+    8: "ship",
+    9: "truck"
+}
+
+def show_images(images, labels, labels_dict):
+	plt.figure(figsize=(5, 5))
+	for i in range(25):
+		plt.subplot(5, 5, i + 1)
+		plt.imshow(images[i])
+		plt.title(labels_dict[labels[i]])
 ```
 
 ### 
