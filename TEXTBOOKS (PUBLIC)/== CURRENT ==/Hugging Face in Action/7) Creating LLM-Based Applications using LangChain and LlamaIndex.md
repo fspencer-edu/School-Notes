@@ -246,3 +246,228 @@ while True:
 ```
 
 ## Connecting LLMs to Your Private Data
+
+- LlamaIndex
+	- Adds RAG (retrieval augmented generation)
+
+### Installing the packages
+
+```python
+!pip install llama_index
+!pip install llama-index-embeddings-huggingface
+!pip install llama-index-llms-huggingface
+```
+### Preparing the documents
+
+### Loading the documents
+
+- `SimpleDirectoryReaderClass`
+	- Component that facilitates reading and indexing documents from a directory
+
+```python
+from llama_index.core import SimpleDirectoryReader
+
+loader = loader = SimpleDirectoryReader(
+    input_dir="./Training Documents",
+    recursive=True,
+    required_exts=[".pdf"],
+)
+
+documents = loader.load_data()
+```
+- Directory input
+- Recursive loading
+- file type filtering
+### Using an embedding model
+
+- Vector embedding
+	- Numerical representation of objects
+
+```python
+from llama_index.embeddings.huggingface import HuggingFaceEmbedding
+
+embedding_model = HuggingFaceEmbedding(model_name="BAAI/bge-small-en-v1.5")
+```
+
+- Bag of Graph Embeddings (BGE)
+	- Generate embeddings for English text
+
+### Indexing the documents
+
+- `VectorStoreIndex`
+	- Creates an index an saves the vector embeddings on disk
+
+```python
+from llama_index.core import VectorStoreIndex
+
+index = VectorStoreIndex.from_documents(
+    documents,
+    embed_model = embedding_model,
+)
+
+index.storage_context.persist(persist_dir=".")
+```
+5 Files
+- `image__vector_store.json`
+- `default__vector_store.json`
+- `graph_store.json`
+- `index_store.json`
+- `docstore.json`
+
+### Loading the embeddings
+
+- `StorageContent`
+
+```python
+from llama_index.core import StorageContext, load_index_from_storage
+from llama_index.embeddings.huggingface import HuggingFaceEmbedding
+
+embedding_model = HuggingFaceEmbedding(model_name="BAAI/bge-small-en-v1.5")
+
+storage_context = StorageContext.from_defaults(persist_dir=".")
+index = load_index_from_storage(storage_context,
+                                embed_model = embedding_model)
+```
+### Using an LLM for querying
+
+```python
+from transformers import AutoModelForCausalLM, AutoTokenizer
+from llama_index.llms.huggingface import HuggingFaceLLM
+import torch
+
+if torch.backends.mps.is_available():#1
+    device = torch.device("mps")
+else:
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+tokenizer = AutoTokenizer.from_pretrained(#2
+    "meta-llama/Llama-3.2-3B-Instruct")
+    model = AutoModelForCausalLM.from_pretrained(
+    "meta-llama/Llama-3.2-3B-Instruct").to(device)
+
+
+    huggingface_llm = HuggingFaceLLM(#3
+        model=model,
+        tokenizer=tokenizer,
+    )
+
+    query_engine = index.as_query_engine(llm=huggingface_llm)#4
+```
+
+**Using the GPU**
+
+- `to()`
+	- Method moves a model or tensor to a specific device
+	- 
+
+### Asking questions
+
+```python
+while True:
+    question = input("Question: ")
+    if question.lower() == "quit": break
+    print(query_engine.query(question).response)
+```
+
+### Using LlamaIndex with OpenAI
+
+- Run a local LLM using OpenAI model
+
+```python
+!pip install langchain_community
+!pip install langchain_openai
+
+from langchain_openai import ChatOpenAI
+import os
+
+os.environ["OPENAI_API_KEY"] = "OpenAI_API_Key"
+openai_llm = ChatOpenAI(temperature = 0.7,
+                        model_name = "gpt-4o-mini")
+
+query_engine = index.as_query_engine(llm = openai_llm)
+
+while True:
+    question = input("Question: ")
+    if question.lower() == "quit": break
+    print(query_engine.query(question).response)
+```
+### Creating a web frontend for the app
+
+```python
+!pip install gradio
+
+def my_chat_bot(input_text):
+    response = query_engine.query(input_text)
+    return response.response
+    
+import gradio as gr
+
+
+gr.Interface(fn = my_chat_bot,#1
+             title = "Enquiry",
+             inputs = "text",
+             outputs = "text").launch()
+```
+### Holding a conversion
+
+- `as_chat_engine()`
+
+```python
+query_engine = index.as_chat_engine(llm=openai_llm)
+
+def my_chat_bot(input_text):
+    response = query_engine.chat(input_text)  #1
+    return response.response
+
+import gradio as gr
+
+gr.Interface(fn = my_chat_bot,  #2
+             title = "Enquiry",
+             inputs = "text",
+             outputs = "text").launch()
+```
+
+### Creating a chatbot UI
+
+```python
+import gradio as gr
+
+with gr.Blocks() as mychatbot:
+    chatbot = gr.Chatbot()  #1
+    question = gr.Textbox()  #2
+
+    def chat(message, chat_history):
+        content = "Responses from chatbot..."  #3
+        chat_history.append((message, content))
+        return "", chat_history
+
+    question.submit(fn = chat,  #4
+                    inputs = [question, chatbot],
+                    outputs = [question, chatbot])
+
+mychatbot.launch()
+```
+- `Blocks`
+	- Low-level API for custom web application
+
+```python
+import gradio as gr
+
+with gr.Blocks() as mychatbot:
+    chatbot = gr.Chatbot()  #1
+    question = gr.Textbox()  #2
+
+    def chat(message, chat_history):
+        content = my_chat_bot(message)
+        chat_history.append((message, content))
+        return "", chat_history
+
+--LB_EMPTY_LINE--
+    question.submit(fn = chat,#3
+                    inputs = [question, chatbot],
+                    outputs = [question, chatbot])
+
+mychatbot.launch()
+```
+
+![[Pasted image 20260517220446.png]]
