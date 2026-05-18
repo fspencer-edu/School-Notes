@@ -298,7 +298,7 @@ tools = []
 agent_executor = create_react_agent(llm, tools)
 ```
 
-![[Pasted image 20260518142301.png]]
+<img src="/images/Pasted image 20260518142301.png" alt="image" width="500">
 
 - ReAct
 	- Method in which the agent thinks step by step
@@ -323,7 +323,7 @@ tools = [search_tool]
 agent_executor = create_react_agent(llm, tools)
 ```
 
-![[Pasted image 20260518142500.png]]
+<img src="/images/Pasted image 20260518142500.png" alt="image" width="500">
 
 ### Using LangGraph with a custom tools
 

@@ -90,7 +90,7 @@ print(dataset)
 - Download the dataset from Hugging face
 	- `~/.cache/huggingface/datasets`
 
-![[Pasted image 20260515221419.png]]
+<img src="/images/Pasted image 20260515221419.png" alt="image" width="500">
 
 - Download a particular split
 
@@ -270,7 +270,7 @@ print(tokens)
 	- Inform the model which tokens should be attended to
 		- 1 (attended to) or 0 (padding)
 
-![[Pasted image 20260515222840.png]]
+<img src="/images/Pasted image 20260515222840.png" alt="image" width="500">
 
 ## Visualizing Datasets
 
@@ -321,7 +321,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-![[Pasted image 20260515223306.png]]
+<img src="/images/Pasted image 20260515223306.png" alt="image" width="500">
 
 ### Using the CIFAR-10 dataset
 

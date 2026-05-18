@@ -38,7 +38,7 @@ interface = gr.Interface(fn = my_chatbot,  #1
 interface.launch()
 ```
 
-![[Pasted image 20260518143038.png]]
+<img src="/images/Pasted image 20260518143038.png" alt="image" width="500">
 
 - Flag buttons are displayed by default
 - Port number increments by 1 every time you run the cell in Jupyter Notebook
@@ -66,7 +66,7 @@ interface = gr.Interface(fn = my_chatbot,
 interface.launch()
 ```
 
-![[Pasted image 20260518143326.png]]
+<img src="/images/Pasted image 20260518143326.png" alt="image" width="500">
 
 ### Configuring authentication
 
@@ -158,7 +158,7 @@ gr.Interface(fn = my_chatbot,
              outputs = "text").launch()
 ```
 
-![[Pasted image 20260518144007.png]]
+<img src="/images/Pasted image 20260518144007.png" alt="image" width="500">
 
 ### Working with Audio
 
@@ -183,7 +183,7 @@ interface = gr.Interface(fn = reverse_audio,
 interface.launch()
 ```
 
-![[Pasted image 20260518144052.png]]
+<img src="/images/Pasted image 20260518144052.png" alt="image" width="500">
 
 ### Working with Images
 
@@ -326,7 +326,7 @@ tabbed = gr.TabbedInterface(  #2
 tabbed.launch()
 ```
 
-![[Pasted image 20260518144413.png]]
+<img src="/images/Pasted image 20260518144413.png" alt="image" width="500">
 
 ## Creating a chatbot UI
 

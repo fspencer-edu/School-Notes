@@ -1,6 +1,6 @@
 https://learning.oreilly.com/library/view/learning-langchain/9781098167271/
 
-![[Pasted image 20260515121331.png]]
+<img src="/images/Pasted image 20260515121331.png" alt="image" width="500">
 
 1) LLM Fundamentals with LangChain
 2) RAG Part 1 - Indexing Your Data

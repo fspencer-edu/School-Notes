@@ -20,7 +20,7 @@
 
 **Tokens**
 
-![[Pasted image 20260516111946.png]]
+<img src="/images/Pasted image 20260516111946.png" alt="image" width="500">
 
 - Token
 	- A chuck of text that a model processes as a single unit
@@ -470,4 +470,4 @@ with gr.Blocks() as mychatbot:
 mychatbot.launch()
 ```
 
-![[Pasted image 20260517220446.png]]
+<img src="/images/Pasted image 20260517220446.png" alt="image" width="500">

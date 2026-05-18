@@ -116,7 +116,7 @@ for score, label, box in zip(results["scores"], results["labels"], results["boxe
 display(image)
 ```
 
-![[Pasted image 20260515122708.png]]
+<img src="/images/Pasted image 20260515122708.png" alt="image" width="500">
 ### Using the transformer pipeline
 
 ```python
@@ -281,7 +281,7 @@ for result in results:
     display(base_image)
 ```
 
-![[Pasted image 20260515123953.png]]
+<img src="/images/Pasted image 20260515123953.png" alt="image" width="500">
 ### Binding to Gradio
 
 `pip install gradio`

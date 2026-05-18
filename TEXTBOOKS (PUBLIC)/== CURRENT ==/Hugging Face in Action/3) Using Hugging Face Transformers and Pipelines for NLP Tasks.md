@@ -7,7 +7,7 @@
 	- RNNs
 	- Long short-term memory (LSTM)
 
-![[Pasted image 20260514223153.png]]
+<img src="/images/Pasted image 20260514223153.png" alt="image" width="500">
 
 - Self-attention
 	- Models weight importance of words irrespective of distance

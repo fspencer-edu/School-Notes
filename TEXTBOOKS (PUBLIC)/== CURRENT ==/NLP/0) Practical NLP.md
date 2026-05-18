@@ -1,6 +1,6 @@
 https://learning.oreilly.com/library/view/practical-natural-language/9781492054047/
 
-![[Pasted image 20260515121135.png]]
+<img src="/images/Pasted image 20260515121135.png" alt="image" width="500">
 
 1) NLP - A Primer
 2) NLP Pipeline

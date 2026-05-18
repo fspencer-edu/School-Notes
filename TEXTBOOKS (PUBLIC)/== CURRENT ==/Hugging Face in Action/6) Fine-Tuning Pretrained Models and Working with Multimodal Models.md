@@ -368,7 +368,7 @@ for score, label, box in zip(results["scores"],
 display(image)
 ```
 
-![[Pasted image 20260516111317.png]]
+<img src="/images/Pasted image 20260516111317.png" alt="image" width="500">
 
 ### Multimodal Models
 

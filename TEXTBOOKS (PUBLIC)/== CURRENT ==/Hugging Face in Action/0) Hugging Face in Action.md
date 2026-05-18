@@ -1,7 +1,7 @@
 
 https://learning.oreilly.com/library/view/hugging-face-in/9781633436718/
 
-![[Pasted image 20260514010803.png]]
+<img src="/images/Pasted image 20260514010803.png" alt="image" width="500">
 
 
 [[1) Introducing Hugging Face]]

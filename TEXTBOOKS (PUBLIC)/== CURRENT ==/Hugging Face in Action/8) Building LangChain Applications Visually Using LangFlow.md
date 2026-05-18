@@ -55,10 +55,10 @@ AI:
 	- `ConversationChain`
 - Connect the `Prompt` and `HuggingFace` components to the `ConversationChain`
 
-![[Pasted image 20260517221110.png]]
+<img src="/images/Pasted image 20260517221110.png" alt="image" width="500">
 ### Add Chat Input and Chat Output Components
 
-![[Pasted image 20260517221132.png]]
+<img src="/images/Pasted image 20260517221132.png" alt="image" width="500">
 ### Testing the project
 ### Maintaining a conversation using the Chat Memory component
 
@@ -70,7 +70,7 @@ User: {question}
 AI:
 ```
 
-![[Pasted image 20260517221241.png]]
+<img src="/images/Pasted image 20260517221241.png" alt="image" width="500">
  
 
 ## Asking Questions on your own Data
@@ -109,15 +109,15 @@ Question:
 Answer:
 ```
 
-![[Pasted image 20260517221502.png]]
+<img src="/images/Pasted image 20260517221502.png" alt="image" width="500">
 ### HuggingFace Component
 
-![[Pasted image 20260517221526.png]]
+<img src="/images/Pasted image 20260517221526.png" alt="image" width="500">
 
 
 ## Using Your Project Programmatically
 
-![[Pasted image 20260517221608.png]]
+<img src="/images/Pasted image 20260517221608.png" alt="image" width="500">
 
 - Connections
 	- Curl

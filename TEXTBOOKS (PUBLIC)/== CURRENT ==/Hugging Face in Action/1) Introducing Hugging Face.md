@@ -61,7 +61,7 @@ demo.launch()
 
 ## Understanding the Hugging Face Mental Model
 
-![[Pasted image 20260514204349.png]]
+<img src="/images/Pasted image 20260514204349.png" alt="image" width="500">
 
 ### User Need
 

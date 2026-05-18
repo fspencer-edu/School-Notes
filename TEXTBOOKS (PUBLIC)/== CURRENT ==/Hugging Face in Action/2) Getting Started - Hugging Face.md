@@ -111,7 +111,7 @@ question_classifier = pipeline("text-classification",
 
 **Device Parameters**
 
-![[Pasted image 20260514205616.png]]
+<img src="/images/Pasted image 20260514205616.png" alt="image" width="500">
 
 **Autodetecting CUDA, MPS, or CPU for PyTorch Inference**
 
