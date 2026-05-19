@@ -777,7 +777,101 @@ enum Node {
 ```
 - `indirect`
 	- Enum's case associated value can be an instance of that enum
-### Subclass and sup
+### Subclass and Superclass
+
+- Two classes can be subclass and superclass of one another
+- Cocoa
+	- One base class
+	- NSObject
+	- All other classes are subclasses, at some level
+	- Tree hierarchy
+
+#### Inheritance
+
+- Share functionality
+
+```swift
+class Quadruped {
+	func walk() {
+		print("walk walk walk")
+	}
+}
+class Dog : Quadruped {}
+class Cat : Quadruped {}
+
+let fido = Dog()
+fido.walk()
+```
+- A class declaration can prevent the class from being subclassed by preceding the class declaration with `final`
+
+#### Additional functionality
+
+- Subclass consists of the methods inherited from superclass, and subclass specific methods
+
+```swift
+class Quadruped {
+    func walk () {
+        print("walk walk walk")
+    }
+}
+class Dog : Quadruped {
+    func bark () {
+        print("woof")
+    }
+    func barkAndWalk() {
+        self.bark()
+        self.walk()
+    }
+}
+
+let fido = Dog()
+fido.barkAndWalk() // woof walk walk walk
+```
+#### Overriding
+
+- Subclass can redefine a method inherited from its superclass
+
+```swift
+class Quadruped {
+	func walk() {
+		print("walk")
+	}
+}
+class Dog : Quadruped {
+	func bark() {
+		print("woof:)
+	}
+}
+class NoisyDog : Dog {
+	override funk bark() {
+		print("woof woof")
+	}
+}
+```
+
+- An override exists only when the subclass redefined the same method that is inherits from a superclass
+	- Same name and external parameters
+- A method override can be replaced with an Optional wrapping the superclass
+
+```swift
+class Dog {
+	func barkAt(cat:Kitten) {}
+}
+class NoisyDog : Dog {
+	override func barkAt(cat:Cat) {}
+}
+```
+
+ - A class declaration can prevent from being overridden by a subclass with `final`
+
+#### The keyword super
+
+- `super`
+	- Override something in the subclass, as well has override the superclass
+#### 
+#### 
+#### 
+
 ### 
 ## Polymorphism
 
