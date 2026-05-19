@@ -1434,6 +1434,16 @@ class SecondViewController : UIViewController {
 ```
 ### Optional Protocol Members
 
+- A protocol member can be declared option
+- Explicity exposed to Objective-C
+	- `@objc`
+
+
+```swift
+@objc protocol Flier {
+	@objc op
+}
+```
 #### Optional Properties
 #### Optional Methods
 ### Implicitly Required Initializers
