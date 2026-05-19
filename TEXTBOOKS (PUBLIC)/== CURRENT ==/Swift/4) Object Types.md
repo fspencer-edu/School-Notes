@@ -1236,16 +1236,258 @@ class Dog {
 ```
 
 - Factory method
-	- Write an instance method version 
+	- Write an instance method version
+	- Creating objects in a superclass while allowing subclasses to determine the specific concrete class to instantiate
 
-### 
-### 
-### 
+### Type as Value
 
+- Treat an object type as a value
+- Metatype
+	- Declare that an object type is acceptable with 1Type
+	- Use an object type as a value
+
+```swift
+func dogTypeExpecter(_ whattype:Dog.Type) {
+}
+
+dogTypeExpecter(Dog.self)
+let d = Dog()
+dogTypeExpecter(type(of:d))
+```
+
+### Summary of Type Terminology
+
+- `type(of:)`
+- `Self`
+- `.Type`
+- `.self`
+### Comparing Types
+
+- Type reference can be compared to one another
+	- `==`
+	- `is`
+	- `.Type`
+
+```swift
+func dogTypeExpecter(_ whattype:Dog.Type) {
+    let equality = whattype == Dog.self
+    let typology = whattype is Dog.Type
+}
+```
 ## Protocols
+
+- Protocols
+	- Way of expressing commonality between otherwise unrelated types
+	- A object type
+	- No protocol objects
+	- Lightweight list of properties and methods
+	- No values, methods have no code
+- Adopting the protocol
+	- Object type can declare that is belongs to a protocol type
+- Conforming to the protocol
+	- Protocol promises to implement the properties and methods listed by the protocol
+- A protocol can also declare a method and provide its implementation
+	- Protocol extensions
+
+```swift
+protocol Flier {
+	func fly()
+}
+
+struct Bird : Flier {
+	func fly() {
+	}
+}
+```
+### Why Protocols?
+
+- A protocol is a kind of type
+- Use Flier as a type when declaring the type of a variable or a function parameter
+
+```swift
+func tellToFly(_ f:Flier){
+	f.fly()
+}
+```
+- Polymorphism applies
+- An object with a `fly` method is not automatically a Flier
+- Object type must formally adopt the protocol
+
+```swift
+func tellToFly(_ f:Flier) {
+	f.fly()
+}
+struct Bee {
+	func fly() {
+	}
+}
+let b = Bee()
+tellToFly(b) // compile error
+```
+
+- Bee cannot be sent the `fly` message
+- Takes Flier parameter
+
+```swift
+func tellToFly(_ f:Flier) {
+    f.fly()
+}
+struct Bee : Flier {
+    func fly() {
+    }
+}
+let b = Bee()
+tellToFly(b)
+```
+### Adopting a Library Protocol
+
+- CustomStringConvertilbe protocol
+	- `description` String property
+
+```swift
+enum Filter : String, CustomStringConvertible {
+    case albums = "Albums"
+    case playlists = "Playlists"
+    case podcasts = "Podcasts"
+    case books = "Audiobooks"
+    var description : String { return self.rawValue }
+}
+
+let type = Filter.albums
+print("It is \(type)") // It is Albums
+print(type) // Albums
+let s = String(describing:type) // Albums
+```
+
+- Give any object type the power of string conversion
+- Type can adopt more than one protocol
+
+```swift
+struct MyType : CustomStringConvertible, TextOutputStreamable, Strideable {
+    // ...
+}
+```
+### Protocol Type Testing and Casting
+
+- `is`
+	- Test object's declared or real type
+
+```swift
+func isBird(_ f:Flier) -> Bool {
+    return f is Bird
+}
+```
+### Declaring a Protocol
+
+- Can take place only at the top level of a file
+- `protocol`
+	- Properties
+	- Methods
+- A protocol can adopt one or more protocols
+### Protocol Composition
+
+- Avoid formally declaring the protocol in the first place by specifying the protocol combination
+	- Join with `&`
+	- Protocol composition
+
+```swift
+func f(_ x: CustomStringConvertible & CustomDebugStringConvertible) {
+}
+
+// composite of a class type
+protocol MyViewProtocol {
+    func doSomethingReallyCool()
+}
+class ViewController: UIViewController {
+    var v: (UIView & MyViewProtocol)?
+    func test() {
+        self.v?.doSomethingReallyCool() // a MyViewProtocol requirement
+        self.v?.backgroundColor = .red // a UIView property
+    }
+}
+```
+### Class Protocols
+
+```swift
+protocol MyViewProtocol : UIView {
+    func doSomethingReallyCool()
+}
+class ViewController: UIViewController {
+    var v: MyViewProtocol? // and therefore a UIView
+    func test() {
+        self.v?.doSomethingReallyCool() // a MyViewProtocol requirement
+        self.v?.backgroundColor = .red // a UIView property
+    }
+}
+```
+
+- Resulting type can take advantage of special memory management features that apply only to classes
+
+```swift
+protocol SecondViewControllerDelegate : AnyObject {
+    func accept(data:Any)
+}
+class SecondViewController : UIViewController {
+    weak var delegate : SecondViewControllerDelegate?
+    // ...
+}
+```
+### Optional Protocol Members
+
+#### Optional Properties
+#### Optional Methods
+### Implicitly Required Initializers
+
+### Expressible by Literal
+
 ## Generics
+
+### Generic Declarations
+### Type Constraints
+### Explicit Specialization
+### Genetic Types and Covariance
+### Associated Type Chains
+### Where Clauses
+
+
 ## Extensions
+
+### Extending Protocols
+### Extending Generics
+
 
 ## Umbrella Types
 
+### Any
+
+#### Suppressing type checking
+#### Object Identity
+### AnyClass
+
+
 ## Collection Types
+
+### Array
+
+#### Array casting and type testing
+
+#### Array comparison
+#### Arrays are value types
+#### Array subscripting
+#### Nested arrays
+#### Basic array properties and methods
+
+#### Array enumeration and transformation
+#### Swift Array and Objective-C NSArray
+### Dictionary
+
+#### Dictionaries have no order
+#### Dictionary casting and comparison
+#### Basic dictionary properties and enumeration
+#### Swift Dictionary and Objective-C NSDictionary
+### Set
+#### Option sets
+#### Swift Set and Objective-C NSSet
+### OrderedSet and OrderedDictionary
+#### OrderedSet
+#### OrderedDictionary
