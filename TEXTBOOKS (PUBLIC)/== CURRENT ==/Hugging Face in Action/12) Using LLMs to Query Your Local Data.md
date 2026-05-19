@@ -303,4 +303,112 @@ template = """
     Question: {question}
 """
 ```
+
+- Use LangChain to chain the prompt template to the LLM
+
+```python
+from langchain import PromptTemplate
+from langchain_core.output_parsers import StrOutputParser
+
+def ask_question(question):
+    prompt = PromptTemplate(template = template,
+                            input_variables=["question"])  
+    chain = prompt | llm | StrOutputParser()  
+    return chain.invoke({"question": question})
+```
+### Asking question using OpenAI
+
+- Prepare the prompt template
+
+```python
+messages = []
+messages.append(
+{
+    'role':'user',
+    'content':'''
+        Here is an example of a JSON file loaded into a Pandas DataFrame:
+        {
+          "famous_people": [
+            {
+              "name": "John Smith",
+              "occupation": "Actor",
+              "birth_date": "1980-05-15",
+              "birth_place": "Los Angeles, USA",
+              "achievements": ["Oscar-winning performance",
+                               "Golden Globe nominee"],
+              "quote": "Acting is not about being someone different.
+                        It's finding the similarity in what is
+                        apparently different, then finding myself in
+                        there."
+            },
+          ]
+        }
+        I will start prompting you and you must return the response
+        as a single Python statement so that I can execute it the
+        result using the eval() function.
+
+        For your info I have loaded the JSON file as a df using
+        the following code:
+
+        with open('famous_people.json', 'r') as json_file:
+        json_data = json.load(json_file)
+
+        df = json_normalize(json_data, 'famous_people')  #1
+    '''
+})
+```
+
+```python
+pip install openai
+
+from openai import OpenAI
+import re
+import os
+
+os.environ['OPENAI_API_KEY'] = "OPENAPI_API_KEY"
+
+client = OpenAI(
+    api_key = os.environ.get("OPENAI_API_KEY"),
+)
+
+while True:
+    prompt = input('\nAsk a question: ')
+    if prompt == "quit":
+        break
+
+    messages.append(
+    {
+        'role':'user',
+        'content':prompt
+    })  
+
+    completion = client.chat.completions.create(
+        model = "gpt-4o-mini",
+        messages = messages,
+        max_tokens = 1024,
+        temperature = 0)
+
+    response = completion.choices[0].message.content
+
+    pattern = re.compile(r'```python\s*([\s\S]*)\n```')
+    match = pattern.search(response)
+    
+    if match:
+        extracted_content = match.group(1)
+        print(extracted_content)
+        if extracted_content.count('\n') > 1:
+            exec(extracted_content)     #1
+        else:            
+            display(eval(extracted_content))  #2
+    else:
+        print("No content found within ```python...```.")
+
+    messages.append(
+    {
+        'role':'assistant',
+        'content':response
+    })
+```
+### 
+### 
 ### 
