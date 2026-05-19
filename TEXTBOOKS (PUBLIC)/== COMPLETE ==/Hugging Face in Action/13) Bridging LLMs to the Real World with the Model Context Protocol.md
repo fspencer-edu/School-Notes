@@ -233,7 +233,154 @@ def weather_report(city: str) -> str:
     - Any relevant weather advice for the conditions
     """
 ```
-### 
+### Testing the components
 
+- `@mcp.prompt`
+	- Registers a function as an MCP prompt
+
+```ython
+$ uv run mcp dev server.py
+```
 ## Testing the MCP server using Claude Desktop
+
+- Claude Desktop
+	- Integrates MCP to enhance AI-driven tasks and workflows
+
+### Configuring Claude Desktop to use the MCP server
+
+```python
+$ nano ~/Library/Application\ Support/Claude/claude_desktop_config.json
+
+{
+  "mcpServers": {
+    "weather": {
+      "command": "/Users/weimenglee/.local/bin/uv",
+      "args": [
+        "--directory",
+        "/Volumes/SSD/MCP_Demo",
+        "run",
+        "server.py"
+      ]
+    }
+  }
+}
+```
+### Improving the MCP server
+
+```python
+from mcp.server.fastmcp import FastMCP
+import httpx
+import fitz  # for PyMuPDF
+import os
+
+import sys
+
+API_KEY = os.getenv('OPENWEATHER_API_KEY')              #1
+if not API_KEY:
+    print("Error: OPENWEATHER_API_KEY environment variable must be set",
+       file=sys.stderr)
+    sys.exit(1)
+
+# Create an MCP server
+mcp = FastMCP("MCP Demo")
+...
+...
+#======
+# Tools
+#======
+@mcp.tool()
+async def fetch_weather(city: str, units: str = "metric") -> dict:
+    async with httpx.AsyncClient() as client:
+        # API_KEY = "xxxxxxxxxxxx"
+        # Using OpenWeatherMap API
+        response = await client.get(
+...
+...
+```
+
 ## Trying third party MCP servers
+
+- Third party MCP servers
+	- Location service
+	- Time service
+
+## Get My Location
+
+```python
+$ nano ~/Library/Application\ Support/Claude/claude_desktop_config.json
+
+{
+  "mcpServers": {
+    "weather": {
+      "command": "/Users/weimenglee/.local/bin/uv",
+      "args": [
+        "--directory",
+        "/Volumes/SSD/MCP_Demo",
+        "run",
+        "server.py"
+      ],
+      "env": {
+        "OPENWEATHER_API_KEY": "xxxxxxxxxxxx"
+      }
+    },
+    "get-location": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@mcpcn/mcp-get-location"
+      ],
+      "env": {}
+    }
+  }
+}
+```
+
+- Location Service server is written in Node.js
+
+### mcp-datetime
+
+- Obtain the current time in geographical locations
+
+```python
+$ nano ~/Library/Application\ Support/Claude/claude_desktop_config.json
+
+{
+  "mcpServers": {
+    "weather": {
+      "command": "/Users/weimenglee/.local/bin/uv",
+      "args": [
+        "--directory",
+        "/Volumes/SSD/Dropbox/MCP_Demo",
+        "run",
+        "server.py"
+      ],
+      "env": {
+        "OPENWEATHER_API_KEY": "xxxxxxxxxxxx"
+      }
+    },
+    "get-location": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@mcpcn/mcp-get-location"
+      ],
+      "env": {}
+    },
+    "mcp-datetime": {
+      "command": "/Users/weimenglee/.local/bin/uvx",
+      "args": ["mcp-datetime"]
+    }
+  }
+}
+```
+**UV and UVX**
+
+- `uv`
+	- Python package and project manager
+	- Handles dependencies an virtual environments
+- `uvx`
+	- Executes Python applications in isolated, temporary environments
+	- 
+
+### 
+### 
