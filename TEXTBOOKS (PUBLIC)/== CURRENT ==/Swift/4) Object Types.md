@@ -275,14 +275,158 @@ class Dog {
 		self.name = name
 		self.license = license
 	}
-	func bar
+	func bark(){
+		print(self.whatDogsSay)
+	}
+	func speak(){
+		self.bark()
+		print("I'm \(self.name)")
+	}
+}
+
+// omit self
+func speak() {
+    bark()
+    print("I'm \(name)")
+}
+
+// static/class method is accssed through the type
+struct Greeting {
+	static let friendly = "hello"
+	static func beFriendly(){
+		print(self.friendly)
+	}
+}
+```
+### Subscripts
+
+- A method that is called by appending square brackets containing arguments directly to a reference
+- Elements that are accessed by key or by index number
+
+```swift
+struct Digit {
+	var number : Int
+	init(_ n: Int){
+		self.number = n
+	}
+	subscript(ix:Int) -> Int {
+		get {
+			let s = String(self.number)
+			return Int(String(s[s.index(s.startIndex, offsetBy:ix)]))!
+		}
+	}
+}
+
+let d = Digit(1234)
+let aDigit = d[1]
+
+struct Digit {
+    var number : Int
+    init(_ n:Int) {
+        self.number = n
+    }
+    subscript(ix:Int) -> Int {
+        get {
+            let s = String(self.number)
+            return Int(String(s[s.index(s.startIndex, offsetBy:ix)]))!
+        }
+        set {
+            var s = String(self.number)
+            let i = s.index(s.startIndex, offsetBy:ix)
+            s.replaceSubrange(i...i, with: String(newValue))
+            self.number = Int(s)!
+        }
+    }
+}
+
+var d = Digit(1234)
+d[0] = 2 // now d.number is 2234
+
+subscript(ix:Int = 0) -> Int {
+```
+
+- Parameter names are not externalized
+	- Add external name, `subscript(ix ix:Int)`
+
+- An object type can declare multiple subscript methods
+- 
+### Nested Object Types
+
+- An object type may be declared inside an object type declaration
+- A nested type can't refer directly to the surrounding type's instance members
+	- Can refer to the surrounding type's static/class members
+
+```swift
+class Dog {
+	struct Noise {
+		static var noise = "woof"
+	}
+	func bark() {
+		print(Dog.Noise.noise)
+	}
+}
+
+Dog.Noise.noise = "arf"
+
+class Dog {
+	static let sound = "ruff"
+	struct Noise {
+		statuc var noise = "woof"
+		func barkTheDog() { bark() } // compile eror
+		var othernoise = sound
+	}
+	func bark() {
+		print(Dog.Noise.noise)
+	}
 }
 ```
 
-#### 
-#### 
-#### 
+- Code inside `Noise` cannot refer directly to Dog's `bark` method
+- Code inside `noise` can refer to `sound` static property
+
 ## Enums
+
+- Enum
+	- An object type whose instance represent distinct predefined alternative values
+	- Express a set of consents that are alternatives to one another
+	- Each case is the name of one of the alternatives
+
+```swift
+enum Filter {
+	case albums
+	case playlists
+	case podcasts
+	case books
+}
+```
+
+- Write an initializer for an enum
+- Instances of an enum with the same case are regarded as equal
+
+```python
+let type = Filter.albums
+
+let type : Filter = .albums
+
+func filterExpecter(_ type:Filter) {}
+filterExpecter(.albums)
+
+let v = UIView()
+v.contentMode = .center
+
+func filterExpecter(_ type:Filter) {
+	if type == .albums {
+		print("it is album")
+	}
+}
+filterExpecter(.albums)
+```
+
+### Raw Values
+
+- Adds a type dec
+### 
+### 
 ## Structs
 ## Classes
 ## Polymorphism
