@@ -1435,41 +1435,352 @@ class SecondViewController : UIViewController {
 ### Optional Protocol Members
 
 - A protocol member can be declared option
-- Explicity exposed to Objective-C
+- Explicitly exposed to Objective-C
 	- `@objc`
 
 
 ```swift
 @objc protocol Flier {
-	@objc op
+	@objc optional var song : String {get}
+	@objc optional func sing()
 }
 ```
 #### Optional Properties
+
+- Swift solves the problem by wrapping its fetched values in an Optional
+
+```swift
+@objc protocol Flier {
+	@objc optional var song : String {get}
+}
+let f : Flier = Bird()
+let s = f.song
+```
 #### Optional Methods
+
+- Unwrapping is not the result of the method call
+
+```swift
+@objc protocol Flier {
+    @objc optional func sing()
+}
+let f : Flier = Bird()
+f.sing?()
+```
 ### Implicitly Required Initializers
 
+- An initializer declared in a protocol is implicitly required
+- A class that adopts this protocol is forced to make that requirement explicit
+- Designate initializer as `required`
+
+```swift
+protocol Flier {
+    init()
+}
+class Bird : Flier {
+    required init() {}
+}
+```
 ### Expressible by Literal
 
+- Protocols declared in the Swift header
+	- ExpressibleByNilLiteral
+	- ExpressibleByBooleanLiteral
+	- ExpressibleByIntegerLiteral
+	- ExpressibleByFloatLiteral
+	- ExpressibleByStringLiteral
+	- ExpressibleByExtendedGraphemeClusterLiteral
+	- ExpressibleByUnicodeScalarLiteral
+	- ExpressibleByArrayLiteral
+	- ExpressibleByDictionaryLiteral
+
+- A literal can appear where an instance of your object type is expected
+
+```swift
+struct Nest : ExpressibleByIntegerLiteral {
+    var eggCount : Int = 0
+    init() {}
+    init(integerLiteral val: Int) {
+        self.eggCount = val
+    }
+}
+```
 ## Generics
 
+- A generic is a placeholder for a type
+- Optional with a specific known type
+
+```swift
+enum Optional<Wrapped> : ExpressibleByNilLiteral { 
+    case none
+    case some(Wrapped) 
+    init(_ some: Wrapped) 
+    // ...
+}
+```
+
+- The process of substitution is called resolving or specializing the generic
+
+```swift
+let s = Optional("howdy")
+
+let s : Optional<String> = "howdy"
+```
 ### Generic Declarations
+
+- Generic protocol with `Self`
+	- Placeholder meaning the type of the adopter
+
+```swift
+protocol Flier {
+    func flockTogetherWith(_ f:Self)
+}
+```
+
+- Generic protocol with associated type
+	- Turns the protocol into a generic
+	- Associated type name is a placeholder
+
+```swift
+protocol Flier {
+    associatedtype T
+    func flockTogetherWith(_ f:T)
+    func mateWith(_ f:T)
+}
+```
+
+- Generic functions
+
+```swift
+func takeAndReturnSameThing<T> (_ t:T) -> T {
+    print(T.self)
+    return t
+}
+```
+
+- Generic object types
+
+```swift
+struct HolderOfTwoSameThings<T> {
+    var firstThing : T
+    var secondThing : T
+    init(thingOne:T, thingTwo:T) {
+        self.firstThing = thingOne
+        self.secondThing = thingTwo
+    }
+}
+```
+
 ### Type Constraints
+
+- A generic declaration can limit the types that are eligible to be used for resolving a particular placeholder
+	- Type constraint
+	- Colon and type
+- Class name
+- Protocol name
+
+```swift
+protocol Flier {
+    func fly()
+}
+protocol Flocker {
+    associatedtype T : Flier // *
+    func flockTogetherWith(f:T)
+}
+struct Bee : Flier {
+    func fly() {}
+}
+struct Bird : Flocker {
+    func flockTogetherWith(f:Bee) {}
+}
+```
+
+- A generic protocol type can be used only as a type constraint
+
 ### Explicit Specialization
+
+- Placeholder's type has been resolved through inference
+- Explicit specialization
+	- Resolve type manually
+
+- Generic protocol with association
+	- The adopter of a protocol can resolve an associated type manually through a type alias
+
+```swift
+protocol Flier {
+    associatedtype T
+}
+struct Bird : Flier {
+    typealias T = String
+}
+```
+
+- Generic object type
+	- User of a generic object type can resolve a placeholder type manually using the same angle bracket syntax used to declared the generic in the first place
+
+```swift
+class Dog<T> {
+    var name : T?
+}
+let d = Dog<String>()
+```
+
 ### Genetic Types and Covariance
+
+- A generic object type can't be used as the declared type of anything
+
+```swift
+class Dog<T> {
+    func speak(_ what:T) {}
+}
+var d: Dog? // compile error
+```
+
+- Only resolved generic object types can be a declared type
+
+```swift
+class Dog<T> {
+    func speak(_ what:T) {}
+}
+var d: Dog<Int>? // that's a type
+var d2: Dog<String>? // that's a different type
+// ... and so on ...
+
+// inferred
+class Node<T> {
+    let value:T
+    let parent:Node?
+    init(_ value:T, parent:Node?) {
+        self.value = value
+        self.parent = parent
+    }
+}
+```
+- A generic type specialized to a subtype is not polymorphic with respect to the same generic type specialized to a supertype
+- Covaiant
+	- The polymorphic relationship between the specializations of the placeholders is applied to the generic types themselves
+
 ### Associated Type Chains
+
+- When a generic placeholder is constrained to a generic protocol with an associated type, refer to the type using dot-notation
+
+```swift
+protocol Fighter {
+	associatedtype Enemy : Fighter
+}
+
+struct Soldier : Fighter {
+    typealias Enemy = Archer
+}
+struct Archer : Fighter {
+    typealias Enemy = Soldier
+}
+
+struct Camp<T:Fighter> {
+}
+```
 ### Where Clauses
 
+- Express a type constraint
+	- Generic function
+	- Generic type
+	- Generic protocol
+	- Associated type in a generic protocol
+
+```swift
+func flyAndWalk<T> (_ f:T) where T: Flier {}
+func flyAndWalk2<T> (_ f:T) where T: Flier & Walker {}
+func flyAndWalk2a<T> (_ f:T) where T: Flier, T: Walker {}
+```
 
 ## Extensions
 
+- An extension is a way of injecting code into an object type that has already been declared elsewhere
+	- Extending an existing object type
+	- Adds functionality
+	- `extension`
+	- Cannot declared a stored property
+	- Cannot declared a designated initializer
+	- Cannot override an existing member
+
+```swift
+extension CGRect {
+    var center : CGPoint {
+        return CGPoint(x:self.midX, y:self.midY)
+    }
+}
+
+extension UIColor {
+    static var myGolden : UIColor {
+        return self.init(
+            red:1.000, green:0.894, blue:0.541, alpha:0.900
+        )
+    }
+}
+
+```
 ### Extending Protocols
+
+- Add methods and properties to the protocol
+- Methods and properties are not requirements
+
+```swift
+protocol Flier {
+}
+extension Flier {
+    func fly() {
+        print("flap flap flap")
+    }
+}
+struct Bird : Flier {
+}
+
+let b = Bird()
+b.fly()
+```
 ### Extending Generics
 
+- The generic's placeholder type name are visible to the extension
+- `where` clause
+	- Limits which resolutions of the generic placeholder can call the code injected by this extension
+- Array is a generic struct whose placeholder type is called Element
+- Conditional conformance
+	- An extension with a where clause
 
 ## Umbrella Types
 
+- Capable of embracing multiple real types under a single heading
+
 ### Any
 
+- Universal Swift umbrella type
+- Any object of function can be passed, without casting
+
+```swift
+func anyExpecter(_ a:Any) {}
+anyExpecter("howdy")     // a struct instance
+anyExpecter(String.self) // a struct type
+anyExpecter(Dog())       // a class instance
+anyExpecter(Dog.self)    // a class type
+anyExpecter(anyExpecter) // a function
+```
+- Cast down
+	- Any object as a more specific type
+	- `anything`
+
+```swift
+if anything is String {
+    let s = anything as! String
+    // ...
+}
+
+let ud = UserDefaults.standard
+ud.set(Date(), forKey:"now")
+```
+
+### AnyObject
+
+- An empty protocol with the special feature that all class types conform to it 
 #### Suppressing type checking
 #### Object Identity
 ### AnyClass
