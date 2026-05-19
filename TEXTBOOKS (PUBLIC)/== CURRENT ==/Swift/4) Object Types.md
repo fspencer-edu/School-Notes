@@ -1035,14 +1035,213 @@ class Dog {
 ```
 ## Polymorphism
 
-- 
+- Substitution
+- Internal identity
 
-#### 
+```swift
+class Dog {
+}
+class NoisyDog : Dog {
+}
+let d : Dog = NoisyDog()
 
-### 
+class Dog {
+    func bark() {
+        print("woof")
+    }
+}
+class NoisyDog : Dog {
+    override func bark() {
+        for _ in 1...3 {
+            super.bark()
+        }
+    }
+}
+
+func tellToBark(_ d:Dog) {
+    d.bark()
+}
+var nd = NoisyDog()
+tellToBark(nd) // what will happen??????
+```
+- Pass `nd`, typed a NoisyDog, where a Dog is expected
+- The internal identity rule
+- `self` depends upon the type of the actual instance
+
+```swift
+class Dog {
+    func bark() {
+        print("woof")
+    }
+    func speak() {
+        self.bark()
+    }
+}
+class NoisyDog : Dog {
+    override func bark() {
+        for _ in 1...3 {
+            super.bark()
+        }
+    }
+}
+
+let nd = NoisyDog()
+nd.speak() // woof woof woof
+```
+
+- Polymorphism applies to Optional types in the same way that is applies to the type of thing wrapped by the Option
+
+```swift
+var d : Dog?
+d = Dog()
+d = NoisyDog()
+d = Optional(NoisyDog())
+```
+
+- Optional are covariant
+- UIViewController is a subclass, and override methods
+- Polymorphism requires dynamic dispatch
+	- Compiler can't perform certain optimizations
+	- Runtime has to think about a message to a class instance
+	- Reduce dynamic dispatch by declaring a class or a class member `final` or `private`
 
 ## Casting
+
+- The messages that the compiles will permit to be sent to an object reference depend upon the reference's declared type
+- Internal identity principle of polymorphism changes an objects real tupe from reference's declared type
+
+```swift
+class Dog {
+	func bark() {
+		print("woof")
+	}
+}
+class NoisyDog : Dog {
+	override func bark() {
+		super.bark(); super.bark()
+	}
+	func beQuiet() {
+		self.bark
+	}
+}
+
+func tellToHush(_ d:Dog) {
+    d.beQuiet() // compile error
+}
+let nd = NoisyDog()
+tellToHush(nd)
+```
+
+- Cannot send `beQuiet` message to the reference `d` inside the function body, since it is typed as Dog
+- Casting
+	- Us `as` to claim a type
+
+### Casting Down
+
+- You cannot cast a String to an Int
+- Cast a superclass to a subclass
+	- `as~`
+	- Forcing the compiler to do something
+
+```swift
+func tellToHush(_ d:Dog) {
+	(d as! NoisyDog).beQuiet()
+}
+let nd = NoisyDog()
+tellToHush(nd)
+```
+
+### Type Testing and Casting Down Safely
+
+- Casting down is a way of telling the compiler to relax its strict type checking
+- Test the type of an instance at runtime
+	- `is`
+- `as?`
+	- Cast down, with the option of failure
+
+```swift
+func tellToHush(_ d:Dog) {
+    let d = d as! NoisyDog // crash
+    d.beQuiet()
+}
+let d = Dog()
+tellToHush(d)
+
+func tellToHush(_ d:Dog) {
+    if d is NoisyDog {
+        let d = d as! NoisyDog
+        d.beQuiet()
+    }
+}
+
+func tellToHush(_ d:Dog) {
+    let d = d as? NoisyDog // an Optional wrapping a NoisyDog
+    if d != nil {
+        d!.beQuiet()
+    }
+}
+
+func tellToHush(_ d:Dog) {
+    (d as? NoisyDog)?.beQuiet()
+}
+```
+### Bridging the Objective-C
+
+- Interchange between Swift and Objective-C
+- Cast a Swift String to a Cocoa NSString
+
+```swift
+let s : NSString = "howdy"
+let s2 = "howdy"
+let s3 : NSString = s2 as NSString
+let i : NSNumber = 1 as NSNumber
+
+let name = "MyNib" // Swift String
+let vc = ViewController(nibName:name, bundle:nil)
+```
+
 ## Type References
+
+### From Instance to Type
+
+- `type(of:)`
+
+```swift
+let d : Dog = NoisyDog()
+print(type(of:d))
+```
+### From self to Type
+
+- An instance should be able to refer to its own type
+- Use `Self` to refer to the current type
+
+```swift
+class Dog {
+	class var whatDogsSay : String {
+		return "woof"
+	}
+	func bark() {
+		print(Dog.whatDogsSay)
+	}
+}
+
+class Dog {
+    class var whatDogsSay : String {
+        return "woof"
+    }
+    func bark() {
+        print(Self.whatDogsSay) // woof
+    }
+}
+```
+
+- Factory method
+	- Write an instance method version 
+
+### 
+### 
+### 
+
 ## Protocols
 ## Generics
 ## Extensions
