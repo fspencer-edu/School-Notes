@@ -1780,15 +1780,81 @@ ud.set(Date(), forKey:"now")
 
 ### AnyObject
 
-- An empty protocol with the special feature that all class types conform to it 
+- An empty protocol with the special feature that all class types conform to it automatically
+- Class instance can be assigned directly where an AnyObject is expected
+- Cast down to retrieve its original type
+
+```swift
+class Dog {
+}
+let d = Dog()
+let anyo : AnyObject = d
+let d2 = anyo as! Dog
+```
 #### Suppressing type checking
+
+- Send a message to an AnyObject without casing
+	- Member of an Objective-C class
+	- Member of Swift subclass
+	- Member of Swift extension
+	- Member of a Swift class or protocol marked `@objc`
+
+```swift
+class Dog {
+    @objc var noise : String = "woof"
+    @objc func bark() -> String {
+        return "woof"
+    }
+}
+class Cat {}
+```
 #### Object Identity
+
+- `===`
+	- Test whether an `object` is an object already referenced
+
+```swift
+@objc func changed(_ n:Notification) {
+    let player = MPMusicPlayerController.applicationMusicPlayer
+    if n.object as AnyObject === player {
+        // ...
+    }
+}
+```
 ### AnyClass
 
+- Type of AnyObject
+
+```swift
+class var layerClass : AnyClass {get}
+```
 
 ## Collection Types
 
+- Swift has built-in collection types Arrays and Dictionaries
+
 ### Array
+
+- An array is an ordered collection of object instances accessible by index number
+- Zero index
+- Strict typing
+- Array is a generic
+	- `Array<Element>`
+- Covariant
+	- Polymorphic with element types
+- Use syntactic sugar with square brackets
+- A literal array is represented as squared brackets containing a list of its elements separated by a comma
+- Array's default initializer `init()`
+
+```swift
+var arr = [Int]()
+var arr : [Int] = []
+
+let arr : [Any] = [1, "howdy"]
+let arr2 : [Flier] = [Insect(), Bird()]
+```
+
+- If an 
 
 #### Array casting and type testing
 
