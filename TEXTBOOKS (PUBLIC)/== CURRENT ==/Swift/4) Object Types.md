@@ -868,12 +868,178 @@ class NoisyDog : Dog {
 
 - `super`
 	- Override something in the subclass, as well has override the superclass
-#### 
-#### 
+
+```swift
+class Dog : Quadruped {
+	func bark() {
+		print("woof")
+	}
+}
+class NoisyDog : Dog {
+	override func bark() {
+		for _ in 1...3 {
+			super.bark()
+		}
+	}
+}
+```
+
+### Class Initializers
+
+- Initialization of a class instance is more complicated than initialization of a struct or enum instance
+- All properties should have an initial value
+- When a subclass is initialized, its superclass properties should be initialized
+#### Kinds of class initializer
+
+- Designated initializer
+	- A class can be instantiated only through a class to one of its designated initializers
+	- Does not delegate to another initializer in the same class
+- Convenience initializer
+	- Marked with `convenience`
+	- Facade for a designated initializer
+	- Must contain `self.init()`
+
+```swift
+// designated initializer
+class Dog {
+}
+let d = Dog()
+
+class Dog {
+	var name = "Fide"
+}
+let d = Dog()
+
+class Dog {
+    var name = "Fido"
+    init(name:String) {self.name = name}
+}
+let d = Dog(name:"Rover") // ok
+let d2 = Dog() // compile error
+```
+
+- A designated initializer cannot, except in order to initialize a property say `self`
+- A convenience initializer is a delegating initializer
+
+#### Subclass initializers
+
+- No declared initializers
+- Convenience initializers only
+- Designated initializers
+- Designated and convenience initializers
+- Override initializers
+- Failable initializers
+
+#### Subclass initializer examples
+
+```swift
+class Dog {
+	var name : String
+	var license : Int
+	init(name:String, license:Int) {
+		self.name = name
+		self.license = license
+	}
+	convenience init(license:Int) {
+		self.init(name:"Fido", license:license)
+	}
+}
+class NoisyDog : Dog{
+}
+
+let nd1 = NoisyDog(name:"Fido", license:1)
+let nd2 = NoisyDog(license:2)
+let nd3 = NoisyDog() // compile error
+```
+
+#### Required Initializers
+
+- A class initializer may be preceded by `required`
+- A subclass may not lack this initializer
+- Must override this initializer and mark the override `required`
+
+```swift
+class Dog {
+    var name : String
+    required init(name:String) {
+        self.name = name
+    }
+}
+class NoisyDog : Dog {
+    var obedient = false
+    init(obedient:Bool) {
+        self.obedient = obedient
+        super.init(name:"Fido")
+    }
+    required init(name:String) {
+        super.init(name:name)
+    }
+}
+```
+
+### Class Deinitializer
+
+- A function declared with the keyword `deinit`
+- Called by the runtime when an instance of this class goes out of existence
+- Subclass deinitializer is called before the superclass's
+- Class feature only
+- Perform internal cleanup
+- Log to the console
+
+### Class Properties
+
+- A subclass can override its inherited properties
+	- Same name and type, marked with `override`
+	- Cannot be a stored property
+
+### Static/Class Members
+#### Static methods vs. class methods
+
+- Static
+	- Cannot be overridden
+- Class
+	- Can be overridden in a subclass
+
+```swift
+class Dog {
+	static func whatDogsSay() -> String {
+		 return "woof"
+	}
+	func bark() {
+		print(Dog.whatDogsSay())
+	}
+}
+```
+#### Static vs. Class Properties
+
+- A static property can be stored
+- A class property must be a computer property
+
+```swift
+class Dog {
+	static var whatDogsSay = "woof"
+	func bark() {
+		print(Dog.whatDogsSay)
+	}
+}
+
+// computer property
+class Dog {
+    class var whatDogsSay : String {
+        return "woof"
+    }
+    func bark() {
+        print(Dog.whatDogsSay)
+    }
+}
+```
+## Polymorphism
+
+- 
+
 #### 
 
 ### 
-## Polymorphism
 
 ## Casting
 ## Type References
