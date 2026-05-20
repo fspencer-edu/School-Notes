@@ -188,11 +188,31 @@ while let i = iterator.next() {
 - Trailing closures
 	- Parentheses are needed
 
+```swift
+for i in arr.map ({$0*2}) {
+    print(i)
+}
+```
 ### Jumping
 
+- Interrupt code's progress completely and jump to a different place
+
 #### Return
+
+- Return statement
+	- One function calls another
 #### Short-circuiting and labels
+
+- `fallthough`
+	- A switch case aborts execution of the current case code, and beings executing the next case
+- `continue`
+	- Aborts execution of current and proceeds to next iteration
+- `break`
+	- Aborts the current construct and proceeds after the end of the construct
+
 #### Throwing and catching errors
+
+- 
 #### Defer Statement
 #### Aborting the whole program
 #### Guard
