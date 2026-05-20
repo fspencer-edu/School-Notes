@@ -1854,18 +1854,188 @@ let arr : [Any] = [1, "howdy"]
 let arr2 : [Flier] = [Insect(), Bird()]
 ```
 
-- If an 
+- Array also has an initializer whose parameter is a sequence
+- `init(repeating:count:)`
+	- Populate an array with the same value
 
+```swift
+let strings : [String?] = Array(repeating:nil, count:100)
+```
 #### Array casting and type testing
 
+- Assign, pass, or casting an array operates on the individual elements of the array
+
+```swift
+let arr : [Int?] = [1, 2, 3]
+print(arr)
+
+let dog1 : Dog = NoisyDog()
+let dog2 : Dog = NoisyDog()
+let arr = [dog1, dog2]
+let arr2 = arr as! [NoisyDog]
+```
 #### Array comparison
+
+- Arrays are equal if they contain the same number of elements and all elements are pairwise equal in order
+
+```swift
+let i1 = 1
+let i2 = 2
+let i3 = 3
+let arr : [Int] = [1,2,3]
+if arr == [i1,i2,i3] { // they are equal!
+```
 #### Arrays are value types
+
+- An array is a value type, not a reference type
+- Elements may not be a value type
 #### Array subscripting
+
+- Array struct implements subscript methods to allow access to elements using square brackets after a reference to an array
+- ArraySlice
+	- `arr[1...3]`
+	- Substring of an array
+
+```swift
+let arr = ["manny", "moe", "jack"]
+let slice = arr[1...2] // ["moe", "jack"]
+print(slice[1]) // moe
+```
+
+- Subscripting an array with a range is an opportunity to use partial range notation
+
+```swift
+var arr = [1,2,3]
+arr[1...] = [4,5] // arr is now [1,4,5]
+```
+
 #### Nested arrays
+
+```swift
+let arr = [[1,2,3], [4,5,6], [7,8,9]]
+let arr = [[1,2,3], [4,5,6], [7,8,9]]
+let i = arr[1][1] // 5
+```
 #### Basic array properties and methods
 
+- An array is a collection, which is a Sequence
+- `import Algorithms`
+	- Algorithms packages
+- `count`
+- `isEmpty`
+- `first`
+- `last`
+
+```swift
+let arr = [1,2,3]
+let slice = arr.suffix(from:1)     // [2,3]
+let slice2 = arr[1...]             // [2,3]
+let slice3 = arr.prefix(upTo:1)    // [1]
+let slice4 = arr.prefix(through:1) // [1,2]
+```
+
+- Cocoa provides, NSSortDescriptor
+- Overlay type SortDescriptor
+- Comparison operator is the same for all properties
+	- Typles
+
+```swift
+arr.sort { ($0.lastName, $0.firstName) < ($1.lastName, $1.firstName) }
+
+var arr = [1,2,3]
+arr.swapAt(0,2) // [3,2,1]
+```
+
 #### Array enumeration and transformation
+
+- An array is a sequence
+- Enumerate, inspect, or operate with each element
+- `for...in`
+
+```swift
+let pepboys = ["Manny", "Moe", "Jack"]
+for pepboy in pepboys {
+    print(pepboy) // prints Manny, then Moe, then Jack
+}
+```
+
+- `forEach(_:)` instance method
+
+```swift
+let pepboys = ["Manny", "Moe", "Jack"]
+pepboys.forEach {print($0)} // prints Manny, then Moe, then Jack
+
+let pepboys = ["Manny", "Moe", "Jack"]
+for (ix,pepboy) in pepboys.enumerated() {
+    print("Pep boy \(ix) is \(pepboy)") // Pep boy 0 is Manny, etc.
+}
+// or:
+pepboys.enumerated().forEach {
+    print("Pep boy \($0.offset) is \($0.element)")
+}
+
+let pepboys = ["Manny", "Moe", "Jack"]
+let ok = pepboys.allSatisfy {$0.hasPrefix("M")} // false
+let ok2 = pepboys.allSatisfy {$0.hasPrefix("M") || $0.hasPrefix("J")} // true
+```
+
+- `allSatisfy(_:)`
+	- Tells whether all elements pass some test
+
+```swift
+let pepboys = ["Manny", "Jack", "Moe"]
+let arr1 = pepboys.filter {$0.hasPrefix("M")} // ["Manny", "Moe"]
+let arr2 = pepboys.prefix {$0.hasPrefix("M")} // ["Manny"]
+let arr3 = pepboys.drop {$0.hasPrefix("M")} // ["Jack", "Moe"]
+```
+
+- `map(_:)`
+	- Yields a new array, each element is the result through a function
+
+```swift
+let arr = [1,2,3]
+let arr2 = arr.map {$0 * 2} // [2,4,6]
+```
+
+- `compactMap(_:)`
+	- Coerce or casts an array safely while eliminating those elements that can't be coerced or cast
+
+```swift
+let arr = ["1", "hey", "2", "ho"]
+let arr2 = arr.compactMap {Int($0)} // [1, 2]
+```
+
+- `reduce`
+	- Combines all the elements of an array into a single value
+	- Result type can have a different type than the element
+
+```swift
+let arr = [1, 4, 9, 13, 112]
+let sum = arr.reduce(0) {$0 + $1} // 139
+
+let sum = arr.reduce(0, +)
+
+let nums = [1,3,2,4,5]
+let result = nums.reduce(into: [[],[]]) { temp, i in
+    temp[i%2].append(i)
+}
+// result is now [[2, 4], [1, 3, 5]]
+```
+
 #### Swift Array and Objective-C NSArray
+
+- Swift Array is bridged to Objective-C NSArray in Foundation framework
+- `[Any]`
+- Pass the array, either by assignment or as an argument in a function call
+
+```swift
+let arr = [UIBarButtonItem(), UIBarButtonItem()]
+self.navigationItem.leftBarButtonItems = arr
+
+let lay = CAGradientLayer()
+lay.locations = [0.25, 0.5, 0.75] // bridged to NSArray of NSNumber
+```
+
 ### Dictionary
 
 #### Dictionaries have no order
