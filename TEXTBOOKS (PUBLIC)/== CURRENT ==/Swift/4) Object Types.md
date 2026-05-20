@@ -2038,13 +2038,222 @@ lay.locations = [0.25, 0.5, 0.75] // bridged to NSArray of NSNumber
 
 ### Dictionary
 
+- A dictionary is an unordered collection of object pairs
+	- Key and value
+- Equatable
+- Implement `hashValue` property
+- Equal keys have equal hash values
+- Uncuttable keys
+- Swift dictionary must be uniform
+	- All keys must be of the same type
+- A dictionary is a generic
+	- `Dictionary<Ket, Value>`
+	- `[Key: Value]`
+
+```swift
+var d = [String:String]()
+var d = ["CA": "California", "NY": "New York"]
+
+// empty dict
+var d : [String:String] = [:]
+```
+
+- Initialize a dictionary from a sequence of key-value tuples
+- Combine with `init(uniqueKyesWithValues:)`
+
+```swift
+let abbrevs = ["CA", "NY"]
+let names = ["California", "New York"]
+
+let tuples = (abbrevs.indices).map {(abbrevs[$0],names[$0])}
+let d = Dictionary(uniqueKeysWithValues: tuples)
+```
+- Use `zip` function that combines two sequences, and produces a sequence of tuples
+
+```swift
+let tuples = zip(abbrevs, names)
+let d = Dictionary(uniqueKeysWithValues: tuples)
+```
+
+#### Dictionary subscripting
+
+- Access to a dictionary's content is by subscripting
+	- Fetch a value by key
+- Change behaviour by supplying a `default` value
+- Assign into a key subscript expression
+
+```swift
+let d = ["CA": "California", "NY": "New York"]
+let state = d["CA"]
+
+let d = ["CA": "California", "NY": "New York"]
+let state = d["MD", default:"N/A"] // state is a String (not an Optional)
+
+var d = ["CA": "California", "NY": "New York"]
+d["CA"] = "Casablanca"
+d["MD"] = "Maryland"
+// d is now ["MD": "Maryland", "NY": "New York", "CA": "Casablanca"]
+```
+
 #### Dictionaries have no order
+
+- Dictionaries are unordered
+
+```swift
+let pairs : KeyValuePairs = ["CA": "California", "NY": "New York"]
+print(pairs.count) // 2
+print(pairs[0]) // (key: "CA", value: "California")
+// to access by key, cycle through the array
+if let pair = pairs.first(where: {$0.key == "NY"}) {
+    let val = pair.value // New York
+}
+```
+
 #### Dictionary casting and comparison
+
+- A dictionary type is legal for casting down
+
+```swift
+let dog1 : Dog = NoisyDog()
+let dog2 : Dog = NoisyDog()
+let d = ["fido": dog1, "rover": dog2]
+let d2 = d as! [String : NoisyDog]
+```
+
 #### Basic dictionary properties and enumeration
+
+- A dictionary has a `count` property reporting the number of key-value pairs it contains
+
+```swift
+var d = ["CA": "California", "NY": "New York"]
+for s in d.keys {
+    print(s) // NY, then CA (or vice versa)
+}
+
+var d = ["CA": "California", "NY": "New York"]
+var keys = Array(d.keys) // ["NY", "CA"] or ["CA", "NY"]
+
+var d = ["CA": "California", "NY": "New York"]
+for (abbrev, state) in d {
+    print("\(abbrev) stands for \(state)")
+}
+```
 #### Swift Dictionary and Objective-C NSDictionary
+
+- NSDictionary
+	- Untyped API characterization
+	- `[AnyHashable:Any]`
+	- Type eraser struct
+	- Key and value types can be marked in Objective-C using a lightweight generic
+- `userInfo`
+	- Cocoa Notification object
+- `progress`
+	- Key value
+
+```swift
+let prog = n.userInfo?["progress"] as? Double
+if prog != nil {
+    self.progress = prog!
+}
+
+UINavigationBar.appearance().titleTextAttributes = [
+    .font: UIFont(name: "ChalkboardSE-Bold", size: 20)!,
+    .foregroundColor: UIColor.darkText,
+    .shadow.: {
+        let shad = NSShadow()
+        shad.shadowOffset = CGSize(width:1.5,height:1.5)
+        return shad
+    }()
+]
+```
 ### Set
+
+- A set is an unordered collection of unique objects
+- Elements must be all of one type
+	- `count`
+	- `isEmpty`
+	- `for...in`
+	- `contains(_:)`
+
+```swift
+let set Set<Int> = [1, 2, 3]
+```
+
+- `intersection(_:)`
+- `union(_:)`
+- `symmetricDifference(_:)`
+- `subtracting(_:)`
+- `isSubset(of:)`
+- `isDisjoint(with:)`
+
+```swift
+let ud = UserDefaults.standard
+let recents = ud.object(forKey: Defaults.recents) as? [Int] ?? []
+var forbiddenNumbers = Set(recents)
+let legalNumbers = Set(1...PIXCOUNT).subtracting(forbiddenNumbers)
+let newNumber = legalNumbers.randomElement()!
+forbiddenNumbers.insert(newNumber)
+ud.set(Array(forbiddenNumbers), forKey:Defaults.recents)
+```
+
 #### Option sets
+
+- An option set is Swift's way of treating a certain type of Cocoa enumeration as a struct
+- Shares common features with Set
+- Objective-C bitmasks
+	- An integer whose bits are used as switches when multiple options are to be specified simultaneously
+- `options:`
+
+```swift
+typedef NS_OPTIONS(NSUInteger, UIViewAnimationOptions) {
+    UIViewAnimationOptionLayoutSubviews            = 1 << 0,
+    UIViewAnimationOptionAllowUserInteraction      = 1 << 1,
+    UIViewAnimationOptionBeginFromCurrentState     = 1 << 2,
+    UIViewAnimationOptionRepeat                    = 1 << 3,
+    UIViewAnimationOptionAutoreverse               = 1 << 4,
+    // ...
+};
+```
 #### Swift Set and Objective-C NSSet
+
+- Swift's Set type is bridged to Objective-C NSSet
+- Untyped medium of interchange
+
+```swift
+override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    let t = touches.first // an Optional wrapping a UITouch
+    // ...
+}
+```
 ### OrderedSet and OrderedDictionary
+
+- Swift Collection package provides an OrderedSet struct and an OrderedDictionary struct
 #### OrderedSet
+
+- An array plus a hash table
+- Order, and refer to elements by index number
+- Elements must be unique
+
+```swift
+let pep = OrderedSet(["Manny", "Moe", "Jack"])
+let first = pep.first! // Manny
+let ix = pep.firstIndex(of: "Moe") // Optional(1), fast
+if pep.contains("Jack") { // true, fast
+```
 #### OrderedDictionary
+
+- `keys` property is an immutable OrderedSet
+- `elements` property looks a lot like what you get when you coerce a Dictionary to an Array
+
+```swift
+var d : OrderedDictionary<String,Planet> = [:]
+d["Mercury"] = Planet(distance: 57_900_000, diameter: 4_878, gravity: 0.38)
+d["Venus"] = Planet(distance: 108_160_000, diameter: 12_104, gravity: 0.9)
+d["Earth"] = Planet(distance: 149_600_000, diameter: 12_756, gravity: 1)
+let names = d.keys // OrderedSet: ["Mercury", "Venus", "Earth"]
+let thirdPlanet = d.elements[2] // tuple with `key` and `value`
+let name = thirdPlanet.key // "Earth"
+let mercuryGravity = d["Mercury"]?.gravity // Optional, 0.38
+let planetX = Planet(distance: 100_000_000, diameter: 8_000, gravity: 0.8)
+d.updateValue(planetX, forKey: "PlanetX", insertingAt: 2)
+```
