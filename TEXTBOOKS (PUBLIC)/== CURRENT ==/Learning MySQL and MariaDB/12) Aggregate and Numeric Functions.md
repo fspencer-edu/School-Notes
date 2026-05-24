@@ -1,3 +1,0 @@
-## Aggregate Functions
-
-## Numeric Functions
