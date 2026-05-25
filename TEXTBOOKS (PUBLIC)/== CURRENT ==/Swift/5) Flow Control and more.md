@@ -423,26 +423,160 @@ struct Dog : CustomStringConvertible {
     }
 }
 ```
-
-
-
 ## Operators
+
+- `reduce`
+	- Expects a function taking two parameters and returning a value whose type matches that of the first parameter
+
+```swift
+infix operator + : AdditionPrecedence
+```
+
+- Operator declaration announces that this symbol is an operator
+	- Specifies parameters and usage syntax
+- Types
+	- `infix`
+	- `prefix`
+	- `postfix`
+
+- Precedence groups
+	- Dictate the order of operations when an expression contains multiple operators
+
 ## Memory Management
+
+- Memory management is handled automatically
+- Objects come into existence when they are instantiated and removed when no longer needed
 
 ### Memory Management of Reference Types
 
+- Memory leak
+	- Two instances never go out of existence
+	- Solved by periodic garbage collection
+	- Retain cycles manually in Swift
+	- `deinit`
+
+```swift
+func testRetainCycle() {
+    class Dog {
+        deinit {
+            print("farewell from Dog")
+        }
+    }
+    class Cat {
+        deinit {
+            print("farewell from Cat")
+        }
+    }
+    let d = Dog()
+    let c = Cat()
+}
+testRetainCycle() // farewell from Cat, farewell from Dog
+```
+- Strong/persisting references
+	- Not destroyed
+	- Objects are leaking
+	- Strong reference cycle
+
+
 #### Weak references
+
+- Retain cycle through a weak reference
+- Object referred can go out of existence while the referrer continues to exist
+
+```swift
+func testRetainCycle() {
+    class Dog {
+        weak var cat : Cat?
+        deinit {
+            print("farewell from Dog")
+        }
+    }
+    class Cat {
+        weak var dog : Dog?
+        deinit {
+            print("farewell from Cat")
+        }
+    }
+    let d = Dog()
+    let c = Cat()
+    d.cat = c
+    c.dog = d
+}
+testRetainCycle() // farewell from Cat, farewell from Dog
+```
+
 #### Unowned references
+
+- Mark a reference as `unowned`
+	- One object cannot exist without a reference to another
+
 #### Stored anonymous functions
+
+### Exclusive Access to Value Types
+
+- A struct and its members might be directly accessed, which can lead to unpredictable results
+- Compiler enforces exclusive access when a struct is being modified
 
 ## Miscellaneous Swift Language Features
 
 ### Synthesized Protocol Implementations
 
 #### Equatable
+
+```swift
+extension Vial : Equatable {
+    static func ==(lhs:Vial, rhs:Vial) -> Bool {
+        return lhs.numberOfBacteria == rhs.numberOfBacteria
+    }
+}
+```
+
+- Equatable synthesis
+	- Object type is a struct or an enum
+	- Adopted Equatable, not in an extension
+	- Not supplied an implementation of the `==` operator
+	- All of the struct's stored property types are themselves Equatable
 #### Hashable
+
+```swidr
+struct Dog : Hashable { // and therefore Equatable
+    let name : String
+    let license : Int
+    let color : UIColor
+    static func ==(lhs:Dog,rhs:Dog) -> Bool {
+        return lhs.name == rhs.name && lhs.license == rhs.license
+    }
+    func hash(into hasher: inout Hasher) {
+        name.hash(into:&hasher)
+        license.hash(into:&hasher)
+    }
+}
+```
 #### Comparable
+
+```swift
+struct Dog : Hashable { // and therefore Equatable
+    let name : String
+    let license : Int
+    let color : UIColor
+    static func ==(lhs:Dog,rhs:Dog) -> Bool {
+        return lhs.name == rhs.name && lhs.license == rhs.license
+    }
+    func hash(into hasher: inout Hasher) {
+        name.hash(into:&hasher)
+        license.hash(into:&hasher)
+    }
+}
+```
 ### Key Paths
+
+- A way of storing a reference to a property without actually accessing the property
+
+```swift
+\Type.property.property...
+var prop = \Person.firstName
+let whatname = p[keyPath:prop]
+```
 
 ### Instance as Function
 

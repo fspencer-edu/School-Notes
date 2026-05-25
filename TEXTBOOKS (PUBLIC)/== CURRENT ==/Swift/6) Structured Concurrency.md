@@ -1,10 +1,42 @@
+
+- Concurrency
+	- Ability of a computer program to do more than one thing at the same time
+- Explicit concurrency
+	- Communication from background code
+	- Running code in the background
+
 ## Multithreading
 
+- Concurrency is traditionally envisioned in terms of threads
+- Threads are the low-level expression of simultaneous subprocess execution
+
 ### The Main Thread
+
+- Only one main thread
+- Blocking
+	- A thread that prevents any other code from running on that thread
+
 ### Background Threads
+
+- Shared data
+- Lock
+	- Helps prevent race condition and dead clocks
+
 ### Asynchronous Code
 
+- Code that might be called at some unknown future time
+
 #### What asynchronous code looks like
+
+- A typical asynchronous code architecture is a completion handler
+
+```swift
+dataTask(
+    with: URL,
+    completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void)
+    -> URLSessionDataTask
+```
+
 #### Returning a value
 #### Throwing an error
 #### Summary
