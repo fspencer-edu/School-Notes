@@ -408,7 +408,21 @@ extension Dog {
 
 - Interospect an object
 	- Letting an object display the names an values of its properties
-- 
+
+```swift
+struct Dog : CustomStringConvertible {
+    var name = "Fido"
+    var license = 1
+    var description : String {
+        var desc = "Dog ("
+        let mirror = Mirror(reflecting:self)
+        for (k,v) in mirror.children {
+            desc.append("\(k!): \(v), ")
+        }
+        return desc.dropLast(2) + ")"
+    }
+}
+```
 
 
 
