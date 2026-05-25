@@ -88,12 +88,49 @@ override func viewDidLoad() {
 ```
 
 ## Wrapping a Completion Handler
+
 ## Multiple Concurrent Tasks
 
+### async let
+
+### Task Groups
+
+
 ## Asynchronous Sequences
+
+### Built-in Asynchronous Sequences
+### Making an Asynchronous Sequence
+### Asynchronous Sequence Methods
 ## Actors
+
+### Actor Isolation
+### Actor Serialization
+### The Main Actor
+
 ## Context Switching
+
+### Implicit Context Switching
+### Explicit Context Switching
+
 ## More About Tasks
+
+### Task Priority
+### The Current Task
+### Sleeping
+### Yielding
+### Cancellation
+
+
+#### Cancellation Strategies
+#### Cancelling subtasks
+
+
 ## More About Actors
 
+### Reentrancy
+### The Keyword Isolated
+### Global Actors
+
+
 ## Sendable
+
