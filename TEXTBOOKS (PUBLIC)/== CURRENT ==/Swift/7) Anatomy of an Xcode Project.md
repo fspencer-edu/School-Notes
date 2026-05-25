@@ -125,11 +125,18 @@ GUI
 ### Swift Packages
 
 #### Adding a Package
-#### 
-#### 
-#### 
-### 
+#### Creating a Package
+#### Customizing a Package
+
 
 
 ## App Launch Process
+
+### The Entry Point
+### How an App Gets Going
+### App Without A Storyboard
+
+
 ## Renaming Parts of a Project
+
+
