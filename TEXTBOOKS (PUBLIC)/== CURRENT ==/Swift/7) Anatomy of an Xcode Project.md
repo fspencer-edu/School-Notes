@@ -120,23 +120,62 @@ GUI
 
 - 
 #### Resources in the Asset Catalog
+
+- Can hold named colours, Sprite Kit textures, and general data objects
+
 ### Code Files
+
+- Swift files are added to the app target's Compile Source build phase
 ### Framework and SDKs
+
+- A framework is a library of compiled code used by your code
+- Cocoa framework
+- Linking connects the compiled code to any needed frameworks
+- Import the framework's header in order to compile and build
+- Link to the framework's binary during the build
 ### Swift Packages
 
 #### Adding a Package
+
+- Add and import a package
 #### Creating a Package
 #### Customizing a Package
 
+#### Sharing a Package
 
+- Upload a package to GitHub
 
 ## App Launch Process
 
 ### The Entry Point
+
+`main` Function
+- Sets up a memory management environment
+- Calls the built-in `UIApplicationMain`
+
+- Swift uses `@main`
 ### How an App Gets Going
+
+- `Info.plist`
+	- Contains an application scene manifest dictionary
+	- Code mentions classes and protocols
+- App has main story board
+
 ### App Without A Storyboard
 
-
+```swift
+func scene(_ scene: UIScene,
+           willConnectTo session: UISceneSession,
+           options connectionOptions: UIScene.ConnectionOptions) {
+    if let windowScene = scene as? UIWindowScene {
+        let window = UIWindow(windowScene: windowScene)
+        window.backgroundColor = .white
+        window.rootViewController = ViewController()
+        self.window = window
+        window.makeKeyAndVisible()
+    }
+}
+```
 ## Renaming Parts of a Project
 
 
