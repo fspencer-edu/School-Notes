@@ -319,19 +319,98 @@ func doSomethingTimeConsuming() {
     // ... do more stuff ...
 }
 ```
-
+- Defer stack
+	- Each successive defer statement, pushes its code onto the top of the stack
 #### Aborting the whole program
+
+- Program stops dead in its tracks
+- `fataError`
+- `assertionFailure`
+	- Does not fail in the shipping program where assertions are turned off
+
+```swift
+required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+}
+```
 #### Guard
- 
+- A guard construct is an if construct where you exit early if the condition fails
+
+```swift
+guard condition else {
+    statements
+    exit
+}
+
+@objc func tapField(_ g: Any) {
+    // g must be a gesture recognizer
+    // and the gesture recognizer must have a view
+    guard let g = g as? UIGestureRecognizer, g.view != nil
+        else {return}
+    // okay, now we can proceed...
+}
+
+guard case let .number(n) = err else {return}
+// n is now the extracted number
+```
+
+- `guard cast` is the logical inverse of `if case`
+
 ## Privacy
+
+- Also known as access control
+- Explicit modification of the normal scope rules
+
+```swift
+class Dog {
+    var name = ""
+    private var whatADogSays = "woof"
+    func bark() {
+        print(self.whatADogSays)
+    }
+}
+```
+
+- 5 privacy levels
+	- `internal`
+	- `fileprivate`
+	- `private`
+	- `public`
+	- `open`
 
 ### Private and Fileprivate
 
+- Restricts its visibility
+
+```swift
+class Dog {
+    private var whatADogSays = "woof"
+}
+extension Dog {
+    func speak() {
+        print(self.whatADogSays) // ok
+    }
+}
+```
+
 ### Public and Open
 
+- Code from a module must have a public type to create an instance
+- A open class can be subclassed in another module
+
 ### Privacy Rules
+
+- A variable cannot be public if its type is private
+- A subclass can't be public unless the superclass is public
+- A subclass can change an overridden member's access level, but it cannot even see its superclass's private members unless they are declared in the same file together
  
 ## Introspection
+
+- Interospect an object
+	- Letting an object display the names an values of its properties
+- 
+
+
 
 ## Operators
 ## Memory Management
