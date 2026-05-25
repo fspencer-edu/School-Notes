@@ -1,0 +1,25 @@
+<img src="/images/Pasted image 20260405135738.png" alt="image" width="500">
+
+https://genetics.elte.hu/oktatasi_anyag/archivum/bioinfo/Bioinformatika_2017-2018/book.pdf
+
+[[1) Introduction - Bioinfo]]
+[[2) Access to Sequence Data and Related Information]]
+[[3) Pairwise Sequence Alignment]]
+[[4) Basic Local Alignment Search Tool (BLAST)]]
+[[5) Advanced Database Searching]]
+[[6) Multiple Sequence Alignment]]
+[[7) Molecular Phylogeny and Evolution]]
+[[8) DNA - The Eukaryotic Chromosome]]
+[[9) Analysis of Next-Generation Sequence Data]]
+[[10) Bioinformatic Approaches to Ribonucleic Acid (RNA)]]
+[[11) Gene Expression - Microarray and RNA-seq Data Analysis]]
+[[12) Protein Analysis and Proteomics]]
+[[13) Protein Structure]]
+[[14) Functional Genomics]]
+[[15) Genomes Across the Tree of Life]]
+[[16) Completed Genomes - Viruses]]
+[[17) Completed Genomes - Bacteria and Archaea]]
+[[18) Eukaryotic genomes - Fungi]]
+[[19) Eukaryotic Genomes - From Parasites to Primates]]
+[[20) Human Genome]]
+[[21) Human Disease]]
