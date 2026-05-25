@@ -38,15 +38,55 @@ dataTask(
 ```
 
 #### Returning a value
+
+- Code containing a time inversion is hard to reason
 #### Throwing an error
+
 #### Summary
+
+- Issues of asynchronous code
+	- Confusion order
+	- Can't return a value
+	- Can't throw an error
 ## Structured Concurrency Syntax
 
+- Asynchronous cod is marked
+- Asynchronous code runs in order
+- Asynchronous code can return a value
+- Asynchronous code can throw an error
+
 ### async/await
+
+- `async`
+	- Masks an asynchronous method
+- `await`
+	- Used to call an asynchronous method
 ### async Contexts
-### 
-### 
+
 ## Tasks
+
+- A Task object represents the notion of a task
+- Basis of all asynchronous activity
+- Tasks are also the atoms of structured concurrency
+	- `priority:`
+	- `operation:`
+
+```swift
+override func viewDidLoad() {
+    super.viewDidLoad()
+    let url = URL(string: "https://www.apeth.com/pep/manny.jpg")!
+    Task {
+        do {
+            let data = try await self.download(url: url)
+            print(data)
+        } catch {
+            print(error)
+        }
+    }
+    print(url)
+}
+```
+
 ## Wrapping a Completion Handler
 ## Multiple Concurrent Tasks
 
