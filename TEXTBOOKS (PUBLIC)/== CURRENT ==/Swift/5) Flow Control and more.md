@@ -406,7 +406,7 @@ extension Dog {
  
 ## Introspection
 
-- Interospect an object
+- Introspect an object
 	- Letting an object display the names an values of its properties
 
 ```swift
