@@ -1,3 +1,13 @@
+- App's visible interface consists entirely of views
+- A view is an interface object
+	- Contain subviews
+	- All views are placed by a view controller
+		- Main view
+
+```swift
+let v = UIView()
+```
+
 ## The Nib Editor Interface
 
 ### Document Outline

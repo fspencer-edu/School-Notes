@@ -90,4 +90,9 @@
 #### Icons in the app
 #### Marketing icon
 #### Launch Image
-#### 
+### Screenshots and Video Previews
+
+### Property List Settings
+### Submission to the App Store
+### 
+### 
