@@ -7,10 +7,25 @@
 ```swift
 let v = UIView()
 ```
+- Nib
+	- A file, in a special format, consisting of instructions for creating and configuring instances, primarily UIView instances
+- Xcode includes a graphical design environment
+	- Nib editor
 
 ## The Nib Editor Interface
 
+- Bulk of the editor is the canvas
+- Document outline
+
 ### Document Outline
+
+- Shows the hierarchical relationship between the objects in the nib
+- Storyboard file
+	- Consists of scenes
+	- A single view controller with ancillary material
+- View controller
+	- Manages an interface object
+	- 
 ### Canvas
 ### Inspectors
 
