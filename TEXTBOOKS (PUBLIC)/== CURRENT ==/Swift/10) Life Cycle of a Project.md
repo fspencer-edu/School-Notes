@@ -1,6 +1,28 @@
 ## Environmental Dependencies
 
+- Build-time dependencies
+	- Version
+	- Type of destination
+	- Custom compilation
+	- Action that causes the build
+- Run time dependencies
+	- App environment
+	- Resources
+
 ### Conditional Compilation
+
+```swift
+#if condition
+    statements
+#elseif condition
+    statements
+#else
+    statements
+#endif
+```
+- Conditions are t
+
+
 ### Build Action
 ### Permissible Runtime Environment
 ### Backward Compatibility
