@@ -71,6 +71,23 @@
 
 ## Localization
 
-### Creting Localized Content
-### 
+### Creating Localized Content
+#### Exporting
+
+#### Editing
+
+#### Importing
+### Testing Localization
 ## Distribution
+
+### Making an Archive
+### The Distribution Certificate
+### The Distribution Profile
+### Distribution for Testing
+#### Ad Hoc Distribution
+### Final App Preparations
+
+#### Icons in the app
+#### Marketing icon
+#### Launch Image
+#### 
